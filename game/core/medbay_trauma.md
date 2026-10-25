@@ -86,3 +86,27 @@ Surviving operatives who return to HQ with missing HP do **not** heal automatica
 | **Gene-Stasis Tank** *(Infirmary Module)* | `[1 PIP] + [3 CR]` | Spend **[1 EF]** during Downtime to **auto-heal 1 missing HP** without rolling (0% risk of natural `1` Permanent Trauma). |
 | **Cryo-Stasis Chamber** *(Standalone Landmark)* | `[2 PIP] + [6 CR]` | **Sponsor-Controlled (1 Bed):** Automatically restores **100% HP** with `0` dice rolled. |
 | **Cybernetic Lab** *(Tier 3 Medical)* | [16 CR] *(Shared)* | Pay **[5 CR]** to completely purge a **Permanent Trauma** or **Critical Injury** token. |
+
+
+---
+
+## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!IMPORTANT]
+> **Stabilization Extortion & Binding Promises at `0 HP`:** When an operative drops to `0 HP` during Step 4, **any deployed ally** may pay the `[1 EF]` or Medical Consumable cost to save them—not just the owning Faction! If the owning Faction is out of `[EF]`, rivals can legally demand an immediate **Binding Promise** (e.g., *"Pay me `[3 CR]` from your Vault right now and I will burn my `[1 EF]` to stabilize your veteran agent"*).
+
+> [!WARNING]
+> **Calcification Risk (`Natural 1` in Med Bay):** Rolling baseline Infirmary Healing Dice (`5+`) always carries a `1-in-6` chance per die of rolling a natural `1`, which calcifies that wound into a **Permanent Trauma Token** (`-1 Max HP`, `-1 Starting Static Die`, locked against normal bed rolls). For high-Loyalty Tier 3 or Tier 4 veterans, consider using the **Gene-Stasis Tank** (`[1 EF]` = auto-heal `1 HP` with `0%` trauma risk) or **Cryo-Stasis Chamber** (`100%` risk-free heal)!
+
+> [!EXAMPLE]
+> **Example of Play — Field Casualty, Martyrdom & The Vulture Tax:**
+> 1. **Obsidian's** operative **The Saboteur** (`[4 LOY]`, carrying a *Heavy Rotary Cannon* and *Tactical Slicer Deck*) takes 2 Backfire damage in Stage 3 and drops to `0 HP`.
+> 2. Obsidian has `[0 EF]` in their Vault. They offer `[2 CR]` to **Titan** to pay `[1 EF]` for stabilization, but Titan refuses—wanting The Saboteur's *Heavy Rotary Cannon*!
+> 3. **The Saboteur is Killed in Action (KIA):**
+>    * Obsidian moves The Saboteur to their **Dead Pool**, immediately gains **`[+2 PIP]`** (*Sacrifice for the Agency*), and locks in The Saboteur's `[4 LOY]` as **`[8 VP]`** of permanent Martyrdom score.
+>    * The 2 equipped items drop onto the stage. **Titan** invokes **Option B (Rival Claim / Vulture Tax)**, paying **`[-1 PIP]`** (`1 PIP` covers up to 2 looted items) to claim both the *Heavy Rotary Cannon* and *Tactical Slicer Deck* directly into Titan's Armory!
+
+> [!DIAGRAM]
+> **Figure 5.1 — The Med Bay Triage & Trauma Lifecycle**
+> * **Visual Specification:** Dual-track medical bay schematic. Top track shows **In-Mission `0 HP` Stabilization** branching into *Saved at `1 HP`* vs *Dead Pool Martyr (`[+2 PIP]` + Vulture Loot Drop)*. Bottom track shows **HQ Downtime Step 3 Infirmary Beds**: rolling `5+` (Clean Heal), `2–4` (Converts to **Critical Injury Token**), and `1` (Converts to **Permanent Trauma Token** requiring Cybernetic Lab purge).
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_5_1_medbay_trauma_flow.webp`

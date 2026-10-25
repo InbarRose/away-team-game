@@ -96,3 +96,26 @@ Before launching the next mission, players bid [CR] (minimum bid: [0 CR], resolv
 HQ starts with **5 Baseline Facilities** (*Infirmary*, *Quartermaster*, *Recruitment Bureau*, *Intel Array*, *Boardroom*), each offering 3 upgrade modules, plus **4 Standalone Landmark Modules**:
 * **Single-Sponsor Rule:** A Faction pays the module's full cost ([4 CR] or `[1 PIP] + [3–4 CR]`) in a single Downtime step, claims **[+1 PIP]** ([+2 PIP] for Landmarks), and places their **Faction Token** on the module.
 * **Shared vs. Sponsor-Controlled:** Most modules upgrade the entire Agency's capabilities, while specific perks (such as *Cryo-Stasis Chamber*, *Tactical Simulator*, *Lobbying Network*, and *Press Office*) grant exclusive control or royalties to the Sponsor Faction.
+
+
+---
+
+## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!IMPORTANT]
+> **Golden Rule of the 4-Tier Economy — What Can and Cannot Be Traded:**
+> * **Tradeable in Binding Promises:** **Credits (`[CR]`)** and unequipped **Armory Items** (plus immediate in-step tactical actions).
+> * **Vault-Bound Currencies (Never Tradeable):** **Effort (`[EF]`)** and **Political Influence (`[PIP]`)** cannot be transferred between players (though a player can spend their own `[EF]` on an ally's behalf during a mission in exchange for `[CR]`).
+> * **Non-Currency States, Ranks & Trackers:** **Momentum (`[MOM]`)** is transient in-mission dice flow; **Loyalty (`[LOY]`)** is character-bound operative rank; **Doom (`[DOOM]`)** and **Victory Points (`[VP]`)** are macro campaign trackers. None of these four are ever stored in a Vault or spent as currencies.
+
+> [!EXAMPLE]
+> **Example of Play — Navigating the 8-Step HQ Downtime Phase:**
+> 1. **Step 1 (Debrief):** Returning from Mission 1, the 4 surviving operatives each gain **`[+1 LOY]`** on their character cards (the Squad Leader gains **`[+2 LOY]`** total and **`[+1 PIP]`** to their Vault). Mission bounties (`[CR]` and `[PIP]`) are deposited into Faction Vaults.
+> 2. **Step 2 (Stand-Down Auction):** With 3 operatives wounded, **Ascendant** bids `[2 CR]` for **Option B — STAND-DOWN**. No one outbids them. The Agency skips mission deployment this round, boosting the Infirmary to **4 Beds** with **5 Healing Dice each**.
+> 3. **Step 3 (Medical Recovery):** All 3 wounded operatives are assigned to beds and heal cleanly using the boosted `5-die` pools.
+> 4. **Step 4 (Corporate Sponsorship):** **Vanderbilt** pays `[4 CR]` to sponsor the **Black Market Terminal** module in the Quartermaster facility, placing their Faction Token on it and immediately gaining **`[+1 PIP]`** (`[2 VP]` value).
+
+> [!DIAGRAM]
+> **Figure 6.1 — Faction Dashboard & 4-Tier Economy Layout**
+> * **Visual Specification:** Annotated diagram of a player's physical **Faction Dashboard**. Left zone: **The Faction Vault** holding the 3 spendable currencies (`[CR]` Gold chits, `[EF]` Cyan energy cells, `[PIP]` Magenta executive seals) + Armory Cache cards. Center zone: **Active & Bench Operative Roster** with personal `[LOY]` rank tracks (`Tiers 1–4`). Top-right corner: **Endgame `[VP]` Ledger** (separated from the spendable Vault).
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_6_1_faction_dashboard_anatomy.webp`

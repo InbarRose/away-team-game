@@ -74,3 +74,27 @@ Immediately during **Step 5 (Resolution)** of the completed stage, the **Squad L
 * **Exchange Rate:** **[1 MOM] = Restore `1 spent static die`** from an operative's Spent Pool back to their Active Static Pool.
 * **The Skin-in-the-Game Constraint:** Momentum dice can **ONLY** be restored to operatives who **actually committed and rolled at least 1 die** during the stage just completed. Operatives who committed `0` dice cannot receive Momentum refunds (unless a specific power such as *Field Scavenger* overrides this rule).
 * **Cap Limit:** An operative's restored static dice can never exceed their starting mission static pool cap.
+
+
+---
+
+## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!TIP]
+> **Tactical Insight — Why Focus Alignment Saves Lives:** Because every die rolled has a flat `16.7%` (`1-in-6`) chance of inflicting `1 HP` Backfire damage, rolling **Out of Focus (`5+`, `0.33 ES/die`)** is doubly punishing. To generate `2 Expected Successes`, a Primary Specialist (`3+`) only needs to roll **3 dice** (`0.50` expected Backfire damage), whereas an Out-of-Focus operative (`5+`) must roll **6 dice** (`1.00` expected Backfire damage AND double the static pool depletion). Always equip a **Focus Bridge** weapon (`4+`) or use **Dynamic Focus Swaps** before rolling Out of Focus!
+
+> [!IMPORTANT]
+> **The Skin-in-the-Game Rule for `[MOM]` Refunds:** You cannot "free-ride" on your teammates' rolls to refill your own spent dice pool. An operative is **only eligible** to receive a restored static die from `[1 MOM]` if they **committed and rolled at least `1` static die** during that specific stage (unless a specific ability such as *Field Scavenger* overrides this restriction).
+
+> [!EXAMPLE]
+> **Example of Play — Static Pool Depletion & Momentum Refill:**
+> * **The Ghost Point** (`2 HP`, `7 Starting Static Dice`, Primary `[Infiltrate]` `3+`) enters **Stage 1: Outer Perimeter** (`[Infiltrate]`, Target Difficulty $D = 3$).
+> * She commits **4 of her 7 static dice**, leaving **3 Available Static Dice** on her card.
+> * Along with her teammate **The Prowler** (who commits **3 static dice**), they roll `7 dice` total at `3+` and score **6 Successes** (`+3` above $D = 3$).
+> * The stage clears with $\text{Momentum} = 6 - 3 - 1 = \mathbf{[2\text{ MOM}]}$.
+> * Both The Ghost Point and The Prowler rolled at least 1 die, so both are eligible for refunds. The Squad Leader gives `[1 MOM]` to each: The Ghost Point moves `1 spent die` back to her Active Pool, entering Stage 2 with **4 Available Static Dice** (`3 Spent`).
+
+> [!DIAGRAM]
+> **Figure 2.1 — Anatomy of the Static Dice Pool & Focus Thresholds**
+> * **Visual Specification:** Schematic flow diagram showing an Operative Card's **Active Static Pool (`7d6`)** splitting into **Committed Dice (`3d6`)** + **Temporary Bonus Dice (`+2d6` from Lock and Load)**. Shows the 3 threshold bands (`3+` Primary Crimson/Cyan, `4+` Secondary/Bridge Amber, `5+` Out-of-Focus Slate) and the red skull `1` Backfire face, followed by committed static dice moving to the **Spent Pool** while temporary dice return to the supply box.
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_2_1_static_dice_flow.webp`

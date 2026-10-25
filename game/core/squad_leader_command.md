@@ -83,3 +83,26 @@ Taking the Squad Leader contract carries high institutional stakes at the end of
 | :--- | :--- | :--- |
 | **Mission Cleared (Success)** | **[+1 PIP]** (`[2 VP]`) to Squad Leader's Faction Vault | **`[+1 LOY]`** ([+2 LOY] total including survival) |
 | **Mission Failed / Retreated** | **[-1 PIP]** (`[-2 VP]`) deducted from Squad Leader's Vault | **`[0 LOY]`** ([+1 LOY] if returning alive) |
+
+
+---
+
+## 7. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!NOTE]
+> **Zero-Credit Command Auction Fallback:** While the standard minimum entry bid for the Command Auction is `[1 CR]`, if all participating Factions are at `[0 CR]` (or if every Faction declines to bid `[1 CR]`), the Squad Leader title does not go vacant. Instead, resolve the election at `[0 CR]` using the standard tie-breaker hierarchy: **Highest Faction `[PIP]` $\rightarrow$ Highest Candidate `[LOY]` $\rightarrow$ Die Roll-Off**.
+
+> [!WARNING]
+> **The Accountability Trap:** Winning the Squad Leader auction grants massive tactical leverage (distributing `[MOM]` die refunds, calling *Force Breach* / *Tactical Bypass*, and breaking ties), but if the mission ends in **Failure or Retreat**, the Squad Leader's Faction suffers **`[-1 PIP]` (`[-2 VP]`)** and their operative forfeits the Squad Leader `[+1 LOY]` bonus. Rivals may deliberately starve a greedy Squad Leader of dice in the final stage just to watch them eat the `[-1 PIP]` penalty!
+
+> [!EXAMPLE]
+> **Example of Play — The Command Auction & Binding Side-Deals:**
+> 1. During **Step 8 of HQ Downtime**, 4 players assemble the strike team. **Aegis** wants the Squad Leader token to guarantee their Commander gets the first `[MOM]` refund die (which also triggers Aegis's *Kinetic Reclamation* for `[+1 EF]`).
+> 2. **Aegis** opens bidding at `[1 CR]`. **Vanderbilt** threatens to raise to `[2 CR]`.
+> 3. Before bids lock, Aegis offers a **Binding Promise**: *"Don't raise the bid; let me win Squad Leader for `[1 CR]`, and I will pay you `[1 CR]` directly right now."*
+> 4. Vanderbilt accepts! Aegis pays `[1 CR]` to Vanderbilt and `[1 CR]` to the HQ bank (`[2 CR]` total outlay, keeping Vanderbilt happy and avoiding a `[3–4 CR]` bidding war).
+
+> [!DIAGRAM]
+> **Figure 4.1 — Squad Leader Authority & Retreat Decision Tree**
+> * **Visual Specification:** Command console schematic illustrating the Squad Leader's 4 levers: (1) Step 1 Dynamic Focus Swap (*Force Breach* vs *Tactical Bypass*), (2) Step 5 `[MOM]` Refund Distribution, (3) Transition Step *Logistical Refresh* (`[2 EF]` for `+1 die` squad-wide / `[3 EF]` for `+2 dice` squad-wide), and (4) Tactical vs. Forced Retreat gates.
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_4_1_squad_leader_console.webp`
