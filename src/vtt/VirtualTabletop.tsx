@@ -674,7 +674,7 @@ export function VirtualTabletop({ components }: VTTProps) {
               }}
             >
               <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)' }}>
-                DOOM TRACKER
+                META CAMPAIGN DOOM CLOCK
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                 <button
@@ -710,7 +710,7 @@ export function VirtualTabletop({ components }: VTTProps) {
               }}
             >
               <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)' }}>
-                SQUAD MOMENTUM
+                IN-MISSION MOMENTUM (TRANSIENT)
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                 <button
@@ -786,7 +786,39 @@ export function VirtualTabletop({ components }: VTTProps) {
                   <strong>
                     {v.playerName} {v.isSquadLeader ? '👑 SQUAD LEADER' : ''}
                   </strong>
-                  <span className="semantic-badge badge-currency-vp">{v.vp} VP</span>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} title="Endgame Victory Point Score Tracker (Not a Spendable Currency)">
+                    <span className="semantic-badge badge-currency-vp">🏆 {v.vp} VP</span>
+                    <button
+                      type="button"
+                      className="vtt-btn"
+                      style={{ padding: '0px 5px', fontSize: '0.68rem' }}
+                      onClick={() =>
+                        setState((prev) => ({
+                          ...prev,
+                          vaults: prev.vaults.map((item, i) =>
+                            i === idx ? { ...item, vp: Math.max(0, item.vp - 1) } : item
+                          ),
+                        }))
+                      }
+                    >
+                      -
+                    </button>
+                    <button
+                      type="button"
+                      className="vtt-btn"
+                      style={{ padding: '0px 5px', fontSize: '0.68rem' }}
+                      onClick={() =>
+                        setState((prev) => ({
+                          ...prev,
+                          vaults: prev.vaults.map((item, i) =>
+                            i === idx ? { ...item, vp: item.vp + 1 } : item
+                          ),
+                        }))
+                      }
+                    >
+                      +
+                    </button>
+                  </div>
                 </div>
 
                 <select
@@ -803,7 +835,7 @@ export function VirtualTabletop({ components }: VTTProps) {
                   style={{
                     width: '100%',
                     padding: '0.35rem',
-                    marginBottom: '0.6rem',
+                    marginBottom: '0.45rem',
                     borderRadius: '4px',
                     background: 'var(--bg-void)',
                     color: 'var(--text-primary)',
@@ -818,11 +850,21 @@ export function VirtualTabletop({ components }: VTTProps) {
                   ))}
                 </select>
 
-                {/* Currency Counters */}
+                {/* Primary Spendable Currencies (3-Column Grid) */}
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.64rem',
+                    color: 'var(--text-muted)',
+                    marginBottom: '0.25rem',
+                  }}
+                >
+                  PRIMARY VAULT CURRENCIES (SPENDABLE ASSETS)
+                </div>
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(4, 1fr)',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
                     gap: '0.4rem',
                     textAlign: 'center',
                     fontSize: '0.75rem',
@@ -833,7 +875,6 @@ export function VirtualTabletop({ components }: VTTProps) {
                       ['credits', 'CR', 'badge-currency-cr'],
                       ['effort', 'EF', 'badge-currency-ef'],
                       ['pip', 'PIP', 'badge-currency-pip'],
-                      ['vp', 'VP', 'badge-currency-vp'],
                     ] as const
                   ).map(([field, label, badgeClass]) => (
                     <div

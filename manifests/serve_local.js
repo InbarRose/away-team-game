@@ -3,9 +3,9 @@
  * AWAY TEAM — Instant Zero-Dependency Local Server
  * ------------------------------------------------
  * Runs manifests/generate_manifests.js and starts a local HTTP server on
- * http://localhost:4321 serving the full Wiki, 200-Card Browser, Art Manifest
- * Exporter, and interactive Virtual Tabletop (VTT) without requiring `npm install`.
- * (For full Astro + React hot-reloading development, use `npm install && npm run dev`.)
+ * http://localhost:4321 serving the full Wiki (with dedicated pages for every
+ * component, Focus hub, Class hub, and Currency/Tracker guide), 200-Card Browser,
+ * Art Manifest Exporter, and interactive Virtual Tabletop (VTT).
  */
 
 import http from 'node:http';
@@ -42,7 +42,7 @@ function buildStandaloneHtml() {
 </head>
 <body>
   <header class="at-navbar">
-    <div class="at-brand">
+    <div class="at-brand" onclick="location.hash='#/wiki/rule/rules_overview'">
       <span>AWAY TEAM</span>
       <span class="at-brand-badge">awayteam.inbarrose.com • LOCAL</span>
     </div>
@@ -61,47 +61,53 @@ function buildStandaloneHtml() {
       fetch('/manifests/exports/image_generation_manifest.json').then(r => r.json()),
     ]);
 
-    const factions = components.filter(c => c.component_type === 'faction');
     const characters = components.filter(c => c.component_type === 'character');
-    const items = components.filter(c => c.component_type === 'item');
-    const missions = components.filter(c => c.component_type === 'mission' || c.component_type === 'side_mission');
-    const modifiers = components.filter(c => c.component_type === 'modifier');
 
-    const BADGE_MAP = {
-      '[Combat]': 'badge-focus-combat',
-      '[Infiltrate]': 'badge-focus-infiltrate',
-      '[Intel]': 'badge-focus-intel',
-      '[Operations]': 'badge-focus-ops',
-      '[Negotiate]': 'badge-focus-negotiate',
-      '[Survival]': 'badge-focus-survival',
-      '[CR]': 'badge-currency-cr',
-      '[EF]': 'badge-currency-ef',
-      '[PIP]': 'badge-currency-pip',
-      '[LOY]': 'badge-currency-loy',
-      '[DOOM]': 'badge-currency-doom',
-      '[MOM]': 'badge-currency-mom',
-      '[VP]': 'badge-currency-vp',
-      '[Head]': 'badge-slot',
-      '[Body]': 'badge-slot',
-      '[Legs]': 'badge-slot',
-      '[Pack]': 'badge-slot',
-      '[Hand L]': 'badge-slot',
-      '[Hand R]': 'badge-slot',
-      '[Consumable]': 'badge-slot',
-      '[Complex]': 'badge-slot',
+    const BADGE_CLASS = {
+      'Combat': ['badge-focus-combat', '#/wiki/focus/combat'],
+      'Infiltrate': ['badge-focus-infiltrate', '#/wiki/focus/infiltrate'],
+      'Intel': ['badge-focus-intel', '#/wiki/focus/intel'],
+      'Operations': ['badge-focus-ops', '#/wiki/focus/operations'],
+      'Negotiate': ['badge-focus-negotiate', '#/wiki/focus/negotiate'],
+      'Survival': ['badge-focus-survival', '#/wiki/focus/survival'],
+      'CR': ['badge-currency-cr', '#/wiki/concept/currencies'],
+      'EF': ['badge-currency-ef', '#/wiki/concept/currencies'],
+      'PIP': ['badge-currency-pip', '#/wiki/concept/currencies'],
+      'LOY': ['badge-currency-loy', '#/wiki/concept/currencies'],
+      'DOOM': ['badge-currency-doom', '#/wiki/rule/campaign_engine'],
+      'MOM': ['badge-currency-mom', '#/wiki/concept/currencies'],
+      'VP': ['badge-currency-vp', '#/wiki/concept/currencies'],
+      'Head': ['badge-slot', '#/wiki/database/item'],
+      'Body': ['badge-slot', '#/wiki/database/item'],
+      'Legs': ['badge-slot', '#/wiki/database/item'],
+      'Pack': ['badge-slot', '#/wiki/database/item'],
+      'Hand L': ['badge-slot', '#/wiki/database/item'],
+      'Hand R': ['badge-slot', '#/wiki/database/item'],
+      'Hand': ['badge-slot', '#/wiki/database/item'],
+      'Consumable': ['badge-slot', '#/wiki/database/item'],
+      'Complex': ['badge-slot', '#/wiki/database/item'],
     };
 
     function formatSemantic(str = '') {
-      const escaped = String(str)
+      let s = String(str)
         .replace(/&/g, '&amp;')
         .replace(/</g, '&lt;')
         .replace(/>/g, '&gt;')
         .replace(/\\*\\*([^*]+)\\*\\*/g, '<strong>$1</strong>')
         .replace(/\`([^\`]+)\`/g, '<code>$1</code>');
-      return escaped.replace(/\\[(Combat|Infiltrate|Intel|Operations|Negotiate|Survival|CR|EF|PIP|LOY|DOOM|MOM|VP|Head|Body|Legs|Pack|Hand L|Hand R|Consumable|Complex)\\]/g, (m, inner) => {
-        const cls = BADGE_MAP[m] || 'badge-slot';
-        return '<span class="semantic-badge ' + cls + '">' + inner + '</span>';
+
+      // Compound quantity tokens e.g. [+1 CR], [-1 PIP], [2 EF], [10+ LOY], [+3 VP]
+      s = s.replace(/\\[([+-]?\\d+(?:[–-]\\d+|\\+)?)\\s+(CR|EF|PIP|LOY|DOOM|MOM|VP)\\]/g, (_, qty, unit) => {
+        const [cls, href] = BADGE_CLASS[unit] || ['badge-slot', '#/wiki/concept/currencies'];
+        return '<a href="' + href + '" class="semantic-badge clickable ' + cls + '">' + qty + ' ' + unit + '</a>';
       });
+
+      // Standard tokens e.g. [Combat], [CR], [Head]
+      s = s.replace(/\\[(Combat|Infiltrate|Intel|Operations|Negotiate|Survival|CR|EF|PIP|LOY|DOOM|MOM|VP|Head|Body|Legs|Pack|Hand L|Hand R|Hand|Consumable|Complex)\\]/g, (_, inner) => {
+        const [cls, href] = BADGE_CLASS[inner] || ['badge-slot', '#/wiki/database/all'];
+        return '<a href="' + href + '" class="semantic-badge clickable ' + cls + '">' + inner + '</a>';
+      });
+      return s;
     }
 
     function renderMarkdown(md = '') {
@@ -121,20 +127,13 @@ function buildStandaloneHtml() {
       mode: location.pathname === '/vtt' ? 'vtt' : 'wiki',
       section: 'rulebook',
       ruleSlug: coreRules[0]?.slug || 'rules_overview',
+      componentId: components[0]?.id || '',
+      focusKey: 'combat',
       search: '',
-      focus: 'all',
-      // VTT state
-      missionId: missions[0]?.id || '',
       stageFocus: 'combat',
       targetDifficulty: 14,
       doom: 0,
       momentum: 0,
-      vaults: [
-        { name: 'Director P1', factionId: 'faction-aegis', cr: 12, ef: 3, pip: 2, vp: 0, leader: true },
-        { name: 'Director P2', factionId: 'faction-nexus', cr: 12, ef: 3, pip: 2, vp: 0, leader: false },
-        { name: 'Director P3', factionId: 'faction-vanderbilt', cr: 14, ef: 2, pip: 3, vp: 0, leader: false },
-        { name: 'Director P4', factionId: 'faction-ascendant', cr: 12, ef: 3, pip: 2, vp: 0, leader: false },
-      ],
       squad: [
         { charId: 'agent-01-commander', hp: 3, bonusDice: 0, rolled: [] },
         { charId: 'agent-07-ghost-point', hp: 2, bonusDice: 0, rolled: [] },
@@ -142,6 +141,21 @@ function buildStandaloneHtml() {
         { charId: 'agent-13-combat-medic', hp: 3, bonusDice: 0, rolled: [] },
       ],
     };
+
+    function syncFromHash() {
+      const h = (location.hash || '').replace(/^#/, '');
+      if (!h.startsWith('/wiki')) return;
+      state.mode = 'wiki';
+      const segs = h.slice(6).split('?')[0].split('/').filter(Boolean);
+      if (segs[0] === 'rule' && segs[1]) { state.section = 'rulebook'; state.ruleSlug = segs[1]; }
+      else if (segs[0] === 'component' && segs[1]) { state.section = 'component_page'; state.componentId = segs[1]; }
+      else if (segs[0] === 'focus' && segs[1]) { state.section = 'focus_page'; state.focusKey = segs[1]; }
+      else if (segs[0] === 'concept' && segs[1] === 'currencies') { state.section = 'currencies_guide'; }
+      else if (segs[0] === 'database' && segs[1]) { state.section = segs[1]; }
+      render();
+    }
+
+    window.addEventListener('hashchange', syncFromHash);
 
     const root = document.getElementById('app-root');
     document.getElementById('btn-wiki').onclick = () => { state.mode = 'wiki'; render(); };
@@ -177,8 +191,8 @@ function buildStandaloneHtml() {
               <div class="vtt-panel-title">
                 <span>AWAY TEAM VIRTUAL TABLETOP (VTT) — STAGE & STATIC POOL DICE ENGINE</span>
                 <div style="display:flex;gap:0.5rem">
-                  <span class="semantic-badge badge-currency-doom">DOOM: \${state.doom}</span>
-                  <span class="semantic-badge badge-currency-mom">MOMENTUM: \${state.momentum}</span>
+                  <span class="semantic-badge badge-currency-doom">META DOOM: \${state.doom}</span>
+                  <span class="semantic-badge badge-currency-mom">IN-MISSION MOM: \${state.momentum}</span>
                 </div>
               </div>
               <div style="display:flex;flex-wrap:wrap;gap:1rem;align-items:center;justify-content:space-between;padding:0.85rem;background:var(--bg-card);border-radius:8px;margin-bottom:1rem">
@@ -201,7 +215,6 @@ function buildStandaloneHtml() {
                   🎲 Roll All 4 Static Dice Pools
                 </button>
               </div>
-
               <div class="vtt-grid-4">
                 \${state.squad.map((slot, idx) => {
                   const ev = evals[idx];
@@ -244,33 +257,70 @@ function buildStandaloneHtml() {
         return;
       }
 
+      const activeRule = coreRules.find(r => r.slug === state.ruleSlug) || coreRules[0];
+      const activeComp = components.find(c => c.id === state.componentId) || components[0];
+
       const filtered = components.filter(c => {
-        if (state.section !== 'all' && state.section !== 'rulebook' && c.component_type !== state.section) return false;
-        if (state.focus !== 'all') {
-          const p = c.focus_affinity?.primary?.toLowerCase();
-          const s = c.focus_affinity?.secondary?.toLowerCase();
-          if (p !== state.focus && s !== state.focus) return false;
-        }
-        if (state.search) {
-          const q = state.search.toLowerCase();
-          const hay = (c.id + ' ' + c.title + ' ' + (c.rules_text || '')).toLowerCase();
-          if (!hay.includes(q)) return false;
-        }
+        if (!['all','rulebook','component_page','currencies_guide','focus_page'].includes(state.section) && c.component_type !== state.section) return false;
         return true;
       });
 
-      const activeRule = coreRules.find(r => r.slug === state.ruleSlug) || coreRules[0];
+      let mainHtml = '';
+      if (state.section === 'rulebook') {
+        mainHtml = \`<div class="rulebook-article">\${renderMarkdown(activeRule.body)}</div>\`;
+      } else if (state.section === 'component_page' && activeComp) {
+        mainHtml = \`
+          <div class="wiki-breadcrumbs">
+            <a href="#/wiki/database/all" class="wiki-breadcrumb-btn">Wiki Database</a> ›
+            <a href="#/wiki/database/\${activeComp.component_type}" class="wiki-breadcrumb-btn">\${activeComp.component_type}</a> ›
+            <strong>\${activeComp.title}</strong>
+          </div>
+          <div class="rulebook-article">
+            <div style="padding:0.75rem 1rem;background:var(--bg-card);border-left:4px solid var(--currency-effort);border-radius:6px;margin-bottom:1rem">
+              \${formatSemantic(activeComp.rules_text || '')}
+            </div>
+            \${renderMarkdown(activeComp.body || '')}
+          </div>
+        \`;
+      } else {
+        mainHtml = \`
+          <div class="card-grid">
+            \${filtered.map(c => \`
+              <article class="at-card">
+                <header class="at-card-header">
+                  <div>
+                    <a href="#/wiki/component/\${c.id}" class="at-card-title-link">\${c.title}</a>
+                    <div class="at-card-subtitle">\${c.component_type} • \${c.category || ''}</div>
+                  </div>
+                  <div class="at-card-cost-cluster">
+                    \${c.cost?.credits ? formatSemantic('[' + c.cost.credits + ' CR]') : ''}
+                  </div>
+                </header>
+                <div class="at-card-art-frame">
+                  <div class="at-card-art-meta"><span>ART SPEC • \${c.art_spec.aspect_ratio}</span><span>\${c.art_spec.asset_path}</span></div>
+                  <p class="at-card-art-prompt">“\${c.art_spec.visual_description}”</p>
+                </div>
+                <div class="at-card-body">
+                  <div>\${formatSemantic(c.rules_text || '')}</div>
+                  <a href="#/wiki/component/\${c.id}" class="vtt-btn" style="align-self:flex-start;text-decoration:none">Open Wiki Page →</a>
+                </div>
+                <footer class="at-card-footer"><span>\${c.id}</span><span>×\${c.deck_copies || 1}</span></footer>
+              </article>
+            \`).join('')}
+          </div>
+        \`;
+      }
 
       root.innerHTML = \`
         <div class="wiki-shell">
           <aside class="wiki-sidebar">
             <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin-bottom:0.5rem">1. CORE RULEBOOK (8)</div>
             \${coreRules.map(r => \`
-              <button data-rule="\${r.slug}" style="display:block;width:100%;text-align:left;padding:0.45rem 0.6rem;margin-bottom:0.2rem;border-radius:6px;background:\${state.section==='rulebook'&&state.ruleSlug===r.slug?'rgba(0,229,255,0.12)':'transparent'};border:1px solid \${state.section==='rulebook'&&state.ruleSlug===r.slug?'var(--currency-effort)':'transparent'};color:var(--text-primary);cursor:pointer;font-size:0.8rem">
+              <a href="#/wiki/rule/\${r.slug}" style="display:block;padding:0.42rem 0.6rem;margin-bottom:0.2rem;border-radius:6px;background:\${state.section==='rulebook'&&state.ruleSlug===r.slug?'rgba(0,229,255,0.12)':'transparent'};color:var(--text-primary);font-size:0.8rem;text-decoration:none">
                 \${r.title.replace(/^AWAY TEAM —\\s*/i, '')}
-              </button>
+              </a>
             \`).join('')}
-            <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin:1rem 0 0.5rem">2. COMPONENT DATABASE (200)</div>
+            <div style="font-family:var(--font-mono);font-size:0.72rem;color:var(--text-muted);margin:1rem 0 0.5rem">2. COMPONENT WIKI PAGES (200)</div>
             \${[
               ['all', 'All Components (200)'],
               ['character', 'Operatives (24)'],
@@ -285,49 +335,17 @@ function buildStandaloneHtml() {
               ['mission', 'Missions (7)'],
               ['side_mission', 'Side-Missions (5)'],
             ].map(([sec, lbl]) => \`
-              <button data-sec="\${sec}" style="display:block;width:100%;text-align:left;padding:0.45rem 0.6rem;margin-bottom:0.2rem;border-radius:6px;background:\${state.section===sec?'var(--bg-card)':'transparent'};border:1px solid \${state.section===sec?'var(--border-strong)':'transparent'};color:var(--text-primary);cursor:pointer;font-size:0.8rem">
+              <a href="#/wiki/database/\${sec}" style="display:block;padding:0.42rem 0.6rem;margin-bottom:0.2rem;border-radius:6px;background:\${state.section===sec?'var(--bg-card)':'transparent'};color:var(--text-primary);font-size:0.8rem;text-decoration:none">
                 \${lbl}
-              </button>
+              </a>
             \`).join('')}
           </aside>
-          <main class="wiki-main">
-            \${state.section === 'rulebook' ? \`
-              <div class="rulebook-article">\${renderMarkdown(activeRule.body)}</div>
-            \` : \`
-              <div class="card-grid">
-                \${filtered.map(c => \`
-                  <article class="at-card">
-                    <header class="at-card-header">
-                      <div>
-                        <h3 class="at-card-title">\${c.title}</h3>
-                        <div class="at-card-subtitle">\${c.component_type} • \${c.category || ''}</div>
-                      </div>
-                      <div class="at-card-cost-cluster">
-                        \${c.cost?.credits ? '<span class="semantic-badge badge-currency-cr">' + c.cost.credits + ' CR</span>' : ''}
-                      </div>
-                    </header>
-                    <div class="at-card-art-frame">
-                      <div class="at-card-art-meta"><span>ART SPEC • \${c.art_spec.aspect_ratio}</span><span>\${c.art_spec.asset_path}</span></div>
-                      <p class="at-card-art-prompt">“\${c.art_spec.visual_description}”</p>
-                    </div>
-                    <div class="at-card-body"><div>\${formatSemantic(c.rules_text || '')}</div></div>
-                    <footer class="at-card-footer"><span>\${c.id}</span><span>×\${c.deck_copies || 1}</span></footer>
-                  </article>
-                \`).join('')}
-              </div>
-            \`}
-          </main>
+          <main class="wiki-main">\${mainHtml}</main>
         </div>
       \`;
-
-      root.querySelectorAll('[data-rule]').forEach(btn => {
-        btn.onclick = () => { state.section = 'rulebook'; state.ruleSlug = btn.dataset.rule; render(); };
-      });
-      root.querySelectorAll('[data-sec]').forEach(btn => {
-        btn.onclick = () => { state.section = btn.dataset.sec; render(); };
-      });
     }
 
+    syncFromHash();
     render();
   </script>
 </body>

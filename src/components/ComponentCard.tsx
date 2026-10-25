@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FocusBadge, SemanticText } from './SemanticText';
+import { FocusBadge, navigateWiki, SemanticText } from './SemanticText';
 
 export interface GameComponent {
   id: string;
@@ -57,6 +57,16 @@ export function ComponentCard({
   const ef = item.cost?.effort ?? 0;
   const pip = item.cost?.pip ?? 0;
 
+  const wikiHref = `#/wiki/component/${item.id}`;
+
+  const handleOpenPage = () => {
+    if (onSelect) {
+      onSelect(item);
+    } else {
+      navigateWiki(wikiHref);
+    }
+  };
+
   const handleCopyPrompt = (e: React.MouseEvent) => {
     e.stopPropagation();
     const fullPrompt = `${item.art_spec.visual_description} Style: ${item.art_spec.art_style} Aspect ratio ${item.art_spec.aspect_ratio}.`;
@@ -77,7 +87,13 @@ export function ComponentCard({
       {/* Header */}
       <header className="at-card-header">
         <div>
-          <h3 className="at-card-title">{item.title}</h3>
+          <button
+            type="button"
+            className="at-card-title-link"
+            onClick={handleOpenPage}
+          >
+            {item.title}
+          </button>
           <div className="at-card-subtitle">
             {item.component_type.replace(/_/g, ' ')}
             {item.category ? ` • ${item.category.replace(/_/g, ' ')}` : ''}
@@ -85,13 +101,13 @@ export function ComponentCard({
           </div>
         </div>
         <div className="at-card-cost-cluster">
-          {cr > 0 && <span className="semantic-badge badge-currency-cr">{cr} CR</span>}
-          {ef > 0 && <span className="semantic-badge badge-currency-ef">{ef} EF</span>}
-          {pip > 0 && <span className="semantic-badge badge-currency-pip">{pip} PIP</span>}
+          {cr > 0 && <SemanticText text={`[${cr} CR]`} />}
+          {ef > 0 && <SemanticText text={`[${ef} EF]`} />}
+          {pip > 0 && <SemanticText text={`[${pip} PIP]`} />}
         </div>
       </header>
 
-      {/* Art Spec Blueprint Frame (automatically renders artwork when present in /assets/) */}
+      {/* Art Spec Blueprint Frame */}
       <div className="at-card-art-frame">
         {!imgError && item.art_spec?.asset_path && (
           <img
@@ -175,19 +191,25 @@ export function ComponentCard({
       {/* Rules Body */}
       <div className="at-card-body">
         <div>
-          <SemanticText text={item.rules_text || 'See full component dossier for detailed rules.'} />
+          <SemanticText text={item.rules_text || 'See full component Wiki page for detailed rules.'} />
         </div>
 
-        {onSelect && (
-          <button
-            type="button"
-            className="vtt-btn"
-            style={{ alignSelf: 'flex-start', marginTop: '0.35rem', fontSize: '0.75rem' }}
-            onClick={() => onSelect(item)}
-          >
-            Inspect Full Dossier →
-          </button>
-        )}
+        <a
+          href={wikiHref}
+          className="vtt-btn"
+          style={{
+            alignSelf: 'flex-start',
+            marginTop: '0.35rem',
+            fontSize: '0.75rem',
+            textDecoration: 'none',
+          }}
+          onClick={(e) => {
+            e.preventDefault();
+            handleOpenPage();
+          }}
+        >
+          Open Wiki Page →
+        </a>
       </div>
 
       {/* Footer */}
