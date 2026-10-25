@@ -31,6 +31,7 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 | **ADR-05** | 2026-10-24 | **Custom Domain (`awayteam.inbarrose.com`):** Configure `public/CNAME`, `astro.config.mjs` (`site: 'https://awayteam.inbarrose.com'`, `base: '/'`), and `.github/workflows/deploy.yml` for root-path subdomain hosting, plus `manifests/serve_local.js` for zero-dependency local previewing. | Eliminates subdirectory path prefixing (`/repo-name/`) and enables instant local and production hosting. |
 | **ADR-06** | 2026-10-24 | **Atomic Commits, Side-Branch PR Workflow & 4-Suite Automated Testing:** Enforce atomic commits on side branches, PRs to `main`, and `.github/workflows/test-pr.yml` running 4 test suites (`tests/01` through `tests/04`) covering structure, schema, `9.0 ES` game math, and VTT functionality. | Guarantees structural, mathematical, and functional integrity on every PR before merging to `main`. |
 | **ADR-07** | 2026-10-24 | **Dedicated Wiki Pages, Inter-Clicky Links & 4-Tier Currency Taxonomy:** Replace modal popups with dedicated Wiki pages (`#/wiki/component/<id>`, `#/wiki/focus/<focus>`, `#/wiki/class/<class>`, `#/wiki/concept/currencies`), normalize all 208 Markdown files to unified compound tokens (`[+1 CR]`, `[2 EF]`, `[10 LOY]`, `[+3 VP]`), and explicitly separate the 3 Primary Currencies (`[CR]`, `[EF]`, `[PIP]`) from transient Mission Momentum (`[MOM]`), Operative Loyalty rank (`[LOY]`), and Meta Trackers (`[DOOM]`, `[VP]`). | Makes the Wiki far easier to read, navigate, and cross-reference without changing any game rules. |
+| **ADR-08** | 2026-10-24 | **Auto-Merge PR Workflow & Design Companion Backlog (`BACKLOG.md`):** After committing atomic increments on a side branch, running local test suites (`npm test`), and opening a Pull Request to `main`, automatically verify CI checks and **merge the PR into `main`**. Maintain `BACKLOG.md` to track design companion rule audits, edge-case questions, VTT simulator findings, and product backlog items without altering game rules prematurely. | Ensures `main` and GitHub Pages stay continuously up to date and establishes a structured design-companion feedback loop. |
 
 ---
 
@@ -162,3 +163,24 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 - [x] Implement TypeScript VTT state engine with `localStorage` persistence and JSON save export/reset (`src/vtt/VirtualTabletop.tsx`).
 - [x] Build VTT views: Campaign/Mission/Doom Tracker, 4-Player Faction Vault Dashboards & Command Auction Resolver, 4-Operative Squad Staging with 6-Slot Anatomical Loadout Validator, Active Stage Resolver + Static Pool Dice Roller + Momentum Calculator, Sponsored HQ Facility Tracker, and Med Bay / Critical Trauma Roller.
 - [x] Create `.github/workflows/deploy.yml` and `README.md`.
+
+---
+
+### ✅ Iteration 13: Dedicated Wiki Pages, Inter-Clicky Links & 4-Tier Currency Taxonomy (COMPLETE — PR #2 Merged)
+- [x] Clarify 4-tier taxonomy (`[CR]`/`[EF]`/`[PIP]` Primary Currencies vs `[MOM]` Mission Flow vs `[LOY]` Operative Rank vs `[DOOM]`/`[VP]` Meta Trackers).
+- [x] Normalize all 208 `/game/` Markdown files into unified compound tokens (`[+1 CR]`, `[2 EF]`, `[10+ LOY]`, `[+3 VP]`).
+- [x] Replace modal popups with dedicated hash-routed Wiki pages, Infoboxes, breadcrumbs, and See Also backlinks.
+
+---
+
+### ✅ Iteration 14: Design Companion Audit, Core Rulebook Callouts/Examples & Official Print Rulebook Reader (COMPLETE)
+- [x] Create `BACKLOG.md` with Design Companion Review, 8 Rule Edge-Case Questions (`BL-RULES-01` to `BL-RULES-08`), Balance Insights (`BL-BAL-01` to `BL-BAL-04`), and Product Roadmap.
+- [x] Enrich all 8 `/game/core/*.md` chapters with Golden Rule callouts (`> [!IMPORTANT]`), Tactical Tips (`> [!TIP]`), step-by-step Examples of Play (`> [!EXAMPLE]`), and Diagram Placeholders (`> [!DIAGRAM]`) without changing any rules.
+- [x] Upgrade `src/components/MarkdownRenderer.tsx` and `src/components/WikiPortal.tsx` with a sleek **Wiki Homepage (`#/wiki/home`)**, **Emulated Print-Style Rulebook Reader (`#/wiki/rulebook`)**, and **Design Companion & Backlog (`#/wiki/backlog`)** view.
+
+---
+
+### ✅ Iteration 15: VTT 7-Step Sequencer, Hover Explanations & Monte Carlo Balance Simulator (COMPLETE)
+- [x] Build `src/vtt/simulator.ts` with deterministic & Monte Carlo (`1,000-trial`) stage/mission probability engine and `9.0 ES` character auditor.
+- [x] Upgrade `src/vtt/VirtualTabletop.tsx` with a guided 7-Step Phase Sequencer, Contextual Rules Coach, hover-over explanations, per-stage Static Dice commitment/spending/refunds, and an interactive **Balance & Monte Carlo Simulator** tab.
+- [x] Add `tests/05-vtt-engine-and-simulator.test.js` and verify all 5 test suites pass.

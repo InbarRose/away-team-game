@@ -75,3 +75,30 @@ Because all 6 Class Abilities cost [1 EF] (`1.33 ES`) but produce slightly diffe
   * **Stage 3 (Core Objective / Climax):** `4–5 Successes`
   * **Stage 4 (Extraction / Final Siege):** `5–6 Successes`
 * **Total Mission Demand:** `12 to 18 Successes` per mission. Because 24–28 static dice rolling against a mix of `3+`, `4+`, and `5+` thresholds generate roughly `12 to 15 ES` before exhaustion, squads must leverage **Primary Focus Specialists**, **Operational Momentum ([MOM])** die refunds, **Dynamic Focus Swaps**, and **Squad Leader Logistical Refreshes** to survive multi-stage operations.
+
+
+---
+
+## 5. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!NOTE]
+> **Designer Note — Why Every Operative Equals `9.0 ES`:** By anchoring `1 Hit Point = 1.50 ES` and `1 Static Die = 0.50 ES`, **Away Team** creates distinct tactical silhouettes without breaking mathematical parity. A tanky frontline bruiser (`4 HP / 5 Dice` = `8.5 ES` + `0.5 ES` passive) and a fragile deep-cover specialist (`2 HP / 8 Dice` = `7.0 ES` + `2.0 ES` active power) enter the mission with the exact same **`9.0 ES` Total Value**—but play completely differently on the table.
+
+> [!EXAMPLE]
+> **Example of Play — Auditing an Operative's `9.0 ES` Budget:**
+> * **Agent 01 — The Commander** (`Soldier` Class, Class Offset `0.0 ES`):
+>   * **Max HP:** `3 HP` $\times 1.50\text{ ES} = \mathbf{4.50\text{ ES}}$
+>   * **Starting Static Dice:** `7 Dice` $\times 0.50\text{ ES} = \mathbf{3.50\text{ ES}}$
+>   * **Unique Power (*Tactical Coordination*):** `1.00 ES` (Moderate Tier 2 active/passive)
+>   * **Total Character Budget:** $4.50 + 3.50 + 1.00 + 0.00 = \mathbf{9.00\text{ ES}}$.
+> * **Agent 13 — The Combat Medic** (`Scientist` Class, Class Offset `-0.5 ES` due to *Dual-Vector Mapping*):
+>   * **Max HP:** `3 HP` $\times 1.50\text{ ES} = \mathbf{4.50\text{ ES}}$
+>   * **Starting Static Dice:** `6 Dice` $\times 0.50\text{ ES} = \mathbf{3.00\text{ ES}}$
+>   * **Unique Power (*Field Triage Protocol*):** `1.00 ES`
+>   * **Class Offset Contribution:** `+0.50 ES` (*Dual-Vector Mapping* surplus)
+>   * **Total Character Budget:** $4.50 + 3.00 + 1.00 + 0.50 = \mathbf{9.00\text{ ES}}$.
+
+> [!DIAGRAM]
+> **Figure 8.1 — The `9.0 ES` Character Balance Triangle & Attrition Curve**
+> * **Visual Specification:** Triangle radar chart comparing three `9.0 ES` operative archetypes: **The Juggernaut** (`4 HP / 5 Dice / 0.5 ES Power`), **The Commander** (`3 HP / 7 Dice / 1.0 ES Power`), and **The Spymaster** (`2 HP / 8 Dice / 2.0 ES Power`), paired with a 4-stage squad static pool depletion curve showing how `[MOM]` refunds and `[2 EF]` Logistical Refresh keep the squad above the stage failure line.
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_8_1_es_balance_curve.webp`

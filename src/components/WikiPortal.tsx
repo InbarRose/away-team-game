@@ -15,9 +15,13 @@ interface WikiPortalProps {
   coreRules: CoreRuleChapter[];
   components: GameComponent[];
   artManifest: any[];
+  onLaunchVTT?: () => void;
 }
 
 type PortalSection =
+  | 'home'
+  | 'print_rulebook'
+  | 'design_backlog'
   | 'rulebook'
   | 'currencies_guide'
   | 'focus_page'
@@ -56,15 +60,15 @@ const FOCUS_META: Record<
   infiltrate: {
     name: 'Infiltrate',
     token: '[Infiltrate]',
-    pyramidShare: '35% Combined Utility Pillar (Tier 2 Tactical Utility)',
+    pyramidShare: '35% Combined Utility Pillar (Tier 2 Specialist Focus)',
     tierRole: 'Stealth Insertion, Mag-Lock Bypass, Covert Recon & Sabotage',
     summary:
-      'Infiltrate governs stealthy entry vectors, security sensor evasion, and covert extraction routes. Squad Leaders can spend [2 EF] to execute a Tactical Bypass, shifting a stage focus to [Infiltrate].',
+      'Infiltrate governs stealthy entry vectors, security sensor evasion, and covert extraction routes. Squad Leaders can declare a Tactical Bypass to shift a [Combat] stage into [Infiltrate].',
   },
   intel: {
     name: 'Intel',
     token: '[Intel]',
-    pyramidShare: '35% Combined Utility Pillar (Tier 2 Tactical Utility)',
+    pyramidShare: '35% Combined Utility Pillar (Tier 2 Specialist Focus)',
     tierRole: 'Mainframe Decryption, Telemetry Analysis, Bio-Research & Auditing',
     summary:
       'Intel governs data extraction, research vaults, and electronic warfare. Scientist and Recon operatives excel at turning [Intel] stages into extra [CR] and stage-scouting advantages.',
@@ -72,7 +76,7 @@ const FOCUS_META: Record<
   operations: {
     name: 'Operations',
     token: '[Operations]',
-    pyramidShare: '35% Combined Utility Pillar (Tier 2 Tactical Utility)',
+    pyramidShare: '15% Combined Utility Friction Pillar (Tier 3 Utility Focus)',
     tierRole: 'Heavy Engineering, Power Grid Siphons, Demolition & Drone Rigging',
     summary:
       'Operations covers physical infrastructure, reactor stabilization, and automated turret/drone deployments. Technicians and Breachers dominate [Operations] checks.',
@@ -80,15 +84,15 @@ const FOCUS_META: Record<
   negotiate: {
     name: 'Negotiate',
     token: '[Negotiate]',
-    pyramidShare: '15% Combined Niche Pillar (Tier 3 High-Leverage Specialist)',
+    pyramidShare: '35% Combined Utility Pillar (Tier 2 Specialist Focus)',
     tierRole: 'Executive Coercion, Hostage Parley, Syndicate Deals & Ceasefires',
     summary:
-      'Negotiate appears in high-stakes social and corporate encounters. Diplomats can also use Strategic Alignment ([1 EF]) to shift a room into or out of [Negotiate].',
+      'Negotiate appears in high-stakes social and corporate encounters. Diplomats can also use Strategic Alignment ([1 EF]) to elevate the entire squad to Secondary Focus (4+).',
   },
   survival: {
     name: 'Survival',
     token: '[Survival]',
-    pyramidShare: '15% Combined Niche Pillar (Tier 3 High-Leverage Specialist)',
+    pyramidShare: '15% Combined Utility Friction Pillar (Tier 3 Utility Focus)',
     tierRole: 'Bio-Containment, Extreme Environments, Field Triage & Hazard Soak',
     summary:
       'Survival governs toxic atmospheres, alien bio-specimens, and structural meltdowns. Survivalists and Juggernauts anchor the squad during lethal environmental stages.',
@@ -102,6 +106,7 @@ const CLASS_META: Record<
     abilityName: string;
     cost: string;
     offsetEs: number;
+    timing: string;
     effect: string;
   }
 > = {
@@ -110,48 +115,54 @@ const CLASS_META: Record<
     abilityName: 'Lock and Load',
     cost: '[1 EF]',
     offsetEs: 0.0,
+    timing: 'Step 2 / Step 3 (Before Rolling)',
     effect:
-      'Activate before rolling (+2 temporary static dice for this stage) OR after rolling (re-roll up to 2 failed dice).',
+      'Draw +2 temporary dice from the supply box and add them to this operative’s active rolling pool for this phase only (does not deplete static pool).',
   },
   recon: {
     name: 'Recon',
-    abilityName: 'Tactical Overwatch',
+    abilityName: 'Intel Reconnaissance',
     cost: '[1 EF]',
     offsetEs: 0.0,
+    timing: 'Step 1 (Stage Briefing)',
     effect:
-      'Activate during Step 1 (Briefing) to reduce the current stage Target Difficulty by -1 Success (to a minimum of 1) and peek at the top Stage Modifier.',
+      'Peek at the upcoming Stage Card or top 2 Stage Modifier cards; choose to Bypass (replace with scouted card) or Hold Position (purge scouted hazard).',
   },
   survivalist: {
     name: 'Survivalist',
-    abilityName: 'Hostile Environment Mastery',
+    abilityName: 'Emergency Field Medicine',
     cost: '[1 EF]',
     offsetEs: 1.0,
+    timing: 'Step 4 (Post-Roll Triage)',
     effect:
-      'Ignore all natural 1s (Backfires) rolled by this operative during this stage, OR restore 1 HP to a deployed operative.',
+      'Remove up to 2 Hit Points lost by a single operative during this specific stage (once per stage per Survivalist).',
   },
   scientist: {
     name: 'Scientist',
     abilityName: 'Dual-Vector Mapping',
     cost: '[1 EF]',
     offsetEs: 0.5,
+    timing: 'Step 1 (Stage Briefing)',
     effect:
-      'Activate during Step 1 (Briefing). Choose any Focus category distinct from the room’s printed Focus and add it as a concurrent Operational Focus for the stage.',
+      'Choose any Focus category distinct from the room’s printed Focus and add it as a concurrent Operational Focus for the stage (enabling Phase 1 3+ rolls).',
   },
   diplomat: {
     name: 'Diplomat',
     abilityName: 'Strategic Alignment',
     cost: '[1 EF]',
     offsetEs: 0.0,
+    timing: 'Step 1 (Stage Briefing)',
     effect:
-      'Activate during Step 1 (Briefing) before dice are rolled. Shift the room’s primary Operational Focus to any other Focus category for the duration of the stage.',
+      'Choose any Focus category (typically the room’s active Focus). For this stage, the entire active squad treats that category as at least Secondary Focus (4+).',
   },
   technician: {
     name: 'Technician',
     abilityName: 'Adaptive Calibration',
     cost: '[1 EF]',
     offsetEs: 0.0,
+    timing: 'End of Step 2 (After Phase 1 Roll)',
     effect:
-      'Activate after rolling to convert any 1 rolled miss into a guaranteed success, OR reduce the [EF] activation cost of an equipped [Complex] item by [-1 EF].',
+      'Allow any deployed operative with the room’s Primary Focus (3+) to immediately commit and roll additional static dice before moving to Phase 2 Support.',
   },
 };
 
@@ -170,11 +181,108 @@ const CATEGORY_LABELS: Record<string, string> = {
   side_mission: 'Themed Side-Missions',
 };
 
-export function WikiPortal({ coreRules, components, artManifest }: WikiPortalProps) {
-  const [activeSection, setActiveSection] = useState<PortalSection>('rulebook');
+const DESIGN_BACKLOG_RULES = [
+  {
+    id: 'BL-RULES-01',
+    priority: 'P0 — High',
+    system: 'Vault Economy & Mission Briefs (Debrief Step 1)',
+    question: 'Mission Clearance Bounty Distribution (Per-Faction vs. Shared Agency Pot)',
+    analysis:
+      'Mission briefs specify a Base Clearance Bounty (e.g., Iron Dawn M1: [6 CR], [1 PIP]; M2: [8 CR], [2 PIP]). Playtesters will immediately ask whether each participating Faction receives the full printed bounty or whether the bounty is a shared pot divided across the 4 deployed slots.',
+    recommendation:
+      'Clarify as either (A) Per-Faction Payout (if Quartermaster prices assume [6–8 CR] income per player per mission) OR (B) Shared Contract Pot split per deployed operative slot with odd remainders claimed by the Squad Leader (adding strong economic incentive to the Command Auction).',
+    link: '#/wiki/rule/vault_economy',
+  },
+  {
+    id: 'BL-RULES-02',
+    priority: 'P0 — High',
+    system: 'Stage Resolution & Mortality (Step 2/3 vs Step 4)',
+    question: 'The "Martyr’s Last Stand / Dying Breath" Success Counting Rule',
+    analysis:
+      'If an operative at 1 HP rolls [5, 4, 1], the natural 1 inflicts 1 Backfire damage (0 HP). If no player spends [1 EF] in Step 4 to stabilize them, do the 5 and 4 from their lethal roll still count toward clearing the stage in Step 5?',
+    recommendation:
+      'Yes ("Dying Breath Rule"). All rolled successes lock in during Step 2/3; stabilization occurs in Step 4. We documented this explicitly in a Golden Rule callout in Chapter 1 (rules_overview.md).',
+    link: '#/wiki/rule/rules_overview',
+  },
+  {
+    id: 'BL-RULES-03',
+    priority: 'P1 — Medium',
+    system: 'Mortality & Vulture Economy (medbay_trauma.md)',
+    question: 'Turn Order Priority for Stabilization Offers & Vulture Looting Claims',
+    analysis:
+      'When an operative drops to 0 HP or dies and drops equipment, multiple rival Factions may want to extort a stabilization deal or pay [-1 PIP] (Vulture Tax) to claim dropped Tier 2 weapons before rolling off.',
+    recommendation:
+      'Standardize table declaration order as Squad Leader first, then clockwise around the table.',
+    link: '#/wiki/rule/medbay_trauma',
+  },
+  {
+    id: 'BL-RULES-04',
+    priority: 'P1 — Medium',
+    system: 'Squad Leader Command (squad_leader_command.md)',
+    question: 'Zero-Credit Command Auction Poverty Fallback ([1 CR] Min vs [0 CR])',
+    analysis:
+      'The Command Auction specifies a [1 CR] minimum entry bid. If all 4 Factions spend down to [0 CR] during HQ Downtime Steps 4–6 (or all refuse to bid), how is the Squad Leader assigned?',
+    recommendation:
+      'Documented a [0 CR] Fallback Note: if no player bids [1 CR] or more, resolve at [0 CR] using the standard tie-breaker hierarchy ([PIP] → [LOY] → Roll-off).',
+    link: '#/wiki/rule/squad_leader_command',
+  },
+  {
+    id: 'BL-RULES-05',
+    priority: 'P2 — Clarity',
+    system: 'Classes & Focus (classes_and_focus.md)',
+    question: 'Technician Adaptive Calibration & Phase 1 Early Resolution Window',
+    analysis:
+      'Technician spends [1 EF] after Phase 1 rolls so a Primary (3+) Specialist can commit additional static dice. Confirming that reaching Target Difficulty D with these bonus dice still triggers Early Resolution (skipping Phase 2 Support rolls) makes Technician’s timing window crystal clear.',
+    recommendation:
+      'Added an explicit Golden Rule callout in Chapter 3 (classes_and_focus.md) confirming Early Resolution applies.',
+    link: '#/wiki/rule/classes_and_focus',
+  },
+  {
+    id: 'BL-RULES-06',
+    priority: 'P2 — Clarity',
+    system: 'Classes & Focus (classes_and_focus.md)',
+    question: 'Scientist Dual-Vector Mapping Phase 1 Initiative Promotion',
+    analysis:
+      'When Scientist adds a second concurrent Focus to a stage in Step 1, operatives holding Primary (3+) in that added Focus are promoted into Phase 1 Initiative (Specialists).',
+    recommendation:
+      'Added a step-by-step Example of Play in Chapter 3 showing Scientist promoting [Combat] operatives into Phase 1 inside an [Intel] room.',
+    link: '#/wiki/rule/classes_and_focus',
+  },
+  {
+    id: 'BL-RULES-07',
+    priority: 'P2 — Clarity',
+    system: 'Stage Modifiers & Dynamic Focus Swaps',
+    question: 'Dynamic Focus Swaps Flipping Split-Effect Stage Modifiers',
+    analysis:
+      'Four Stage Modifiers have Split Effects ([Combat] vs [Non-Combat]). Because Dynamic Focus Swaps (Force Breach / Tactical Bypass) happen in Step 1 after the modifier is revealed, swapping a room from [Combat] to [Infiltrate] flips which half of the Split Modifier applies.',
+    recommendation:
+      'Keep this interaction—it makes Step 1 Briefing decisions and Recon’s Intel Reconnaissance feel deeply tactical.',
+    link: '#/wiki/database/modifier',
+  },
+  {
+    id: 'BL-RULES-08',
+    priority: 'P3 — Edge Case',
+    system: 'Med Bay & Trauma (medbay_trauma.md)',
+    question: '2-HP Operatives Accumulating 2 Critical Injury / Trauma Tokens (0 Max HP)',
+    analysis:
+      'Glass-cannon operatives (2 HP cap) who suffer 2 unhealed Critical Injury or Permanent Trauma tokens (-1 Max HP each) would drop to 0 Max HP on launch.',
+    recommendation:
+      'Specify that an operative whose effective Max HP reaches 0 is Medically Grounded on the HQ bench until at least 1 token is healed or purged at the Cybernetic Lab.',
+    link: '#/wiki/rule/medbay_trauma',
+  },
+];
+
+export function WikiPortal({
+  coreRules,
+  components,
+  artManifest,
+  onLaunchVTT,
+}: WikiPortalProps) {
+  const [activeSection, setActiveSection] = useState<PortalSection>('home');
   const [selectedRuleSlug, setSelectedRuleSlug] = useState<string>(
     coreRules[0]?.slug || 'rules_overview'
   );
+  const [printChapterFilter, setPrintChapterFilter] = useState<string>('all');
   const [selectedComponentId, setSelectedComponentId] = useState<string>(
     components[0]?.id || 'agent-01-commander'
   );
@@ -190,13 +298,24 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
   useEffect(() => {
     const applyHashRoute = (rawHash: string) => {
       const h = (rawHash || window.location.hash || '').replace(/^#/, '');
+      if (!h || h === '/wiki' || h === '/wiki/' || h === '/wiki/home') {
+        setActiveSection('home');
+        return;
+      }
       if (!h.startsWith('/wiki')) return;
 
       const [pathPart, queryPart] = h.slice(6).split('?'); // remove '/wiki/'
       const segs = pathPart.split('/').filter(Boolean);
       const params = new URLSearchParams(queryPart || '');
 
-      if (segs[0] === 'rule' && segs[1]) {
+      if (segs[0] === 'home') {
+        setActiveSection('home');
+      } else if (segs[0] === 'print-rulebook' || segs[0] === 'rulebook') {
+        setActiveSection('print_rulebook');
+        if (segs[1]) setPrintChapterFilter(segs[1]);
+      } else if (segs[0] === 'backlog') {
+        setActiveSection('design_backlog');
+      } else if (segs[0] === 'rule' && segs[1]) {
         setActiveSection('rulebook');
         setSelectedRuleSlug(segs[1]);
       } else if (segs[0] === 'component' && segs[1]) {
@@ -246,7 +365,6 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
     [components, selectedComponentId]
   );
 
-  // Compute sibling components in the same category for Prev/Next Wiki navigation
   const categorySiblings = useMemo(() => {
     if (!activeComponent) return [];
     return components.filter((c) => c.component_type === activeComponent.component_type);
@@ -257,7 +375,6 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
     [categorySiblings, activeComponent]
   );
 
-  // Compute Related / Backlinked Components for the current Component Wiki Page
   const relatedForComponent = useMemo(() => {
     if (!activeComponent) return { sameGroup: [], focusMatches: [], childOrParent: [] };
 
@@ -286,7 +403,6 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
           .slice(0, 8)
       : [];
 
-    // Campaign <-> Mission links
     let childOrParent: GameComponent[] = [];
     if (activeComponent.component_type === 'campaign') {
       const prefix = activeComponent.id.replace('campaign-', 'mission-');
@@ -306,7 +422,6 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
     return { sameGroup, focusMatches, childOrParent };
   }, [components, activeComponent]);
 
-  // Filter components for database views
   const filteredComponents = useMemo(() => {
     return components.filter((c) => {
       if (activeSection === 'character' && c.component_type !== 'character') return false;
@@ -399,17 +514,24 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
       {/* Sidebar Navigation */}
       <aside className="wiki-sidebar">
         {/* Global Quick Search */}
-        <div style={{ marginBottom: '1rem' }}>
+        <div style={{ marginBottom: '0.9rem' }}>
           <input
             type="search"
-            placeholder="🔍 Quick jump / search 200 cards..."
+            placeholder="🔍 Search 200 cards & rules..."
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value);
               if (
-                ['rulebook', 'currencies_guide', 'focus_page', 'class_page', 'component_page'].includes(
-                  activeSection
-                )
+                [
+                  'home',
+                  'print_rulebook',
+                  'design_backlog',
+                  'rulebook',
+                  'currencies_guide',
+                  'focus_page',
+                  'class_page',
+                  'component_page',
+                ].includes(activeSection)
               ) {
                 setActiveSection('all');
               }
@@ -426,7 +548,7 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
           />
         </div>
 
-        {/* 1. Core Rulebook */}
+        {/* 0. Start Here & Rulebook Hub */}
         <div
           style={{
             fontFamily: 'var(--font-mono)',
@@ -434,12 +556,60 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
             letterSpacing: '0.08em',
-            marginBottom: '0.4rem',
+            marginBottom: '0.35rem',
           }}
         >
-          1. Core Rulebook (/game/core)
+          0. Start Here & Rulebook
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', marginBottom: '1.1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', marginBottom: '1rem' }}>
+          <button
+            type="button"
+            onClick={() => navigateWiki('#/wiki/home')}
+            style={{
+              textAlign: 'left',
+              padding: '0.42rem 0.6rem',
+              borderRadius: '6px',
+              border:
+                activeSection === 'home'
+                  ? '1px solid var(--currency-effort)'
+                  : '1px solid transparent',
+              background:
+                activeSection === 'home' ? 'rgba(0, 229, 255, 0.14)' : 'transparent',
+              color:
+                activeSection === 'home' ? 'var(--text-primary)' : 'var(--text-secondary)',
+              fontSize: '0.8rem',
+              fontWeight: activeSection === 'home' ? 700 : 600,
+              cursor: 'pointer',
+            }}
+          >
+            🏠 Wiki Homepage & Overview
+          </button>
+
+          <button
+            type="button"
+            onClick={() => navigateWiki('#/wiki/print-rulebook')}
+            style={{
+              textAlign: 'left',
+              padding: '0.42rem 0.6rem',
+              borderRadius: '6px',
+              border:
+                activeSection === 'print_rulebook'
+                  ? '1px solid #a855f7'
+                  : '1px solid transparent',
+              background:
+                activeSection === 'print_rulebook'
+                  ? 'rgba(168, 85, 247, 0.16)'
+                  : 'transparent',
+              color:
+                activeSection === 'print_rulebook' ? '#e9d5ff' : 'var(--text-secondary)',
+              fontSize: '0.8rem',
+              fontWeight: activeSection === 'print_rulebook' ? 700 : 600,
+              cursor: 'pointer',
+            }}
+          >
+            📘 Official Print Rulebook (Full)
+          </button>
+
           <button
             type="button"
             onClick={() => navigateWiki('#/wiki/concept/currencies')}
@@ -464,10 +634,50 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
               cursor: 'pointer',
             }}
           >
-            ★ Currencies vs. States & Trackers
+            ★ 4-Tier Currencies & Trackers
           </button>
 
-          {coreRules.map((ch) => {
+          <button
+            type="button"
+            onClick={() => navigateWiki('#/wiki/backlog')}
+            style={{
+              textAlign: 'left',
+              padding: '0.42rem 0.6rem',
+              borderRadius: '6px',
+              border:
+                activeSection === 'design_backlog'
+                  ? '1px solid #10b981'
+                  : '1px solid transparent',
+              background:
+                activeSection === 'design_backlog'
+                  ? 'rgba(16, 185, 129, 0.14)'
+                  : 'transparent',
+              color:
+                activeSection === 'design_backlog' ? '#6ee7b7' : 'var(--text-secondary)',
+              fontSize: '0.8rem',
+              fontWeight: activeSection === 'design_backlog' ? 700 : 600,
+              cursor: 'pointer',
+            }}
+          >
+            🧭 Design Companion & Backlog
+          </button>
+        </div>
+
+        {/* 1. Core Rulebook Chapters */}
+        <div
+          style={{
+            fontFamily: 'var(--font-mono)',
+            fontSize: '0.7rem',
+            textTransform: 'uppercase',
+            color: 'var(--text-muted)',
+            letterSpacing: '0.08em',
+            marginBottom: '0.35rem',
+          }}
+        >
+          1. Rulebook Chapters (/game/core)
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.18rem', marginBottom: '1rem' }}>
+          {coreRules.map((ch, idx) => {
             const isCurrent = activeSection === 'rulebook' && selectedRuleSlug === ch.slug;
             return (
               <button
@@ -476,17 +686,17 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
                 onClick={() => navigateWiki(`#/wiki/rule/${ch.slug}`)}
                 style={{
                   textAlign: 'left',
-                  padding: '0.4rem 0.6rem',
+                  padding: '0.38rem 0.6rem',
                   borderRadius: '6px',
                   border: isCurrent ? '1px solid var(--currency-effort)' : '1px solid transparent',
                   background: isCurrent ? 'rgba(0, 229, 255, 0.12)' : 'transparent',
                   color: isCurrent ? 'var(--text-primary)' : 'var(--text-secondary)',
-                  fontSize: '0.8rem',
+                  fontSize: '0.78rem',
                   fontWeight: isCurrent ? 700 : 500,
                   cursor: 'pointer',
                 }}
               >
-                {ch.title.replace(/^AWAY TEAM —\s*/i, '')}
+                {idx + 1}. {ch.title.replace(/^AWAY TEAM —\s*/i, '')}
               </button>
             );
           })}
@@ -500,12 +710,12 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
             textTransform: 'uppercase',
             color: 'var(--text-muted)',
             letterSpacing: '0.08em',
-            marginBottom: '0.4rem',
+            marginBottom: '0.35rem',
           }}
         >
-          2. Wiki Component Databases ({components.length})
+          2. Component Databases ({components.length})
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem', marginBottom: '1.1rem' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.18rem', marginBottom: '1rem' }}>
           {(
             [
               ['all', `All Components (${components.length})`],
@@ -529,12 +739,12 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
                 onClick={() => navigateWiki(`#/wiki/database/${secKey}`)}
                 style={{
                   textAlign: 'left',
-                  padding: '0.4rem 0.6rem',
+                  padding: '0.38rem 0.6rem',
                   borderRadius: '6px',
                   border: isCurrent ? '1px solid var(--border-strong)' : '1px solid transparent',
                   background: isCurrent ? 'var(--bg-card)' : 'transparent',
                   color: isCurrent ? 'var(--text-primary)' : 'var(--text-secondary)',
-                  fontSize: '0.8rem',
+                  fontSize: '0.78rem',
                   fontWeight: isCurrent ? 700 : 500,
                   cursor: 'pointer',
                 }}
@@ -635,6 +845,1000 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
       {/* Main Wiki Viewport */}
       <main className="wiki-main">
         {/* ====================================================================
+            VIEW 0A: SLEEK WIKI HOMEPAGE (#/wiki/home)
+           ==================================================================== */}
+        {activeSection === 'home' && (
+          <div>
+            {/* Hero Abstract Banner */}
+            <section className="wiki-hero-banner">
+              <div
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.74rem',
+                  color: 'var(--currency-effort)',
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.4rem',
+                }}
+              >
+                OFFICIAL SYSTEM REFERENCE • 6.0 STATIC DICE ENGINE • 1–4 PLAYERS
+              </div>
+              <h1
+                style={{
+                  margin: '0 0 0.65rem 0',
+                  fontFamily: 'var(--font-display)',
+                  fontSize: '2.2rem',
+                  letterSpacing: '0.04em',
+                }}
+              >
+                AWAY TEAM — Corporate Tactics, Attrition & Betrayal
+              </h1>
+              <p
+                style={{
+                  fontSize: '1.02rem',
+                  color: '#dbe4f0',
+                  maxWidth: '920px',
+                  margin: '0 0 1rem 0',
+                  lineHeight: 1.65,
+                }}
+              >
+                <strong>Away Team</strong> is a semi-cooperative sci-fi tactical board game for{' '}
+                <strong>1 to 4 Directors</strong>. You command rival corporate{' '}
+                <strong>Factions</strong> inside a joint planetary task force. On the ground, your{' '}
+                <strong>4 deployed Specialist Operatives</strong> must coordinate finite static dice
+                pools to breach facilities, clear hazards, and stop the campaign{' '}
+                <SemanticText text="[DOOM]" /> clock from collapsing. In the boardroom, however,{' '}
+                <strong>only one Director can win</strong>—by hoarding{' '}
+                <SemanticText text="[VP]" />, sponsoring HQ modules, extorting teammates at{' '}
+                <code>0 HP</code>, and fulfilling hidden <SemanticText text="Secret Objectives" />.
+              </p>
+
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.65rem', marginTop: '1rem' }}>
+                <button
+                  type="button"
+                  className="vtt-btn vtt-btn-primary"
+                  style={{ padding: '0.55rem 1.1rem', fontSize: '0.88rem' }}
+                  onClick={() => navigateWiki('#/wiki/print-rulebook')}
+                >
+                  📘 Open Official Print Rulebook
+                </button>
+                <button
+                  type="button"
+                  className="vtt-btn"
+                  style={{ padding: '0.55rem 1.1rem', fontSize: '0.88rem' }}
+                  onClick={() => navigateWiki('#/wiki/concept/currencies')}
+                >
+                  💰 4-Tier Currencies & Trackers Guide
+                </button>
+                <button
+                  type="button"
+                  className="vtt-btn"
+                  style={{ padding: '0.55rem 1.1rem', fontSize: '0.88rem' }}
+                  onClick={() => navigateWiki('#/wiki/backlog')}
+                >
+                  🧭 Design Companion & Backlog
+                </button>
+                {onLaunchVTT && (
+                  <button
+                    type="button"
+                    className="vtt-btn"
+                    style={{
+                      padding: '0.55rem 1.1rem',
+                      fontSize: '0.88rem',
+                      borderColor: '#10b981',
+                      color: '#34d399',
+                    }}
+                    onClick={onLaunchVTT}
+                  >
+                    🎲 Launch Sequenced VTT & Simulator
+                  </button>
+                )}
+              </div>
+
+              {/* 4 Core Pillars */}
+              <div className="wiki-pillar-grid">
+                <div className="wiki-pillar-card">
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.72rem',
+                      color: 'var(--currency-effort)',
+                      marginBottom: '0.25rem',
+                    }}
+                  >
+                    PILLAR I • FINITE ATTRITION
+                  </div>
+                  <strong style={{ fontSize: '0.96rem' }}>Non-Refreshing Static Dice</strong>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: '0.35rem 0 0 0' }}>
+                    Operatives enter a mission with <code>4–10 d6</code> static dice for the{' '}
+                    <em>entire mission</em>. Every die committed to a room moves to the Spent Pool
+                    unless refunded via <SemanticText text="[MOM]" /> or{' '}
+                    <SemanticText text="Logistical Refresh" />.
+                  </p>
+                </div>
+
+                <div className="wiki-pillar-card">
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.72rem',
+                      color: 'var(--currency-credits)',
+                      marginBottom: '0.25rem',
+                    }}
+                  >
+                    PILLAR II • TABLE POLITICS
+                  </div>
+                  <strong style={{ fontSize: '0.96rem' }}>Auctioned Squad Leadership</strong>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: '0.35rem 0 0 0' }}>
+                    No alpha-gaming: players bid <SemanticText text="[CR]" /> in the{' '}
+                    <SemanticText text="Command Auction" /> to claim the Squad Leader badge,
+                    controlling Focus Swaps, <SemanticText text="[MOM]" /> refunds, and Retreats.
+                  </p>
+                </div>
+
+                <div className="wiki-pillar-card">
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.72rem',
+                      color: '#f472b6',
+                      marginBottom: '0.25rem',
+                    }}
+                  >
+                    PILLAR III • SEMI-CO-OP TENSION
+                  </div>
+                  <strong style={{ fontSize: '0.96rem' }}>Binding Deals & Vulture Looting</strong>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: '0.35rem 0 0 0' }}>
+                    When an ally drops to <code>0 HP</code>, extort <SemanticText text="[CR]" /> for{' '}
+                    <SemanticText text="[1 EF]" /> stabilization—or let them become a Martyr and pay
+                    the <SemanticText text="[-1 PIP]" /> <SemanticText text="Vulture Tax" /> to claim
+                    their weapons.
+                  </p>
+                </div>
+
+                <div className="wiki-pillar-card">
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.72rem',
+                      color: '#34d399',
+                      marginBottom: '0.25rem',
+                    }}
+                  >
+                    PILLAR IV • ASYMMETRIC BALANCE
+                  </div>
+                  <strong style={{ fontSize: '0.96rem' }}>9.0 ES Mathematical Ledger</strong>
+                  <p style={{ fontSize: '0.82rem', color: 'var(--text-secondary)', margin: '0.35rem 0 0 0' }}>
+                    All 24 Specialists, 6 Classes, 8 Factions, and 87 Armory items are calibrated to
+                    the atomic <strong>Expected Success (ES)</strong> standard.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            {/* Quick-Launch Portal Grid */}
+            <h2
+              style={{
+                fontFamily: 'var(--font-display)',
+                fontSize: '1.35rem',
+                margin: '0 0 0.85rem 0',
+              }}
+            >
+              Explore the Away Team Reference Portal
+            </h2>
+            <div className="wiki-portal-grid">
+              <div
+                className="wiki-portal-card"
+                onClick={() => navigateWiki('#/wiki/print-rulebook')}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: '#c084fc',
+                    }}
+                  >
+                    DELUXE PRINT EMULATOR • 8 CHAPTERS
+                  </div>
+                  <h3 style={{ margin: '0.25rem 0 0.45rem 0' }}>
+                    📘 Official Board Game Rulebook
+                  </h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Read the complete rulebook formatted like a physical tabletop manual with Golden
+                    Rule callouts, step-by-step Examples of Play, component diagrams, and back-cover
+                    Quick Reference tables.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.85rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.76rem',
+                    color: 'var(--currency-effort)',
+                  }}
+                >
+                  Open Print-Style Rulebook →
+                </div>
+              </div>
+
+              <div
+                className="wiki-portal-card"
+                onClick={() => navigateWiki('#/wiki/concept/currencies')}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: 'var(--currency-credits)',
+                    }}
+                  >
+                    ECONOMIC TAXONOMY • 4 TIERS
+                  </div>
+                  <h3 style={{ margin: '0.25rem 0 0.45rem 0' }}>
+                    💰 Currencies vs. States & Trackers
+                  </h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Clear visual breakdown of Spendable Vault Currencies (
+                    <SemanticText text="[CR]" /> <SemanticText text="[EF]" />{' '}
+                    <SemanticText text="[PIP]" />) vs. Mission Flow (<SemanticText text="[MOM]" />
+                    ), Operative Rank (<SemanticText text="[LOY]" />), and Meta Trackers (
+                    <SemanticText text="[DOOM]" /> <SemanticText text="[VP]" />).
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.85rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.76rem',
+                    color: 'var(--currency-effort)',
+                  }}
+                >
+                  Read Taxonomy Guide →
+                </div>
+              </div>
+
+              <div
+                className="wiki-portal-card"
+                onClick={() => navigateWiki('#/wiki/database/faction')}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: '#38bdf8',
+                    }}
+                  >
+                    CORPORATE DOSSIERS • 8 FACTIONS
+                  </div>
+                  <h3 style={{ margin: '0.25rem 0 0.45rem 0' }}>
+                    🏢 The 8 Competing Factions
+                  </h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Inspect Aegis, Nexus, Vanderbilt, Obsidian, Titan, Ascendant, Aurelius, and
+                    Ironclad—including starting Vaults and 4-Tier Loyalty Progression Trees.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.85rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.76rem',
+                    color: 'var(--currency-effort)',
+                  }}
+                >
+                  Browse 8 Factions →
+                </div>
+              </div>
+
+              <div
+                className="wiki-portal-card"
+                onClick={() => navigateWiki('#/wiki/database/character')}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: '#f87171',
+                    }}
+                  >
+                    STRIKE TEAM ROSTER • 24 OPERATIVES
+                  </div>
+                  <h3 style={{ margin: '0.25rem 0 0.45rem 0' }}>
+                    👤 24 Specialist Operatives & 6 Classes
+                  </h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Every operative is built on the <code>9.0 ES</code> budget across Soldier, Recon,
+                    Survivalist, Scientist, Diplomat, and Technician classes.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.85rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.76rem',
+                    color: 'var(--currency-effort)',
+                  }}
+                >
+                  Browse 24 Operatives →
+                </div>
+              </div>
+
+              <div
+                className="wiki-portal-card"
+                onClick={() => navigateWiki('#/wiki/database/item')}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: '#fb923c',
+                    }}
+                  >
+                    QUARTERMASTER CACHE • 87 ITEMS
+                  </div>
+                  <h3 style={{ margin: '0.25rem 0 0.45rem 0' }}>
+                    🔫 Armory Weapons, Rigs & Drones
+                  </h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Filter Tier 1 & Tier 2 Handhelds, Wearables (<SemanticText text="[Head]" />{' '}
+                    <SemanticText text="[Body]" /> <SemanticText text="[Legs]" />{' '}
+                    <SemanticText text="[Pack]" />), Consumables, and <SemanticText text="[Complex]" />{' '}
+                    rigs.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.85rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.76rem',
+                    color: 'var(--currency-effort)',
+                  }}
+                >
+                  Browse 87 Armory Items →
+                </div>
+              </div>
+
+              <div
+                className="wiki-portal-card"
+                onClick={() => navigateWiki('#/wiki/backlog')}
+              >
+                <div>
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.7rem',
+                      color: '#34d399',
+                    }}
+                  >
+                    SYSTEMS COMPANION • RULES & BALANCE AUDIT
+                  </div>
+                  <h3 style={{ margin: '0.25rem 0 0.45rem 0' }}>
+                    🧭 Design Companion & Product Backlog
+                  </h3>
+                  <p style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', margin: 0 }}>
+                    Review 8 surfaced rulebook edge-case questions (<code>BL-RULES-01</code> to{' '}
+                    <code>08</code>), Monte Carlo balance findings, and upcoming VTT/Print milestones.
+                  </p>
+                </div>
+                <div
+                  style={{
+                    marginTop: '0.85rem',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.76rem',
+                    color: 'var(--currency-effort)',
+                  }}
+                >
+                  Open Design Companion →
+                </div>
+              </div>
+            </div>
+
+            {/* At-a-Glance Sequence of Play & Focus Pyramid */}
+            <div className="wiki-entity-layout">
+              <div className="rulebook-article">
+                <h2>At-a-Glance: How a Game of Away Team Flows</h2>
+                <p>
+                  A campaign plays across <strong>3 to 5 linked Missions</strong> (such as{' '}
+                  <SemanticText text="Operation: Iron Dawn" /> or{' '}
+                  <SemanticText text="Operation: Apex Extraction" />), alternating between two main
+                  phases:
+                </p>
+                <ol>
+                  <li>
+                    <strong>Phase A — Tactical Field Mission (3–5 Stage Cards):</strong>
+                    <ul>
+                      <li>
+                        <strong>Step 1 (Briefing & Swaps):</strong> Reveal Stage + Modifier. Squad
+                        Leader may call <SemanticText text="Force Breach" /> or{' '}
+                        <SemanticText text="Tactical Bypass" />; Recon, Scientist, and Diplomat may
+                        trigger <SemanticText text="[1 EF]" /> abilities; players broker Binding
+                        Promises.
+                      </li>
+                      <li>
+                        <strong>Step 2 (Phase 1 — Specialists 3+):</strong> Operatives whose{' '}
+                        <strong>Primary Focus</strong> matches the room commit static dice and roll at{' '}
+                        <code>3+</code> (<code>1s</code> deal 1 HP Backfire). If they reach Target
+                        Difficulty <code>D</code>, the stage clears immediately!
+                      </li>
+                      <li>
+                        <strong>Step 3 (Phase 2 — Support 4+ / 5+):</strong> If more successes are
+                        needed, remaining operatives commit static dice and roll at <code>4+</code>{' '}
+                        (Secondary/Bridged) or <code>5+</code> (Out of Focus).
+                      </li>
+                      <li>
+                        <strong>Step 4 (Triage & Stabilization):</strong> Trigger Survivalist{' '}
+                        <SemanticText text="Emergency Field Medicine" /> or stabilize any{' '}
+                        <code>0 HP</code> operative for <SemanticText text="[1 EF]" /> (otherwise KIA
+                        Martyr + <SemanticText text="Vulture Tax" /> loot drop).
+                      </li>
+                      <li>
+                        <strong>Step 5 (Resolution & Momentum):</strong> If cleared by{' '}
+                        <code>D + 2</code> or more, generate{' '}
+                        <code>Momentum = Successes - D - 1</code> (<SemanticText text="[MOM]" />),
+                        immediately restoring spent static dice to participating rollers.
+                      </li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Phase B — 8-Step Agency HQ Downtime:</strong>
+                    <ul>
+                      <li>
+                        Collect mission payouts & <SemanticText text="[+1 LOY]" /> survival ranks →
+                        Bid on the <SemanticText text="Stand-Down Auction" /> → Roll Healing Dice at
+                        the <SemanticText text="Infirmary" /> → Sponsor HQ Modules for{' '}
+                        <SemanticText text="[+1 PIP]" /> → Hire at the{' '}
+                        <SemanticText text="Recruitment Bureau" /> → Re-arm at the{' '}
+                        <SemanticText text="Quartermaster" /> → Elect the next Squad Leader in the{' '}
+                        <SemanticText text="Command Auction" />.
+                      </li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+
+              <aside className="wiki-infobox">
+                <div className="wiki-infobox-header">
+                  <div
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.68rem',
+                      color: 'var(--currency-effort)',
+                    }}
+                  >
+                    THE 50 / 35 / 15 CHALLENGE MATRIX
+                  </div>
+                  <h3 style={{ margin: '0.2rem 0 0 0', fontSize: '1rem' }}>
+                    Skewed Focus Pyramid
+                  </h3>
+                </div>
+                <table className="wiki-infobox-table">
+                  <tbody>
+                    <tr>
+                      <th>Tier 1 (~50%)</th>
+                      <td>
+                        <FocusBadge focus="combat" />
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                          Mandatory frontline kinetic checks in every mission.
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Tier 2 (~35%)</th>
+                      <td>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
+                          <FocusBadge focus="intel" />
+                          <FocusBadge focus="infiltrate" />
+                          <FocusBadge focus="negotiate" />
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                          Core objective extraction, stealth bypasses, and executive parley.
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <th>Tier 3 (~15%)</th>
+                      <td>
+                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.25rem' }}>
+                          <FocusBadge focus="operations" />
+                          <FocusBadge focus="survival" />
+                        </div>
+                        <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                          High-friction engineering lockouts and lethal bio-hazards.
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </aside>
+            </div>
+          </div>
+        )}
+
+        {/* ====================================================================
+            VIEW 0B: EMULATED OFFICIAL PRINT-STYLE BOARD GAME RULEBOOK
+           ==================================================================== */}
+        {activeSection === 'print_rulebook' && (
+          <div className="print-rulebook-folio">
+            {/* Top Folio Bar */}
+            <div className="print-rulebook-topbar">
+              <div>
+                <strong style={{ color: '#f8fafc', letterSpacing: '0.06em' }}>
+                  📘 AWAY TEAM — OFFICIAL TABLETOP RULEBOOK & FIELD MANUAL (v1.0)
+                </strong>
+                <span style={{ marginLeft: '0.75rem', color: 'var(--currency-effort)' }}>
+                  • Illustrated Print Layout Emulator
+                </span>
+              </div>
+              <div style={{ display: 'flex', gap: '0.45rem', alignItems: 'center', flexWrap: 'wrap' }}>
+                <span>Jump to Section:</span>
+                <select
+                  value={printChapterFilter}
+                  onChange={(e) => setPrintChapterFilter(e.target.value)}
+                  style={{
+                    padding: '0.35rem 0.6rem',
+                    borderRadius: '6px',
+                    border: '1px solid var(--border-strong)',
+                    background: 'var(--bg-void)',
+                    color: 'var(--text-primary)',
+                    fontSize: '0.78rem',
+                  }}
+                >
+                  <option value="all">Full Print Rulebook (All 8 Chapters + Quick Ref)</option>
+                  <option value="anatomy">0. Component Anatomy & Box Contents</option>
+                  {coreRules.map((ch, idx) => (
+                    <option key={ch.slug} value={ch.slug}>
+                      Ch. {idx + 1}: {ch.title}
+                    </option>
+                  ))}
+                  <option value="quickref">Back Cover: Quick Reference & Icon Glossary</option>
+                </select>
+              </div>
+            </div>
+
+            {/* Spread 0: Table of Contents & Component Anatomy */}
+            {(printChapterFilter === 'all' || printChapterFilter === 'anatomy') && (
+              <section className="print-rulebook-page">
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.72rem',
+                    color: 'var(--text-muted)',
+                    marginBottom: '0.75rem',
+                  }}
+                >
+                  <span>SECTION 00 // BOX CONTENTS, TABLET OF CONTENTS & COMPONENT ANATOMY</span>
+                  <span>FOLIO PAGE 01–02</span>
+                </div>
+
+                <h1 style={{ fontFamily: 'var(--font-display)', fontSize: '1.95rem', marginTop: 0 }}>
+                  Welcome to the Agency: Box Contents & Component Anatomy
+                </h1>
+                <p style={{ color: '#cbd5e1', fontSize: '0.94rem' }}>
+                  This manual emulates the physical rulebook included in the{' '}
+                  <strong>Away Team Core Box</strong>. Every rule, callout, worked example of play,
+                  and schematic diagram placeholder below is live-linked to the 200-component
+                  database.
+                </p>
+
+                {/* Table of Contents Grid */}
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+                    gap: '0.65rem',
+                    margin: '1.15rem 0',
+                  }}
+                >
+                  {coreRules.map((ch, idx) => (
+                    <div
+                      key={ch.id}
+                      onClick={() => setPrintChapterFilter(ch.slug)}
+                      style={{
+                        padding: '0.65rem 0.85rem',
+                        borderRadius: '6px',
+                        background: 'rgba(15, 23, 42, 0.8)',
+                        border: '1px solid var(--border-subtle)',
+                        cursor: 'pointer',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontFamily: 'var(--font-mono)',
+                          fontSize: '0.7rem',
+                          color: 'var(--currency-effort)',
+                        }}
+                      >
+                        CHAPTER 0{idx + 1} • PAGE {idx * 3 + 3}
+                      </div>
+                      <strong style={{ fontSize: '0.88rem', color: '#f8fafc' }}>{ch.title}</strong>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Component Anatomy Visual Placeholders */}
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
+                    gap: '1rem',
+                    marginTop: '1.25rem',
+                  }}
+                >
+                  <div className="rulebook-callout callout-diagram" style={{ margin: 0 }}>
+                    <div className="rulebook-callout-header">
+                      <span>🃏 COMPONENT DIAGRAM A</span>
+                      <span>TAROT 70×120mm</span>
+                    </div>
+                    <div className="rulebook-callout-body" style={{ fontSize: '0.82rem' }}>
+                      <strong>Specialist Operative Card Anatomy (24 Cards):</strong>
+                      <ol style={{ paddingLeft: '1.2rem', margin: '0.4rem 0 0 0' }}>
+                        <li>
+                          <strong>Header & Class Icon:</strong> Operative Callsign & Class (
+                          <code>Soldier</code>, <code>Recon</code>, etc.).
+                        </li>
+                        <li>
+                          <strong>Focus Affinity Bar:</strong> Primary Focus (<SemanticText text="[Combat]" />{' '}
+                          <code>3+</code>) & Secondary Focus (<code>4+</code>).
+                        </li>
+                        <li>
+                          <strong>Stat Line (9.0 ES Budget):</strong> Max Hit Points (<code>2–5 HP</code>) &
+                          Starting Static Dice Pool (<code>4–10 d6</code>).
+                        </li>
+                        <li>
+                          <strong>Class Ability (<SemanticText text="[1 EF]" />) & Unique Power:</strong>{' '}
+                          Timing window & tactical effect.
+                        </li>
+                        <li>
+                          <strong>Personal Loyalty Track:</strong> Tracks <SemanticText text="[LOY]" /> from{' '}
+                          <code>1</code> to <code>10+</code> (Tiers 1–4).
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div className="rulebook-callout callout-diagram" style={{ margin: 0 }}>
+                    <div className="rulebook-callout-header">
+                      <span>🔫 COMPONENT DIAGRAM B</span>
+                      <span>POKER 63×88mm</span>
+                    </div>
+                    <div className="rulebook-callout-body" style={{ fontSize: '0.82rem' }}>
+                      <strong>Armory Equipment Card Anatomy (87 Cards):</strong>
+                      <ol style={{ paddingLeft: '1.2rem', margin: '0.4rem 0 0 0' }}>
+                        <li>
+                          <strong>Quartermaster Cost:</strong> Top-right <SemanticText text="[CR]" /> /{' '}
+                          <SemanticText text="[PIP]" /> purchase price.
+                        </li>
+                        <li>
+                          <strong>Anatomical Slot Tag:</strong> <SemanticText text="[Hand L]" />,{' '}
+                          <SemanticText text="[Body]" />, <SemanticText text="[Head]" />,{' '}
+                          <SemanticText text="[Legs]" />, <SemanticText text="[Pack]" />, or{' '}
+                          <SemanticText text="[Complex]" />.
+                        </li>
+                        <li>
+                          <strong>Focus Bridge / Elevation:</strong> Grants <code>4+</code> Secondary
+                          threshold in the bridged Focus.
+                        </li>
+                        <li>
+                          <strong>Stat Modifiers:</strong> Bonus Static Dice (<code>+1d6</code>) or Armor
+                          Buffer soak.
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+
+                  <div className="rulebook-callout callout-diagram" style={{ margin: 0 }}>
+                    <div className="rulebook-callout-header">
+                      <span>🏛️ COMPONENT DIAGRAM C</span>
+                      <span>PLAYER MAT</span>
+                    </div>
+                    <div className="rulebook-callout-body" style={{ fontSize: '0.82rem' }}>
+                      <strong>Faction Dashboard & Vault Mat (8 Mats):</strong>
+                      <ol style={{ paddingLeft: '1.2rem', margin: '0.4rem 0 0 0' }}>
+                        <li>
+                          <strong>The Faction Vault (Left):</strong> Stores the 3 spendable currencies (
+                          <SemanticText text="[CR]" />, <SemanticText text="[EF]" />,{' '}
+                          <SemanticText text="[PIP]" />) and unequipped Armory Cache.
+                        </li>
+                        <li>
+                          <strong>4-Tier Loyalty Tree (Center):</strong> Unlocks Faction powers at{' '}
+                          <SemanticText text="[1 LOY]" />, <SemanticText text="[3 LOY]" />,{' '}
+                          <SemanticText text="[6 LOY]" />, and <SemanticText text="[10+ LOY]" />.
+                        </li>
+                        <li>
+                          <strong>Dead Pool & Score Ledger (Right):</strong> Holds Martyr operatives (
+                          <code>1 LOY = 2 VP</code>) and tracks endgame <SemanticText text="[VP]" />.
+                        </li>
+                      </ol>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            )}
+
+            {/* Chapters I – VIII */}
+            {coreRules
+              .filter((ch) => printChapterFilter === 'all' || printChapterFilter === ch.slug)
+              .map((ch) => {
+                const realIdx = coreRules.findIndex((r) => r.slug === ch.slug);
+                return (
+                  <section key={ch.id} className="print-rulebook-page rulebook-article">
+                    <div
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.72rem',
+                        color: 'var(--currency-effort)',
+                        marginBottom: '0.6rem',
+                      }}
+                    >
+                      <span>
+                        CHAPTER 0{realIdx + 1} // {ch.slug.replace(/_/g, ' ').toUpperCase()}
+                      </span>
+                      <span>
+                        FOLIO PAGE {realIdx * 3 + 3}–{realIdx * 3 + 5}
+                      </span>
+                    </div>
+                    <MarkdownRenderer content={ch.body} />
+                  </section>
+                );
+              })}
+
+            {/* Back-Cover Quick Reference Sheet */}
+            {(printChapterFilter === 'all' || printChapterFilter === 'quickref') && (
+              <section className="print-rulebook-page rulebook-article">
+                <div
+                  style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.72rem',
+                    color: 'var(--currency-credits)',
+                    marginBottom: '0.6rem',
+                  }}
+                >
+                  <span>BACK COVER // EXECUTIVE QUICK REFERENCE & ICON GLOSSARY</span>
+                  <span>FOLIO PAGE 28</span>
+                </div>
+                <h1>Back-Cover Quick Reference Sheet</h1>
+                <div
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                    gap: '1rem',
+                  }}
+                >
+                  <div>
+                    <h3>1. Stage Resolution (5 Steps)</h3>
+                    <ol>
+                      <li>
+                        <strong>Step 1 — Briefing & Swaps:</strong> Reveal Stage + Modifier. Squad
+                        Leader may call <SemanticText text="Force Breach" /> or{' '}
+                        <SemanticText text="Tactical Bypass" />. Activate Step 1 Class Powers (
+                        <SemanticText text="Intel Reconnaissance" />,{' '}
+                        <SemanticText text="Dual-Vector Mapping" />,{' '}
+                        <SemanticText text="Strategic Alignment" />).
+                      </li>
+                      <li>
+                        <strong>Step 2 — Phase 1 (Specialists 3+):</strong> Primary Focus operatives
+                        commit & roll static dice (<code>3+</code> hits, <code>1</code> Backfire). If
+                        Hits ≥ <code>D</code>, <strong>Early Resolution</strong> clears stage!
+                      </li>
+                      <li>
+                        <strong>Step 3 — Phase 2 (Support 4+ / 5+):</strong> Secondary/Bridged roll at{' '}
+                        <code>4+</code>; Out-of-Focus roll at <code>5+</code>.
+                      </li>
+                      <li>
+                        <strong>Step 4 — Triage & 0 HP Stabilization:</strong> Spend{' '}
+                        <SemanticText text="[1 EF]" /> or Medkit to save <code>0 HP</code> operatives
+                        at <code>1 HP</code>, or resolve KIA Martyr (<SemanticText text="[+2 PIP]" />) +{' '}
+                        <SemanticText text="Vulture Tax" /> (<SemanticText text="[-1 PIP]" /> per 2
+                        items).
+                      </li>
+                      <li>
+                        <strong>Step 5 — Resolution & Momentum:</strong> If Hits ≥ <code>D + 2</code>,
+                        gain <code>MOM = Hits - D - 1</code> (<SemanticText text="[1 MOM]" /> = restore
+                        1 spent die to a roller).
+                      </li>
+                    </ol>
+                  </div>
+
+                  <div>
+                    <h3>2. Standard Tie-Breaker Hierarchy</h3>
+                    <ol>
+                      <li>
+                        <strong>Highest Bid in Credits (<SemanticText text="[CR]" />)</strong>
+                      </li>
+                      <li>
+                        <strong>Highest Faction Political Influence (<SemanticText text="[PIP]" />)</strong>
+                      </li>
+                      <li>
+                        <strong>Highest Candidate Operative Loyalty (<SemanticText text="[LOY]" />)</strong>
+                      </li>
+                      <li>
+                        <strong>Unmodified d6 Roll-Off</strong>
+                      </li>
+                    </ol>
+
+                    <h3 style={{ marginTop: '1rem' }}>3. Final Executive [VP] Audit</h3>
+                    <ul>
+                      <li>
+                        <strong>Open Agendas & HQ Sponsorships:</strong> Printed{' '}
+                        <SemanticText text="[VP]" />
+                      </li>
+                      <li>
+                        <strong>Remaining Vault Influence:</strong>{' '}
+                        <SemanticText text="[1 PIP]" /> = <SemanticText text="[2 VP]" />
+                      </li>
+                      <li>
+                        <strong>Living & Martyr Operative Loyalty:</strong>{' '}
+                        <SemanticText text="[1 LOY]" /> = <SemanticText text="[2 VP]" /> (+
+                        <SemanticText text="[3 VP]" /> per Tier 4 Icon)
+                      </li>
+                      <li>
+                        <strong>Tiered Secret Objectives:</strong> 1st ={' '}
+                        <SemanticText text="[+15 VP]" />, 2nd = <SemanticText text="[+10 VP]" />, 3rd
+                        = <SemanticText text="[+5 VP]" />
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </section>
+            )}
+          </div>
+        )}
+
+        {/* ====================================================================
+            VIEW 0C: DESIGN COMPANION AUDIT & PRODUCT BACKLOG (#/wiki/backlog)
+           ==================================================================== */}
+        {activeSection === 'design_backlog' && (
+          <div className="rulebook-article">
+            <nav className="wiki-breadcrumbs">
+              <button
+                type="button"
+                className="wiki-breadcrumb-btn"
+                onClick={() => navigateWiki('#/wiki/home')}
+              >
+                Wiki Home
+              </button>
+              <span>›</span>
+              <strong style={{ color: 'var(--text-primary)' }}>
+                Design Companion Review, Rule Edge Cases & Product Backlog
+              </strong>
+            </nav>
+
+            <h1>🧭 Design Companion Review & Prioritized Backlog</h1>
+            <p>
+              As your <strong>Systems & UX Design Companion</strong>, I audited all 8 Core Rulebook
+              chapters, the <code>9.0 ES</code> mathematical ledger, and all 200 components.{' '}
+              <strong>Zero rules or numbers have been altered.</strong> Instead, explanations,
+              examples, and callouts have been sharpened across the rulebook, while potential table
+              ambiguities and balance questions are surfaced below as structured backlog items for your
+              review.
+            </p>
+
+            <div className="rulebook-callout callout-tip">
+              <div className="rulebook-callout-header">
+                <span>✨ EXECUTIVE CRITIQUE</span>
+                <span>WHAT SHINES IN THE 6.0 ENGINE</span>
+              </div>
+              <div className="rulebook-callout-body">
+                <ul>
+                  <li>
+                    <strong>Operational Momentum (<SemanticText text="[MOM]" />) + Skin-in-the-Game:</strong>{' '}
+                    Requiring an operative to commit at least <code>1 die</code> to qualify for{' '}
+                    <SemanticText text="[MOM]" /> die refunds solves the classic semi-co-op "free
+                    rider" problem.
+                  </li>
+                  <li>
+                    <strong>Phase 1 Early Resolution (3+ Specialists):</strong> Letting Primary
+                    Specialists clear a room in Step 2 before Phase 2 Support even touches the dice
+                    makes squad composition and Scientist/Diplomat Step 1 powers feel immediately
+                    rewarding.
+                  </li>
+                  <li>
+                    <strong>Flat 16.7% Backfire (`1`) vs. Variable Hit Thresholds (`3+/4+/5+`):</strong>{' '}
+                    Penalizing Out-of-Focus play via <em>dice inefficiency</em> (needing 2x the rolls,
+                    thus 2x the exposure to natural <code>1s</code>) is intuitive and eliminates
+                    convoluted hazard tables.
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <h2>1. Rulebook Edge-Case & Timing Backlog (For Designer Decision)</h2>
+            <p>
+              These 8 items represent questions playtesters will ask during live sessions. Click any
+              linked chapter to inspect the current wording and callouts:
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th>ID & Priority</th>
+                  <th>System / Chapter</th>
+                  <th>Surfaced Question / Edge Case</th>
+                  <th>Companion Recommendation</th>
+                </tr>
+              </thead>
+              <tbody>
+                {DESIGN_BACKLOG_RULES.map((item) => (
+                  <tr key={item.id}>
+                    <td style={{ whiteSpace: 'nowrap', fontFamily: 'var(--font-mono)' }}>
+                      <strong>{item.id}</strong>
+                      <div style={{ fontSize: '0.72rem', color: 'var(--currency-credits)' }}>
+                        {item.priority}
+                      </div>
+                    </td>
+                    <td>
+                      <button
+                        type="button"
+                        className="wiki-inline-link"
+                        onClick={() => navigateWiki(item.link)}
+                      >
+                        {item.system}
+                      </button>
+                    </td>
+                    <td>
+                      <strong>{item.question}</strong>
+                      <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
+                        {item.analysis}
+                      </div>
+                    </td>
+                    <td style={{ fontSize: '0.82rem' }}>
+                      <SemanticText text={item.recommendation} />
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+
+            <h2>2. Mathematical & Monte Carlo Balance Insights (`9.0 ES` Ledger)</h2>
+            <ul>
+              <li>
+                <strong>
+                  <code>BL-BAL-01</code> — The <code>D + 1</code> "Clean Clear" Margin in Momentum:
+                </strong>{' '}
+                Because <SemanticText text="[MOM]" /> starts at <code>D + 2</code> (
+                <code>MOM = Successes - D - 1</code>), rolling exactly <code>D + 1</code> yields{' '}
+                <code>0 MOM</code>. In Monte Carlo simulations, intentionally committing extra dice
+                purely to chase Momentum is EV-negative unless paired with{' '}
+                <SemanticText text="Aegis Tactical Directorate" /> (<em>Kinetic Reclamation</em>{' '}
+                <SemanticText text="[+1 EF]" />) or Tier 2 <em>Covering Fire</em>. Momentum works
+                great as a "hot-roll rebate" cushion!
+              </li>
+              <li>
+                <strong>
+                  <code>BL-BAL-02</code> — 2-HP Glass Cannon Operatives (<code>2 HP / 8 Dice</code>):
+                </strong>{' '}
+                Operatives like <em>The Ghost Point</em>, <em>The Virologist</em>, and{' '}
+                <em>The Spymaster</em> expect <code>1.33</code> natural <code>1s</code> across 8
+                rolls—giving them a <strong>39.5% probability of hitting 0 HP</strong> across a full
+                mission without Armor Buffer or healing. This strongly validates Tier 1{' '}
+                <SemanticText text="[Body]" /> armor and <SemanticText text="[1 EF]" /> Emergency
+                Stabilization.
+              </li>
+              <li>
+                <strong>
+                  <code>BL-BAL-03</code> — 3-Player Vanguard Slot Loyalty Velocity:
+                </strong>{' '}
+                In 3P mode, winning the Vanguard Auction deploys 2 operatives for that Faction,
+                generating <SemanticText text="[+2 LOY]" /> (<SemanticText text="[4 VP]" />) on a
+                surviving mission—making the Vanguard Auction worth at least{' '}
+                <SemanticText text="[2 CR]" />–<SemanticText text="[3 CR]" />.
+              </li>
+            </ul>
+          </div>
+        )}
+
+        {/* ====================================================================
             VIEW 1: DEDICATED COMPONENT WIKI PAGE (#/wiki/component/<id>)
            ==================================================================== */}
         {activeSection === 'component_page' && activeComponent && (
@@ -644,9 +1848,9 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
               <button
                 type="button"
                 className="wiki-breadcrumb-btn"
-                onClick={() => navigateWiki('#/wiki/database/all')}
+                onClick={() => navigateWiki('#/wiki/home')}
               >
-                Wiki Database
+                Wiki Home
               </button>
               <span>›</span>
               <button
@@ -1027,9 +2231,9 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
               <button
                 type="button"
                 className="wiki-breadcrumb-btn"
-                onClick={() => navigateWiki('#/wiki/rule/rules_overview')}
+                onClick={() => navigateWiki('#/wiki/home')}
               >
-                Core Rulebook
+                Wiki Home
               </button>
               <span>›</span>
               <strong style={{ color: 'var(--text-primary)' }}>
@@ -1210,7 +2414,9 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
               <strong>Pyramid Share:</strong> {FOCUS_META[selectedFocusKey].pyramidShare} •{' '}
               <strong>Operational Domain:</strong> {FOCUS_META[selectedFocusKey].tierRole}
             </p>
-            <p>{FOCUS_META[selectedFocusKey].summary}</p>
+            <p>
+              <SemanticText text={FOCUS_META[selectedFocusKey].summary} />
+            </p>
 
             <h2>
               Primary {FOCUS_META[selectedFocusKey].name} Specialists (Hit on 3+)
@@ -1301,6 +2507,7 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
             <p>
               <strong>Signature Class Ability ({CLASS_META[selectedClassKey].abilityName}):</strong>{' '}
               Costs <SemanticText text={CLASS_META[selectedClassKey].cost} /> •{' '}
+              <strong>Timing:</strong> <code>{CLASS_META[selectedClassKey].timing}</code> •{' '}
               <SemanticText text={CLASS_META[selectedClassKey].effect} />
             </p>
             <p>
@@ -1334,7 +2541,13 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
         {activeSection === 'rulebook' && activeRule && (
           <div className="rulebook-article">
             <nav className="wiki-breadcrumbs">
-              <span>Core Rulebook</span>
+              <button
+                type="button"
+                className="wiki-breadcrumb-btn"
+                onClick={() => navigateWiki('#/wiki/print-rulebook')}
+              >
+                Official Rulebook
+              </button>
               <span>›</span>
               <strong style={{ color: 'var(--text-primary)' }}>
                 Chapter {activeRuleIndex + 1}: {activeRule.title}
@@ -1447,6 +2660,9 @@ export function WikiPortal({ coreRules, components, artManifest }: WikiPortalPro
             VIEW 7: FILTERABLE COMPONENT DATABASE BROWSE VIEWS
            ==================================================================== */}
         {![
+          'home',
+          'print_rulebook',
+          'design_backlog',
           'rulebook',
           'currencies_guide',
           'focus_page',

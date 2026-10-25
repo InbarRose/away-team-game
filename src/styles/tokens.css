@@ -755,3 +755,289 @@ a:hover {
   border-color: #334155;
   color: #64748b;
 }
+
+
+/* ==========================================================================
+   WIKI HOMEPAGE, PRINT-STYLE RULEBOOK & CALLOUT SYSTEM
+   ========================================================================== */
+
+.wiki-hero-banner {
+  position: relative;
+  padding: 2rem 2.25rem;
+  border-radius: var(--radius-lg);
+  background: radial-gradient(circle at 85% 20%, rgba(0, 229, 255, 0.16) 0%, rgba(17, 24, 39, 0.96) 55%, #090d16 100%);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+}
+
+.wiki-pillar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+.wiki-pillar-card {
+  background: rgba(11, 16, 27, 0.78);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 0.9rem 1.05rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.wiki-pillar-card:hover {
+  border-color: var(--currency-effort);
+  transform: translateY(-2px);
+}
+
+.wiki-portal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.wiki-portal-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.25rem;
+  text-align: left;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+
+.wiki-portal-card:hover {
+  border-color: var(--currency-effort);
+  background: var(--bg-card);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.38);
+}
+
+/* Rulebook Callouts, Examples of Play & Diagram Placeholders */
+.rulebook-callout {
+  margin: 1.15rem 0;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-strong);
+  overflow: hidden;
+  background: rgba(15, 23, 42, 0.75);
+}
+
+.rulebook-callout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem 0.95rem;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.rulebook-callout-body {
+  padding: 0.85rem 1.05rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #e2e8f0;
+}
+
+.callout-important {
+  border-left: 4px solid #f59e0b;
+  background: rgba(245, 158, 11, 0.07);
+}
+.callout-important .rulebook-callout-header {
+  background: rgba(245, 158, 11, 0.16);
+  color: #fbbf24;
+}
+
+.callout-tip {
+  border-left: 4px solid #10b981;
+  background: rgba(16, 185, 129, 0.07);
+}
+.callout-tip .rulebook-callout-header {
+  background: rgba(16, 185, 129, 0.16);
+  color: #34d399;
+}
+
+.callout-warning {
+  border-left: 4px solid #ef4444;
+  background: rgba(239, 68, 68, 0.08);
+}
+.callout-warning .rulebook-callout-header {
+  background: rgba(239, 68, 68, 0.18);
+  color: #f87171;
+}
+
+.callout-note {
+  border-left: 4px solid #38bdf8;
+  background: rgba(56, 189, 248, 0.07);
+}
+.callout-note .rulebook-callout-header {
+  background: rgba(56, 189, 248, 0.15);
+  color: #7dd3fc;
+}
+
+.callout-example {
+  border-left: 4px solid #a855f7;
+  background: rgba(168, 85, 247, 0.08);
+}
+.callout-example .rulebook-callout-header {
+  background: rgba(168, 85, 247, 0.18);
+  color: #d8b4fe;
+}
+
+.callout-diagram {
+  border: 1px dashed rgba(0, 229, 255, 0.55);
+  background: radial-gradient(circle at 50% 0%, rgba(0, 229, 255, 0.09), rgba(11, 16, 27, 0.92));
+}
+.callout-diagram .rulebook-callout-header {
+  background: rgba(0, 229, 255, 0.14);
+  color: var(--currency-effort);
+}
+
+.rulebook-diagram-frame {
+  padding: 0.9rem 1.05rem;
+}
+
+.rulebook-diagram-wireframe {
+  background: rgba(7, 10, 16, 0.8);
+  border: 1px solid rgba(0, 229, 255, 0.25);
+  border-radius: 6px;
+  padding: 0.45rem;
+}
+
+.rulebook-flowchart-pre {
+  margin: 1rem 0;
+  padding: 0.95rem 1.15rem;
+  background: #070b13;
+  border: 1px solid var(--border-strong);
+  border-left: 3px solid var(--currency-effort);
+  border-radius: var(--radius-sm);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #7dd3fc;
+}
+
+.rulebook-formula-banner {
+  margin: 1rem 0;
+  padding: 0.75rem 1.1rem;
+  background: rgba(255, 215, 0, 0.07);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #fde047;
+  text-align: center;
+}
+
+/* Emulated Print-Style Deluxe Board Game Rulebook Folio */
+.print-rulebook-folio {
+  background: linear-gradient(180deg, #111929 0%, #0d1422 100%);
+  border: 2px solid #2e4163;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  overflow: hidden;
+}
+
+.print-rulebook-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.9rem 1.5rem;
+  background: #080c15;
+  border-bottom: 2px solid #2e4163;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.print-rulebook-page {
+  padding: 2rem 2.4rem;
+  border-bottom: 2px dashed rgba(148, 163, 184, 0.2);
+  position: relative;
+}
+
+/* ==========================================================================
+   VTT 7-STEP SEQUENCER, CONTEXTUAL COACH & MONTE CARLO SIMULATOR
+   ========================================================================== */
+.vtt-sequencer-bar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(135px, 1fr));
+  gap: 0.45rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.vtt-step-pill {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.2rem;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.14s ease;
+}
+
+.vtt-step-pill:hover {
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.vtt-step-pill.active {
+  background: rgba(0, 229, 255, 0.14);
+  border-color: var(--currency-effort);
+  color: var(--text-primary);
+  box-shadow: 0 0 14px rgba(0, 229, 255, 0.2);
+}
+
+.vtt-step-pill.completed {
+  border-color: rgba(16, 185, 129, 0.5);
+  background: rgba(16, 185, 129, 0.08);
+}
+
+.vtt-coach-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.85rem 1.1rem;
+  margin-top: 0.85rem;
+  border-radius: var(--radius-sm);
+  background: rgba(0, 229, 255, 0.07);
+  border: 1px solid rgba(0, 229, 255, 0.35);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 960px) {
+  .wiki-sidebar {
+    position: static;
+    max-height: none;
+    border-right: none;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+  .wiki-main {
+    padding: 1rem;
+  }
+  .print-rulebook-page {
+    padding: 1.25rem 1.15rem;
+  }
+}

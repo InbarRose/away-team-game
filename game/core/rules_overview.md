@@ -108,3 +108,24 @@ Compare total accumulated successes against the stage's Target Difficulty ($D$):
 Before revealing the next stage card:
 * The Squad Leader may trigger **Logistical Refresh** ([2 EF] to restore 1 die to all operatives, or [3 EF] to restore 2 dice to all operatives) or declare a **Tactical Retreat** (if after Stage 1 and either an operative is at `1 HP` or $>50\%$ of squad static dice are spent).
 * Operatives may use Transition Step abilities or items.
+
+
+---
+
+## 5. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!IMPORTANT]
+> **Golden Rule — Dying Breath Successes Count:** During Step 2 (Phase 1 Specialists) or Step 3 (Phase 2 Support), all committed dice resolve simultaneously. If an operative rolls a natural `1` (Backfire) that reduces them to `0 HP` alongside successful dice (`3+`, `4+`, or `5+`), **all rolled successes on that throw still count toward clearing the Stage**—even if no player stabilizes the operative during Step 4 (resulting in a Martyr KIA).
+
+> [!EXAMPLE]
+> **Example of Play — Resolving a Stage in 5 Steps (With Early Resolution):**
+> 1. **Step 1 (Briefing):** The squad enters Stage 2 of *Deep-Sea Laboratory Raid*: **Heavy Enforcer Gate** (`[Combat]`, Target Difficulty $D = 4$). The Squad Leader draws the Stage Modifier **Automated Turret Crossfire** (`+1` Target Difficulty $\rightarrow D = 5$). No Dynamic Focus Swap is declared.
+> 2. **Step 2 (Phase 1 — The Specialists):** **The Commander** (Aegis, Primary `[Combat]` `3+`) and **The Pointman** (Obsidian, Primary `[Combat]` `3+`) act first in Phase 1. The Commander commits `4 static dice` and activates *Lock and Load* (`[1 EF]` for `+2 temporary dice` = `6 dice` total). The Pointman commits `3 static dice`. Together they roll `9 dice` needing `3+`: they roll `6, 5, 5, 4, 3, 3, 3, 2, 1` — scoring **7 Successes** and **1 Backfire** (`1 HP` damage to The Pointman).
+> 3. **Early Resolution Check:** Because `7 Successes` meets and exceeds Target Difficulty $D = 5$, **the stage is immediately cleared in Phase 1!** The two non-combat teammates (**The Virologist** and **The Spymaster**) skip Step 3 (Phase 2 Support) completely, saving all of their static dice and avoiding any Backfire risk.
+> 4. **Step 4 (Post-Initiative & Triage):** The Pointman is still at `2 HP` (above `0 HP`), so no stabilization is required.
+> 5. **Step 5 (Resolution & Operational Momentum):** With `7 Successes` against $D = 5$ (a margin of $+2$), the squad generates $\text{Momentum} = 7 - 5 - 1 = \mathbf{[1\text{ MOM}]}$. The Squad Leader assigns `[1 MOM]` to restore `1 spent static die` back to The Commander's active pool, and Aegis triggers *Kinetic Reclamation* to deposit `[+1 EF]` into their Faction Vault!
+
+> [!DIAGRAM]
+> **Figure 1.1 — 4-Player Table Setup & Agency Enclave Layout**
+> * **Visual Specification:** Top-down isometric diagram of a 4-player table. Center of table shows the **Campaign Dossier**, **Active Mission Stage Track (Stages 1–3)**, **HQ Facility Board (5 Facilities + 4 Landmarks)**, and **Quartermaster / Recruitment Markets**. Surrounding the center are 4 **Faction Dashboards**, each holding a **3-Currency Vault (`[CR]`, `[EF]`, `[PIP]`)**, an **Active Operative Slot** with `6 Anatomical Gear Slots`, and a **Spent Static Dice Tray**.
+> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_1_1_table_setup.webp`

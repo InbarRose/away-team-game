@@ -65,3 +65,25 @@ When the squad clears the final Climax Stage of the campaign's last mission, the
 3. **Personnel Loyalty ([LOY]):** Every point of [LOY] on your **living bench operatives** AND **Dead Pool martyrs** converts at standard **`[1 LOY] = [2 VP]`**, plus **[+3 VP]** for every operative who reached **Loyalty Tier 4 ([10+ LOY] Corporate Icon)**.
 4. **Tiered Secret Objectives:** Reveal hidden **Secret Objective** cards and award **[+15 VP] (1st Place)**, **[+10 VP] (2nd Place)**, and **[+5 VP] (3rd Place)** (minimum 1 unit required to qualify).
 5. **Tie-Breaker:** Highest remaining [PIP], then highest remaining [CR], then most living operatives.
+
+
+---
+
+## 6. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!IMPORTANT]
+> **Stage Failures vs. Mission Failures (`[DOOM]` Escalation):** Failing an individual Stage Card inside a mission **never** advances the global `[DOOM]` tracker (unless that stage is a Mission Climax stage whose failure aborts the mission). Individual stage failures inflict local tactical blowback (HP damage, static die loss, or `+1` downstream difficulty). **`[+1 DOOM]` is added strictly when an entire Campaign Mission fails or is aborted via Retreat.**
+
+> [!TIP]
+> **Preparing for `[Continuous Drop]` (`[No HQ]`) Missions:** In advanced campaigns like *Operation: Apex Extraction*, Mission 2 links directly into Mission 3 with the **`[Continuous Drop]`** tag. Because there is **no HQ Downtime** between Part A and Part B, any static dice spent or HP lost in Mission 2 remain spent/missing at the start of Mission 3! Save a Squad Leader **Logistical Refresh (`[3 EF]`)** and extra Medical Consumables for the transition into Part B.
+
+> [!EXAMPLE]
+> **Example of Play — Final Executive `[VP]` Audit (Endgame Scoring):**
+> * The squad clears Stage 3 of Mission 3 in *Operation: Iron Dawn*, winning the campaign collectively. Now the 4 Directors audit their final **`[VP]`** totals:
+>   * **Aegis Director:** `6 VP` (from 2 Open Agendas) + `3 PIP` (`6 VP`) + `9 LOY` across living/martyr agents (`18 VP`) + 1st Place on Secret Objective *The Warlord* (`+15 VP`) = **`45 VP` (1st Place — Winner!)**.
+>   * **Vanderbilt Director:** `8 VP` (from Open Agendas) + `5 PIP` (`10 VP`) + `6 LOY` (`12 VP`) + 2nd Place Secret Objective (`+10 VP`) = **`40 VP` (2nd Place)**.
+
+> [!DIAGRAM]
+> **Figure 7.1 — Campaign Progression, Side-Mission Windows & 6-Slot Anatomical Loadout**
+> * **Visual Specification:** Split diagram. Left panel shows the **Campaign Mission Track (`M1` $\rightarrow$ `M2` $\rightarrow$ `M3`)** with optional Side-Mission branches (`[Urban]`, `[Space]`, `[Facility]`) and the 3-step **`[DOOM]` Clock**. Right panel shows the **Operative Anatomical Loadout Silhouette** with `[Head]`, `[Body]`, `[Legs]`, `[Pack]`, `[Hand L] + [Hand R]`, `[Complex]`, and `2 Consumable` slots.
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_7_1_campaign_and_loadout.webp`
