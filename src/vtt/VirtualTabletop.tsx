@@ -1,6 +1,12 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { GameComponent } from '../components/ComponentCard';
 import { FocusBadge, SemanticText } from '../components/SemanticText';
+import {
+  calculateOperationalMomentum,
+  evaluateCharacterBudgetES,
+  expectedSuccessPerDie,
+  simulateStageMonteCarlo,
+} from './simulator';
 
 interface VTTProps {
   components: GameComponent[];
@@ -26,6 +32,8 @@ interface DeployedOperative {
   currentHp: number;
   armorRemaining: number;
   bonusDice: number;
+  committedDice: number;
+  spentDice: number;
   critInjuryDicePenalty: number;
   critInjuryHpPenalty: number;
   traumaNote: string;
@@ -36,6 +44,7 @@ interface DeployedOperative {
 
 interface VTTState {
   playerCount: number;
+  sequenceStep: number; // 1..7 guided game loop step
   campaignId: string;
   missionId: string;
   stageIndex: number;
@@ -52,17 +61,70 @@ interface VTTState {
   combatLog: string[];
 }
 
-const STORAGE_KEY = 'away_team_vtt_state_v1';
+const SEQUENCE_STEPS = [
+  {
+    step: 1,
+    shortTitle: '1. Briefing & Swaps',
+    fullTitle: 'Step 1: Stage Briefing, Modifiers & Dynamic Focus Swaps',
+    coachHint:
+      'Reveal the Stage Card and attach 1 Stage Modifier. The Squad Leader may declare Force Breach (shift to [Combat]) or Tactical Bypass (shift to [Infiltrate]). Recon, Scientist (Dual-Vector Mapping), and Diplomat (Strategic Alignment) may spend [1 EF] now. Players may broker Binding Promises ([CR] / items).',
+  },
+  {
+    step: 2,
+    shortTitle: '2. Phase 1: Specialists (3+)',
+    fullTitle: 'Step 2: Phase 1 Initiative — Primary Focus Specialists (3+)',
+    coachHint:
+      'Operatives whose Primary Focus matches the active room Focus act first! Set their Committed Dice and click "Roll Phase 1 Specialists (3+)". EARLY RESOLUTION: If Phase 1 successes meet or exceed Target Difficulty D, the stage is cleared immediately and Phase 2 Support skips rolling!',
+  },
+  {
+    step: 3,
+    shortTitle: '3. Phase 2: Support (4+/5+)',
+    fullTitle: 'Step 3: Phase 2 Initiative — Support Operatives (4+ Secondary / 5+ Out of Focus)',
+    coachHint:
+      'If Phase 1 Specialists did not reach Target Difficulty D, non-Primary operatives commit and roll static dice: Secondary/Bridged Focus hits on 4+; Out of Focus hits on 5+. Every natural 1 inflicts 1 HP Backfire damage.',
+  },
+  {
+    step: 4,
+    shortTitle: '4. Triage & 0 HP Check',
+    fullTitle: 'Step 4: Post-Initiative Triage & Emergency Stabilization Window',
+    coachHint:
+      'Trigger reactive damage mitigation (Survivalist Emergency Field Medicine [1 EF] heals up to 2 stage HP). If any operative is at 0 HP, any Faction may spend [1 EF] or discard a Medkit to stabilize them at 1 HP—otherwise they are KIA (Martyr: +2 [PIP] to owner, and rivals may claim dropped gear via the [-1 PIP] Vulture Tax).',
+  },
+  {
+    step: 5,
+    shortTitle: '5. Resolution & [MOM]',
+    fullTitle: 'Step 5: Stage Resolution & Operational Momentum ([MOM]) Distribution',
+    coachHint:
+      'Compare total successes against Target Difficulty D. If Successes >= D + 2, generate Operational Momentum: MOM = Successes - D - 1. The Squad Leader immediately spends [1 MOM] to restore 1 spent static die to any operative who committed and rolled >= 1 die in this stage!',
+  },
+  {
+    step: 6,
+    shortTitle: '6. Transition & Resupply',
+    fullTitle: 'Step 6: Between-Stage Transition, Logistical Refresh & Retreat Check',
+    coachHint:
+      'Before revealing the next stage, the Squad Leader may spend [2 EF] (restore +1 spent static die to all 4 operatives) or [3 EF] (restore +2 spent static dice to all 4 operatives), or call a Tactical Retreat if >50% of squad dice are spent or an operative is at 1 HP.',
+  },
+  {
+    step: 7,
+    shortTitle: '7. HQ Downtime (8 Steps)',
+    fullTitle: 'Step 7: Agency HQ Downtime — Debrief, Med Bay, Sponsorships & Command Auction',
+    coachHint:
+      'Return to Agency HQ: (1) Award mission [CR]/[PIP] and [+1 LOY] to surviving operatives (+2 LOY to winning Squad Leader), (2) Stand-Down Auction, (3) Infirmary Bed Healing Dice (5+/4+), (4) Sponsor HQ Modules (+1 PIP / +2 VP), (5) Recruitment Bureau ([8 CR]), (6) Quartermaster Armory, (7) Boardroom Perks, (8) Command Auction for next drop.',
+  },
+];
+
+const STORAGE_KEY = 'away_team_vtt_state_v2';
 
 const DEFAULT_STATE: VTTState = {
   playerCount: 4,
+  sequenceStep: 1,
   campaignId: 'campaign-iron-dawn',
   missionId: 'mission-iron-dawn-1-black-market-intercept',
   stageIndex: 0,
   overrideFocus: null,
   secondaryConcurrentFocus: null,
   activeModifierId: '',
-  targetDifficulty: 14,
+  targetDifficulty: 4,
   doom: 0,
   retriesUsed: 0,
   momentumTokens: 0,
@@ -122,6 +184,8 @@ const DEFAULT_STATE: VTTState = {
       currentHp: 3,
       armorRemaining: 0,
       bonusDice: 0,
+      committedDice: 3,
+      spentDice: 0,
       critInjuryDicePenalty: 0,
       critInjuryHpPenalty: 0,
       traumaNote: '',
@@ -137,6 +201,8 @@ const DEFAULT_STATE: VTTState = {
       currentHp: 2,
       armorRemaining: 0,
       bonusDice: 0,
+      committedDice: 2,
+      spentDice: 0,
       critInjuryDicePenalty: 0,
       critInjuryHpPenalty: 0,
       traumaNote: '',
@@ -152,6 +218,8 @@ const DEFAULT_STATE: VTTState = {
       currentHp: 2,
       armorRemaining: 0,
       bonusDice: 0,
+      committedDice: 2,
+      spentDice: 0,
       critInjuryDicePenalty: 0,
       critInjuryHpPenalty: 0,
       traumaNote: '',
@@ -167,6 +235,8 @@ const DEFAULT_STATE: VTTState = {
       currentHp: 3,
       armorRemaining: 0,
       bonusDice: 0,
+      committedDice: 2,
+      spentDice: 0,
       critInjuryDicePenalty: 0,
       critInjuryHpPenalty: 0,
       traumaNote: '',
@@ -176,13 +246,17 @@ const DEFAULT_STATE: VTTState = {
     },
   ],
   combatLog: [
-    '[SYSTEM] Away Team Virtual Tabletop initialized. Select a Mission Stage and roll Static Dice Pools.',
+    '[SYSTEM] Away Team Sequenced VTT & Monte Carlo Balance Engine initialized. Follow the 7-Step Phase Sequencer above.',
   ],
 };
 
 export function VirtualTabletop({ components }: VTTProps) {
   const [state, setState] = useState<VTTState>(DEFAULT_STATE);
-  const [activeTab, setActiveTab] = useState<'stage' | 'squad' | 'hq' | 'medbay'>('stage');
+  const [activeTab, setActiveTab] = useState<
+    'stage' | 'squad' | 'hq' | 'medbay' | 'simulator'
+  >('stage');
+  const [simTrials, setSimTrials] = useState<number>(1000);
+  const [simSeedBump, setSimSeedBump] = useState<number>(0);
 
   // Load state from localStorage on mount
   useEffect(() => {
@@ -191,7 +265,11 @@ export function VirtualTabletop({ components }: VTTProps) {
       if (saved) {
         const parsed = JSON.parse(saved);
         if (parsed && parsed.vaults && parsed.squad) {
-          setState(parsed);
+          setState({
+            ...DEFAULT_STATE,
+            ...parsed,
+            sequenceStep: parsed.sequenceStep || 1,
+          });
         }
       }
     } catch {
@@ -273,6 +351,9 @@ export function VirtualTabletop({ components }: VTTProps) {
     [modifiers, state.activeModifierId]
   );
 
+  const activeStepMeta =
+    SEQUENCE_STEPS.find((s) => s.step === state.sequenceStep) || SEQUENCE_STEPS[0];
+
   const appendLog = (entry: string) => {
     setState((prev) => ({
       ...prev,
@@ -300,21 +381,24 @@ export function VirtualTabletop({ components }: VTTProps) {
       focusTargets.push(state.secondaryConcurrentFocus.toLowerCase());
     }
 
-    let threshold = 5;
-    let roleLabel = 'Phase 2: Vanguard Assist (5+)';
+    let threshold: 3 | 4 | 5 = 5;
+    let roleLabel = 'Phase 2: Out-of-Focus Support (5+)';
     let isOutOfFocus = true;
+    let isPhase1Specialist = false;
 
     if (primary && focusTargets.includes(primary)) {
       threshold = 3;
       roleLabel = 'Phase 1: Primary Specialist (3+)';
       isOutOfFocus = false;
+      isPhase1Specialist = true;
     } else if (
       (secondary && focusTargets.includes(secondary)) ||
       itemBridges.some((b) => b && focusTargets.includes(b))
     ) {
       threshold = 4;
-      roleLabel = 'Phase 1: Secondary/Bridge Specialist (4+)';
+      roleLabel = 'Phase 2: Secondary/Bridge Support (4+)';
       isOutOfFocus = false;
+      isPhase1Specialist = false;
     }
 
     const itemStaticDice = equipped.reduce(
@@ -328,17 +412,24 @@ export function VirtualTabletop({ components }: VTTProps) {
     const totalDice = Math.max(
       1,
       (char?.stats?.static_dice || 6) +
-        itemStaticDice +
-        op.bonusDice -
-        op.critInjuryDicePenalty
+        itemStaticDice -
+        (op.critInjuryDicePenalty || 0)
     );
+    const spentDice = Math.min(totalDice, Math.max(0, op.spentDice || 0));
+    const availableStaticDice = Math.max(0, totalDice - spentDice);
+    const committedDice = Math.min(
+      availableStaticDice,
+      Math.max(0, op.committedDice ?? Math.min(3, availableStaticDice))
+    );
+    const effectiveRollCount = Math.max(0, committedDice + (op.bonusDice || 0));
+
     const maxHp = Math.max(
       1,
-      (char?.stats?.hp_cap || 3) - op.critInjuryHpPenalty
+      (char?.stats?.hp_cap || 3) - (op.critInjuryHpPenalty || 0)
     );
 
     const hits = op.rolledDice.filter((d) => d >= threshold).length;
-    const backfires = isOutOfFocus ? op.rolledDice.filter((d) => d === 1).length : 0;
+    const backfires = op.rolledDice.filter((d) => d === 1).length;
 
     return {
       char,
@@ -346,7 +437,12 @@ export function VirtualTabletop({ components }: VTTProps) {
       threshold,
       roleLabel,
       isOutOfFocus,
+      isPhase1Specialist,
       totalDice,
+      spentDice,
+      availableStaticDice,
+      committedDice,
+      effectiveRollCount,
       maxHp,
       itemArmor,
       hits,
@@ -358,33 +454,195 @@ export function VirtualTabletop({ components }: VTTProps) {
   const squadSummary = useMemo(() => {
     let totalSuccesses = 0;
     let totalBackfires = 0;
+    let totalCommittedDice = 0;
+    let expectedSuccesses = 0;
+
     for (const op of state.squad) {
       if (op.inMedBay || op.currentHp <= 0) continue;
       const ev = getOperativeEval(op);
       totalSuccesses += ev.hits;
       totalBackfires += ev.backfires;
+      totalCommittedDice += ev.effectiveRollCount;
+      expectedSuccesses += ev.effectiveRollCount * expectedSuccessPerDie(ev.threshold);
     }
-    const cleared = totalSuccesses >= state.targetDifficulty;
-    const momentumEarned = totalSuccesses >= state.targetDifficulty + 2;
-    return { totalSuccesses, totalBackfires, cleared, momentumEarned };
-  }, [state.squad, state.targetDifficulty, effectivePrimaryFocus, state.secondaryConcurrentFocus]);
 
-  // Roll all active operatives' static dice pools
+    const cleared = totalSuccesses >= state.targetDifficulty;
+    const momentumGenerated = calculateOperationalMomentum(
+      totalSuccesses,
+      state.targetDifficulty
+    );
+    const momentumEarned = momentumGenerated > 0;
+
+    return {
+      totalSuccesses,
+      totalBackfires,
+      totalCommittedDice,
+      expectedSuccesses: Math.round(expectedSuccesses * 100) / 100,
+      cleared,
+      momentumEarned,
+      momentumGenerated,
+    };
+  }, [
+    state.squad,
+    state.targetDifficulty,
+    effectivePrimaryFocus,
+    state.secondaryConcurrentFocus,
+  ]);
+
+  // Live Monte Carlo simulation result for the active stage & squad
+  const liveSimulation = useMemo(() => {
+    const simInputs = state.squad
+      .filter((op) => !op.inMedBay && op.currentHp > 0)
+      .map((op) => {
+        const ev = getOperativeEval(op);
+        const ownerFaction = state.vaults[op.ownerPlayer]?.factionId;
+        return {
+          id: op.characterId,
+          title: ev.char?.title || op.characterId,
+          className: ev.char?.category || 'soldier',
+          threshold: ev.threshold,
+          committedDice: ev.effectiveRollCount,
+          currentHp: op.currentHp,
+          armorBuffer: ev.itemArmor,
+          ignoreFirstBackfire: ownerFaction === 'faction-aegis' && op.loyalty >= 1,
+        };
+      });
+
+    return simulateStageMonteCarlo(simInputs, state.targetDifficulty, simTrials);
+  }, [
+    state.squad,
+    state.vaults,
+    state.targetDifficulty,
+    effectivePrimaryFocus,
+    state.secondaryConcurrentFocus,
+    simTrials,
+    simSeedBump,
+  ]);
+
+  // Roll only Phase 1 Specialists (3+) first, checking for Early Resolution
+  const handleRollPhase1Specialists = () => {
+    let phase1Hits = 0;
+    const nextSquad = state.squad.map((op) => {
+      if (op.inMedBay || op.currentHp <= 0) return { ...op, rolledDice: [] };
+      const ev = getOperativeEval(op);
+      if (!ev.isPhase1Specialist || ev.effectiveRollCount <= 0) {
+        return { ...op, rolledDice: [] };
+      }
+      const rolled = Array.from({ length: ev.effectiveRollCount }, () =>
+        Math.floor(Math.random() * 6) + 1
+      );
+      phase1Hits += rolled.filter((d) => d >= ev.threshold).length;
+      return {
+        ...op,
+        rolledDice: rolled,
+        spentDice: Math.min(ev.totalDice, (op.spentDice || 0) + ev.committedDice),
+        bonusDice: 0,
+      };
+    });
+
+    const earlyClear = phase1Hits >= state.targetDifficulty;
+    const momGen = calculateOperationalMomentum(phase1Hits, state.targetDifficulty);
+
+    setState((prev) => ({
+      ...prev,
+      squad: nextSquad,
+      sequenceStep: earlyClear ? 5 : 3,
+      momentumTokens: earlyClear ? prev.momentumTokens + momGen : prev.momentumTokens,
+    }));
+
+    if (earlyClear) {
+      appendLog(
+        `⚡ PHASE 1 EARLY RESOLUTION! Primary (3+) Specialists scored ${phase1Hits}/${state.targetDifficulty} hits—clearing the stage immediately! Phase 2 Support saves all static dice! (+${momGen} [MOM])`
+      );
+    } else {
+      appendLog(
+        `Phase 1 Specialists rolled ${phase1Hits}/${state.targetDifficulty} hits. Advancing to Step 3 (Phase 2 Support 4+/5+) to close the remaining ${state.targetDifficulty - phase1Hits} hit deficit.`
+      );
+    }
+  };
+
+  // Roll all active operatives' committed static dice pools
   const handleRollSquadPools = () => {
+    let totalHits = 0;
     const nextSquad = state.squad.map((op) => {
       if (op.inMedBay || op.currentHp <= 0) {
         return { ...op, rolledDice: [] };
       }
       const ev = getOperativeEval(op);
-      const rolled = Array.from({ length: ev.totalDice }, () =>
+      // If already rolled in Phase 1, keep their roll
+      if (op.rolledDice.length > 0 && state.sequenceStep === 3 && ev.isPhase1Specialist) {
+        totalHits += ev.hits;
+        return op;
+      }
+      const countToRoll = Math.max(1, ev.effectiveRollCount);
+      const rolled = Array.from({ length: countToRoll }, () =>
         Math.floor(Math.random() * 6) + 1
       );
-      return { ...op, rolledDice: rolled };
+      totalHits += rolled.filter((d) => d >= ev.threshold).length;
+      return {
+        ...op,
+        rolledDice: rolled,
+        spentDice: Math.min(ev.totalDice, (op.spentDice || 0) + ev.committedDice),
+        bonusDice: 0,
+      };
     });
 
-    setState((prev) => ({ ...prev, squad: nextSquad }));
+    const momGen = calculateOperationalMomentum(totalHits, state.targetDifficulty);
+
+    setState((prev) => ({
+      ...prev,
+      squad: nextSquad,
+      sequenceStep: 4,
+      momentumTokens: prev.momentumTokens + momGen,
+    }));
     appendLog(
-      `Rolled Static Dice Pools for active Away Team on [${effectivePrimaryFocus.toUpperCase()}] stage (Target Difficulty: ${state.targetDifficulty}).`
+      `Rolled Committed Static Dice on [${effectivePrimaryFocus.toUpperCase()}] stage: ${totalHits}/${state.targetDifficulty} Successes (${
+        totalHits >= state.targetDifficulty ? `CLEARED! +${momGen} [MOM]` : 'FAILED'
+      }).`
+    );
+  };
+
+  // Spend 1 [MOM] token to restore 1 spent static die to an eligible operative
+  const handleRefundDieWithMomentum = (slotIdx: number) => {
+    if (state.momentumTokens <= 0) return;
+    const op = state.squad[slotIdx];
+    if ((op.spentDice || 0) <= 0) return;
+    const ev = getOperativeEval(op);
+
+    setState((prev) => ({
+      ...prev,
+      momentumTokens: Math.max(0, prev.momentumTokens - 1),
+      squad: prev.squad.map((s, i) =>
+        i === slotIdx
+          ? { ...s, spentDice: Math.max(0, (s.spentDice || 0) - 1) }
+          : s
+      ),
+    }));
+    appendLog(
+      `Spent [1 MOM] to restore +1 spent static die to ${ev.char?.title}'s Active Pool.`
+    );
+  };
+
+  // Squad Leader Logistical Refresh ([2 EF] = +1 die all, [3 EF] = +2 dice all)
+  const handleLogisticalRefresh = (tierCostEf: 2 | 3) => {
+    const restoreCount = tierCostEf === 2 ? 1 : 2;
+    const leaderIdx = state.vaults.findIndex((v) => v.isSquadLeader);
+    const payIdx = leaderIdx >= 0 ? leaderIdx : 0;
+
+    setState((prev) => ({
+      ...prev,
+      vaults: prev.vaults.map((v, idx) =>
+        idx === payIdx
+          ? { ...v, effort: Math.max(0, v.effort - tierCostEf) }
+          : v
+      ),
+      squad: prev.squad.map((s) => ({
+        ...s,
+        spentDice: Math.max(0, (s.spentDice || 0) - restoreCount),
+      })),
+    }));
+    appendLog(
+      `Squad Leader triggered Logistical Refresh ([${tierCostEf} EF]): Restored +${restoreCount} spent static die/dice to all 4 deployed operatives!`
     );
   };
 
@@ -417,7 +675,7 @@ export function VirtualTabletop({ components }: VTTProps) {
       })),
     }));
     appendLog(
-      `Command Auction resolved: ${state.vaults[winnerIdx].playerName} elected Squad Leader with a bid of ${bestBid} [CR] (tie-breaker: ${bestPip} [PIP]).`
+      `Command Auction resolved: ${state.vaults[winnerIdx].playerName} elected Squad Leader with a bid of [${bestBid} CR] (tie-breaker: [${bestPip} PIP]).`
     );
   };
 
@@ -510,9 +768,8 @@ export function VirtualTabletop({ components }: VTTProps) {
       .map((id) => items.find((i) => i.id === id))
       .filter(Boolean) as GameComponent[];
 
-    // Check slot usage (Head, Body, Legs, Pack, and up to 2 Hand slots)
     const candidateSlots = candidate.stats?.slots_required || [];
-    let handCount = currentItems.reduce(
+    const handCount = currentItems.reduce(
       (sum, it) =>
         sum +
         (it.stats?.slots_required || []).filter((s) =>
@@ -562,14 +819,43 @@ export function VirtualTabletop({ components }: VTTProps) {
 
   return (
     <div className="vtt-container">
-      {/* Top Macro Campaign & Doom Bar */}
+      {/* ====================================================================
+          GUIDED 7-STEP PHASE SEQUENCER & CONTEXTUAL RULES COACH
+         ==================================================================== */}
       <section className="vtt-panel">
         <div className="vtt-panel-title">
-          <span>AWAY TEAM VIRTUAL TABLETOP (VTT) — COMMAND & CAMPAIGN HUD</span>
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <span>🧭 GUIDED 7-STEP GAME LOOP SEQUENCER & TACTICAL RULES COACH</span>
+          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
             <button
               type="button"
               className="vtt-btn"
+              title="Move to the previous step in the official Sequence of Play"
+              onClick={() =>
+                setState((p) => ({
+                  ...p,
+                  sequenceStep: p.sequenceStep > 1 ? p.sequenceStep - 1 : 7,
+                }))
+              }
+            >
+              ◀ Prev Step
+            </button>
+            <button
+              type="button"
+              className="vtt-btn vtt-btn-primary"
+              title="Advance to the next step in the official Sequence of Play"
+              onClick={() =>
+                setState((p) => ({
+                  ...p,
+                  sequenceStep: p.sequenceStep < 7 ? p.sequenceStep + 1 : 1,
+                }))
+              }
+            >
+              Next Step ▶
+            </button>
+            <button
+              type="button"
+              className="vtt-btn"
+              title="Export current campaign, vaults, and squad state as a JSON save file"
               onClick={() => {
                 const blob = new Blob([JSON.stringify(state, null, 2)], {
                   type: 'application/json',
@@ -586,6 +872,7 @@ export function VirtualTabletop({ components }: VTTProps) {
             <button
               type="button"
               className="vtt-btn vtt-btn-danger"
+              title="Reset the entire Virtual Tabletop back to initial Mission 1 state"
               onClick={() => {
                 setState(DEFAULT_STATE);
                 localStorage.removeItem(STORAGE_KEY);
@@ -596,6 +883,109 @@ export function VirtualTabletop({ components }: VTTProps) {
           </div>
         </div>
 
+        {/* 7-Step Clickable Sequencer Bar */}
+        <div className="vtt-sequencer-bar">
+          {SEQUENCE_STEPS.map((st) => {
+            const isActive = state.sequenceStep === st.step;
+            const isDone = state.sequenceStep > st.step;
+            return (
+              <button
+                key={st.step}
+                type="button"
+                className={`vtt-step-pill ${isActive ? 'active' : isDone ? 'completed' : ''}`}
+                title={st.coachHint}
+                onClick={() => {
+                  setState((p) => ({ ...p, sequenceStep: st.step }));
+                  if (st.step === 7) setActiveTab('medbay');
+                  else setActiveTab('stage');
+                }}
+              >
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.66rem',
+                    color: isActive
+                      ? 'var(--currency-effort)'
+                      : isDone
+                      ? '#34d399'
+                      : 'var(--text-muted)',
+                  }}
+                >
+                  {isDone ? '✓ COMPLETED' : isActive ? '● ACTIVE STEP' : `STEP 0${st.step}`}
+                </div>
+                <strong style={{ fontSize: '0.78rem' }}>{st.shortTitle}</strong>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Contextual Rules Coach & Live Probability Hint */}
+        <div className="vtt-coach-banner">
+          <div style={{ flex: 1, minWidth: '280px' }}>
+            <div
+              style={{
+                fontFamily: 'var(--font-mono)',
+                fontSize: '0.72rem',
+                color: 'var(--currency-effort)',
+                fontWeight: 700,
+                marginBottom: '0.2rem',
+              }}
+            >
+              💡 ACTIVE STEP RULES COACH — {activeStepMeta.fullTitle}
+            </div>
+            <div style={{ color: '#dbe4f0', lineHeight: 1.5 }}>
+              <SemanticText text={activeStepMeta.coachHint} />
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: '0.55rem 0.85rem',
+              borderRadius: '6px',
+              background: 'rgba(15, 23, 42, 0.88)',
+              border: '1px solid var(--border-strong)',
+              fontFamily: 'var(--font-mono)',
+              fontSize: '0.74rem',
+              minWidth: '255px',
+            }}
+            title="Live 1,000-trial Monte Carlo simulation of your currently committed static dice against Target Difficulty D"
+          >
+            <div style={{ color: 'var(--text-secondary)', fontSize: '0.68rem' }}>
+              PRE-ROLL MONTE CARLO FORECAST ({squadSummary.totalCommittedDice}d6 vs D={state.targetDifficulty})
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.25rem' }}>
+              <span>Clear Odds:</span>
+              <strong
+                style={{
+                  color:
+                    liveSimulation.clearProbabilityPct >= 80
+                      ? '#34d399'
+                      : liveSimulation.clearProbabilityPct >= 55
+                      ? '#fbbf24'
+                      : '#f87171',
+                }}
+              >
+                {liveSimulation.clearProbabilityPct}% (E={squadSummary.expectedSuccesses} ES)
+              </strong>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Phase 1 Early Clear:</span>
+              <strong style={{ color: '#38bdf8' }}>
+                {liveSimulation.earlyPhase1ClearProbabilityPct}%
+              </strong>
+            </div>
+            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <span>Momentum ([MOM]) Odds:</span>
+              <strong style={{ color: '#a855f7' }}>
+                {liveSimulation.momentumProbabilityPct}%
+              </strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Top Macro Campaign & Doom Bar */}
+      <section className="vtt-panel">
         <div
           style={{
             display: 'grid',
@@ -605,7 +995,7 @@ export function VirtualTabletop({ components }: VTTProps) {
           }}
         >
           {/* Campaign Selector */}
-          <div>
+          <div title="Select the active Campaign Dossier (sets Max Doom threshold and narrative mission arc)">
             <label style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block' }}>
               ACTIVE CAMPAIGN DOSSIER
             </label>
@@ -632,7 +1022,7 @@ export function VirtualTabletop({ components }: VTTProps) {
           </div>
 
           {/* Mission Selector */}
-          <div>
+          <div title="Select the active Campaign Mission or Themed Side-Mission">
             <label style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block' }}>
               ACTIVE MISSION / SIDE-MISSION
             </label>
@@ -666,6 +1056,7 @@ export function VirtualTabletop({ components }: VTTProps) {
           {/* Doom & Momentum Trackers */}
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
             <div
+              title="Meta Campaign Doom Clock ([DOOM]) — Advances ONLY when an entire Campaign Mission fails or retreats. Reaching Max Doom causes immediate Agency Collapse!"
               style={{
                 padding: '0.4rem 0.7rem',
                 borderRadius: '6px',
@@ -687,7 +1078,7 @@ export function VirtualTabletop({ components }: VTTProps) {
                   -
                 </button>
                 <strong style={{ fontSize: '1.05rem', color: '#ff8080' }}>
-                  {state.doom} / {activeCampaign?.stats?.max_doom || 4} [DOOM]
+                  {state.doom} / {activeCampaign?.stats?.max_doom || 3} [DOOM]
                 </strong>
                 <button
                   type="button"
@@ -702,6 +1093,7 @@ export function VirtualTabletop({ components }: VTTProps) {
             </div>
 
             <div
+              title="In-Mission Operational Momentum ([MOM]) — Transient state earned when clearing a Stage by >= D+2 successes (MOM = Successes - D - 1). Spend [1 MOM] to restore 1 spent static die to a participating roller!"
               style={{
                 padding: '0.4rem 0.7rem',
                 borderRadius: '6px',
@@ -750,13 +1142,32 @@ export function VirtualTabletop({ components }: VTTProps) {
       <section className="vtt-panel">
         <div className="vtt-panel-title">
           <span>FACTION VAULTS & COMMAND AUCTION</span>
-          <button
-            type="button"
-            className="vtt-btn vtt-btn-primary"
-            onClick={handleResolveCommandAuction}
-          >
-            👑 Resolve Command Auction (Elect Squad Leader)
-          </button>
+          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+            <button
+              type="button"
+              className="vtt-btn"
+              title="Squad Leader Command Ability (Transition Step): Spend [2 EF] from Leader's Vault to restore +1 spent static die to all 4 operatives"
+              onClick={() => handleLogisticalRefresh(2)}
+            >
+              🚁 Logistical Refresh T1 ([2 EF] → +1 Die All)
+            </button>
+            <button
+              type="button"
+              className="vtt-btn"
+              title="Squad Leader Command Ability (Transition Step): Spend [3 EF] from Leader's Vault to restore +2 spent static dice to all 4 operatives"
+              onClick={() => handleLogisticalRefresh(3)}
+            >
+              🚁 Logistical Refresh T2 ([3 EF] → +2 Dice All)
+            </button>
+            <button
+              type="button"
+              className="vtt-btn vtt-btn-primary"
+              title="Resolve the pre-mission Command Auction using the canonical tie-breaker hierarchy: Highest [CR] Bid → Highest [PIP] → Candidate [LOY]"
+              onClick={handleResolveCommandAuction}
+            >
+              👑 Resolve Command Auction (Elect Squad Leader)
+            </button>
+          </div>
         </div>
 
         <div className="vtt-grid-4">
@@ -786,7 +1197,10 @@ export function VirtualTabletop({ components }: VTTProps) {
                   <strong>
                     {v.playerName} {v.isSquadLeader ? '👑 SQUAD LEADER' : ''}
                   </strong>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} title="Endgame Victory Point Score Tracker (Not a Spendable Currency)">
+                  <div
+                    style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}
+                    title="Endgame Victory Point Score Tracker (Not a Spendable Currency)"
+                  >
                     <span className="semantic-badge badge-currency-vp">🏆 {v.vp} VP</span>
                     <button
                       type="button"
@@ -872,13 +1286,29 @@ export function VirtualTabletop({ components }: VTTProps) {
                 >
                   {(
                     [
-                      ['credits', 'CR', 'badge-currency-cr'],
-                      ['effort', 'EF', 'badge-currency-ef'],
-                      ['pip', 'PIP', 'badge-currency-pip'],
+                      [
+                        'credits',
+                        'CR',
+                        'badge-currency-cr',
+                        'Credits [CR] (0.50 ES) — Tradeable in Binding Promises. Spent on Armory gear, HQ sponsorships, and Command Auctions.',
+                      ],
+                      [
+                        'effort',
+                        'EF',
+                        'badge-currency-ef',
+                        'Effort [EF] (1.33 ES) — Vault-bound fuel. Spent on [1 EF] Class Abilities, [Complex] items, 0 HP Stabilization, and Logistical Refresh.',
+                      ],
+                      [
+                        'pip',
+                        'PIP',
+                        'badge-currency-pip',
+                        'Political Influence [PIP] (6.00 ES) — Vault-bound executive leverage. Breaks auction ties, pays Vulture Tax, and scores 2 VP each at endgame.',
+                      ],
                     ] as const
-                  ).map(([field, label, badgeClass]) => (
+                  ).map(([field, label, badgeClass, tooltip]) => (
                     <div
                       key={field}
+                      title={tooltip}
                       style={{
                         padding: '0.35rem',
                         borderRadius: '6px',
@@ -932,6 +1362,7 @@ export function VirtualTabletop({ components }: VTTProps) {
 
                 {/* Command Bid Input */}
                 <div
+                  title="Enter your Faction's Credit [CR] bid for the Squad Leader role (Tie-breaker: Highest [PIP] → Candidate [LOY])"
                   style={{
                     marginTop: '0.55rem',
                     display: 'flex',
@@ -982,6 +1413,7 @@ export function VirtualTabletop({ components }: VTTProps) {
             ['squad', '🎒 2. Away Team Loadouts (6-Slot Equipment Validator)'],
             ['hq', '🏛 3. Sponsored HQ Facilities & Landmarks'],
             ['medbay', '🏥 4. Med Bay Triage & Critical Trauma Roller'],
+            ['simulator', '📊 5. Balance & Monte Carlo Simulator (1,000 Trials)'],
           ] as const
         ).map(([tabKey, label]) => (
           <button
@@ -1003,7 +1435,7 @@ export function VirtualTabletop({ components }: VTTProps) {
               ACTIVE STAGE: {currentStage?.name || 'Stage 1'} (Stage {state.stageIndex + 1} of{' '}
               {Math.max(1, activeStages.length)})
             </span>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {activeStages.map((st: any, sIdx: number) => (
                 <button
                   key={sIdx}
@@ -1013,8 +1445,10 @@ export function VirtualTabletop({ components }: VTTProps) {
                     setState((p) => ({
                       ...p,
                       stageIndex: sIdx,
+                      sequenceStep: 1,
                       overrideFocus: null,
                       secondaryConcurrentFocus: null,
+                      squad: p.squad.map((op) => ({ ...op, rolledDice: [] })),
                     }))
                   }
                 >
@@ -1037,7 +1471,7 @@ export function VirtualTabletop({ components }: VTTProps) {
               marginBottom: '1rem',
             }}
           >
-            <div>
+            <div title="Step 1 Dynamic Focus Swaps: The Squad Leader may shift a non-combat room to [Combat] (+1/+2 Difficulty) via Force Breach, or shift a [Combat] room to [Infiltrate] via Tactical Bypass.">
               <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
                 EFFECTIVE OPERATIONAL FOCUS
               </div>
@@ -1053,13 +1487,17 @@ export function VirtualTabletop({ components }: VTTProps) {
                   className="vtt-btn"
                   style={{ fontSize: '0.72rem' }}
                   onClick={() => {
-                    setState((p) => ({ ...p, overrideFocus: 'combat' }));
+                    setState((p) => ({
+                      ...p,
+                      overrideFocus: 'combat',
+                      targetDifficulty: p.targetDifficulty + 1,
+                    }));
                     appendLog(
-                      'Squad Leader executed Force Breach (2 [EF]): Stage Focus shifted to [Combat] (+2 Target Difficulty).'
+                      'Squad Leader declared Force Breach: Stage Focus shifted to [Combat] (+1 Target Difficulty).'
                     );
                   }}
                 >
-                  Force Breach → [Combat]
+                  💥 Force Breach → [Combat]
                 </button>
                 <button
                   type="button"
@@ -1068,18 +1506,18 @@ export function VirtualTabletop({ components }: VTTProps) {
                   onClick={() => {
                     setState((p) => ({ ...p, overrideFocus: 'infiltrate' }));
                     appendLog(
-                      'Squad Leader executed Tactical Bypass (2 [EF]): Stage Focus shifted to [Infiltrate].'
+                      'Squad Leader declared Tactical Bypass: Stage Focus shifted to [Infiltrate].'
                     );
                   }}
                 >
-                  Bypass → [Infiltrate]
+                  🌿 Bypass → [Infiltrate]
                 </button>
               </div>
             </div>
 
-            <div>
+            <div title="Step 1 Class Powers: Scientist's Dual-Vector Mapping ([1 EF]) adds a second concurrent Focus so operatives matching either Focus roll at 3+ in Phase 1!">
               <label style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block' }}>
-                DIPLOMAT SHIFT / SCIENTIST DUAL-VECTOR FOCUS
+                FOCUS OVERRIDE / SCIENTIST DUAL-VECTOR ([1 EF])
               </label>
               <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.3rem' }}>
                 <select
@@ -1137,7 +1575,7 @@ export function VirtualTabletop({ components }: VTTProps) {
               </div>
             </div>
 
-            <div>
+            <div title="Step 1 Stage Modifier: Draw 1 Stage Modifier card face-up when entering the stage.">
               <label style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block' }}>
                 ATTACHED STAGE MODIFIER CARD
               </label>
@@ -1171,9 +1609,9 @@ export function VirtualTabletop({ components }: VTTProps) {
               )}
             </div>
 
-            <div>
+            <div title="Stage Target Difficulty (D): Standard stages require 3–6 Successes. Clearing by >= D+2 generates Operational Momentum (MOM = Successes - D - 1).">
               <div style={{ fontSize: '0.72rem', color: 'var(--text-secondary)' }}>
-                TARGET DIFFICULTY (3.5 × P + M)
+                STAGE TARGET DIFFICULTY (D)
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginTop: '0.3rem' }}>
                 <button
@@ -1233,20 +1671,40 @@ export function VirtualTabletop({ components }: VTTProps) {
               </div>
               <div style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', marginTop: '0.2rem' }}>
                 {squadSummary.momentumEarned
-                  ? '⚡ OPERATIONAL MOMENTUM ACHIEVED (>= D+2)! Gain +1 [MOM] token!'
-                  : `Need ${Math.max(0, state.targetDifficulty + 2 - squadSummary.totalSuccesses)} more successes for Operational Momentum [MOM].`}{' '}
-                • Out-of-Focus Natural 1 Backfires: <strong>{squadSummary.totalBackfires}</strong>
+                  ? `⚡ OPERATIONAL MOMENTUM ACHIEVED (>= D+2)! Generated +${squadSummary.momentumGenerated} [MOM] die refund(s)!`
+                  : `Need ${Math.max(
+                      0,
+                      state.targetDifficulty + 2 - squadSummary.totalSuccesses
+                    )} more successes for Operational Momentum [MOM].`}{' '}
+                • Natural 1 Backfires: <strong>{squadSummary.totalBackfires}</strong>
               </div>
             </div>
 
-            <button
-              type="button"
-              className="vtt-btn vtt-btn-primary"
-              style={{ fontSize: '0.95rem', padding: '0.6rem 1.2rem' }}
-              onClick={handleRollSquadPools}
-            >
-              🎲 Roll All Active Static Dice Pools
-            </button>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              <button
+                type="button"
+                className="vtt-btn"
+                style={{
+                  fontSize: '0.86rem',
+                  padding: '0.55rem 0.95rem',
+                  borderColor: '#38bdf8',
+                  color: '#7dd3fc',
+                }}
+                title="Step 2 (Phase 1 Specialists): Roll ONLY Primary Focus (3+) operatives first. If they reach D, Early Resolution clears the stage and Support operatives save all their static dice!"
+                onClick={handleRollPhase1Specialists}
+              >
+                ⚡ Step 2: Roll Phase 1 Specialists (3+)
+              </button>
+              <button
+                type="button"
+                className="vtt-btn vtt-btn-primary"
+                style={{ fontSize: '0.9rem', padding: '0.55rem 1.1rem' }}
+                title="Roll all committed static dice pools across the active Away Team"
+                onClick={handleRollSquadPools}
+              >
+                🎲 Roll All Active Static Dice Pools
+              </button>
+            </div>
           </div>
 
           {/* 4-Operative Dice Resolution Cards */}
@@ -1260,112 +1718,192 @@ export function VirtualTabletop({ components }: VTTProps) {
                     padding: '0.9rem',
                     borderRadius: '8px',
                     background: 'var(--bg-card)',
-                    border: '1px solid var(--border-subtle)',
+                    border: ev.isPhase1Specialist
+                      ? '1px solid rgba(56, 189, 248, 0.5)'
+                      : '1px solid var(--border-subtle)',
                   }}
                 >
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
                       <strong style={{ fontSize: '0.92rem' }}>{ev.char?.title}</strong>
-                      <div style={{ fontSize: '0.72rem', color: 'var(--currency-effort)', fontFamily: 'var(--font-mono)' }}>
+                      <div
+                        style={{
+                          fontSize: '0.72rem',
+                          color: ev.isPhase1Specialist ? '#38bdf8' : 'var(--text-secondary)',
+                          fontFamily: 'var(--font-mono)',
+                        }}
+                      >
                         {ev.roleLabel}
                       </div>
                     </div>
-                    <span className="semantic-badge badge-currency-loy">LOY {op.loyalty}</span>
+                    <span
+                      className="semantic-badge badge-currency-loy"
+                      title="Personal Operative Loyalty Rank ([LOY]) — Non-tradeable rank attached to this card. Unlocks Faction Loyalty Tiers 1–4 and scores 2 VP per LOY at endgame."
+                    >
+                      LOY {op.loyalty}
+                    </span>
                   </div>
 
-                  {/* Operative Affinity & Stats */}
+                  {/* Operative Affinity & Static Pool Status */}
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.35rem', margin: '0.55rem 0' }}>
                     <FocusBadge focus={ev.char?.focus_affinity?.primary} roleLabel="1°" />
                     <FocusBadge focus={ev.char?.focus_affinity?.secondary} roleLabel="2°" />
-                    <span className="stat-pill" style={{ color: '#f87171' }}>
+                    <span
+                      className="stat-pill"
+                      style={{ color: '#f87171' }}
+                      title="Current Hit Points / Maximum Hit Points"
+                    >
                       ♥ {op.currentHp}/{ev.maxHp} HP
                     </span>
-                    <span className="stat-pill" style={{ color: '#38bdf8' }}>
-                      🎲 {ev.totalDice} Pool
+                    <span
+                      className="stat-pill"
+                      style={{ color: '#38bdf8' }}
+                      title={`Static Dice Pool: ${ev.availableStaticDice} Available / ${ev.spentDice} Spent (${ev.totalDice} Max Cap)`}
+                    >
+                      🎲 {ev.availableStaticDice}/{ev.totalDice} Avail ({ev.spentDice} Spent)
                     </span>
                   </div>
 
-                  {/* Bonus Dice & HP Adjusters */}
+                  {/* Per-Stage Static Dice Commitment & Temp Dice Controls */}
                   <div
                     style={{
-                      display: 'flex',
-                      justifyContent: 'space-between',
-                      fontSize: '0.75rem',
+                      display: 'grid',
+                      gridTemplateColumns: 'repeat(3, 1fr)',
+                      gap: '0.35rem',
+                      fontSize: '0.72rem',
                       marginBottom: '0.6rem',
-                      color: 'var(--text-secondary)',
+                      padding: '0.4rem',
+                      borderRadius: '6px',
+                      background: 'var(--bg-void)',
+                      border: '1px solid var(--border-subtle)',
                     }}
                   >
-                    <span>
-                      Temp Dice ({op.bonusDice >= 0 ? `+${op.bonusDice}` : op.bonusDice}):{' '}
-                      <button
-                        type="button"
-                        className="vtt-btn"
-                        style={{ padding: '0 6px' }}
-                        onClick={() =>
-                          setState((p) => ({
-                            ...p,
-                            squad: p.squad.map((s, i) =>
-                              i === slotIdx ? { ...s, bonusDice: s.bonusDice - 1 } : s
-                            ),
-                          }))
-                        }
-                      >
-                        -
-                      </button>{' '}
-                      <button
-                        type="button"
-                        className="vtt-btn"
-                        style={{ padding: '0 6px' }}
-                        onClick={() =>
-                          setState((p) => ({
-                            ...p,
-                            squad: p.squad.map((s, i) =>
-                              i === slotIdx ? { ...s, bonusDice: s.bonusDice + 1 } : s
-                            ),
-                          }))
-                        }
-                      >
-                        +
-                      </button>
-                    </span>
+                    <div title="Choose how many finite Static Dice from this operative's Available Pool to commit to this stage">
+                      <div style={{ color: 'var(--text-muted)' }}>Commit: {ev.committedDice}d6</div>
+                      <div style={{ display: 'flex', gap: '0.2rem', marginTop: '0.2rem' }}>
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{ padding: '0 6px' }}
+                          onClick={() =>
+                            setState((p) => ({
+                              ...p,
+                              squad: p.squad.map((s, i) =>
+                                i === slotIdx
+                                  ? {
+                                      ...s,
+                                      committedDice: Math.max(0, ev.committedDice - 1),
+                                    }
+                                  : s
+                              ),
+                            }))
+                          }
+                        >
+                          -
+                        </button>
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{ padding: '0 6px' }}
+                          onClick={() =>
+                            setState((p) => ({
+                              ...p,
+                              squad: p.squad.map((s, i) =>
+                                i === slotIdx
+                                  ? {
+                                      ...s,
+                                      committedDice: Math.min(
+                                        ev.availableStaticDice,
+                                        ev.committedDice + 1
+                                      ),
+                                    }
+                                  : s
+                              ),
+                            }))
+                          }
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
 
-                    <span>
-                      HP:{' '}
-                      <button
-                        type="button"
-                        className="vtt-btn"
-                        style={{ padding: '0 6px' }}
-                        onClick={() =>
-                          setState((p) => ({
-                            ...p,
-                            squad: p.squad.map((s, i) =>
-                              i === slotIdx
-                                ? { ...s, currentHp: Math.max(0, s.currentHp - 1) }
-                                : s
-                            ),
-                          }))
-                        }
-                      >
-                        -1
-                      </button>{' '}
-                      <button
-                        type="button"
-                        className="vtt-btn"
-                        style={{ padding: '0 6px' }}
-                        onClick={() =>
-                          setState((p) => ({
-                            ...p,
-                            squad: p.squad.map((s, i) =>
-                              i === slotIdx
-                                ? { ...s, currentHp: Math.min(ev.maxHp, s.currentHp + 1) }
-                                : s
-                            ),
-                          }))
-                        }
-                      >
-                        +1
-                      </button>
-                    </span>
+                    <div title="Temporary Bonus Dice (e.g. Soldier Lock and Load +2d6 for [1 EF]). Returned to the box after rolling without depleting Static Pool.">
+                      <div style={{ color: 'var(--text-muted)' }}>
+                        Temp: {op.bonusDice >= 0 ? `+${op.bonusDice}` : op.bonusDice}d6
+                      </div>
+                      <div style={{ display: 'flex', gap: '0.2rem', marginTop: '0.2rem' }}>
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{ padding: '0 6px' }}
+                          onClick={() =>
+                            setState((p) => ({
+                              ...p,
+                              squad: p.squad.map((s, i) =>
+                                i === slotIdx ? { ...s, bonusDice: s.bonusDice - 1 } : s
+                              ),
+                            }))
+                          }
+                        >
+                          -
+                        </button>
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{ padding: '0 6px' }}
+                          onClick={() =>
+                            setState((p) => ({
+                              ...p,
+                              squad: p.squad.map((s, i) =>
+                                i === slotIdx ? { ...s, bonusDice: s.bonusDice + 1 } : s
+                              ),
+                            }))
+                          }
+                        >
+                          +
+                        </button>
+                      </div>
+                    </div>
+
+                    <div title="Adjust operative Hit Points (Natural 1 Backfires inflict 1 HP damage; 0 HP opens the Emergency Stabilization Window)">
+                      <div style={{ color: 'var(--text-muted)' }}>HP Adjust</div>
+                      <div style={{ display: 'flex', gap: '0.2rem', marginTop: '0.2rem' }}>
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{ padding: '0 6px' }}
+                          onClick={() =>
+                            setState((p) => ({
+                              ...p,
+                              squad: p.squad.map((s, i) =>
+                                i === slotIdx
+                                  ? { ...s, currentHp: Math.max(0, s.currentHp - 1) }
+                                  : s
+                              ),
+                            }))
+                          }
+                        >
+                          -1
+                        </button>
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{ padding: '0 6px' }}
+                          onClick={() =>
+                            setState((p) => ({
+                              ...p,
+                              squad: p.squad.map((s, i) =>
+                                i === slotIdx
+                                  ? { ...s, currentHp: Math.min(ev.maxHp, s.currentHp + 1) }
+                                  : s
+                              ),
+                            }))
+                          }
+                        >
+                          +1
+                        </button>
+                      </div>
+                    </div>
                   </div>
 
                   {/* Rolled Dice Display */}
@@ -1384,13 +1922,16 @@ export function VirtualTabletop({ components }: VTTProps) {
                     }}
                   >
                     {op.rolledDice.length === 0 ? (
-                      <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
-                        No dice rolled yet for this stage.
+                      <span style={{ fontSize: '0.74rem', color: 'var(--text-muted)' }}>
+                        Ready to roll {ev.effectiveRollCount}d6 (Target {ev.threshold}+, E=
+                        {Math.round(ev.effectiveRollCount * expectedSuccessPerDie(ev.threshold) * 100) /
+                          100}{' '}
+                        ES).
                       </span>
                     ) : (
                       op.rolledDice.map((val, dIdx) => {
                         const isHit = val >= ev.threshold;
-                        const isBackfire = ev.isOutOfFocus && val === 1;
+                        const isBackfire = val === 1;
                         return (
                           <span
                             key={dIdx}
@@ -1401,7 +1942,7 @@ export function VirtualTabletop({ components }: VTTProps) {
                               isHit
                                 ? `Success (${val} >= ${ev.threshold}+)`
                                 : isBackfire
-                                ? 'Natural 1 Out-of-Focus Backfire!'
+                                ? 'Natural 1 Backfire! Inflicts 1 HP damage unless mitigated.'
                                 : `Miss (${val} < ${ev.threshold}+)`
                             }
                           >
@@ -1412,18 +1953,45 @@ export function VirtualTabletop({ components }: VTTProps) {
                     )}
                   </div>
 
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <span style={{ fontSize: '0.78rem', fontWeight: 700, color: '#34d399' }}>
+                  <div
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      flexWrap: 'wrap',
+                      gap: '0.35rem',
+                    }}
+                  >
+                    <span style={{ fontSize: '0.76rem', fontWeight: 700, color: '#34d399' }}>
                       Hits: {ev.hits} {ev.backfires > 0 ? `• ⚠ ${ev.backfires} Backfire(s)` : ''}
                     </span>
-                    <button
-                      type="button"
-                      className="vtt-btn"
-                      style={{ fontSize: '0.72rem' }}
-                      onClick={() => handleConvertMissToHit(slotIdx)}
-                    >
-                      ⚡ Convert 1 Miss → Hit
-                    </button>
+                    <div style={{ display: 'flex', gap: '0.3rem' }}>
+                      {state.momentumTokens > 0 && ev.spentDice > 0 && (
+                        <button
+                          type="button"
+                          className="vtt-btn"
+                          style={{
+                            fontSize: '0.68rem',
+                            padding: '0.2rem 0.45rem',
+                            borderColor: 'var(--currency-momentum)',
+                            color: '#34d399',
+                          }}
+                          title="Spend [1 MOM] to restore 1 spent static die back to this operative's Available Pool (Skin-in-the-Game rule: must have rolled >= 1 die)"
+                          onClick={() => handleRefundDieWithMomentum(slotIdx)}
+                        >
+                          ♻ +1 Die (-1 MOM)
+                        </button>
+                      )}
+                      <button
+                        type="button"
+                        className="vtt-btn"
+                        style={{ fontSize: '0.7rem', padding: '0.2rem 0.5rem' }}
+                        title="Convert 1 rolled miss into a guaranteed hit (e.g. via reroll/calibration item or ability)"
+                        onClick={() => handleConvertMissToHit(slotIdx)}
+                      >
+                        ⚡ Miss → Hit
+                      </button>
+                    </div>
                   </div>
                 </div>
               );
@@ -1466,6 +2034,8 @@ export function VirtualTabletop({ components }: VTTProps) {
                                 ...s,
                                 characterId: e.target.value,
                                 currentHp: newChar?.stats?.hp_cap || 3,
+                                spentDice: 0,
+                                committedDice: 3,
                                 rolledDice: [],
                               }
                             : s
@@ -1728,6 +2298,179 @@ export function VirtualTabletop({ components }: VTTProps) {
                 </div>
               );
             })}
+          </div>
+        </section>
+      )}
+
+      {/* TAB 5: MONTE CARLO BALANCE & STATISTICS SIMULATOR */}
+      {activeTab === 'simulator' && (
+        <section className="vtt-panel">
+          <div className="vtt-panel-title">
+            <span>
+              📊 MONTE CARLO STAGE SIMULATOR & 9.0 ES BALANCE AUDITOR ({liveSimulation.trials} TRIALS)
+            </span>
+            <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+              <select
+                value={simTrials}
+                onChange={(e) => setSimTrials(Number(e.target.value))}
+                style={{
+                  padding: '0.35rem 0.6rem',
+                  borderRadius: '6px',
+                  background: 'var(--bg-void)',
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--border-strong)',
+                  fontSize: '0.78rem',
+                }}
+              >
+                <option value={500}>500 Monte Carlo Trials</option>
+                <option value={1000}>1,000 Monte Carlo Trials</option>
+                <option value={5000}>5,000 Monte Carlo Trials</option>
+              </select>
+              <button
+                type="button"
+                className="vtt-btn vtt-btn-primary"
+                onClick={() => setSimSeedBump((n) => n + 1)}
+              >
+                🔄 Re-Run Monte Carlo Simulation
+              </button>
+            </div>
+          </div>
+
+          {/* Simulation Metrics Grid */}
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))',
+              gap: '0.85rem',
+              marginBottom: '1.15rem',
+            }}
+          >
+            <div className="wiki-pillar-card">
+              <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+                STAGE CLEAR PROBABILITY (≥ {state.targetDifficulty} HITS)
+              </div>
+              <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#34d399', marginTop: '0.2rem' }}>
+                {liveSimulation.clearProbabilityPct}%
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                Avg Rolled Successes: {liveSimulation.averageSuccesses} (Theory:{' '}
+                {liveSimulation.theoreticalExpectedSuccesses} ES)
+              </div>
+            </div>
+
+            <div className="wiki-pillar-card">
+              <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+                PHASE 1 EARLY RESOLUTION RATE
+              </div>
+              <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#38bdf8', marginTop: '0.2rem' }}>
+                {liveSimulation.earlyPhase1ClearProbabilityPct}%
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                Support (4+/5+) saves dice when Phase 1 clears
+              </div>
+            </div>
+
+            <div className="wiki-pillar-card">
+              <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+                MOMENTUM ([MOM]) GENERATION RATE
+              </div>
+              <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#c084fc', marginTop: '0.2rem' }}>
+                {liveSimulation.momentumProbabilityPct}%
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                Avg Refunded Dice: +{liveSimulation.averageMomentumGenerated} [MOM] / stage
+              </div>
+            </div>
+
+            <div className="wiki-pillar-card">
+              <div style={{ fontSize: '0.7rem', fontFamily: 'var(--font-mono)', color: 'var(--text-secondary)' }}>
+                EXPECTED BACKFIRE ATTRITION
+              </div>
+              <div style={{ fontSize: '1.65rem', fontWeight: 800, color: '#f87171', marginTop: '0.2rem' }}>
+                -{liveSimulation.averageHpLost} HP
+              </div>
+              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                0 HP Emergency Stabilization Risk: {liveSimulation.zeroHpCasualtyProbabilityPct}%
+              </div>
+            </div>
+          </div>
+
+          <div
+            style={{
+              padding: '0.8rem 1rem',
+              borderRadius: '6px',
+              background: 'rgba(0, 229, 255, 0.08)',
+              borderLeft: '4px solid var(--currency-effort)',
+              marginBottom: '1.25rem',
+              fontSize: '0.86rem',
+            }}
+          >
+            <strong>Simulator Tactical Verdict:</strong>{' '}
+            <SemanticText text={liveSimulation.tacticalVerdict} />
+          </div>
+
+          {/* 24-Operative 9.0 ES Ledger Verification Table */}
+          <h3 style={{ fontFamily: 'var(--font-display)', margin: '0 0 0.6rem 0' }}>
+            24-Operative 9.0 ES Mathematical Balance Ledger Audit
+          </h3>
+          <div style={{ overflowX: 'auto' }}>
+            <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.78rem' }}>
+              <thead>
+                <tr style={{ background: 'var(--bg-card)', textAlign: 'left' }}>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Operative</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Class</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Primary (3+)</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Secondary (4+)</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>HP (1.5 ES)</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Static Dice (0.5 ES)</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Class Offset</th>
+                  <th style={{ padding: '0.5rem', border: '1px solid var(--border-subtle)' }}>Total Budget</th>
+                </tr>
+              </thead>
+              <tbody>
+                {characters.map((ch) => {
+                  const hp = ch.stats?.hp_cap || 3;
+                  const dice = ch.stats?.static_dice || 6;
+                  const lc = (ch.category || '').toLowerCase();
+                  const classOff = lc === 'survivalist' ? 1.0 : lc === 'scientist' ? 0.5 : 0.0;
+                  const powerEs = Math.max(0.5, 9.0 - hp * 1.5 - dice * 0.5 - classOff);
+                  const audit = evaluateCharacterBudgetES({
+                    hpCap: hp,
+                    staticDice: dice,
+                    powerEs,
+                    className: ch.category || 'soldier',
+                  });
+                  return (
+                    <tr key={ch.id}>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)' }}>
+                        <strong>{ch.title}</strong>
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)', textTransform: 'capitalize' }}>
+                        {ch.category}
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)' }}>
+                        <FocusBadge focus={ch.focus_affinity?.primary} />
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)' }}>
+                        <FocusBadge focus={ch.focus_affinity?.secondary} />
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-mono)' }}>
+                        {hp} HP ({audit.hpEs.toFixed(1)} ES)
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-mono)' }}>
+                        {dice}d6 ({audit.diceEs.toFixed(1)} ES)
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-mono)' }}>
+                        +{audit.classOffsetEs.toFixed(1)} ES
+                      </td>
+                      <td style={{ padding: '0.45rem', border: '1px solid var(--border-subtle)', fontFamily: 'var(--font-mono)', color: '#34d399', fontWeight: 700 }}>
+                        {audit.totalEs.toFixed(1)} ES ✓
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </section>
       )}
