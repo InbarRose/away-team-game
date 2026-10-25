@@ -211,4 +211,45 @@ describe('Suite 04: Semantic Design Tokens, SVG Assets & VTT Rules Engine Functi
     assert.equal(resolveCriticalInjuryRoll(4).dicePenalty, 1);
     assert.equal(resolveCriticalInjuryRoll(6).hpPenalty, 1);
   });
+
+  it('enforces dedicated Wiki pages (no popups), inter-clicky links, compound quantity tokens, and the 4-tier currency/state/tracker taxonomy', () => {
+    const wikiPortalSrc = fs.readFileSync(
+      path.join(ROOT_DIR, 'src', 'components', 'WikiPortal.tsx'),
+      'utf8'
+    );
+    const semanticSrc = fs.readFileSync(
+      path.join(ROOT_DIR, 'src', 'components', 'SemanticText.tsx'),
+      'utf8'
+    );
+    const vaultEconomyMd = fs.readFileSync(
+      path.join(ROOT_DIR, 'game', 'core', 'vault_economy.md'),
+      'utf8'
+    );
+    const allComponents = JSON.parse(
+      fs.readFileSync(path.join(ROOT_DIR, 'manifests', 'exports', 'all_components.json'), 'utf8')
+    );
+
+    // 1. WikiPortal uses dedicated hash routes (#/wiki/component/..., #/wiki/focus/..., #/wiki/class/..., #/wiki/concept/currencies)
+    assert.ok(wikiPortalSrc.includes('#/wiki/component/'));
+    assert.ok(wikiPortalSrc.includes('#/wiki/focus/'));
+    assert.ok(wikiPortalSrc.includes('#/wiki/class/'));
+    assert.ok(wikiPortalSrc.includes('#/wiki/concept/currencies'));
+    assert.ok(!wikiPortalSrc.includes('✕ Close Dossier'), 'Modal popups must be replaced by dedicated Wiki pages');
+
+    // 2. SemanticText includes compound quantity regex and WIKI_ENTITY_LINKS
+    assert.ok(semanticSrc.includes('WIKI_ENTITY_LINKS'));
+    assert.ok(semanticSrc.includes('COMPOUND_OR_TOKEN_REGEX'));
+
+    // 3. Vault Economy explicitly distinguishes the 3 Primary Vault Currencies from Non-Currency States/Rewards/Trackers
+    assert.ok(vaultEconomyMd.includes('Three Primary Vault Currencies'));
+    assert.ok(vaultEconomyMd.includes('Non-Currency States, Rewards & Meta Trackers'));
+
+    // 4. No component rules_text or body has broken nested bold+backtick currency formatting like **+1 `[CR]`**
+    for (const comp of allComponents) {
+      assert.ok(
+        !/\*\*[^*`]*`\[(?:CR|EF|PIP|LOY|DOOM|MOM|VP)\]`/.test(comp.body || ''),
+        `Component ${comp.id} body contains unnormalized nested backtick currency formatting`
+      );
+    }
+  });
 });
