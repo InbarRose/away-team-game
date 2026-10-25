@@ -47,8 +47,8 @@ The **Squad Power-Relay Pack** provides a once-per-mission squad-wide stamina bo
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Active Squad Utility (Dice Refresh)
 

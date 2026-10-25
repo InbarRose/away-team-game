@@ -35,8 +35,8 @@ modules:
     cost_credits: 4
     cost_pip: 1
     reward_pip: 1
-    effect: "SPONSOR BENEFIT: Media royalties—whenever ANY player completes an Open Agenda during a mission, the Sponsor Faction collects +1 [CR] from the supply."
-rules_text: "Baseline: 1 Active Open Agenda Slot and 1 Equippable Perk Slot per Faction. Sponsorable Modules: Executive Suite (4 [CR]), Lobbying Network (4 [CR]), Press Office (1 [PIP] + 4 [CR])."
+    effect: "SPONSOR BENEFIT: Media royalties—whenever ANY player completes an Open Agenda during a mission, the Sponsor Faction collects [+1 CR] from the supply."
+rules_text: "Baseline: 1 Active Open Agenda Slot and 1 Equippable Perk Slot per Faction. Sponsorable Modules: Executive Suite ([4 CR]), Lobbying Network ([4 CR]), Press Office ([1 PIP] + [4 CR])."
 tags:
   - "hq"
   - "boardroom"
@@ -59,6 +59,6 @@ art_spec:
 
 | Module Name | Sponsorship Cost | Reward | Passive / Sponsor Effect |
 | :--- | :--- | :---: | :--- |
-| **Executive Suite** | `4 [CR]` | `+1 [PIP]` | **Agency-Wide:** Expands capacity for every Faction to **2 Active Open Agendas** and **2 Equippable Perks**. |
-| **Lobbying Network** | `4 [CR]` | `+1 [PIP]` | **Sponsor Benefit:** Once per Downtime, the Sponsor Faction may cycle (discard and redraw) 1 unwanted Agenda or Perk card. |
-| **Press Office** | `1 [PIP] + 4 [CR]` | `+1 [PIP]` | **Sponsor Benefit:** Whenever **any player** completes an Open Agenda during a mission, the Sponsor Faction collects **`+1 [CR]`** from the bank. |
+| **Executive Suite** | [4 CR] | [+1 PIP] | **Agency-Wide:** Expands capacity for every Faction to **2 Active Open Agendas** and **2 Equippable Perks**. |
+| **Lobbying Network** | [4 CR] | [+1 PIP] | **Sponsor Benefit:** Once per Downtime, the Sponsor Faction may cycle (discard and redraw) 1 unwanted Agenda or Perk card. |
+| **Press Office** | `[1 PIP] + [4 CR]` | [+1 PIP] | **Sponsor Benefit:** Whenever **any player** completes an Open Agenda during a mission, the Sponsor Faction collects **[+1 CR]** from the bank. |

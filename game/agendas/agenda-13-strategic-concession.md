@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (Base Phase Auctions): Formally pass or abstain during the Command Auction or Stand-Down Auction despite holding the highest current [PIP] or Credit [CR] balance, allowing a trailing rival to win the auction. Payout: +2 [VP] AND receive a 2-Credit [CR] rebate to your Vault."
+rules_text: "Condition (Base Phase Auctions): Formally pass or abstain during the Command Auction or Stand-Down Auction despite holding the highest current [PIP] or [CR] balance, allowing a trailing rival to win the auction. Payout: [+2 VP] AND receive a 2-[CR] rebate to your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Formally pass or abstain during the **Command Auction** or **Stand-Down Auction** despite holding the highest current `[PIP]` or Credit (`[CR]`) balance, allowing a trailing rival to win the auction.
+Formally pass or abstain during the **Command Auction** or **Stand-Down Auction** despite holding the highest current [PIP] or Credit ([CR]) balance, allowing a trailing rival to win the auction.
 
 ## Reward Payout
 
-* **+2 `[VP]`** (Victory Points)
-* Receive a **+2 `[CR]`** rebate to your Faction Vault
+* **[+2 VP]** (Victory Points)
+* Receive a **[+2 CR]** rebate to your Faction Vault

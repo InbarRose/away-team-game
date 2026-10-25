@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Recon Sentry Drone ("Scout")** is a Tier 1 autonomous companion occupying the `[Complex]` slot for `3 [CR]`. Hovering ahead of the fireteam to feed real-time lidar and thermal telemetry, it grants +1 static die on all `[Intel]` and `[Infiltrate]` checks and allows the operative to screen out a catastrophic Stage Modifier card once per mission drop.
+The **Recon Sentry Drone ("Scout")** is a Tier 1 autonomous companion occupying the [Complex] slot for [3 CR]. Hovering ahead of the fireteam to feed real-time lidar and thermal telemetry, it grants +1 static die on all [Intel] and [Infiltrate] checks and allows the operative to screen out a catastrophic Stage Modifier card once per mission drop.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [3 CR] *(1.5 ES Value)*
 * **Type:** Autonomous Companion (Intel & Stealth)
 
 ---
@@ -60,7 +60,7 @@ The **Recon Sentry Drone ("Scout")** is a Tier 1 autonomous companion occupying 
 ## Tactical Capabilities
 
 ### Passive: Telemetry
-Adds **+1 static die** to all `[Intel]` and `[Infiltrate]` stage checks for this character.
+Adds **+1 static die** to all [Intel] and [Infiltrate] stage checks for this character.
 
 ### Active Cost: Scout Ahead *(Spend Die)*
 Once per drop, during Step 1 (Briefing), spend **1 static die** to peek at the upcoming Stage Modifier card and choose to either keep it or reshuffle it back into the modifier deck.

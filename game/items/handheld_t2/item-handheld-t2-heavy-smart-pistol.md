@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Heavy Smart-Pistol** is a Tier 2 high-caliber targeted sidearm that packs the full `+2 Temporary Static Dice` punch of a two-handed assault rifle into a single `[Hand]` slot, leaving the operative's off-hand free for a utility deck or second weapon.
+The **Heavy Smart-Pistol** is a Tier 2 high-caliber targeted sidearm that packs the full `+2 Temporary Static Dice` punch of a two-handed assault rifle into a single [Hand] slot, leaving the operative's off-hand free for a utility deck or second weapon.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [5 CR] *(2.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Combat]`
+* **Focus Coverage:** [Combat]
 
 ## Core Mechanics
 
-1. **Smart-Target Output (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Combat]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Combat]` to roll `[Combat]` checks at **Secondary Focus (`4+`)**.
+1. **Smart-Target Output (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Combat].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Combat] to roll [Combat] checks at **Secondary Focus (`4+`)**.

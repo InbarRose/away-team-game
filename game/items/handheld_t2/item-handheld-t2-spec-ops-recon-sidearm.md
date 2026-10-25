@@ -49,16 +49,16 @@ art_spec:
 
 ## Overview
 
-The **Spec-Ops Recon Sidearm** is an integrated sensor weapon engineered for black-ops reconnaissance teams. It bridges and boosts `[Combat]`, `[Intel]`, and `[Infiltrate]` in a single one-handed package.
+The **Spec-Ops Recon Sidearm** is an integrated sensor weapon engineered for black-ops reconnaissance teams. It bridges and boosts [Combat], [Intel], and [Infiltrate] in a single one-handed package.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [5 CR] *(2.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Combat]` / `[Intel]` / `[Infiltrate]`
+* **Focus Coverage:** [Combat] / [Intel] / [Infiltrate]
 
 ## Core Mechanics
 
-1. **Tri-Domain Utility (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in `[Combat]`, `[Intel]`, or `[Infiltrate]`.
+1. **Tri-Domain Utility (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in [Combat], [Intel], or [Infiltrate].
 2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in any of those three categories to roll them at **Secondary Focus (`4+`)**.

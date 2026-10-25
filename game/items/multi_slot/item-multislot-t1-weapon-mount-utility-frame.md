@@ -46,14 +46,14 @@ art_spec:
 
 ## Overview
 
-The **Weapon-Mount Utility Frame** is a Tier 1 load-bearing exo-rig occupying the `[Body]` and `[Legs]` slots. Outfitted with a gyro-stabilized gimbal arm and high-torque leg struts, it expands an operative's weapon-handling capacity while allowing them to convert personal stamina into heavy mechanical assistance for squadmates.
+The **Weapon-Mount Utility Frame** is a Tier 1 load-bearing exo-rig occupying the [Body] and [Legs] slots. Outfitted with a gyro-stabilized gimbal arm and high-torque leg struts, it expands an operative's weapon-handling capacity while allowing them to convert personal stamina into heavy mechanical assistance for squadmates.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Body]` + `[Legs]` (2 Slots)
-* **Market Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Slots Required:** [Body] + [Legs] (2 Slots)
+* **Market Cost:** [5 CR] *(2.5 ES Value)*
 * **Tier:** Tier 1 Multi-Slot Rig
 
 ---
@@ -61,7 +61,7 @@ The **Weapon-Mount Utility Frame** is a Tier 1 load-bearing exo-rig occupying th
 ## Tactical Capabilities
 
 ### Passive: Third Arm Mount *(Heavy Utility)*
-Grants **+1 extra Hand Slot** (`[Hand]`). You can now wield a 1-Handed item while using a 2-Handed weapon, or carry three 1-Handed items simultaneously.
+Grants **+1 extra Hand Slot** ([Hand]). You can now wield a 1-Handed item while using a 2-Handed weapon, or carry three 1-Handed items simultaneously.
 
 ### Active Cost: Servo Overclock *(Spend Die)*
 Once per stage, spend **1 static die** from your active pool to immediately grant **+2 temporary static dice** to an ally on their roll in the same room.

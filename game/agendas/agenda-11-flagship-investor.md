@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (HQ Base Expansion): Fully fund and sponsor a Tier 2 Module, Tier 3 Module, or Standalone Landmark Module entirely from your Faction Vault during a single Downtime phase. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (HQ Base Expansion): Fully fund and sponsor a Tier 2 Module, Tier 3 Module, or Standalone Landmark Module entirely from your Faction Vault during a single Downtime phase. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -53,5 +53,5 @@ Fully fund and sponsor a **Tier 2 Module**, **Tier 3 Module**, or **Standalone L
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

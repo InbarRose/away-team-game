@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "complex"
   armor_buffer: null
-rules_text: "Combat Coordination (Passive): Re-roll up to 1 failure face (blank or 1) on every check made by this character. Emergency Battery Dump (Active Cost): Once per drop, spend 1 Effort [EF] from your Vault to activate Valkyrie's emergency power, restoring up to 2 spent static dice per character for the entire squad."
+rules_text: "Combat Coordination (Passive): Re-roll up to 1 failure face (blank or 1) on every check made by this character. Emergency Battery Dump (Active Cost): Once per drop, spend [1 EF] from your Vault to activate Valkyrie's emergency power, restoring up to 2 spent static dice per character for the entire squad."
 active_ability: "Emergency Battery Dump — Cost: Spend 1 Vault Effort [EF] (Once per drop). Effect: Restore up to 2 spent static dice per character across the entire squad."
 tags:
   - "complex"
@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Neural Tactical AI ("Valkyrie Drone")** is an elite Tier 2 autonomous AI companion occupying the `[Complex]` slot at `9 [CR]`. Providing constant predictive targeting that grants a free failure-face re-roll on every single stage check, Valkyrie also stores an emergency capacitor reserve that lets its owner trigger a full squad-wide +2 static dice refresh for just `1 [EF]` (a 2-Effort discount over standard *Logistical Refresh*).
+The **Neural Tactical AI ("Valkyrie Drone")** is an elite Tier 2 autonomous AI companion occupying the [Complex] slot at [9 CR]. Providing constant predictive targeting that grants a free failure-face re-roll on every single stage check, Valkyrie also stores an emergency capacitor reserve that lets its owner trigger a full squad-wide +2 static dice refresh for just [1 EF] (a 2-Effort discount over standard *Logistical Refresh*).
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `9 [CR]` *(4.5 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [9 CR] *(4.5 ES Value)*
 * **Type:** Autonomous AI Companion
 
 ---
@@ -63,4 +63,4 @@ The **Neural Tactical AI ("Valkyrie Drone")** is an elite Tier 2 autonomous AI c
 Re-roll up to **1 failure face** (blank or natural 1) on every check made by this character.
 
 ### Active Cost: Emergency Battery Dump *(Spend Vault Effort)*
-Once per drop, spend **1 Effort `[EF]`** from your Vault to activate Valkyrie's emergency power, restoring up to **2 spent static dice per character** for the entire squad.
+Once per drop, spend **[1 EF]** from your Vault to activate Valkyrie's emergency power, restoring up to **2 spent static dice per character** for the entire squad.

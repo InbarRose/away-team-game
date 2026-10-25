@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Heavy Operations Terminal** is a dual-grip industrial cyber-deck that occupies both hand slots to provide raw engineering and systems-control power during `[Operations]` stages.
+The **Heavy Operations Terminal** is a dual-grip industrial cyber-deck that occupies both hand slots to provide raw engineering and systems-control power during [Operations] stages.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Operations]`
+* **Focus Coverage:** [Operations]
 
 ## Core Mechanics
 
-1. **Dedicated Engineering Rig (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Operations]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Operations]` to roll `[Operations]` checks at **Secondary Focus (`4+`)**.
+1. **Dedicated Engineering Rig (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Operations].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Operations] to roll [Operations] checks at **Secondary Focus (`4+`)**.

@@ -47,8 +47,8 @@ The **Reactive Pivot Greaves** grant a repeatable `4+` saving throw against ever
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Primary Focus Saving Throw
 

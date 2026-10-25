@@ -32,7 +32,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your [Combat] Primary Focus operatives scores the single highest number of successes on a [Combat] stage that yields Momentum (+2 or higher). Payout: +3 [VP] AND deposit +1 [CR] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your [Combat] Primary Focus operatives scores the single highest number of successes on a [Combat] stage that yields Momentum (+2 or higher). Payout: [+3 VP] AND deposit [+1 CR] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -48,7 +48,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-01-overwhelming-force.md",
-    "body": "# Overwhelming Force\n\n* **Category:** Category A — In-Mission Operations (`[Combat]` Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your `[Combat]` Primary Focus operatives** scores the single highest number of successes on a `[Combat]` stage that yields **Momentum (`[MOM]`, +2 or higher)**.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[CR]`** into your Faction Vault"
+    "body": "# Overwhelming Force\n\n* **Category:** Category A — In-Mission Operations ([Combat] Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your [Combat] Primary Focus operatives** scores the single highest number of successes on a [Combat] stage that yields **Momentum ([MOM], +2 or higher)**.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 CR]** into your Faction Vault"
   },
   {
     "id": "agenda-02-shadow-dominance",
@@ -83,7 +83,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your [Infiltrate] Primary Focus operatives scores the single highest number of successes on an [Infiltrate] stage that is cleared with 0 Backfires (natural 1s) across the entire squad. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your [Infiltrate] Primary Focus operatives scores the single highest number of successes on an [Infiltrate] stage that is cleared with 0 Backfires (natural 1s) across the entire squad. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -99,7 +99,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-02-shadow-dominance.md",
-    "body": "# Shadow Dominance\n\n* **Category:** Category A — In-Mission Operations (`[Infiltrate]` Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your `[Infiltrate]` Primary Focus operatives** scores the single highest number of successes on an `[Infiltrate]` stage that is cleared with **0 Backfires (natural 1s)** across the entire squad.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Shadow Dominance\n\n* **Category:** Category A — In-Mission Operations ([Infiltrate] Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your [Infiltrate] Primary Focus operatives** scores the single highest number of successes on an [Infiltrate] stage that is cleared with **0 Backfires (natural 1s)** across the entire squad.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-03-telemetry-apex",
@@ -134,7 +134,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your [Intel] Primary Focus operatives scores the single highest number of successes on an [Intel] stage after you activated a Class Ability, item, or Vault Effort [EF] during that stage. Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your [Intel] Primary Focus operatives scores the single highest number of successes on an [Intel] stage after you activated a Class Ability, item, or Vault [EF] during that stage. Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -150,7 +150,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-03-telemetry-apex.md",
-    "body": "# Telemetry Apex\n\n* **Category:** Category A — In-Mission Operations (`[Intel]` Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your `[Intel]` Primary Focus operatives** scores the single highest number of successes on an `[Intel]` stage after you activated a **Class Ability, item, or Vault Effort (`[EF]`)** during that stage.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Telemetry Apex\n\n* **Category:** Category A — In-Mission Operations ([Intel] Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your [Intel] Primary Focus operatives** scores the single highest number of successes on an [Intel] stage after you activated a **Class Ability, item, or Vault Effort ([EF])** during that stage.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   },
   {
     "id": "agenda-04-system-overclock",
@@ -185,7 +185,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your [Operations] Primary Focus operatives scores the single highest number of successes on an [Operations] stage. Payout: +3 [VP] AND deposit +1 [CR] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your [Operations] Primary Focus operatives scores the single highest number of successes on an [Operations] stage. Payout: [+3 VP] AND deposit [+1 CR] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -201,7 +201,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-04-system-overclock.md",
-    "body": "# System Overclock\n\n* **Category:** Category A — In-Mission Operations (`[Operations]` Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your `[Operations]` Primary Focus operatives** scores the single highest number of successes on an `[Operations]` stage.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[CR]`** into your Faction Vault"
+    "body": "# System Overclock\n\n* **Category:** Category A — In-Mission Operations ([Operations] Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your [Operations] Primary Focus operatives** scores the single highest number of successes on an [Operations] stage.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 CR]** into your Faction Vault"
   },
   {
     "id": "agenda-05-executive-leverage",
@@ -236,7 +236,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your [Negotiate] Primary Focus operatives scores the single highest number of successes on a [Negotiate] stage where they generated at least 2 successes. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your [Negotiate] Primary Focus operatives scores the single highest number of successes on a [Negotiate] stage where they generated at least 2 successes. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -252,7 +252,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-05-executive-leverage.md",
-    "body": "# Executive Leverage\n\n* **Category:** Category A — In-Mission Operations (`[Negotiate]` Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your `[Negotiate]` Primary Focus operatives** scores the single highest number of successes on a `[Negotiate]` stage where they generated **at least 2 successes**.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Executive Leverage\n\n* **Category:** Category A — In-Mission Operations ([Negotiate] Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your [Negotiate] Primary Focus operatives** scores the single highest number of successes on a [Negotiate] stage where they generated **at least 2 successes**.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-06-hazard-mastery",
@@ -287,7 +287,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your [Survival] Primary Focus operatives scores the single highest number of successes on a [Survival] stage (or on any stage where a Dynamic Focus Swap was triggered). Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your [Survival] Primary Focus operatives scores the single highest number of successes on a [Survival] stage (or on any stage where a Dynamic Focus Swap was triggered). Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -303,7 +303,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-06-hazard-mastery.md",
-    "body": "# Hazard Mastery\n\n* **Category:** Category A — In-Mission Operations (`[Survival]` Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your `[Survival]` Primary Focus operatives** scores the single highest number of successes on a `[Survival]` stage (or on any stage where a **Dynamic Focus Swap** was triggered).\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Hazard Mastery\n\n* **Category:** Category A — In-Mission Operations ([Survival] Dominance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your [Survival] Primary Focus operatives** scores the single highest number of successes on a [Survival] stage (or on any stage where a **Dynamic Focus Swap** was triggered).\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   },
   {
     "id": "agenda-07-battlefield-samaritan",
@@ -338,7 +338,7 @@
       "pip": 0,
       "loyalty": 1
     },
-    "rules_text": "Condition (Mission Emergency Window): Your operative uses a Class Ability, Consumable item, or Pack item to heal or stabilize a rival player's operative back from 0 HP or 1 HP. Payout: +3 [VP] AND award +1 [LOY] to your performing operative.",
+    "rules_text": "Condition (Mission Emergency Window): Your operative uses a Class Ability, Consumable item, or Pack item to heal or stabilize a rival player's operative back from 0 HP or 1 HP. Payout: [+3 VP] AND award [+1 LOY] to your performing operative.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -354,7 +354,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-07-battlefield-samaritan.md",
-    "body": "# Battlefield Samaritan\n\n* **Category:** Category A — In-Mission Operations (Generous Play)\n* **Fulfillment Context:** Mission Emergency Window\n\n## Fulfillment Condition\n\nYour operative uses a **Class Ability, Consumable item, or Pack item** to **heal or stabilize a *rival player's* operative** back from **0 HP or 1 HP**.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Award **+1 `[LOY]`** to your performing operative"
+    "body": "# Battlefield Samaritan\n\n* **Category:** Category A — In-Mission Operations (Generous Play)\n* **Fulfillment Context:** Mission Emergency Window\n\n## Fulfillment Condition\n\nYour operative uses a **Class Ability, Consumable item, or Pack item** to **heal or stabilize a *rival player's* operative** back from **0 HP or 1 HP**.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Award **[+1 LOY]** to your performing operative"
   },
   {
     "id": "agenda-08-forced-entry",
@@ -389,7 +389,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Briefing Step & Clearance): While serving as Squad Leader, declare a Force Breach ([Non-Combat] -> [Combat]), and have your own operative score the majority of successes required to clear the escalated stage. Payout: +3 [VP] AND deposit +1 [CR] into your Vault.",
+    "rules_text": "Condition (Mission Briefing Step & Clearance): While serving as Squad Leader, declare a Force Breach ([Non-Combat] -> [Combat]), and have your own operative score the majority of successes required to clear the escalated stage. Payout: [+3 VP] AND deposit [+1 CR] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -405,7 +405,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-08-forced-entry.md",
-    "body": "# Forced Entry\n\n* **Category:** Category A — In-Mission Operations (Command & Breach)\n* **Fulfillment Context:** Mission Briefing Step & Clearance\n\n## Fulfillment Condition\n\nWhile serving as **Squad Leader**, declare a **Force Breach** (`[Non-Combat]` $\\rightarrow$ `[Combat]`), and have **your own operative** score the majority of successes required to clear the escalated stage.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[CR]`** into your Faction Vault"
+    "body": "# Forced Entry\n\n* **Category:** Category A — In-Mission Operations (Command & Breach)\n* **Fulfillment Context:** Mission Briefing Step & Clearance\n\n## Fulfillment Condition\n\nWhile serving as **Squad Leader**, declare a **Force Breach** (`[Non-Combat]` $\\rightarrow$ [Combat]), and have **your own operative** score the majority of successes required to clear the escalated stage.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 CR]** into your Faction Vault"
   },
   {
     "id": "agenda-09-command-resilience",
@@ -440,7 +440,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Transition Step): Serve as Squad Leader for a full mission, trigger at least one Logistical Refresh (spending Vault Effort [EF] to restore squad dice), and complete the mission with 0 stage failures. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (Mission Transition Step): Serve as Squad Leader for a full mission, trigger at least one Logistical Refresh (spending Vault [EF] to restore squad dice), and complete the mission with 0 stage failures. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -456,7 +456,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-09-command-resilience.md",
-    "body": "# Command Resilience\n\n* **Category:** Category A — In-Mission Operations (Squad Command)\n* **Fulfillment Context:** Mission Transition Step & Completion\n\n## Fulfillment Condition\n\nServe as **Squad Leader** for a full mission, trigger at least one **Logistical Refresh** (spending Vault `[EF]` to restore squad dice), and complete the mission with **0 stage failures**.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Command Resilience\n\n* **Category:** Category A — In-Mission Operations (Squad Command)\n* **Fulfillment Context:** Mission Transition Step & Completion\n\n## Fulfillment Condition\n\nServe as **Squad Leader** for a full mission, trigger at least one **Logistical Refresh** (spending Vault [EF] to restore squad dice), and complete the mission with **0 stage failures**.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-10-iron-will",
@@ -491,7 +491,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Stage Resolution): One of your operatives takes 2 or more points of Backfire/hazard HP damage during a single stage, but still contributes 2 or more successes to clear that stage. Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (Mission Stage Resolution): One of your operatives takes 2 or more points of Backfire/hazard HP damage during a single stage, but still contributes 2 or more successes to clear that stage. Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -507,7 +507,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-10-iron-will.md",
-    "body": "# Iron Will\n\n* **Category:** Category A — In-Mission Operations (High-Attrition Endurance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your operatives** takes **2 or more points of Backfire/hazard HP damage** during a single stage, but still contributes **2 or more successes** to clear that stage.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Iron Will\n\n* **Category:** Category A — In-Mission Operations (High-Attrition Endurance)\n* **Fulfillment Context:** Mission Stage Resolution\n\n## Fulfillment Condition\n\nOne of **your operatives** takes **2 or more points of Backfire/hazard HP damage** during a single stage, but still contributes **2 or more successes** to clear that stage.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   },
   {
     "id": "agenda-11-flagship-investor",
@@ -542,7 +542,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Base Expansion): Fully fund and sponsor a Tier 2 Module, Tier 3 Module, or Standalone Landmark Module entirely from your Faction Vault during a single Downtime phase. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (HQ Base Expansion): Fully fund and sponsor a Tier 2 Module, Tier 3 Module, or Standalone Landmark Module entirely from your Faction Vault during a single Downtime phase. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -558,7 +558,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-11-flagship-investor.md",
-    "body": "# Flagship Investor\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals\n* **Fulfillment Context:** HQ Base Expansion\n\n## Fulfillment Condition\n\nFully fund and sponsor a **Tier 2 Module**, **Tier 3 Module**, or **Standalone Landmark Module** entirely from your Faction Vault during a single Downtime phase.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Flagship Investor\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals\n* **Fulfillment Context:** HQ Base Expansion\n\n## Fulfillment Condition\n\nFully fund and sponsor a **Tier 2 Module**, **Tier 3 Module**, or **Standalone Landmark Module** entirely from your Faction Vault during a single Downtime phase.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-12-medical-benefactor",
@@ -593,7 +593,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Infirmary Step): Spend your Faction's Credits [CR] or Med Bay bed allotment during Downtime to heal an unhealed damage point on a rival player's benched operative. Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (HQ Infirmary Step): Spend your Faction's [CR] or Med Bay bed allotment during Downtime to heal an unhealed damage point on a rival player's benched operative. Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -609,7 +609,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-12-medical-benefactor.md",
-    "body": "# Medical Benefactor\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Generous Play)\n* **Fulfillment Context:** HQ Infirmary Step\n\n## Fulfillment Condition\n\nSpend your Faction's Credits (`[CR]`) or Med Bay bed allotment during Downtime to **heal an unhealed damage point on a *rival player's* benched operative**.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Medical Benefactor\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Generous Play)\n* **Fulfillment Context:** HQ Infirmary Step\n\n## Fulfillment Condition\n\nSpend your Faction's Credits ([CR]) or Med Bay bed allotment during Downtime to **heal an unhealed damage point on a *rival player's* benched operative**.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   },
   {
     "id": "agenda-13-strategic-concession",
@@ -644,7 +644,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Base Phase Auctions): Formally pass or abstain during the Command Auction or Stand-Down Auction despite holding the highest current [PIP] or Credit [CR] balance, allowing a trailing rival to win the auction. Payout: +2 [VP] AND receive a 2-Credit [CR] rebate to your Vault.",
+    "rules_text": "Condition (Base Phase Auctions): Formally pass or abstain during the Command Auction or Stand-Down Auction despite holding the highest current [PIP] or [CR] balance, allowing a trailing rival to win the auction. Payout: [+2 VP] AND receive a 2-[CR] rebate to your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -660,7 +660,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-13-strategic-concession.md",
-    "body": "# Strategic Concession\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Diplomatic Play)\n* **Fulfillment Context:** Base Phase Auctions\n\n## Fulfillment Condition\n\nFormally pass or abstain during the **Command Auction** or **Stand-Down Auction** despite holding the highest current `[PIP]` or Credit (`[CR]`) balance, allowing a trailing rival to win the auction.\n\n## Reward Payout\n\n* **+2 `[VP]`** (Victory Points)\n* Receive a **+2 `[CR]`** rebate to your Faction Vault"
+    "body": "# Strategic Concession\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Diplomatic Play)\n* **Fulfillment Context:** Base Phase Auctions\n\n## Fulfillment Condition\n\nFormally pass or abstain during the **Command Auction** or **Stand-Down Auction** despite holding the highest current [PIP] or Credit ([CR]) balance, allowing a trailing rival to win the auction.\n\n## Reward Payout\n\n* **[+2 VP]** (Victory Points)\n* Receive a **[+2 CR]** rebate to your Faction Vault"
   },
   {
     "id": "agenda-14-industrial-monopoly",
@@ -695,7 +695,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Base Expansion): Sponsor and construct 2 or more HQ Modules during a single HQ Downtime phase. Payout: +4 [VP].",
+    "rules_text": "Condition (HQ Base Expansion): Sponsor and construct 2 or more HQ Modules during a single HQ Downtime phase. Payout: [+4 VP].",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -711,7 +711,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-14-industrial-monopoly.md",
-    "body": "# Industrial Monopoly\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals\n* **Fulfillment Context:** HQ Base Expansion\n\n## Fulfillment Condition\n\nSponsor and construct **2 or more HQ Modules** during a single HQ Downtime phase.\n\n## Reward Payout\n\n* **+4 `[VP]`** (Victory Points)"
+    "body": "# Industrial Monopoly\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals\n* **Fulfillment Context:** HQ Base Expansion\n\n## Fulfillment Condition\n\nSponsor and construct **2 or more HQ Modules** during a single HQ Downtime phase.\n\n## Reward Payout\n\n* **[+4 VP]** (Victory Points)"
   },
   {
     "id": "agenda-15-corporate-relief",
@@ -746,7 +746,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Downtime Trade): Transfer an armory item or 2+ Credits [CR] directly from your Faction Vault to a rival Faction whose Vault currently holds 0 Credits [CR] (Effort [EF] cannot be traded). Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (HQ Downtime Trade): Transfer an armory item or [2+ CR] directly from your Faction Vault to a rival Faction whose Vault currently holds [0 CR] ([EF] cannot be traded). Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -762,7 +762,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-15-corporate-relief.md",
-    "body": "# Corporate Relief\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Rule-Compliant Bailout)\n* **Fulfillment Context:** HQ Downtime Trade\n\n## Fulfillment Condition\n\nTransfer an **armory item** or **2+ Credits (`[CR]`)** directly from your Faction Vault to a rival Faction whose Vault currently holds **0 Credits (`[CR]`)** *(Effort `[EF]` cannot be traded)*.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Corporate Relief\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Rule-Compliant Bailout)\n* **Fulfillment Context:** HQ Downtime Trade\n\n## Fulfillment Condition\n\nTransfer an **armory item** or **[2+ CR] ([CR])** directly from your Faction Vault to a rival Faction whose Vault currently holds **[0 CR] ([CR])** *([EF] cannot be traded)*.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-16-structural-mastery",
@@ -797,7 +797,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Base Expansion): Sponsor and construct a cumulative total of 3 HQ Modules across the campaign. Payout: +4 [VP].",
+    "rules_text": "Condition (HQ Base Expansion): Sponsor and construct a cumulative total of 3 HQ Modules across the campaign. Payout: [+4 VP].",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -813,7 +813,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-16-structural-mastery.md",
-    "body": "# Structural Mastery\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals\n* **Fulfillment Context:** HQ Base Expansion\n\n## Fulfillment Condition\n\nSponsor and construct a cumulative total of **3 HQ Modules** across the campaign.\n\n## Reward Payout\n\n* **+4 `[VP]`** (Victory Points)"
+    "body": "# Structural Mastery\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals\n* **Fulfillment Context:** HQ Base Expansion\n\n## Fulfillment Condition\n\nSponsor and construct a cumulative total of **3 HQ Modules** across the campaign.\n\n## Reward Payout\n\n* **[+4 VP]** (Victory Points)"
   },
   {
     "id": "agenda-17-black-market-sponsor",
@@ -848,7 +848,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Quartermaster Step): Purchase a non-consumable weapon, armor, or device from the Quartermaster shop during Downtime and immediately transfer it to a rival player's operative for 0 Credits [CR]. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (HQ Quartermaster Step): Purchase a non-consumable weapon, armor, or device from the Quartermaster shop during Downtime and immediately transfer it to a rival player's operative for [0 CR]. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -864,7 +864,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-17-black-market-sponsor.md",
-    "body": "# Black-Market Sponsor\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Generous Play)\n* **Fulfillment Context:** HQ Quartermaster Step\n\n## Fulfillment Condition\n\nPurchase a **non-consumable weapon, armor, or device** from the Quartermaster shop during Downtime and **immediately transfer it to a *rival player's* operative for 0 Credits (`[CR]`)**.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Black-Market Sponsor\n\n* **Category:** Category B — HQ Infrastructure & Corporate Deals (Generous Play)\n* **Fulfillment Context:** HQ Quartermaster Step\n\n## Fulfillment Condition\n\nPurchase a **non-consumable weapon, armor, or device** from the Quartermaster shop during Downtime and **immediately transfer it to a *rival player's* operative for [0 CR] ([CR])**.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-18-veteran-promotion",
@@ -899,7 +899,7 @@
       "pip": 1,
       "loyalty": 0
     },
-    "rules_text": "Condition (Personnel Progression): Advance one of your owned operatives to Loyalty Rank 3 (6 [LOY]) or higher. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault.",
+    "rules_text": "Condition (Personnel Progression): Advance one of your owned operatives to Loyalty Rank 3 ([6 LOY]) or higher. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -915,7 +915,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-18-veteran-promotion.md",
-    "body": "# Veteran Promotion\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Personnel Progression\n\n## Fulfillment Condition\n\nAdvance one of **your owned operatives** to **Loyalty Rank 3 (6 `[LOY]`)** or higher.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[PIP]`** into your Faction Vault"
+    "body": "# Veteran Promotion\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Personnel Progression\n\n## Fulfillment Condition\n\nAdvance one of **your owned operatives** to **Loyalty Rank 3 ([6 LOY])** or higher.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 PIP]** into your Faction Vault"
   },
   {
     "id": "agenda-19-heavy-loadout-chassis",
@@ -950,7 +950,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Loadout Step): Deploy one of your operatives equipped with both a 2-Handed Weapon AND a Multi-Slot Wearables Rig during the same mission drop. Payout: +2 [VP] AND deposit +1 [CR] into your Vault.",
+    "rules_text": "Condition (Loadout Step): Deploy one of your operatives equipped with both a 2-Handed Weapon AND a Multi-Slot Wearables Rig during the same mission drop. Payout: [+2 VP] AND deposit [+1 CR] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -966,7 +966,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-19-heavy-loadout-chassis.md",
-    "body": "# Heavy Loadout Chassis\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Loadout Step\n\n## Fulfillment Condition\n\nDeploy one of **your operatives** equipped with both a **2-Handed Weapon** AND a **Multi-Slot Wearables Rig** during the same mission drop.\n\n## Reward Payout\n\n* **+2 `[VP]`** (Victory Points)\n* Deposit **+1 `[CR]`** into your Faction Vault"
+    "body": "# Heavy Loadout Chassis\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Loadout Step\n\n## Fulfillment Condition\n\nDeploy one of **your operatives** equipped with both a **2-Handed Weapon** AND a **Multi-Slot Wearables Rig** during the same mission drop.\n\n## Reward Payout\n\n* **[+2 VP]** (Victory Points)\n* Deposit **[+1 CR]** into your Faction Vault"
   },
   {
     "id": "agenda-20-cybernetic-reconstruction",
@@ -1001,7 +1001,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Medical Step): Spend Credits [CR] at HQ (via the Cybernetic Lab or specialized items) to completely purge a Permanent Trauma or Critical Injury Token from one of your benched veterans. Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (HQ Medical Step): Spend [CR] at HQ (via the Cybernetic Lab or specialized items) to completely purge a Permanent Trauma or Critical Injury Token from one of your benched veterans. Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -1017,7 +1017,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-20-cybernetic-reconstruction.md",
-    "body": "# Cybernetic Reconstruction\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** HQ Medical Step\n\n## Fulfillment Condition\n\nSpend Credits (`[CR]`) at HQ (via the *Cybernetic Lab* or specialized items) to completely purge a **Permanent Trauma** or **Critical Injury Token** from one of your benched veterans.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Cybernetic Reconstruction\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** HQ Medical Step\n\n## Fulfillment Condition\n\nSpend Credits ([CR]) at HQ (via the *Cybernetic Lab* or specialized items) to completely purge a **Permanent Trauma** or **Critical Injury Token** from one of your benched veterans.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   },
   {
     "id": "agenda-21-battle-hardened-vanguard",
@@ -1052,7 +1052,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Completion): Successfully complete a Campaign Mission deploying one of your operatives who launched carrying 2 or more Critical Injury Tokens, without that operative dying. Payout: +4 [VP].",
+    "rules_text": "Condition (Mission Completion): Successfully complete a Campaign Mission deploying one of your operatives who launched carrying 2 or more Critical Injury Tokens, without that operative dying. Payout: [+4 VP].",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -1068,7 +1068,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-21-battle-hardened-vanguard.md",
-    "body": "# Battle-Hardened Vanguard\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Mission Completion\n\n## Fulfillment Condition\n\nSuccessfully complete a Campaign Mission deploying one of **your operatives** who launched carrying **2 or more Critical Injury Tokens**, without that operative dying.\n\n## Reward Payout\n\n* **+4 `[VP]`** (Victory Points)"
+    "body": "# Battle-Hardened Vanguard\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Mission Completion\n\n## Fulfillment Condition\n\nSuccessfully complete a Campaign Mission deploying one of **your operatives** who launched carrying **2 or more Critical Injury Tokens**, without that operative dying.\n\n## Reward Payout\n\n* **[+4 VP]** (Victory Points)"
   },
   {
     "id": "agenda-22-pure-blood-loyalty",
@@ -1103,7 +1103,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Personnel Progression): Advance one of your operatives to Loyalty Rank 2 (3+ [LOY]) solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending Credits [CR] on recruits. Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (Personnel Progression): Advance one of your operatives to Loyalty Rank 2 ([3+ LOY]) solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending [CR] on recruits. Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -1119,7 +1119,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-22-pure-blood-loyalty.md",
-    "body": "# Pure-Blood Loyalty\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Personnel Progression\n\n## Fulfillment Condition\n\nAdvance one of **your operatives** to **Loyalty Rank 2 (3+ `[LOY]`)** solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending Credits (`[CR]`) on recruitment or artificial loyalty boosts.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Pure-Blood Loyalty\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Personnel Progression\n\n## Fulfillment Condition\n\nAdvance one of **your operatives** to **Loyalty Rank 2 ([3+ LOY])** solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending Credits ([CR]) on recruitment or artificial loyalty boosts.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   },
   {
     "id": "agenda-23-vulture-retribution",
@@ -1154,7 +1154,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (Mission Field Salvage): Claim a dropped item card from a fallen rival operative by paying the [PIP] Vulture Tax, and successfully equip it onto one of your own operatives during the subsequent mission. Payout: +3 [VP] AND deposit +1 [CR] into your Vault.",
+    "rules_text": "Condition (Mission Field Salvage): Claim a dropped item card from a fallen rival operative by paying the [PIP] Vulture Tax, and successfully equip it onto one of your own operatives during the subsequent mission. Payout: [+3 VP] AND deposit [+1 CR] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -1170,7 +1170,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-23-vulture-retribution.md",
-    "body": "# Vulture Retribution\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Mission Field Salvage & Subsequent Drop\n\n## Fulfillment Condition\n\nClaim a dropped item card from a fallen **rival operative** by paying the `[PIP]` **Vulture Tax**, and successfully equip it onto one of your own operatives during the subsequent mission.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[CR]`** into your Faction Vault"
+    "body": "# Vulture Retribution\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** Mission Field Salvage & Subsequent Drop\n\n## Fulfillment Condition\n\nClaim a dropped item card from a fallen **rival operative** by paying the [PIP] **Vulture Tax**, and successfully equip it onto one of your own operatives during the subsequent mission.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 CR]** into your Faction Vault"
   },
   {
     "id": "agenda-24-elite-cross-training",
@@ -1205,7 +1205,7 @@
       "pip": 0,
       "loyalty": 0
     },
-    "rules_text": "Condition (HQ Loadout & Mission Clearance): Pay cross-training tuition at HQ to append a new Secondary Focus to your operative, then use that newly appended focus to score 2+ successes on an active stage during that drop. Payout: +3 [VP] AND deposit +1 [EF] into your Vault.",
+    "rules_text": "Condition (HQ Loadout & Mission Clearance): Pay cross-training tuition at HQ to append a new Secondary Focus to your operative, then use that newly appended focus to score 2+ successes on an active stage during that drop. Payout: [+3 VP] AND deposit [+1 EF] into your Vault.",
     "active_ability": null,
     "tags": [
       "agenda",
@@ -1221,6 +1221,6 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/agendas/agenda-24-elite-cross-training.md",
-    "body": "# Elite Cross-Training\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** HQ Loadout & Mission Clearance\n\n## Fulfillment Condition\n\nPay cross-training tuition at HQ to append a new **Secondary Focus (4+)** to your operative, then use that newly appended focus to score **2+ successes** on an active stage during that drop.\n\n## Reward Payout\n\n* **+3 `[VP]`** (Victory Points)\n* Deposit **+1 `[EF]`** into your Faction Vault"
+    "body": "# Elite Cross-Training\n\n* **Category:** Category C — Character & Personnel\n* **Fulfillment Context:** HQ Loadout & Mission Clearance\n\n## Fulfillment Condition\n\nPay cross-training tuition at HQ to append a new **Secondary Focus (4+)** to your operative, then use that newly appended focus to score **2+ successes** on an active stage during that drop.\n\n## Reward Payout\n\n* **[+3 VP]** (Victory Points)\n* Deposit **[+1 EF]** into your Faction Vault"
   }
 ]

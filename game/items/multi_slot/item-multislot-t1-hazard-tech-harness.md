@@ -47,14 +47,14 @@ art_spec:
 
 ## Overview
 
-The **Hazard Tech-Harness** is a Tier 1 multi-slot rig occupying both the `[Head]` and `[Body]` equipment slots. Engineered for extreme environmental anomaly zones and compromised industrial sectors, it pairs a permanent vitality buffer with an active atmospheric purge system that neutralizes room-wide Stage Modifiers.
+The **Hazard Tech-Harness** is a Tier 1 multi-slot rig occupying both the [Head] and [Body] equipment slots. Engineered for extreme environmental anomaly zones and compromised industrial sectors, it pairs a permanent vitality buffer with an active atmospheric purge system that neutralizes room-wide Stage Modifiers.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Head]` + `[Body]` (2 Slots)
-* **Market Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slots Required:** [Head] + [Body] (2 Slots)
+* **Market Cost:** [4 CR] *(2.0 ES Value)*
 * **Tier:** Tier 1 Multi-Slot Rig
 
 ---

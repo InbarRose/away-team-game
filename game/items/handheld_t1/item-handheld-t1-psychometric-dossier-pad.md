@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Psychometric Dossier Pad** is a corporate leverage database pre-loaded with personnel files, financial histories, and behavioral profiles. It bridges `[Intel]` and `[Negotiate]`, turning raw reconnaissance into immediate social leverage.
+The **Psychometric Dossier Pad** is a corporate leverage database pre-loaded with personnel files, financial histories, and behavioral profiles. It bridges [Intel] and [Negotiate], turning raw reconnaissance into immediate social leverage.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Intel]` + `[Negotiate]`
+* **Focus Coverage:** [Intel] + [Negotiate]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Intel]` or `[Negotiate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Intel]` or `[Negotiate]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Intel] or [Negotiate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Intel] or [Negotiate] to roll both categories at **Secondary Focus (`4+`)**.

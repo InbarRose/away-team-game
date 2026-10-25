@@ -48,8 +48,8 @@ The **Orbital Drone Relay Pack** upgrades the Tier 1 Squad Power-Relay Pack by c
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `8 [CR]` *(4.0 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [8 CR] *(4.0 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Global Recharge & Scan)
 

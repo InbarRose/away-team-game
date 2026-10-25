@@ -46,8 +46,8 @@ The **Apex Recoil Greaves** upgrade the Tier 1 Impact Recoil Greaves, allowing t
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Double Cushion)
 

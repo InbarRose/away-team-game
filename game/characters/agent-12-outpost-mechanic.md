@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.0
   trigger: "Once per mission, immediately after a stage is cleared with Momentum (+2 or higher)"
   effect: "Cole may claim +1 bonus Momentum refund die back into his own static pool, even if he committed 0 dice during that stage."
-rules_text: "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Field Scavenger): Once per mission on a Momentum clear, restore +1 spent static die to Cole even if he did not roll in that stage."
+rules_text: "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Field Scavenger): Once per mission on a Momentum clear, restore +1 spent static die to Cole even if he did not roll in that stage."
 tags:
   - "character"
   - "survivalist"
@@ -49,12 +49,12 @@ art_spec:
 # Agent 12: Cole "Rusty" Vance (*The Outpost Mechanic*)
 
 * **Class:** Survivalist (`Zero-Combat Specialist`)
-* **Focus Profile:** Primary: `[Survival]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Survival] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Emergency Field Medicine (`1 [EF]`)
+## Class Ability: Emergency Field Medicine ([1 EF])
 
 Activate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).
 
@@ -62,4 +62,4 @@ Activate immediately after a rolling phase concludes in direct response to damag
 
 ## Unique Power: Field Scavenger (`1.0 ES` — Tier 2 Trigger)
 
-Once per mission, immediately after the squad clears a stage with **Operational Momentum (`[MOM]`)**, Cole may claim **`+1 bonus Momentum refund die`** into his own static pool—even if he committed `0` dice during that stage.
+Once per mission, immediately after the squad clears a stage with **Operational Momentum ([MOM])**, Cole may claim **`+1 bonus Momentum refund die`** into his own static pool—even if he committed `0` dice during that stage.

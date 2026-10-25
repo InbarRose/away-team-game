@@ -21,7 +21,7 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-rules_text: "Squad Leader Buyout: During Step 1 (Briefing), the Squad Leader may spend 2 Credits [CR] from their Vault. If paid, directly add +1 automatic Success toward the stage difficulty. Failure Penalty: If the stage fails, deduct 1 [PIP] from the Squad Leader's Faction Vault due to corporate embarrassment."
+rules_text: "Squad Leader Buyout: During Step 1 (Briefing), the Squad Leader may spend [2 CR] from their Vault. If paid, directly add +1 automatic Success toward the stage difficulty. Failure Penalty: If the stage fails, deduct [1 PIP] from the Squad Leader's Faction Vault due to corporate embarrassment."
 active_ability: "Squad Leader Buyout (2 CR for +1 Success)"
 tags:
   - "modifier"
@@ -43,5 +43,5 @@ art_spec:
 
 ## System Rules
 
-* **Squad Leader Buyout:** During Step 1 (Briefing), the Squad Leader may spend **2 `[CR]`** from their Vault. If paid, directly add **+1 automatic Success** toward the stage difficulty.
-* **Failure Penalty:** If the stage fails, deduct **1 `[PIP]`** from the Squad Leader’s Faction Vault due to corporate embarrassment.
+* **Squad Leader Buyout:** During Step 1 (Briefing), the Squad Leader may spend **[2 CR]** from their Vault. If paid, directly add **+1 automatic Success** toward the stage difficulty.
+* **Failure Penalty:** If the stage fails, deduct **[1 PIP]** from the Squad Leader’s Faction Vault due to corporate embarrassment.

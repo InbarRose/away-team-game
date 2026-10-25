@@ -21,7 +21,7 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-rules_text: "Difficulty Shift: Target Difficulty for this stage is increased by +1 Success. Clearance Dividend: Upon successfully clearing the stage, deposit +3 Credits [CR] AND +1 [PIP] directly into your Faction Vault."
+rules_text: "Difficulty Shift: Target Difficulty for this stage is increased by +1 Success. Clearance Dividend: Upon successfully clearing the stage, deposit [+3 CR] AND [+1 PIP] directly into your Faction Vault."
 active_ability: null
 tags:
   - "modifier"
@@ -44,4 +44,4 @@ art_spec:
 ## System Rules
 
 * **Difficulty Shift:** Target Difficulty for this stage is increased by **+1 Success**.
-* **Clearance Dividend:** Upon successfully clearing the stage, deposit **+3 `[CR]`** AND **+1 `[PIP]`** directly into your Faction Vault.
+* **Clearance Dividend:** Upon successfully clearing the stage, deposit **[+3 CR]** AND **[+1 PIP]** directly into your Faction Vault.

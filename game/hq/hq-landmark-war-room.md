@@ -17,7 +17,7 @@ focus_affinity:
 stats:
   reward_pip: 2
   sponsor_controlled: true
-rules_text: "Cost: 2 [PIP] + 2 [CR] (Awards +2 [PIP] to Sponsor). Winning bidder in the Command Auction receives a 1 [CR] refund (minimum net payment 0 [CR]). In addition, the Sponsor Faction draws +1 Faction Perk card whenever a mission is successfully cleared."
+rules_text: "Cost: [2 PIP] + [2 CR] (Awards [+2 PIP] to Sponsor). Winning bidder in the Command Auction receives a [1 CR] refund (minimum net payment [0 CR]). In addition, the Sponsor Faction draws +1 Faction Perk card whenever a mission is successfully cleared."
 tags:
   - "hq"
   - "landmark"
@@ -32,13 +32,13 @@ art_spec:
 
 # The War Room (Standalone Landmark)
 
-* **Sponsorship Cost:** `2 [PIP] + 2 [CR]`
-* **Sponsorship Reward:** **`+2 [PIP]`** (`4 [VP]`) + Faction Token placement
+* **Sponsorship Cost:** `[2 PIP] + [2 CR]`
+* **Sponsorship Reward:** **[+2 PIP]** ([4 VP]) + Faction Token placement
 * **Control Mode:** Hybrid (Agency Command Subsidy + Sponsor Perk Dividend)
 
 ---
 
 ## Landmark Effect
 
-* **Command Subsidy:** The winning bidder in every **Command Auction** receives an immediate **`1 [CR]` refund** from the HQ bank (allowing a `1 [CR]` winning bid to cost `0 [CR]` net).
+* **Command Subsidy:** The winning bidder in every **Command Auction** receives an immediate **[1 CR] refund** from the HQ bank (allowing a [1 CR] winning bid to cost [0 CR] net).
 * **Sponsor Dividend:** Whenever the squad successfully clears a mission, the **Sponsor Faction** draws **`+1 Faction Perk`** card during Debrief.

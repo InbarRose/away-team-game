@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Stage Resolution): One of your operatives takes 2 or more points of Backfire/hazard HP damage during a single stage, but still contributes 2 or more successes to clear that stage. Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (Mission Stage Resolution): One of your operatives takes 2 or more points of Backfire/hazard HP damage during a single stage, but still contributes 2 or more successes to clear that stage. Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -53,5 +53,5 @@ One of **your operatives** takes **2 or more points of Backfire/hazard HP damage
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

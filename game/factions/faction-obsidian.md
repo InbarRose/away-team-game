@@ -35,11 +35,11 @@ loyalty_tiers:
   tier_3:
     loyalty_required: 6
     title: "Operative — Deep Cover"
-    effect: "Completing an Open Agenda with this character deployed grants +1 [EF] directly to Obsidian's Vault."
+    effect: "Completing an Open Agenda with this character deployed grants [+1 EF] directly to Obsidian's Vault."
   tier_4:
     loyalty_required: 10
     title: "Corporate Icon — Shadow Director (+3 VPs)"
-    effect: "Draw 2 Secret Objectives and keep both; while deployed, all squad stealth/[Infiltrate] checks gain +1 automatic Success. Awards +3 [VP] at end-of-game."
+    effect: "Draw 2 Secret Objectives and keep both; while deployed, all squad stealth/[Infiltrate] checks gain +1 automatic Success. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Black Budget): During Boardroom step, draw 1 extra Open Agenda and 1 extra Perk; keep 1 beyond standard Boardroom slot limits."
 tags:
   - "faction"
@@ -58,8 +58,8 @@ art_spec:
 *Black-Ops Espionage & Covert Network*
 
 * **Faction Color:** Matte Obsidian (`#1C1917`)
-* **Strategic Identity:** Covert `[Infiltrate]` supremacy, breaking Boardroom Agenda/Perk capacity limits, and hidden endgame scoring.
-* **Starting Vault Assets:** `3 [CR]` • `1 [EF]` • `2 [PIP]`
+* **Strategic Identity:** Covert [Infiltrate] supremacy, breaking Boardroom Agenda/Perk capacity limits, and hidden endgame scoring.
+* **Starting Vault Assets:** [3 CR] • [1 EF] • [2 PIP]
 
 ---
 
@@ -71,9 +71,9 @@ During **Step 7 (Boardroom Politics)** of HQ Downtime, Obsidian draws **1 extra 
 
 ## Operative Loyalty Progression Tree
 
-| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |
+| Loyalty Tier | Required [LOY] | Rank & Ability Name | Mechanical Effect |
 | :--- | :---: | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Contractor:** *Shadow Walk* | Treat `[Infiltrate]` as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |
-| **Tier 2** | `3 [LOY]` | **Veteran:** *Counter-Surveillance* *(Squad)* | While this operative is deployed, the **entire squad ignores negative Stage Modifiers** during `[Infiltrate]` stages. |
-| **Tier 3** | `6 [LOY]` | **Operative:** *Deep Cover* | Whenever Obsidian completes an Open Agenda while this operative is deployed, deposit **`+1 [EF]`** into Obsidian's Vault. |
-| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Shadow Director* *(+3 VPs)* | Draw 1 additional **Secret Objective** and score both at endgame; while deployed, all `[Infiltrate]` stages gain **+1 automatic Success**. Worth **`+3 [VP]`** at end of campaign. |
+| **Tier 1** | [1 LOY] | **Contractor:** *Shadow Walk* | Treat [Infiltrate] as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |
+| **Tier 2** | [3 LOY] | **Veteran:** *Counter-Surveillance* *(Squad)* | While this operative is deployed, the **entire squad ignores negative Stage Modifiers** during [Infiltrate] stages. |
+| **Tier 3** | [6 LOY] | **Operative:** *Deep Cover* | Whenever Obsidian completes an Open Agenda while this operative is deployed, deposit **[+1 EF]** into Obsidian's Vault. |
+| **Tier 4** | [10+ LOY] | **Corporate Icon:** *Shadow Director* *([+3 VP])* | Draw 1 additional **Secret Objective** and score both at endgame; while deployed, all [Infiltrate] stages gain **+1 automatic Success**. Worth **[+3 VP]** at end of campaign. |

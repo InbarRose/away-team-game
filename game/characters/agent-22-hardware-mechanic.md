@@ -25,14 +25,14 @@ stats:
 class_ability:
   name: "Adaptive Calibration"
   cost_effort: 1
-  effect: "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by -1 [EF] (min 0)."
+  effect: "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by [-1 EF] (min 0)."
 unique_power:
   name: "Salvage Protocols"
   tier: 1
   es_value: 0.5
   trigger: "Passive — whenever Tess clears an [Operations] stage as a Phase 1 Specialist"
-  effect: "Deposit +1 [CR] directly into your Faction Vault from stripped industrial hardware."
-rules_text: "Class (Technician — Adaptive Calibration, 1 [EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by -1 [EF]. Unique Power (Salvage Protocols): Clearing an [Operations] stage as a Specialist deposits +1 [CR] into your Vault."
+  effect: "Deposit [+1 CR] directly into your Faction Vault from stripped industrial hardware."
+rules_text: "Class (Technician — Adaptive Calibration, [1 EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by [-1 EF]. Unique Power (Salvage Protocols): Clearing an [Operations] stage as a Specialist deposits [+1 CR] into your Vault."
 tags:
   - "character"
   - "technician"
@@ -48,17 +48,17 @@ art_spec:
 # Agent 22: Tess "Sprocket" Tanaka (*The Hardware Mechanic*)
 
 * **Class:** Technician
-* **Focus Profile:** Primary: `[Operations]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Operations] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `0.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Adaptive Calibration (`1 [EF]`)
+## Class Ability: Adaptive Calibration ([1 EF])
 
-Activate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the `[EF]` activation cost of an equipped `[Complex]` item by `-1 [EF]`** (to a minimum of `0`).
+Activate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the [EF] activation cost of an equipped [Complex] item by [-1 EF]** (to a minimum of `0`).
 
 ---
 
 ## Unique Power: Salvage Protocols (`0.5 ES` — Tier 1 Passive)
 
-Whenever Tess participates in clearing an **`[Operations]`** stage as a Phase 1 Specialist, deposit **`+1 Credit [CR]`** directly into your Faction Vault.
+Whenever Tess participates in clearing an **[Operations]** stage as a Phase 1 Specialist, deposit **`[+1 CR]`** directly into your Faction Vault.

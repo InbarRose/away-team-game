@@ -38,7 +38,7 @@
       "trigger": "Passive — whenever this operative rolls dice in a [Combat] stage",
       "effect": "Ignore the first natural 1 (Backfire) rolled by this operative each [Combat] stage."
     },
-    "rules_text": "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (CQC Conditioning): Ignore the first natural 1 (Backfire) rolled by Garret in each [Combat] stage.",
+    "rules_text": "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (CQC Conditioning): Ignore the first natural 1 (Backfire) rolled by Garret in each [Combat] stage.",
     "tags": [
       "character",
       "soldier",
@@ -52,7 +52,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-01-commander.md",
-    "body": "# Agent 01: Commander Garret Vance (*The Commander*)\n\n* **Class:** Soldier (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`4 HP`** (`6.0 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Lock and Load (`1 [EF]`)\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Garret's rolling pool for this phase only.\n\n---\n\n## Unique Power: CQC Conditioning (`0.5 ES` — Tier 1 Passive)\n\nWhenever Garret rolls dice in a **`[Combat]`** stage, completely **ignore the first natural `1` (Backfire)** rolled in his pool each stage."
+    "body": "# Agent 01: Commander Garret Vance (*The Commander*)\n\n* **Class:** Soldier (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`4 HP`** (`6.0 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Lock and Load ([1 EF])\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Garret's rolling pool for this phase only.\n\n---\n\n## Unique Power: CQC Conditioning (`0.5 ES` — Tier 1 Passive)\n\nWhenever Garret rolls dice in a **[Combat]** stage, completely **ignore the first natural `1` (Backfire)** rolled in his pool each stage."
   },
   {
     "id": "agent-02-pointman",
@@ -93,7 +93,7 @@
       "trigger": "Active — during Phase 1 Initiative on a [Combat] or [Infiltrate] stage",
       "effect": "Croft may choose to skip her normal Initiative phase and act during Step 4 (Post-Initiative), evaluating the entire squad's rolled pool before deciding how many static dice to commit (rolling at her normal 3+ or 4+ threshold)."
     },
-    "rules_text": "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (Tactical Flank): Skip Phase 1/2 to commit and roll your exact needed dice during Step 4 (Post-Initiative) after seeing all other rolls.",
+    "rules_text": "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (Tactical Flank): Skip Phase 1/2 to commit and roll your exact needed dice during Step 4 (Post-Initiative) after seeing all other rolls.",
     "tags": [
       "character",
       "soldier",
@@ -107,7 +107,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-02-pointman.md",
-    "body": "# Agent 02: Sarah \"Specter\" Croft (*The Pointman*)\n\n* **Class:** Soldier (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Infiltrate]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Lock and Load (`1 [EF]`)\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Sarah's rolling pool for this phase only.\n\n---\n\n## Unique Power: Tactical Flank (`1.0 ES` — Tier 2 Active)\n\nSarah may choose to completely skip Phase 1 or Phase 2 Initiative and instead act during **Step 4 (Post-Initiative)**. This allows her controlling Faction to see the exact success deficit rolled by the rest of the squad before committing the exact number of static dice needed from her sheet (rolling at her normal `3+` or `4+` threshold)."
+    "body": "# Agent 02: Sarah \"Specter\" Croft (*The Pointman*)\n\n* **Class:** Soldier (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Infiltrate] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Lock and Load ([1 EF])\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Sarah's rolling pool for this phase only.\n\n---\n\n## Unique Power: Tactical Flank (`1.0 ES` — Tier 2 Active)\n\nSarah may choose to completely skip Phase 1 or Phase 2 Initiative and instead act during **Step 4 (Post-Initiative)**. This allows her controlling Faction to see the exact success deficit rolled by the rest of the squad before committing the exact number of static dice needed from her sheet (rolling at her normal `3+` or `4+` threshold)."
   },
   {
     "id": "agent-03-breacher",
@@ -148,7 +148,7 @@
       "trigger": "Activate during Phase 1 Initiative in a [Combat] stage before rolling",
       "effect": "Permanently spend 1 static die from your pool without rolling it to lay down cover fire. For the remainder of Phase 1, all other Specialist dice in the room succeed on a 2+ threshold instead of 3+."
     },
-    "rules_text": "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (Suppressing Fire): Spend 1 static die unrolled in Phase 1 [Combat] so all other Specialist dice succeed on a 2+ instead of 3+.",
+    "rules_text": "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (Suppressing Fire): Spend 1 static die unrolled in Phase 1 [Combat] so all other Specialist dice succeed on a 2+ instead of 3+.",
     "tags": [
       "character",
       "soldier",
@@ -162,7 +162,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-03-breacher.md",
-    "body": "# Agent 03: Draco \"Gorgon\" Vance (*The Breacher*)\n\n* **Class:** Soldier (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Lock and Load (`1 [EF]`)\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Draco's rolling pool for this phase only.\n\n---\n\n## Unique Power: Suppressing Fire (`1.0 ES` — Tier 2 Active)\n\nDuring Phase 1 Initiative on a **`[Combat]`** stage, Draco may spend **`1 static die`** from his active pool without rolling it to lay down heavy cover fire. For the remainder of Phase 1, all other Specialist dice committed to the room score successes on a **`2+` threshold** (instead of `3+`)."
+    "body": "# Agent 03: Draco \"Gorgon\" Vance (*The Breacher*)\n\n* **Class:** Soldier (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Lock and Load ([1 EF])\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Draco's rolling pool for this phase only.\n\n---\n\n## Unique Power: Suppressing Fire (`1.0 ES` — Tier 2 Active)\n\nDuring Phase 1 Initiative on a **[Combat]** stage, Draco may spend **`1 static die`** from his active pool without rolling it to lay down heavy cover fire. For the remainder of Phase 1, all other Specialist dice committed to the room score successes on a **`2+` threshold** (instead of `3+`)."
   },
   {
     "id": "agent-04-juggernaut",
@@ -201,9 +201,9 @@
       "tier": 1,
       "es_value": 0.5,
       "trigger": "Reactive — once per stage when an ally takes Backfire (1) damage in [Combat] or [Survival]",
-      "effect": "Marcus may intercept and suffer that 1 point of Backfire damage onto his own HP track instead of the ally. If he does, his Faction immediately deposits +1 [CR] into their Vault."
+      "effect": "Marcus may intercept and suffer that 1 point of Backfire damage onto his own HP track instead of the ally. If he does, his Faction immediately deposits [+1 CR] into their Vault."
     },
-    "rules_text": "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (Kinetic Soak): Once per [Combat] or [Survival] stage, absorb 1 Backfire damage for an ally onto Marcus and gain +1 [CR].",
+    "rules_text": "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (Kinetic Soak): Once per [Combat] or [Survival] stage, absorb 1 Backfire damage for an ally onto Marcus and gain [+1 CR].",
     "tags": [
       "character",
       "soldier",
@@ -218,7 +218,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-04-juggernaut.md",
-    "body": "# Agent 04: Marcus \"The Anvil\" Vance (*The Juggernaut*)\n\n* **Class:** Soldier (`Primary Combat` — Tank Archetype)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Survival]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`4 HP`** (`6.0 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES` Tank Envelope)\n\n---\n\n## Class Ability: Lock and Load (`1 [EF]`)\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Marcus's rolling pool for this phase only.\n\n---\n\n## Unique Power: Kinetic Soak (`0.5 ES` — Tier 1 Reactive)\n\nOnce per stage during a **`[Combat]`** or **`[Survival]`** check, when a deployed ally rolls a natural `1` (Backfire), Marcus may step in and take that `1 HP` damage onto his own health track instead. If he does, his Faction immediately deposits **`+1 Credit [CR]`** into their Vault."
+    "body": "# Agent 04: Marcus \"The Anvil\" Vance (*The Juggernaut*)\n\n* **Class:** Soldier (`Primary Combat` — Tank Archetype)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Survival] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`4 HP`** (`6.0 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES` Tank Envelope)\n\n---\n\n## Class Ability: Lock and Load ([1 EF])\n\nActivate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Marcus's rolling pool for this phase only.\n\n---\n\n## Unique Power: Kinetic Soak (`0.5 ES` — Tier 1 Reactive)\n\nOnce per stage during a **[Combat]** or **[Survival]** check, when a deployed ally rolls a natural `1` (Backfire), Marcus may step in and take that `1 HP` damage onto his own health track instead. If he does, his Faction immediately deposits **`[+1 CR]`** into their Vault."
   },
   {
     "id": "agent-05-guerrilla",
@@ -259,7 +259,7 @@
       "trigger": "Once per mission, during Step 1 (Briefing) of a [Combat] or [Infiltrate] stage",
       "effect": "Paint enemy weak points for the squad. For the duration of this stage, all Out-of-Focus Support operatives roll against a 4+ threshold (instead of 5+)."
     },
-    "rules_text": "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Target Acquired): Once per mission on a [Combat] or [Infiltrate] stage, all Out-of-Focus allies hit on 4+ instead of 5+.",
+    "rules_text": "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Target Acquired): Once per mission on a [Combat] or [Infiltrate] stage, all Out-of-Focus allies hit on 4+ instead of 5+.",
     "tags": [
       "character",
       "recon",
@@ -273,7 +273,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-05-guerrilla.md",
-    "body": "# Agent 05: Kaelen \"Echo\" Cross (*The Guerrilla*)\n\n* **Class:** Recon (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Infiltrate]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance (`1 [EF]`)\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Target Acquired (`1.0 ES` — Tier 2 Active)\n\nOnce per mission during Step 1 (Briefing) of a **`[Combat]`** or **`[Infiltrate]`** stage, Kaelen can lock onto enemy threat vectors. For the duration of this stage, **all Out-of-Focus Support operatives score successes on a `4+`** (instead of `5+`)."
+    "body": "# Agent 05: Kaelen \"Echo\" Cross (*The Guerrilla*)\n\n* **Class:** Recon (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Infiltrate] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance ([1 EF])\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Target Acquired (`1.0 ES` — Tier 2 Active)\n\nOnce per mission during Step 1 (Briefing) of a **[Combat]** or **[Infiltrate]** stage, Kaelen can lock onto enemy threat vectors. For the duration of this stage, **all Out-of-Focus Support operatives score successes on a `4+`** (instead of `5+`)."
   },
   {
     "id": "agent-06-saboteur",
@@ -314,7 +314,7 @@
       "trigger": "Once per mission, during Step 1 (Briefing) of a [Combat] or [Operations] stage",
       "effect": "Spend 1 static die from Buster's active pool to detonate a perimeter charge, permanently reducing the stage's Target Difficulty by -1 Success (minimum 1) and ignoring any Difficulty +1 text on the Stage Modifier."
     },
-    "rules_text": "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Shaped Demolition): Once per mission in [Combat] or [Operations], spend 1 static die to lower Target Difficulty by -1 and ignore Modifier difficulty increases.",
+    "rules_text": "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Shaped Demolition): Once per mission in [Combat] or [Operations], spend 1 static die to lower Target Difficulty by -1 and ignore Modifier difficulty increases.",
     "tags": [
       "character",
       "recon",
@@ -328,7 +328,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-06-saboteur.md",
-    "body": "# Agent 06: Jaxom \"Buster\" Reyes (*The Saboteur*)\n\n* **Class:** Recon (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance (`1 [EF]`)\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Shaped Demolition (`1.0 ES` — Tier 2 Active)\n\nOnce per mission during Step 1 (Briefing) of a **`[Combat]`** or **`[Operations]`** stage, Buster may spend **`1 static die`** from his pool to reduce the stage's Target Difficulty by **`-1 Success`** (minimum 1) and ignore any difficulty increases on the active Stage Modifier."
+    "body": "# Agent 06: Jaxom \"Buster\" Reyes (*The Saboteur*)\n\n* **Class:** Recon (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance ([1 EF])\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Shaped Demolition (`1.0 ES` — Tier 2 Active)\n\nOnce per mission during Step 1 (Briefing) of a **[Combat]** or **[Operations]** stage, Buster may spend **`1 static die`** from his pool to reduce the stage's Target Difficulty by **`-1 Success`** (minimum 1) and ignore any difficulty increases on the active Stage Modifier."
   },
   {
     "id": "agent-07-ghost-point",
@@ -369,7 +369,7 @@
       "trigger": "Passive — whenever this operative rolls dice in an [Infiltrate] stage",
       "effect": "Ignore the first natural 1 (Backfire) rolled by Ji-Yoon on each [Infiltrate] stage."
     },
-    "rules_text": "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Ghost Protocol): Ignore the first natural 1 (Backfire) rolled by Ji-Yoon in each [Infiltrate] stage.",
+    "rules_text": "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Ghost Protocol): Ignore the first natural 1 (Backfire) rolled by Ji-Yoon in each [Infiltrate] stage.",
     "tags": [
       "character",
       "recon",
@@ -383,7 +383,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-07-ghost-point.md",
-    "body": "# Agent 07: Ji-Yoon \"Wraith\" Park (*The Ghost Point*)\n\n* **Class:** Recon (`Secondary Combat`)\n* **Focus Profile:** Primary: `[Infiltrate]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance (`1 [EF]`)\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Ghost Protocol (`0.5 ES` — Tier 1 Passive)\n\nWhenever Ji-Yoon rolls dice in an **`[Infiltrate]`** stage, she completely **ignores the first natural `1` (Backfire)** rolled in her pool."
+    "body": "# Agent 07: Ji-Yoon \"Wraith\" Park (*The Ghost Point*)\n\n* **Class:** Recon (`Secondary Combat`)\n* **Focus Profile:** Primary: [Infiltrate] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance ([1 EF])\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Ghost Protocol (`0.5 ES` — Tier 1 Passive)\n\nWhenever Ji-Yoon rolls dice in an **[Infiltrate]** stage, she completely **ignores the first natural `1` (Backfire)** rolled in her pool."
   },
   {
     "id": "agent-08-prowler",
@@ -422,9 +422,9 @@
       "tier": 3,
       "es_value": 1.5,
       "trigger": "Passive — during Resolution of any [Infiltrate] or [Intel] stage",
-      "effect": "Whenever Vesper rolls at least one natural 6 on an [Infiltrate] or [Intel] check, deposit +1 [CR] into your Faction Vault (or +2 [CR] if she rolled two or more 6s)."
+      "effect": "Whenever Vesper rolls at least one natural 6 on an [Infiltrate] or [Intel] check, deposit [+1 CR] into your Faction Vault (or [+2 CR] if she rolled two or more 6s)."
     },
-    "rules_text": "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Shadow Siphon): Rolling a natural 6 on an [Infiltrate] or [Intel] check deposits +1 [CR] into your Vault (+2 [CR] for two or more 6s).",
+    "rules_text": "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Shadow Siphon): Rolling a natural 6 on an [Infiltrate] or [Intel] check deposits [+1 CR] into your Vault ([+2 CR] for two or more 6s).",
     "tags": [
       "character",
       "recon",
@@ -440,7 +440,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-08-prowler.md",
-    "body": "# Agent 08: Vesper \"Nyx\" Gray (*The Prowler*)\n\n* **Class:** Recon (`Zero-Combat Specialist` — Glass Cannon)\n* **Focus Profile:** Primary: `[Infiltrate]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`9 Static Dice`** (`4.5 ES`) • **Power:** `1.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance (`1 [EF]`)\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Shadow Siphon (`1.5 ES` — Tier 3 Passive)\n\nWhenever Vesper rolls at least one natural `6` during an **`[Infiltrate]`** or **`[Intel]`** stage check, her Faction immediately harvests **`+1 Credit [CR]`** into their Vault (or **`+2 [CR]`** if she rolls two or more natural `6s`)."
+    "body": "# Agent 08: Vesper \"Nyx\" Gray (*The Prowler*)\n\n* **Class:** Recon (`Zero-Combat Specialist` — Glass Cannon)\n* **Focus Profile:** Primary: [Infiltrate] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`9 Static Dice`** (`4.5 ES`) • **Power:** `1.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Intel Reconnaissance ([1 EF])\n\nActivate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.\n\n---\n\n## Unique Power: Shadow Siphon (`1.5 ES` — Tier 3 Passive)\n\nWhenever Vesper rolls at least one natural `6` during an **[Infiltrate]** or **[Intel]** stage check, her Faction immediately harvests **`[+1 CR]`** into their Vault (or **[+2 CR]** if she rolls two or more natural `6s`)."
   },
   {
     "id": "agent-09-ranger",
@@ -481,7 +481,7 @@
       "trigger": "Passive — whenever this operative rolls dice in a [Survival] or environmental hazard stage",
       "effect": "Ignore the first natural 1 (Backfire) rolled by Silas each stage."
     },
-    "rules_text": "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Hardened Endurance): Ignore the first natural 1 (Backfire) rolled by Silas each stage.",
+    "rules_text": "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Hardened Endurance): Ignore the first natural 1 (Backfire) rolled by Silas each stage.",
     "tags": [
       "character",
       "survivalist",
@@ -495,7 +495,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-09-ranger.md",
-    "body": "# Agent 09: Major Silas Thorne (*The Ranger*)\n\n* **Class:** Survivalist (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Survival]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `0.5 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine (`1 [EF]`)\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Hardened Endurance (`0.5 ES` — Tier 1 Passive)\n\nIgnore the first natural `1` (Backfire) rolled by Silas each stage during **`[Survival]`** or **`[Combat]`** checks."
+    "body": "# Agent 09: Major Silas Thorne (*The Ranger*)\n\n* **Class:** Survivalist (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Survival] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `0.5 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine ([1 EF])\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Hardened Endurance (`0.5 ES` — Tier 1 Passive)\n\nIgnore the first natural `1` (Backfire) rolled by Silas each stage during **[Survival]** or **[Combat]** checks."
   },
   {
     "id": "agent-10-sentinel",
@@ -536,7 +536,7 @@
       "trigger": "Once per mission, when the squad clears a [Combat] or [Intel] stage with Momentum (+2 or higher)",
       "effect": "Elena inspires the strike team, granting +1 additional Momentum refund die to any deployed operative who rolled in that stage."
     },
-    "rules_text": "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Tactical Rally): Once per mission on a [Combat] or [Intel] Momentum clear, grant +1 extra Momentum refund die to a rolling ally.",
+    "rules_text": "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Tactical Rally): Once per mission on a [Combat] or [Intel] Momentum clear, grant +1 extra Momentum refund die to a rolling ally.",
     "tags": [
       "character",
       "survivalist",
@@ -550,7 +550,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-10-sentinel.md",
-    "body": "# Agent 10: Captain Elena Rostova (*The Sentinel*)\n\n* **Class:** Survivalist (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine (`1 [EF]`)\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Tactical Rally (`1.0 ES` — Tier 2 Trigger)\n\nOnce per mission, when the squad clears a **`[Combat]`** or **`[Intel]`** stage with **Operational Momentum (`[MOM]`)**, Elena grants **`+1 additional Momentum refund die`** to any participating operative."
+    "body": "# Agent 10: Captain Elena Rostova (*The Sentinel*)\n\n* **Class:** Survivalist (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine ([1 EF])\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Tactical Rally (`1.0 ES` — Tier 2 Trigger)\n\nOnce per mission, when the squad clears a **[Combat]** or **[Intel]** stage with **Operational Momentum ([MOM])**, Elena grants **`+1 additional Momentum refund die`** to any participating operative."
   },
   {
     "id": "agent-11-vanguard-tracker",
@@ -591,7 +591,7 @@
       "trigger": "Passive — triggers immediately the first time per mission this operative is reduced to 1 HP",
       "effect": "Immediately restore +2 spent static dice back to Kael's active pool, and treat all his rolls for the current and next stage as Primary Focus (3+)."
     },
-    "rules_text": "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Last Stand Protocol): The first time Kael drops to 1 HP each mission, restore +2 spent static dice and treat his rolls as Primary Focus (3+) for the current and next stage.",
+    "rules_text": "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Last Stand Protocol): The first time Kael drops to 1 HP each mission, restore +2 spent static dice and treat his rolls as Primary Focus (3+) for the current and next stage.",
     "tags": [
       "character",
       "survivalist",
@@ -605,7 +605,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-11-vanguard-tracker.md",
-    "body": "# Agent 11: Kael \"Hound\" Volkov (*The Vanguard Tracker*)\n\n* **Class:** Survivalist (`Secondary Combat`)\n* **Focus Profile:** Primary: `[Survival]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`4 Static Dice`** (`2.0 ES`) • **Power:** `1.5 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine (`1 [EF]`)\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Last Stand Protocol (`1.5 ES` — Tier 3 Passive)\n\nThe first time per mission Kael is reduced to **exactly `1 HP`**, immediately restore **`+2 spent static dice`** to his active pool and treat all of his rolls for the current and next stage as **Primary Focus (`3+`)**."
+    "body": "# Agent 11: Kael \"Hound\" Volkov (*The Vanguard Tracker*)\n\n* **Class:** Survivalist (`Secondary Combat`)\n* **Focus Profile:** Primary: [Survival] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`4 Static Dice`** (`2.0 ES`) • **Power:** `1.5 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine ([1 EF])\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Last Stand Protocol (`1.5 ES` — Tier 3 Passive)\n\nThe first time per mission Kael is reduced to **exactly `1 HP`**, immediately restore **`+2 spent static dice`** to his active pool and treat all of his rolls for the current and next stage as **Primary Focus (`3+`)**."
   },
   {
     "id": "agent-12-outpost-mechanic",
@@ -646,7 +646,7 @@
       "trigger": "Once per mission, immediately after a stage is cleared with Momentum (+2 or higher)",
       "effect": "Cole may claim +1 bonus Momentum refund die back into his own static pool, even if he committed 0 dice during that stage."
     },
-    "rules_text": "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Field Scavenger): Once per mission on a Momentum clear, restore +1 spent static die to Cole even if he did not roll in that stage.",
+    "rules_text": "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Field Scavenger): Once per mission on a Momentum clear, restore +1 spent static die to Cole even if he did not roll in that stage.",
     "tags": [
       "character",
       "survivalist",
@@ -661,7 +661,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-12-outpost-mechanic.md",
-    "body": "# Agent 12: Cole \"Rusty\" Vance (*The Outpost Mechanic*)\n\n* **Class:** Survivalist (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: `[Survival]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine (`1 [EF]`)\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Field Scavenger (`1.0 ES` — Tier 2 Trigger)\n\nOnce per mission, immediately after the squad clears a stage with **Operational Momentum (`[MOM]`)**, Cole may claim **`+1 bonus Momentum refund die`** into his own static pool—even if he committed `0` dice during that stage."
+    "body": "# Agent 12: Cole \"Rusty\" Vance (*The Outpost Mechanic*)\n\n* **Class:** Survivalist (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: [Survival] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Emergency Field Medicine ([1 EF])\n\nActivate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).\n\n---\n\n## Unique Power: Field Scavenger (`1.0 ES` — Tier 2 Trigger)\n\nOnce per mission, immediately after the squad clears a stage with **Operational Momentum ([MOM])**, Cole may claim **`+1 bonus Momentum refund die`** into his own static pool—even if he committed `0` dice during that stage."
   },
   {
     "id": "agent-13-combat-medic",
@@ -702,7 +702,7 @@
       "trigger": "Reactive — once per mission when any deployed operative drops to 0 HP",
       "effect": "Spend 1 static die from Aris's active pool to immediately stabilize that operative at 1 HP without spending [EF] or discarding a Consumable item."
     },
-    "rules_text": "Class (Scientist — Dual-Vector Mapping, 1 [EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Emergency Triage): Once per mission when an ally hits 0 HP, spend 1 static die to stabilize them at 1 HP for free.",
+    "rules_text": "Class (Scientist — Dual-Vector Mapping, [1 EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Emergency Triage): Once per mission when an ally hits 0 HP, spend 1 static die to stabilize them at 1 HP for free.",
     "tags": [
       "character",
       "scientist",
@@ -717,7 +717,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-13-combat-medic.md",
-    "body": "# Agent 13: Dr. Aris Thorne (*The Combat Medic*)\n\n* **Class:** Scientist (`Primary Combat`)\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping (`1 [EF]`)\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Emergency Triage (`1.0 ES` — Tier 2 Reactive)\n\nOnce per mission, when any deployed operative drops to **`0 HP`** mid-stage, Aris can spend **`1 static die`** from his active pool to immediately stabilize that operative at **`1 HP`** without spending Vault `[EF]` or discarding a Medical Consumable."
+    "body": "# Agent 13: Dr. Aris Thorne (*The Combat Medic*)\n\n* **Class:** Scientist (`Primary Combat`)\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping ([1 EF])\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Emergency Triage (`1.0 ES` — Tier 2 Reactive)\n\nOnce per mission, when any deployed operative drops to **`0 HP`** mid-stage, Aris can spend **`1 static die`** from his active pool to immediately stabilize that operative at **`1 HP`** without spending Vault [EF] or discarding a Medical Consumable."
   },
   {
     "id": "agent-14-field-biologist",
@@ -758,7 +758,7 @@
       "trigger": "Once per stage, during Step 4 (Post-Initiative) after your initial roll lands",
       "effect": "Re-roll up to 2 failure faces (blanks or natural 1s) in Linnea's rolled dice pool."
     },
-    "rules_text": "Class (Scientist — Dual-Vector Mapping, 1 [EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Pattern Recognition): Once per stage after rolling, re-roll up to 2 failure faces (blanks or 1s) in your pool.",
+    "rules_text": "Class (Scientist — Dual-Vector Mapping, [1 EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Pattern Recognition): Once per stage after rolling, re-roll up to 2 failure faces (blanks or 1s) in your pool.",
     "tags": [
       "character",
       "scientist",
@@ -772,7 +772,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-14-field-biologist.md",
-    "body": "# Agent 14: Dr. Linnea Lindstrom (*The Field Biologist*)\n\n* **Class:** Scientist (`Secondary Combat`)\n* **Focus Profile:** Primary: `[Intel]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping (`1 [EF]`)\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Pattern Recognition (`1.0 ES` — Tier 2 Active)\n\nOnce per stage, after Linnea's initial dice roll lands, she may **re-roll up to `2 failure faces`** (blanks or natural `1s`) in her active pool."
+    "body": "# Agent 14: Dr. Linnea Lindstrom (*The Field Biologist*)\n\n* **Class:** Scientist (`Secondary Combat`)\n* **Focus Profile:** Primary: [Intel] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping ([1 EF])\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Pattern Recognition (`1.0 ES` — Tier 2 Active)\n\nOnce per stage, after Linnea's initial dice roll lands, she may **re-roll up to `2 failure faces`** (blanks or natural `1s`) in her active pool."
   },
   {
     "id": "agent-15-virologist",
@@ -811,9 +811,9 @@
       "tier": 3,
       "es_value": 2,
       "trigger": "Activate once per mission during Step 1 (Briefing) of an [Intel] or [Infiltrate] stage",
-      "effect": "Spend 1 [EF] to unleash a custom viral exploit, instantly adding +4 temporary static dice to Naomi's pool that are completely immune to Backfire (1s) damage for that stage."
+      "effect": "Spend [1 EF] to unleash a custom viral exploit, instantly adding +4 temporary static dice to Naomi's pool that are completely immune to Backfire (1s) damage for that stage."
     },
-    "rules_text": "Class (Scientist — Dual-Vector Mapping, 1 [EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Data Cascade): Once per mission in [Intel] or [Infiltrate], spend 1 [EF] to gain +4 temporary dice immune to Backfire (1s).",
+    "rules_text": "Class (Scientist — Dual-Vector Mapping, [1 EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Data Cascade): Once per mission in [Intel] or [Infiltrate], spend [1 EF] to gain +4 temporary dice immune to Backfire (1s).",
     "tags": [
       "character",
       "scientist",
@@ -829,7 +829,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-15-virologist.md",
-    "body": "# Agent 15: Dr. Naomi Kim (*The Virologist*)\n\n* **Class:** Scientist (`Zero-Combat Specialist` — Glass Cannon)\n* **Focus Profile:** Primary: `[Intel]` (`3+`) | Secondary: `[Infiltrate]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `2.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping (`1 [EF]`)\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Data Cascade (`2.0 ES` — Tier 3 Active)\n\nOnce per mission during Step 1 (Briefing) of an **`[Intel]`** or **`[Infiltrate]`** stage, Naomi may spend **`1 [EF]`** to add **`+4 temporary static dice`** to her pool for that check, with complete immunity to Backfire (`1s`) damage."
+    "body": "# Agent 15: Dr. Naomi Kim (*The Virologist*)\n\n* **Class:** Scientist (`Zero-Combat Specialist` — Glass Cannon)\n* **Focus Profile:** Primary: [Intel] (`3+`) | Secondary: [Infiltrate] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `2.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping ([1 EF])\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Data Cascade (`2.0 ES` — Tier 3 Active)\n\nOnce per mission during Step 1 (Briefing) of an **[Intel]** or **[Infiltrate]** stage, Naomi may spend **[1 EF]** to add **`+4 temporary static dice`** to her pool for that check, with complete immunity to Backfire (`1s`) damage."
   },
   {
     "id": "agent-16-systems-architect",
@@ -868,9 +868,9 @@
       "tier": 1,
       "es_value": 0.5,
       "trigger": "Passive — whenever Henrik clears an [Intel] stage as a Phase 1 Specialist",
-      "effect": "Deposit +1 [CR] directly into your Faction Vault from decrypted corporate data."
+      "effect": "Deposit [+1 CR] directly into your Faction Vault from decrypted corporate data."
     },
-    "rules_text": "Class (Scientist — Dual-Vector Mapping, 1 [EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Telemetry Harvest): Clearing an [Intel] stage as a Specialist deposits +1 [CR] into your Vault.",
+    "rules_text": "Class (Scientist — Dual-Vector Mapping, [1 EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Telemetry Harvest): Clearing an [Intel] stage as a Specialist deposits [+1 CR] into your Vault.",
     "tags": [
       "character",
       "scientist",
@@ -885,7 +885,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-16-systems-architect.md",
-    "body": "# Agent 16: Dr. Henrik \"Cortex\" Lindqvist (*The Systems Architect*)\n\n* **Class:** Scientist (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: `[Intel]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `0.5 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping (`1 [EF]`)\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Telemetry Harvest (`0.5 ES` — Tier 1 Passive)\n\nWhenever Henrik participates in clearing an **`[Intel]`** stage as a Phase 1 Specialist, deposit **`+1 Credit [CR]`** directly into your Faction Vault."
+    "body": "# Agent 16: Dr. Henrik \"Cortex\" Lindqvist (*The Systems Architect*)\n\n* **Class:** Scientist (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: [Intel] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `0.5 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Dual-Vector Mapping ([1 EF])\n\nActivate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.\n\n---\n\n## Unique Power: Telemetry Harvest (`0.5 ES` — Tier 1 Passive)\n\nWhenever Henrik participates in clearing an **[Intel]** stage as a Phase 1 Specialist, deposit **`[+1 CR]`** directly into your Faction Vault."
   },
   {
     "id": "agent-17-political-enforcer",
@@ -924,9 +924,9 @@
       "tier": 2,
       "es_value": 1,
       "trigger": "Once per mission — when clearing a [Combat] or [Negotiate] stage",
-      "effect": "Deposit +2 [CR] directly into your Faction Vault."
+      "effect": "Deposit [+2 CR] directly into your Faction Vault."
     },
-    "rules_text": "Class (Diplomat — Strategic Alignment, 1 [EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Extortionist): Once per mission, when clearing a [Combat] or [Negotiate] stage, deposit +2 [CR] into your Vault.",
+    "rules_text": "Class (Diplomat — Strategic Alignment, [1 EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Extortionist): Once per mission, when clearing a [Combat] or [Negotiate] stage, deposit [+2 CR] into your Vault.",
     "tags": [
       "character",
       "diplomat",
@@ -940,7 +940,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-17-political-enforcer.md",
-    "body": "# Agent 17: Consul Thaddeus Finch (*The Political Enforcer*)\n\n* **Class:** Diplomat\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Negotiate]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment (`1 [EF]`)\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Extortionist (`1.0 ES` — Tier 2 Active)\n\n**Once per mission**, when the squad clears a **`[Combat]`** or **`[Negotiate]`** stage in which Finch rolled dice, deposit **`+2 Credits [CR]`** directly into your Faction Vault."
+    "body": "# Agent 17: Consul Thaddeus Finch (*The Political Enforcer*)\n\n* **Class:** Diplomat\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Negotiate] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment ([1 EF])\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Extortionist (`1.0 ES` — Tier 2 Active)\n\n**Once per mission**, when the squad clears a **[Combat]** or **[Negotiate]** stage in which Finch rolled dice, deposit **`[+2 CR]`** directly into your Faction Vault."
   },
   {
     "id": "agent-18-crisis-coordinator",
@@ -979,9 +979,9 @@
       "tier": 3,
       "es_value": 1.5,
       "trigger": "Once per mission — during Step 1 (Briefing) of a [Negotiate] or [Combat] stage",
-      "effect": "Spend 2 [EF] to reduce the room's Target Difficulty by -2 Successes (to a minimum of 1)."
+      "effect": "Spend [2 EF] to reduce the room's Target Difficulty by -2 Successes (to a minimum of 1)."
     },
-    "rules_text": "Class (Diplomat — Strategic Alignment, 1 [EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Diplomatic Truce): Once per mission on a [Negotiate] or [Combat] stage, spend 2 [EF] to reduce Target Difficulty by -2 Successes (min 1).",
+    "rules_text": "Class (Diplomat — Strategic Alignment, [1 EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Diplomatic Truce): Once per mission on a [Negotiate] or [Combat] stage, spend [2 EF] to reduce Target Difficulty by -2 Successes (min 1).",
     "tags": [
       "character",
       "diplomat",
@@ -995,7 +995,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-18-crisis-coordinator.md",
-    "body": "# Agent 18: Aisha Rahman (*The Crisis Coordinator*)\n\n* **Class:** Diplomat\n* **Focus Profile:** Primary: `[Negotiate]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment (`1 [EF]`)\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Diplomatic Truce (`1.5 ES` — Tier 3 Active)\n\n**Once per mission**, during Step 1 (Briefing) of a **`[Negotiate]`** or **`[Combat]`** stage, you may spend **`2 Effort [EF]`** to reduce the room's Target Difficulty by **`-2 Successes`** (to a minimum of `1`)."
+    "body": "# Agent 18: Aisha Rahman (*The Crisis Coordinator*)\n\n* **Class:** Diplomat\n* **Focus Profile:** Primary: [Negotiate] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment ([1 EF])\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Diplomatic Truce (`1.5 ES` — Tier 3 Active)\n\n**Once per mission**, during Step 1 (Briefing) of a **[Negotiate]** or **[Combat]** stage, you may spend **`[2 EF]`** to reduce the room's Target Difficulty by **`-2 Successes`** (to a minimum of `1`)."
   },
   {
     "id": "agent-19-spymaster",
@@ -1034,9 +1034,9 @@
       "tier": 4,
       "es_value": 2,
       "trigger": "Passive — during the Command Auction & Mission Launch",
-      "effect": "Your minimum Command Auction bid is 0 [CR]. Whenever you are elected Squad Leader with Soren deployed on the Away Team, immediately deposit +2 [EF] into your Faction Vault."
+      "effect": "Your minimum Command Auction bid is [0 CR]. Whenever you are elected Squad Leader with Soren deployed on the Away Team, immediately deposit [+2 EF] into your Faction Vault."
     },
-    "rules_text": "Class (Diplomat — Strategic Alignment, 1 [EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Corporate Executive): Minimum Command Auction bid is 0 [CR]; when elected Squad Leader with Soren deployed, gain +2 [EF].",
+    "rules_text": "Class (Diplomat — Strategic Alignment, [1 EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Corporate Executive): Minimum Command Auction bid is [0 CR]; when elected Squad Leader with Soren deployed, gain [+2 EF].",
     "tags": [
       "character",
       "diplomat",
@@ -1051,7 +1051,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-19-spymaster.md",
-    "body": "# Agent 19: Soren de Witt (*The Spymaster*)\n\n* **Class:** Diplomat (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: `[Negotiate]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `2.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment (`1 [EF]`)\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Corporate Executive (`2.0 ES` — Tier 4 Rule-Breaker)\n\nWhile Soren de Witt is deployed on your active Away Team:\n* Your minimum opening bid in the **Command Auction** is **`0 [CR]`** (allowing you to claim Squad Leader for free if uncontested).\n* Whenever you win the Command Auction and become **Squad Leader**, immediately deposit **`+2 Effort [EF]`** into your Faction Vault at Mission Launch."
+    "body": "# Agent 19: Soren de Witt (*The Spymaster*)\n\n* **Class:** Diplomat (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: [Negotiate] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `2.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment ([1 EF])\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Corporate Executive (`2.0 ES` — Tier 4 Rule-Breaker)\n\nWhile Soren de Witt is deployed on your active Away Team:\n* Your minimum opening bid in the **Command Auction** is **[0 CR]** (allowing you to claim Squad Leader for free if uncontested).\n* Whenever you win the Command Auction and become **Squad Leader**, immediately deposit **`[+2 EF]`** into your Faction Vault at Mission Launch."
   },
   {
     "id": "agent-20-black-ops-envoy",
@@ -1090,9 +1090,9 @@
       "tier": 2,
       "es_value": 1,
       "trigger": "At the start of every Mission Drop",
-      "effect": "Draw and equip 1 random Tier 1 [Consumable] item onto Evelyn for 0 [CR] (if an equipment/belt slot is available). Unspent expense-account consumables are returned at extraction."
+      "effect": "Draw and equip 1 random Tier 1 [Consumable] item onto Evelyn for [0 CR] (if an equipment/belt slot is available). Unspent expense-account consumables are returned at extraction."
     },
-    "rules_text": "Class (Diplomat — Strategic Alignment, 1 [EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Executive Expense Account): Start every mission drop with 1 free random Tier 1 [Consumable] equipped.",
+    "rules_text": "Class (Diplomat — Strategic Alignment, [1 EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Executive Expense Account): Start every mission drop with 1 free random Tier 1 [Consumable] equipped.",
     "tags": [
       "character",
       "diplomat",
@@ -1107,7 +1107,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-20-black-ops-envoy.md",
-    "body": "# Agent 20: Director Evelyn Vance (*The Black-Ops Envoy*)\n\n* **Class:** Diplomat (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: `[Negotiate]` (`3+`) | Secondary: `[Infiltrate]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment (`1 [EF]`)\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Executive Expense Account (`1.0 ES` — Tier 2 Passive)\n\nAt the start of every Mission Drop, draw **1 random Tier 1 `[Consumable]`** from the Armory deck and equip it onto Evelyn for **`0 [CR]`**. If it is not consumed during the mission, return it to the Armory deck during Extraction."
+    "body": "# Agent 20: Director Evelyn Vance (*The Black-Ops Envoy*)\n\n* **Class:** Diplomat (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: [Negotiate] (`3+`) | Secondary: [Infiltrate] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Strategic Alignment ([1 EF])\n\nActivate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.\n\n---\n\n## Unique Power: Executive Expense Account (`1.0 ES` — Tier 2 Passive)\n\nAt the start of every Mission Drop, draw **1 random Tier 1 [Consumable]** from the Armory deck and equip it onto Evelyn for **[0 CR]**. If it is not consumed during the mission, return it to the Armory deck during Extraction."
   },
   {
     "id": "agent-21-combat-slicer",
@@ -1139,7 +1139,7 @@
     "class_ability": {
       "name": "Adaptive Calibration",
       "cost_effort": 1,
-      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by -1 [EF] (min 0)."
+      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by [-1 EF] (min 0)."
     },
     "unique_power": {
       "name": "System Overclock",
@@ -1148,7 +1148,7 @@
       "trigger": "Once per stage — before rolling on an [Operations] or [Combat] check",
       "effect": "Corey may suffer 1 HP damage (ignoring armor buffers) to add +3 temporary static dice to his roll for this stage."
     },
-    "rules_text": "Class (Technician — Adaptive Calibration, 1 [EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by -1 [EF]. Unique Power (System Overclock): Once per stage on [Operations] or [Combat], suffer 1 HP damage to add +3 temporary static dice.",
+    "rules_text": "Class (Technician — Adaptive Calibration, [1 EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by [-1 EF]. Unique Power (System Overclock): Once per stage on [Operations] or [Combat], suffer 1 HP damage to add +3 temporary static dice.",
     "tags": [
       "character",
       "technician",
@@ -1162,7 +1162,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-21-combat-slicer.md",
-    "body": "# Agent 21: Corey \"Apex\" Miller (*The Combat Slicer*)\n\n* **Class:** Technician\n* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration (`1 [EF]`)\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the `[EF]` activation cost of an equipped `[Complex]` item by `-1 [EF]`** (to a minimum of `0`).\n\n---\n\n## Unique Power: System Overclock (`1.0 ES` — Tier 2 Active)\n\n**Once per stage**, before rolling on an **`[Operations]`** or **`[Combat]`** check, Corey may voluntarily suffer **`1 HP` direct neural feedback damage** (bypassing Armor Buffers) to add **`+3 temporary static dice`** to his roll for this stage."
+    "body": "# Agent 21: Corey \"Apex\" Miller (*The Combat Slicer*)\n\n* **Class:** Technician\n* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration ([1 EF])\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the [EF] activation cost of an equipped [Complex] item by [-1 EF]** (to a minimum of `0`).\n\n---\n\n## Unique Power: System Overclock (`1.0 ES` — Tier 2 Active)\n\n**Once per stage**, before rolling on an **[Operations]** or **[Combat]** check, Corey may voluntarily suffer **`1 HP` direct neural feedback damage** (bypassing Armor Buffers) to add **`+3 temporary static dice`** to his roll for this stage."
   },
   {
     "id": "agent-22-hardware-mechanic",
@@ -1194,16 +1194,16 @@
     "class_ability": {
       "name": "Adaptive Calibration",
       "cost_effort": 1,
-      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by -1 [EF] (min 0)."
+      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by [-1 EF] (min 0)."
     },
     "unique_power": {
       "name": "Salvage Protocols",
       "tier": 1,
       "es_value": 0.5,
       "trigger": "Passive — whenever Tess clears an [Operations] stage as a Phase 1 Specialist",
-      "effect": "Deposit +1 [CR] directly into your Faction Vault from stripped industrial hardware."
+      "effect": "Deposit [+1 CR] directly into your Faction Vault from stripped industrial hardware."
     },
-    "rules_text": "Class (Technician — Adaptive Calibration, 1 [EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by -1 [EF]. Unique Power (Salvage Protocols): Clearing an [Operations] stage as a Specialist deposits +1 [CR] into your Vault.",
+    "rules_text": "Class (Technician — Adaptive Calibration, [1 EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by [-1 EF]. Unique Power (Salvage Protocols): Clearing an [Operations] stage as a Specialist deposits [+1 CR] into your Vault.",
     "tags": [
       "character",
       "technician",
@@ -1217,7 +1217,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-22-hardware-mechanic.md",
-    "body": "# Agent 22: Tess \"Sprocket\" Tanaka (*The Hardware Mechanic*)\n\n* **Class:** Technician\n* **Focus Profile:** Primary: `[Operations]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `0.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration (`1 [EF]`)\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the `[EF]` activation cost of an equipped `[Complex]` item by `-1 [EF]`** (to a minimum of `0`).\n\n---\n\n## Unique Power: Salvage Protocols (`0.5 ES` — Tier 1 Passive)\n\nWhenever Tess participates in clearing an **`[Operations]`** stage as a Phase 1 Specialist, deposit **`+1 Credit [CR]`** directly into your Faction Vault."
+    "body": "# Agent 22: Tess \"Sprocket\" Tanaka (*The Hardware Mechanic*)\n\n* **Class:** Technician\n* **Focus Profile:** Primary: [Operations] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `0.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration ([1 EF])\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the [EF] activation cost of an equipped [Complex] item by [-1 EF]** (to a minimum of `0`).\n\n---\n\n## Unique Power: Salvage Protocols (`0.5 ES` — Tier 1 Passive)\n\nWhenever Tess participates in clearing an **[Operations]** stage as a Phase 1 Specialist, deposit **`[+1 CR]`** directly into your Faction Vault."
   },
   {
     "id": "agent-23-cryptologist",
@@ -1249,16 +1249,16 @@
     "class_ability": {
       "name": "Adaptive Calibration",
       "cost_effort": 1,
-      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by -1 [EF] (min 0)."
+      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by [-1 EF] (min 0)."
     },
     "unique_power": {
       "name": "Zero-Day Override",
       "tier": 3,
       "es_value": 1.5,
       "trigger": "Once per mission — during Step 1 (Briefing) of any stage",
-      "effect": "Completely negate and discard 1 active Stage Modifier card on the current room for 0 [EF]."
+      "effect": "Completely negate and discard 1 active Stage Modifier card on the current room for [0 EF]."
     },
-    "rules_text": "Class (Technician — Adaptive Calibration, 1 [EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by -1 [EF]. Unique Power (Zero-Day Override): Once per mission during Briefing, negate and discard 1 Stage Modifier for 0 [EF].",
+    "rules_text": "Class (Technician — Adaptive Calibration, [1 EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by [-1 EF]. Unique Power (Zero-Day Override): Once per mission during Briefing, negate and discard 1 Stage Modifier for [0 EF].",
     "tags": [
       "character",
       "technician",
@@ -1273,7 +1273,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-23-cryptologist.md",
-    "body": "# Agent 23: Cipher (Lukas Sterling) (*The Cryptologist*)\n\n* **Class:** Technician (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: `[Operations]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`9 Static Dice`** (`4.5 ES`) • **Power:** `1.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration (`1 [EF]`)\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the `[EF]` activation cost of an equipped `[Complex]` item by `-1 [EF]`** (to a minimum of `0`).\n\n---\n\n## Unique Power: Zero-Day Override (`1.5 ES` — Tier 3 Active)\n\n**Once per mission**, during Step 1 (Briefing) of any stage, Cipher may deploy a pre-compiled exploit to **completely negate and discard 1 active Stage Modifier card** attached to the room for **`0 [EF]`**."
+    "body": "# Agent 23: Cipher (Lukas Sterling) (*The Cryptologist*)\n\n* **Class:** Technician (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: [Operations] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`2 HP`** (`3.0 ES`) • **`9 Static Dice`** (`4.5 ES`) • **Power:** `1.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration ([1 EF])\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the [EF] activation cost of an equipped [Complex] item by [-1 EF]** (to a minimum of `0`).\n\n---\n\n## Unique Power: Zero-Day Override (`1.5 ES` — Tier 3 Active)\n\n**Once per mission**, during Step 1 (Briefing) of any stage, Cipher may deploy a pre-compiled exploit to **completely negate and discard 1 active Stage Modifier card** attached to the room for **[0 EF]**."
   },
   {
     "id": "agent-24-eod-drone-operator",
@@ -1305,16 +1305,16 @@
     "class_ability": {
       "name": "Adaptive Calibration",
       "cost_effort": 1,
-      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by -1 [EF] (min 0)."
+      "effect": "Activate after rolling dice. Convert any 1 rolled miss into a guaranteed success, OR reduce the Effort cost of activating an equipped [Complex] item by [-1 EF] (min 0)."
     },
     "unique_power": {
       "name": "Drone Telemetry",
       "tier": 2,
       "es_value": 1,
       "trigger": "Passive — whenever Rhea activates an equipped [Complex] item",
-      "effect": "Equipped [Complex] items on Rhea cost -1 [EF] to activate (min 0) and grant +1 additional temporary static die on top of their printed effect."
+      "effect": "Equipped [Complex] items on Rhea cost [-1 EF] to activate (min 0) and grant +1 additional temporary static die on top of their printed effect."
     },
-    "rules_text": "Class (Technician — Adaptive Calibration, 1 [EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by -1 [EF]. Unique Power (Drone Telemetry): Equipped [Complex] items cost -1 [EF] to activate and grant +1 additional temporary static die.",
+    "rules_text": "Class (Technician — Adaptive Calibration, [1 EF]): Convert 1 miss into a guaranteed success or reduce a [Complex] item's activation cost by [-1 EF]. Unique Power (Drone Telemetry): Equipped [Complex] items cost [-1 EF] to activate and grant +1 additional temporary static die.",
     "tags": [
       "character",
       "technician",
@@ -1329,6 +1329,6 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/characters/agent-24-eod-drone-operator.md",
-    "body": "# Agent 24: Rhea \"Rig\" Kovacs (*The EOD Drone Operator*)\n\n* **Class:** Technician (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: `[Operations]` (`3+`) | Secondary: `[Infiltrate]` (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration (`1 [EF]`)\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the `[EF]` activation cost of an equipped `[Complex]` item by `-1 [EF]`** (to a minimum of `0`).\n\n---\n\n## Unique Power: Drone Telemetry (`1.0 ES` — Tier 2 Passive)\n\nWhenever Rhea activates an equipped **`[Complex]`** item, its activation cost is reduced by **`-1 [EF]`** (minimum `0`) and it grants **`+1 additional temporary static die`** on top of its printed effect."
+    "body": "# Agent 24: Rhea \"Rig\" Kovacs (*The EOD Drone Operator*)\n\n* **Class:** Technician (`Zero-Combat Specialist`)\n* **Focus Profile:** Primary: [Operations] (`3+`) | Secondary: [Infiltrate] (`4+`) | Out of Focus: `5+`\n* **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)\n\n---\n\n## Class Ability: Adaptive Calibration ([1 EF])\n\nActivate after rolling dice to **convert any 1 rolled miss into a guaranteed success**, OR activate before rolling to **reduce the [EF] activation cost of an equipped [Complex] item by [-1 EF]** (to a minimum of `0`).\n\n---\n\n## Unique Power: Drone Telemetry (`1.0 ES` — Tier 2 Passive)\n\nWhenever Rhea activates an equipped **[Complex]** item, its activation cost is reduced by **[-1 EF]** (minimum `0`) and it grants **`+1 additional temporary static die`** on top of its printed effect."
   }
 ]

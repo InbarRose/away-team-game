@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (HQ Downtime Trade): Transfer an armory item or 2+ Credits [CR] directly from your Faction Vault to a rival Faction whose Vault currently holds 0 Credits [CR] (Effort [EF] cannot be traded). Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (HQ Downtime Trade): Transfer an armory item or [2+ CR] directly from your Faction Vault to a rival Faction whose Vault currently holds [0 CR] ([EF] cannot be traded). Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Transfer an **armory item** or **2+ Credits (`[CR]`)** directly from your Faction Vault to a rival Faction whose Vault currently holds **0 Credits (`[CR]`)** *(Effort `[EF]` cannot be traded)*.
+Transfer an **armory item** or **[2+ CR] ([CR])** directly from your Faction Vault to a rival Faction whose Vault currently holds **[0 CR] ([CR])** *([EF] cannot be traded)*.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

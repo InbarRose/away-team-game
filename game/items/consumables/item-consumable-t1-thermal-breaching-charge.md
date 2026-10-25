@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Thermal Breaching Charge** is a Tier 1 utility explosive consumable costing `2 [CR]`. Activated during Step 3 (Commitment), it injects +3 temporary static dice into the squad's rolling pool across physical breach, demolition, and entry checks (`[Combat]`, `[Operations]`, or `[Infiltrate]`).
+The **Thermal Breaching Charge** is a Tier 1 utility explosive consumable costing [2 CR]. Activated during Step 3 (Commitment), it injects +3 temporary static dice into the squad's rolling pool across physical breach, demolition, and entry checks ([Combat], [Operations], or [Infiltrate]).
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Utility Explosive (Single-Use)
-* **Market Cost:** `2 [CR]` *(1.0 ES Value)*
+* **Market Cost:** [2 CR] *(1.0 ES Value)*
 * **Activation Window:** Step 3 (Commitment)
 
 ---
@@ -60,4 +60,4 @@ The **Thermal Breaching Charge** is a Tier 1 utility explosive consumable costin
 ## Tactical Effect
 
 ### Breaching Payload
-Consume during Step 3 (Commitment) to add **+3 temporary static dice** to the squad's rolling pool on `[Combat]`, `[Operations]`, or `[Infiltrate]` stage checks. Discard this card after use.
+Consume during Step 3 (Commitment) to add **+3 temporary static dice** to the squad's rolling pool on [Combat], [Operations], or [Infiltrate] stage checks. Discard this card after use.

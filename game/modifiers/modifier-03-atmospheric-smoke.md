@@ -24,8 +24,8 @@ stats:
 split_effects:
   combat: "Zero visibility. Natural 1s and natural 2s both trigger Backfire damage."
   infiltrate: "Visual concealment. Specialist characters score successes on a 2+."
-  other: "Disoriented navigation. Clearing this stage awards 0 Momentum [MOM] regardless of excess successes."
-rules_text: "If [Combat] Focus: Natural 1s and natural 2s both trigger Backfire damage. If [Infiltrate] Focus: Specialist characters score successes on a 2+. If Other Focus ([Intel], [Operations], [Survival], [Negotiate]): Clearing this stage awards 0 Momentum [MOM] regardless of excess successes."
+  other: "Disoriented navigation. Clearing this stage awards [0 MOM] regardless of excess successes."
+rules_text: "If [Combat] Focus: Natural 1s and natural 2s both trigger Backfire damage. If [Infiltrate] Focus: Specialist characters score successes on a 2+. If Other Focus ([Intel], [Operations], [Survival], [Negotiate]): Clearing this stage awards [0 MOM] regardless of excess successes."
 active_ability: null
 tags:
   - "modifier"
@@ -47,6 +47,6 @@ art_spec:
 
 ## Split-Effect Rules by Active Stage Focus
 
-* **If `[Combat]` Focus:** *Zero Visibility.* Natural **1s** and natural **2s** **both trigger Backfire damage**.
-* **If `[Infiltrate]` Focus:** *Visual Concealment.* Specialist characters score successes on a **2+**.
-* **If Other Focus (`[Intel]`, `[Operations]`, `[Survival]`, `[Negotiate]`):** *Disoriented Navigation.* Clearing this stage awards **0 Momentum (`[MOM]`)** regardless of excess successes.
+* **If [Combat] Focus:** *Zero Visibility.* Natural **1s** and natural **2s** **both trigger Backfire damage**.
+* **If [Infiltrate] Focus:** *Visual Concealment.* Specialist characters score successes on a **2+**.
+* **If Other Focus ([Intel], [Operations], [Survival], [Negotiate]):** *Disoriented Navigation.* Clearing this stage awards **0 Momentum ([MOM])** regardless of excess successes.

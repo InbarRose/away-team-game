@@ -29,12 +29,12 @@ tier_unlocks:
   - tier: 2
     loyalty_required: 3
     ability_name: "Suppressive Push"
-    effect: "[Combat] Stages: Spend 1 Effort [EF] to negate the first point of Backfire (1s) damage dealt across the entire squad."
+    effect: "[Combat] Stages: Spend [1 EF] to negate the first point of Backfire (1s) damage dealt across the entire squad."
   - tier: 3
     loyalty_required: 6
     ability_name: "Relentless Assault"
     effect: "Once per mission, convert one rolled natural 1 in [Combat] into an automatic Success instead of taking damage."
-rules_text: "T1 (1 LOY) Point-Blank Breach: In [Combat], natural 4s count as 2 successes with 1H kinetic weapons. T2 (3 LOY) Suppressive Push: Spend 1 [EF] in [Combat] to negate the first squad Backfire damage. T3 (6 LOY) Relentless Assault: 1/mission, convert one rolled natural 1 in [Combat] into a Success instead of taking damage."
+rules_text: "T1 ([1 LOY]) Point-Blank Breach: In [Combat], natural 4s count as 2 successes with 1H kinetic weapons. T2 ([3 LOY]) Suppressive Push: Spend [1 EF] in [Combat] to negate the first squad Backfire damage. T3 ([6 LOY]) Relentless Assault: 1/mission, convert one rolled natural 1 in [Combat] into a Success instead of taking damage."
 active_ability: "Suppressive Push (1 EF) / Relentless Assault (1/mission)"
 tags:
   - "perk"
@@ -57,6 +57,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Point-Blank Breach** | In `[Combat]`, natural **4s** count as **2 successes** when wielding a 1-Handed kinetic weapon. |
-| **Tier 2** | `3 [LOY]` | **Suppressive Push** | `[Combat]` Stages: Spend **1 `[EF]`** to negate the first point of Backfire (natural 1s) damage dealt across the entire squad. |
-| **Tier 3** | `6 [LOY]` | **Relentless Assault** | Once per mission, convert one rolled natural **1** in `[Combat]` into an automatic **Success** instead of taking damage. |
+| **Tier 1** | [1 LOY] | **Point-Blank Breach** | In [Combat], natural **4s** count as **2 successes** when wielding a 1-Handed kinetic weapon. |
+| **Tier 2** | [3 LOY] | **Suppressive Push** | [Combat] Stages: Spend **[1 EF]** to negate the first point of Backfire (natural 1s) damage dealt across the entire squad. |
+| **Tier 3** | [6 LOY] | **Relentless Assault** | Once per mission, convert one rolled natural **1** in [Combat] into an automatic **Success** instead of taking damage. |

@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "pack"
   armor_buffer: null
-rules_text: "Field Salvage: Whenever your squad clears a stage with Momentum (+2 or higher), choose one: Recycle (recover 1 used Consumable item back into your inventory) OR Salvage (deposit +1 [CR] into your Faction Vault)."
+rules_text: "Field Salvage: Whenever your squad clears a stage with Momentum (+2 or higher), choose one: Recycle (recover 1 used Consumable item back into your inventory) OR Salvage (deposit [+1 CR] into your Faction Vault)."
 active_ability: null
 tags:
   - "wearable"
@@ -44,12 +44,12 @@ art_spec:
 
 ## Overview
 
-The **Field Scavenger Rig** turns `[MOM]` into tangible economic gain, letting the wearer either recycle a spent Consumable item or deposit `+1 [CR]` into their Faction Vault whenever the squad clears a stage with Momentum.
+The **Field Scavenger Rig** turns [MOM] into tangible economic gain, letting the wearer either recycle a spent Consumable item or deposit [+1 CR] into their Faction Vault whenever the squad clears a stage with Momentum.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Resource Recycling (Momentum Engine)
 
@@ -57,4 +57,4 @@ The **Field Scavenger Rig** turns `[MOM]` into tangible economic gain, letting t
 
 * **Field Salvage:** Whenever your squad clears a stage with **Momentum** (`+2` or higher), you may choose one:
   * **Recycle:** Recover **1 used Consumable item** back into your inventory.
-  * **Salvage:** Deposit **`+1 [CR]`** into your Faction Vault.
+  * **Salvage:** Deposit **[+1 CR]** into your Faction Vault.

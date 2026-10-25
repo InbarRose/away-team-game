@@ -25,7 +25,7 @@ tier_unlocks:
   - tier: 1
     loyalty_required: 1
     ability_name: "Emergency Patch"
-    effect: "Transition Step: Spend 1 Effort [EF] to restore 1 HP to yourself or an adjacent deployed ally (once per mission)."
+    effect: "Transition Step: Spend [1 EF] to restore 1 HP to yourself or an adjacent deployed ally (once per mission)."
   - tier: 2
     loyalty_required: 3
     ability_name: "Triage Efficiency"
@@ -34,7 +34,7 @@ tier_unlocks:
     loyalty_required: 6
     ability_name: "Defibrillator Surge"
     effect: "Once per campaign, prevent a deployed ally's death on a failed stage, stabilizing them at 1 HP instead."
-rules_text: "T1 (1 LOY) Emergency Patch: In Transition Step, spend 1 [EF] to restore 1 HP to self or ally (1/mission). T2 (3 LOY) Triage Efficiency: Roll +1 bonus Healing Die when resting in an HQ Med Bay bed. T3 (6 LOY) Defibrillator Surge: Once per campaign, prevent a deployed ally's death on a failed stage, stabilizing them at 1 HP."
+rules_text: "T1 ([1 LOY]) Emergency Patch: In Transition Step, spend [1 EF] to restore 1 HP to self or ally (1/mission). T2 ([3 LOY]) Triage Efficiency: Roll +1 bonus Healing Die when resting in an HQ Med Bay bed. T3 ([6 LOY]) Defibrillator Surge: Once per campaign, prevent a deployed ally's death on a failed stage, stabilizing them at 1 HP."
 active_ability: "Emergency Patch (1 EF, 1/mission) / Defibrillator Surge (1/campaign)"
 tags:
   - "perk"
@@ -57,6 +57,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Emergency Patch** | Transition Step: Spend **1 `[EF]`** to restore **1 HP** to yourself or an adjacent deployed ally (once per mission). |
-| **Tier 2** | `3 [LOY]` | **Triage Efficiency** | While resting in a Med Bay bed at HQ, this operative rolls **+1 bonus Healing Die** on their medical check. |
-| **Tier 3** | `6 [LOY]` | **Defibrillator Surge** | Once per campaign, prevent a deployed ally's death on a failed stage, stabilizing them at **1 HP** instead. |
+| **Tier 1** | [1 LOY] | **Emergency Patch** | Transition Step: Spend **[1 EF]** to restore **1 HP** to yourself or an adjacent deployed ally (once per mission). |
+| **Tier 2** | [3 LOY] | **Triage Efficiency** | While resting in a Med Bay bed at HQ, this operative rolls **+1 bonus Healing Die** on their medical check. |
+| **Tier 3** | [6 LOY] | **Defibrillator Surge** | Once per campaign, prevent a deployed ally's death on a failed stage, stabilizing them at **1 HP** instead. |

@@ -59,7 +59,7 @@ stages:
       cost: "Triggers vault demolition alarm (+1 Difficulty)"
       description: "Blow the vault doors with thermite charges under heavy fire."
     failure_penalty: "Vault auto-locks! The squad extracts empty-handed without base payouts."
-rules_text: "Side-Mission (Themes: [Urban], [Covert] — 3 Stages). Base Clearance Bounty: 7 [CR], 1 [PIP]. Bonus Bounty: Clear Stage 3 with [MOM] (+2 or higher) -> +1 free Consumable Item card. Stage 1: Syndicate Alleyway ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Guard Barracks ([Combat] D4, Mandatory Fight). Stage 3: Armory Main Vault ([Operations] D4; Force Breach to [Combat] D5)."
+rules_text: "Side-Mission (Themes: [Urban], [Covert] — 3 Stages). Base Clearance Bounty: [7 CR], [1 PIP]. Bonus Bounty: Clear Stage 3 with [MOM] (+2 or higher) -> +1 free Consumable Item card. Stage 1: Syndicate Alleyway ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Guard Barracks ([Combat] D4, Mandatory Fight). Stage 3: Armory Main Vault ([Operations] D4; Force Breach to [Combat] D5)."
 active_ability: null
 tags:
   - "side-mission"
@@ -76,9 +76,9 @@ art_spec:
 
 # Side-Mission: Black-Market Arms Cache
 
-> **Themes:** 🏙️ `[Urban]` • 💼 `[Covert]`  
-> **Base Clearance Bounty:** `7 [CR]`, `1 [PIP]`  
-> **Bonus Bounty:** Clear Stage 3 with **Momentum (`[MOM]`, $+2$ or higher above $D$)** $\rightarrow$ **`+1 Free Consumable Item Card`**
+> **Themes:** 🏙️ [Urban] • 💼 [Covert]  
+> **Base Clearance Bounty:** [7 CR], [1 PIP]  
+> **Bonus Bounty:** Clear Stage 3 with **Momentum ([MOM], $+2$ or higher above $D$)** $\rightarrow$ **`+1 Free Consumable Item Card`**
 
 ---
 
@@ -92,19 +92,19 @@ A local crime syndicate operating out of a neon-lit urban nightlife district is 
 
 | Stage | Stage Name | Preset Focus | Target Difficulty ($D$) | Dynamic Focus Swap Option | Stage Failure Penalty |
 | :---: | :--- | :---: | :---: | :--- | :--- |
-| **1** | **Syndicate Alleyway** | `[Combat]` | **3 Successes** | **Tactical Bypass (`[Infiltrate]`):** Target $D = 4$ | Alarm raised! Stage 2 Target Difficulty escalates by **$+1$ Success**. |
-| **2** | **Guard Barracks** | `[Combat]` | **4 Successes** *(5 if S1 failed)* | *(None — Mandatory Kinetic Bottleneck)* | Suppression fire! Every deployed operative takes **1 HP damage**. |
-| **3** | **Armory Main Vault** | `[Operations]` | **4 Successes** | **Force Breach (`[Combat]`):** Target $D = 5$ | **Mission Failure:** Vault auto-locks! Squad extracts empty-handed without base payouts. |
+| **1** | **Syndicate Alleyway** | [Combat] | **3 Successes** | **Tactical Bypass ([Infiltrate]):** Target $D = 4$ | Alarm raised! Stage 2 Target Difficulty escalates by **$+1$ Success**. |
+| **2** | **Guard Barracks** | [Combat] | **4 Successes** *(5 if S1 failed)* | *(None — Mandatory Kinetic Bottleneck)* | Suppression fire! Every deployed operative takes **1 HP damage**. |
+| **3** | **Armory Main Vault** | [Operations] | **4 Successes** | **Force Breach ([Combat]):** Target $D = 5$ | **Mission Failure:** Vault auto-locks! Squad extracts empty-handed without base payouts. |
 
 ---
 
 ## 3. Detailed Stage Breakdown
 
 ### Stage 1: Syndicate Alleyway
-* **Preset Focus:** `[Combat]` — **Target Difficulty: 3 Successes**
+* **Preset Focus:** [Combat] — **Target Difficulty: 3 Successes**
   * *Narrative:* Gunfight against syndicate lookouts guarding the rain-slicked alley entrance.
-* **Dynamic Focus Swap — Tactical Bypass (`[Infiltrate]`):**
-  * During Step 1 (Briefing), the Squad Leader may shift the stage to `[Infiltrate]` at **Target Difficulty: 4 Successes**.
+* **Dynamic Focus Swap — Tactical Bypass ([Infiltrate]):**
+  * During Step 1 (Briefing), the Squad Leader may shift the stage to [Infiltrate] at **Target Difficulty: 4 Successes**.
   * *Narrative:* Slip through rooftop fire escapes unseen.
 * **Stage Failure Penalty (Tactical Blowback):**
   * Alarm raised! Stage 2 Target Difficulty escalates by **`+1 Success`**.
@@ -112,7 +112,7 @@ A local crime syndicate operating out of a neon-lit urban nightlife district is 
 ---
 
 ### Stage 2: Guard Barracks (Mandatory Fight)
-* **Preset Focus:** `[Combat]` — **Target Difficulty: 4 Successes** *(Escalates to **5 Successes** if Stage 1 failed)*
+* **Preset Focus:** [Combat] — **Target Difficulty: 4 Successes** *(Escalates to **5 Successes** if Stage 1 failed)*
   * *Narrative:* Point-blank firefight inside the syndicate armorers' quarters.
 * **No Dynamic Swap Available:** Mandatory kinetic bottleneck.
 * **Stage Failure Penalty (Tactical Blowback):**
@@ -121,12 +121,12 @@ A local crime syndicate operating out of a neon-lit urban nightlife district is 
 ---
 
 ### Stage 3: Armory Main Vault (Climax Stage)
-* **Preset Focus:** `[Operations]` — **Target Difficulty: 4 Successes**
+* **Preset Focus:** [Operations] — **Target Difficulty: 4 Successes**
   * *Narrative:* Cracking the biometric lock on the heavy weapons vault.
-* **Dynamic Focus Swap — Force Breach (`[Combat]`):**
-  * During Step 1 (Briefing), the Squad Leader may shift the stage to `[Combat]` at **Target Difficulty: 5 Successes**.
+* **Dynamic Focus Swap — Force Breach ([Combat]):**
+  * During Step 1 (Briefing), the Squad Leader may shift the stage to [Combat] at **Target Difficulty: 5 Successes**.
   * *Narrative:* Blow the vault doors with thermite charges under heavy fire.
 * **Stage Clearance:**
-  * **Side-Mission Cleared!** Award **`7 [CR]`** and **`1 [PIP]`**. If total successes on Stage 3 reached **`6+ Successes`** on `[Operations]` (or **`7+ Successes`** on `[Combat]` Force Breach), generating at least `1 [MOM]`, also award **`+1 free Consumable Item card`**!
+  * **Side-Mission Cleared!** Award **[7 CR]** and **[1 PIP]**. If total successes on Stage 3 reached **`6+ Successes`** on [Operations] (or **`7+ Successes`** on [Combat] Force Breach), generating at least [1 MOM], also award **`+1 free Consumable Item card`**!
 * **Stage Failure Penalty (Mission Failure):**
   * Vault auto-locks! The squad extracts empty-handed without base payouts.

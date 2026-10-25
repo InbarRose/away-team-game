@@ -51,14 +51,14 @@ art_spec:
 
 ## Overview
 
-The **Heavy Chemical Flamethrower Rig** is a Tier 1 multi-slot weapon system requiring `[Pack]`, `[Hand L]`, and `[Hand R]`. By dedicating the operative's entire carrying frame to pressurized propellant and a dual-grip projector, it provides heavy die amplification and Focus bridging across both `[Combat]` and `[Survival]` encounters.
+The **Heavy Chemical Flamethrower Rig** is a Tier 1 multi-slot weapon system requiring [Pack], [Hand L], and [Hand R]. By dedicating the operative's entire carrying frame to pressurized propellant and a dual-grip projector, it provides heavy die amplification and Focus bridging across both [Combat] and [Survival] encounters.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Pack]` + `[Hand L]` + `[Hand R]` (3 Slots: Both Hands + Pack)
-* **Market Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Slots Required:** [Pack] + [Hand L] + [Hand R] (3 Slots: Both Hands + Pack)
+* **Market Cost:** [5 CR] *(2.5 ES Value)*
 * **Tier:** Tier 1 Multi-Slot Rig
 
 ---
@@ -66,7 +66,7 @@ The **Heavy Chemical Flamethrower Rig** is a Tier 1 multi-slot weapon system req
 ## Tactical Capabilities
 
 ### Passive: Suppression Arc *(Heavy Firepower)*
-Adds **+2 Temporary Static Dice** to your pool on `[Combat]` or `[Survival]` stage rolls. Bridges both categories to **Secondary Focus (4+)** for Out-of-Focus operatives.
+Adds **+2 Temporary Static Dice** to your pool on [Combat] or [Survival] stage rolls. Bridges both categories to **Secondary Focus (4+)** for Out-of-Focus operatives.
 
 ### Active Cost: Fuel Dump *(Spend Die)*
 Once per stage, spend **1 static die** from your pool before rolling. For that check, all of your dice hit on a **4+** (instead of standard 5+), melting target thresholds.

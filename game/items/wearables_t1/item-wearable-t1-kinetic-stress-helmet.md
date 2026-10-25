@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "head"
   armor_buffer: null
-rules_text: "Stress Conversion: Whenever this operative suffers 1 or more HP damage during a stage, immediately deposit +1 [EF] into your Faction Vault."
+rules_text: "Stress Conversion: Whenever this operative suffers 1 or more HP damage during a stage, immediately deposit [+1 EF] into your Faction Vault."
 active_ability: null
 tags:
   - "wearable"
@@ -43,15 +43,15 @@ art_spec:
 
 ## Overview
 
-The **Kinetic Stress Telemetry Helmet** turns front-line punishment into Faction Vault fuel. Whenever the wearer suffers HP damage during a stage, their faction immediately collects `+1 [EF]`.
+The **Kinetic Stress Telemetry Helmet** turns front-line punishment into Faction Vault fuel. Whenever the wearer suffers HP damage during a stage, their faction immediately collects [+1 EF].
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Head]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Head]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Damage Trigger (Effort Engine)
 
 ## Core Mechanics
 
-* **Stress Conversion:** Whenever this character suffers **1 or more HP damage** during a stage, immediately deposit **`+1 [EF]`** into your Faction Vault.
+* **Stress Conversion:** Whenever this character suffers **1 or more HP damage** during a stage, immediately deposit **[+1 EF]** into your Faction Vault.

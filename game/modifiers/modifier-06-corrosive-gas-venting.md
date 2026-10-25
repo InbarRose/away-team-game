@@ -21,7 +21,7 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-rules_text: "Pre-Roll Hazard: During Step 1 (Briefing), every deployed character rolls 1 die. On a natural 1, that character immediately takes 1 point of HP damage before any dice are committed. Squad Leader Mitigation: Spend 1 Effort [EF] from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad."
+rules_text: "Pre-Roll Hazard: During Step 1 (Briefing), every deployed character rolls 1 die. On a natural 1, that character immediately takes 1 point of HP damage before any dice are committed. Squad Leader Mitigation: Spend [1 EF] from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad."
 active_ability: "Activate Scrubbers (1 EF in Briefing)"
 tags:
   - "modifier"
@@ -44,4 +44,4 @@ art_spec:
 ## System Rules
 
 * **Pre-Roll Hazard:** During Step 1 (Briefing), every deployed character rolls **1 die**. On a natural **1**, that character immediately takes **1 point of HP damage** before any dice are committed.
-* **Squad Leader Mitigation:** Spend **1 `[EF]`** from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad.
+* **Squad Leader Mitigation:** Spend **[1 EF]** from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad.

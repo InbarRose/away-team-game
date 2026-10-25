@@ -31,10 +31,10 @@ Because static dice pools do not refresh between stages, every die rolled repres
 | **`1 Guaranteed Success`** | **`1.00 ES`** | The fundamental unit required to clear Stage Target Difficulties. |
 | **`1 Static Die` (Average)** | **`0.50 ES`** | Weighted average across the 50/35/15 Focus Pyramid (`3+`, `4+`, `5+`). |
 | **`1 Hit Point (HP)`** | **`1.50 ES`** | Absorbs $\sim 6$ die rolls of Backfire (`16.7%`) risk, or 3 high-hazard checks. |
-| **`1 Effort Token [EF]`** | **`1.33 ES`** | Vault fuel. `1 [EF]` activates *Lock and Load* for $+2$ Specialist dice ($2 \times 0.67 = 1.33\text{ ES}$). |
-| **`1 Credit [CR]`** | **`0.50 ES`** | Baseline currency. Tier 1 Handhelds cost `3 [CR]` (`1.50 ES`); Tier 2 Wearables cost `7 [CR]` (`3.50 ES`). |
-| **`1 Political Influence [PIP]`** | **`6.00 ES`** | High-scarcity executive leverage. Worth `2 [VP]` at endgame and unlocks major HQ modules. |
-| **`1 Loyalty [LOY]`** | **`0.00 ES` (Field)** | Campaign progression & VP metric. Does not inflate in-mission character combat budgets. |
+| **`[1 EF] Token [EF]`** | **`1.33 ES`** | Vault fuel. [1 EF] activates *Lock and Load* for $+2$ Specialist dice ($2 \times 0.67 = 1.33\text{ ES}$). |
+| **`[1 CR]`** | **`0.50 ES`** | Baseline currency. Tier 1 Handhelds cost [3 CR] (`1.50 ES`); Tier 2 Wearables cost [7 CR] (`3.50 ES`). |
+| **`[1 PIP]`** | **`6.00 ES`** | High-scarcity executive leverage. Worth [2 VP] at endgame and unlocks major HQ modules. |
+| **`[1 LOY]`** | **`0.00 ES` (Field)** | Campaign progression & VP metric. Does not inflate in-mission character combat budgets. |
 
 ---
 
@@ -45,9 +45,9 @@ Every Specialist Operative card is constructed on a strict **`9.0 ES` Target Bud
 $$\text{Total Character Budget (9.0 ES)} = (\text{HP} \times 1.5\text{ ES}) + (\text{Static Dice} \times 0.5\text{ ES}) + \text{Unique Power (0.5–2.0 ES)} + \text{Class Offset}$$
 
 ### 3.1 Class Offset Adjustments
-Because all 6 Class Abilities cost `1 [EF]` (`1.33 ES`) but produce slightly different tactical yields, two classes include a small budget offset:
+Because all 6 Class Abilities cost [1 EF] (`1.33 ES`) but produce slightly different tactical yields, two classes include a small budget offset:
 
-| Class | Class Ability (`1 [EF]`) | Tactical Yield | Stat Budget Offset | Available Stat + Power Pool |
+| Class | Class Ability ([1 EF]) | Tactical Yield | Stat Budget Offset | Available Stat + Power Pool |
 | :--- | :--- | :---: | :---: | :---: |
 | **Soldier** | *Lock and Load* (+2 temp dice) | `1.33 ES` | `0.0 ES` | **`9.0 ES`** |
 | **Recon** | *Intel Reconnaissance* (Stage/Mod scout) | `1.50 ES` | `0.0 ES` | **`9.0 ES`** |
@@ -74,4 +74,4 @@ Because all 6 Class Abilities cost `1 [EF]` (`1.33 ES`) but produce slightly dif
   * **Stage 2 (Internal Security / Navigation):** `3–4 Successes`
   * **Stage 3 (Core Objective / Climax):** `4–5 Successes`
   * **Stage 4 (Extraction / Final Siege):** `5–6 Successes`
-* **Total Mission Demand:** `12 to 18 Successes` per mission. Because 24–28 static dice rolling against a mix of `3+`, `4+`, and `5+` thresholds generate roughly `12 to 15 ES` before exhaustion, squads must leverage **Primary Focus Specialists**, **Operational Momentum (`[MOM]`)** die refunds, **Dynamic Focus Swaps**, and **Squad Leader Logistical Refreshes** to survive multi-stage operations.
+* **Total Mission Demand:** `12 to 18 Successes` per mission. Because 24–28 static dice rolling against a mix of `3+`, `4+`, and `5+` thresholds generate roughly `12 to 15 ES` before exhaustion, squads must leverage **Primary Focus Specialists**, **Operational Momentum ([MOM])** die refunds, **Dynamic Focus Swaps**, and **Squad Leader Logistical Refreshes** to survive multi-stage operations.

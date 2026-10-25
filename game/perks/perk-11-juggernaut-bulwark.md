@@ -29,12 +29,12 @@ tier_unlocks:
   - tier: 2
     loyalty_required: 3
     ability_name: "Interlocking Shield"
-    effect: "When an adjacent ally suffers Backfire (1s) damage, spend 1 Effort [EF] to intercept 1 point of that damage onto this unit."
+    effect: "When an adjacent ally suffers Backfire (1s) damage, spend [1 EF] to intercept 1 point of that damage onto this unit."
   - tier: 3
     loyalty_required: 6
     ability_name: "Unyielding Chassis"
     effect: "Max HP Cap increased by +1; this operative ignores the -1 die penalty from their first Critical Injury token."
-rules_text: "T1 (1 LOY) Reactive Layering: Equipped Wearable Body Armor grants +1 extra Armor Buffer. T2 (3 LOY) Interlocking Shield: Spend 1 [EF] to intercept 1 Backfire damage from an ally onto this unit. T3 (6 LOY) Unyielding Chassis: +1 Max HP Cap; ignore the -1 die penalty from your first Critical Injury token."
+rules_text: "T1 ([1 LOY]) Reactive Layering: Equipped Wearable Body Armor grants +1 extra Armor Buffer. T2 ([3 LOY]) Interlocking Shield: Spend [1 EF] to intercept 1 Backfire damage from an ally onto this unit. T3 ([6 LOY]) Unyielding Chassis: +1 Max HP Cap; ignore the -1 die penalty from your first Critical Injury token."
 active_ability: "Interlocking Shield (1 EF)"
 tags:
   - "perk"
@@ -57,6 +57,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Reactive Layering** | Wearable Body Armor equipped to this operative provides **+1 additional Armor Buffer** point. |
-| **Tier 2** | `3 [LOY]` | **Interlocking Shield** | When an adjacent ally suffers Backfire (natural 1s) damage, spend **1 `[EF]`** to intercept **1 point of that damage** onto this unit. |
-| **Tier 3** | `6 [LOY]` | **Unyielding Chassis** | Max HP Cap increased by **+1**; this operative ignores the **-1 die penalty** from their first Critical Injury token. |
+| **Tier 1** | [1 LOY] | **Reactive Layering** | Wearable Body Armor equipped to this operative provides **+1 additional Armor Buffer** point. |
+| **Tier 2** | [3 LOY] | **Interlocking Shield** | When an adjacent ally suffers Backfire (natural 1s) damage, spend **[1 EF]** to intercept **1 point of that damage** onto this unit. |
+| **Tier 3** | [6 LOY] | **Unyielding Chassis** | Max HP Cap increased by **+1**; this operative ignores the **-1 die penalty** from their first Critical Injury token. |

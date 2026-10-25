@@ -43,16 +43,16 @@ art_spec:
 
 ## Overview
 
-The **Sub-Neural Broadcast Rig** is a subliminal signal tower and executive override array designed for master `[Negotiate]` specialists, providing `+2 Temporary Static Dice` and **Primary Recirculation**.
+The **Sub-Neural Broadcast Rig** is a subliminal signal tower and executive override array designed for master [Negotiate] specialists, providing `+2 Temporary Static Dice` and **Primary Recirculation**.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [6 CR] *(3.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Negotiate]`
+* **Focus Coverage:** [Negotiate]
 
 ## Core Mechanics
 
-1. **Subliminal Resonance (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Negotiate]`.
-2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in `[Negotiate]` rolls in `[Negotiate]`, re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.
+1. **Subliminal Resonance (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Negotiate].
+2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in [Negotiate] rolls in [Negotiate], re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.

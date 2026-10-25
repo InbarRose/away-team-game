@@ -31,8 +31,8 @@ unique_power:
   tier: 1
   es_value: 0.5
   trigger: "Reactive — once per stage when an ally takes Backfire (1) damage in [Combat] or [Survival]"
-  effect: "Marcus may intercept and suffer that 1 point of Backfire damage onto his own HP track instead of the ally. If he does, his Faction immediately deposits +1 [CR] into their Vault."
-rules_text: "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (Kinetic Soak): Once per [Combat] or [Survival] stage, absorb 1 Backfire damage for an ally onto Marcus and gain +1 [CR]."
+  effect: "Marcus may intercept and suffer that 1 point of Backfire damage onto his own HP track instead of the ally. If he does, his Faction immediately deposits [+1 CR] into their Vault."
+rules_text: "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (Kinetic Soak): Once per [Combat] or [Survival] stage, absorb 1 Backfire damage for an ally onto Marcus and gain [+1 CR]."
 tags:
   - "character"
   - "soldier"
@@ -49,12 +49,12 @@ art_spec:
 # Agent 04: Marcus "The Anvil" Vance (*The Juggernaut*)
 
 * **Class:** Soldier (`Primary Combat` — Tank Archetype)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Survival]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Survival] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`4 HP`** (`6.0 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES` Tank Envelope)
 
 ---
 
-## Class Ability: Lock and Load (`1 [EF]`)
+## Class Ability: Lock and Load ([1 EF])
 
 Activate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Marcus's rolling pool for this phase only.
 
@@ -62,4 +62,4 @@ Activate during any Phase 1 or Phase 2 Initiative step before dice are committed
 
 ## Unique Power: Kinetic Soak (`0.5 ES` — Tier 1 Reactive)
 
-Once per stage during a **`[Combat]`** or **`[Survival]`** check, when a deployed ally rolls a natural `1` (Backfire), Marcus may step in and take that `1 HP` damage onto his own health track instead. If he does, his Faction immediately deposits **`+1 Credit [CR]`** into their Vault.
+Once per stage during a **[Combat]** or **[Survival]** check, when a deployed ally rolls a natural `1` (Backfire), Marcus may step in and take that `1 HP` damage onto his own health track instead. If he does, his Faction immediately deposits **`[+1 CR]`** into their Vault.

@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Heavy Composite Ablative Armor** doubles the protection of the Tier 1 ballistic vest, providing a **2 HP damage buffer** per mission drop in a single `[Body]` slot.
+The **Heavy Composite Ablative Armor** doubles the protection of the Tier 1 ballistic vest, providing a **2 HP damage buffer** per mission drop in a single [Body] slot.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Damage Buffer)
 

@@ -46,7 +46,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-01-electromagnetic-blackout.md",
-    "body": "# Electromagnetic Blackout\n\n* **Type:** Split-Effect Environment Modifier (`split_modifier`)\n* **Thematic Profile:** High-yield EMP pulse or power grid failure rendering complex electronic optics dark.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If `[Combat]` Focus:** *Targeting HUDs Offline.* Characters **cannot re-roll failure faces** during this stage.\n* **If `[Intel]` or `[Operations]` Focus:** *Defensive ICE Triggered.* All success thresholds are increased by **+1** (Primary hits on **4+**, Secondary on **5+**, Out of Focus on **6**).\n* **If Other Focus (`[Infiltrate]`, `[Survival]`, `[Negotiate]`):** *Pitch-Black Terrain.* Natural **1s** (Backfires) inflict **+1 extra HP damage**."
+    "body": "# Electromagnetic Blackout\n\n* **Type:** Split-Effect Environment Modifier (`split_modifier`)\n* **Thematic Profile:** High-yield EMP pulse or power grid failure rendering complex electronic optics dark.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If [Combat] Focus:** *Targeting HUDs Offline.* Characters **cannot re-roll failure faces** during this stage.\n* **If [Intel] or [Operations] Focus:** *Defensive ICE Triggered.* All success thresholds are increased by **+1** (Primary hits on **4+**, Secondary on **5+**, Out of Focus on **6**).\n* **If Other Focus ([Infiltrate], [Survival], [Negotiate]):** *Pitch-Black Terrain.* Natural **1s** (Backfires) inflict **+1 extra HP damage**."
   },
   {
     "id": "modifier-02-automated-defense-turrets",
@@ -95,7 +95,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-02-automated-defense-turrets.md",
-    "body": "# Automated Defense Turrets\n\n* **Type:** Split-Effect Hazard Modifier (`split_modifier`)\n* **Thematic Profile:** Ceiling-mounted automated turrets tracking movement in the operational zone.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If `[Combat]` Focus:** *Heavy Suppression.* Any character rolling during **Phase 2 (Support)** takes **2 HP damage** on a natural **1**.\n* **If `[Infiltrate]` Focus:** *Active Laser Grid.* Specialist success threshold is raised to **4+** (instead of standard 3+).\n* **If Other Focus (`[Intel]`, `[Operations]`, `[Survival]`, `[Negotiate]`):** *Hardened Locks.* Stage Target Difficulty is increased by **+1 Success**."
+    "body": "# Automated Defense Turrets\n\n* **Type:** Split-Effect Hazard Modifier (`split_modifier`)\n* **Thematic Profile:** Ceiling-mounted automated turrets tracking movement in the operational zone.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If [Combat] Focus:** *Heavy Suppression.* Any character rolling during **Phase 2 (Support)** takes **2 HP damage** on a natural **1**.\n* **If [Infiltrate] Focus:** *Active Laser Grid.* Specialist success threshold is raised to **4+** (instead of standard 3+).\n* **If Other Focus ([Intel], [Operations], [Survival], [Negotiate]):** *Hardened Locks.* Stage Target Difficulty is increased by **+1 Success**."
   },
   {
     "id": "modifier-03-atmospheric-smoke",
@@ -126,9 +126,9 @@
     "split_effects": {
       "combat": "Zero visibility. Natural 1s and natural 2s both trigger Backfire damage.",
       "infiltrate": "Visual concealment. Specialist characters score successes on a 2+.",
-      "other": "Disoriented navigation. Clearing this stage awards 0 Momentum [MOM] regardless of excess successes."
+      "other": "Disoriented navigation. Clearing this stage awards [0 MOM] regardless of excess successes."
     },
-    "rules_text": "If [Combat] Focus: Natural 1s and natural 2s both trigger Backfire damage. If [Infiltrate] Focus: Specialist characters score successes on a 2+. If Other Focus ([Intel], [Operations], [Survival], [Negotiate]): Clearing this stage awards 0 Momentum [MOM] regardless of excess successes.",
+    "rules_text": "If [Combat] Focus: Natural 1s and natural 2s both trigger Backfire damage. If [Infiltrate] Focus: Specialist characters score successes on a 2+. If Other Focus ([Intel], [Operations], [Survival], [Negotiate]): Clearing this stage awards [0 MOM] regardless of excess successes.",
     "active_ability": null,
     "tags": [
       "modifier",
@@ -144,7 +144,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-03-atmospheric-smoke.md",
-    "body": "# Atmospheric Smoke / Dense Fog\n\n* **Type:** Split-Effect Environment Modifier (`split_modifier`)\n* **Thematic Profile:** Heavy chemical smoke or aerosol coolant filling the facility.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If `[Combat]` Focus:** *Zero Visibility.* Natural **1s** and natural **2s** **both trigger Backfire damage**.\n* **If `[Infiltrate]` Focus:** *Visual Concealment.* Specialist characters score successes on a **2+**.\n* **If Other Focus (`[Intel]`, `[Operations]`, `[Survival]`, `[Negotiate]`):** *Disoriented Navigation.* Clearing this stage awards **0 Momentum (`[MOM]`)** regardless of excess successes."
+    "body": "# Atmospheric Smoke / Dense Fog\n\n* **Type:** Split-Effect Environment Modifier (`split_modifier`)\n* **Thematic Profile:** Heavy chemical smoke or aerosol coolant filling the facility.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If [Combat] Focus:** *Zero Visibility.* Natural **1s** and natural **2s** **both trigger Backfire damage**.\n* **If [Infiltrate] Focus:** *Visual Concealment.* Specialist characters score successes on a **2+**.\n* **If Other Focus ([Intel], [Operations], [Survival], [Negotiate]):** *Disoriented Navigation.* Clearing this stage awards **0 Momentum ([MOM])** regardless of excess successes."
   },
   {
     "id": "modifier-04-wide-band-signal-jammer",
@@ -175,7 +175,7 @@
     "split_effects": {
       "intel_ops": "Remote servers blocked. Operatives cannot activate Class Abilities during this stage.",
       "negotiate": "External channels severed. All non-Specialist characters act as Out of Focus (hitting on 5+ only).",
-      "other": "Tactical link severed. The Squad Leader cannot use Logistical Refresh (spending Effort [EF] to restore dice) during this stage."
+      "other": "Tactical link severed. The Squad Leader cannot use Logistical Refresh (spending [EF] to restore dice) during this stage."
     },
     "rules_text": "If [Intel] or [Operations] Focus: Operatives cannot activate Class Abilities during this stage. If [Negotiate] Focus: All non-Specialist characters act as Out of Focus (hitting on 5+ only). If Other Focus ([Combat], [Infiltrate], [Survival]): The Squad Leader cannot use Logistical Refresh during this stage.",
     "active_ability": null,
@@ -193,7 +193,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-04-wide-band-signal-jammer.md",
-    "body": "# Wide-Band Signal Jammer\n\n* **Type:** Split-Effect Technical Modifier (`split_modifier`)\n* **Thematic Profile:** Military-grade scramblers blocking external communication links and AI telemetry relays.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If `[Intel]` or `[Operations]` Focus:** *Remote Servers Blocked.* Operatives **cannot activate Class Abilities** during this stage.\n* **If `[Negotiate]` Focus:** *External Channels Severed.* All non-Specialist characters act as **Out of Focus (hitting on 5+ only)**.\n* **If Other Focus (`[Combat]`, `[Infiltrate]`, `[Survival]`):** *Tactical Link Severed.* The Squad Leader cannot use *Logistical Refresh* (spending `[EF]` to restore dice) during this stage."
+    "body": "# Wide-Band Signal Jammer\n\n* **Type:** Split-Effect Technical Modifier (`split_modifier`)\n* **Thematic Profile:** Military-grade scramblers blocking external communication links and AI telemetry relays.\n\n## Split-Effect Rules by Active Stage Focus\n\n* **If [Intel] or [Operations] Focus:** *Remote Servers Blocked.* Operatives **cannot activate Class Abilities** during this stage.\n* **If [Negotiate] Focus:** *External Channels Severed.* All non-Specialist characters act as **Out of Focus (hitting on 5+ only)**.\n* **If Other Focus ([Combat], [Infiltrate], [Survival]):** *Tactical Link Severed.* The Squad Leader cannot use *Logistical Refresh* (spending [EF] to restore dice) during this stage."
   },
   {
     "id": "modifier-05-reinforced-fortifications",
@@ -221,7 +221,7 @@
       "slots_required": [],
       "armor_buffer": null
     },
-    "rules_text": "Difficulty Shift: Target Difficulty for this stage is increased by +1 Success. Bounty: If the stage is cleared with Momentum [MOM] (+2 or higher), immediately deposit +2 Credits [CR] into your Faction Vault.",
+    "rules_text": "Difficulty Shift: Target Difficulty for this stage is increased by +1 Success. Bounty: If the stage is cleared with Momentum [MOM] (+2 or higher), immediately deposit [+2 CR] into your Faction Vault.",
     "active_ability": null,
     "tags": [
       "modifier",
@@ -237,7 +237,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-05-reinforced-fortifications.md",
-    "body": "# Reinforced Fortifications\n\n* **Type:** Generic Difficulty / Bounty Modifier (`generic_modifier`)\n* **Thematic Profile:** Extra blast shielding, barricades, or hardened firewalls installed in the zone.\n\n## System Rules\n\n* **Difficulty Shift:** Target Difficulty for this stage is increased by **+1 Success**.\n* **Bounty:** If the stage is cleared with **Momentum (`[MOM]`, +2 or higher)**, immediately deposit **+2 `[CR]`** into the Squad Leader's Faction Vault."
+    "body": "# Reinforced Fortifications\n\n* **Type:** Generic Difficulty / Bounty Modifier (`generic_modifier`)\n* **Thematic Profile:** Extra blast shielding, barricades, or hardened firewalls installed in the zone.\n\n## System Rules\n\n* **Difficulty Shift:** Target Difficulty for this stage is increased by **+1 Success**.\n* **Bounty:** If the stage is cleared with **Momentum ([MOM], +2 or higher)**, immediately deposit **[+2 CR]** into the Squad Leader's Faction Vault."
   },
   {
     "id": "modifier-06-corrosive-gas-venting",
@@ -265,7 +265,7 @@
       "slots_required": [],
       "armor_buffer": null
     },
-    "rules_text": "Pre-Roll Hazard: During Step 1 (Briefing), every deployed character rolls 1 die. On a natural 1, that character immediately takes 1 point of HP damage before any dice are committed. Squad Leader Mitigation: Spend 1 Effort [EF] from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad.",
+    "rules_text": "Pre-Roll Hazard: During Step 1 (Briefing), every deployed character rolls 1 die. On a natural 1, that character immediately takes 1 point of HP damage before any dice are committed. Squad Leader Mitigation: Spend [1 EF] from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad.",
     "active_ability": "Activate Scrubbers (1 EF in Briefing)",
     "tags": [
       "modifier",
@@ -281,7 +281,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-06-corrosive-gas-venting.md",
-    "body": "# Corrosive Gas Venting\n\n* **Type:** Generic Hazard & Mitigation Modifier (`generic_modifier`)\n* **Thematic Profile:** Ruptured bio-pipes filling the room with airborne toxins.\n\n## System Rules\n\n* **Pre-Roll Hazard:** During Step 1 (Briefing), every deployed character rolls **1 die**. On a natural **1**, that character immediately takes **1 point of HP damage** before any dice are committed.\n* **Squad Leader Mitigation:** Spend **1 `[EF]`** from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad."
+    "body": "# Corrosive Gas Venting\n\n* **Type:** Generic Hazard & Mitigation Modifier (`generic_modifier`)\n* **Thematic Profile:** Ruptured bio-pipes filling the room with airborne toxins.\n\n## System Rules\n\n* **Pre-Roll Hazard:** During Step 1 (Briefing), every deployed character rolls **1 die**. On a natural **1**, that character immediately takes **1 point of HP damage** before any dice are committed.\n* **Squad Leader Mitigation:** Spend **[1 EF]** from your Vault during Briefing to activate environmental scrubbers and completely ignore this hazard for the entire squad."
   },
   {
     "id": "modifier-07-high-value-corporate-asset",
@@ -309,7 +309,7 @@
       "slots_required": [],
       "armor_buffer": null
     },
-    "rules_text": "Difficulty Shift: Target Difficulty for this stage is increased by +1 Success. Clearance Dividend: Upon successfully clearing the stage, deposit +3 Credits [CR] AND +1 [PIP] directly into your Faction Vault.",
+    "rules_text": "Difficulty Shift: Target Difficulty for this stage is increased by +1 Success. Clearance Dividend: Upon successfully clearing the stage, deposit [+3 CR] AND [+1 PIP] directly into your Faction Vault.",
     "active_ability": null,
     "tags": [
       "modifier",
@@ -325,7 +325,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-07-high-value-corporate-asset.md",
-    "body": "# High-Value Corporate Asset\n\n* **Type:** Generic High-Stakes Bounty Modifier (`generic_modifier`)\n* **Thematic Profile:** An unattended high-tier data drive, prototype item, or executive prisoner is present in the room.\n\n## System Rules\n\n* **Difficulty Shift:** Target Difficulty for this stage is increased by **+1 Success**.\n* **Clearance Dividend:** Upon successfully clearing the stage, deposit **+3 `[CR]`** AND **+1 `[PIP]`** directly into your Faction Vault."
+    "body": "# High-Value Corporate Asset\n\n* **Type:** Generic High-Stakes Bounty Modifier (`generic_modifier`)\n* **Thematic Profile:** An unattended high-tier data drive, prototype item, or executive prisoner is present in the room.\n\n## System Rules\n\n* **Difficulty Shift:** Target Difficulty for this stage is increased by **+1 Success**.\n* **Clearance Dividend:** Upon successfully clearing the stage, deposit **[+3 CR]** AND **[+1 PIP]** directly into your Faction Vault."
   },
   {
     "id": "modifier-08-executive-bribe-protocol",
@@ -353,7 +353,7 @@
       "slots_required": [],
       "armor_buffer": null
     },
-    "rules_text": "Squad Leader Buyout: During Step 1 (Briefing), the Squad Leader may spend 2 Credits [CR] from their Vault. If paid, directly add +1 automatic Success toward the stage difficulty. Failure Penalty: If the stage fails, deduct 1 [PIP] from the Squad Leader's Faction Vault due to corporate embarrassment.",
+    "rules_text": "Squad Leader Buyout: During Step 1 (Briefing), the Squad Leader may spend [2 CR] from their Vault. If paid, directly add +1 automatic Success toward the stage difficulty. Failure Penalty: If the stage fails, deduct [1 PIP] from the Squad Leader's Faction Vault due to corporate embarrassment.",
     "active_ability": "Squad Leader Buyout (2 CR for +1 Success)",
     "tags": [
       "modifier",
@@ -369,7 +369,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-08-executive-bribe-protocol.md",
-    "body": "# Executive Bribe Protocol\n\n* **Type:** Generic Buyout Option Modifier (`generic_modifier`)\n* **Thematic Profile:** Local facility officers or system administrators open to monetary persuasion.\n\n## System Rules\n\n* **Squad Leader Buyout:** During Step 1 (Briefing), the Squad Leader may spend **2 `[CR]`** from their Vault. If paid, directly add **+1 automatic Success** toward the stage difficulty.\n* **Failure Penalty:** If the stage fails, deduct **1 `[PIP]`** from the Squad Leader’s Faction Vault due to corporate embarrassment."
+    "body": "# Executive Bribe Protocol\n\n* **Type:** Generic Buyout Option Modifier (`generic_modifier`)\n* **Thematic Profile:** Local facility officers or system administrators open to monetary persuasion.\n\n## System Rules\n\n* **Squad Leader Buyout:** During Step 1 (Briefing), the Squad Leader may spend **[2 CR]** from their Vault. If paid, directly add **+1 automatic Success** toward the stage difficulty.\n* **Failure Penalty:** If the stage fails, deduct **[1 PIP]** from the Squad Leader’s Faction Vault due to corporate embarrassment."
   },
   {
     "id": "modifier-09-structural-instability",
@@ -457,7 +457,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-10-sub-zero-thermal-drop.md",
-    "body": "# Sub-Zero Thermal Drop\n\n* **Type:** Generic Resource Freeze Modifier (`generic_modifier`)\n* **Thematic Profile:** Freezing temperatures or liquid nitrogen leaks draining hydraulic battery lines.\n\n## System Rules\n\n* **Resource Lockout:** Restoring spent static dice (whether via **Momentum (`[MOM]`)**, character abilities, or equipped packs) **is completely disabled** during this stage."
+    "body": "# Sub-Zero Thermal Drop\n\n* **Type:** Generic Resource Freeze Modifier (`generic_modifier`)\n* **Thematic Profile:** Freezing temperatures or liquid nitrogen leaks draining hydraulic battery lines.\n\n## System Rules\n\n* **Resource Lockout:** Restoring spent static dice (whether via **Momentum ([MOM])**, character abilities, or equipped packs) **is completely disabled** during this stage."
   },
   {
     "id": "modifier-11-press-corps-cameras",
@@ -485,7 +485,7 @@
       "slots_required": [],
       "armor_buffer": null
     },
-    "rules_text": "Executive Payout: If the stage is cleared, award +1 [PIP] directly to the Squad Leader's Faction Vault. Public Failure: Whenever a character rolls one or more natural 1s (Backfires), deduct 1 [PIP] from their controlling Faction's Vault.",
+    "rules_text": "Executive Payout: If the stage is cleared, award [+1 PIP] directly to the Squad Leader's Faction Vault. Public Failure: Whenever a character rolls one or more natural 1s (Backfires), deduct [1 PIP] from their controlling Faction's Vault.",
     "active_ability": null,
     "tags": [
       "modifier",
@@ -501,7 +501,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/modifiers/modifier-11-press-corps-cameras.md",
-    "body": "# Press Corps Cameras / Corporate Broadcast\n\n* **Type:** Generic Political Leverage Modifier (`generic_modifier`)\n* **Thematic Profile:** Live security feeds or news drone coverage broadcasting the squad's performance to HQ executives.\n\n## System Rules\n\n* **Executive Payout:** If the stage is cleared, award **+1 `[PIP]`** directly to the Squad Leader’s Faction Vault.\n* **Public Failure:** Whenever a character rolls one or more natural **1s** (Backfires), deduct **1 `[PIP]`** from their controlling Faction's Vault."
+    "body": "# Press Corps Cameras / Corporate Broadcast\n\n* **Type:** Generic Political Leverage Modifier (`generic_modifier`)\n* **Thematic Profile:** Live security feeds or news drone coverage broadcasting the squad's performance to HQ executives.\n\n## System Rules\n\n* **Executive Payout:** If the stage is cleared, award **[+1 PIP]** directly to the Squad Leader’s Faction Vault.\n* **Public Failure:** Whenever a character rolls one or more natural **1s** (Backfires), deduct **[1 PIP]** from their controlling Faction's Vault."
   },
   {
     "id": "modifier-12-explosive-fuel-craters",

@@ -36,8 +36,8 @@ modules:
     cost_credits: 3
     cost_pip: 1
     reward_pip: 1
-    effect: "During Downtime Step 3, any Faction may spend 1 [EF] from their Vault to automatically restore 1 missing HP to an operative without rolling dice (0% risk of natural 1 Permanent Trauma)."
-rules_text: "Baseline: 2 Treatment Beds, 3 Healing Dice per bed (heals on 5+; natural 1 causes Permanent Trauma; unhealed HP becomes Critical Injury). Sponsorable Modules: Surgical Wing (4 [CR]), Trauma Cybernetics (4 [CR]), Gene-Stasis Tank (1 [PIP] + 3 [CR])."
+    effect: "During Downtime Step 3, any Faction may spend [1 EF] from their Vault to automatically restore 1 missing HP to an operative without rolling dice (0% risk of natural 1 Permanent Trauma)."
+rules_text: "Baseline: 2 Treatment Beds, 3 Healing Dice per bed (heals on 5+; natural 1 causes Permanent Trauma; unhealed HP becomes Critical Injury). Sponsorable Modules: Surgical Wing ([4 CR]), Trauma Cybernetics ([4 CR]), Gene-Stasis Tank ([1 PIP] + [3 CR])."
 tags:
   - "hq"
   - "medical"
@@ -59,10 +59,10 @@ art_spec:
 
 ## Sponsorable Modules
 
-Sponsoring any module awards **`+1 [PIP]`** (`2 [VP]`) to the funding Faction and places their Faction Token on the module.
+Sponsoring any module awards **[+1 PIP]** ([2 VP]) to the funding Faction and places their Faction Token on the module.
 
 | Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |
 | :--- | :--- | :---: | :--- |
-| **Surgical Wing** | `4 [CR]` | `+1 [PIP]` | Adds **+2 additional Treatment Beds** (4 total beds baseline; 6 during a Stand-Down round). |
-| **Trauma Cybernetics** | `4 [CR]` | `+1 [PIP]` | Upgrades medical lasers: all Healing Dice clear damage on a **`4+`** (and Critical Injury healing improves from `6+` to **`5+`**). |
-| **Gene-Stasis Tank** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Spending **`1 [EF]`** from a Faction Vault during Downtime automatically restores `1 missing HP` without rolling dice (zero risk of natural `1` Permanent Trauma). |
+| **Surgical Wing** | [4 CR] | [+1 PIP] | Adds **+2 additional Treatment Beds** (4 total beds baseline; 6 during a Stand-Down round). |
+| **Trauma Cybernetics** | [4 CR] | [+1 PIP] | Upgrades medical lasers: all Healing Dice clear damage on a **`4+`** (and Critical Injury healing improves from `6+` to **`5+`**). |
+| **Gene-Stasis Tank** | `[1 PIP] + [3 CR]` | [+1 PIP] | Spending **[1 EF]** from a Faction Vault during Downtime automatically restores `1 missing HP` without rolling dice (zero risk of natural `1` Permanent Trauma). |

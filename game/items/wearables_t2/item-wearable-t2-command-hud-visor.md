@@ -47,8 +47,8 @@ The **Command HUD Visor** is the Tier 2 upgrade to the classic Tactical HUD Viso
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Head]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Head]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Enhanced Targeting)
 

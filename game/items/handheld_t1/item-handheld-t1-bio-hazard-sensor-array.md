@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Bio-Hazard Sensor Array** is a handheld environmental and biological telemetry scanner. It bridges `[Survival]` and `[Intel]`, helping operatives navigate toxic containment breaches while harvesting scientific research data.
+The **Bio-Hazard Sensor Array** is a handheld environmental and biological telemetry scanner. It bridges [Survival] and [Intel], helping operatives navigate toxic containment breaches while harvesting scientific research data.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Survival]` + `[Intel]`
+* **Focus Coverage:** [Survival] + [Intel]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Survival]` or `[Intel]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Survival]` or `[Intel]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Survival] or [Intel].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Survival] or [Intel] to roll both categories at **Secondary Focus (`4+`)**.

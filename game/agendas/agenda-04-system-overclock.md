@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Stage Resolution): One of your [Operations] Primary Focus operatives scores the single highest number of successes on an [Operations] stage. Payout: +3 [VP] AND deposit +1 [CR] into your Vault."
+rules_text: "Condition (Mission Stage Resolution): One of your [Operations] Primary Focus operatives scores the single highest number of successes on an [Operations] stage. Payout: [+3 VP] AND deposit [+1 CR] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -44,14 +44,14 @@ art_spec:
 
 # System Overclock
 
-* **Category:** Category A — In-Mission Operations (`[Operations]` Dominance)
+* **Category:** Category A — In-Mission Operations ([Operations] Dominance)
 * **Fulfillment Context:** Mission Stage Resolution
 
 ## Fulfillment Condition
 
-One of **your `[Operations]` Primary Focus operatives** scores the single highest number of successes on an `[Operations]` stage.
+One of **your [Operations] Primary Focus operatives** scores the single highest number of successes on an [Operations] stage.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[CR]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 CR]** into your Faction Vault

@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.0
   trigger: "Activate during Phase 1 Initiative in a [Combat] stage before rolling"
   effect: "Permanently spend 1 static die from your pool without rolling it to lay down cover fire. For the remainder of Phase 1, all other Specialist dice in the room succeed on a 2+ threshold instead of 3+."
-rules_text: "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (Suppressing Fire): Spend 1 static die unrolled in Phase 1 [Combat] so all other Specialist dice succeed on a 2+ instead of 3+."
+rules_text: "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (Suppressing Fire): Spend 1 static die unrolled in Phase 1 [Combat] so all other Specialist dice succeed on a 2+ instead of 3+."
 tags:
   - "character"
   - "soldier"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 03: Draco "Gorgon" Vance (*The Breacher*)
 
 * **Class:** Soldier (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Lock and Load (`1 [EF]`)
+## Class Ability: Lock and Load ([1 EF])
 
 Activate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Draco's rolling pool for this phase only.
 
@@ -61,4 +61,4 @@ Activate during any Phase 1 or Phase 2 Initiative step before dice are committed
 
 ## Unique Power: Suppressing Fire (`1.0 ES` — Tier 2 Active)
 
-During Phase 1 Initiative on a **`[Combat]`** stage, Draco may spend **`1 static die`** from his active pool without rolling it to lay down heavy cover fire. For the remainder of Phase 1, all other Specialist dice committed to the room score successes on a **`2+` threshold** (instead of `3+`).
+During Phase 1 Initiative on a **[Combat]** stage, Draco may spend **`1 static die`** from his active pool without rolling it to lay down heavy cover fire. For the remainder of Phase 1, all other Specialist dice committed to the room score successes on a **`2+` threshold** (instead of `3+`).

@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "consumable"
   armor_buffer: null
-rules_text: "Data Extraction (Single-Use Consumable — Step 4 Resolution): Consume immediately after clearing a stage with Momentum [MOM] (+2 or higher above Target Difficulty) to deposit +1 Credit [CR] AND +1 Effort [EF] into your Faction Vault."
+rules_text: "Data Extraction (Single-Use Consumable — Step 4 Resolution): Consume immediately after clearing a stage with Momentum [MOM] (+2 or higher above Target Difficulty) to deposit [+1 CR] AND [+1 EF] into your Faction Vault."
 active_ability: "Data Extraction — Activation: Step 4 (Resolution after clearing a stage with Momentum +2 or higher, Single-Use). Effect: Deposit +1 Credit [CR] AND +1 Effort [EF] into your Faction Vault."
 tags:
   - "consumable"
@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Encrypted Data Core** is a Tier 1 economic salvage consumable costing `2 [CR]`. While it provides no direct combat power, consuming it upon a high-Momentum stage clearance (`+2` or higher above Target Difficulty $D$) yields both `+1 [CR]` and `+1 [EF]` directly into the player's Faction Vault—turning a `1.0 ES` investment into `1.83 ES` of permanent Vault value.
+The **Encrypted Data Core** is a Tier 1 economic salvage consumable costing [2 CR]. While it provides no direct combat power, consuming it upon a high-Momentum stage clearance (`+2` or higher above Target Difficulty $D$) yields both [+1 CR] and [+1 EF] directly into the player's Faction Vault—turning a `1.0 ES` investment into `1.83 ES` of permanent Vault value.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Salvage / Vault (Single-Use)
-* **Market Cost:** `2 [CR]` *(1.0 ES Value)*
+* **Market Cost:** [2 CR] *(1.0 ES Value)*
 * **Activation Window:** Step 4 (Resolution)
 
 ---
@@ -60,4 +60,4 @@ The **Encrypted Data Core** is a Tier 1 economic salvage consumable costing `2 [
 ## Tactical Effect
 
 ### Data Extraction
-Consume immediately after clearing a stage with **Operational Momentum `[MOM]` (+2 or higher)** to deposit **+1 Credit `[CR]`** **AND** **+1 Effort `[EF]`** into your Faction Vault. Discard this card after use.
+Consume immediately after clearing a stage with **Operational Momentum [MOM] (+2 or higher)** to deposit **[+1 CR]** **AND** **[+1 EF]** into your Faction Vault. Discard this card after use.

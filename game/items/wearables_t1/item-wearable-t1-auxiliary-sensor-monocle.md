@@ -47,8 +47,8 @@ The **Auxiliary Sensor Monocle** protects operatives whenever they roll at **Sec
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Head]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Head]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Secondary Focus Protection
 

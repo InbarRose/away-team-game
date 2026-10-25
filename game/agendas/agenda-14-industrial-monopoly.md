@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (HQ Base Expansion): Sponsor and construct 2 or more HQ Modules during a single HQ Downtime phase. Payout: +4 [VP]."
+rules_text: "Condition (HQ Base Expansion): Sponsor and construct 2 or more HQ Modules during a single HQ Downtime phase. Payout: [+4 VP]."
 active_ability: null
 tags:
   - "agenda"
@@ -53,4 +53,4 @@ Sponsor and construct **2 or more HQ Modules** during a single HQ Downtime phase
 
 ## Reward Payout
 
-* **+4 `[VP]`** (Victory Points)
+* **[+4 VP]** (Victory Points)

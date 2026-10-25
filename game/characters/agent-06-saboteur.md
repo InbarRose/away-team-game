@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.0
   trigger: "Once per mission, during Step 1 (Briefing) of a [Combat] or [Operations] stage"
   effect: "Spend 1 static die from Buster's active pool to detonate a perimeter charge, permanently reducing the stage's Target Difficulty by -1 Success (minimum 1) and ignoring any Difficulty +1 text on the Stage Modifier."
-rules_text: "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Shaped Demolition): Once per mission in [Combat] or [Operations], spend 1 static die to lower Target Difficulty by -1 and ignore Modifier difficulty increases."
+rules_text: "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Shaped Demolition): Once per mission in [Combat] or [Operations], spend 1 static die to lower Target Difficulty by -1 and ignore Modifier difficulty increases."
 tags:
   - "character"
   - "recon"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 06: Jaxom "Buster" Reyes (*The Saboteur*)
 
 * **Class:** Recon (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Operations]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Operations] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Intel Reconnaissance (`1 [EF]`)
+## Class Ability: Intel Reconnaissance ([1 EF])
 
 Activate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.
 
@@ -61,4 +61,4 @@ Activate during Step 1 (Briefing) to scout the top card of the Stage Modifier de
 
 ## Unique Power: Shaped Demolition (`1.0 ES` — Tier 2 Active)
 
-Once per mission during Step 1 (Briefing) of a **`[Combat]`** or **`[Operations]`** stage, Buster may spend **`1 static die`** from his pool to reduce the stage's Target Difficulty by **`-1 Success`** (minimum 1) and ignore any difficulty increases on the active Stage Modifier.
+Once per mission during Step 1 (Briefing) of a **[Combat]** or **[Operations]** stage, Buster may spend **`1 static die`** from his pool to reduce the stage's Target Difficulty by **`-1 Success`** (minimum 1) and ignore any difficulty increases on the active Stage Modifier.

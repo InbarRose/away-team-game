@@ -48,16 +48,16 @@ art_spec:
 
 ## Overview
 
-The **Covert Eliminator Sidearm** is a silenced tactical pistol with integrated credential-spoofing transponders. It covers `[Combat]`, `[Infiltrate]`, and `[Negotiate]`, offering seamless versatility across high-society espionage missions.
+The **Covert Eliminator Sidearm** is a silenced tactical pistol with integrated credential-spoofing transponders. It covers [Combat], [Infiltrate], and [Negotiate], offering seamless versatility across high-society espionage missions.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [5 CR] *(2.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Combat]` / `[Infiltrate]` / `[Negotiate]`
+* **Focus Coverage:** [Combat] / [Infiltrate] / [Negotiate]
 
 ## Core Mechanics
 
-1. **Tri-Domain Utility (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in `[Combat]`, `[Infiltrate]`, or `[Negotiate]`.
+1. **Tri-Domain Utility (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in [Combat], [Infiltrate], or [Negotiate].
 2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in any of those three categories to roll them at **Secondary Focus (`4+`)**.

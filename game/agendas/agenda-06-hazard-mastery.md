@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Stage Resolution): One of your [Survival] Primary Focus operatives scores the single highest number of successes on a [Survival] stage (or on any stage where a Dynamic Focus Swap was triggered). Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (Mission Stage Resolution): One of your [Survival] Primary Focus operatives scores the single highest number of successes on a [Survival] stage (or on any stage where a Dynamic Focus Swap was triggered). Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -44,14 +44,14 @@ art_spec:
 
 # Hazard Mastery
 
-* **Category:** Category A — In-Mission Operations (`[Survival]` Dominance)
+* **Category:** Category A — In-Mission Operations ([Survival] Dominance)
 * **Fulfillment Context:** Mission Stage Resolution
 
 ## Fulfillment Condition
 
-One of **your `[Survival]` Primary Focus operatives** scores the single highest number of successes on a `[Survival]` stage (or on any stage where a **Dynamic Focus Swap** was triggered).
+One of **your [Survival] Primary Focus operatives** scores the single highest number of successes on a [Survival] stage (or on any stage where a **Dynamic Focus Swap** was triggered).
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

@@ -44,14 +44,14 @@ art_spec:
 
 ## Overview
 
-The **Nanite Bio-Foam Canister** is a Tier 2 advanced medical consumable priced at `5 [CR]`. Deployed instantly at any step of a mission, it delivers a massive +2 HP emergency heal while suspending all stat penalties from Critical Injuries or Permanent Trauma for the remainder of the drop.
+The **Nanite Bio-Foam Canister** is a Tier 2 advanced medical consumable priced at [5 CR]. Deployed instantly at any step of a mission, it delivers a massive +2 HP emergency heal while suspending all stat penalties from Critical Injuries or Permanent Trauma for the remainder of the drop.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Advanced Medical (Single-Use)
-* **Market Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Market Cost:** [5 CR] *(2.5 ES Value)*
 * **Activation Window:** Any Step (Instant)
 
 ---

@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Tactical Multi-Tool** combines a low-signature thermal cutter with a motorized climbing winch. It bridges `[Survival]` and `[Infiltrate]`, allowing operatives to carve bypasses through hazardous maintenance shafts and structural wreckage.
+The **Tactical Multi-Tool** combines a low-signature thermal cutter with a motorized climbing winch. It bridges [Survival] and [Infiltrate], allowing operatives to carve bypasses through hazardous maintenance shafts and structural wreckage.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Survival]` + `[Infiltrate]`
+* **Focus Coverage:** [Survival] + [Infiltrate]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Survival]` or `[Infiltrate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Survival]` or `[Infiltrate]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Survival] or [Infiltrate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Survival] or [Infiltrate] to roll both categories at **Secondary Focus (`4+`)**.

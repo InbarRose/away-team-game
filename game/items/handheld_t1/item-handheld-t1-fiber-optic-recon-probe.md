@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Fiber-Optic Micro-Recon Probe** is a flexible stealth camera array and laser microphone. It bridges `[Intel]` and `[Infiltrate]`, allowing operatives to scout room layouts, eavesdrop on encrypted terminals, and slip past security patrols undetected.
+The **Fiber-Optic Micro-Recon Probe** is a flexible stealth camera array and laser microphone. It bridges [Intel] and [Infiltrate], allowing operatives to scout room layouts, eavesdrop on encrypted terminals, and slip past security patrols undetected.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Intel]` + `[Infiltrate]`
+* **Focus Coverage:** [Intel] + [Infiltrate]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Intel]` or `[Infiltrate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Intel]` or `[Infiltrate]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Intel] or [Infiltrate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Intel] or [Infiltrate] to roll both categories at **Secondary Focus (`4+`)**.

@@ -47,8 +47,8 @@ The **Field Surgical Suite Pack** upgrades the Tier 1 Auto-Triage Trauma Pack, a
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `8 [CR]` *(4.0 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [8 CR] *(4.0 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Advanced Triage)
 

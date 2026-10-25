@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Holo-Broadcast Comm Unit** is a portable two-handed communications tower and holographic telepresence rig. It grants heavy dice output and Focus bridging for `[Negotiate]` encounters.
+The **Holo-Broadcast Comm Unit** is a portable two-handed communications tower and holographic telepresence rig. It grants heavy dice output and Focus bridging for [Negotiate] encounters.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Negotiate]`
+* **Focus Coverage:** [Negotiate]
 
 ## Core Mechanics
 
-1. **Executive Telepresence (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Negotiate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Negotiate]` to roll `[Negotiate]` checks at **Secondary Focus (`4+`)**.
+1. **Executive Telepresence (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Negotiate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Negotiate] to roll [Negotiate] checks at **Secondary Focus (`4+`)**.

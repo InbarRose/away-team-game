@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (HQ Quartermaster Step): Purchase a non-consumable weapon, armor, or device from the Quartermaster shop during Downtime and immediately transfer it to a rival player's operative for 0 Credits [CR]. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (HQ Quartermaster Step): Purchase a non-consumable weapon, armor, or device from the Quartermaster shop during Downtime and immediately transfer it to a rival player's operative for [0 CR]. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Purchase a **non-consumable weapon, armor, or device** from the Quartermaster shop during Downtime and **immediately transfer it to a *rival player's* operative for 0 Credits (`[CR]`)**.
+Purchase a **non-consumable weapon, armor, or device** from the Quartermaster shop during Downtime and **immediately transfer it to a *rival player's* operative for [0 CR] ([CR])**.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

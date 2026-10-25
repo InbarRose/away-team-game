@@ -60,7 +60,7 @@ stages:
       cost: "0 Effort (Physical Specimen Extraction)"
       description: "Grab the physical specimen cryo-canisters and escape through the flooded jungle drainage pipes."
     failure_penalty: "Lab purges automatically! Genetic data is incinerated; mission fails without base payouts."
-rules_text: "Side-Mission (Themes: [Planet], [Facility] — 3 Stages). Base Clearance Bounty: 6 [CR], 1 [PIP]. Bonus Bounty: Deploy at least 1 Scientist -> +1 free Consumable Item card. Stage 1: Decontamination Chamber Seal ([Operations] D3; Force Breach to [Combat] D4). Stage 2: Specimen Nest Siege ([Combat] D5, Mandatory Siege Fight). Stage 3: Genetic Data Core ([Intel] D4; Bypass to [Survival] D4)."
+rules_text: "Side-Mission (Themes: [Planet], [Facility] — 3 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Bonus Bounty: Deploy at least 1 Scientist -> +1 free Consumable Item card. Stage 1: Decontamination Chamber Seal ([Operations] D3; Force Breach to [Combat] D4). Stage 2: Specimen Nest Siege ([Combat] D5, Mandatory Siege Fight). Stage 3: Genetic Data Core ([Intel] D4; Bypass to [Survival] D4)."
 active_ability: null
 tags:
   - "side-mission"
@@ -78,8 +78,8 @@ art_spec:
 
 # Side-Mission: Bio-Specimen Containment Purge
 
-> **Themes:** 🌲 `[Planet]` • 🔬 `[Facility]`  
-> **Base Clearance Bounty:** `6 [CR]`, `1 [PIP]`  
+> **Themes:** 🌲 [Planet] • 🔬 [Facility]  
+> **Base Clearance Bounty:** [6 CR], [1 PIP]  
 > **Bonus Bounty:** Deploy at least **1 `Scientist` operative** on the squad $\rightarrow$ **`+1 Free Consumable Item Card`**
 
 ---
@@ -94,19 +94,19 @@ A surface bio-research laboratory on an isolated jungle planet has suffered a ca
 
 | Stage | Stage Name | Preset Focus | Target Difficulty ($D$) | Dynamic Focus Swap Option | Stage Failure Penalty |
 | :---: | :--- | :---: | :---: | :--- | :--- |
-| **1** | **Decontamination Chamber Seal** | `[Operations]` | **3 Successes** | **Force Breach (`[Combat]`):** Target $D = 4$ | Toxic gas leak! Every deployed operative takes **1 HP damage**. |
-| **2** | **Specimen Nest Siege** | `[Combat]` | **5 Successes** | *(None — Mandatory Siege Firefight)* | Vicious onslaught! Every deployed operative takes **1 HP damage** and loses **1 static die**. |
-| **3** | **Genetic Data Core** | `[Intel]` | **4 Successes** | **Tactical Bypass (`[Survival]`):** Target $D = 4$ | **Mission Failure:** Lab purges automatically! Data destroyed; squad extracts without payouts. |
+| **1** | **Decontamination Chamber Seal** | [Operations] | **3 Successes** | **Force Breach ([Combat]):** Target $D = 4$ | Toxic gas leak! Every deployed operative takes **1 HP damage**. |
+| **2** | **Specimen Nest Siege** | [Combat] | **5 Successes** | *(None — Mandatory Siege Firefight)* | Vicious onslaught! Every deployed operative takes **1 HP damage** and loses **1 static die**. |
+| **3** | **Genetic Data Core** | [Intel] | **4 Successes** | **Tactical Bypass ([Survival]):** Target $D = 4$ | **Mission Failure:** Lab purges automatically! Data destroyed; squad extracts without payouts. |
 
 ---
 
 ## 3. Detailed Stage Breakdown
 
 ### Stage 1: Decontamination Chamber Seal
-* **Preset Focus:** `[Operations]` — **Target Difficulty: 3 Successes**
+* **Preset Focus:** [Operations] — **Target Difficulty: 3 Successes**
   * *Narrative:* Overriding sealed bio-hazard airlock doors to access the quarantined laboratory interior.
-* **Dynamic Focus Swap — Force Breach (`[Combat]`):**
-  * During Step 1 (Briefing), the Squad Leader may shift the stage to `[Combat]` at **Target Difficulty: 4 Successes**.
+* **Dynamic Focus Swap — Force Breach ([Combat]):**
+  * During Step 1 (Briefing), the Squad Leader may shift the stage to [Combat] at **Target Difficulty: 4 Successes**.
   * *Narrative:* Blast through the reinforced quartz decontamination glass with explosive charges.
 * **Stage Failure Penalty (Tactical Blowback):**
   * Toxic gas leak! Every deployed operative takes **1 point of HP damage**.
@@ -114,7 +114,7 @@ A surface bio-research laboratory on an isolated jungle planet has suffered a ca
 ---
 
 ### Stage 2: Specimen Nest Siege (Mandatory Fight)
-* **Preset Focus:** `[Combat]` — **Target Difficulty: 5 Successes**
+* **Preset Focus:** [Combat] — **Target Difficulty: 5 Successes**
   * *Narrative:* Holding the defensive perimeter against swarming bio-specimens inside the overgrown main atrium.
 * **No Dynamic Swap Available:** Mandatory siege firefight.
 * **Stage Failure Penalty (Tactical Blowback):**
@@ -123,12 +123,12 @@ A surface bio-research laboratory on an isolated jungle planet has suffered a ca
 ---
 
 ### Stage 3: Genetic Data Core (Climax Stage)
-* **Preset Focus:** `[Intel]` — **Target Difficulty: 4 Successes**
+* **Preset Focus:** [Intel] — **Target Difficulty: 4 Successes**
   * *Narrative:* Siphoning genetic sequencing data from the central laboratory core while the self-destruct countdown ticks down.
-* **Dynamic Focus Swap — Tactical Bypass (`[Survival]`):**
-  * During Step 1 (Briefing), the Squad Leader may shift the stage to `[Survival]` at **Target Difficulty: 4 Successes**.
+* **Dynamic Focus Swap — Tactical Bypass ([Survival]):**
+  * During Step 1 (Briefing), the Squad Leader may shift the stage to [Survival] at **Target Difficulty: 4 Successes**.
   * *Narrative:* Grab the physical specimen cryo-canisters and escape through flooded jungle drainage pipes.
 * **Stage Clearance:**
-  * **Side-Mission Cleared!** Award **`6 [CR]`** and **`1 [PIP]`** (plus **`+1 free Consumable Item card`** if at least 1 `Scientist` operative was deployed on the 4-character away team).
+  * **Side-Mission Cleared!** Award **[6 CR]** and **[1 PIP]** (plus **`+1 free Consumable Item card`** if at least 1 `Scientist` operative was deployed on the 4-character away team).
 * **Stage Failure Penalty (Mission Failure):**
   * The lab purges automatically! The genetic data is incinerated and the mission fails without base payouts.

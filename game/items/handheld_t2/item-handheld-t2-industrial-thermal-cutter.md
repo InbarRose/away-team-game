@@ -43,16 +43,16 @@ art_spec:
 
 ## Overview
 
-The **Industrial Thermal Cutter** is a heavy-duty plasma lance designed for dedicated `[Survival]` and Med-Tech specialists, pairing `+2 Temporary Static Dice` with **Primary Recirculation**.
+The **Industrial Thermal Cutter** is a heavy-duty plasma lance designed for dedicated [Survival] and Med-Tech specialists, pairing `+2 Temporary Static Dice` with **Primary Recirculation**.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [6 CR] *(3.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Survival]`
+* **Focus Coverage:** [Survival]
 
 ## Core Mechanics
 
-1. **Plasma Breaching Output (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Survival]`.
-2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in `[Survival]` rolls in `[Survival]`, re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.
+1. **Plasma Breaching Output (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Survival].
+2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in [Survival] rolls in [Survival], re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.

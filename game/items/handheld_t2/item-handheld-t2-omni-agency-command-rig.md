@@ -48,16 +48,16 @@ art_spec:
 
 ## Overview
 
-The **Omni-Agency Command Rig** is an all-in-one corporate field computer that unifies all three Tier 2 Pyramid Focus categories (`[Intel]`, `[Infiltrate]`, and `[Negotiate]`). Equipped in a single hand, it turns any brute-force Soldier or Engineer into a capable covert operative.
+The **Omni-Agency Command Rig** is an all-in-one corporate field computer that unifies all three Tier 2 Pyramid Focus categories ([Intel], [Infiltrate], and [Negotiate]). Equipped in a single hand, it turns any brute-force Soldier or Engineer into a capable covert operative.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [5 CR] *(2.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Intel]` / `[Infiltrate]` / `[Negotiate]`
+* **Focus Coverage:** [Intel] / [Infiltrate] / [Negotiate]
 
 ## Core Mechanics
 
-1. **Tri-Domain Utility (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in `[Intel]`, `[Infiltrate]`, or `[Negotiate]`.
+1. **Tri-Domain Utility (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in [Intel], [Infiltrate], or [Negotiate].
 2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in any of those three categories to roll them at **Secondary Focus (`4+`)**.

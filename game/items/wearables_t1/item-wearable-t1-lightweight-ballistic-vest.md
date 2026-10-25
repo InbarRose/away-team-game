@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Lightweight Ballistic Vest** is the standard Tier 1 `[Body]` armor buffer, absorbing 1 point of HP damage from any source per mission drop.
+The **Lightweight Ballistic Vest** is the standard Tier 1 [Body] armor buffer, absorbing 1 point of HP damage from any source per mission drop.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Generic Utility (Damage Buffer)
 

@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "complex"
   armor_buffer: 2
-rules_text: "Deployment (Step 1 Briefing): Deploy during Step 1 (Briefing) of any stage to add +3 temporary static dice to the squad pool for that stage (remains deployed for 2 stages before running out of power). Shield Projection (Active Cost — Step 4 Resolution): Spend 1 Effort [EF] from your Vault to have the turret's barrier absorb up to 2 points of HP damage suffered by any squad members in the room."
+rules_text: "Deployment (Step 1 Briefing): Deploy during Step 1 (Briefing) of any stage to add +3 temporary static dice to the squad pool for that stage (remains deployed for 2 stages before running out of power). Shield Projection (Active Cost — Step 4 Resolution): Spend [1 EF] from your Vault to have the turret's barrier absorb up to 2 points of HP damage suffered by any squad members in the room."
 active_ability: "Shield Projection — Cost: Spend 1 Vault Effort [EF] during Step 4 (Resolution). Effect: Absorb up to 2 points of HP damage suffered by any squad members in the room. Turret persists across 2 consecutive stages."
 tags:
   - "complex"
@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Fortress Defense Barrier Turret** is a Tier 2 heavy deployable fortification occupying the `[Complex]` slot for `8 [CR]`. Unlike Tier 1 turrets, its high-capacity power cell remains active across **2 consecutive stages**, contributing **+3 temporary static dice** on any Focus check while projecting an energy barrier that can absorb up to 2 HP of squad damage per stage for `1 [EF]`.
+The **Fortress Defense Barrier Turret** is a Tier 2 heavy deployable fortification occupying the [Complex] slot for [8 CR]. Unlike Tier 1 turrets, its high-capacity power cell remains active across **2 consecutive stages**, contributing **+3 temporary static dice** on any Focus check while projecting an energy barrier that can absorb up to 2 HP of squad damage per stage for [1 EF].
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `8 [CR]` *(4.0 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [8 CR] *(4.0 ES Value)*
 * **Type:** Heavy Deployable Fortification
 
 ---
@@ -63,4 +63,4 @@ The **Fortress Defense Barrier Turret** is a Tier 2 heavy deployable fortificati
 Deploy during Step 1 (Briefing) of **any** stage. Adds **+3 temporary static dice** to the squad pool for that stage. The turret remains deployed and active for **2 stages** before running out of power.
 
 ### Active Cost: Shield Projection *(Spend Vault Effort)*
-During Step 4 (Resolution), spend **1 Effort `[EF]`** from your Vault to have the turret's barrier absorb up to **2 points of HP damage** suffered by any squad members in the room.
+During Step 4 (Resolution), spend **[1 EF]** from your Vault to have the turret's barrier absorb up to **2 points of HP damage** suffered by any squad members in the room.

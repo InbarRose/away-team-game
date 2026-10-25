@@ -25,20 +25,20 @@ tier_unlocks:
   - tier: 1
     loyalty_required: 1
     ability_name: "Bulk Procurement"
-    effect: "During Step 2 (Quartermaster) of Downtime, the first item card purchased receives a -1 Credit [CR] discount (minimum 1 Credit)."
+    effect: "During Step 2 (Quartermaster) of Downtime, the first item card purchased receives a [-1 CR] discount (minimum [1 CR])."
   - tier: 2
     loyalty_required: 3
     ability_name: "Performance Retainer"
-    effect: "Whenever this operative scores 2+ successes on a cleared stage, deposit +1 Credit [CR] directly into your Vault."
+    effect: "Whenever this operative scores 2+ successes on a cleared stage, deposit [+1 CR] directly into your Vault."
   - tier: 3
     loyalty_required: 6
     ability_name: "Executive Buyout"
-    effect: "Briefing Step: Spend 2 Credits [CR] from Vault to add +1 automatic Success to the active stage check."
+    effect: "Briefing Step: Spend [2 CR] from Vault to add +1 automatic Success to the active stage check."
   - tier: 4
     loyalty_required: 10
     ability_name: "Fiscal Hegemony"
-    effect: "Hold most Credits [CR] at campaign end -> +2 bonus VPs & +1 [PIP]; while deployed, shop gear costs -1 Credit (+3 VPs at endgame)."
-rules_text: "T1 (1 LOY) Bulk Procurement: First item bought in Quartermaster Step costs -1 [CR] (min 1). T2 (3 LOY) Performance Retainer: Score 2+ successes on a cleared stage to deposit +1 [CR] into Vault. T3 (6 LOY) Executive Buyout: In Briefing, spend 2 [CR] for +1 automatic Success. T4 (10 LOY) Fiscal Hegemony: Most [CR] at endgame grants +2 [VP] & +1 [PIP]; shop gear costs -1 [CR] (+3 [VP] at endgame)."
+    effect: "Hold most [CR] at campaign end -> [+2 VP] & [+1 PIP]; while deployed, shop gear costs [-1 CR] ([+3 VP] at endgame)."
+rules_text: "T1 ([1 LOY]) Bulk Procurement: First item bought in Quartermaster Step costs [-1 CR] (min 1). T2 ([3 LOY]) Performance Retainer: Score 2+ successes on a cleared stage to deposit [+1 CR] into Vault. T3 ([6 LOY]) Executive Buyout: In Briefing, spend [2 CR] for +1 automatic Success. T4 ([10 LOY]) Fiscal Hegemony: Most [CR] at endgame grants [+2 VP] & [+1 PIP]; shop gear costs [-1 CR] ([+3 VP] at endgame)."
 active_ability: "Executive Buyout (2 CR)"
 tags:
   - "perk"
@@ -61,7 +61,7 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Bulk Procurement** | During Step 2 (Quartermaster) of Downtime, the first item card purchased receives a **-1 `[CR]` discount** (minimum 1 Credit). |
-| **Tier 2** | `3 [LOY]` | **Performance Retainer** | Whenever this operative scores **2+ successes** on a cleared stage, deposit **+1 `[CR]`** directly into your Vault. |
-| **Tier 3** | `6 [LOY]` | **Executive Buyout** | Briefing Step: Spend **2 `[CR]`** from Vault to add **+1 automatic Success** to the active stage check. |
-| **Tier 4** | `10 [LOY]` | **Fiscal Hegemony** | Hold most `[CR]` at campaign end $\rightarrow$ **+2 bonus `[VP]` & +1 `[PIP]`**; while deployed, shop gear costs **-1 `[CR]`** (**+3 `[VP]`** at endgame). |
+| **Tier 1** | [1 LOY] | **Bulk Procurement** | During Step 2 (Quartermaster) of Downtime, the first item card purchased receives a **[-1 CR] discount** (minimum [1 CR]). |
+| **Tier 2** | [3 LOY] | **Performance Retainer** | Whenever this operative scores **2+ successes** on a cleared stage, deposit **[+1 CR]** directly into your Vault. |
+| **Tier 3** | [6 LOY] | **Executive Buyout** | Briefing Step: Spend **[2 CR]** from Vault to add **+1 automatic Success** to the active stage check. |
+| **Tier 4** | [10 LOY] | **Fiscal Hegemony** | Hold most [CR] at campaign end $\rightarrow$ **[+2 VP] & [+1 PIP]**; while deployed, shop gear costs **[-1 CR]** (**[+3 VP]** at endgame). |

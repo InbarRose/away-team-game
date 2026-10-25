@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 1
-rules_text: "Condition (Mission Emergency Window): Your operative uses a Class Ability, Consumable item, or Pack item to heal or stabilize a rival player's operative back from 0 HP or 1 HP. Payout: +3 [VP] AND award +1 [LOY] to your performing operative."
+rules_text: "Condition (Mission Emergency Window): Your operative uses a Class Ability, Consumable item, or Pack item to heal or stabilize a rival player's operative back from 0 HP or 1 HP. Payout: [+3 VP] AND award [+1 LOY] to your performing operative."
 active_ability: null
 tags:
   - "agenda"
@@ -53,5 +53,5 @@ Your operative uses a **Class Ability, Consumable item, or Pack item** to **heal
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Award **+1 `[LOY]`** to your performing operative
+* **[+3 VP]** (Victory Points)
+* Award **[+1 LOY]** to your performing operative

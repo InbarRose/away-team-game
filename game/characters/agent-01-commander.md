@@ -32,7 +32,7 @@ unique_power:
   es_value: 0.5
   trigger: "Passive — whenever this operative rolls dice in a [Combat] stage"
   effect: "Ignore the first natural 1 (Backfire) rolled by this operative each [Combat] stage."
-rules_text: "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (CQC Conditioning): Ignore the first natural 1 (Backfire) rolled by Garret in each [Combat] stage."
+rules_text: "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (CQC Conditioning): Ignore the first natural 1 (Backfire) rolled by Garret in each [Combat] stage."
 tags:
   - "character"
   - "soldier"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 01: Commander Garret Vance (*The Commander*)
 
 * **Class:** Soldier (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`4 HP`** (`6.0 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Lock and Load (`1 [EF]`)
+## Class Ability: Lock and Load ([1 EF])
 
 Activate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Garret's rolling pool for this phase only.
 
@@ -61,4 +61,4 @@ Activate during any Phase 1 or Phase 2 Initiative step before dice are committed
 
 ## Unique Power: CQC Conditioning (`0.5 ES` — Tier 1 Passive)
 
-Whenever Garret rolls dice in a **`[Combat]`** stage, completely **ignore the first natural `1` (Backfire)** rolled in his pool each stage.
+Whenever Garret rolls dice in a **[Combat]** stage, completely **ignore the first natural `1` (Backfire)** rolled in his pool each stage.

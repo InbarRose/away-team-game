@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Standard Issue Sidearm** is the baseline Tier 1 one-handed firearm in the Quartermaster armory. With 6 copies in the equipment deck, it serves as the primary way for non-combat operatives (such as Medics, Techs, or PR Directors) to survive and contribute meaningfully during `[Combat]` stages without burning Squad Leader Effort on Dynamic Focus Swaps.
+The **Standard Issue Sidearm** is the baseline Tier 1 one-handed firearm in the Quartermaster armory. With 6 copies in the equipment deck, it serves as the primary way for non-combat operatives (such as Medics, Techs, or PR Directors) to survive and contribute meaningfully during [Combat] stages without burning Squad Leader Effort on Dynamic Focus Swaps.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 6 Copies
-* **Focus Coverage:** `[Combat]`
+* **Focus Coverage:** [Combat]
 
 ## Core Mechanics
 
-1. **Tactical Firepower (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool whenever you commit dice to a `[Combat]` stage check.
-2. **Focus Bridge (`4+`):** Allows an operative who is normally Out of Focus (`5+`) in `[Combat]` to roll `[Combat]` checks at **Secondary Focus (`4+`)**.
+1. **Tactical Firepower (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool whenever you commit dice to a [Combat] stage check.
+2. **Focus Bridge (`4+`):** Allows an operative who is normally Out of Focus (`5+`) in [Combat] to roll [Combat] checks at **Secondary Focus (`4+`)**.

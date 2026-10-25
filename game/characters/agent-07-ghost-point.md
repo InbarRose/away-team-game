@@ -32,7 +32,7 @@ unique_power:
   es_value: 0.5
   trigger: "Passive — whenever this operative rolls dice in an [Infiltrate] stage"
   effect: "Ignore the first natural 1 (Backfire) rolled by Ji-Yoon on each [Infiltrate] stage."
-rules_text: "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Ghost Protocol): Ignore the first natural 1 (Backfire) rolled by Ji-Yoon in each [Infiltrate] stage."
+rules_text: "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Ghost Protocol): Ignore the first natural 1 (Backfire) rolled by Ji-Yoon in each [Infiltrate] stage."
 tags:
   - "character"
   - "recon"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 07: Ji-Yoon "Wraith" Park (*The Ghost Point*)
 
 * **Class:** Recon (`Secondary Combat`)
-* **Focus Profile:** Primary: `[Infiltrate]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Infiltrate] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `0.5 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Intel Reconnaissance (`1 [EF]`)
+## Class Ability: Intel Reconnaissance ([1 EF])
 
 Activate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.
 
@@ -61,4 +61,4 @@ Activate during Step 1 (Briefing) to scout the top card of the Stage Modifier de
 
 ## Unique Power: Ghost Protocol (`0.5 ES` — Tier 1 Passive)
 
-Whenever Ji-Yoon rolls dice in an **`[Infiltrate]`** stage, she completely **ignores the first natural `1` (Backfire)** rolled in her pool.
+Whenever Ji-Yoon rolls dice in an **[Infiltrate]** stage, she completely **ignores the first natural `1` (Backfire)** rolled in her pool.

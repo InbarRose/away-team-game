@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Kinetic Overdrive Greaves** snowball squad success from room to room. Whenever the squad clears a stage with `[MOM]` (`+2` or higher), the wearer gains `+2 Temporary Static Dice` for the following stage.
+The **Kinetic Overdrive Greaves** snowball squad success from room to room. Whenever the squad clears a stage with [MOM] (`+2` or higher), the wearer gains `+2 Temporary Static Dice` for the following stage.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Momentum Surge)
 

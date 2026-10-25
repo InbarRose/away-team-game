@@ -43,16 +43,16 @@ art_spec:
 
 ## Overview
 
-The **Quantum Processing Terminal** is an ultra-dense portable mainframe deck built for master Engineers. Through **Primary Recirculation**, it guarantees massive success totals and shields `[Operations]` specialists from catastrophic Backfires.
+The **Quantum Processing Terminal** is an ultra-dense portable mainframe deck built for master Engineers. Through **Primary Recirculation**, it guarantees massive success totals and shields [Operations] specialists from catastrophic Backfires.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [6 CR] *(3.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Operations]`
+* **Focus Coverage:** [Operations]
 
 ## Core Mechanics
 
-1. **Quantum Throughput (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Operations]`.
-2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in `[Operations]` rolls in `[Operations]`, re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.
+1. **Quantum Throughput (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Operations].
+2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in [Operations] rolls in [Operations], re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.

@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (HQ Base Expansion): Sponsor and construct a cumulative total of 3 HQ Modules across the campaign. Payout: +4 [VP]."
+rules_text: "Condition (HQ Base Expansion): Sponsor and construct a cumulative total of 3 HQ Modules across the campaign. Payout: [+4 VP]."
 active_ability: null
 tags:
   - "agenda"
@@ -53,4 +53,4 @@ Sponsor and construct a cumulative total of **3 HQ Modules** across the campaign
 
 ## Reward Payout
 
-* **+4 `[VP]`** (Victory Points)
+* **[+4 VP]** (Victory Points)

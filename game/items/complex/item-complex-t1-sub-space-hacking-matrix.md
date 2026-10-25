@@ -23,7 +23,7 @@ stats:
   slots_required:
     - "complex"
   armor_buffer: null
-rules_text: "Security Bridge (Passive): Bridges [Operations] checks to Secondary Focus (4+) if your character is Out-of-Focus. System Override (Active Cost): Spend 1 Effort [EF] from your Faction Vault during an [Operations] check to treat your roll as Primary Focus (3+) and ignore 1 natural failure face."
+rules_text: "Security Bridge (Passive): Bridges [Operations] checks to Secondary Focus (4+) if your character is Out-of-Focus. System Override (Active Cost): Spend [1 EF] from your Faction Vault during an [Operations] check to treat your roll as Primary Focus (3+) and ignore 1 natural failure face."
 active_ability: "System Override — Cost: Spend 1 Vault Effort [EF] during an [Operations] check. Effect: Treat your roll as Primary Focus (3+) and ignore 1 natural failure face."
 tags:
   - "complex"
@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Sub-Space Hacking Matrix** is a Tier 1 `[Complex]` systems-override rig costing `4 [CR]`. Designed to solve the squad's `[Operations]` bottlenecks, it passively bridges any Out-of-Focus operative to `4+` on `[Operations]` checks and can consume 1 Vault Effort `[EF]` to elevate the user to full `3+` Primary Mastery while scrubbing a failure face.
+The **Sub-Space Hacking Matrix** is a Tier 1 [Complex] systems-override rig costing [4 CR]. Designed to solve the squad's [Operations] bottlenecks, it passively bridges any Out-of-Focus operative to `4+` on [Operations] checks and can consume 1 Vault [EF] to elevate the user to full `3+` Primary Mastery while scrubbing a failure face.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [4 CR] *(2.0 ES Value)*
 * **Type:** Mission Key / Systems Override
 
 ---
@@ -60,7 +60,7 @@ The **Sub-Space Hacking Matrix** is a Tier 1 `[Complex]` systems-override rig co
 ## Tactical Capabilities
 
 ### Passive: Security Bridge
-Bridges `[Operations]` checks to **Secondary Focus (4+)** if your character is Out-of-Focus.
+Bridges [Operations] checks to **Secondary Focus (4+)** if your character is Out-of-Focus.
 
 ### Active Cost: System Override *(Spend Vault Effort)*
-Spend **1 Effort `[EF]`** from your Faction Vault during an `[Operations]` check to treat your roll as **Primary Focus (3+)** and ignore 1 natural failure face.
+Spend **[1 EF]** from your Faction Vault during an [Operations] check to treat your roll as **Primary Focus (3+)** and ignore 1 natural failure face.

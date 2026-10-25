@@ -23,7 +23,7 @@ stats:
     - "body"
     - "legs"
   armor_buffer: null
-rules_text: "Auxiliary Generator (Passive): Gain +1 Permanent Static Die added to your rolling pool on all checks. Overdrive Burst (Active): Once per stage, spend 1 static die from your active pool to gain +2 Temporary Effort [EF] that must be used immediately during the current stage check (any unused temporary Effort is lost)."
+rules_text: "Auxiliary Generator (Passive): Gain +1 Permanent Static Die added to your rolling pool on all checks. Overdrive Burst (Active): Once per stage, spend 1 static die from your active pool to gain +2 Temporary [EF] that must be used immediately during the current stage check (any unused temporary Effort is lost)."
 active_ability: "Overdrive Burst — Cost: Spend 1 Static Die (Once per stage). Effect: Gain +2 Temporary Effort [EF] that must be spent immediately during the current stage check (unused temporary Effort is lost)."
 tags:
   - "multi-slot"
@@ -47,14 +47,14 @@ art_spec:
 
 ## Overview
 
-The **Siphon-Core Power Frame** is a Tier 2 multi-slot powered exoskeleton occupying `[Body]` and `[Legs]`. Built around a micro-fusion kinetic harvester, it expands the operative's permanent static dice pool and converts single static dice into immediate bursts of temporary Effort `[EF]` to fuel Class Abilities, Faction Powers, or Squad Leader commands without draining the Faction Vault.
+The **Siphon-Core Power Frame** is a Tier 2 multi-slot powered exoskeleton occupying [Body] and [Legs]. Built around a micro-fusion kinetic harvester, it expands the operative's permanent static dice pool and converts single static dice into immediate bursts of temporary [EF] to fuel Class Abilities, Faction Powers, or Squad Leader commands without draining the Faction Vault.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Body]` + `[Legs]` (2 Slots)
-* **Market Cost:** `8 [CR]` *(4.0 ES Value)*
+* **Slots Required:** [Body] + [Legs] (2 Slots)
+* **Market Cost:** [8 CR] *(4.0 ES Value)*
 * **Tier:** Tier 2 Multi-Slot Rig
 
 ---
@@ -65,4 +65,4 @@ The **Siphon-Core Power Frame** is a Tier 2 multi-slot powered exoskeleton occup
 Gain **+1 Permanent Static Die** added to your rolling pool on all checks.
 
 ### Active Cost: Overdrive Burst *(Spend Die for Immediate Effort)*
-Once per stage, spend **1 static die** from your active pool to gain **+2 Temporary Effort `[EF]`** that **must be used immediately** during the current stage check (any unused temporary Effort is lost).
+Once per stage, spend **1 static die** from your active pool to gain **+2 Temporary [EF]** that **must be used immediately** during the current stage check (any unused temporary Effort is lost).

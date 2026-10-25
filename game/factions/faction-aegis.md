@@ -22,7 +22,7 @@ focus_affinity:
 base_power:
   name: "Kinetic Reclamation"
   trigger: "Whenever an Aegis agent generates Momentum (+2 or higher on a cleared stage)"
-  effect: "Aegis immediately deposits +1 [EF] into their Faction Vault."
+  effect: "Aegis immediately deposits [+1 EF] into their Faction Vault."
 loyalty_tiers:
   tier_1:
     loyalty_required: 1
@@ -39,8 +39,8 @@ loyalty_tiers:
   tier_4:
     loyalty_required: 10
     title: "Corporate Icon — War Hero (+3 VPs)"
-    effect: "All allies in this character's squad gain +1 temporary static die during Phase 1 in [Combat] stages. Awards +3 [VP] at end-of-game."
-rules_text: "Base Power (Kinetic Reclamation): Whenever an Aegis agent generates [MOM], deposit +1 [EF] into your Vault."
+    effect: "All allies in this character's squad gain +1 temporary static die during Phase 1 in [Combat] stages. Awards [+3 VP] at end-of-game."
+rules_text: "Base Power (Kinetic Reclamation): Whenever an Aegis agent generates [MOM], deposit [+1 EF] into your Vault."
 tags:
   - "faction"
   - "combat"
@@ -58,22 +58,22 @@ art_spec:
 *Private Military Contractor & Heavy Ordnance Syndicate*
 
 * **Faction Color:** Gunmetal Slate (`#2C3E50`)
-* **Strategic Identity:** Frontline kinetic dominance, Momentum generation, and turning aggressive stage clears into sustainable Vault `[EF]`.
-* **Starting Vault Assets:** `4 [CR]` • `1 [EF]` • `1 [PIP]`
+* **Strategic Identity:** Frontline kinetic dominance, Momentum generation, and turning aggressive stage clears into sustainable Vault [EF].
+* **Starting Vault Assets:** [4 CR] • [1 EF] • [1 PIP]
 
 ---
 
 ## Base Faction Power: Kinetic Reclamation
 
-Whenever an Aegis operative participates in a stage that generates **Operational Momentum (`[MOM]`, $+2$ or higher above Target Difficulty)**, Aegis immediately deposits **`+1 Effort [EF]`** from the supply into their Faction Vault.
+Whenever an Aegis operative participates in a stage that generates **Operational Momentum ([MOM], $+2$ or higher above Target Difficulty)**, Aegis immediately deposits **`[+1 EF]`** from the supply into their Faction Vault.
 
 ---
 
 ## Operative Loyalty Progression Tree
 
-| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |
+| Loyalty Tier | Required [LOY] | Rank & Ability Name | Mechanical Effect |
 | :--- | :---: | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Contractor:** *CQC Drill* | Ignore the first natural `1` (Backfire) rolled by this operative each stage. |
-| **Tier 2** | `3 [LOY]` | **Veteran:** *Covering Fire* *(Squad)* | When this operative helps generate `[MOM]`, grant **+1 additional Momentum refund die** to an ally who rolled in that stage. |
-| **Tier 3** | `6 [LOY]` | **Operative:** *Tactical Command* | Once per mission, when this operative rolls a natural `1`, convert it into a **Success** instead of taking Backfire damage. |
-| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *War Hero* *(+3 VPs)* | All allies in this operative's squad gain **+1 temporary static die** during Phase 1 in `[Combat]` stages. Worth **`+3 [VP]`** at end of campaign. |
+| **Tier 1** | [1 LOY] | **Contractor:** *CQC Drill* | Ignore the first natural `1` (Backfire) rolled by this operative each stage. |
+| **Tier 2** | [3 LOY] | **Veteran:** *Covering Fire* *(Squad)* | When this operative helps generate [MOM], grant **+1 additional Momentum refund die** to an ally who rolled in that stage. |
+| **Tier 3** | [6 LOY] | **Operative:** *Tactical Command* | Once per mission, when this operative rolls a natural `1`, convert it into a **Success** instead of taking Backfire damage. |
+| **Tier 4** | [10+ LOY] | **Corporate Icon:** *War Hero* *([+3 VP])* | All allies in this operative's squad gain **+1 temporary static die** during Phase 1 in [Combat] stages. Worth **[+3 VP]** at end of campaign. |

@@ -47,8 +47,8 @@ The **Hydraulic Servo-Struts** guarantee safe extraction when an encounter colla
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Failure & Retreat Safety
 

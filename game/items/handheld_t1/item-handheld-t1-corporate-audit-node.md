@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Corporate Audit Node** is an encrypted blackmail, compliance, and NDA terminal. It pairs technical system overrides (`[Operations]`) with high-stakes boardroom coercion (`[Negotiate]`).
+The **Corporate Audit Node** is an encrypted blackmail, compliance, and NDA terminal. It pairs technical system overrides ([Operations]) with high-stakes boardroom coercion ([Negotiate]).
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Operations]` + `[Negotiate]`
+* **Focus Coverage:** [Operations] + [Negotiate]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Operations]` or `[Negotiate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Operations]` or `[Negotiate]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Operations] or [Negotiate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Operations] or [Negotiate] to roll both categories at **Secondary Focus (`4+`)**.

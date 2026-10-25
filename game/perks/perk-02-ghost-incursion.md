@@ -34,8 +34,8 @@ tier_unlocks:
   - tier: 4
     loyalty_required: 10
     ability_name: "Phantom Extraction"
-    effect: "The squad ignores Target Difficulty increases from past alarms; [Infiltrate] clears grant +1 [PIP] to Vault (+3 VPs at endgame)."
-rules_text: "T1 (1 LOY) Shadow Footing: Treat [Infiltrate] as Secondary Focus (4+) if Out of Focus. T2 (3 LOY) Silent Sweep: 1/mission, negate 1 Backfire HP damage in an [Infiltrate] stage. T4 (10 LOY) Phantom Extraction: Squad ignores alarm difficulty increases; [Infiltrate] clears grant +1 [PIP] to Vault (+3 [VP] at endgame)."
+    effect: "The squad ignores Target Difficulty increases from past alarms; [Infiltrate] clears grant [+1 PIP] to Vault ([+3 VP] at endgame)."
+rules_text: "T1 ([1 LOY]) Shadow Footing: Treat [Infiltrate] as Secondary Focus (4+) if Out of Focus. T2 ([3 LOY]) Silent Sweep: 1/mission, negate 1 Backfire HP damage in an [Infiltrate] stage. T4 ([10 LOY]) Phantom Extraction: Squad ignores alarm difficulty increases; [Infiltrate] clears grant [+1 PIP] to Vault ([+3 VP] at endgame)."
 active_ability: "Silent Sweep (1/mission)"
 tags:
   - "perk"
@@ -58,6 +58,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Shadow Footing** | Treat `[Infiltrate]` as a **Secondary Focus (4+)** if currently Out of Focus (5+). |
-| **Tier 2** | `3 [LOY]` | **Silent Sweep** | Once per mission drop, completely negate **1 point of Backfire HP damage** taken in an `[Infiltrate]` stage. |
-| **Tier 4** | `10 [LOY]` | **Phantom Extraction** | The squad ignores Target Difficulty increases from past alarms; `[Infiltrate]` clears grant **+1 `[PIP]`** to Vault (**+3 `[VP]`** at endgame). |
+| **Tier 1** | [1 LOY] | **Shadow Footing** | Treat [Infiltrate] as a **Secondary Focus (4+)** if currently Out of Focus (5+). |
+| **Tier 2** | [3 LOY] | **Silent Sweep** | Once per mission drop, completely negate **1 point of Backfire HP damage** taken in an [Infiltrate] stage. |
+| **Tier 4** | [10 LOY] | **Phantom Extraction** | The squad ignores Target Difficulty increases from past alarms; [Infiltrate] clears grant **[+1 PIP]** to Vault (**[+3 VP]** at endgame). |
