@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { GameComponent } from '../components/ComponentCard';
+import rawAllComponents from '../data/all_components.json';
 import { FocusBadge, SemanticText } from '../components/SemanticText';
 import {
   calculateOperationalMomentum,
@@ -250,7 +251,7 @@ const DEFAULT_STATE: VTTState = {
   ],
 };
 
-export function VirtualTabletop({ components }: VTTProps) {
+export function VirtualTabletop({ components = rawAllComponents as GameComponent[], onReturnToWiki }: VTTProps) {
   const [state, setState] = useState<VTTState>(DEFAULT_STATE);
   const [activeTab, setActiveTab] = useState<
     'stage' | 'squad' | 'hq' | 'medbay' | 'simulator'
@@ -1056,7 +1057,7 @@ export function VirtualTabletop({ components }: VTTProps) {
           {/* Doom & Momentum Trackers */}
           <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
             <div
-              title="Meta Campaign Doom Clock ([DOOM]) — Advances ONLY when an entire Campaign Mission fails or retreats. Reaching Max Doom causes immediate Agency Collapse!"
+              title="Meta Campaign Failure Tracker ([FAIL]) — Advances ONLY when an entire Campaign Mission fails or retreats. Reaching Dissolution Threshold causes Task Force Dissolution!"
               style={{
                 padding: '0.4rem 0.7rem',
                 borderRadius: '6px',
@@ -1065,7 +1066,7 @@ export function VirtualTabletop({ components }: VTTProps) {
               }}
             >
               <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)' }}>
-                META CAMPAIGN DOOM CLOCK
+                MISSION FAILURE TRACKER
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
                 <button
@@ -1078,7 +1079,7 @@ export function VirtualTabletop({ components }: VTTProps) {
                   -
                 </button>
                 <strong style={{ fontSize: '1.05rem', color: '#ff8080' }}>
-                  {state.doom} / {activeCampaign?.stats?.max_doom || 3} [DOOM]
+                  {state.doom} / {activeCampaign?.stats?.max_doom || 3} [FAIL]
                 </strong>
                 <button
                   type="button"
