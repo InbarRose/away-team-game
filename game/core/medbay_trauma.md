@@ -18,7 +18,7 @@ Operatives feature baseline maximum health pools ranging from **2 to 5 Hit Point
                                │
                                ▼
                 [ EMERGENCY STABILIZATION WINDOW ]
-           Spend 1 [EF] OR Discard 1 Medical Consumable
+           Spend [1 EF] OR Discard 1 Medical Consumable
                                │
          ┌─────────────────────┴─────────────────────┐
          ▼                                           ▼
@@ -29,16 +29,16 @@ Remains active in squad.                   Proceed to Field Casualty Drop.
 
 ### 1.1 Emergency Stabilization
 Before the operative is declared dead, the controlling Faction **or any deployed ally** may trigger an immediate stabilization:
-* **Cost:** Spend **`1 Effort [EF]`** from a Faction Vault OR discard **1 Medical Consumable** (e.g., *Field Trauma Medkit*, *Nanite Bio-Foam Canister*).
+* **Cost:** Spend **`[1 EF]`** from a Faction Vault OR discard **1 Medical Consumable** (e.g., *Field Trauma Medkit*, *Nanite Bio-Foam Canister*).
 * **Effect:** The operative resets to **`1 HP`** and continues the mission in their deployment slot.
 
 ### 1.2 Field Casualty Drop & The Vulture Economy
 If no player pays the stabilization cost, the operative is **Killed in Action (KIA)**:
-1. **The Dead Pool Ledger:** Place the fallen operative's card face-up in the owning Faction's **Dead Pool**. Their owning Faction immediately gains **`+2 [PIP]`** (*Sacrifice for the Agency*), and all accumulated **`[LOY]`** on the card is preserved for endgame Martyrdom VP scoring (`1 [LOY] = 2 [VP]`, or higher with specific Faction perks).
+1. **The Dead Pool Ledger:** Place the fallen operative's card face-up in the owning Faction's **Dead Pool**. Their owning Faction immediately gains **[+2 PIP]** (*Sacrifice for the Agency*), and all accumulated **[LOY]** on the card is preserved for endgame Martyrdom VP scoring (`[1 LOY] = [2 VP]`, or higher with specific Faction perks).
 2. **Dropped Equipment:** All items equipped to the fallen operative drop onto the active Stage Card. Surviving squad members must resolve the dropped gear before advancing:
    * **Option A — Retain & Return:** Leave the dropped items in the drop ship's common cargo. If the squad completes or safely retreats from the mission, the items return to the original owner's Faction Vault for free.
-   * **Option B — Rival Claim (The Vulture Tax):** Any surviving rival Faction may claim the fallen operative's items into their own inventory/vault, but must immediately pay an **Administrative Vulture Tax of `-1 [PIP]` for every 2 items claimed (rounded up)**.
-   * **Contested Loot:** If multiple rivals attempt to claim the same dropped item and cannot negotiate a split, each rolls a d6; highest roll pays the `[PIP]` tax and claims the item. On a tie, the item is destroyed in the crossfire.
+   * **Option B — Rival Claim (The Vulture Tax):** Any surviving rival Faction may claim the fallen operative's items into their own inventory/vault, but must immediately pay an **Administrative Vulture Tax of [-1 PIP] for every 2 items claimed (rounded up)**.
+   * **Contested Loot:** If multiple rivals attempt to claim the same dropped item and cannot negotiate a split, each rolls a d6; highest roll pays the [PIP] tax and claims the item. On a tie, the item is destroyed in the crossfire.
 
 ---
 
@@ -72,7 +72,7 @@ Surviving operatives who return to HQ with missing HP do **not** heal automatica
 | Condition Token | How It Is Acquired | Mechanical Penalty | How It Is Removed |
 | :--- | :--- | :--- | :--- |
 | **Critical Injury Token** *(Temporary Scar)* | Any missing HP that remains **unhealed** at the end of Downtime Step 3 (from missed rolls or no available bed). | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy.** | Assign to an Infirmary Bed in a future Downtime and roll at a **`-1` threshold penalty** (`6+` base, or `5+` with *Trauma Cybernetics*), OR use *Gene-Stasis Tank* / *Cybernetic Lab*. |
-| **Permanent Trauma Token** *(Locked Complication)* | Rolling a **natural `1`** on a Med Bay Healing Die during Downtime Step 3. | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy.** | **Locked** against normal Med Bay rolls. Can **only** be purged via the **Cybernetic Lab** (`5 [CR]`) or **Rehab Lab** (`3 [EF]`). |
+| **Permanent Trauma Token** *(Locked Complication)* | Rolling a **natural `1`** on a Med Bay Healing Die during Downtime Step 3. | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy.** | **Locked** against normal Med Bay rolls. Can **only** be purged via the **Cybernetic Lab** ([5 CR]) or **Rehab Lab** ([3 EF]). |
 
 ---
 
@@ -81,8 +81,8 @@ Surviving operatives who return to HQ with missing HP do **not** heal automatica
 | Facility / Module | Cost | Medical Recovery Impact |
 | :--- | :--- | :--- |
 | **Baseline Infirmary** | *Starting HQ* | **2 Beds**, **3 Healing Dice** per bed, heals on **`5+`**. |
-| **Surgical Wing** *(Infirmary Module)* | `4 [CR]` | Adds **+2 Treatment Beds** (4 total beds baseline; 6 during Stand-Down). |
-| **Trauma Cybernetics** *(Infirmary Module)* | `4 [CR]` | Lowers healing threshold to **`4+`** (and offsets Critical Injury healing from `6+` to **`5+`**). |
-| **Gene-Stasis Tank** *(Infirmary Module)* | `1 [PIP] + 3 [CR]` | Spend **`1 [EF]`** during Downtime to **auto-heal 1 missing HP** without rolling (0% risk of natural `1` Permanent Trauma). |
-| **Cryo-Stasis Chamber** *(Standalone Landmark)* | `2 [PIP] + 6 [CR]` | **Sponsor-Controlled (1 Bed):** Automatically restores **100% HP** with `0` dice rolled. |
-| **Cybernetic Lab** *(Tier 3 Medical)* | `16 [CR]` *(Shared)* | Pay **`5 [CR]`** to completely purge a **Permanent Trauma** or **Critical Injury** token. |
+| **Surgical Wing** *(Infirmary Module)* | [4 CR] | Adds **+2 Treatment Beds** (4 total beds baseline; 6 during Stand-Down). |
+| **Trauma Cybernetics** *(Infirmary Module)* | [4 CR] | Lowers healing threshold to **`4+`** (and offsets Critical Injury healing from `6+` to **`5+`**). |
+| **Gene-Stasis Tank** *(Infirmary Module)* | `[1 PIP] + [3 CR]` | Spend **[1 EF]** during Downtime to **auto-heal 1 missing HP** without rolling (0% risk of natural `1` Permanent Trauma). |
+| **Cryo-Stasis Chamber** *(Standalone Landmark)* | `[2 PIP] + [6 CR]` | **Sponsor-Controlled (1 Bed):** Automatically restores **100% HP** with `0` dice rolled. |
+| **Cybernetic Lab** *(Tier 3 Medical)* | [16 CR] *(Shared)* | Pay **[5 CR]** to completely purge a **Permanent Trauma** or **Critical Injury** token. |

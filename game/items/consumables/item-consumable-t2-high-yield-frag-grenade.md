@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **High-Yield Frag Grenade** is a Tier 2 heavy ordnance consumable costing `5 [CR]`. Tossed during Step 3 (Commitment) of a `[Combat]` or `[Survival]` stage, it floods the check with +4 temporary static dice and provides a safety re-roll for 1 failed die face.
+The **High-Yield Frag Grenade** is a Tier 2 heavy ordnance consumable costing [5 CR]. Tossed during Step 3 (Commitment) of a [Combat] or [Survival] stage, it floods the check with +4 temporary static dice and provides a safety re-roll for 1 failed die face.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Heavy Ordnance (Single-Use)
-* **Market Cost:** `5 [CR]` *(2.5 ES Value)*
+* **Market Cost:** [5 CR] *(2.5 ES Value)*
 * **Activation Window:** Step 3 (Commitment)
 
 ---
@@ -60,4 +60,4 @@ The **High-Yield Frag Grenade** is a Tier 2 heavy ordnance consumable costing `5
 ## Tactical Effect
 
 ### Area Saturation
-Consume during Step 3 (Commitment) to add **+4 temporary static dice** to the rolling pool during `[Combat]` or `[Survival]` stages **AND** allow you to re-roll up to **1 failure face** (blank or natural 1). Discard this card after use.
+Consume during Step 3 (Commitment) to add **+4 temporary static dice** to the rolling pool during [Combat] or [Survival] stages **AND** allow you to re-roll up to **1 failure face** (blank or natural 1). Discard this card after use.

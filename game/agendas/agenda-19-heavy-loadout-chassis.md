@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (Loadout Step): Deploy one of your operatives equipped with both a 2-Handed Weapon AND a Multi-Slot Wearables Rig during the same mission drop. Payout: +2 [VP] AND deposit +1 [CR] into your Vault."
+rules_text: "Condition (Loadout Step): Deploy one of your operatives equipped with both a 2-Handed Weapon AND a Multi-Slot Wearables Rig during the same mission drop. Payout: [+2 VP] AND deposit [+1 CR] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -53,5 +53,5 @@ Deploy one of **your operatives** equipped with both a **2-Handed Weapon** AND a
 
 ## Reward Payout
 
-* **+2 `[VP]`** (Victory Points)
-* Deposit **+1 `[CR]`** into your Faction Vault
+* **[+2 VP]** (Victory Points)
+* Deposit **[+1 CR]** into your Faction Vault

@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Stage Resolution): One of your [Intel] Primary Focus operatives scores the single highest number of successes on an [Intel] stage after you activated a Class Ability, item, or Vault Effort [EF] during that stage. Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (Mission Stage Resolution): One of your [Intel] Primary Focus operatives scores the single highest number of successes on an [Intel] stage after you activated a Class Ability, item, or Vault [EF] during that stage. Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -44,14 +44,14 @@ art_spec:
 
 # Telemetry Apex
 
-* **Category:** Category A — In-Mission Operations (`[Intel]` Dominance)
+* **Category:** Category A — In-Mission Operations ([Intel] Dominance)
 * **Fulfillment Context:** Mission Stage Resolution
 
 ## Fulfillment Condition
 
-One of **your `[Intel]` Primary Focus operatives** scores the single highest number of successes on an `[Intel]` stage after you activated a **Class Ability, item, or Vault Effort (`[EF]`)** during that stage.
+One of **your [Intel] Primary Focus operatives** scores the single highest number of successes on an [Intel] stage after you activated a **Class Ability, item, or Vault Effort ([EF])** during that stage.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

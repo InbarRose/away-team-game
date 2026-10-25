@@ -48,8 +48,8 @@ The **Specialist Apex Cortex Helm** combines and upgrades the protection of both
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Head]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Head]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Mastery Shield)
 

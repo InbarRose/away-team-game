@@ -43,16 +43,16 @@ art_spec:
 
 ## Overview
 
-The **High-Gain Deep-Scanner** is a Tier 2 deep-spectrum reconnaissance array built to amplify `[Intel]` specialists with `+2 Temporary Static Dice` and **Primary Recirculation**.
+The **High-Gain Deep-Scanner** is a Tier 2 deep-spectrum reconnaissance array built to amplify [Intel] specialists with `+2 Temporary Static Dice` and **Primary Recirculation**.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [6 CR] *(3.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Intel]`
+* **Focus Coverage:** [Intel]
 
 ## Core Mechanics
 
-1. **Deep-Spectrum Sweep (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Intel]`.
-2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in `[Intel]` rolls in `[Intel]`, re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.
+1. **Deep-Spectrum Sweep (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Intel].
+2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in [Intel] rolls in [Intel], re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.

@@ -31,8 +31,8 @@ unique_power:
   tier: 4
   es_value: 2.0
   trigger: "Passive — during the Command Auction & Mission Launch"
-  effect: "Your minimum Command Auction bid is 0 [CR]. Whenever you are elected Squad Leader with Soren deployed on the Away Team, immediately deposit +2 [EF] into your Faction Vault."
-rules_text: "Class (Diplomat — Strategic Alignment, 1 [EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Corporate Executive): Minimum Command Auction bid is 0 [CR]; when elected Squad Leader with Soren deployed, gain +2 [EF]."
+  effect: "Your minimum Command Auction bid is [0 CR]. Whenever you are elected Squad Leader with Soren deployed on the Away Team, immediately deposit [+2 EF] into your Faction Vault."
+rules_text: "Class (Diplomat — Strategic Alignment, [1 EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Corporate Executive): Minimum Command Auction bid is [0 CR]; when elected Squad Leader with Soren deployed, gain [+2 EF]."
 tags:
   - "character"
   - "diplomat"
@@ -49,12 +49,12 @@ art_spec:
 # Agent 19: Soren de Witt (*The Spymaster*)
 
 * **Class:** Diplomat (`Zero-Combat Specialist`)
-* **Focus Profile:** Primary: `[Negotiate]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Negotiate] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`2 HP`** (`3.0 ES`) • **`8 Static Dice`** (`4.0 ES`) • **Power:** `2.0 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Strategic Alignment (`1 [EF]`)
+## Class Ability: Strategic Alignment ([1 EF])
 
 Activate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.
 
@@ -63,5 +63,5 @@ Activate during Step 1 (Briefing) before dice are rolled. **Shift the room's pri
 ## Unique Power: Corporate Executive (`2.0 ES` — Tier 4 Rule-Breaker)
 
 While Soren de Witt is deployed on your active Away Team:
-* Your minimum opening bid in the **Command Auction** is **`0 [CR]`** (allowing you to claim Squad Leader for free if uncontested).
-* Whenever you win the Command Auction and become **Squad Leader**, immediately deposit **`+2 Effort [EF]`** into your Faction Vault at Mission Launch.
+* Your minimum opening bid in the **Command Auction** is **[0 CR]** (allowing you to claim Squad Leader for free if uncontested).
+* Whenever you win the Command Auction and become **Squad Leader**, immediately deposit **`[+2 EF]`** into your Faction Vault at Mission Launch.

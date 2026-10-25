@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Diplomatic Envoy AI** is a real-time psychoanalysis earpiece and physiological triage monitor. It bridges `[Survival]` and `[Negotiate]`, helping operatives manage panicked survivors, biomedical emergencies, and hostile hostage standoffs.
+The **Diplomatic Envoy AI** is a real-time psychoanalysis earpiece and physiological triage monitor. It bridges [Survival] and [Negotiate], helping operatives manage panicked survivors, biomedical emergencies, and hostile hostage standoffs.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Survival]` + `[Negotiate]`
+* **Focus Coverage:** [Survival] + [Negotiate]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Survival]` or `[Negotiate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Survival]` or `[Negotiate]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Survival] or [Negotiate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Survival] or [Negotiate] to roll both categories at **Secondary Focus (`4+`)**.

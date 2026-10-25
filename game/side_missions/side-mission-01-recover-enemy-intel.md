@@ -66,7 +66,7 @@ stages:
       cost: "Triggers vault turret lockdown (+1 to +2 Difficulty)"
       description: "Physically rip the classified drives from the server racks under heavy automated turret fire."
     failure_penalty: "Anti-intrusion wipe completes! The data is permanently lost. Side-Mission ends in failure without base payouts."
-rules_text: "Side-Mission (Themes: [Urban], [Covert], [Facility] — 3 Stages). Base Payout: 6 [CR], 1 [PIP]. Bonus Stealth Bounty: Maintain stealth through Stage 1 -> +3 [CR], +1 [PIP]. Stage 1: Perimeter Watchtower ([Combat] D3; Stealth Bypass to [Infiltrate] D4). Stage 2: Internal Navigation ([Operations] D3 if stealth maintained, D4 if loud/failed). Stage 3: The Data Vault ([Intel] D3 if stealth maintained, D5 if alert is high)."
+rules_text: "Side-Mission (Themes: [Urban], [Covert], [Facility] — 3 Stages). Base Payout: [6 CR], [1 PIP]. Bonus Stealth Bounty: Maintain stealth through Stage 1 -> [+3 CR], [+1 PIP]. Stage 1: Perimeter Watchtower ([Combat] D3; Stealth Bypass to [Infiltrate] D4). Stage 2: Internal Navigation ([Operations] D3 if stealth maintained, D4 if loud/failed). Stage 3: The Data Vault ([Intel] D3 if stealth maintained, D5 if alert is high)."
 active_ability: null
 tags:
   - "side-mission"
@@ -84,9 +84,9 @@ art_spec:
 
 # Side-Mission: Recover Enemy Intel
 
-> **Themes:** 🏙️ `[Urban]` • 💼 `[Covert]` • 🔬 `[Facility]`  
-> **Base Clearance Bounty:** `6 [CR]`, `1 [PIP]`  
-> **Bonus Stealth Bounty:** Maintain stealth through Stage 1 (`[Infiltrate]` Swap cleared) $\rightarrow$ **`+3 [CR]`, `+1 [PIP]`** (`9 [CR]`, `2 [PIP]` Total!)
+> **Themes:** 🏙️ [Urban] • 💼 [Covert] • 🔬 [Facility]  
+> **Base Clearance Bounty:** [6 CR], [1 PIP]  
+> **Bonus Stealth Bounty:** Maintain stealth through Stage 1 ([Infiltrate] Swap cleared) $\rightarrow$ **[+3 CR], [+1 PIP]** ([9 CR], [2 PIP] Total!)
 
 ---
 
@@ -100,20 +100,20 @@ A rival corporate directorate is storing unredacted black-project dossiers insid
 
 | Stage | Stage Name | Preset Focus | Target Difficulty ($D$) | Dynamic Focus Swap Option | Stage Failure Penalty |
 | :---: | :--- | :---: | :---: | :--- | :--- |
-| **1** | **Perimeter Watchtower** | `[Combat]` | **3 Successes** | **Stealth Insertion (`[Infiltrate]`):** Target $D = 4$ | Alarm Tripped! Stealth bounty lost; all operatives lose **1 static die**; S2 & S3 $D$ **$+1$**. |
-| **2** | **Internal Navigation** | `[Operations]` | **3 Successes** *(4 if loud/failed)* | **Force Breach (`[Combat]`):** Target $D = 5$ | Venting Gas! All deployed operatives take **1 HP damage** and Squad Leader loses **`1 [EF]`**. |
-| **3** | **The Data Vault** | `[Intel]` | **3 Successes** *(5 if alert high)* | **Force Breach (`[Combat]`):** Target $D = 6$ | **Mission Failure (Wipe):** Data lost! Squad extracts empty-handed without base payouts. |
+| **1** | **Perimeter Watchtower** | [Combat] | **3 Successes** | **Stealth Insertion ([Infiltrate]):** Target $D = 4$ | Alarm Tripped! Stealth bounty lost; all operatives lose **1 static die**; S2 & S3 $D$ **$+1$**. |
+| **2** | **Internal Navigation** | [Operations] | **3 Successes** *(4 if loud/failed)* | **Force Breach ([Combat]):** Target $D = 5$ | Venting Gas! All deployed operatives take **1 HP damage** and Squad Leader loses **[1 EF]**. |
+| **3** | **The Data Vault** | [Intel] | **3 Successes** *(5 if alert high)* | **Force Breach ([Combat]):** Target $D = 6$ | **Mission Failure (Wipe):** Data lost! Squad extracts empty-handed without base payouts. |
 
 ---
 
 ## 3. Detailed Stage Breakdown
 
 ### Stage 1: Perimeter Watchtower
-* **Preset Focus:** `[Combat]` — **Target Difficulty: 3 Successes**
-  * *Narrative:* Assaulting the outer perimeter watchtower with suppressed kinetic fire (note: clearing via loud `[Combat]` forfeits the Bonus Stealth Bounty and raises internal alert to $D=4$ on Stage 2).
-* **Dynamic Focus Swap — Stealth Insertion (`[Infiltrate]`):**
-  * During Step 1 (Briefing), the Squad Leader may shift the stage to `[Infiltrate]` at **Target Difficulty: 4 Successes**.
-  * *Narrative:* Ghost past the watchtower searchlights undetected, preserving the **Bonus Stealth Bounty (`+3 [CR], +1 [PIP]`)** and keeping Stage 2 and Stage 3 at their minimum Target Difficulty (`3 Successes`).
+* **Preset Focus:** [Combat] — **Target Difficulty: 3 Successes**
+  * *Narrative:* Assaulting the outer perimeter watchtower with suppressed kinetic fire (note: clearing via loud [Combat] forfeits the Bonus Stealth Bounty and raises internal alert to $D=4$ on Stage 2).
+* **Dynamic Focus Swap — Stealth Insertion ([Infiltrate]):**
+  * During Step 1 (Briefing), the Squad Leader may shift the stage to [Infiltrate] at **Target Difficulty: 4 Successes**.
+  * *Narrative:* Ghost past the watchtower searchlights undetected, preserving the **Bonus Stealth Bounty (`[+3 CR], [+1 PIP]`)** and keeping Stage 2 and Stage 3 at their minimum Target Difficulty (`3 Successes`).
 * **Stage Failure Penalty (Tactical Blowback):**
   * Alarm Tripped! The Bonus Stealth Bounty is failed.
   * Every deployed operative loses **1 static die** from shock.
@@ -122,21 +122,21 @@ A rival corporate directorate is storing unredacted black-project dossiers insid
 ---
 
 ### Stage 2: Internal Navigation
-* **Preset Focus:** `[Operations]` — **Target Difficulty: 3 Successes** if Stage 1 stealth succeeded; **4 Successes** if Stage 1 was loud or failed.
+* **Preset Focus:** [Operations] — **Target Difficulty: 3 Successes** if Stage 1 stealth succeeded; **4 Successes** if Stage 1 was loud or failed.
   * *Narrative:* Hacking internal blast door controls and bypassing laser grids to reach the central data core.
-* **Dynamic Focus Swap — Force Breach (`[Combat]`):**
-  * Shift the stage to `[Combat]` at **Target Difficulty: 5 Successes** (*Blow the internal blast doors and fight through facility security*).
+* **Dynamic Focus Swap — Force Breach ([Combat]):**
+  * Shift the stage to [Combat] at **Target Difficulty: 5 Successes** (*Blow the internal blast doors and fight through facility security*).
 * **Stage Failure Penalty (Tactical Blowback):**
-  * Security countermeasures trigger! Venting neuro-gas inflicts **1 point of HP damage** on every deployed operative and deducts **`1 [EF]`** from the Squad Leader's Faction Vault.
+  * Security countermeasures trigger! Venting neuro-gas inflicts **1 point of HP damage** on every deployed operative and deducts **[1 EF]** from the Squad Leader's Faction Vault.
 
 ---
 
 ### Stage 3: The Data Vault (Climax Stage)
-* **Preset Focus:** `[Intel]` — **Target Difficulty: 3 Successes** if stealth was maintained; **5 Successes** if facility alert is high.
+* **Preset Focus:** [Intel] — **Target Difficulty: 3 Successes** if stealth was maintained; **5 Successes** if facility alert is high.
   * *Narrative:* Siphoning classified solid-state drives under high-pressure encryption countermeasures.
-* **Dynamic Focus Swap — Force Breach (`[Combat]`):**
-  * Shift the stage to `[Combat]` at **Target Difficulty: 6 Successes** (*Physically rip out the server blades under automated turret fire*).
+* **Dynamic Focus Swap — Force Breach ([Combat]):**
+  * Shift the stage to [Combat] at **Target Difficulty: 6 Successes** (*Physically rip out the server blades under automated turret fire*).
 * **Stage Clearance:**
-  * **Side-Mission Cleared!** Award **`6 [CR]`** and **`1 [PIP]`** (plus **`+3 [CR]`** and **`+1 [PIP]`** if stealth was maintained in Stage 1).
+  * **Side-Mission Cleared!** Award **[6 CR]** and **[1 PIP]** (plus **[+3 CR]** and **[+1 PIP]** if stealth was maintained in Stage 1).
 * **Stage Failure Penalty (Mission Failure):**
-  * Anti-intrusion wipe completes! The data is permanently lost. The squad returns to HQ empty-handed without base payouts (adds `0 [DOOM]` unless specified otherwise by the active Campaign Dossier).
+  * Anti-intrusion wipe completes! The data is permanently lost. The squad returns to HQ empty-handed without base payouts (adds [0 DOOM] unless specified otherwise by the active Campaign Dossier).

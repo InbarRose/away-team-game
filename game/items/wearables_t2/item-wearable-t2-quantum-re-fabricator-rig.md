@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Quantum Re-Fabricator Rig** is a Tier 2 Exclusive `[Pack]` that converts cheap Tier 1 consumables into high-value Tier 2 consumables by scanning and duplicating an ally's equipped consumable item mid-mission.
+The **Quantum Re-Fabricator Rig** is a Tier 2 Exclusive [Pack] that converts cheap Tier 1 consumables into high-value Tier 2 consumables by scanning and duplicating an ally's equipped consumable item mid-mission.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `8 [CR]` *(4.0 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [8 CR] *(4.0 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Item Duplication)
 

@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "legs"
   armor_buffer: null
-rules_text: "Shock Absorber: If a stage check fails, you may spend 1 [EF] from your Faction Vault. If you do, completely negate all stage failure HP damage that would be suffered by this operative and 1 adjacent ally."
+rules_text: "Shock Absorber: If a stage check fails, you may spend [1 EF] from your Faction Vault. If you do, completely negate all stage failure HP damage that would be suffered by this operative and 1 adjacent ally."
 active_ability: "When a stage check fails, spend 1 [EF] to negate all stage failure HP damage for this operative and 1 adjacent ally."
 tags:
   - "wearable"
@@ -43,15 +43,15 @@ art_spec:
 
 ## Overview
 
-The **Stasis Anchor Greaves** allow an operative to spend `1 [EF]` from their Faction Vault whenever a stage check fails to completely shield both themselves and an adjacent ally from all stage failure HP penalties.
+The **Stasis Anchor Greaves** allow an operative to spend [1 EF] from their Faction Vault whenever a stage check fails to completely shield both themselves and an adjacent ally from all stage failure HP penalties.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Shock Absorber)
 
 ## Core Mechanics
 
-* **Shock Absorber:** If a stage check fails, you may spend **`1 [EF]`** from your Faction Vault. If you do, completely negate all stage failure HP damage that would be suffered by this character and **1 adjacent ally**.
+* **Shock Absorber:** If a stage check fails, you may spend **[1 EF]** from your Faction Vault. If you do, completely negate all stage failure HP damage that would be suffered by this character and **1 adjacent ally**.

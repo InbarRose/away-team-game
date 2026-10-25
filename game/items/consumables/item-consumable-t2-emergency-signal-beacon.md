@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "consumable"
   armor_buffer: null
-rules_text: "Supply Drop (Single-Use Consumable — Step 1 Briefing): Restores up to 2 spent static dice per character across the entire squad without spending Effort [EF] from the Vault."
+rules_text: "Supply Drop (Single-Use Consumable — Step 1 Briefing): Restores up to 2 spent static dice per character across the entire squad without spending [EF] from the Vault."
 active_ability: "Supply Drop — Activation: Step 1 (Briefing, Single-Use). Effect: Restores up to 2 spent static dice per character across the entire squad without spending Vault Effort [EF]."
 tags:
   - "consumable"
@@ -44,14 +44,14 @@ art_spec:
 
 ## Overview
 
-The **Emergency Signal Beacon** is the highest-tier field logistics consumable in the Armory at `7 [CR]`. Activated during Step 1 (Briefing), it replicates the Squad Leader's full 3-Effort *Logistical Refresh* command—restoring up to 2 spent static dice to every character in the 4-operative squad (up to 8 static dice total)—while costing zero Effort `[EF]` from the Faction Vault.
+The **Emergency Signal Beacon** is the highest-tier field logistics consumable in the Armory at [7 CR]. Activated during Step 1 (Briefing), it replicates the Squad Leader's full 3-Effort *Logistical Refresh* command—restoring up to 2 spent static dice to every character in the 4-operative squad (up to 8 static dice total)—while costing zero [EF] from the Faction Vault.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Field Logistics (Single-Use)
-* **Market Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Market Cost:** [7 CR] *(3.5 ES Value)*
 * **Activation Window:** Step 1 (Briefing)
 
 ---
@@ -59,4 +59,4 @@ The **Emergency Signal Beacon** is the highest-tier field logistics consumable i
 ## Tactical Effect
 
 ### Supply Drop
-Consume during Step 1 (Briefing) to restore up to **2 spent static dice per character** across the entire squad without spending Effort `[EF]` from the Vault. Discard this card after use.
+Consume during Step 1 (Briefing) to restore up to **2 spent static dice per character** across the entire squad without spending [EF] from the Vault. Discard this card after use.

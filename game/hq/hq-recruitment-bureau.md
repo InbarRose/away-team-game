@@ -29,14 +29,14 @@ modules:
     cost_credits: 4
     cost_pip: 0
     reward_pip: 1
-    effect: "Reduces operative hiring cost by -2 [CR] (from 8 [CR] down to 6 [CR]). Newly hired recruits immediately draw 1 free random Tier 1 Consumable item."
+    effect: "Reduces operative hiring cost by [-2 CR] (from [8 CR] down to [6 CR]). Newly hired recruits immediately draw 1 free random Tier 1 Consumable item."
   - id: "mod-academy-fast-track"
     title: "Academy Fast-Track"
     cost_credits: 3
     cost_pip: 1
     reward_pip: 1
-    effect: "All newly hired recruits enter their Faction roster starting with 1 [LOY] (immediately unlocking Loyalty Tier 1 Contractor perks)."
-rules_text: "Baseline: 2 face-up Recruit Cards, hiring cost 8 [CR] per operative (enters at full HP, 0 [LOY]). Sponsorable Modules: Headhunter Network (4 [CR]), Signing Bonus Incentives (4 [CR]), Academy Fast-Track (1 [PIP] + 3 [CR])."
+    effect: "All newly hired recruits enter their Faction roster starting with [1 LOY] (immediately unlocking Loyalty Tier 1 Contractor perks)."
+rules_text: "Baseline: 2 face-up Recruit Cards, hiring cost [8 CR] per operative (enters at full HP, [0 LOY]). Sponsorable Modules: Headhunter Network ([4 CR]), Signing Bonus Incentives ([4 CR]), Academy Fast-Track ([1 PIP] + [3 CR])."
 tags:
   - "hq"
   - "recruitment"
@@ -51,7 +51,7 @@ art_spec:
 
 # The Recruitment Bureau (Personnel Division)
 
-* **Baseline Capability:** **2 Face-Up Recruit Cards**. During Step 5 of HQ Downtime, Factions may pay **`8 Credits [CR]`** to hire an available operative onto their roster bench at full HP and `0 [LOY]`.
+* **Baseline Capability:** **2 Face-Up Recruit Cards**. During Step 5 of HQ Downtime, Factions may pay **`[8 CR]`** to hire an available operative onto their roster bench at full HP and [0 LOY].
 
 ---
 
@@ -59,6 +59,6 @@ art_spec:
 
 | Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |
 | :--- | :--- | :---: | :--- |
-| **Headhunter Network** | `4 [CR]` | `+1 [PIP]` | Expands the recruitment pool to **4 face-up operative choices**. |
-| **Signing Bonus Incentives** | `4 [CR]` | `+1 [PIP]` | Reduces operative hiring cost by **`-2 [CR]`** (`6 [CR]` total) and grants 1 free random Tier 1 Consumable upon hiring. |
-| **Academy Fast-Track** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Newly hired recruits enter the Faction roster with **`+1 starting [LOY]`** (unlocking Loyalty Tier 1 immediately). |
+| **Headhunter Network** | [4 CR] | [+1 PIP] | Expands the recruitment pool to **4 face-up operative choices**. |
+| **Signing Bonus Incentives** | [4 CR] | [+1 PIP] | Reduces operative hiring cost by **[-2 CR]** ([6 CR] total) and grants 1 free random Tier 1 Consumable upon hiring. |
+| **Academy Fast-Track** | `[1 PIP] + [3 CR]` | [+1 PIP] | Newly hired recruits enter the Faction roster with **`+1 starting [LOY]`** (unlocking Loyalty Tier 1 immediately). |

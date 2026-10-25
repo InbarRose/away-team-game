@@ -47,8 +47,8 @@ The **Master Quartermaster Frame** is the ultimate inventory expansion rig, addi
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `8 [CR]` *(4.0 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [8 CR] *(4.0 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Deep Storage)
 

@@ -44,10 +44,10 @@
         "cost_credits": 4,
         "cost_pip": 1,
         "reward_pip": 1,
-        "effect": "SPONSOR BENEFIT: Media royalties—whenever ANY player completes an Open Agenda during a mission, the Sponsor Faction collects +1 [CR] from the supply."
+        "effect": "SPONSOR BENEFIT: Media royalties—whenever ANY player completes an Open Agenda during a mission, the Sponsor Faction collects [+1 CR] from the supply."
       }
     ],
-    "rules_text": "Baseline: 1 Active Open Agenda Slot and 1 Equippable Perk Slot per Faction. Sponsorable Modules: Executive Suite (4 [CR]), Lobbying Network (4 [CR]), Press Office (1 [PIP] + 4 [CR]).",
+    "rules_text": "Baseline: 1 Active Open Agenda Slot and 1 Equippable Perk Slot per Faction. Sponsorable Modules: Executive Suite ([4 CR]), Lobbying Network ([4 CR]), Press Office ([1 PIP] + [4 CR]).",
     "tags": [
       "hq",
       "boardroom",
@@ -61,7 +61,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-boardroom.md",
-    "body": "# The Boardroom (Executive Floor)\n\n* **Baseline Capability:** Each Faction maintains **1 Active Open Agenda Slot** and **1 Equippable Perk Slot** on their Faction Dashboard during Step 7 of HQ Downtime.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Passive / Sponsor Effect |\n| :--- | :--- | :---: | :--- |\n| **Executive Suite** | `4 [CR]` | `+1 [PIP]` | **Agency-Wide:** Expands capacity for every Faction to **2 Active Open Agendas** and **2 Equippable Perks**. |\n| **Lobbying Network** | `4 [CR]` | `+1 [PIP]` | **Sponsor Benefit:** Once per Downtime, the Sponsor Faction may cycle (discard and redraw) 1 unwanted Agenda or Perk card. |\n| **Press Office** | `1 [PIP] + 4 [CR]` | `+1 [PIP]` | **Sponsor Benefit:** Whenever **any player** completes an Open Agenda during a mission, the Sponsor Faction collects **`+1 [CR]`** from the bank. |"
+    "body": "# The Boardroom (Executive Floor)\n\n* **Baseline Capability:** Each Faction maintains **1 Active Open Agenda Slot** and **1 Equippable Perk Slot** on their Faction Dashboard during Step 7 of HQ Downtime.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Passive / Sponsor Effect |\n| :--- | :--- | :---: | :--- |\n| **Executive Suite** | [4 CR] | [+1 PIP] | **Agency-Wide:** Expands capacity for every Faction to **2 Active Open Agendas** and **2 Equippable Perks**. |\n| **Lobbying Network** | [4 CR] | [+1 PIP] | **Sponsor Benefit:** Once per Downtime, the Sponsor Faction may cycle (discard and redraw) 1 unwanted Agenda or Perk card. |\n| **Press Office** | `[1 PIP] + [4 CR]` | [+1 PIP] | **Sponsor Benefit:** Whenever **any player** completes an Open Agenda during a mission, the Sponsor Faction collects **[+1 CR]** from the bank. |"
   },
   {
     "id": "hq-infirmary",
@@ -109,10 +109,10 @@
         "cost_credits": 3,
         "cost_pip": 1,
         "reward_pip": 1,
-        "effect": "During Downtime Step 3, any Faction may spend 1 [EF] from their Vault to automatically restore 1 missing HP to an operative without rolling dice (0% risk of natural 1 Permanent Trauma)."
+        "effect": "During Downtime Step 3, any Faction may spend [1 EF] from their Vault to automatically restore 1 missing HP to an operative without rolling dice (0% risk of natural 1 Permanent Trauma)."
       }
     ],
-    "rules_text": "Baseline: 2 Treatment Beds, 3 Healing Dice per bed (heals on 5+; natural 1 causes Permanent Trauma; unhealed HP becomes Critical Injury). Sponsorable Modules: Surgical Wing (4 [CR]), Trauma Cybernetics (4 [CR]), Gene-Stasis Tank (1 [PIP] + 3 [CR]).",
+    "rules_text": "Baseline: 2 Treatment Beds, 3 Healing Dice per bed (heals on 5+; natural 1 causes Permanent Trauma; unhealed HP becomes Critical Injury). Sponsorable Modules: Surgical Wing ([4 CR]), Trauma Cybernetics ([4 CR]), Gene-Stasis Tank ([1 PIP] + [3 CR]).",
     "tags": [
       "hq",
       "medical",
@@ -126,7 +126,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-infirmary.md",
-    "body": "# The Infirmary (Medical Wing)\n\n* **Baseline Capability:** **2 Treatment Beds**. Each bed provides **3 Healing Dice** to a resting non-deployed operative during Step 3 of HQ Downtime.\n* **Healing Resolution:** Every die showing **`5+`** heals `1 missing HP`. Rolling a **natural `1`** calcifies that point of damage into a **Permanent Trauma Token** (`-1 Max HP`, `-1 Starting Static Die`). Any damage remaining unhealed at the end of Step 3 converts into a **Critical Injury Token**.\n\n---\n\n## Sponsorable Modules\n\nSponsoring any module awards **`+1 [PIP]`** (`2 [VP]`) to the funding Faction and places their Faction Token on the module.\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Surgical Wing** | `4 [CR]` | `+1 [PIP]` | Adds **+2 additional Treatment Beds** (4 total beds baseline; 6 during a Stand-Down round). |\n| **Trauma Cybernetics** | `4 [CR]` | `+1 [PIP]` | Upgrades medical lasers: all Healing Dice clear damage on a **`4+`** (and Critical Injury healing improves from `6+` to **`5+`**). |\n| **Gene-Stasis Tank** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Spending **`1 [EF]`** from a Faction Vault during Downtime automatically restores `1 missing HP` without rolling dice (zero risk of natural `1` Permanent Trauma). |"
+    "body": "# The Infirmary (Medical Wing)\n\n* **Baseline Capability:** **2 Treatment Beds**. Each bed provides **3 Healing Dice** to a resting non-deployed operative during Step 3 of HQ Downtime.\n* **Healing Resolution:** Every die showing **`5+`** heals `1 missing HP`. Rolling a **natural `1`** calcifies that point of damage into a **Permanent Trauma Token** (`-1 Max HP`, `-1 Starting Static Die`). Any damage remaining unhealed at the end of Step 3 converts into a **Critical Injury Token**.\n\n---\n\n## Sponsorable Modules\n\nSponsoring any module awards **[+1 PIP]** ([2 VP]) to the funding Faction and places their Faction Token on the module.\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Surgical Wing** | [4 CR] | [+1 PIP] | Adds **+2 additional Treatment Beds** (4 total beds baseline; 6 during a Stand-Down round). |\n| **Trauma Cybernetics** | [4 CR] | [+1 PIP] | Upgrades medical lasers: all Healing Dice clear damage on a **`4+`** (and Critical Injury healing improves from `6+` to **`5+`**). |\n| **Gene-Stasis Tank** | `[1 PIP] + [3 CR]` | [+1 PIP] | Spending **[1 EF]** from a Faction Vault during Downtime automatically restores `1 missing HP` without rolling dice (zero risk of natural `1` Permanent Trauma). |"
   },
   {
     "id": "hq-intel-array",
@@ -172,10 +172,10 @@
         "cost_credits": 3,
         "cost_pip": 1,
         "reward_pip": 1,
-        "effect": "Once per mission drop, the Squad Leader can spend 1 [EF] from their Vault to completely ignore and cancel the negative text of an active Stage Modifier card."
+        "effect": "Once per mission drop, the Squad Leader can spend [1 EF] from their Vault to completely ignore and cancel the negative text of an active Stage Modifier card."
       }
     ],
-    "rules_text": "Baseline: 1 Active Side-Mission slot. Sponsorable Modules: Satellite Telemetry (4 [CR]), Covert Desk (4 [CR]), Signal Jammer (1 [PIP] + 3 [CR]).",
+    "rules_text": "Baseline: 1 Active Side-Mission slot. Sponsorable Modules: Satellite Telemetry ([4 CR]), Covert Desk ([4 CR]), Signal Jammer ([1 PIP] + [3 CR]).",
     "tags": [
       "hq",
       "intel",
@@ -189,7 +189,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-intel-array.md",
-    "body": "# The Intel Array (Telemetry & Operations)\n\n* **Baseline Capability:** **1 Active Side-Mission Slot** seeded from the campaign's allowed Theme tags during HQ Downtime.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Satellite Telemetry** | `4 [CR]` | `+1 [PIP]` | During Step 1 (Briefing), the Squad Leader may privately inspect the **Stage Modifier cards** for all upcoming stages on the mission track. |\n| **Covert Desk** | `4 [CR]` | `+1 [PIP]` | Adds **+1 Side-Mission / Open Agenda slot** (`2` total), increasing available secondary operations. |\n| **Signal Jammer** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Once per mission drop, the Squad Leader may spend **`1 [EF]`** to completely ignore the negative text of an active Stage Modifier card. |"
+    "body": "# The Intel Array (Telemetry & Operations)\n\n* **Baseline Capability:** **1 Active Side-Mission Slot** seeded from the campaign's allowed Theme tags during HQ Downtime.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Satellite Telemetry** | [4 CR] | [+1 PIP] | During Step 1 (Briefing), the Squad Leader may privately inspect the **Stage Modifier cards** for all upcoming stages on the mission track. |\n| **Covert Desk** | [4 CR] | [+1 PIP] | Adds **+1 Side-Mission / Open Agenda slot** (`2` total), increasing available secondary operations. |\n| **Signal Jammer** | `[1 PIP] + [3 CR]` | [+1 PIP] | Once per mission drop, the Squad Leader may spend **[1 EF]** to completely ignore the negative text of an active Stage Modifier card. |"
   },
   {
     "id": "hq-landmark-cryo-stasis",
@@ -214,7 +214,7 @@
       "sponsor_controlled": true,
       "bed_capacity": 1
     },
-    "rules_text": "Cost: 2 [PIP] + 6 [CR] (Awards +2 [PIP] to Sponsor). Sponsor-Controlled Landmark (Capacity: 1 Operative). During Downtime Step 3, automatically restores 100% of the occupant's missing HP with 0 dice rolled (0% Permanent Trauma risk). Sponsor chooses occupant or may rent the chamber to rivals.",
+    "rules_text": "Cost: [2 PIP] + [6 CR] (Awards [+2 PIP] to Sponsor). Sponsor-Controlled Landmark (Capacity: 1 Operative). During Downtime Step 3, automatically restores 100% of the occupant's missing HP with 0 dice rolled (0% Permanent Trauma risk). Sponsor chooses occupant or may rent the chamber to rivals.",
     "tags": [
       "hq",
       "landmark",
@@ -228,7 +228,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-landmark-cryo-stasis.md",
-    "body": "# Cryo-Stasis Chamber (Standalone Landmark)\n\n* **Sponsorship Cost:** `2 [PIP] + 6 [CR]`\n* **Sponsorship Reward:** **`+2 [PIP]`** (`4 [VP]`) + Faction Token placement\n* **Control Mode:** **Sponsor-Controlled** (`Capacity: 1 Operative`)\n\n---\n\n## Landmark Effect\n\nDuring **Step 3 (Healing & Medical Recovery)** of HQ Downtime, the chamber holds **1 wounded operative** and **automatically restores 100% of their missing Hit Points** without rolling any Healing Dice (completely eliminating the risk of rolling a natural `1` Permanent Trauma).\n\nBecause this Landmark is **Sponsor-Controlled**, the Sponsor Faction decides which operative occupies the pod each round—and may openly auction or rent the slot to desperate rival Factions for `[CR]` or items."
+    "body": "# Cryo-Stasis Chamber (Standalone Landmark)\n\n* **Sponsorship Cost:** `[2 PIP] + [6 CR]`\n* **Sponsorship Reward:** **[+2 PIP]** ([4 VP]) + Faction Token placement\n* **Control Mode:** **Sponsor-Controlled** (`Capacity: 1 Operative`)\n\n---\n\n## Landmark Effect\n\nDuring **Step 3 (Healing & Medical Recovery)** of HQ Downtime, the chamber holds **1 wounded operative** and **automatically restores 100% of their missing Hit Points** without rolling any Healing Dice (completely eliminating the risk of rolling a natural `1` Permanent Trauma).\n\nBecause this Landmark is **Sponsor-Controlled**, the Sponsor Faction decides which operative occupies the pod each round—and may openly auction or rent the slot to desperate rival Factions for [CR] or items."
   },
   {
     "id": "hq-landmark-supply-lines",
@@ -252,7 +252,7 @@
       "reward_pip": 2,
       "sponsor_controlled": false
     },
-    "rules_text": "Cost: 2 [PIP] + 4 [CR] (Awards +2 [PIP] to Sponsor). Unlocks mid-mission Orbital Drop Pods: during any Transition Step between stages, the Squad Leader may call a supply drop, allowing any deployed operative to purchase and immediately equip face-up Quartermaster items mid-mission.",
+    "rules_text": "Cost: [2 PIP] + [4 CR] (Awards [+2 PIP] to Sponsor). Unlocks mid-mission Orbital Drop Pods: during any Transition Step between stages, the Squad Leader may call a supply drop, allowing any deployed operative to purchase and immediately equip face-up Quartermaster items mid-mission.",
     "tags": [
       "hq",
       "landmark",
@@ -266,7 +266,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-landmark-supply-lines.md",
-    "body": "# Supply Lines (Standalone Landmark)\n\n* **Sponsorship Cost:** `2 [PIP] + 4 [CR]`\n* **Sponsorship Reward:** **`+2 [PIP]`** (`4 [VP]`) + Faction Token placement\n* **Control Mode:** Agency-Wide Operational Unlock\n\n---\n\n## Landmark Effect\n\nUnlocks mid-mission **Orbital Drop Pods**. During any **Transition Step** between stages on a mission, the **Squad Leader** may call an orbital supply drop, allowing any Factions with deployed operatives to purchase face-up items from the **Quartermaster** display using Vault `[CR]` and equip them immediately in the field."
+    "body": "# Supply Lines (Standalone Landmark)\n\n* **Sponsorship Cost:** `[2 PIP] + [4 CR]`\n* **Sponsorship Reward:** **[+2 PIP]** ([4 VP]) + Faction Token placement\n* **Control Mode:** Agency-Wide Operational Unlock\n\n---\n\n## Landmark Effect\n\nUnlocks mid-mission **Orbital Drop Pods**. During any **Transition Step** between stages on a mission, the **Squad Leader** may call an orbital supply drop, allowing any Factions with deployed operatives to purchase face-up items from the **Quartermaster** display using Vault [CR] and equip them immediately in the field."
   },
   {
     "id": "hq-landmark-tactical-simulator",
@@ -291,7 +291,7 @@
       "sponsor_controlled": true,
       "simulator_capacity": 1
     },
-    "rules_text": "Cost: 2 [PIP] + 5 [CR] (Awards +2 [PIP] to Sponsor). Sponsor-Controlled Landmark (Capacity: 1 Benched Operative). During Downtime, 1 resting operative placed in the simulator gains +1 [LOY] and enters their next mission drop with +2 temporary static dice on Stage 1.",
+    "rules_text": "Cost: [2 PIP] + [5 CR] (Awards [+2 PIP] to Sponsor). Sponsor-Controlled Landmark (Capacity: 1 Benched Operative). During Downtime, 1 resting operative placed in the simulator gains [+1 LOY] and enters their next mission drop with +2 temporary static dice on Stage 1.",
     "tags": [
       "hq",
       "landmark",
@@ -305,7 +305,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-landmark-tactical-simulator.md",
-    "body": "# Tactical Simulator (Standalone Landmark)\n\n* **Sponsorship Cost:** `2 [PIP] + 5 [CR]`\n* **Sponsorship Reward:** **`+2 [PIP]`** (`4 [VP]`) + Faction Token placement\n* **Control Mode:** **Sponsor-Controlled** (`Capacity: 1 Resting Operative`)\n\n---\n\n## Landmark Effect\n\nDuring HQ Downtime, **1 healthy benched operative** assigned to the Tactical Simulator immediately earns **`+1 [LOY]`** and enters their next mission deployment with **`+2 temporary static dice` on Stage 1**.\n\nBecause this Landmark is **Sponsor-Controlled**, the Sponsor Faction chooses which benched operative trains in the simulator each round (or may lease the training slot to a rival Faction)."
+    "body": "# Tactical Simulator (Standalone Landmark)\n\n* **Sponsorship Cost:** `[2 PIP] + [5 CR]`\n* **Sponsorship Reward:** **[+2 PIP]** ([4 VP]) + Faction Token placement\n* **Control Mode:** **Sponsor-Controlled** (`Capacity: 1 Resting Operative`)\n\n---\n\n## Landmark Effect\n\nDuring HQ Downtime, **1 healthy benched operative** assigned to the Tactical Simulator immediately earns **[+1 LOY]** and enters their next mission deployment with **`+2 temporary static dice` on Stage 1**.\n\nBecause this Landmark is **Sponsor-Controlled**, the Sponsor Faction chooses which benched operative trains in the simulator each round (or may lease the training slot to a rival Faction)."
   },
   {
     "id": "hq-landmark-war-room",
@@ -329,7 +329,7 @@
       "reward_pip": 2,
       "sponsor_controlled": true
     },
-    "rules_text": "Cost: 2 [PIP] + 2 [CR] (Awards +2 [PIP] to Sponsor). Winning bidder in the Command Auction receives a 1 [CR] refund (minimum net payment 0 [CR]). In addition, the Sponsor Faction draws +1 Faction Perk card whenever a mission is successfully cleared.",
+    "rules_text": "Cost: [2 PIP] + [2 CR] (Awards [+2 PIP] to Sponsor). Winning bidder in the Command Auction receives a [1 CR] refund (minimum net payment [0 CR]). In addition, the Sponsor Faction draws +1 Faction Perk card whenever a mission is successfully cleared.",
     "tags": [
       "hq",
       "landmark",
@@ -343,7 +343,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-landmark-war-room.md",
-    "body": "# The War Room (Standalone Landmark)\n\n* **Sponsorship Cost:** `2 [PIP] + 2 [CR]`\n* **Sponsorship Reward:** **`+2 [PIP]`** (`4 [VP]`) + Faction Token placement\n* **Control Mode:** Hybrid (Agency Command Subsidy + Sponsor Perk Dividend)\n\n---\n\n## Landmark Effect\n\n* **Command Subsidy:** The winning bidder in every **Command Auction** receives an immediate **`1 [CR]` refund** from the HQ bank (allowing a `1 [CR]` winning bid to cost `0 [CR]` net).\n* **Sponsor Dividend:** Whenever the squad successfully clears a mission, the **Sponsor Faction** draws **`+1 Faction Perk`** card during Debrief."
+    "body": "# The War Room (Standalone Landmark)\n\n* **Sponsorship Cost:** `[2 PIP] + [2 CR]`\n* **Sponsorship Reward:** **[+2 PIP]** ([4 VP]) + Faction Token placement\n* **Control Mode:** Hybrid (Agency Command Subsidy + Sponsor Perk Dividend)\n\n---\n\n## Landmark Effect\n\n* **Command Subsidy:** The winning bidder in every **Command Auction** receives an immediate **[1 CR] refund** from the HQ bank (allowing a [1 CR] winning bid to cost [0 CR] net).\n* **Sponsor Dividend:** Whenever the squad successfully clears a mission, the **Sponsor Faction** draws **`+1 Faction Perk`** card during Debrief."
   },
   {
     "id": "hq-quartermaster",
@@ -381,7 +381,7 @@
         "cost_credits": 4,
         "cost_pip": 0,
         "reward_pip": 1,
-        "effect": "Expands the Quartermaster display to 5 face-up item slots. All single-use Consumables cost -1 [CR] (minimum 1 [CR])."
+        "effect": "Expands the Quartermaster display to 5 face-up item slots. All single-use Consumables cost [-1 CR] (minimum [1 CR])."
       },
       {
         "id": "mod-custom-workshop",
@@ -392,7 +392,7 @@
         "effect": "Gear tuning: equipping at least one non-consumable item during Step 8 (Loadout) grants that operative +1 temporary static die on their very first roll of the mission."
       }
     ],
-    "rules_text": "Baseline: 3 face-up Tier 1 Armory Item slots during Downtime Step 6. Sponsorable Modules: Black Market Terminal (4 [CR]), Bulk Logistics (4 [CR]), Custom Workshop (1 [PIP] + 3 [CR]).",
+    "rules_text": "Baseline: 3 face-up Tier 1 Armory Item slots during Downtime Step 6. Sponsorable Modules: Black Market Terminal ([4 CR]), Bulk Logistics ([4 CR]), Custom Workshop ([1 PIP] + [3 CR]).",
     "tags": [
       "hq",
       "armory",
@@ -406,7 +406,7 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-quartermaster.md",
-    "body": "# The Quartermaster (Armory Vault)\n\n* **Baseline Capability:** **3 Face-Up Item Slots**. Displays Tier 1 Handhelds, Wearables, Consumables, and Complex items at standard `[CR]` prices during Step 6 of HQ Downtime.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Black Market Terminal** | `4 [CR]` | `+1 [PIP]` | Unlocks **Tier 2** Handhelds, Wearables, Multi-Slot Rigs, Consumables, and Complex items in the Quartermaster deck rotation. |\n| **Bulk Logistics** | `4 [CR]` | `+1 [PIP]` | Expands the shop display to **5 face-up item slots**. Single-use Consumables cost **`-1 [CR]`** (minimum `1 [CR]`). |\n| **Custom Workshop** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Equipping a non-consumable item during Loadout grants that operative **`+1 temporary static die`** on their very first stage roll of the mission. |"
+    "body": "# The Quartermaster (Armory Vault)\n\n* **Baseline Capability:** **3 Face-Up Item Slots**. Displays Tier 1 Handhelds, Wearables, Consumables, and Complex items at standard [CR] prices during Step 6 of HQ Downtime.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Black Market Terminal** | [4 CR] | [+1 PIP] | Unlocks **Tier 2** Handhelds, Wearables, Multi-Slot Rigs, Consumables, and Complex items in the Quartermaster deck rotation. |\n| **Bulk Logistics** | [4 CR] | [+1 PIP] | Expands the shop display to **5 face-up item slots**. Single-use Consumables cost **[-1 CR]** (minimum [1 CR]). |\n| **Custom Workshop** | `[1 PIP] + [3 CR]` | [+1 PIP] | Equipping a non-consumable item during Loadout grants that operative **`+1 temporary static die`** on their very first stage roll of the mission. |"
   },
   {
     "id": "hq-recruitment-bureau",
@@ -445,7 +445,7 @@
         "cost_credits": 4,
         "cost_pip": 0,
         "reward_pip": 1,
-        "effect": "Reduces operative hiring cost by -2 [CR] (from 8 [CR] down to 6 [CR]). Newly hired recruits immediately draw 1 free random Tier 1 Consumable item."
+        "effect": "Reduces operative hiring cost by [-2 CR] (from [8 CR] down to [6 CR]). Newly hired recruits immediately draw 1 free random Tier 1 Consumable item."
       },
       {
         "id": "mod-academy-fast-track",
@@ -453,10 +453,10 @@
         "cost_credits": 3,
         "cost_pip": 1,
         "reward_pip": 1,
-        "effect": "All newly hired recruits enter their Faction roster starting with 1 [LOY] (immediately unlocking Loyalty Tier 1 Contractor perks)."
+        "effect": "All newly hired recruits enter their Faction roster starting with [1 LOY] (immediately unlocking Loyalty Tier 1 Contractor perks)."
       }
     ],
-    "rules_text": "Baseline: 2 face-up Recruit Cards, hiring cost 8 [CR] per operative (enters at full HP, 0 [LOY]). Sponsorable Modules: Headhunter Network (4 [CR]), Signing Bonus Incentives (4 [CR]), Academy Fast-Track (1 [PIP] + 3 [CR]).",
+    "rules_text": "Baseline: 2 face-up Recruit Cards, hiring cost [8 CR] per operative (enters at full HP, [0 LOY]). Sponsorable Modules: Headhunter Network ([4 CR]), Signing Bonus Incentives ([4 CR]), Academy Fast-Track ([1 PIP] + [3 CR]).",
     "tags": [
       "hq",
       "recruitment",
@@ -470,6 +470,6 @@
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
     },
     "source_path": "game/hq/hq-recruitment-bureau.md",
-    "body": "# The Recruitment Bureau (Personnel Division)\n\n* **Baseline Capability:** **2 Face-Up Recruit Cards**. During Step 5 of HQ Downtime, Factions may pay **`8 Credits [CR]`** to hire an available operative onto their roster bench at full HP and `0 [LOY]`.\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Headhunter Network** | `4 [CR]` | `+1 [PIP]` | Expands the recruitment pool to **4 face-up operative choices**. |\n| **Signing Bonus Incentives** | `4 [CR]` | `+1 [PIP]` | Reduces operative hiring cost by **`-2 [CR]`** (`6 [CR]` total) and grants 1 free random Tier 1 Consumable upon hiring. |\n| **Academy Fast-Track** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Newly hired recruits enter the Faction roster with **`+1 starting [LOY]`** (unlocking Loyalty Tier 1 immediately). |"
+    "body": "# The Recruitment Bureau (Personnel Division)\n\n* **Baseline Capability:** **2 Face-Up Recruit Cards**. During Step 5 of HQ Downtime, Factions may pay **`[8 CR]`** to hire an available operative onto their roster bench at full HP and [0 LOY].\n\n---\n\n## Sponsorable Modules\n\n| Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |\n| :--- | :--- | :---: | :--- |\n| **Headhunter Network** | [4 CR] | [+1 PIP] | Expands the recruitment pool to **4 face-up operative choices**. |\n| **Signing Bonus Incentives** | [4 CR] | [+1 PIP] | Reduces operative hiring cost by **[-2 CR]** ([6 CR] total) and grants 1 free random Tier 1 Consumable upon hiring. |\n| **Academy Fast-Track** | `[1 PIP] + [3 CR]` | [+1 PIP] | Newly hired recruits enter the Faction roster with **`+1 starting [LOY]`** (unlocking Loyalty Tier 1 immediately). |"
   }
 ]

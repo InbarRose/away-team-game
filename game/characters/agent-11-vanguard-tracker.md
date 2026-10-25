@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.5
   trigger: "Passive — triggers immediately the first time per mission this operative is reduced to 1 HP"
   effect: "Immediately restore +2 spent static dice back to Kael's active pool, and treat all his rolls for the current and next stage as Primary Focus (3+)."
-rules_text: "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Last Stand Protocol): The first time Kael drops to 1 HP each mission, restore +2 spent static dice and treat his rolls as Primary Focus (3+) for the current and next stage."
+rules_text: "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Last Stand Protocol): The first time Kael drops to 1 HP each mission, restore +2 spent static dice and treat his rolls as Primary Focus (3+) for the current and next stage."
 tags:
   - "character"
   - "survivalist"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 11: Kael "Hound" Volkov (*The Vanguard Tracker*)
 
 * **Class:** Survivalist (`Secondary Combat`)
-* **Focus Profile:** Primary: `[Survival]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Survival] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`4 Static Dice`** (`2.0 ES`) • **Power:** `1.5 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Emergency Field Medicine (`1 [EF]`)
+## Class Ability: Emergency Field Medicine ([1 EF])
 
 Activate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).
 

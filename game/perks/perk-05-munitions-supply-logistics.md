@@ -33,8 +33,8 @@ tier_unlocks:
   - tier: 3
     loyalty_required: 6
     ability_name: "Tactical Drop Crate"
-    effect: "Transition Step: Spend 2 Credits [CR] to draw 1 random Consumable card directly from the deck into this operative's hand."
-rules_text: "T1 (1 LOY) Deep Pockets: Carry +1 additional [Small] or [Consumable] item without using slots. T2 (3 LOY) Supply Recycling: When using a Consumable, roll 1d6; on 4+, return it to hand instead of discarding. T3 (6 LOY) Tactical Drop Crate: In Transition Step, spend 2 [CR] to draw 1 random Consumable into hand."
+    effect: "Transition Step: Spend [2 CR] to draw 1 random Consumable card directly from the deck into this operative's hand."
+rules_text: "T1 ([1 LOY]) Deep Pockets: Carry +1 additional [Small] or [Consumable] item without using slots. T2 ([3 LOY]) Supply Recycling: When using a Consumable, roll 1d6; on 4+, return it to hand instead of discarding. T3 ([6 LOY]) Tactical Drop Crate: In Transition Step, spend [2 CR] to draw 1 random Consumable into hand."
 active_ability: "Tactical Drop Crate (2 CR)"
 tags:
   - "perk"
@@ -57,6 +57,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Deep Pockets** | This operative can carry **+1 additional `[Small]` or `[Consumable]`** item card without consuming inventory slots. |
-| **Tier 2** | `3 [LOY]` | **Supply Recycling** | When using a Consumable item, roll 1 die; on a **4+**, the card is returned to hand instead of being discarded. |
-| **Tier 3** | `6 [LOY]` | **Tactical Drop Crate** | Transition Step: Spend **2 `[CR]`** to draw 1 random Consumable card directly from the deck into this operative's hand. |
+| **Tier 1** | [1 LOY] | **Deep Pockets** | This operative can carry **+1 additional [Small] or [Consumable]** item card without consuming inventory slots. |
+| **Tier 2** | [3 LOY] | **Supply Recycling** | When using a Consumable item, roll 1 die; on a **4+**, the card is returned to hand instead of being discarded. |
+| **Tier 3** | [6 LOY] | **Tactical Drop Crate** | Transition Step: Spend **[2 CR]** to draw 1 random Consumable card directly from the deck into this operative's hand. |

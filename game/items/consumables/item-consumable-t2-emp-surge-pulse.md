@@ -44,14 +44,14 @@ art_spec:
 
 ## Overview
 
-The **EMP Surge Pulse** is a Tier 2 electronic warfare consumable priced at `6 [CR]`. Triggered during Step 1 (Briefing), it delivers a massive two-fold swing: completely deleting a dangerous Stage Modifier card while simultaneously restoring up to 2 spent static dice to every operative in the room.
+The **EMP Surge Pulse** is a Tier 2 electronic warfare consumable priced at [6 CR]. Triggered during Step 1 (Briefing), it delivers a massive two-fold swing: completely deleting a dangerous Stage Modifier card while simultaneously restoring up to 2 spent static dice to every operative in the room.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Electronic Warfare (Single-Use)
-* **Market Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Market Cost:** [6 CR] *(3.0 ES Value)*
 * **Activation Window:** Step 1 (Briefing)
 
 ---

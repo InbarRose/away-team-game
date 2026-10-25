@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Kinetic Energy Absorbers** reward aggressive, high-success play. Whenever the wearer participates in a stage cleared with `[MOM]` (`+2` or higher over target difficulty), they automatically recover 1 spent static die on top of any Squad Leader Momentum refunds.
+The **Kinetic Energy Absorbers** reward aggressive, high-success play. Whenever the wearer participates in a stage cleared with [MOM] (`+2` or higher over target difficulty), they automatically recover 1 spent static die on top of any Squad Leader Momentum refunds.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Momentum Engine (Dice Recovery)
 

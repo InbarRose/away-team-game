@@ -23,7 +23,7 @@ stats:
     - "head"
     - "body"
   armor_buffer: null
-rules_text: "Fortified Core (Passive): Gain +1 Maximum Hit Point AND +1 Permanent Static Die across all rolls. Harmonic Shielding (Active): During Step 3 (Commitment), spend 1 Effort [EF] per protected ally to render those specific squad members completely immune to Backfire (1s) damage for that stage roll."
+rules_text: "Fortified Core (Passive): Gain +1 Maximum Hit Point AND +1 Permanent Static Die across all rolls. Harmonic Shielding (Active): During Step 3 (Commitment), spend [1 EF] per protected ally to render those specific squad members completely immune to Backfire (1s) damage for that stage roll."
 active_ability: "Harmonic Shielding — Cost: Spend 1 Effort [EF] per protected ally during Step 3 (Commitment). Effect: Render each paid squad member completely immune to Backfire (natural 1s) damage for that stage roll."
 tags:
   - "multi-slot"
@@ -47,14 +47,14 @@ art_spec:
 
 ## Overview
 
-The **Aegis Bio-Shield Platform** is a Tier 2 defensive command rig occupying `[Head]` and `[Body]`. In addition to fortifying its wearer with +1 Maximum Hit Point and +1 Permanent Static Die, its harmonic projector allows the controlling player to selectively purchase Backfire immunity for individual operatives on a pay-per-ally basis during Dice Commitment.
+The **Aegis Bio-Shield Platform** is a Tier 2 defensive command rig occupying [Head] and [Body]. In addition to fortifying its wearer with +1 Maximum Hit Point and +1 Permanent Static Die, its harmonic projector allows the controlling player to selectively purchase Backfire immunity for individual operatives on a pay-per-ally basis during Dice Commitment.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Head]` + `[Body]` (2 Slots)
-* **Market Cost:** `10 [CR]` *(5.0 ES Value)*
+* **Slots Required:** [Head] + [Body] (2 Slots)
+* **Market Cost:** [10 CR] *(5.0 ES Value)*
 * **Tier:** Tier 2 Multi-Slot Rig
 
 ---
@@ -65,4 +65,4 @@ The **Aegis Bio-Shield Platform** is a Tier 2 defensive command rig occupying `[
 Gain **+1 Maximum Hit Point** **AND** **+1 Permanent Static Die** across all rolls.
 
 ### Active Cost: Harmonic Shielding *(Pay-Per-Character Protection)*
-During Step 3 (Commitment), spend **1 Effort `[EF]` per protected ally** to render those specific squad members completely immune to Backfire (natural 1s) damage for that stage roll.
+During Step 3 (Commitment), spend **[1 EF] per protected ally** to render those specific squad members completely immune to Backfire (natural 1s) damage for that stage roll.

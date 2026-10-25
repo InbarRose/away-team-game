@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (Personnel Progression): Advance one of your owned operatives to Loyalty Rank 3 (6 [LOY]) or higher. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (Personnel Progression): Advance one of your owned operatives to Loyalty Rank 3 ([6 LOY]) or higher. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Advance one of **your owned operatives** to **Loyalty Rank 3 (6 `[LOY]`)** or higher.
+Advance one of **your owned operatives** to **Loyalty Rank 3 ([6 LOY])** or higher.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

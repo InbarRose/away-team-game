@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Field Salvage): Claim a dropped item card from a fallen rival operative by paying the [PIP] Vulture Tax, and successfully equip it onto one of your own operatives during the subsequent mission. Payout: +3 [VP] AND deposit +1 [CR] into your Vault."
+rules_text: "Condition (Mission Field Salvage): Claim a dropped item card from a fallen rival operative by paying the [PIP] Vulture Tax, and successfully equip it onto one of your own operatives during the subsequent mission. Payout: [+3 VP] AND deposit [+1 CR] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Claim a dropped item card from a fallen **rival operative** by paying the `[PIP]` **Vulture Tax**, and successfully equip it onto one of your own operatives during the subsequent mission.
+Claim a dropped item card from a fallen **rival operative** by paying the [PIP] **Vulture Tax**, and successfully equip it onto one of your own operatives during the subsequent mission.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[CR]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 CR]** into your Faction Vault

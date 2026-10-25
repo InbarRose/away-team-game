@@ -43,16 +43,16 @@ art_spec:
 
 ## Overview
 
-The **Heavy Rotary Cannon** is the premier Tier 2 `[Combat]` weapon (3 copies in the deck). Unlike Tier 1 weapons that bridge non-specialists, Tier 2 two-handed equipment is designed for **Specialist Amplification**—turning a Primary Focus (`3+`) Soldier into an unstoppable Momentum engine via **Primary Recirculation**.
+The **Heavy Rotary Cannon** is the premier Tier 2 [Combat] weapon (3 copies in the deck). Unlike Tier 1 weapons that bridge non-specialists, Tier 2 two-handed equipment is designed for **Specialist Amplification**—turning a Primary Focus (`3+`) Soldier into an unstoppable Momentum engine via **Primary Recirculation**.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [6 CR] *(3.0 ES Value)*
 * **Deck Quantity:** 3 Copies
-* **Focus Coverage:** `[Combat]`
+* **Focus Coverage:** [Combat]
 
 ## Core Mechanics
 
-1. **Maximum Firepower (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Combat]`.
-2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in `[Combat]` rolls in `[Combat]`, re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`** (and natural 1s that re-roll into non-1s avoid Backfire damage!).
+1. **Maximum Firepower (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Combat].
+2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in [Combat] rolls in [Combat], re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`** (and natural 1s that re-roll into non-1s avoid Backfire damage!).

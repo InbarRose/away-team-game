@@ -47,8 +47,8 @@ The **Adrenaline Surge Harness** provides an emergency burst of stamina when an 
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Emergency Tactical Power
 

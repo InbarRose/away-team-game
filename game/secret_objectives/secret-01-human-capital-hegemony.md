@@ -26,7 +26,7 @@ scoring_tiers:
   first_place_vp: 15
   second_place_vp: 10
   third_place_vp: 5
-rules_text: "Endgame Audit Target Metric: Highest collective Loyalty Points [LOY] across your living and dead roster (minimum 1 [LOY] required to qualify). 1st Place: +15 [VP] | 2nd Place: +10 [VP] | 3rd Place: +5 [VP]."
+rules_text: "Endgame Audit Target Metric: Highest collective [LOY] across your living and dead roster (minimum [1 LOY] required to qualify). 1st Place: [+15 VP] | 2nd Place: [+10 VP] | 3rd Place: [+5 VP]."
 active_ability: null
 tags:
   - "secret-objective"
@@ -44,14 +44,14 @@ art_spec:
 # Human Capital Hegemony
 
 * **Ideological Mandate:** Cultivate the most prestigious, highly indoctrinated veteran personnel in the Agency.
-* **Target Metric:** Highest collective **Loyalty Points (`[LOY]`)** across your living and dead roster *(minimum 1 `[LOY]` required to qualify)*.
+* **Target Metric:** Highest collective **Loyalty Points ([LOY])** across your living and dead roster *(minimum [1 LOY] required to qualify)*.
 
 ## Tiered Endgame Scoring
 
 | Standing | Reward Payout |
 | :--- | :--- |
-| **1st Place (Most `[LOY]`)** | **+15 `[VP]`** |
-| **2nd Place (2nd Most `[LOY]`)** | **+10 `[VP]`** |
-| **3rd Place (3rd Most `[LOY]`)** | **+5 `[VP]`** |
+| **1st Place (Most [LOY])** | **[+15 VP]** |
+| **2nd Place (2nd Most [LOY])** | **[+10 VP]** |
+| **3rd Place (3rd Most [LOY])** | **[+5 VP]** |
 
 > **Tie Resolution:** Tied Factions each claim the full VP reward for that rank, and the next rank down is skipped.

@@ -26,7 +26,7 @@ scoring_tiers:
   first_place_vp: 15
   second_place_vp: 10
   third_place_vp: 5
-rules_text: "Endgame Audit Target Metric: Highest unspent Credits [CR] remaining in your Faction Vault (minimum 1 [CR] required to qualify). 1st Place: +15 [VP] | 2nd Place: +10 [VP] | 3rd Place: +5 [VP]."
+rules_text: "Endgame Audit Target Metric: Highest unspent [CR] remaining in your Faction Vault (minimum [1 CR] required to qualify). 1st Place: [+15 VP] | 2nd Place: [+10 VP] | 3rd Place: [+5 VP]."
 active_ability: null
 tags:
   - "secret-objective"
@@ -44,14 +44,14 @@ art_spec:
 # Corporate Liquidity
 
 * **Ideological Mandate:** Ensure your Faction Vault holds maximum liquid capital when the campaign concludes.
-* **Target Metric:** Highest unspent **Credits (`[CR]`)** remaining in your Faction Vault *(minimum 1 `[CR]` required to qualify)*.
+* **Target Metric:** Highest unspent **Credits ([CR])** remaining in your Faction Vault *(minimum [1 CR] required to qualify)*.
 
 ## Tiered Endgame Scoring
 
 | Standing | Reward Payout |
 | :--- | :--- |
-| **1st Place (Most `[CR]`)** | **+15 `[VP]`** |
-| **2nd Place (2nd Most `[CR]`)** | **+10 `[VP]`** |
-| **3rd Place (3rd Most `[CR]`)** | **+5 `[VP]`** |
+| **1st Place (Most [CR])** | **[+15 VP]** |
+| **2nd Place (2nd Most [CR])** | **[+10 VP]** |
+| **3rd Place (3rd Most [CR])** | **[+5 VP]** |
 
 > **Tie Resolution:** Tied Factions each claim the full VP reward for that rank, and the next rank down is skipped.

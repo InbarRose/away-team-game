@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.0
   trigger: "Once per mission, when the squad clears a [Combat] or [Intel] stage with Momentum (+2 or higher)"
   effect: "Elena inspires the strike team, granting +1 additional Momentum refund die to any deployed operative who rolled in that stage."
-rules_text: "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Tactical Rally): Once per mission on a [Combat] or [Intel] Momentum clear, grant +1 extra Momentum refund die to a rolling ally."
+rules_text: "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Tactical Rally): Once per mission on a [Combat] or [Intel] Momentum clear, grant +1 extra Momentum refund die to a rolling ally."
 tags:
   - "character"
   - "survivalist"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 10: Captain Elena Rostova (*The Sentinel*)
 
 * **Class:** Survivalist (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`5 Static Dice`** (`2.5 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Emergency Field Medicine (`1 [EF]`)
+## Class Ability: Emergency Field Medicine ([1 EF])
 
 Activate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).
 
@@ -61,4 +61,4 @@ Activate immediately after a rolling phase concludes in direct response to damag
 
 ## Unique Power: Tactical Rally (`1.0 ES` — Tier 2 Trigger)
 
-Once per mission, when the squad clears a **`[Combat]`** or **`[Intel]`** stage with **Operational Momentum (`[MOM]`)**, Elena grants **`+1 additional Momentum refund die`** to any participating operative.
+Once per mission, when the squad clears a **[Combat]** or **[Intel]** stage with **Operational Momentum ([MOM])**, Elena grants **`+1 additional Momentum refund die`** to any participating operative.

@@ -42,12 +42,12 @@ art_spec:
 
 ## Overview
 
-The **Impact Recoil Greaves** are the premier Tier 1 `[Legs]` defensive item against self-inflicted Backfire damage, ignoring the first natural `1` rolled by the wearer every single stage.
+The **Impact Recoil Greaves** are the premier Tier 1 [Legs] defensive item against self-inflicted Backfire damage, ignoring the first natural `1` rolled by the wearer every single stage.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Generic Backfire Protection
 

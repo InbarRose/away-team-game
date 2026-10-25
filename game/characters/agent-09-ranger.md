@@ -32,7 +32,7 @@ unique_power:
   es_value: 0.5
   trigger: "Passive — whenever this operative rolls dice in a [Survival] or environmental hazard stage"
   effect: "Ignore the first natural 1 (Backfire) rolled by Silas each stage."
-rules_text: "Class (Survivalist — Emergency Field Medicine, 1 [EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Hardened Endurance): Ignore the first natural 1 (Backfire) rolled by Silas each stage."
+rules_text: "Class (Survivalist — Emergency Field Medicine, [1 EF]): Heal up to 2 HP lost by 1 operative during this stage. Unique Power (Hardened Endurance): Ignore the first natural 1 (Backfire) rolled by Silas each stage."
 tags:
   - "character"
   - "survivalist"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 09: Major Silas Thorne (*The Ranger*)
 
 * **Class:** Survivalist (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Survival]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Survival] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `0.5 ES` • **Class Offset:** `+1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Emergency Field Medicine (`1 [EF]`)
+## Class Ability: Emergency Field Medicine ([1 EF])
 
 Activate immediately after a rolling phase concludes in direct response to damage. **Remove up to `2 Hit Points` lost by a single operative** during this specific stage (once per stage).
 
@@ -61,4 +61,4 @@ Activate immediately after a rolling phase concludes in direct response to damag
 
 ## Unique Power: Hardened Endurance (`0.5 ES` — Tier 1 Passive)
 
-Ignore the first natural `1` (Backfire) rolled by Silas each stage during **`[Survival]`** or **`[Combat]`** checks.
+Ignore the first natural `1` (Backfire) rolled by Silas each stage during **[Survival]** or **[Combat]** checks.

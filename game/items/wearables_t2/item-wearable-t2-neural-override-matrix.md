@@ -42,12 +42,12 @@ art_spec:
 
 ## Overview
 
-The **Neural Override Matrix** is a Tier 2 Exclusive `[Head]` implant rig that lets an operative temporarily elevate their Focus proficiency by one full tier for a critical stage—even promoting a Secondary Focus (`4+`) up to full Specialist **Primary Focus (`3+`)**.
+The **Neural Override Matrix** is a Tier 2 Exclusive [Head] implant rig that lets an operative temporarily elevate their Focus proficiency by one full tier for a critical stage—even promoting a Secondary Focus (`4+`) up to full Specialist **Primary Focus (`3+`)**.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Head]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Head]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Focus Elevation)
 

@@ -23,7 +23,7 @@ stats:
     - "head"
     - "body"
   armor_buffer: null
-rules_text: "Gimbal Mount & Core (Passive): Gain +1 extra Hand Slot ([Hand]) AND +1 Permanent Static Die across all rolls. System Purge (Active): Once per mission drop, spend 2 Effort [EF] from your Faction Vault to instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries."
+rules_text: "Gimbal Mount & Core (Passive): Gain +1 extra Hand Slot ([Hand]) AND +1 Permanent Static Die across all rolls. System Purge (Active): Once per mission drop, spend [2 EF] from your Faction Vault to instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries."
 active_ability: "System Purge — Cost: Spend 2 Vault Effort [EF] (Once per mission drop). Effect: Instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries."
 tags:
   - "multi-slot"
@@ -47,14 +47,14 @@ art_spec:
 
 ## Overview
 
-The **Vanguard Breacher Carapace** is an elite Tier 2 upper-body siege rig occupying `[Head]` and `[Body]`. Combining an articulated third weapon mount with a permanent static die boost and an onboard nanite flush system, it allows a heavily taxed operative to spend Faction Vault Effort `[EF]` mid-mission for a complete stamina and trauma reset.
+The **Vanguard Breacher Carapace** is an elite Tier 2 upper-body siege rig occupying [Head] and [Body]. Combining an articulated third weapon mount with a permanent static die boost and an onboard nanite flush system, it allows a heavily taxed operative to spend Faction Vault [EF] mid-mission for a complete stamina and trauma reset.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Head]` + `[Body]` (2 Slots)
-* **Market Cost:** `10 [CR]` *(5.0 ES Value)*
+* **Slots Required:** [Head] + [Body] (2 Slots)
+* **Market Cost:** [10 CR] *(5.0 ES Value)*
 * **Tier:** Tier 2 Multi-Slot Rig
 
 ---
@@ -62,7 +62,7 @@ The **Vanguard Breacher Carapace** is an elite Tier 2 upper-body siege rig occup
 ## Tactical Capabilities
 
 ### Passive: Gimbal Mount & Core
-Gain **+1 extra Hand Slot** (`[Hand]`) **AND** **+1 Permanent Static Die** across all rolls.
+Gain **+1 extra Hand Slot** ([Hand]) **AND** **+1 Permanent Static Die** across all rolls.
 
 ### Active Cost: System Purge *(Spend Vault Effort)*
-Once per mission drop, spend **2 Effort `[EF]`** from your Faction Vault to instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries.
+Once per mission drop, spend **[2 EF]** from your Faction Vault to instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries.

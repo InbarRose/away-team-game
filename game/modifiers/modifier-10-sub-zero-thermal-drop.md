@@ -43,4 +43,4 @@ art_spec:
 
 ## System Rules
 
-* **Resource Lockout:** Restoring spent static dice (whether via **Momentum (`[MOM]`)**, character abilities, or equipped packs) **is completely disabled** during this stage.
+* **Resource Lockout:** Restoring spent static dice (whether via **Momentum ([MOM])**, character abilities, or equipped packs) **is completely disabled** during this stage.

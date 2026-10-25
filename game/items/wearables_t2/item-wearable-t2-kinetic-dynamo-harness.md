@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "body"
   armor_buffer: null
-rules_text: "Vault Engine: Whenever this operative generates 2 or more successes on a single stage roll, automatically deposit +1 [EF] into your Faction Vault."
+rules_text: "Vault Engine: Whenever this operative generates 2 or more successes on a single stage roll, automatically deposit [+1 EF] into your Faction Vault."
 active_ability: null
 tags:
   - "wearable"
@@ -42,15 +42,15 @@ art_spec:
 
 ## Overview
 
-The **Kinetic Dynamo Harness** is a premier `[EF]` generator. Whenever the wearer rolls 2 or more successes on a single stage check, their faction automatically deposits `+1 [EF]` into their Faction Vault.
+The **Kinetic Dynamo Harness** is a premier [EF] generator. Whenever the wearer rolls 2 or more successes on a single stage check, their faction automatically deposits [+1 EF] into their Faction Vault.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Vault Engine)
 
 ## Core Mechanics
 
-* **Vault Engine:** Whenever this character generates **2 or more successes** on a single stage roll, automatically deposit **`+1 [EF]`** into your Faction Vault.
+* **Vault Engine:** Whenever this character generates **2 or more successes** on a single stage roll, automatically deposit **[+1 EF]** into your Faction Vault.

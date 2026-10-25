@@ -47,14 +47,14 @@ art_spec:
 
 ## Overview
 
-The **Heavy Plasma Breach-Borer** is a Tier 2 heavy mission siege weapon requiring both the `[Complex]` slot and 1 `[Hand]` slot for `9 [CR]`. Generating a massive **+3 static dice** on all `[Operations]` and `[Combat]` rolls, it also features the **Overdrive Bore** fail-safe: by absorbing 1 point of unpreventable thermal blowback damage, the operator guarantees +2 automatic successes on an `[Operations]` check and shields the entire squad from stage failure blowback.
+The **Heavy Plasma Breach-Borer** is a Tier 2 heavy mission siege weapon requiring both the [Complex] slot and 1 [Hand] slot for [9 CR]. Generating a massive **+3 static dice** on all [Operations] and [Combat] rolls, it also features the **Overdrive Bore** fail-safe: by absorbing 1 point of unpreventable thermal blowback damage, the operator guarantees +2 automatic successes on an [Operations] check and shields the entire squad from stage failure blowback.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` + `[Hand]` (2 Slots: Hand + Complex)
-* **Market Cost:** `9 [CR]` *(4.5 ES Value)*
+* **Slots Required:** [Complex] + [Hand] (2 Slots: Hand + Complex)
+* **Market Cost:** [9 CR] *(4.5 ES Value)*
 * **Type:** Heavy Mission Siege Gear
 
 ---
@@ -62,7 +62,7 @@ The **Heavy Plasma Breach-Borer** is a Tier 2 heavy mission siege weapon requiri
 ## Tactical Capabilities
 
 ### Passive: Siege Output
-Adds **+3 static dice** to all `[Operations]` and `[Combat]` stage rolls.
+Adds **+3 static dice** to all [Operations] and [Combat] stage rolls.
 
 ### Active Cost: Overdrive Bore *(Spend HP)*
-Suffer **1 point of HP damage** (bypassing armor buffers) during a stage roll to gain **+2 automatic successes** on an `[Operations]` breach check and render the squad immune to stage failure penalties for that room.
+Suffer **1 point of HP damage** (bypassing armor buffers) during a stage roll to gain **+2 automatic successes** on an [Operations] breach check and render the squad immune to stage failure penalties for that room.

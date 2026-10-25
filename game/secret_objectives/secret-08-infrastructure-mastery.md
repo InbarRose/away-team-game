@@ -26,7 +26,7 @@ scoring_tiers:
   first_place_vp: 15
   second_place_vp: 10
   third_place_vp: 5
-rules_text: "Endgame Audit Target Metric: Highest total Credits [CR] contributed to HQ Base Facility Upgrade and Landmark projects (minimum 1 [CR] contributed to qualify). 1st Place: +15 [VP] | 2nd Place: +10 [VP] | 3rd Place: +5 [VP]."
+rules_text: "Endgame Audit Target Metric: Highest total [CR] contributed to HQ Base Facility Upgrade and Landmark projects (minimum [1 CR] contributed to qualify). 1st Place: [+15 VP] | 2nd Place: [+10 VP] | 3rd Place: [+5 VP]."
 active_ability: null
 tags:
   - "secret-objective"
@@ -44,14 +44,14 @@ art_spec:
 # Infrastructure Mastery
 
 * **Ideological Mandate:** Direct the physical expansion of Agency Headquarters by financing base facilities.
-* **Target Metric:** Highest total **Credits (`[CR]`) contributed** to HQ Base Facility Upgrade and Landmark projects *(minimum 1 `[CR]` contributed required to qualify)*.
+* **Target Metric:** Highest total **Credits ([CR]) contributed** to HQ Base Facility Upgrade and Landmark projects *(minimum [1 CR] contributed required to qualify)*.
 
 ## Tiered Endgame Scoring
 
 | Standing | Reward Payout |
 | :--- | :--- |
-| **1st Place (Most Infrastructure Funding)** | **+15 `[VP]`** |
-| **2nd Place (2nd Most Infrastructure Funding)** | **+10 `[VP]`** |
-| **3rd Place (3rd Most Infrastructure Funding)** | **+5 `[VP]`** |
+| **1st Place (Most Infrastructure Funding)** | **[+15 VP]** |
+| **2nd Place (2nd Most Infrastructure Funding)** | **[+10 VP]** |
+| **3rd Place (3rd Most Infrastructure Funding)** | **[+5 VP]** |
 
 > **Tie Resolution:** Tied Factions each claim the full VP reward for that rank, and the next rank down is skipped.

@@ -47,8 +47,8 @@ The **Hazard Insulation Harness** shields operatives when they are forced to rol
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Out-of-Focus Protection
 

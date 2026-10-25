@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "complex"
   armor_buffer: null
-rules_text: "Secure Storage (Passive): Increases squad carrying capacity for mission-critical objectives. Resource Siphon (Active Cost): Whenever your squad clears an [Intel] or [Operations] stage with Momentum [MOM] (+2 or higher), spend 1 static die to instantly extract +2 Credits [CR] directly into your Faction Vault."
+rules_text: "Secure Storage (Passive): Increases squad carrying capacity for mission-critical objectives. Resource Siphon (Active Cost): Whenever your squad clears an [Intel] or [Operations] stage with Momentum [MOM] (+2 or higher), spend 1 static die to instantly extract [+2 CR] directly into your Faction Vault."
 active_ability: "Resource Siphon — Cost: Spend 1 Static Die upon clearing an [Intel] or [Operations] stage with Momentum (+2 or higher). Effect: Instantly extract +2 Credits [CR] directly into your Faction Vault."
 tags:
   - "complex"
@@ -46,14 +46,14 @@ art_spec:
 
 ## Overview
 
-The **Specimen Isolation Siphon** is a Tier 1 `[Complex]` salvage and vault-generation rig priced at `3 [CR]`. Built for operatives looking to monetize technical and research rooms, it expands mission-critical objective capacity and converts spare static dice into `+2 [CR]` payouts whenever the squad clears an `[Intel]` or `[Operations]` stage with Operational Momentum `[MOM]`.
+The **Specimen Isolation Siphon** is a Tier 1 [Complex] salvage and vault-generation rig priced at [3 CR]. Built for operatives looking to monetize technical and research rooms, it expands mission-critical objective capacity and converts spare static dice into [+2 CR] payouts whenever the squad clears an [Intel] or [Operations] stage with Operational Momentum [MOM].
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [3 CR] *(1.5 ES Value)*
 * **Type:** Mission Salvage / Vault Rig
 
 ---
@@ -64,4 +64,4 @@ The **Specimen Isolation Siphon** is a Tier 1 `[Complex]` salvage and vault-gene
 Increases squad carrying capacity for mission-critical objectives and biological/technical samples.
 
 ### Active Cost: Resource Siphon *(Spend Die on Momentum Clear)*
-Whenever your squad clears an `[Intel]` or `[Operations]` stage with **Operational Momentum `[MOM]` (+2 or higher)**, spend **1 static die** to instantly extract **+2 Credits `[CR]`** directly into your Faction Vault.
+Whenever your squad clears an [Intel] or [Operations] stage with **Operational Momentum [MOM] (+2 or higher)**, spend **1 static die** to instantly extract **[+2 CR]** directly into your Faction Vault.

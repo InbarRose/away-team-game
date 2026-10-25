@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Automated Suppressive Turret** is a Tier 1 `[Complex]` deployable fire-support platform priced at `3 [CR]`. Set up during Step 1 (Briefing) of any `[Combat]` or `[Survival]` stage, it provides +2 temporary static dice to the squad pool—and can be deliberately red-lined into a single-use **Overclock** burst that lowers the entire squad's hit threshold to `4+` before burning out its barrel assembly.
+The **Automated Suppressive Turret** is a Tier 1 [Complex] deployable fire-support platform priced at [3 CR]. Set up during Step 1 (Briefing) of any [Combat] or [Survival] stage, it provides +2 temporary static dice to the squad pool—and can be deliberately red-lined into a single-use **Overclock** burst that lowers the entire squad's hit threshold to `4+` before burning out its barrel assembly.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [3 CR] *(1.5 ES Value)*
 * **Type:** Deployable Fire Support
 
 ---
@@ -60,7 +60,7 @@ The **Automated Suppressive Turret** is a Tier 1 `[Complex]` deployable fire-sup
 ## Tactical Capabilities
 
 ### Deployment *(Step 1 Briefing)*
-Deploy during Step 1 (Briefing) of a `[Combat]` or `[Survival]` stage. Grants **+2 temporary static dice** to the squad's pool for that stage.
+Deploy during Step 1 (Briefing) of a [Combat] or [Survival] stage. Grants **+2 temporary static dice** to the squad's pool for that stage.
 
 ### Active Cost: Overclock *(Spend Die & Sacrifice)*
 Spend **1 static die** from your pool before rolling to force the turret to target heavy units, allowing all squad dice to succeed on a **4+** for that check. The turret burns out and is **discarded** after the stage.

@@ -47,8 +47,8 @@ The **Auto-Triage Trauma Pack** is a 4-Credit emergency medical safeguard for th
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Pack]`
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Pack]
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Emergency Rescue (Medical Buffer)
 

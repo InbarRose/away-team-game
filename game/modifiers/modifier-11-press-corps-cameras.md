@@ -21,7 +21,7 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-rules_text: "Executive Payout: If the stage is cleared, award +1 [PIP] directly to the Squad Leader's Faction Vault. Public Failure: Whenever a character rolls one or more natural 1s (Backfires), deduct 1 [PIP] from their controlling Faction's Vault."
+rules_text: "Executive Payout: If the stage is cleared, award [+1 PIP] directly to the Squad Leader's Faction Vault. Public Failure: Whenever a character rolls one or more natural 1s (Backfires), deduct [1 PIP] from their controlling Faction's Vault."
 active_ability: null
 tags:
   - "modifier"
@@ -43,5 +43,5 @@ art_spec:
 
 ## System Rules
 
-* **Executive Payout:** If the stage is cleared, award **+1 `[PIP]`** directly to the Squad Leader’s Faction Vault.
-* **Public Failure:** Whenever a character rolls one or more natural **1s** (Backfires), deduct **1 `[PIP]`** from their controlling Faction's Vault.
+* **Executive Payout:** If the stage is cleared, award **[+1 PIP]** directly to the Squad Leader’s Faction Vault.
+* **Public Failure:** Whenever a character rolls one or more natural **1s** (Backfires), deduct **[1 PIP]** from their controlling Faction's Vault.

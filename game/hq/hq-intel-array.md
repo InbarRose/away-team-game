@@ -34,8 +34,8 @@ modules:
     cost_credits: 3
     cost_pip: 1
     reward_pip: 1
-    effect: "Once per mission drop, the Squad Leader can spend 1 [EF] from their Vault to completely ignore and cancel the negative text of an active Stage Modifier card."
-rules_text: "Baseline: 1 Active Side-Mission slot. Sponsorable Modules: Satellite Telemetry (4 [CR]), Covert Desk (4 [CR]), Signal Jammer (1 [PIP] + 3 [CR])."
+    effect: "Once per mission drop, the Squad Leader can spend [1 EF] from their Vault to completely ignore and cancel the negative text of an active Stage Modifier card."
+rules_text: "Baseline: 1 Active Side-Mission slot. Sponsorable Modules: Satellite Telemetry ([4 CR]), Covert Desk ([4 CR]), Signal Jammer ([1 PIP] + [3 CR])."
 tags:
   - "hq"
   - "intel"
@@ -58,6 +58,6 @@ art_spec:
 
 | Module Name | Sponsorship Cost | Reward | Agency-Wide Passive Effect |
 | :--- | :--- | :---: | :--- |
-| **Satellite Telemetry** | `4 [CR]` | `+1 [PIP]` | During Step 1 (Briefing), the Squad Leader may privately inspect the **Stage Modifier cards** for all upcoming stages on the mission track. |
-| **Covert Desk** | `4 [CR]` | `+1 [PIP]` | Adds **+1 Side-Mission / Open Agenda slot** (`2` total), increasing available secondary operations. |
-| **Signal Jammer** | `1 [PIP] + 3 [CR]` | `+1 [PIP]` | Once per mission drop, the Squad Leader may spend **`1 [EF]`** to completely ignore the negative text of an active Stage Modifier card. |
+| **Satellite Telemetry** | [4 CR] | [+1 PIP] | During Step 1 (Briefing), the Squad Leader may privately inspect the **Stage Modifier cards** for all upcoming stages on the mission track. |
+| **Covert Desk** | [4 CR] | [+1 PIP] | Adds **+1 Side-Mission / Open Agenda slot** (`2` total), increasing available secondary operations. |
+| **Signal Jammer** | `[1 PIP] + [3 CR]` | [+1 PIP] | Once per mission drop, the Squad Leader may spend **[1 EF]** to completely ignore the negative text of an active Stage Modifier card. |

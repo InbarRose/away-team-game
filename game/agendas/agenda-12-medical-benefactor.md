@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (HQ Infirmary Step): Spend your Faction's Credits [CR] or Med Bay bed allotment during Downtime to heal an unhealed damage point on a rival player's benched operative. Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (HQ Infirmary Step): Spend your Faction's [CR] or Med Bay bed allotment during Downtime to heal an unhealed damage point on a rival player's benched operative. Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Spend your Faction's Credits (`[CR]`) or Med Bay bed allotment during Downtime to **heal an unhealed damage point on a *rival player's* benched operative**.
+Spend your Faction's Credits ([CR]) or Med Bay bed allotment during Downtime to **heal an unhealed damage point on a *rival player's* benched operative**.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

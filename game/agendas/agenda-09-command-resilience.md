@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (Mission Transition Step): Serve as Squad Leader for a full mission, trigger at least one Logistical Refresh (spending Vault Effort [EF] to restore squad dice), and complete the mission with 0 stage failures. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (Mission Transition Step): Serve as Squad Leader for a full mission, trigger at least one Logistical Refresh (spending Vault [EF] to restore squad dice), and complete the mission with 0 stage failures. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Serve as **Squad Leader** for a full mission, trigger at least one **Logistical Refresh** (spending Vault `[EF]` to restore squad dice), and complete the mission with **0 stage failures**.
+Serve as **Squad Leader** for a full mission, trigger at least one **Logistical Refresh** (spending Vault [EF] to restore squad dice), and complete the mission with **0 stage failures**.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

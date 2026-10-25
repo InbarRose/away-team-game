@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (HQ Loadout & Mission Clearance): Pay cross-training tuition at HQ to append a new Secondary Focus to your operative, then use that newly appended focus to score 2+ successes on an active stage during that drop. Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (HQ Loadout & Mission Clearance): Pay cross-training tuition at HQ to append a new Secondary Focus to your operative, then use that newly appended focus to score 2+ successes on an active stage during that drop. Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -53,5 +53,5 @@ Pay cross-training tuition at HQ to append a new **Secondary Focus (4+)** to you
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

@@ -47,6 +47,6 @@ art_spec:
 
 ## Split-Effect Rules by Active Stage Focus
 
-* **If `[Combat]` Focus:** *Targeting HUDs Offline.* Characters **cannot re-roll failure faces** during this stage.
-* **If `[Intel]` or `[Operations]` Focus:** *Defensive ICE Triggered.* All success thresholds are increased by **+1** (Primary hits on **4+**, Secondary on **5+**, Out of Focus on **6**).
-* **If Other Focus (`[Infiltrate]`, `[Survival]`, `[Negotiate]`):** *Pitch-Black Terrain.* Natural **1s** (Backfires) inflict **+1 extra HP damage**.
+* **If [Combat] Focus:** *Targeting HUDs Offline.* Characters **cannot re-roll failure faces** during this stage.
+* **If [Intel] or [Operations] Focus:** *Defensive ICE Triggered.* All success thresholds are increased by **+1** (Primary hits on **4+**, Secondary on **5+**, Out of Focus on **6**).
+* **If Other Focus ([Infiltrate], [Survival], [Negotiate]):** *Pitch-Black Terrain.* Natural **1s** (Backfires) inflict **+1 extra HP damage**.

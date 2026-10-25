@@ -49,14 +49,14 @@ art_spec:
 
 ## Overview
 
-The **Titan Dreadnought Chassis** is the pinnacle Tier 2 full-suit armor rig, locking down `[Head]`, `[Body]`, and `[Legs]`. At `12 [CR]`, it transforms an operative into a walking fortress with +2 Maximum Hit Points and a third `[Hand]` slot, backed by an emergency **Reactor Vent** protocol that trades 2 HP of internal heat damage for an overwhelming +4 Static Dice burst with total Backfire immunity.
+The **Titan Dreadnought Chassis** is the pinnacle Tier 2 full-suit armor rig, locking down [Head], [Body], and [Legs]. At [12 CR], it transforms an operative into a walking fortress with +2 Maximum Hit Points and a third [Hand] slot, backed by an emergency **Reactor Vent** protocol that trades 2 HP of internal heat damage for an overwhelming +4 Static Dice burst with total Backfire immunity.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Head]` + `[Body]` + `[Legs]` (Full Suit — 3 Slots)
-* **Market Cost:** `12 [CR]` *(6.0 ES Value)*
+* **Slots Required:** [Head] + [Body] + [Legs] (Full Suit — 3 Slots)
+* **Market Cost:** [12 CR] *(6.0 ES Value)*
 * **Tier:** Tier 2 Multi-Slot Rig
 
 ---
@@ -64,7 +64,7 @@ The **Titan Dreadnought Chassis** is the pinnacle Tier 2 full-suit armor rig, lo
 ## Tactical Capabilities
 
 ### Passive: Walking Tank
-Gain **+2 Maximum Hit Points** **AND** **+1 extra Hand Slot** (`[Hand]`).
+Gain **+2 Maximum Hit Points** **AND** **+1 extra Hand Slot** ([Hand]).
 
 ### Active Cost: Reactor Vent *(Spend HP for Raw Power)*
 Once per mission drop, suffer **2 points of HP damage** (bypassing armor buffers) to add **+4 Static Dice** to your pool and gain complete immunity to Backfire (natural 1s) damage on your current roll.

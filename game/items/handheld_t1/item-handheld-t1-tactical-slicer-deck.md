@@ -46,16 +46,16 @@ art_spec:
 
 ## Overview
 
-The **Tactical Slicer Deck** is a ruggedized field hacking terminal that bridges technical infrastructure (`[Operations]`) and data extraction (`[Intel]`). It allows any operative to slice into locked subnets and decrypt corporate telemetry with reliable efficiency.
+The **Tactical Slicer Deck** is a ruggedized field hacking terminal that bridges technical infrastructure ([Operations]) and data extraction ([Intel]). It allows any operative to slice into locked subnets and decrypt corporate telemetry with reliable efficiency.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` or `[Hand R]` (1 Hand)
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Hand L] or [Hand R] (1 Hand)
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Operations]` + `[Intel]`
+* **Focus Coverage:** [Operations] + [Intel]
 
 ## Core Mechanics
 
-1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either `[Operations]` or `[Intel]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Operations]` or `[Intel]` to roll both categories at **Secondary Focus (`4+`)**.
+1. **Dual-Domain Assistance (`+1 Temp Die`):** Adds **+1 Temporary Static Die** to your active rolling pool when operating in either [Operations] or [Intel].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Operations] or [Intel] to roll both categories at **Secondary Focus (`4+`)**.

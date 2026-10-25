@@ -50,14 +50,14 @@ art_spec:
 
 ## Overview
 
-The **Neuro-Overclock Ampoule** is a Tier 2 neural enhancer consumable costing `6 [CR]`. Slotted during Step 1 (Briefing), it temporarily elevates any operative—even one completely Out of Focus (5+)—to **Primary Focus (3+)** Mastery for the duration of the stage check, unlocking Phase 1 Specialist rolling and a 66.7% hit rate per die.
+The **Neuro-Overclock Ampoule** is a Tier 2 neural enhancer consumable costing [6 CR]. Slotted during Step 1 (Briefing), it temporarily elevates any operative—even one completely Out of Focus (5+)—to **Primary Focus (3+)** Mastery for the duration of the stage check, unlocking Phase 1 Specialist rolling and a 66.7% hit rate per die.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Neural Enhancer (Single-Use)
-* **Market Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Market Cost:** [6 CR] *(3.0 ES Value)*
 * **Activation Window:** Step 1 (Briefing)
 
 ---

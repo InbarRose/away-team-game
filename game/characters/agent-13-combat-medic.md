@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.0
   trigger: "Reactive — once per mission when any deployed operative drops to 0 HP"
   effect: "Spend 1 static die from Aris's active pool to immediately stabilize that operative at 1 HP without spending [EF] or discarding a Consumable item."
-rules_text: "Class (Scientist — Dual-Vector Mapping, 1 [EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Emergency Triage): Once per mission when an ally hits 0 HP, spend 1 static die to stabilize them at 1 HP for free."
+rules_text: "Class (Scientist — Dual-Vector Mapping, [1 EF]): Add a second concurrent Operational Focus to the current stage. Unique Power (Emergency Triage): Once per mission when an ally hits 0 HP, spend 1 static die to stabilize them at 1 HP for free."
 tags:
   - "character"
   - "scientist"
@@ -49,12 +49,12 @@ art_spec:
 # Agent 13: Dr. Aris Thorne (*The Combat Medic*)
 
 * **Class:** Scientist (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.0 ES` • **Class Offset:** `+0.5 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Dual-Vector Mapping (`1 [EF]`)
+## Class Ability: Dual-Vector Mapping ([1 EF])
 
 Activate during Step 1 (Briefing). Choose any Focus category and **add it as a concurrent Operational Focus** for the room, allowing operatives to use either the printed Focus or the added Focus for Phase 1/2 thresholds.
 
@@ -62,4 +62,4 @@ Activate during Step 1 (Briefing). Choose any Focus category and **add it as a c
 
 ## Unique Power: Emergency Triage (`1.0 ES` — Tier 2 Reactive)
 
-Once per mission, when any deployed operative drops to **`0 HP`** mid-stage, Aris can spend **`1 static die`** from his active pool to immediately stabilize that operative at **`1 HP`** without spending Vault `[EF]` or discarding a Medical Consumable.
+Once per mission, when any deployed operative drops to **`0 HP`** mid-stage, Aris can spend **`1 static die`** from his active pool to immediately stabilize that operative at **`1 HP`** without spending Vault [EF] or discarding a Medical Consumable.

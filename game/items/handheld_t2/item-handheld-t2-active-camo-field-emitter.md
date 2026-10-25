@@ -43,16 +43,16 @@ art_spec:
 
 ## Overview
 
-The **Active Camo Field Emitter** is a two-handed light-bending field generator that supercharges dedicated `[Infiltrate]` specialists with `+2 Temporary Static Dice` and **Primary Recirculation**.
+The **Active Camo Field Emitter** is a two-handed light-bending field generator that supercharges dedicated [Infiltrate] specialists with `+2 Temporary Static Dice` and **Primary Recirculation**.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [6 CR] *(3.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Infiltrate]`
+* **Focus Coverage:** [Infiltrate]
 
 ## Core Mechanics
 
-1. **Refractive Cloak (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Infiltrate]`.
-2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in `[Infiltrate]` rolls in `[Infiltrate]`, re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.
+1. **Refractive Cloak (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Infiltrate].
+2. **Specialist Rule — Primary Recirculation (`4+` Re-Roll):** Whenever a character with **Primary Focus (`3+`)** in [Infiltrate] rolls in [Infiltrate], re-roll all failed dice (blanks and natural 1s) once. Re-rolled dice succeed on a **`4+`**.

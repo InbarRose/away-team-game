@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (Personnel Progression): Advance one of your operatives to Loyalty Rank 2 (3+ [LOY]) solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending Credits [CR] on recruits. Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (Personnel Progression): Advance one of your operatives to Loyalty Rank 2 ([3+ LOY]) solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending [CR] on recruits. Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Advance one of **your operatives** to **Loyalty Rank 2 (3+ `[LOY]`)** solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending Credits (`[CR]`) on recruitment or artificial loyalty boosts.
+Advance one of **your operatives** to **Loyalty Rank 2 ([3+ LOY])** solely through in-mission achievements (Closer bonuses and Attrition bonuses), without spending Credits ([CR]) on recruitment or artificial loyalty boosts.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

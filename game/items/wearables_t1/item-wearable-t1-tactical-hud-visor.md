@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Tactical HUD Visor** is a versatile Tier 1 `[Head]` wearable that offers reliable dice-mitigation across every Focus category, allowing the wearer to re-roll one failed die (blank or natural 1) each stage.
+The **Tactical HUD Visor** is a versatile Tier 1 [Head] wearable that offers reliable dice-mitigation across every Focus category, allowing the wearer to re-roll one failed die (blank or natural 1) each stage.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Head]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Head]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Generic Utility (Re-Roll)
 

@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (Mission Stage Resolution): One of your [Infiltrate] Primary Focus operatives scores the single highest number of successes on an [Infiltrate] stage that is cleared with 0 Backfires (natural 1s) across the entire squad. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (Mission Stage Resolution): One of your [Infiltrate] Primary Focus operatives scores the single highest number of successes on an [Infiltrate] stage that is cleared with 0 Backfires (natural 1s) across the entire squad. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -44,14 +44,14 @@ art_spec:
 
 # Shadow Dominance
 
-* **Category:** Category A — In-Mission Operations (`[Infiltrate]` Dominance)
+* **Category:** Category A — In-Mission Operations ([Infiltrate] Dominance)
 * **Fulfillment Context:** Mission Stage Resolution
 
 ## Fulfillment Condition
 
-One of **your `[Infiltrate]` Primary Focus operatives** scores the single highest number of successes on an `[Infiltrate]` stage that is cleared with **0 Backfires (natural 1s)** across the entire squad.
+One of **your [Infiltrate] Primary Focus operatives** scores the single highest number of successes on an [Infiltrate] stage that is cleared with **0 Backfires (natural 1s)** across the entire squad.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

@@ -30,12 +30,12 @@ tier_unlocks:
   - tier: 2
     loyalty_required: 3
     ability_name: "Spin Doctor"
-    effect: "Once per mission, spend 1 [PIP] on stage failure to prevent that failure from escalating Target Difficulties downstream."
+    effect: "Once per mission, spend [1 PIP] on stage failure to prevent that failure from escalating Target Difficulties downstream."
   - tier: 3
     loyalty_required: 6
     ability_name: "Public Mandate"
-    effect: "Whenever your Faction completes an Open Agenda with this operative deployed, deposit +1 extra [PIP] directly into Vault."
-rules_text: "T1 (1 LOY) Media Charm: Treat [Negotiate] as Secondary Focus (4+) if Out of Focus. T2 (3 LOY) Spin Doctor: 1/mission, spend 1 [PIP] on stage failure to prevent downstream Target Difficulty escalation. T3 (6 LOY) Public Mandate: Completing an Open Agenda while this operative is deployed deposits +1 extra [PIP] into Vault."
+    effect: "Whenever your Faction completes an Open Agenda with this operative deployed, deposit [+1 PIP] directly into Vault."
+rules_text: "T1 ([1 LOY]) Media Charm: Treat [Negotiate] as Secondary Focus (4+) if Out of Focus. T2 ([3 LOY]) Spin Doctor: 1/mission, spend [1 PIP] on stage failure to prevent downstream Target Difficulty escalation. T3 ([6 LOY]) Public Mandate: Completing an Open Agenda while this operative is deployed deposits [+1 PIP] into Vault."
 active_ability: "Spin Doctor (1 PIP, 1/mission)"
 tags:
   - "perk"
@@ -58,6 +58,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Media Charm** | Treat `[Negotiate]` as a **Secondary Focus (4+)** if currently Out of Focus (5+). |
-| **Tier 2** | `3 [LOY]` | **Spin Doctor** | Once per mission, spend **1 `[PIP]`** on stage failure to prevent that failure from escalating Target Difficulties downstream. |
-| **Tier 3** | `6 [LOY]` | **Public Mandate** | Whenever your Faction completes an Open Agenda with this operative deployed, deposit **+1 extra `[PIP]`** directly into Vault. |
+| **Tier 1** | [1 LOY] | **Media Charm** | Treat [Negotiate] as a **Secondary Focus (4+)** if currently Out of Focus (5+). |
+| **Tier 2** | [3 LOY] | **Spin Doctor** | Once per mission, spend **[1 PIP]** on stage failure to prevent that failure from escalating Target Difficulties downstream. |
+| **Tier 3** | [6 LOY] | **Public Mandate** | Whenever your Faction completes an Open Agenda with this operative deployed, deposit **[+1 PIP]** directly into Vault. |

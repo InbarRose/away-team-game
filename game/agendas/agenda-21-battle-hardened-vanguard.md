@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Completion): Successfully complete a Campaign Mission deploying one of your operatives who launched carrying 2 or more Critical Injury Tokens, without that operative dying. Payout: +4 [VP]."
+rules_text: "Condition (Mission Completion): Successfully complete a Campaign Mission deploying one of your operatives who launched carrying 2 or more Critical Injury Tokens, without that operative dying. Payout: [+4 VP]."
 active_ability: null
 tags:
   - "agenda"
@@ -53,4 +53,4 @@ Successfully complete a Campaign Mission deploying one of **your operatives** wh
 
 ## Reward Payout
 
-* **+4 `[VP]`** (Victory Points)
+* **[+4 VP]** (Victory Points)

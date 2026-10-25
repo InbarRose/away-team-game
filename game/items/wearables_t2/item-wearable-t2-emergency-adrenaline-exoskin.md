@@ -48,8 +48,8 @@ The **Emergency Adrenaline Exoskin** upgrades the Tier 1 Adrenaline Surge Harnes
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Second Wind Overdrive)
 

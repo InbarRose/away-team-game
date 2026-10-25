@@ -27,7 +27,7 @@ payout:
   effort: 1
   pip: 0
   loyalty: 0
-rules_text: "Condition (HQ Medical Step): Spend Credits [CR] at HQ (via the Cybernetic Lab or specialized items) to completely purge a Permanent Trauma or Critical Injury Token from one of your benched veterans. Payout: +3 [VP] AND deposit +1 [EF] into your Vault."
+rules_text: "Condition (HQ Medical Step): Spend [CR] at HQ (via the Cybernetic Lab or specialized items) to completely purge a Permanent Trauma or Critical Injury Token from one of your benched veterans. Payout: [+3 VP] AND deposit [+1 EF] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-Spend Credits (`[CR]`) at HQ (via the *Cybernetic Lab* or specialized items) to completely purge a **Permanent Trauma** or **Critical Injury Token** from one of your benched veterans.
+Spend Credits ([CR]) at HQ (via the *Cybernetic Lab* or specialized items) to completely purge a **Permanent Trauma** or **Critical Injury Token** from one of your benched veterans.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[EF]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 EF]** into your Faction Vault

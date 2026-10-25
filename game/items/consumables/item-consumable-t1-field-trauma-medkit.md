@@ -43,14 +43,14 @@ art_spec:
 
 ## Overview
 
-The **Field Trauma Medkit** is a Tier 1 single-use medical consumable priced at `1 [CR]`. Capable of being triggered at any step of a stage check, it provides immediate emergency stabilization for a wounded operative before a lethal Backfire or stage failure sends them to the Dead Pool.
+The **Field Trauma Medkit** is a Tier 1 single-use medical consumable priced at [1 CR]. Capable of being triggered at any step of a stage check, it provides immediate emergency stabilization for a wounded operative before a lethal Backfire or stage failure sends them to the Dead Pool.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Medical Consumable (Single-Use)
-* **Market Cost:** `1 [CR]` *(0.5 ES Value)*
+* **Market Cost:** [1 CR] *(0.5 ES Value)*
 * **Activation Window:** Any Step (Instant)
 
 ---

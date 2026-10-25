@@ -26,7 +26,7 @@ scoring_tiers:
   first_place_vp: 15
   second_place_vp: 10
   third_place_vp: 5
-rules_text: "Endgame Audit Target Metric: Highest unspent Effort [EF] stored in your Faction Vault (minimum 1 [EF] required to qualify). 1st Place: +15 [VP] | 2nd Place: +10 [VP] | 3rd Place: +5 [VP]."
+rules_text: "Endgame Audit Target Metric: Highest unspent [EF] stored in your Faction Vault (minimum [1 EF] required to qualify). 1st Place: [+15 VP] | 2nd Place: [+10 VP] | 3rd Place: [+5 VP]."
 active_ability: null
 tags:
   - "secret-objective"
@@ -44,14 +44,14 @@ art_spec:
 # Institutional Overtime
 
 * **Ideological Mandate:** Force your operatives to redline their performance, banking unused operational energy.
-* **Target Metric:** Highest unspent **Effort (`[EF]`)** stored in your Faction Vault *(minimum 1 `[EF]` required to qualify)*.
+* **Target Metric:** Highest unspent **Effort ([EF])** stored in your Faction Vault *(minimum [1 EF] required to qualify)*.
 
 ## Tiered Endgame Scoring
 
 | Standing | Reward Payout |
 | :--- | :--- |
-| **1st Place (Most `[EF]`)** | **+15 `[VP]`** |
-| **2nd Place (2nd Most `[EF]`)** | **+10 `[VP]`** |
-| **3rd Place (3rd Most `[EF]`)** | **+5 `[VP]`** |
+| **1st Place (Most [EF])** | **[+15 VP]** |
+| **2nd Place (2nd Most [EF])** | **[+10 VP]** |
+| **3rd Place (3rd Most [EF])** | **[+5 VP]** |
 
 > **Tie Resolution:** Tied Factions each claim the full VP reward for that rank, and the next rank down is skipped.

@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Long-Range Telemetry Array** is a two-handed sensor dish and signal decryptor. It provides massive `[Intel]` gathering output and bridges any operative into an effective reconnaissance specialist.
+The **Long-Range Telemetry Array** is a two-handed sensor dish and signal decryptor. It provides massive [Intel] gathering output and bridges any operative into an effective reconnaissance specialist.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Intel]`
+* **Focus Coverage:** [Intel]
 
 ## Core Mechanics
 
-1. **Deep-Spectrum Array (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Intel]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Intel]` to roll `[Intel]` checks at **Secondary Focus (`4+`)**.
+1. **Deep-Spectrum Array (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Intel].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Intel] to roll [Intel] checks at **Secondary Focus (`4+`)**.

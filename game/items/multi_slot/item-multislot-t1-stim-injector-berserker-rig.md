@@ -47,14 +47,14 @@ art_spec:
 
 ## Overview
 
-The **Stim-Injector Berserker Rig** is a high-risk Tier 1 multi-slot combat suit occupying `[Body]` and `[Legs]`. It reinforces the wearer's physiology with +1 Maximum HP while hard-wiring sub-dermal stimulant spikes directly into their nervous system—allowing them to burn raw vitality for guaranteed stage successes.
+The **Stim-Injector Berserker Rig** is a high-risk Tier 1 multi-slot combat suit occupying [Body] and [Legs]. It reinforces the wearer's physiology with +1 Maximum HP while hard-wiring sub-dermal stimulant spikes directly into their nervous system—allowing them to burn raw vitality for guaranteed stage successes.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Body]` + `[Legs]` (2 Slots)
-* **Market Cost:** `6 [CR]` *(3.0 ES Value)*
+* **Slots Required:** [Body] + [Legs] (2 Slots)
+* **Market Cost:** [6 CR] *(3.0 ES Value)*
 * **Tier:** Tier 1 Multi-Slot Rig
 
 ---

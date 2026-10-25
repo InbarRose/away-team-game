@@ -31,8 +31,8 @@ unique_power:
   tier: 3
   es_value: 1.5
   trigger: "Passive — during Resolution of any [Infiltrate] or [Intel] stage"
-  effect: "Whenever Vesper rolls at least one natural 6 on an [Infiltrate] or [Intel] check, deposit +1 [CR] into your Faction Vault (or +2 [CR] if she rolled two or more 6s)."
-rules_text: "Class (Recon — Intel Reconnaissance, 1 [EF]): Scout and swap/purge Stage Modifier. Unique Power (Shadow Siphon): Rolling a natural 6 on an [Infiltrate] or [Intel] check deposits +1 [CR] into your Vault (+2 [CR] for two or more 6s)."
+  effect: "Whenever Vesper rolls at least one natural 6 on an [Infiltrate] or [Intel] check, deposit [+1 CR] into your Faction Vault (or [+2 CR] if she rolled two or more 6s)."
+rules_text: "Class (Recon — Intel Reconnaissance, [1 EF]): Scout and swap/purge Stage Modifier. Unique Power (Shadow Siphon): Rolling a natural 6 on an [Infiltrate] or [Intel] check deposits [+1 CR] into your Vault ([+2 CR] for two or more 6s)."
 tags:
   - "character"
   - "recon"
@@ -50,12 +50,12 @@ art_spec:
 # Agent 08: Vesper "Nyx" Gray (*The Prowler*)
 
 * **Class:** Recon (`Zero-Combat Specialist` — Glass Cannon)
-* **Focus Profile:** Primary: `[Infiltrate]` (`3+`) | Secondary: `[Intel]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Infiltrate] (`3+`) | Secondary: [Intel] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`2 HP`** (`3.0 ES`) • **`9 Static Dice`** (`4.5 ES`) • **Power:** `1.5 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Intel Reconnaissance (`1 [EF]`)
+## Class Ability: Intel Reconnaissance ([1 EF])
 
 Activate during Step 1 (Briefing) to scout the top card of the Stage Modifier deck (or next modular stage) and choose whether to replace the current modifier/stage or purge the scouted card.
 
@@ -63,4 +63,4 @@ Activate during Step 1 (Briefing) to scout the top card of the Stage Modifier de
 
 ## Unique Power: Shadow Siphon (`1.5 ES` — Tier 3 Passive)
 
-Whenever Vesper rolls at least one natural `6` during an **`[Infiltrate]`** or **`[Intel]`** stage check, her Faction immediately harvests **`+1 Credit [CR]`** into their Vault (or **`+2 [CR]`** if she rolls two or more natural `6s`).
+Whenever Vesper rolls at least one natural `6` during an **[Infiltrate]** or **[Intel]** stage check, her Faction immediately harvests **`[+1 CR]`** into their Vault (or **[+2 CR]** if she rolls two or more natural `6s`).

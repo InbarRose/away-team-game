@@ -43,12 +43,12 @@ art_spec:
 
 ## Overview
 
-The **Sub-Dermal Intercept Rig** is a Tier 2 Exclusive `[Body]` piece that protects fragile teammates. Once per stage, the wearer can intercept and completely negate 1 point of damage suffered by an adjacent ally.
+The **Sub-Dermal Intercept Rig** is a Tier 2 Exclusive [Body] piece that protects fragile teammates. Once per stage, the wearer can intercept and completely negate 1 point of damage suffered by an adjacent ally.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Tier 2 Exclusive (Damage Intercept)
 

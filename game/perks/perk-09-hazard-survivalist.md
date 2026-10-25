@@ -29,12 +29,12 @@ tier_unlocks:
   - tier: 2
     loyalty_required: 3
     ability_name: "Pathfinder Bypass"
-    effect: "When declaring a Tactical Bypass to [Survival], the resource cost (Effort [EF] or item) is waived (0 cost)."
+    effect: "When declaring a Tactical Bypass to [Survival], the resource cost ([EF] or item) is waived (0 cost)."
   - tier: 4
     loyalty_required: 10
     ability_name: "Apex Specimen"
-    effect: "Max HP permanently increased by +1; operative can never suffer Critical Injury tokens from [Survival] checks (+3 VPs at endgame)."
-rules_text: "T1 (1 LOY) Environmental Filter: 1/mission, ignore direct HP or die-penalty effects from an active Stage Modifier. T2 (3 LOY) Pathfinder Bypass: Tactical Bypass to [Survival] costs 0 resources. T4 (10 LOY) Apex Specimen: Permanent +1 Max HP; immune to Critical Injury tokens from [Survival] checks (+3 [VP] at endgame)."
+    effect: "Max HP permanently increased by +1; operative can never suffer Critical Injury tokens from [Survival] checks ([+3 VP] at endgame)."
+rules_text: "T1 ([1 LOY]) Environmental Filter: 1/mission, ignore direct HP or die-penalty effects from an active Stage Modifier. T2 ([3 LOY]) Pathfinder Bypass: Tactical Bypass to [Survival] costs 0 resources. T4 ([10 LOY]) Apex Specimen: Permanent +1 Max HP; immune to Critical Injury tokens from [Survival] checks ([+3 VP] at endgame)."
 active_ability: "Environmental Filter (1/mission) / Pathfinder Bypass (0 Cost)"
 tags:
   - "perk"
@@ -57,6 +57,6 @@ art_spec:
 
 | Tier | Loyalty Required | Ability Name | Mechanical Effect & Cost |
 | :--- | :--- | :--- | :--- |
-| **Tier 1** | `1 [LOY]` | **Environmental Filter** | Once per mission, completely ignore the direct physical HP or die-penalty text from an active Stage Modifier card. |
-| **Tier 2** | `3 [LOY]` | **Pathfinder Bypass** | When declaring a **Tactical Bypass** to `[Survival]`, the resource cost (`[EF]` or item) is waived (**0 cost**). |
-| **Tier 4** | `10 [LOY]` | **Apex Specimen** | Max HP permanently increased by **+1**; operative can never suffer Critical Injury tokens from `[Survival]` checks (**+3 `[VP]`** at endgame). |
+| **Tier 1** | [1 LOY] | **Environmental Filter** | Once per mission, completely ignore the direct physical HP or die-penalty text from an active Stage Modifier card. |
+| **Tier 2** | [3 LOY] | **Pathfinder Bypass** | When declaring a **Tactical Bypass** to [Survival], the resource cost ([EF] or item) is waived (**0 cost**). |
+| **Tier 4** | [10 LOY] | **Apex Specimen** | Max HP permanently increased by **+1**; operative can never suffer Critical Injury tokens from [Survival] checks (**[+3 VP]** at endgame). |

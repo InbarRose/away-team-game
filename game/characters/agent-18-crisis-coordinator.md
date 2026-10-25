@@ -31,8 +31,8 @@ unique_power:
   tier: 3
   es_value: 1.5
   trigger: "Once per mission — during Step 1 (Briefing) of a [Negotiate] or [Combat] stage"
-  effect: "Spend 2 [EF] to reduce the room's Target Difficulty by -2 Successes (to a minimum of 1)."
-rules_text: "Class (Diplomat — Strategic Alignment, 1 [EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Diplomatic Truce): Once per mission on a [Negotiate] or [Combat] stage, spend 2 [EF] to reduce Target Difficulty by -2 Successes (min 1)."
+  effect: "Spend [2 EF] to reduce the room's Target Difficulty by -2 Successes (to a minimum of 1)."
+rules_text: "Class (Diplomat — Strategic Alignment, [1 EF]): Shift the room's Operational Focus to any other Focus category. Unique Power (Diplomatic Truce): Once per mission on a [Negotiate] or [Combat] stage, spend [2 EF] to reduce Target Difficulty by -2 Successes (min 1)."
 tags:
   - "character"
   - "diplomat"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 18: Aisha Rahman (*The Crisis Coordinator*)
 
 * **Class:** Diplomat
-* **Focus Profile:** Primary: `[Negotiate]` (`3+`) | Secondary: `[Combat]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Negotiate] (`3+`) | Secondary: [Combat] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`6 Static Dice`** (`3.0 ES`) • **Power:** `1.5 ES` • **Class Offset:** `0.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Strategic Alignment (`1 [EF]`)
+## Class Ability: Strategic Alignment ([1 EF])
 
 Activate during Step 1 (Briefing) before dice are rolled. **Shift the room's primary Operational Focus** to any other Focus category for the duration of the stage.
 
@@ -61,4 +61,4 @@ Activate during Step 1 (Briefing) before dice are rolled. **Shift the room's pri
 
 ## Unique Power: Diplomatic Truce (`1.5 ES` — Tier 3 Active)
 
-**Once per mission**, during Step 1 (Briefing) of a **`[Negotiate]`** or **`[Combat]`** stage, you may spend **`2 Effort [EF]`** to reduce the room's Target Difficulty by **`-2 Successes`** (to a minimum of `1`).
+**Once per mission**, during Step 1 (Briefing) of a **[Negotiate]** or **[Combat]** stage, you may spend **`[2 EF]`** to reduce the room's Target Difficulty by **`-2 Successes`** (to a minimum of `1`).

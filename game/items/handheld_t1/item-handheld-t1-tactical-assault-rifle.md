@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Tactical Assault Rifle** is the workhorse Tier 1 two-handed weapon in the Quartermaster deck (3 copies). Requiring both hand slots, it delivers a substantial `+2 Temporary Static Dice` boost in `[Combat]` while bridging non-combat operatives up to Secondary Focus (`4+`).
+The **Tactical Assault Rifle** is the workhorse Tier 1 two-handed weapon in the Quartermaster deck (3 copies). Requiring both hand slots, it delivers a substantial `+2 Temporary Static Dice` boost in [Combat] while bridging non-combat operatives up to Secondary Focus (`4+`).
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 3 Copies
-* **Focus Coverage:** `[Combat]`
+* **Focus Coverage:** [Combat]
 
 ## Core Mechanics
 
-1. **Heavy Firepower (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Combat]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Combat]` to roll `[Combat]` checks at **Secondary Focus (`4+`)**.
+1. **Heavy Firepower (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Combat].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Combat] to roll [Combat] checks at **Secondary Focus (`4+`)**.

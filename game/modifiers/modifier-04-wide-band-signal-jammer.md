@@ -24,7 +24,7 @@ stats:
 split_effects:
   intel_ops: "Remote servers blocked. Operatives cannot activate Class Abilities during this stage."
   negotiate: "External channels severed. All non-Specialist characters act as Out of Focus (hitting on 5+ only)."
-  other: "Tactical link severed. The Squad Leader cannot use Logistical Refresh (spending Effort [EF] to restore dice) during this stage."
+  other: "Tactical link severed. The Squad Leader cannot use Logistical Refresh (spending [EF] to restore dice) during this stage."
 rules_text: "If [Intel] or [Operations] Focus: Operatives cannot activate Class Abilities during this stage. If [Negotiate] Focus: All non-Specialist characters act as Out of Focus (hitting on 5+ only). If Other Focus ([Combat], [Infiltrate], [Survival]): The Squad Leader cannot use Logistical Refresh during this stage."
 active_ability: null
 tags:
@@ -47,6 +47,6 @@ art_spec:
 
 ## Split-Effect Rules by Active Stage Focus
 
-* **If `[Intel]` or `[Operations]` Focus:** *Remote Servers Blocked.* Operatives **cannot activate Class Abilities** during this stage.
-* **If `[Negotiate]` Focus:** *External Channels Severed.* All non-Specialist characters act as **Out of Focus (hitting on 5+ only)**.
-* **If Other Focus (`[Combat]`, `[Infiltrate]`, `[Survival]`):** *Tactical Link Severed.* The Squad Leader cannot use *Logistical Refresh* (spending `[EF]` to restore dice) during this stage.
+* **If [Intel] or [Operations] Focus:** *Remote Servers Blocked.* Operatives **cannot activate Class Abilities** during this stage.
+* **If [Negotiate] Focus:** *External Channels Severed.* All non-Specialist characters act as **Out of Focus (hitting on 5+ only)**.
+* **If Other Focus ([Combat], [Infiltrate], [Survival]):** *Tactical Link Severed.* The Squad Leader cannot use *Logistical Refresh* (spending [EF] to restore dice) during this stage.

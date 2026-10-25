@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 1
   loyalty: 0
-rules_text: "Condition (Mission Stage Resolution): One of your [Negotiate] Primary Focus operatives scores the single highest number of successes on a [Negotiate] stage where they generated at least 2 successes. Payout: +3 [VP] AND deposit +1 [PIP] into your Vault."
+rules_text: "Condition (Mission Stage Resolution): One of your [Negotiate] Primary Focus operatives scores the single highest number of successes on a [Negotiate] stage where they generated at least 2 successes. Payout: [+3 VP] AND deposit [+1 PIP] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -44,14 +44,14 @@ art_spec:
 
 # Executive Leverage
 
-* **Category:** Category A — In-Mission Operations (`[Negotiate]` Dominance)
+* **Category:** Category A — In-Mission Operations ([Negotiate] Dominance)
 * **Fulfillment Context:** Mission Stage Resolution
 
 ## Fulfillment Condition
 
-One of **your `[Negotiate]` Primary Focus operatives** scores the single highest number of successes on a `[Negotiate]` stage where they generated **at least 2 successes**.
+One of **your [Negotiate] Primary Focus operatives** scores the single highest number of successes on a [Negotiate] stage where they generated **at least 2 successes**.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[PIP]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 PIP]** into your Faction Vault

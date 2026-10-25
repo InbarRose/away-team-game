@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Thermal Infiltration Disruptor** is a two-handed field damper suite that masks thermal and acoustic signatures during `[Infiltrate]` stages.
+The **Thermal Infiltration Disruptor** is a two-handed field damper suite that masks thermal and acoustic signatures during [Infiltrate] stages.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Infiltrate]`
+* **Focus Coverage:** [Infiltrate]
 
 ## Core Mechanics
 
-1. **Signature Damper (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Infiltrate]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Infiltrate]` to roll `[Infiltrate]` checks at **Secondary Focus (`4+`)**.
+1. **Signature Damper (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Infiltrate].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Infiltrate] to roll [Infiltrate] checks at **Secondary Focus (`4+`)**.

@@ -18,14 +18,14 @@ To prevent "alpha gaming" and create high-stakes table politics, **Away Team** c
 During **Step 8 of HQ Downtime (Loadout Step)**, once the 4-operative strike team is assembled, players bid for the right to assign the **Squad Leader Token** to their deployed operative.
 
 ### Bidding & Table Politics
-* **Minimum Entry Bid:** `1 Credit [CR]` paid from a Faction Vault directly to the HQ supply bank (unless modified by a character power such as *Corporate Executive*).
-* **Side-Deals & Bribes:** Factions are explicitly encouraged to negotiate binding side-deals to avoid costly bidding wars (e.g., *"Let me take Squad Leader for 1 Credit, and I will guarantee you the first Momentum die refund in Stage 1"*).
+* **Minimum Entry Bid:** `[1 CR]` paid from a Faction Vault directly to the HQ supply bank (unless modified by a character power such as *Corporate Executive*).
+* **Side-Deals & Bribes:** Factions are explicitly encouraged to negotiate binding side-deals to avoid costly bidding wars (e.g., *"Let me take Squad Leader for [1 CR], and I will guarantee you the first Momentum die refund in Stage 1"*).
 
 ### Tie-Breaker Hierarchy
-If two or more Factions match the highest `[CR]` bid and refuse to raise or step down, resolve the tie using this strict hierarchy:
-1. **Highest Credits Bid (`[CR]`):** Highest payment to the HQ bank wins.
-2. **Highest Faction `[PIP]`:** The Faction currently holding more Political Influence Power wins.
-3. **Highest Operative `[LOY]`:** The Faction whose deployed candidate has higher personal Loyalty wins.
+If two or more Factions match the highest [CR] bid and refuse to raise or step down, resolve the tie using this strict hierarchy:
+1. **Highest Credits Bid ([CR]):** Highest payment to the HQ bank wins.
+2. **Highest Faction [PIP]:** The Faction currently holding more Political Influence Power wins.
+3. **Highest Operative [LOY]:** The Faction whose deployed candidate has higher personal Loyalty wins.
 4. **Die Roll-Off:** Roll a d6 until a single clear winner emerges.
 
 ---
@@ -35,7 +35,7 @@ If two or more Factions match the highest `[CR]` bid and refuse to raise or step
 During the mission, the player controlling the Squad Leader holds **final decision-making authority** over all non-rolling squad choices:
 * Declaring **Dynamic Focus Swaps** (*Force Breach* or *Tactical Bypass*) during Step 1 (Briefing).
 * Selecting branching paths or resolving narrative dilemmas on Mission Briefs.
-* Distributing **Operational Momentum (`[MOM]`)** die refunds among eligible rollers at the end of a cleared stage.
+* Distributing **Operational Momentum ([MOM])** die refunds among eligible rollers at the end of a cleared stage.
 * Deciding whether the squad concedes a room before Phase 2 Support rolls.
 * Triggering **Logistical Resupply** or declaring a **Tactical / Forced Retreat**.
 
@@ -43,12 +43,12 @@ During the mission, the player controlling the Squad Leader holds **final decisi
 
 ## 3. Command Ability: Logistical Resupply
 
-The Squad Leader maintains a direct uplink to HQ orbital supply drops. During any **Transition Step** between stages (never mid-stage during a rolling phase), the Squad Leader may spend pooled **`[EF]`** directly from their Faction Vault to inject spent dice back into the entire squad's static pools:
+The Squad Leader maintains a direct uplink to HQ orbital supply drops. During any **Transition Step** between stages (never mid-stage during a rolling phase), the Squad Leader may spend pooled **[EF]** directly from their Faction Vault to inject spent dice back into the entire squad's static pools:
 
 | Command Action | Vault Cost | Squad-Wide Effect | Mathematical Value |
 | :--- | :--- | :--- | :--- |
-| **Logistical Refresh (Tier 1)** | **`2 [EF]`** (`2.66 ES`) | Restore **+1 spent static die** to **every** deployed operative (`4 dice` total). | `2.00–2.68 ES` expected return |
-| **Logistical Refresh (Tier 2)** | **`3 [EF]`** (`4.00 ES`) | Restore **+2 spent static dice** to **every** deployed operative (`8 dice` total). | `4.00–5.33 ES` expected return |
+| **Logistical Refresh (Tier 1)** | **[2 EF]** (`2.66 ES`) | Restore **+1 spent static die** to **every** deployed operative (`4 dice` total). | `2.00–2.68 ES` expected return |
+| **Logistical Refresh (Tier 2)** | **[3 EF]** (`4.00 ES`) | Restore **+2 spent static dice** to **every** deployed operative (`8 dice` total). | `4.00–5.33 ES` expected return |
 
 ---
 
@@ -56,8 +56,8 @@ The Squad Leader maintains a direct uplink to HQ orbital supply drops. During an
 
 During **Step 1 (Briefing)** of a stage, if the Mission Brief permits a Dynamic Focus Swap, the Squad Leader may alter how the squad tackles the room:
 
-* 💥 **Force Breach (`[Non-Combat]` $\rightarrow$ `[Combat]`):** Turn a technical, stealth, or social stage into a brute-force firefight. The stage's active Focus becomes `[Combat]`, but the Target Difficulty increases by **$+1$ or $+2$ Successes** (as printed on the Mission Brief) due to triggered security alarms.
-* 🌿 **Tactical Bypass (`[Combat]` $\rightarrow$ `[Non-Combat]`):** Detour around an armed patrol by slicing security gates (`[Operations]`), slipping through vents (`[Infiltrate]`), or scaling hazardous terrain (`[Survival]`). Shifts the active Focus to the listed category at the printed Target Difficulty (some bypasses require spending `1 [EF]` or `1 static die` per operative as specified on the brief).
+* 💥 **Force Breach (`[Non-Combat]` $\rightarrow$ [Combat]):** Turn a technical, stealth, or social stage into a brute-force firefight. The stage's active Focus becomes [Combat], but the Target Difficulty increases by **$+1$ or $+2$ Successes** (as printed on the Mission Brief) due to triggered security alarms.
+* 🌿 **Tactical Bypass ([Combat] $\rightarrow$ `[Non-Combat]`):** Detour around an armed patrol by slicing security gates ([Operations]), slipping through vents ([Infiltrate]), or scaling hazardous terrain ([Survival]). Shifts the active Focus to the listed category at the printed Target Difficulty (some bypasses require spending [1 EF] or `1 static die` per operative as specified on the brief).
 
 ---
 
@@ -81,5 +81,5 @@ Taking the Squad Leader contract carries high institutional stakes at the end of
 
 | Mission Outcome | Faction Political Impact | Squad Leader Operative Impact |
 | :--- | :--- | :--- |
-| **Mission Cleared (Success)** | **`+1 [PIP]`** (`2 VPs`) to Squad Leader's Faction Vault | **`+1 Bonus [LOY]`** (`+2 [LOY]` total including survival) |
-| **Mission Failed / Retreated** | **`-1 [PIP]`** (`-2 VPs`) deducted from Squad Leader's Vault | **`0 Bonus [LOY]`** (`+1 [LOY]` if returning alive) |
+| **Mission Cleared (Success)** | **[+1 PIP]** (`[2 VP]`) to Squad Leader's Faction Vault | **`[+1 LOY]`** ([+2 LOY] total including survival) |
+| **Mission Failed / Retreated** | **[-1 PIP]** (`[-2 VP]`) deducted from Squad Leader's Vault | **`[0 LOY]`** ([+1 LOY] if returning alive) |

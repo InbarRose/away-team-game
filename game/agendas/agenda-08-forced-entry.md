@@ -27,7 +27,7 @@ payout:
   effort: 0
   pip: 0
   loyalty: 0
-rules_text: "Condition (Mission Briefing Step & Clearance): While serving as Squad Leader, declare a Force Breach ([Non-Combat] -> [Combat]), and have your own operative score the majority of successes required to clear the escalated stage. Payout: +3 [VP] AND deposit +1 [CR] into your Vault."
+rules_text: "Condition (Mission Briefing Step & Clearance): While serving as Squad Leader, declare a Force Breach ([Non-Combat] -> [Combat]), and have your own operative score the majority of successes required to clear the escalated stage. Payout: [+3 VP] AND deposit [+1 CR] into your Vault."
 active_ability: null
 tags:
   - "agenda"
@@ -49,9 +49,9 @@ art_spec:
 
 ## Fulfillment Condition
 
-While serving as **Squad Leader**, declare a **Force Breach** (`[Non-Combat]` $\rightarrow$ `[Combat]`), and have **your own operative** score the majority of successes required to clear the escalated stage.
+While serving as **Squad Leader**, declare a **Force Breach** (`[Non-Combat]` $\rightarrow$ [Combat]), and have **your own operative** score the majority of successes required to clear the escalated stage.
 
 ## Reward Payout
 
-* **+3 `[VP]`** (Victory Points)
-* Deposit **+1 `[CR]`** into your Faction Vault
+* **[+3 VP]** (Victory Points)
+* Deposit **[+1 CR]** into your Faction Vault

@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "complex"
   armor_buffer: null
-rules_text: "Phase Slip (Passive): Once per stage, after taking damage, roll 1 die for free; on a 4+, phase out to ignore that damage. Tactical Teleport (Active Cost): When your squad declares a Tactical Retreat, spend 1 static die AND 1 Effort [EF] from your Vault to instantly teleport the entire squad back to HQ, taking 0 damage, suffering 0 injury rolls, and salvaging 100% of collected loot."
+rules_text: "Phase Slip (Passive): Once per stage, after taking damage, roll 1 die for free; on a 4+, phase out to ignore that damage. Tactical Teleport (Active Cost): When your squad declares a Tactical Retreat, spend 1 static die AND [1 EF] from your Vault to instantly teleport the entire squad back to HQ, taking 0 damage, suffering 0 injury rolls, and salvaging 100% of collected loot."
 active_ability: "Tactical Teleport — Cost: Spend 1 Static Die AND 1 Vault Effort [EF] when declaring a Tactical Retreat. Effect: Instantly teleport the entire squad back to HQ with 0 damage, 0 injury rolls, and 100% of collected loot preserved."
 tags:
   - "complex"
@@ -45,14 +45,14 @@ art_spec:
 
 ## Overview
 
-The **Phase-Shift Transceiver** is the pinnacle Tier 2 `[Complex]` anomaly and extraction engine at `10 [CR]`. Passively offering a free `4+` phase-save against damage once per stage, its signature **Tactical Teleport** completely rewrites the risk math of deep mission runs—allowing a squad to abort a doomed drop via *Tactical Retreat* with zero damage, zero trauma rolls, and 100% loot retention.
+The **Phase-Shift Transceiver** is the pinnacle Tier 2 [Complex] anomaly and extraction engine at [10 CR]. Passively offering a free `4+` phase-save against damage once per stage, its signature **Tactical Teleport** completely rewrites the risk math of deep mission runs—allowing a squad to abort a doomed drop via *Tactical Retreat* with zero damage, zero trauma rolls, and 100% loot retention.
 
 ---
 
 ## Equipment Specifications
 
-* **Slots Required:** `[Complex]` (1 Slot)
-* **Market Cost:** `10 [CR]` *(5.0 ES Value)*
+* **Slots Required:** [Complex] (1 Slot)
+* **Market Cost:** [10 CR] *(5.0 ES Value)*
 * **Type:** Anomaly & Extraction Engine
 
 ---
@@ -63,4 +63,4 @@ The **Phase-Shift Transceiver** is the pinnacle Tier 2 `[Complex]` anomaly and e
 Once per stage, after taking damage, roll 1 die for free. On a **4+**, phase out to ignore that damage.
 
 ### Active Cost: Tactical Teleport *(Perfect Extraction)*
-When your squad declares a **Tactical Retreat**, spend **1 static die** **AND** **1 Effort `[EF]`** from your Vault to instantly teleport the entire squad back to HQ, taking **0 damage**, suffering **0 injury rolls**, and salvaging **100% of collected loot**.
+When your squad declares a **Tactical Retreat**, spend **1 static die** **AND** **[1 EF]** from your Vault to instantly teleport the entire squad back to HQ, taking **0 damage**, suffering **0 injury rolls**, and salvaging **100% of collected loot**.

@@ -44,14 +44,14 @@ art_spec:
 
 ## Overview
 
-The **Combat Hyper-Stim** is a high-risk Tier 1 tactical stimulant priced at `2 [CR]`. By overclocking the operative's synaptic response time during Step 1 (Briefing), it improves their target hit threshold by 1 step across all dice rolled in that stage—at the risk of unpreventable vascular backlash if any natural 1s appear.
+The **Combat Hyper-Stim** is a high-risk Tier 1 tactical stimulant priced at [2 CR]. By overclocking the operative's synaptic response time during Step 1 (Briefing), it improves their target hit threshold by 1 step across all dice rolled in that stage—at the risk of unpreventable vascular backlash if any natural 1s appear.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Tactical Stim (Single-Use)
-* **Market Cost:** `2 [CR]` *(1.0 ES Value)*
+* **Market Cost:** [2 CR] *(1.0 ES Value)*
 * **Activation Window:** Step 1 (Briefing)
 
 ---

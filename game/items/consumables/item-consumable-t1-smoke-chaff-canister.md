@@ -43,14 +43,14 @@ art_spec:
 
 ## Overview
 
-The **Smoke / Chaff Canister** is a Tier 1 defensive suppression consumable priced at `1 [CR]`. Because it is activated reactively during Step 4 (Resolution) *after* the dice have been rolled, it serves as reliable insurance against a critical natural 1 Backfire anywhere in the squad.
+The **Smoke / Chaff Canister** is a Tier 1 defensive suppression consumable priced at [1 CR]. Because it is activated reactively during Step 4 (Resolution) *after* the dice have been rolled, it serves as reliable insurance against a critical natural 1 Backfire anywhere in the squad.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Defensive Suppression (Single-Use)
-* **Market Cost:** `1 [CR]` *(0.5 ES Value)*
+* **Market Cost:** [1 CR] *(0.5 ES Value)*
 * **Activation Window:** Step 4 (Resolution)
 
 ---

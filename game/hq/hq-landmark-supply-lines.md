@@ -17,7 +17,7 @@ focus_affinity:
 stats:
   reward_pip: 2
   sponsor_controlled: false
-rules_text: "Cost: 2 [PIP] + 4 [CR] (Awards +2 [PIP] to Sponsor). Unlocks mid-mission Orbital Drop Pods: during any Transition Step between stages, the Squad Leader may call a supply drop, allowing any deployed operative to purchase and immediately equip face-up Quartermaster items mid-mission."
+rules_text: "Cost: [2 PIP] + [4 CR] (Awards [+2 PIP] to Sponsor). Unlocks mid-mission Orbital Drop Pods: during any Transition Step between stages, the Squad Leader may call a supply drop, allowing any deployed operative to purchase and immediately equip face-up Quartermaster items mid-mission."
 tags:
   - "hq"
   - "landmark"
@@ -32,12 +32,12 @@ art_spec:
 
 # Supply Lines (Standalone Landmark)
 
-* **Sponsorship Cost:** `2 [PIP] + 4 [CR]`
-* **Sponsorship Reward:** **`+2 [PIP]`** (`4 [VP]`) + Faction Token placement
+* **Sponsorship Cost:** `[2 PIP] + [4 CR]`
+* **Sponsorship Reward:** **[+2 PIP]** ([4 VP]) + Faction Token placement
 * **Control Mode:** Agency-Wide Operational Unlock
 
 ---
 
 ## Landmark Effect
 
-Unlocks mid-mission **Orbital Drop Pods**. During any **Transition Step** between stages on a mission, the **Squad Leader** may call an orbital supply drop, allowing any Factions with deployed operatives to purchase face-up items from the **Quartermaster** display using Vault `[CR]` and equip them immediately in the field.
+Unlocks mid-mission **Orbital Drop Pods**. During any **Transition Step** between stages on a mission, the **Squad Leader** may call an orbital supply drop, allowing any Factions with deployed operatives to purchase face-up items from the **Quartermaster** display using Vault [CR] and equip them immediately in the field.

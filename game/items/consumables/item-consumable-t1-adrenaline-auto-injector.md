@@ -43,14 +43,14 @@ art_spec:
 
 ## Overview
 
-The **Adrenaline Auto-Injector** is a Tier 1 tactical stimulant consumable costing `1 [CR]`. Triggered during Step 1 (Briefing), it provides an economical +2 temporary static dice boost for any stage check regardless of Focus category.
+The **Adrenaline Auto-Injector** is a Tier 1 tactical stimulant consumable costing [1 CR]. Triggered during Step 1 (Briefing), it provides an economical +2 temporary static dice boost for any stage check regardless of Focus category.
 
 ---
 
 ## Consumable Specifications
 
 * **Sub-Category:** Tactical Stim (Single-Use)
-* **Market Cost:** `1 [CR]` *(0.5 ES Value)*
+* **Market Cost:** [1 CR] *(0.5 ES Value)*
 * **Activation Window:** Step 1 (Briefing)
 
 ---

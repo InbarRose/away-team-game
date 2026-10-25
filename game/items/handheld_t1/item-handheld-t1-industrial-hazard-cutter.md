@@ -44,16 +44,16 @@ art_spec:
 
 ## Overview
 
-The **Industrial Hazard Cutter** is a two-handed hydraulic plasma spreader engineered for heavy rescue and obstacle clearance in extreme `[Survival]` environments.
+The **Industrial Hazard Cutter** is a two-handed hydraulic plasma spreader engineered for heavy rescue and obstacle clearance in extreme [Survival] environments.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Hand L]` + `[Hand R]` (2 Hands)
-* **Quartermaster Cost:** `4 [CR]` *(2.0 ES Value)*
+* **Slot Requirement:** [Hand L] + [Hand R] (2 Hands)
+* **Quartermaster Cost:** [4 CR] *(2.0 ES Value)*
 * **Deck Quantity:** 1 Copy
-* **Focus Coverage:** `[Survival]`
+* **Focus Coverage:** [Survival]
 
 ## Core Mechanics
 
-1. **Heavy Breaching Tool (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in `[Survival]`.
-2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in `[Survival]` to roll `[Survival]` checks at **Secondary Focus (`4+`)**.
+1. **Heavy Breaching Tool (`+2 Temp Dice`):** Adds **+2 Temporary Static Dice** to your active rolling pool when operating in [Survival].
+2. **Focus Bridge (`4+`):** Allows an operative who is Out of Focus (`5+`) in [Survival] to roll [Survival] checks at **Secondary Focus (`4+`)**.

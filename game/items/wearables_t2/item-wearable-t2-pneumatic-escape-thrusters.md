@@ -47,8 +47,8 @@ The **Pneumatic Escape Thrusters** upgrade the Tier 1 Hydraulic Servo-Struts, gr
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Legs]`
-* **Quartermaster Cost:** `7 [CR]` *(3.5 ES Value)*
+* **Slot Requirement:** [Legs]
+* **Quartermaster Cost:** [7 CR] *(3.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Upgraded Classic (Squad Disengagement)
 

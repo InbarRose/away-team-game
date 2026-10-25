@@ -25,7 +25,7 @@ When an operative deploys from the HQ bench, their **Starting Static Dice Pool**
 ```
 
 ### Permanent Exhaustion vs. Temporary Dice
-* **Static Dice:** Dice committed from an operative's sheet are moved to their **Spent Pool** after rolling. They do **not** automatically refresh between stages. They can only be restored via **Operational Momentum (`[MOM]`)**, the Squad Leader's **Logistical Refresh**, or specific item/class/faction abilities.
+* **Static Dice:** Dice committed from an operative's sheet are moved to their **Spent Pool** after rolling. They do **not** automatically refresh between stages. They can only be restored via **Operational Momentum ([MOM])**, the Squad Leader's **Logistical Refresh**, or specific item/class/faction abilities.
 * **Temporary Dice:** Bonus dice granted for a single check by Class Abilities (such as Soldier's *Lock and Load*) or Handheld/Complex equipment are rolled alongside committed static dice, then returned to the supply box immediately after the stage resolves. Temporary dice never deplete or inflate an operative's permanent static pool cap.
 
 ---
@@ -51,26 +51,26 @@ Operating Out of Focus is penalized not by arbitrary extra damage, but by **seve
 
 ---
 
-## 3. Operational Momentum (`[MOM]`)
+## 3. Operational Momentum ([MOM])
 
-To prevent conservative dice hoarding ("penny-pinching") and reward aggressive Specialist play, clearing a stage with excess successes generates **Operational Momentum (`[MOM]`)**.
+To prevent conservative dice hoarding ("penny-pinching") and reward aggressive Specialist play, clearing a stage with excess successes generates **Operational Momentum ([MOM])**.
 
 ### 3.1 Generating Momentum
-When the squad clears a stage and their **Total Successes** exceed the stage's **Target Difficulty ($D$)** by **$+2$ or more**, every success starting at $D + 2$ generates **1 Momentum (`[MOM]`)**:
+When the squad clears a stage and their **Total Successes** exceed the stage's **Target Difficulty ($D$)** by **$+2$ or more**, every success starting at $D + 2$ generates **1 Momentum ([MOM])**:
 
 $$\text{Momentum} = \text{Total Successes} - D - 1 \quad (\text{for } \text{Total Successes} \ge D + 2)$$
 
-| Target Difficulty ($D$) | Total Successes Rolled | Margin Above Target | Momentum (`[MOM]`) Generated |
+| Target Difficulty ($D$) | Total Successes Rolled | Margin Above Target | Momentum ([MOM]) Generated |
 | :---: | :---: | :---: | :--- |
-| **3** | 3 | $+0$ | **0 `[MOM]`** (Standard Clear) |
-| **3** | 4 | $+1$ | **0 `[MOM]`** (Clean Clear) |
-| **3** | 5 | **$+2$** | **1 `[MOM]`** |
-| **3** | 6 | **$+3$** | **2 `[MOM]`** |
-| **3** | 7 | **$+4$** | **3 `[MOM]`** |
+| **3** | 3 | $+0$ | **[0 MOM]** (Standard Clear) |
+| **3** | 4 | $+1$ | **[0 MOM]** (Clean Clear) |
+| **3** | 5 | **$+2$** | **[1 MOM]** |
+| **3** | 6 | **$+3$** | **[2 MOM]** |
+| **3** | 7 | **$+4$** | **[3 MOM]** |
 
 ### 3.2 Spending Momentum (Squad Leader Distribution)
-Immediately during **Step 5 (Resolution)** of the completed stage, the **Squad Leader** distributes all generated `[MOM]` points across the squad:
+Immediately during **Step 5 (Resolution)** of the completed stage, the **Squad Leader** distributes all generated [MOM] points across the squad:
 
-* **Exchange Rate:** **`1 [MOM]` = Restore `1 spent static die`** from an operative's Spent Pool back to their Active Static Pool.
+* **Exchange Rate:** **[1 MOM] = Restore `1 spent static die`** from an operative's Spent Pool back to their Active Static Pool.
 * **The Skin-in-the-Game Constraint:** Momentum dice can **ONLY** be restored to operatives who **actually committed and rolled at least 1 die** during the stage just completed. Operatives who committed `0` dice cannot receive Momentum refunds (unless a specific power such as *Field Scavenger* overrides this rule).
 * **Cap Limit:** An operative's restored static dice can never exceed their starting mission static pool cap.

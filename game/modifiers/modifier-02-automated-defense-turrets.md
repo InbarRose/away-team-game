@@ -47,6 +47,6 @@ art_spec:
 
 ## Split-Effect Rules by Active Stage Focus
 
-* **If `[Combat]` Focus:** *Heavy Suppression.* Any character rolling during **Phase 2 (Support)** takes **2 HP damage** on a natural **1**.
-* **If `[Infiltrate]` Focus:** *Active Laser Grid.* Specialist success threshold is raised to **4+** (instead of standard 3+).
-* **If Other Focus (`[Intel]`, `[Operations]`, `[Survival]`, `[Negotiate]`):** *Hardened Locks.* Stage Target Difficulty is increased by **+1 Success**.
+* **If [Combat] Focus:** *Heavy Suppression.* Any character rolling during **Phase 2 (Support)** takes **2 HP damage** on a natural **1**.
+* **If [Infiltrate] Focus:** *Active Laser Grid.* Specialist success threshold is raised to **4+** (instead of standard 3+).
+* **If Other Focus ([Intel], [Operations], [Survival], [Negotiate]):** *Hardened Locks.* Stage Target Difficulty is increased by **+1 Success**.

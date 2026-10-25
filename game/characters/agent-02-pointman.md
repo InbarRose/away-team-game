@@ -32,7 +32,7 @@ unique_power:
   es_value: 1.0
   trigger: "Active — during Phase 1 Initiative on a [Combat] or [Infiltrate] stage"
   effect: "Croft may choose to skip her normal Initiative phase and act during Step 4 (Post-Initiative), evaluating the entire squad's rolled pool before deciding how many static dice to commit (rolling at her normal 3+ or 4+ threshold)."
-rules_text: "Class (Soldier — Lock and Load, 1 [EF]): +2 temporary dice for this roll. Unique Power (Tactical Flank): Skip Phase 1/2 to commit and roll your exact needed dice during Step 4 (Post-Initiative) after seeing all other rolls."
+rules_text: "Class (Soldier — Lock and Load, [1 EF]): +2 temporary dice for this roll. Unique Power (Tactical Flank): Skip Phase 1/2 to commit and roll your exact needed dice during Step 4 (Post-Initiative) after seeing all other rolls."
 tags:
   - "character"
   - "soldier"
@@ -48,12 +48,12 @@ art_spec:
 # Agent 02: Sarah "Specter" Croft (*The Pointman*)
 
 * **Class:** Soldier (`Primary Combat`)
-* **Focus Profile:** Primary: `[Combat]` (`3+`) | Secondary: `[Infiltrate]` (`4+`) | Out of Focus: `5+`
+* **Focus Profile:** Primary: [Combat] (`3+`) | Secondary: [Infiltrate] (`4+`) | Out of Focus: `5+`
 * **Base Stats:** **`3 HP`** (`4.5 ES`) • **`7 Static Dice`** (`3.5 ES`) • **Power:** `1.0 ES` (**Total:** `9.0 ES`)
 
 ---
 
-## Class Ability: Lock and Load (`1 [EF]`)
+## Class Ability: Lock and Load ([1 EF])
 
 Activate during any Phase 1 or Phase 2 Initiative step before dice are committed. Draw **`+2 temporary dice`** from the supply box and add them directly to Sarah's rolling pool for this phase only.
 

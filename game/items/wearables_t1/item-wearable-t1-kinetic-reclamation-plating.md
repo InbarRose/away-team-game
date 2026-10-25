@@ -22,7 +22,7 @@ stats:
   slots_required:
     - "body"
   armor_buffer: null
-rules_text: "Scrap Collector: Whenever this operative rolls 1 or more natural 1s (Backfires) during a stage, immediately collect +1 [CR] into your Faction Vault."
+rules_text: "Scrap Collector: Whenever this operative rolls 1 or more natural 1s (Backfires) during a stage, immediately collect [+1 CR] into your Faction Vault."
 active_ability: null
 tags:
   - "wearable"
@@ -43,15 +43,15 @@ art_spec:
 
 ## Overview
 
-The **Kinetic Reclamation Plating** turns bad luck into liquid capital, depositing `+1 [CR]` into your Faction Vault whenever the wearer rolls one or more Backfires (`1`s) during a stage.
+The **Kinetic Reclamation Plating** turns bad luck into liquid capital, depositing [+1 CR] into your Faction Vault whenever the wearer rolls one or more Backfires (`1`s) during a stage.
 
 ## Equipment Profile
 
-* **Slot Requirement:** `[Body]`
-* **Quartermaster Cost:** `3 [CR]` *(1.5 ES Value)*
+* **Slot Requirement:** [Body]
+* **Quartermaster Cost:** [3 CR] *(1.5 ES Value)*
 * **Deck Quantity:** 1 Copy
 * **Equipment Type:** Backfire Salvage (Credit Engine)
 
 ## Core Mechanics
 
-* **Scrap Collector:** Whenever this character rolls 1 or more natural `1`s (Backfires) during a stage, immediately collect **`+1 [CR]`** into your Faction Vault.
+* **Scrap Collector:** Whenever this character rolls 1 or more natural `1`s (Backfires) during a stage, immediately collect **[+1 CR]** into your Faction Vault.
