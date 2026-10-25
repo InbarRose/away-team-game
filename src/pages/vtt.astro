@@ -1,0 +1,29 @@
+---
+import '../styles/tokens.css';
+import { AppShell } from '../components/AppShell';
+import coreRules from '../data/core_rules.json';
+import allComponents from '../data/all_components.json';
+import artManifest from '../data/image_generation_manifest.json';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWAY TEAM — Virtual Tabletop (VTT) Environment</title>
+    <meta
+      name="description"
+      content="Playable browser Virtual Tabletop (VTT) for Away Team: Faction Vaults, Command Auctions, 4-Operative Squad Staging, Static Pool Dice Roller, and Med Bay Triage."
+    />
+  </head>
+  <body>
+    <AppShell
+      client:load
+      initialMode="vtt"
+      coreRules={coreRules}
+      components={allComponents}
+      artManifest={artManifest}
+    />
+  </body>
+</html>

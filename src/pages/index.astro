@@ -1,0 +1,29 @@
+---
+import '../styles/tokens.css';
+import { AppShell } from '../components/AppShell';
+import coreRules from '../data/core_rules.json';
+import allComponents from '../data/all_components.json';
+import artManifest from '../data/image_generation_manifest.json';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWAY TEAM — Rulebook Wiki, Component Database & Virtual Tabletop</title>
+    <meta
+      name="description"
+      content="Official rulebook reference, 200-component card browser, generative art manifest pipeline, and browser Virtual Tabletop (VTT) for Away Team."
+    />
+  </head>
+  <body>
+    <AppShell
+      client:load
+      initialMode="wiki"
+      coreRules={coreRules}
+      components={allComponents}
+      artManifest={artManifest}
+    />
+  </body>
+</html>
