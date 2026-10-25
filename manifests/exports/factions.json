@@ -1,0 +1,538 @@
+[
+  {
+    "id": "faction-aegis",
+    "title": "Aegis Tactical Directorate",
+    "component_type": "faction",
+    "category": "pmc_ordnance",
+    "faction": "faction-aegis",
+    "color_hex": "#2C3E50",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 4,
+      "effort": 1,
+      "pip": 1
+    },
+    "focus_affinity": {
+      "primary": "combat",
+      "secondary": "survival",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Kinetic Reclamation",
+      "trigger": "Whenever an Aegis agent generates Momentum (+2 or higher on a cleared stage)",
+      "effect": "Aegis immediately deposits +1 [EF] into their Faction Vault."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — CQC Drill",
+        "effect": "Ignore the first natural 1 (Backfire) rolled by this character each stage."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Covering Fire (Squad Benefit)",
+        "effect": "When this character generates Momentum, grant +1 additional Momentum refund die to an ally who rolled in that stage."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Tactical Command",
+        "effect": "Once per mission, when this character rolls a natural 1, convert it into a Success instead of taking damage."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — War Hero (+3 VPs)",
+        "effect": "All allies in this character's squad gain +1 temporary static die during Phase 1 in [Combat] stages. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Kinetic Reclamation): Whenever an Aegis agent generates [MOM], deposit +1 [EF] into your Vault.",
+    "tags": [
+      "faction",
+      "combat",
+      "momentum",
+      "pmc"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_aegis.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "A brutalist gunmetal-slate corporate command crest featuring an angular tactical shield bisected by twin heavy rifle barrels, set against an armored bulkhead lit by cold tactical HUD projections.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-aegis.md",
+    "body": "# Aegis Tactical Directorate\n\n*Private Military Contractor & Heavy Ordnance Syndicate*\n\n* **Faction Color:** Gunmetal Slate (`#2C3E50`)\n* **Strategic Identity:** Frontline kinetic dominance, Momentum generation, and turning aggressive stage clears into sustainable Vault `[EF]`.\n* **Starting Vault Assets:** `4 [CR]` • `1 [EF]` • `1 [PIP]`\n\n---\n\n## Base Faction Power: Kinetic Reclamation\n\nWhenever an Aegis operative participates in a stage that generates **Operational Momentum (`[MOM]`, $+2$ or higher above Target Difficulty)**, Aegis immediately deposits **`+1 Effort [EF]`** from the supply into their Faction Vault.\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *CQC Drill* | Ignore the first natural `1` (Backfire) rolled by this operative each stage. |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Covering Fire* *(Squad)* | When this operative helps generate `[MOM]`, grant **+1 additional Momentum refund die** to an ally who rolled in that stage. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Tactical Command* | Once per mission, when this operative rolls a natural `1`, convert it into a **Success** instead of taking Backfire damage. |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *War Hero* *(+3 VPs)* | All allies in this operative's squad gain **+1 temporary static die** during Phase 1 in `[Combat]` stages. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-ascendant",
+    "title": "Ascendant Bio-Tech",
+    "component_type": "faction",
+    "category": "biotech_medicine",
+    "faction": "faction-ascendant",
+    "color_hex": "#059669",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 3,
+      "effort": 2,
+      "pip": 1
+    },
+    "focus_affinity": {
+      "primary": "intel",
+      "secondary": "survival",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Cellular Scrapping",
+      "trigger": "Whenever an Ascendant agent suffers 1+ Backfire damage (1s) or drops to 0 HP; and during Med Bay recovery",
+      "effect": "Deposit +1 [EF] into your Vault whenever an Ascendant operative takes Backfire damage or hits 0 HP. Ascendant operatives lower their Infirmary Healing Die target threshold by -1 (e.g., 5+ becomes 4+)."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Dermal Plating",
+        "effect": "+1 Maximum Hit Point on this operative's sheet."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Adrenaline Surge",
+        "effect": "Whenever this character takes HP damage, immediately restore 1 spent static die back to their active pool."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Bio-Catalyst (HQ Benefit)",
+        "effect": "While resting in the Infirmary during Downtime, all other characters resting in Infirmary beds gain +1 bonus Healing Die."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Apex Specimen (+3 VPs)",
+        "effect": "Automatically survives mission failure at 1 HP; restores 1 HP to every squad member after each cleared stage. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Cellular Scrapping): Gain +1 [EF] whenever your operative takes Backfire damage or drops to 0 HP. Your operatives heal on -1 lower threshold in the Infirmary.",
+    "tags": [
+      "faction",
+      "biotech",
+      "medical",
+      "effort-engine"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_ascendant.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "A glowing toxic-emerald double-helix emblem coiled around a surgical caduceus inside a pressurized bio-containment cylinder filled with bioluminescent nutrient fluid.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-ascendant.md",
+    "body": "# Ascendant Bio-Tech\n\n*Cloning Systems, Genetic Engineering & Cyber-Medicine*\n\n* **Faction Color:** Toxic Emerald (`#059669`)\n* **Strategic Identity:** Converting physical trauma into Vault `[EF]`, superior Infirmary healing thresholds, and bio-regenerative resilience.\n* **Starting Vault Assets:** `3 [CR]` • `2 [EF]` • `1 [PIP]`\n\n---\n\n## Base Faction Power: Cellular Scrapping\n\n* **Trauma Harvesting:** Whenever an Ascendant operative suffers `1+` Backfire damage (`1s`) or drops to `0 HP`, immediately deposit **`+1 Effort [EF]`** into Ascendant's Vault.\n* **Enhanced Cellular Recovery:** Ascendant operatives improve their Infirmary Healing Die threshold by **`-1`** (healing on **`4+`** base, or **`3+`** with *Trauma Cybernetics*).\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Dermal Plating* | Permanently increases this operative's Maximum Hit Points by **`+1 HP`**. |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Adrenaline Surge* | Whenever this operative takes HP damage, immediately restore **`1 spent static die`** back to their active pool. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Bio-Catalyst* *(HQ Benefit)* | While resting in an Infirmary bed during Downtime, **all other operatives resting in beds** gain **`+1 bonus Healing Die`**. |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Apex Specimen* *(+3 VPs)* | Automatically survives mission failure at `1 HP`; restores **`1 HP` to every squad member** after each cleared stage. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-aurelius",
+    "title": "Aurelius Media & Political Lobby",
+    "component_type": "faction",
+    "category": "media_politics",
+    "faction": "faction-aurelius",
+    "color_hex": "#4F46E5",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 4,
+      "effort": 1,
+      "pip": 2
+    },
+    "focus_affinity": {
+      "primary": "negotiate",
+      "secondary": "infiltrate",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Media Spin",
+      "trigger": "At the conclusion of a successful mission or Stand-Down round",
+      "effect": "Spend 2 [EF] to convert 1 [LOY] on any of your operatives into +1 [PIP], OR convert 1 [PIP] into +3 [CR]."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Silver Tongue",
+        "effect": "Treat [Negotiate] as a Secondary Focus (4+) if currently Out of Focus (5+)."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — PR Campaign",
+        "effect": "Whenever this character clears a stage as Specialist, Aurelius gains +1 [CR] from news royalties."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Crisis Management (Squad Benefit)",
+        "effect": "Once per mission, if a stage fails while this character is deployed, prevent the loss of Faction [PIP] and reduce any Doom Tracker penalty by 1."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Global Icon (+3 VPs)",
+        "effect": "Earn double [PIP] payouts whenever Aurelius completes a mission with this character as Squad Leader. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Media Spin): After a mission or Stand-Down, spend 2 [EF] to convert 1 [LOY] into +1 [PIP], or convert 1 [PIP] into +3 [CR].",
+    "tags": [
+      "faction",
+      "negotiate",
+      "pip",
+      "media"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_aurelius.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "A luminous broadcasting-indigo corporate crest shaped like an orbital satellite dish projecting concentric signal waves around a stylized globe inside a high-tech media control room.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-aurelius.md",
+    "body": "# Aurelius Media & Political Lobby\n\n*Corporate News Network & Public Relations Monolith*\n\n* **Faction Color:** Broadcasting Indigo (`#4F46E5`)\n* **Strategic Identity:** Political Influence (`[PIP]`) arbitrage, `[Negotiate]` dominance, and shielding the squad from political/Doom fallout on failed stages.\n* **Starting Vault Assets:** `4 [CR]` • `1 [EF]` • `2 [PIP]`\n\n---\n\n## Base Faction Power: Media Spin\n\nAt the conclusion of a successful mission or a Stand-Down round (during Step 1 of HQ Downtime), Aurelius may spend **`2 Effort [EF]`** from their Vault to execute one of the following conversions:\n* Convert **`1 [LOY]`** from any Aurelius operative into **`+1 [PIP]`** on your Faction Dashboard; **OR**\n* Convert **`1 [PIP]`** from your Faction Dashboard into **`+3 Credits [CR]`**.\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Silver Tongue* | Treat `[Negotiate]` as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *PR Campaign* | Whenever this operative participates in clearing a stage as a Phase 1 Specialist, Aurelius gains **`+1 [CR]`** from broadcast royalties. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Crisis Management* *(Squad)* | Once per mission, if a stage or mission fails while this operative is deployed, prevent all Faction `[PIP]` losses and reduce any `[DOOM]` penalty by `1`. |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Global Icon* *(+3 VPs)* | Earn **double `[PIP]` payouts** whenever Aurelius completes a mission with this operative serving as Squad Leader. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-ironclad",
+    "title": "Ironclad Extraction Scavengers",
+    "component_type": "faction",
+    "category": "salvage_survival",
+    "faction": "faction-ironclad",
+    "color_hex": "#92400E",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 4,
+      "effort": 1,
+      "pip": 1
+    },
+    "focus_affinity": {
+      "primary": "survival",
+      "secondary": "operations",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Vulture Salvage",
+      "trigger": "Whenever a stage is failed by the squad OR when an operative discards/burns an Item",
+      "effect": "Ironclad gains +2 [CR] whenever a stage fails or an item is discarded/consumed. Ironclad can buy discarded items from the scrap pile at half price (rounded up) during Downtime."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Rigged Gear",
+        "effect": "Treat [Survival] as a Secondary Focus (4+) if currently Out of Focus (5+)."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Field Reclamation (Squad Benefit)",
+        "effect": "When an ally uses/discards a Consumable item, this character can roll 1 die; on a 4+, reclaim the item back into inventory instead of discarding it."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Ablative Armor (Squad Benefit)",
+        "effect": "When a stage fails, this character salvages +2 [CR] for Ironclad and shields 1 ally from taking HP damage."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Scrap Monarch (+3 VPs)",
+        "effect": "All squad members gain +1 Wearable/Armor Slot; consumable items used by any squad member have a 50% (4+) chance to not be consumed. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Vulture Salvage): Gain +2 [CR] whenever a stage fails or an item is burned/discarded. Buy discarded scrap items at half price during Downtime.",
+    "tags": [
+      "faction",
+      "survival",
+      "salvage",
+      "consumables"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_ironclad.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "A weathered rust-bronze industrial claw emblem clamping onto a salvaged reactor core, stenciled onto pitted hull plating with welding sparks flying in the background.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-ironclad.md",
+    "body": "# Ironclad Extraction Scavengers\n\n*Deep-Space Mining, Wreck Salvage & Vulture Operations*\n\n* **Faction Color:** Rust Bronze (`#92400E`)\n* **Strategic Identity:** Profiting from stage failures and expended consumables, recycling squad gear, and mastering `[Survival]` environments.\n* **Starting Vault Assets:** `4 [CR]` • `1 [EF]` • `1 [PIP]`\n\n---\n\n## Base Faction Power: Vulture Salvage\n\n* **Scrap Harvesting:** Whenever a stage is **failed** by the squad OR whenever an operative **discards/consumes an Item card**, Ironclad harvests **`+2 Credits [CR]`** from the bank (once per trigger event).\n* **Scrapyard Procurement:** During Step 6 (Quartermaster) of HQ Downtime, Ironclad may purchase discarded/destroyed items from the scrap pile at **half `[CR]` cost** (rounded up).\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Rigged Gear* | Treat `[Survival]` as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Field Reclamation* *(Squad)* | Whenever any squad member uses a Consumable item, roll 1 d6; on a **`4+`**, reclaim the card back into inventory instead of discarding it. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Ablative Armor* *(Squad)* | When a stage fails, this operative salvages **`+2 [CR]`** for Ironclad and shields **1 ally from taking Stage Failure HP damage**. |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Scrap Monarch* *(+3 VPs)* | All squad members gain **+1 extra Wearable/Consumable slot**; all consumables used by the squad recycle on a `4+`. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-nexus",
+    "title": "Nexus Cybernetics & Data",
+    "component_type": "faction",
+    "category": "technocratic_intel",
+    "faction": "faction-nexus",
+    "color_hex": "#00BCD4",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 3,
+      "effort": 2,
+      "pip": 1
+    },
+    "focus_affinity": {
+      "primary": "intel",
+      "secondary": "operations",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Deep-Data Synthesis",
+      "trigger": "Activate during Step 1 (Briefing) of an [Intel] or [Operations] stage",
+      "effect": "Spend 1 [EF] to look at the top 2 cards of the Stage Modifier deck and place them back in any order. If the room is cleared, gain +2 [CR]."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Sub-Routine Bypass",
+        "effect": "Treat [Operations] as a Secondary Focus (4+) if currently Out of Focus (5+)."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Telemetry Relay (Squad Benefit)",
+        "effect": "When this character clears an [Intel] stage as Specialist, reduce the Target Difficulty of the next stage on the brief by -1 Success (min 1) for the whole squad."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Mainframe Override",
+        "effect": "Once per mission, during Step 1 (Briefing), swap the room's current Focus category to [Intel] or [Operations] without spending Effort."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Neural Apex (+3 VPs)",
+        "effect": "While deployed, all squad members treat [Intel] and [Operations] as Primary Focus (3+). Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Deep-Data Synthesis): Spend 1 [EF] during Briefing of an [Intel] or [Operations] stage to reorder top 2 Stage Modifiers; gain +2 [CR] on stage clear.",
+    "tags": [
+      "faction",
+      "intel",
+      "operations",
+      "telemetry"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_nexus.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "A sleek neon-cyan holographic neural lattice emblem hovering inside a dark clean-room server core, with fiber-optic data streams converging into a stylized cybernetic iris.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-nexus.md",
+    "body": "# Nexus Cybernetics & Data\n\n*Technocratic Intelligence Collective & Systems Architecture*\n\n* **Faction Color:** Neon Cyan (`#00BCD4`)\n* **Strategic Identity:** Stage Modifier manipulation, `[Intel]` and `[Operations]` mastery, and converting technical clearances into liquid `[CR]`.\n* **Starting Vault Assets:** `3 [CR]` • `2 [EF]` • `1 [PIP]`\n\n---\n\n## Base Faction Power: Deep-Data Synthesis\n\nActivate during **Step 1 (Briefing)** of an `[Intel]` or `[Operations]` stage. Spend **`1 Effort [EF]`** from your Vault to look at the top 2 cards of the Stage Modifier deck and place them back in any order. If the stage is successfully cleared, Nexus gains **`+2 Credits [CR]`**.\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Sub-Routine Bypass* | Treat `[Operations]` as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Telemetry Relay* *(Squad)* | When this operative clears an `[Intel]` stage as a Specialist, reduce the Target Difficulty of the next stage on the brief by **`-1 Success`** (min 1) for the whole squad. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Mainframe Override* | Once per mission, during Step 1 (Briefing), swap the room's active Focus to `[Intel]` or `[Operations]` for free (`0 [EF]`). |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Neural Apex* *(+3 VPs)* | While deployed, all squad members treat `[Intel]` and `[Operations]` as **Primary Focus (`3+`)**. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-obsidian",
+    "title": "Obsidian Syndicate",
+    "component_type": "faction",
+    "category": "espionage_covert",
+    "faction": "faction-obsidian",
+    "color_hex": "#1C1917",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 3,
+      "effort": 1,
+      "pip": 2
+    },
+    "focus_affinity": {
+      "primary": "infiltrate",
+      "secondary": "intel",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Black Budget",
+      "trigger": "During Step 7 (Boardroom) of HQ Downtime",
+      "effect": "Draw 1 extra Open Agenda and 1 extra Faction Perk. Choose 1 to keep (ignoring Boardroom capacity limits for the next drop) and discard the other."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Shadow Walk",
+        "effect": "Treat [Infiltrate] as a Secondary Focus (4+) if currently Out of Focus (5+)."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Counter-Surveillance (Squad Benefit)",
+        "effect": "When this character is deployed, the entire squad ignores negative Stage Modifiers during [Infiltrate] stages."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Deep Cover",
+        "effect": "Completing an Open Agenda with this character deployed grants +1 [EF] directly to Obsidian's Vault."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Shadow Director (+3 VPs)",
+        "effect": "Draw 2 Secret Objectives and keep both; while deployed, all squad stealth/[Infiltrate] checks gain +1 automatic Success. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Black Budget): During Boardroom step, draw 1 extra Open Agenda and 1 extra Perk; keep 1 beyond standard Boardroom slot limits.",
+    "tags": [
+      "faction",
+      "infiltrate",
+      "agendas",
+      "stealth"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_obsidian.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "A razor-sharp matte-obsidian geometric monolith emblem fractured with faint violet light seams, emerging from deep shadow inside a covert black-site briefing room.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-obsidian.md",
+    "body": "# Obsidian Syndicate\n\n*Black-Ops Espionage & Covert Network*\n\n* **Faction Color:** Matte Obsidian (`#1C1917`)\n* **Strategic Identity:** Covert `[Infiltrate]` supremacy, breaking Boardroom Agenda/Perk capacity limits, and hidden endgame scoring.\n* **Starting Vault Assets:** `3 [CR]` • `1 [EF]` • `2 [PIP]`\n\n---\n\n## Base Faction Power: Black Budget\n\nDuring **Step 7 (Boardroom Politics)** of HQ Downtime, Obsidian draws **1 extra Open Agenda** and **1 extra Faction Perk**. Choose **1** of those drawn cards to keep active for the upcoming mission drop (**ignoring standard Boardroom slot capacity limits**) and discard the other.\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Shadow Walk* | Treat `[Infiltrate]` as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Counter-Surveillance* *(Squad)* | While this operative is deployed, the **entire squad ignores negative Stage Modifiers** during `[Infiltrate]` stages. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Deep Cover* | Whenever Obsidian completes an Open Agenda while this operative is deployed, deposit **`+1 [EF]`** into Obsidian's Vault. |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Shadow Director* *(+3 VPs)* | Draw 1 additional **Secret Objective** and score both at endgame; while deployed, all `[Infiltrate]` stages gain **+1 automatic Success**. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-titan",
+    "title": "Titan Heavy Logistics",
+    "component_type": "faction",
+    "category": "orbital_logistics",
+    "faction": "faction-titan",
+    "color_hex": "#D97706",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 4,
+      "effort": 2,
+      "pip": 1
+    },
+    "focus_affinity": {
+      "primary": "operations",
+      "secondary": "combat",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Orbital Munitions Resupply",
+      "trigger": "Activate during any Transition Step between stages",
+      "effect": "Spend 2 [EF] to immediately grant +1 static die back to the active pools of every deployed operative on the squad."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Deep Pockets",
+        "effect": "Can carry +1 extra Consumable item beyond standard inventory limits."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Heavy Drop Specialist",
+        "effect": "When Titan triggers Orbital Munitions Resupply, this character restores +2 static dice instead of +1."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Field Quartermaster (Squad Benefit)",
+        "effect": "Once per mission, during a Transition Step, restore 1 spent static die to every squad member for free (0 [EF] cost)."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Logistics Paragon (+3 VPs)",
+        "effect": "Active static dice pools across the entire squad can never drop below 2 dice during any stage. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Orbital Munitions Resupply): Spend 2 [EF] during any Transition Step to restore +1 spent static die to every deployed operative on the squad.",
+    "tags": [
+      "faction",
+      "operations",
+      "logistics",
+      "dice-refresh"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_titan.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "An industrial hazard-amber corporate emblem featuring a heavy orbital drop-pod descending through atmospheric plasma inside a colossal mechanized cargo bay.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-titan.md",
+    "body": "# Titan Heavy Logistics\n\n*Orbital Supply Chain & Industrial Hardware Conglomerate*\n\n* **Faction Color:** Industrial Amber (`#D97706`)\n* **Strategic Identity:** Squad-wide static dice replenishment, extra consumable capacity, and acting as the strike team's logistical backbone even when not serving as Squad Leader.\n* **Starting Vault Assets:** `4 [CR]` • `2 [EF]` • `1 [PIP]`\n\n---\n\n## Base Faction Power: Orbital Munitions Resupply\n\nActivate during any **Transition Step** between stages (regardless of whether Titan holds the Squad Leader title). Spend **`2 Effort [EF]`** from Titan's Vault to immediately restore **`+1 spent static die`** back to the active pools of **every deployed operative on the squad**.\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Deep Pockets* | This operative can carry **+1 extra Consumable item** beyond standard inventory slot limits. |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Heavy Drop Specialist* | Whenever Titan triggers *Orbital Munitions Resupply*, this operative restores **`+2 spent static dice`** instead of `+1`. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Field Quartermaster* *(Squad)* | Once per mission, during a Transition Step, restore **`1 spent static die` to every squad member** for free (`0 [EF]` cost). |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Logistics Paragon* *(+3 VPs)* | While deployed, active static dice pools across the **entire squad** can never drop below `2 dice`. Worth **`+3 [VP]`** at end of campaign. |"
+  },
+  {
+    "id": "faction-vanderbilt",
+    "title": "Vanderbilt Sovereign Group",
+    "component_type": "faction",
+    "category": "venture_monopoly",
+    "faction": "faction-vanderbilt",
+    "color_hex": "#C5A059",
+    "tier": 1,
+    "deck_copies": 1,
+    "cost": {
+      "credits": 0,
+      "effort": 0,
+      "pip": 0
+    },
+    "starting_assets": {
+      "credits": 6,
+      "effort": 0,
+      "pip": 2
+    },
+    "focus_affinity": {
+      "primary": "negotiate",
+      "secondary": "intel",
+      "bridges": []
+    },
+    "base_power": {
+      "name": "Hostile Buyout",
+      "trigger": "During HQ Sponsorship and Command Auctions",
+      "effect": "When Vanderbilt sponsors an HQ Module, receive a 1 [CR] rebate. In the Command Auction, Vanderbilt may spend 1 [CR] to force any rival bidder to match with +2 [CR] or forfeit."
+    },
+    "loyalty_tiers": {
+      "tier_1": {
+        "loyalty_required": 1,
+        "title": "Contractor — Corporate Subsidy",
+        "effect": "The purchase cost of gear equipped to this character is reduced by -1 [CR] (minimum 1 [CR])."
+      },
+      "tier_2": {
+        "loyalty_required": 3,
+        "title": "Veteran — Golden Parachute (Squad Benefit)",
+        "effect": "When this character serves as Squad Leader, refund 1 [CR] spent during the Command Auction back to Vanderbilt's Vault upon mission completion."
+      },
+      "tier_3": {
+        "loyalty_required": 6,
+        "title": "Operative — Dividends Engine",
+        "effect": "Every time this character participates in a cleared stage, deposit +1 [CR] into Vanderbilt's Vault."
+      },
+      "tier_4": {
+        "loyalty_required": 10,
+        "title": "Corporate Icon — Board Chair (+3 VPs)",
+        "effect": "When deployed, every player on the squad may re-roll one failed die per stage. Awards +3 [VP] at end-of-game."
+      }
+    },
+    "rules_text": "Base Power (Hostile Buyout): Receive a 1 [CR] rebate on HQ Module sponsorships. Spend 1 [CR] in Command Auctions to force rivals to pay +2 [CR] or fold.",
+    "tags": [
+      "faction",
+      "negotiate",
+      "credits",
+      "auctions"
+    ],
+    "art_spec": {
+      "asset_path": "/assets/factions/faction_vanderbilt.webp",
+      "aspect_ratio": "70:120",
+      "visual_description": "An opulent gilded-brass and black-marble corporate sigil featuring a stylized sovereign crown integrated with rising financial ticker bars inside a penthouse boardroom overlooking an orbital skyline.",
+      "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+    },
+    "source_path": "game/factions/faction-vanderbilt.md",
+    "body": "# Vanderbilt Sovereign Group\n\n*Venture Capital Syndicate & Monopoly Holdings*\n\n* **Faction Color:** Gilded Brass (`#C5A059`)\n* **Strategic Identity:** Liquid `[CR]` monopoly, HQ infrastructure rebates, and pricing rivals out of Command Auctions.\n* **Starting Vault Assets:** `6 [CR]` • `0 [EF]` • `2 [PIP]`\n\n---\n\n## Base Faction Power: Hostile Buyout\n\n* **Infrastructure Rebate:** Whenever Vanderbilt sponsors an HQ Facility Module or Standalone Landmark, immediately receive a **`1 Credit [CR]` rebate** from the supply bank.\n* **Auction Squeeze:** During the Command Auction, Vanderbilt may spend **`1 [CR]`** to force any rival bidder to outbid by **`+2 [CR]`** (instead of `+1 [CR]`) or immediately forfeit their bid.\n\n---\n\n## Operative Loyalty Progression Tree\n\n| Loyalty Tier | Required `[LOY]` | Rank & Ability Name | Mechanical Effect |\n| :--- | :---: | :--- | :--- |\n| **Tier 1** | `1 [LOY]` | **Contractor:** *Corporate Subsidy* | Quartermaster gear purchased for and immediately equipped to this operative costs **`-1 [CR]`** (minimum `1 [CR]`). |\n| **Tier 2** | `3 [LOY]` | **Veteran:** *Golden Parachute* *(Squad)* | When this operative serves as **Squad Leader**, refund **`1 [CR]`** spent during the Command Auction back to Vanderbilt's Vault upon mission completion. |\n| **Tier 3** | `6 [LOY]` | **Operative:** *Dividends Engine* | Every time this operative commits at least 1 die to a cleared stage, deposit **`+1 [CR]`** into Vanderbilt's Vault. |\n| **Tier 4** | `10+ [LOY]` | **Corporate Icon:** *Board Chair* *(+3 VPs)* | While deployed, **every operative on the squad** may re-roll 1 failed die per stage. Worth **`+3 [VP]`** at end of campaign. |"
+  }
+]
