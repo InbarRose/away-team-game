@@ -24,7 +24,7 @@ stats:
     - "complex"
   armor_buffer: null
 rules_text: "Security Bridge (Passive): Bridges [Operations] checks to Secondary Focus (4+) if your character is Out-of-Focus. System Override (Active Cost): Spend [1 EF] from your Faction Vault during an [Operations] check to treat your roll as Primary Focus (3+) and ignore 1 natural failure face."
-active_ability: "System Override — Cost: Spend 1 Vault Effort [EF] during an [Operations] check. Effect: Treat your roll as Primary Focus (3+) and ignore 1 natural failure face."
+active_ability: "System Override — Cost: Spend 1 Vault [EF] during an [Operations] check. Effect: Treat your roll as Primary Focus (3+) and ignore 1 natural failure face."
 tags:
   - "complex"
   - "tier-1"

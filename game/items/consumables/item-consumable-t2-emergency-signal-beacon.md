@@ -23,7 +23,7 @@ stats:
     - "consumable"
   armor_buffer: null
 rules_text: "Supply Drop (Single-Use Consumable — Step 1 Briefing): Restores up to 2 spent static dice per character across the entire squad without spending [EF] from the Vault."
-active_ability: "Supply Drop — Activation: Step 1 (Briefing, Single-Use). Effect: Restores up to 2 spent static dice per character across the entire squad without spending Vault Effort [EF]."
+active_ability: "Supply Drop — Activation: Step 1 (Briefing, Single-Use). Effect: Restores up to 2 spent static dice per character across the entire squad without spending Vault [EF]."
 tags:
   - "consumable"
   - "tier-2"

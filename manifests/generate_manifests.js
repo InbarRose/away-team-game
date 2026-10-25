@@ -2,9 +2,9 @@
 /**
  * AWAY TEAM — Automated Component & Art Manifest Exporter
  * -------------------------------------------------------
- * Crawls all Markdown files under /game/, extracts and validates YAML frontmatter
- * and Markdown body content, and outputs structured JSON manifests under /manifests/exports/
- * (plus /src/data/ for the Wiki & VTT web application).
+ * Crawls all Markdown files under /game/ (and internal /docs/design/), extracts
+ * and validates YAML frontmatter and Markdown body content, and outputs structured
+ * JSON manifests under /manifests/exports/ (plus /src/data/ for the Wiki & VTT web application).
  */
 
 import fs from 'node:fs';
@@ -15,6 +15,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const ROOT_DIR = path.resolve(__dirname, '..');
 const GAME_DIR = path.join(ROOT_DIR, 'game');
+const DESIGN_DIR = path.join(ROOT_DIR, 'docs', 'design');
 const EXPORTS_DIR = path.join(__dirname, 'exports');
 const SRC_DATA_DIR = path.join(ROOT_DIR, 'src', 'data');
 
@@ -82,7 +83,6 @@ function parseYamlLines(lines, startIndex = 0, baseIndent = 0) {
         result.push(sub.value);
         i = sub.nextIndex;
       } else if (afterDash.includes(':') && !afterDash.startsWith('"') && !afterDash.startsWith("'")) {
-        // Inline object start inside array item: "- tier: 1"
         const colonIdx = afterDash.indexOf(':');
         const key = afterDash.slice(0, colonIdx).trim();
         const restVal = afterDash.slice(colonIdx + 1).trim();
@@ -95,7 +95,6 @@ function parseYamlLines(lines, startIndex = 0, baseIndent = 0) {
           itemObj[key] = parseScalar(restVal);
           i++;
         }
-        // Check subsequent keys at indent + 2
         while (i < lines.length) {
           const nextRaw = lines[i];
           if (!nextRaw.trim() || nextRaw.trim().startsWith('#')) {
@@ -226,6 +225,8 @@ function main() {
         id: `core-${slug.replace(/_/g, '-')}`,
         slug,
         title: data.title || (titleMatch ? titleMatch[1].trim() : slug),
+        order: data.order ?? 99,
+        summary: data.summary || '',
         source_path: relPath,
         body: content,
       });
@@ -252,6 +253,32 @@ function main() {
       source_path: relPath,
       body: content,
     });
+  }
+
+  // Sort core rules by order
+  coreRules.sort((a, b) => a.order - b.order);
+
+  // Scan internal design documentation from /docs/design/
+  const designDocs = [];
+  if (fs.existsSync(DESIGN_DIR)) {
+    const designFiles = walkMarkdownFiles(DESIGN_DIR);
+    for (const filePath of designFiles) {
+      const relPath = path.relative(ROOT_DIR, filePath).replace(/\\/g, '/');
+      const raw = fs.readFileSync(filePath, 'utf8');
+      const { data, content } = parseMarkdownFile(raw);
+      const slug = path.basename(filePath, '.md');
+      const titleMatch = content.match(/^#\s+(.+)$/m);
+      designDocs.push({
+        id: data.id || `design-${slug.replace(/_/g, '-')}`,
+        slug,
+        title: data.title || (titleMatch ? titleMatch[1].trim() : slug),
+        order: data.order ?? 99,
+        summary: data.summary || '',
+        source_path: relPath,
+        body: content,
+      });
+    }
+    designDocs.sort((a, b) => a.order - b.order);
   }
 
   // Build image generation manifest
@@ -297,6 +324,7 @@ function main() {
   writeJson(EXPORTS_DIR, 'all_components.json', allComponents);
   writeJson(EXPORTS_DIR, 'image_generation_manifest.json', imageGenerationManifest);
   writeJson(EXPORTS_DIR, 'core_rules.json', coreRules);
+  writeJson(EXPORTS_DIR, 'design_docs.json', designDocs);
 
   for (const [key, list] of Object.entries(byCategory)) {
     writeJson(EXPORTS_DIR, `${key}.json`, list);
@@ -305,6 +333,7 @@ function main() {
   // Also write combined bundle into src/data/ for Astro/React Wiki & VTT
   writeJson(SRC_DATA_DIR, 'all_components.json', allComponents);
   writeJson(SRC_DATA_DIR, 'core_rules.json', coreRules);
+  writeJson(SRC_DATA_DIR, 'design_docs.json', designDocs);
   writeJson(SRC_DATA_DIR, 'image_generation_manifest.json', imageGenerationManifest);
 
   // Sync /assets/ directory to /public/assets/ so static icons & card art resolve at /assets/...
@@ -318,6 +347,7 @@ function main() {
   console.log(' AWAY TEAM MANIFEST GENERATOR SUMMARY');
   console.log('====================================================');
   console.log(`Core Rulebook Chapters : ${coreRules.length}`);
+  console.log(`Internal Design Docs   : ${designDocs.length}`);
   console.log(`Total Game Components  : ${allComponents.length}`);
   for (const [key, list] of Object.entries(byCategory)) {
     console.log(`  - ${key.padEnd(22)} : ${list.length}`);

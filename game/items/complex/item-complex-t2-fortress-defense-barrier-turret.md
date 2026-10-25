@@ -23,7 +23,7 @@ stats:
     - "complex"
   armor_buffer: 2
 rules_text: "Deployment (Step 1 Briefing): Deploy during Step 1 (Briefing) of any stage to add +3 temporary static dice to the squad pool for that stage (remains deployed for 2 stages before running out of power). Shield Projection (Active Cost — Step 4 Resolution): Spend [1 EF] from your Vault to have the turret's barrier absorb up to 2 points of HP damage suffered by any squad members in the room."
-active_ability: "Shield Projection — Cost: Spend 1 Vault Effort [EF] during Step 4 (Resolution). Effect: Absorb up to 2 points of HP damage suffered by any squad members in the room. Turret persists across 2 consecutive stages."
+active_ability: "Shield Projection — Cost: Spend 1 Vault [EF] during Step 4 (Resolution). Effect: Absorb up to 2 points of HP damage suffered by any squad members in the room. Turret persists across 2 consecutive stages."
 tags:
   - "complex"
   - "tier-2"

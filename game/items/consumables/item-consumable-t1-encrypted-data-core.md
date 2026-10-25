@@ -23,7 +23,7 @@ stats:
     - "consumable"
   armor_buffer: null
 rules_text: "Data Extraction (Single-Use Consumable — Step 4 Resolution): Consume immediately after clearing a stage with Momentum [MOM] (+2 or higher above Target Difficulty) to deposit [+1 CR] AND [+1 EF] into your Faction Vault."
-active_ability: "Data Extraction — Activation: Step 4 (Resolution after clearing a stage with Momentum +2 or higher, Single-Use). Effect: Deposit +1 Credit [CR] AND +1 Effort [EF] into your Faction Vault."
+active_ability: "Data Extraction — Activation: Step 4 (Resolution after clearing a stage with Momentum +2 or higher, Single-Use). Effect: Deposit [+1 CR] AND [+1 EF] into your Faction Vault."
 tags:
   - "consumable"
   - "tier-1"

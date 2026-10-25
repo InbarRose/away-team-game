@@ -24,7 +24,7 @@ stats:
     - "body"
   armor_buffer: null
 rules_text: "Fortified Core (Passive): Gain +1 Maximum Hit Point AND +1 Permanent Static Die across all rolls. Harmonic Shielding (Active): During Step 3 (Commitment), spend [1 EF] per protected ally to render those specific squad members completely immune to Backfire (1s) damage for that stage roll."
-active_ability: "Harmonic Shielding — Cost: Spend 1 Effort [EF] per protected ally during Step 3 (Commitment). Effect: Render each paid squad member completely immune to Backfire (natural 1s) damage for that stage roll."
+active_ability: "Harmonic Shielding — Cost: Spend [1 EF] per protected ally during Step 3 (Commitment). Effect: Render each paid squad member completely immune to Backfire (natural 1s) damage for that stage roll."
 tags:
   - "multi-slot"
   - "tier-2"

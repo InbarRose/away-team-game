@@ -39,7 +39,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "infiltrate"
       target_difficulty: 4
-      cost: "0 Effort (Standard Bypass)"
+      cost: "[0 EF] (Standard Bypass)"
       description: "Slip through rooftop fire escapes unseen to bypass the syndicate lookouts."
     failure_penalty: "Alarm raised! Stage 2 Target Difficulty escalates by +1 Success."
   - stage_number: 2

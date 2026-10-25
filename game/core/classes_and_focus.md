@@ -119,16 +119,16 @@ Across the 6 classes, Focus pairings are mathematically distributed into **11 Pr
 
 > [!TIP]
 > **Scientist vs. Diplomat in Step 1:**
-> * **Scientist (*Dual-Vector Mapping*, `[1 EF]`):** Best when your squad has a dedicated Specialist in a *second* Focus (e.g., adding `[Intel]` to a `[Combat]` stage so your Scientist and Cryptologist can roll at `3+` in Phase 1 alongside your Soldiers).
-> * **Diplomat (*Strategic Alignment*, `[1 EF]`):** Best when the squad enters a niche Tier 3 hazard (`[Survival]` or `[Negotiate]`) where *nobody* holds Primary Focus—instantly lifting all Out-of-Focus (`5+`) teammates up to Secondary Focus (`4+`).
+> * **Scientist (*Dual-Vector Mapping*, `[1 EF]`):** Best when your squad has a dedicated Specialist in a *second* Focus (e.g., adding [Intel] to a [Combat] stage so your Scientist and Cryptologist can roll at `3+` in Phase 1 alongside your Soldiers).
+> * **Diplomat (*Strategic Alignment*, `[1 EF]`):** Best when the squad enters a niche Tier 3 hazard ([Survival] or [Negotiate]) where *nobody* holds Primary Focus—instantly lifting all Out-of-Focus (`5+`) teammates up to Secondary Focus (`4+`).
 
 > [!EXAMPLE]
 > **Example of Play — Combining *Dual-Vector Mapping* with Phase 1 Initiative:**
-> 1. The squad enters **Sub-Level Mainframe** (`[Intel]`, Target Difficulty $D = 5$). Only **The Virologist** (Scientist) has Primary `[Intel]` (`3+`); **The Commander** and **The Breacher** have Primary `[Combat]` (`3+`) and are Out of Focus (`5+`) in `[Intel]`.
-> 2. During **Step 1 (Briefing)**, the Virologist's Faction spends `[1 EF]` to activate **Dual-Vector Mapping**, adding `[Combat]` as a **concurrent Operational Focus** for the room (`[Intel]` + `[Combat]`).
-> 3. Now, in **Step 2 (Phase 1 — The Specialists)**, The Virologist (Primary `[Intel]` `3+`), The Commander (Primary `[Combat]` `3+`), and The Breacher (Primary `[Combat]` `3+`) **all act in Phase 1 at a `3+` threshold**, turning a desperate Out-of-Focus bottleneck into an effortless Phase 1 sweep!
+> 1. The squad enters **Sub-Level Mainframe** ([Intel], Target Difficulty $D = 5$). Only **The Virologist** (Scientist) has Primary [Intel] (`3+`); **The Commander** and **The Breacher** have Primary [Combat] (`3+`) and are Out of Focus (`5+`) in [Intel].
+> 2. During **Step 1 (Briefing)**, the Virologist's Faction spends `[1 EF]` to activate **Dual-Vector Mapping**, adding [Combat] as a **concurrent Operational Focus** for the room ([Intel] + [Combat]).
+> 3. Now, in **Step 2 (Phase 1 — The Specialists)**, The Virologist (Primary [Intel] `3+`), The Commander (Primary [Combat] `3+`), and The Breacher (Primary [Combat] `3+`) **all act in Phase 1 at a `3+` threshold**, turning a desperate Out-of-Focus bottleneck into an effortless Phase 1 sweep!
 
 > [!DIAGRAM]
 > **Figure 3.1 — The 50 / 35 / 15 Skewed Focus Pyramid & 6 Class Timing Windows**
-> * **Visual Specification:** Left side: 3-tier illuminated pyramid showing Tier 1 `[Combat]` (`50%`), Tier 2 `[Intel] / [Infiltrate] / [Negotiate]` (`35%`), and Tier 3 `[Operations] / [Survival]` (`15%`). Right side: Timeline of the 5-Step Stage Loop showing exact activation pins for Recon/Scientist/Diplomat (`Step 1 Briefing`), Soldier (`Phase 1/2 Pre-Roll`), Technician (`Post-Phase 1`), and Survivalist (`Step 4 Triage`).
+> * **Visual Specification:** Left side: 3-tier illuminated pyramid showing Tier 1 [Combat] (`50%`), Tier 2 `[Intel] / [Infiltrate] / [Negotiate]` (`35%`), and Tier 3 `[Operations] / [Survival]` (`15%`). Right side: Timeline of the 5-Step Stage Loop showing exact activation pins for Recon/Scientist/Diplomat (`Step 1 Briefing`), Soldier (`Phase 1/2 Pre-Roll`), Technician (`Post-Phase 1`), and Survivalist (`Step 4 Triage`).
 > * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_3_1_focus_pyramid_timeline.webp`

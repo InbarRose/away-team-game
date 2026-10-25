@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "While resting in the Infirmary during Downtime, all other characters resting in Infirmary beds gain +1 bonus Healing Die."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Apex Specimen (+3 VPs)"
+    title: "Corporate Icon — Apex Specimen ([+3 VP])"
     effect: "Automatically survives mission failure at 1 HP; restores 1 HP to every squad member after each cleared stage. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Cellular Scrapping): Gain [+1 EF] whenever your operative takes Backfire damage or drops to 0 HP. Your operatives heal on -1 lower threshold in the Infirmary."
 tags:

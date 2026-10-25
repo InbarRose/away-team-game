@@ -39,7 +39,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "infiltrate"
       target_difficulty: 4
-      cost: "0 Effort (Standard Bypass)"
+      cost: "[0 EF] (Standard Bypass)"
       description: "Slip unseen through neon rooftop fire escapes or frozen drainage pipes to bypass the perimeter guards."
     failure_penalty: "Security alert sounds! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success."
   - stage_number: 2
@@ -52,8 +52,8 @@ stages:
       target_difficulty: 5
       cost: "Triggers facility alarm (+1 Difficulty)"
       description: "Blow the reinforced vault or blast doors with thermal charges and fight through the security lobby."
-    failure_penalty: "Mission Failure: Internal lockdown seals the vault/lift completely. Add +1 [DOOM] to the Campaign Track. Retrying Mission 1 is permitted."
-rules_text: "Operation: Iron Dawn — Mission 1 (2 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Requires >= 1 [Combat] operative. Stage 1: Syndicate Alleyway / Outer Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Broker's Safe-Vault / Lift Terminal Control ([Operations] D4, or D5 if Stage 1 failed; Force Breach to [Combat] D5). Mission Failure adds [+1 DOOM] and triggers a Tactical Retreat (freely retriable)."
+    failure_penalty: "Mission Failure: Internal lockdown seals the vault/lift completely. Add [+1 FAIL] to the Campaign Track. Retrying Mission 1 is permitted."
+rules_text: "Operation: Iron Dawn — Mission 1 (2 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Requires >= 1 [Combat] operative. Stage 1: Syndicate Alleyway / Outer Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Broker's Safe-Vault / Lift Terminal Control ([Operations] D4, or D5 if Stage 1 failed; Force Breach to [Combat] D5). Mission Failure adds [+1 FAIL] and triggers a Tactical Retreat (freely retriable)."
 active_ability: null
 tags:
   - "mission"
@@ -85,7 +85,7 @@ This mission card supports both canonical theater variants from the *Operation: 
 * **Revised Global Macro-Arc ("Black-Market Intercept" — Neon Syndicate District):** Ascendant Bio-Tech is smuggling experimental cyber-warfare encryption drives through an underground black market. The squad deploys to an urban nightlife district to neutralize syndicate lookouts, breach the broker's secure vault, and steal the master decryption keys needed to locate Ascendant's deep-sea laboratory.
 * **Facility Incursion Variant ("Perimeter Breach" — Mountain Outpost):** The squad drops into the snow-covered mountains surrounding an unauthorized Ascendant Bio-Tech research facility to neutralize the outer watchtower checkpoint and hijack the subterranean lift terminal.
 * **Return to HQ:** Upon clearing Stage 2, the squad extracts to HQ to decipher the stolen telemetry and outfit for Mission 2.
-* **Retry Narrative:** If Stage 2 fails, internal lockdown seals the target and the squad executes a **Tactical Retreat** ([+1 DOOM]). Retrying Mission 1 launches a **Second Assault Wave** against the broker's secondary safehouse (or alerted perimeter gate).
+* **Retry Narrative:** If Stage 2 fails, internal lockdown seals the target and the squad executes a **Tactical Retreat** ([+1 FAIL]). Retrying Mission 1 launches a **Second Assault Wave** against the broker's secondary safehouse (or alerted perimeter gate).
 
 ---
 
@@ -94,7 +94,7 @@ This mission card supports both canonical theater variants from the *Operation: 
 | Stage | Stage Name | Preset Focus | Target Difficulty ($D$) | Dynamic Focus Swap Option | Stage Failure Penalty |
 | :---: | :--- | :---: | :---: | :--- | :--- |
 | **1** | **Syndicate Alleyway** *(or Outer Checkpoint)* | [Combat] | **3 Successes** | **Tactical Bypass ([Infiltrate]):** Target $D = 4$ | Alarm sounds! All deployed operatives lose **1 static die**; Stage 2 $D$ increases by **$+1$ Success**. |
-| **2** | **Broker's Safe-Vault** *(or Lift Terminal Control)* | [Operations] | **4 Successes** *(5 if S1 failed)* | **Force Breach ([Combat]):** Target $D = 5$ | **Mission Failure:** Lockdown seals target. Add **[+1 DOOM]** to Campaign Track (Retriable). |
+| **2** | **Broker's Safe-Vault** *(or Lift Terminal Control)* | [Operations] | **4 Successes** *(5 if S1 failed)* | **Force Breach ([Combat]):** Target $D = 5$ | **Mission Failure:** Lockdown seals target. Add **[+1 FAIL]** to Campaign Track (Retriable). |
 
 ---
 
@@ -124,4 +124,4 @@ This mission card supports both canonical theater variants from the *Operation: 
   * **Mission Accomplished!** Award **[6 CR]** and **[1 PIP]** (distributed per Campaign / Squad Leader rules) and advance the campaign dossier to **Mission 2**.
 * **Stage Failure Penalty (Mission Failure):**
   * Internal lockdown seals the vault/lift completely, forcing an emergency extraction empty-handed.
-  * Advance the Campaign Doom Track by **[+1 DOOM]**. If [DOOM] is below 3, the squad returns to HQ for Downtime and may retry Mission 1.
+  * Advance the Campaign Mission Failure Track by **[+1 FAIL]**. If [FAIL] is below 3, the squad returns to HQ for Downtime and may retry Mission 1.

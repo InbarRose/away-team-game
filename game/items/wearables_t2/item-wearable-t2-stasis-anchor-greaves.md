@@ -23,7 +23,7 @@ stats:
     - "legs"
   armor_buffer: null
 rules_text: "Shock Absorber: If a stage check fails, you may spend [1 EF] from your Faction Vault. If you do, completely negate all stage failure HP damage that would be suffered by this operative and 1 adjacent ally."
-active_ability: "When a stage check fails, spend 1 [EF] to negate all stage failure HP damage for this operative and 1 adjacent ally."
+active_ability: "When a stage check fails, spend [1 EF] to negate all stage failure HP damage for this operative and 1 adjacent ally."
 tags:
   - "wearable"
   - "legs"

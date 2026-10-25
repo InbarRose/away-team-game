@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "Once per mission, when this character rolls a natural 1, convert it into a Success instead of taking damage."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — War Hero (+3 VPs)"
+    title: "Corporate Icon — War Hero ([+3 VP])"
     effect: "All allies in this character's squad gain +1 temporary static die during Phase 1 in [Combat] stages. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Kinetic Reclamation): Whenever an Aegis agent generates [MOM], deposit [+1 EF] into your Vault."
 tags:

@@ -23,7 +23,7 @@ stats:
     - "complex"
   armor_buffer: null
 rules_text: "Phase Slip (Passive): Once per stage, after taking damage, roll 1 die for free; on a 4+, phase out to ignore that damage. Tactical Teleport (Active Cost): When your squad declares a Tactical Retreat, spend 1 static die AND [1 EF] from your Vault to instantly teleport the entire squad back to HQ, taking 0 damage, suffering 0 injury rolls, and salvaging 100% of collected loot."
-active_ability: "Tactical Teleport — Cost: Spend 1 Static Die AND 1 Vault Effort [EF] when declaring a Tactical Retreat. Effect: Instantly teleport the entire squad back to HQ with 0 damage, 0 injury rolls, and 100% of collected loot preserved."
+active_ability: "Tactical Teleport — Cost: Spend 1 Static Die AND 1 Vault [EF] when declaring a Tactical Retreat. Effect: Instantly teleport the entire squad back to HQ with 0 damage, 0 injury rolls, and 100% of collected loot preserved."
 tags:
   - "complex"
   - "tier-2"

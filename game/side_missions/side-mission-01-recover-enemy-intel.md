@@ -27,7 +27,7 @@ stats:
   bounty_credits: 6
   bounty_pip: 1
   bounty_effort: 0
-  bonus_bounty: "Maintain stealth through Stage 1 (via [Infiltrate] Swap) -> +3 [CR], +1 [PIP]"
+  bonus_bounty: "Maintain stealth through Stage 1 (via [Infiltrate] Swap) -> [+3 CR], [+1 PIP]"
 themes:
   - "Urban"
   - "Covert"
@@ -41,7 +41,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "infiltrate"
       target_difficulty: 4
-      cost: "0 Effort (Stealth Insertion — unlocks Bonus Stealth Bounty)"
+      cost: "[0 EF] (Stealth Insertion — unlocks Bonus Stealth Bounty)"
       description: "Shift stage to [Infiltrate] (Target D=4) to slip past the watchtower undetected and preserve the Stealth Bounty."
     failure_penalty: "Alarm Tripped! Stealth bonus bounty is failed. Every deployed operative loses 1 static die from shock, and Stage 2 and Stage 3 Target Difficulties escalate by +1 Success."
   - stage_number: 2
@@ -54,7 +54,7 @@ stages:
       target_difficulty: 5
       cost: "Triggers high facility alert (+1 Difficulty)"
       description: "Blast through the internal blast doors with breaching charges."
-    failure_penalty: "Security countermeasures trigger! Venting gas inflicts 1 point of HP damage on every deployed operative and deducts 1 [EF] from the Squad Leader's Faction Vault."
+    failure_penalty: "Security countermeasures trigger! Venting gas inflicts 1 point of HP damage on every deployed operative and deducts [1 EF] from the Squad Leader's Faction Vault."
   - stage_number: 3
     name: "The Data Vault"
     preset_focus: "intel"
@@ -139,4 +139,4 @@ A rival corporate directorate is storing unredacted black-project dossiers insid
 * **Stage Clearance:**
   * **Side-Mission Cleared!** Award **[6 CR]** and **[1 PIP]** (plus **[+3 CR]** and **[+1 PIP]** if stealth was maintained in Stage 1).
 * **Stage Failure Penalty (Mission Failure):**
-  * Anti-intrusion wipe completes! The data is permanently lost. The squad returns to HQ empty-handed without base payouts (adds [0 DOOM] unless specified otherwise by the active Campaign Dossier).
+  * Anti-intrusion wipe completes! The data is permanently lost. The squad returns to HQ empty-handed without base payouts (adds [0 FAIL] unless specified otherwise by the active Campaign Dossier).

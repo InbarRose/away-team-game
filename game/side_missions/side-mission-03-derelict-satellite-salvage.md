@@ -27,7 +27,7 @@ stats:
   bounty_credits: 6
   bounty_pip: 2
   bounty_effort: 0
-  bonus_bounty: "Spend 0 [EF] during the entire mission -> +2 [CR]"
+  bonus_bounty: "Spend [0 EF] during the entire mission -> [+2 CR]"
 themes:
   - "Space"
 stages:
@@ -50,9 +50,9 @@ stages:
       type: "tactical_bypass"
       target_focus: "operations"
       target_difficulty: 4
-      cost: "0 Effort (Terminal Hack)"
+      cost: "[0 EF] (Terminal Hack)"
       description: "Hack the drone control terminal to shut down the automated security drones remotely."
-    failure_penalty: "Electrical discharge! The Squad Leader loses 1 [EF] from their Faction Vault."
+    failure_penalty: "Electrical discharge! The Squad Leader loses [1 EF] from their Faction Vault."
   - stage_number: 3
     name: "Mainframe Core Siphon"
     preset_focus: "intel"

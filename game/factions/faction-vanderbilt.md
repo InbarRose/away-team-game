@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "Every time this character participates in a cleared stage, deposit [+1 CR] into Vanderbilt's Vault."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Board Chair (+3 VPs)"
+    title: "Corporate Icon — Board Chair ([+3 VP])"
     effect: "When deployed, every player on the squad may re-roll one failed die per stage. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Hostile Buyout): Receive a [1 CR] rebate on HQ Module sponsorships. Spend [1 CR] in Command Auctions to force rivals to pay [+2 CR] or fold."
 tags:

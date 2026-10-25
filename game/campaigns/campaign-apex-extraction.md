@@ -46,7 +46,7 @@ campaign_parameters:
     - "mission-apex-extraction-3-vip-exfiltration-escort"
     - "mission-apex-extraction-4-bioweapon-facility-decapitation"
 stages: []
-rules_text: "Hard 4-Mission Campaign Dossier. Max Doom Threshold: [4 DOOM]. Global Retry Budget: Max 2 Retries Total. Missions 2 & 3 form a linked [Continuous Drop] / [No HQ] operation ([+2 DOOM] on failure, pivoting to Target B Dr. Kaelen with a 1 Side-Mission recovery window). Upon clearing Mission 3, all Side-Missions are permanently locked out prior to Mission 4."
+rules_text: "Hard 4-Mission Campaign Dossier. Maximum Failure Limit: [4 FAIL]. Global Retry Budget: Max 2 Retries Total. Missions 2 & 3 form a linked [Continuous Drop] / [No HQ] operation ([+2 FAIL] on failure, pivoting to Target B Dr. Kaelen with a 1 Side-Mission recovery window). Upon clearing Mission 3, all Side-Missions are permanently locked out prior to Mission 4."
 active_ability: null
 tags:
   - "campaign"
@@ -87,7 +87,7 @@ art_spec:
 | :--- | :--- |
 | **Difficulty Rating** | **Medium / Hard Complex Campaign** |
 | **Sequence Length** | **4 Campaign Missions** (3 Stages in M1–M3; 4 Stages in M4) |
-| **Max Doom Threshold** | **[4 DOOM] Points** (Immediate Agency Collapse / Game Over at [4 DOOM]) |
+| **Maximum Failure Limit** | **[4 FAIL] Points** (Immediate Task Force Dissolution / Game Over at [4 FAIL]) |
 | **Global Retry Budget** | **MAX 2 RETRIES TOTAL** across the entire campaign |
 | **The Double-Mission Arc** | **Missions 2 & 3** form a linked 2-Part [Continuous Drop] / [No HQ] Operation |
 | **Side-Mission Lockout Policy** | • **Pre-Mission 2:** Side-Missions freely allowed.<br>• **Fail Mission 2 or 3:** `1 Side-Mission ALLOWED` before retrying for the Assistant (*Dr. Kaelen*).<br>• **Post-Mission 3 Success:** Side-Missions **LOCKED OUT COMPLETELY** (No side-ops between M3 and M4). |
@@ -105,7 +105,7 @@ When the squad clears Stage 3 of **Mission 2 (Black-Site Infiltration)**, they *
 ### 3.2 Failure & Retry Contingency: The "Target B" Assistant Pivot
 If the squad fails **Mission 2** OR **Mission 3**:
 * **Narrative Consequence:** Primary VIP **Dr. Elena Vance** is executed or permanently evacuated off-world by Ascendant forces.
-* **Campaign Penalty:** Advance the Doom Track by **[+2 DOOM]** and consume **`1 Campaign Retry`** from the 2-retry global budget.
+* **Campaign Penalty:** Advance the Mission Failure Track by **[+2 FAIL]** and consume **`1 Campaign Retry`** from the 2-retry global budget.
 * **Recovery Window:** Upon retreating to HQ, the squad is permitted **1 optional Side-Mission** to farm [CR], [EF], or gear and heal in the Infirmary before launching their retry.
 * **Target B Pivot:** Retrying the linked operation targets **Facility Beta** to extract Dr. Vance's lead assistant, **Dr. Kaelen**, starting at Mission 2 under heightened guard parameters.
 
@@ -116,10 +116,10 @@ Once the VIP (Dr. Vance or Dr. Kaelen) is successfully extracted at the end of M
 
 ## 4. Campaign Mission Sequence
 
-1. **[Mission 1: Signal Reconnaissance](../missions/mission-apex-extraction-1-signal-reconnaissance.md)** — 3 Stages (`Outer Gate Checkpoint` $\rightarrow$ `Patrol Bunker` $\rightarrow$ `Relay Server Vault`). Fail Penalty: [+1 DOOM].
-2. **[Mission 2: Black-Site Infiltration (Part A)](../missions/mission-apex-extraction-2-black-site-infiltration.md)** — 3 Stages (`Perimeter Guard Gate` $\rightarrow$ `Sub-Level Barracks` $\rightarrow$ `Bio-Vault Cellblock`). Links directly to M3 ([No HQ]). Fail Penalty: [+2 DOOM].
-3. **[Mission 3: VIP Exfiltration Escort (Part B)](../missions/mission-apex-extraction-3-vip-exfiltration-escort.md)** — 3 Stages (`Convoy Ambush` $\rightarrow$ `Mountain Pass Run` $\rightarrow$ `Helipad Evac Siege`). [Continuous Drop]. Fail Penalty: [+2 DOOM].
-4. **[Mission 4: Bioweapon Facility Decapitation (Climax)](../missions/mission-apex-extraction-4-bioweapon-facility-decapitation.md)** — 4 Stages (`Outer Rampart Siege` $\rightarrow$ `Reactor Core Overload` $\rightarrow$ `Executive Guard Core` $\rightarrow$ `Meltdown Evacuation`). Fail Penalty: [+1 DOOM].
+1. **[Mission 1: Signal Reconnaissance](../missions/mission-apex-extraction-1-signal-reconnaissance.md)** — 3 Stages (`Outer Gate Checkpoint` $\rightarrow$ `Patrol Bunker` $\rightarrow$ `Relay Server Vault`). Fail Penalty: [+1 FAIL].
+2. **[Mission 2: Black-Site Infiltration (Part A)](../missions/mission-apex-extraction-2-black-site-infiltration.md)** — 3 Stages (`Perimeter Guard Gate` $\rightarrow$ `Sub-Level Barracks` $\rightarrow$ `Bio-Vault Cellblock`). Links directly to M3 ([No HQ]). Fail Penalty: [+2 FAIL].
+3. **[Mission 3: VIP Exfiltration Escort (Part B)](../missions/mission-apex-extraction-3-vip-exfiltration-escort.md)** — 3 Stages (`Convoy Ambush` $\rightarrow$ `Mountain Pass Run` $\rightarrow$ `Helipad Evac Siege`). [Continuous Drop]. Fail Penalty: [+2 FAIL].
+4. **[Mission 4: Bioweapon Facility Decapitation (Climax)](../missions/mission-apex-extraction-4-bioweapon-facility-decapitation.md)** — 4 Stages (`Outer Rampart Siege` $\rightarrow$ `Reactor Core Overload` $\rightarrow$ `Executive Guard Core` $\rightarrow$ `Meltdown Evacuation`). Fail Penalty: [+1 FAIL].
 
 ---
 

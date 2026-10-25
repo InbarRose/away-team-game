@@ -24,7 +24,7 @@ stats:
     - "body"
   armor_buffer: null
 rules_text: "Gimbal Mount & Core (Passive): Gain +1 extra Hand Slot ([Hand]) AND +1 Permanent Static Die across all rolls. System Purge (Active): Once per mission drop, spend [2 EF] from your Faction Vault to instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries."
-active_ability: "System Purge — Cost: Spend 2 Vault Effort [EF] (Once per mission drop). Effect: Instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries."
+active_ability: "System Purge — Cost: Spend 2 Vault [EF] (Once per mission drop). Effect: Instantly refresh your static dice pool back to maximum capacity and heal all active trauma injuries."
 tags:
   - "multi-slot"
   - "tier-2"
