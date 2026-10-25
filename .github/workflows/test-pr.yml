@@ -1,0 +1,27 @@
+name: PR Test Suites & Schema Validation
+
+on:
+  pull_request:
+    branches: ["main", "master"]
+  push:
+    branches: ["main", "master"]
+  workflow_dispatch:
+
+jobs:
+  test-suites:
+    name: Run Manifest Generator & 4 Test Suites
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Regenerate & Validate Component Manifests
+        run: node manifests/generate_manifests.js
+
+      - name: Run Automated Test Suites (Structure, Schema, Game Math & VTT Engine)
+        run: npm test

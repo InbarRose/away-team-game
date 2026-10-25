@@ -1,0 +1,31 @@
+{
+  "name": "away-team-game",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Away Team — Semi-Cooperative Sci-Fi Board Game Rulebook Wiki, Component Database, Asset Manifest Pipeline & Virtual Tabletop (VTT)",
+  "scripts": {
+    "test": "node manifests/generate_manifests.js && node --test tests/*.test.js",
+    "start": "node manifests/serve_local.js",
+    "serve:local": "node manifests/serve_local.js",
+    "generate:manifests": "node manifests/generate_manifests.js",
+    "predev": "node manifests/generate_manifests.js",
+    "dev": "astro dev",
+    "prebuild": "node manifests/generate_manifests.js",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/react": "^3.6.2",
+    "astro": "^4.15.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^14.1.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.5",
+    "@types/react-dom": "^18.3.0",
+    "typescript": "^5.6.2"
+  }
+}

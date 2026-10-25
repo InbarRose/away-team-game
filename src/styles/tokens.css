@@ -1,0 +1,562 @@
+/* ==========================================================================
+   AWAY TEAM — SEMANTIC DESIGN TOKENS & TACTICAL HUD STYLESHEET
+   ========================================================================== */
+
+:root {
+  /* Core UI Palette — Tactical Corporate Sci-Fi Dark Mode */
+  --bg-void: #070a10;
+  --bg-primary: #0b101b;
+  --bg-elevated: #111827;
+  --bg-card: #151f32;
+  --bg-card-hover: #1b2840;
+  --bg-glass: rgba(17, 24, 39, 0.86);
+  --border-subtle: #1f2d47;
+  --border-strong: #33486e;
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #64748b;
+
+  /* 1. Six Focus Types (50/35/15 Skewed Pyramid) */
+  --focus-combat: #E03E3E;
+  --focus-combat-bg: rgba(224, 62, 62, 0.16);
+  --focus-infiltrate: #9B51E0;
+  --focus-infiltrate-bg: rgba(155, 81, 224, 0.16);
+  --focus-intel: #00A3FF;
+  --focus-intel-bg: rgba(0, 163, 255, 0.16);
+  --focus-ops: #F2994A;
+  --focus-ops-bg: rgba(242, 153, 74, 0.16);
+  --focus-negotiate: #F2C94C;
+  --focus-negotiate-bg: rgba(242, 201, 76, 0.16);
+  --focus-survival: #219653;
+  --focus-survival-bg: rgba(33, 150, 83, 0.16);
+
+  /* 2. Currencies & Operational Metrics */
+  --currency-credits: #FFD700;
+  --currency-credits-bg: rgba(255, 215, 0, 0.15);
+  --currency-effort: #00E5FF;
+  --currency-effort-bg: rgba(0, 229, 255, 0.15);
+  --currency-pip: #D63384;
+  --currency-pip-bg: rgba(214, 51, 132, 0.15);
+  --currency-loyalty: #3B82F6;
+  --currency-loyalty-bg: rgba(59, 130, 246, 0.15);
+  --currency-doom: #8B0000;
+  --currency-doom-text: #ff6b6b;
+  --currency-doom-bg: rgba(139, 0, 0, 0.28);
+  --currency-momentum: #10B981;
+  --currency-momentum-bg: rgba(16, 185, 129, 0.16);
+  --currency-vp: #F59E0B;
+  --currency-vp-bg: rgba(245, 158, 11, 0.16);
+
+  /* 3. Eight Faction Palettes */
+  --faction-aegis: #2C3E50;
+  --faction-nexus: #00BCD4;
+  --faction-vanderbilt: #C5A059;
+  --faction-obsidian: #1C1917;
+  --faction-titan: #D97706;
+  --faction-ascendant: #059669;
+  --faction-aurelius: #4F46E5;
+  --faction-ironclad: #92400E;
+
+  /* Typography */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Rajdhani', 'Orbitron', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Card Geometry */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-void);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--focus-intel);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   TOP NAVIGATION BAR
+   ========================================================================== */
+.at-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.at-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.25rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-primary);
+}
+
+.at-brand-badge {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  background: var(--currency-effort-bg);
+  color: var(--currency-effort);
+  border: 1px solid var(--currency-effort);
+}
+
+.at-nav-links {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.at-nav-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.at-nav-btn:hover,
+.at-nav-btn.active {
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border-color: var(--border-strong);
+  text-decoration: none;
+}
+
+.at-nav-btn.vtt-cta {
+  background: rgba(0, 229, 255, 0.12);
+  color: var(--currency-effort);
+  border-color: rgba(0, 229, 255, 0.45);
+}
+.at-nav-btn.vtt-cta:hover {
+  background: rgba(0, 229, 255, 0.22);
+}
+
+/* ==========================================================================
+   SEMANTIC INLINE TOKENS & BADGES
+   ========================================================================== */
+.semantic-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.28rem;
+  padding: 0.1rem 0.45rem;
+  margin: 0 0.1rem;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  vertical-align: baseline;
+  border: 1px solid currentColor;
+  white-space: nowrap;
+}
+
+.semantic-badge svg {
+  width: 12px;
+  height: 12px;
+  flex-shrink: 0;
+}
+
+.badge-focus-combat {
+  color: var(--focus-combat);
+  background: var(--focus-combat-bg);
+}
+.badge-focus-infiltrate {
+  color: var(--focus-infiltrate);
+  background: var(--focus-infiltrate-bg);
+}
+.badge-focus-intel {
+  color: var(--focus-intel);
+  background: var(--focus-intel-bg);
+}
+.badge-focus-ops,
+.badge-focus-operations {
+  color: var(--focus-ops);
+  background: var(--focus-ops-bg);
+}
+.badge-focus-negotiate {
+  color: var(--focus-negotiate);
+  background: var(--focus-negotiate-bg);
+}
+.badge-focus-survival {
+  color: var(--focus-survival);
+  background: var(--focus-survival-bg);
+}
+
+.badge-currency-cr {
+  color: var(--currency-credits);
+  background: var(--currency-credits-bg);
+}
+.badge-currency-ef {
+  color: var(--currency-effort);
+  background: var(--currency-effort-bg);
+}
+.badge-currency-pip {
+  color: var(--currency-pip);
+  background: var(--currency-pip-bg);
+}
+.badge-currency-loy {
+  color: var(--currency-loyalty);
+  background: var(--currency-loyalty-bg);
+}
+.badge-currency-doom {
+  color: var(--currency-doom-text);
+  background: var(--currency-doom-bg);
+}
+.badge-currency-mom {
+  color: var(--currency-momentum);
+  background: var(--currency-momentum-bg);
+}
+.badge-currency-vp {
+  color: var(--currency-vp);
+  background: var(--currency-vp-bg);
+}
+.badge-slot {
+  color: #cbd5e1;
+  background: rgba(148, 163, 184, 0.14);
+  border-color: rgba(148, 163, 184, 0.4);
+}
+
+/* ==========================================================================
+   COMPONENT CARD RENDERER (POKER 63:88 & TAROT 70:120)
+   ========================================================================== */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1.25rem;
+}
+
+.at-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: transform 0.16s ease, border-color 0.16s ease, box-shadow 0.16s ease;
+  position: relative;
+}
+
+.at-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-strong);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.45);
+}
+
+.at-card-header {
+  padding: 0.75rem 0.9rem;
+  background: rgba(7, 10, 16, 0.55);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.at-card-title {
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.at-card-subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: 0.2rem;
+}
+
+.at-card-cost-cluster {
+  display: flex;
+  gap: 0.3rem;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* Art Spec Blueprint Frame */
+.at-card-art-frame {
+  position: relative;
+  background: radial-gradient(circle at 50% 35%, #1d2b45 0%, #0b111e 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.75rem 0.9rem;
+  min-height: 118px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.at-card-art-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  color: var(--text-muted);
+}
+
+.at-card-art-prompt {
+  font-size: 0.76rem;
+  color: #94a3b8;
+  font-style: italic;
+  margin: 0.4rem 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.at-card-stats-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding: 0.55rem 0.9rem;
+  background: rgba(11, 16, 27, 0.7);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+}
+
+.stat-pill {
+  padding: 0.12rem 0.45rem;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.at-card-body {
+  padding: 0.85rem 0.9rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.65rem;
+  font-size: 0.85rem;
+  color: #dbe4f0;
+}
+
+.at-card-footer {
+  padding: 0.5rem 0.9rem;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(7, 10, 16, 0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   WIKI & RULEBOOK LAYOUT
+   ========================================================================== */
+.wiki-shell {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 58px);
+}
+
+@media (max-width: 960px) {
+  .wiki-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+.wiki-sidebar {
+  background: var(--bg-primary);
+  border-right: 1px solid var(--border-subtle);
+  padding: 1.25rem 1rem;
+  overflow-y: auto;
+}
+
+.wiki-main {
+  padding: 1.5rem 2rem;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.rulebook-article {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.25rem;
+  max-width: 960px;
+}
+
+.rulebook-article h1,
+.rulebook-article h2,
+.rulebook-article h3 {
+  font-family: var(--font-display);
+  letter-spacing: 0.03em;
+  color: var(--text-primary);
+}
+
+.rulebook-article h1 {
+  font-size: 1.85rem;
+  border-bottom: 2px solid var(--border-strong);
+  padding-bottom: 0.5rem;
+  margin-top: 0;
+}
+
+.rulebook-article h2 {
+  font-size: 1.35rem;
+  margin-top: 1.75rem;
+  color: var(--currency-effort);
+}
+
+.rulebook-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.88rem;
+}
+
+.rulebook-article th,
+.rulebook-article td {
+  border: 1px solid var(--border-subtle);
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+}
+
+.rulebook-article th {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+/* ==========================================================================
+   VIRTUAL TABLETOP (VTT) ENGINE STYLES
+   ========================================================================== */
+.vtt-container {
+  padding: 1.25rem 1.5rem;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.vtt-panel {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.25rem;
+}
+
+.vtt-panel-title {
+  margin: 0 0 0.85rem 0;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-primary);
+}
+
+.vtt-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1rem;
+}
+
+.vtt-btn {
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.vtt-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--currency-effort);
+}
+
+.vtt-btn-primary {
+  background: rgba(0, 229, 255, 0.16);
+  border-color: var(--currency-effort);
+  color: var(--currency-effort);
+}
+
+.vtt-btn-danger {
+  background: rgba(224, 62, 62, 0.16);
+  border-color: var(--focus-combat);
+  color: #ff8080;
+}
+
+.die-cube {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-weight: 800;
+  font-size: 1rem;
+  border: 2px solid var(--border-strong);
+  background: var(--bg-void);
+}
+
+.die-cube.hit {
+  border-color: var(--currency-momentum);
+  background: var(--currency-momentum-bg);
+  color: #34d399;
+}
+
+.die-cube.backfire {
+  border-color: var(--focus-combat);
+  background: var(--focus-combat-bg);
+  color: #ff6b6b;
+}
+
+.die-cube.miss {
+  border-color: #334155;
+  color: #64748b;
+}
