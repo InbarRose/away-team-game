@@ -37,7 +37,7 @@ To keep bookkeeping clear, **Away Team** separates **Primary Vault Currencies** 
 | :--- | :---: | :--- | :--- |
 | **Operational Momentum** | [MOM] | **In-Mission Tactical Flow** | Earned **only during an active mission** when clearing a Stage by $\ge D + 2$ successes. Immediately refunds `1 spent static die` to a participating operative and triggers Momentum-reactive powers. Never stored in the Vault; resets at mission extraction. |
 | **Loyalty** | [LOY] | **Operative Progression Reward** | Attached directly to an individual Specialist Operative card (earned by surviving missions or Martyrdom). **Cannot be spent or traded.** Reaching higher ranks (`1 / 3 / 6 / [10+ LOY]`, Tiers 1–4) permanently unlocks Faction Loyalty Tree abilities, scales Multi-Tier Perks, and awards `[2 VP]` per `[1 LOY]` at endgame. |
-| **Doom** | [DOOM] | **Meta Campaign Clock** | Global catastrophe countdown tracked on the Campaign Dossier—not on player boards. Advances (`[+1 DOOM]`) on mission failure or forced extraction; reaching Max Doom ends the campaign in a coalition loss. |
+| **Doom** | [FAIL] | **Meta Campaign Clock** | Global catastrophe countdown tracked on the Campaign Dossier—not on player boards. Advances (`[+1 FAIL]`) on mission failure or forced extraction; reaching Maximum Failure Limit ends the campaign in a coalition loss. |
 | **Victory Points** | [VP] | **Endgame Score Tracker** | Corporate supremacy score tallied at the end of the campaign (from Sponsored HQ Modules, Open Agendas, Secret Objectives, Tier 4 Icons, and Vault reserves) to crown the winning Director. |
 
 ### Earning Operative Loyalty ([LOY])
@@ -46,7 +46,7 @@ To keep bookkeeping clear, **Away Team** separates **Primary Vault Currencies** 
 3. **Milestones & Facilities:** Specific Open Agendas, Side-Missions, or the *Tactical Simulator* Landmark award bonus [LOY].
 
 ### The Law of Binding Promises
-During any Stage Briefing (Step 1) or HQ Downtime Phase, players may freely trade **[CR]**, **Armory Items**, or **immediate tactical actions** (e.g., *"Pay me `[2 CR]` now and I will activate Dual-Vector Mapping on this stage"*). Once resources change hands, promises of immediate action in the current step are **legally binding**. **[EF] and [PIP] cannot be traded between players, and [LOY], [MOM], [DOOM], and [VP] are non-currency states/trackers.**
+During any Stage Briefing (Step 1) or HQ Downtime Phase, players may freely trade **[CR]**, **Armory Items**, or **immediate tactical actions** (e.g., *"Pay me `[2 CR]` now and I will activate Dual-Vector Mapping on this stage"*). Once resources change hands, promises of immediate action in the current step are **legally binding**. **[EF] and [PIP] cannot be traded between players, and [LOY], [MOM], [FAIL], and [VP] are non-currency states/trackers.**
 
 ---
 
@@ -90,7 +90,7 @@ Before launching the next mission, players bid [CR] (minimum bid: [0 CR], resolv
   * Infirmary capacity increases by **+2 Treatment Beds** (4 beds base).
   * Every Infirmary bed gains **+2 bonus Healing Dice** (5 dice per bed).
   * The Quartermaster shop inventory completely refreshes for free.
-  * *(Note: If the active Campaign Dossier penalizes Stand-Downs with [+1 DOOM], advance the Doom Tracker accordingly).*
+  * *(Note: If the active Campaign Dossier penalizes Stand-Downs with [+1 FAIL], advance the Mission Failure Tracker accordingly).*
 
 ### Step 4 Deep-Dive: Corporate Sponsorship (HQ Upgrades)
 HQ starts with **5 Baseline Facilities** (*Infirmary*, *Quartermaster*, *Recruitment Bureau*, *Intel Array*, *Boardroom*), each offering 3 upgrade modules, plus **4 Standalone Landmark Modules**:
@@ -104,18 +104,18 @@ HQ starts with **5 Baseline Facilities** (*Infirmary*, *Quartermaster*, *Recruit
 
 > [!IMPORTANT]
 > **Golden Rule of the 4-Tier Economy — What Can and Cannot Be Traded:**
-> * **Tradeable in Binding Promises:** **Credits (`[CR]`)** and unequipped **Armory Items** (plus immediate in-step tactical actions).
-> * **Vault-Bound Currencies (Never Tradeable):** **Effort (`[EF]`)** and **Political Influence (`[PIP]`)** cannot be transferred between players (though a player can spend their own `[EF]` on an ally's behalf during a mission in exchange for `[CR]`).
-> * **Non-Currency States, Ranks & Trackers:** **Momentum (`[MOM]`)** is transient in-mission dice flow; **Loyalty (`[LOY]`)** is character-bound operative rank; **Doom (`[DOOM]`)** and **Victory Points (`[VP]`)** are macro campaign trackers. None of these four are ever stored in a Vault or spent as currencies.
+> * **Tradeable in Binding Promises:** **Credits ([CR])** and unequipped **Armory Items** (plus immediate in-step tactical actions).
+> * **Vault-Bound Currencies (Never Tradeable):** **Effort ([EF])** and **Political Influence ([PIP])** cannot be transferred between players (though a player can spend their own [EF] on an ally's behalf during a mission in exchange for [CR]).
+> * **Non-Currency States, Ranks & Trackers:** **Momentum ([MOM])** is transient in-mission dice flow; **Loyalty ([LOY])** is character-bound operative rank; **Doom ([FAIL])** and **Victory Points ([VP])** are macro campaign trackers. None of these four are ever stored in a Vault or spent as currencies.
 
 > [!EXAMPLE]
 > **Example of Play — Navigating the 8-Step HQ Downtime Phase:**
-> 1. **Step 1 (Debrief):** Returning from Mission 1, the 4 surviving operatives each gain **`[+1 LOY]`** on their character cards (the Squad Leader gains **`[+2 LOY]`** total and **`[+1 PIP]`** to their Vault). Mission bounties (`[CR]` and `[PIP]`) are deposited into Faction Vaults.
+> 1. **Step 1 (Debrief):** Returning from Mission 1, the 4 surviving operatives each gain **`[+1 LOY]`** on their character cards (the Squad Leader gains **`[+2 LOY]`** total and **`[+1 PIP]`** to their Vault). Mission bounties ([CR] and [PIP]) are deposited into Faction Vaults.
 > 2. **Step 2 (Stand-Down Auction):** With 3 operatives wounded, **Ascendant** bids `[2 CR]` for **Option B — STAND-DOWN**. No one outbids them. The Agency skips mission deployment this round, boosting the Infirmary to **4 Beds** with **5 Healing Dice each**.
 > 3. **Step 3 (Medical Recovery):** All 3 wounded operatives are assigned to beds and heal cleanly using the boosted `5-die` pools.
 > 4. **Step 4 (Corporate Sponsorship):** **Vanderbilt** pays `[4 CR]` to sponsor the **Black Market Terminal** module in the Quartermaster facility, placing their Faction Token on it and immediately gaining **`[+1 PIP]`** (`[2 VP]` value).
 
 > [!DIAGRAM]
 > **Figure 6.1 — Faction Dashboard & 4-Tier Economy Layout**
-> * **Visual Specification:** Annotated diagram of a player's physical **Faction Dashboard**. Left zone: **The Faction Vault** holding the 3 spendable currencies (`[CR]` Gold chits, `[EF]` Cyan energy cells, `[PIP]` Magenta executive seals) + Armory Cache cards. Center zone: **Active & Bench Operative Roster** with personal `[LOY]` rank tracks (`Tiers 1–4`). Top-right corner: **Endgame `[VP]` Ledger** (separated from the spendable Vault).
+> * **Visual Specification:** Annotated diagram of a player's physical **Faction Dashboard**. Left zone: **The Faction Vault** holding the 3 spendable currencies ([CR] Gold chits, [EF] Cyan energy cells, [PIP] Magenta executive seals) + Armory Cache cards. Center zone: **Active & Bench Operative Roster** with personal [LOY] rank tracks (`Tiers 1–4`). Top-right corner: **Endgame [VP] Ledger** (separated from the spendable Vault).
 > * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_6_1_faction_dashboard_anatomy.webp`

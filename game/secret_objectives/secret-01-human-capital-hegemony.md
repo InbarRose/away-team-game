@@ -21,7 +21,7 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-target_metric: "Highest collective Loyalty Points [LOY] across your living and dead roster (min 1 required)."
+target_metric: "Highest collective [LOY] across your living and dead roster (min 1 required)."
 scoring_tiers:
   first_place_vp: 15
   second_place_vp: 10

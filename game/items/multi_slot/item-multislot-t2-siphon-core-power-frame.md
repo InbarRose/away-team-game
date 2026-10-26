@@ -24,7 +24,7 @@ stats:
     - "legs"
   armor_buffer: null
 rules_text: "Auxiliary Generator (Passive): Gain +1 Permanent Static Die added to your rolling pool on all checks. Overdrive Burst (Active): Once per stage, spend 1 static die from your active pool to gain +2 Temporary [EF] that must be used immediately during the current stage check (any unused temporary Effort is lost)."
-active_ability: "Overdrive Burst — Cost: Spend 1 Static Die (Once per stage). Effect: Gain +2 Temporary Effort [EF] that must be spent immediately during the current stage check (unused temporary Effort is lost)."
+active_ability: "Overdrive Burst — Cost: Spend 1 Static Die (Once per stage). Effect: Gain +2 Temporary [EF] that must be spent immediately during the current stage check (unused temporary Effort is lost)."
 tags:
   - "multi-slot"
   - "tier-2"

@@ -35,10 +35,10 @@ loyalty_tiers:
   tier_3:
     loyalty_required: 6
     title: "Operative — Crisis Management (Squad Benefit)"
-    effect: "Once per mission, if a stage fails while this character is deployed, prevent the loss of Faction [PIP] and reduce any Doom Tracker penalty by 1."
+    effect: "Once per mission, if a stage fails while this character is deployed, prevent the loss of Faction [PIP] and reduce any Mission Failure Tracker penalty by 1."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Global Icon (+3 VPs)"
+    title: "Corporate Icon — Global Icon ([+3 VP])"
     effect: "Earn double [PIP] payouts whenever Aurelius completes a mission with this character as Squad Leader. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Media Spin): After a mission or Stand-Down, spend [2 EF] to convert [1 LOY] into [+1 PIP], or convert [1 PIP] into [+3 CR]."
 tags:
@@ -77,5 +77,5 @@ At the conclusion of a successful mission or a Stand-Down round (during Step 1 o
 | :--- | :---: | :--- | :--- |
 | **Tier 1** | [1 LOY] | **Contractor:** *Silver Tongue* | Treat [Negotiate] as a **Secondary Focus (`4+`)** if currently Out of Focus (`5+`). |
 | **Tier 2** | [3 LOY] | **Veteran:** *PR Campaign* | Whenever this operative participates in clearing a stage as a Phase 1 Specialist, Aurelius gains **[+1 CR]** from broadcast royalties. |
-| **Tier 3** | [6 LOY] | **Operative:** *Crisis Management* *(Squad)* | Once per mission, if a stage or mission fails while this operative is deployed, prevent all Faction [PIP] losses and reduce any [DOOM] penalty by `1`. |
+| **Tier 3** | [6 LOY] | **Operative:** *Crisis Management* *(Squad)* | Once per mission, if a stage or mission fails while this operative is deployed, prevent all Faction [PIP] losses and reduce any [FAIL] penalty by `1`. |
 | **Tier 4** | [10+ LOY] | **Corporate Icon:** *Global Icon* *([+3 VP])* | Earn **double [PIP] payouts** whenever Aurelius completes a mission with this operative serving as Squad Leader. Worth **[+3 VP]** at end of campaign. |

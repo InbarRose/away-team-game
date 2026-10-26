@@ -27,7 +27,7 @@ stats:
   bounty_credits: 5
   bounty_pip: 0
   bounty_effort: 2
-  bonus_bounty: "Clear Stage 2 without rolling any natural 1s (Backfires) -> +2 [CR]"
+  bonus_bounty: "Clear Stage 2 without rolling any natural 1s (Backfires) -> [+2 CR]"
 themes:
   - "Facility"
   - "Urban"
@@ -40,7 +40,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "infiltrate"
       target_difficulty: 4
-      cost: "0 Effort (Standard Bypass)"
+      cost: "[0 EF] (Standard Bypass)"
       description: "Crawl through high-voltage utility conduits to bypass the maintenance checkpoint."
     failure_penalty: "Alert tripped! Stage 2 Target Difficulty escalates by +1 Success."
   - stage_number: 2
@@ -62,7 +62,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "operations"
       target_difficulty: 4
-      cost: "0 Effort (Terminal Override)"
+      cost: "[0 EF] (Terminal Override)"
       description: "Engage emergency heat sinks via terminal overrides to vent the plasma feedback safely."
     failure_penalty: "Generator safety trip! The siphon fails; the squad extracts without base payouts."
 rules_text: "Side-Mission (Themes: [Facility], [Urban] — 3 Stages). Base Clearance Bounty: [5 CR], [2 EF] deposited directly into Vault. Bonus Bounty: Clear Stage 2 without rolling natural 1s -> [+2 CR]. Stage 1: Maintenance Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: High-Voltage Recalibration ([Operations] D4; Force Breach to [Combat] D5). Stage 3: Generator Overdrive ([Survival] D4; Bypass to [Operations] D4)."

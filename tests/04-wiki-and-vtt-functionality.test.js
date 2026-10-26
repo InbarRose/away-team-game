@@ -234,20 +234,23 @@ describe('Suite 04: Semantic Design Tokens, SVG Assets & VTT Rules Engine Functi
     assert.ok(wikiPortalSrc.includes('#/wiki/focus/'));
     assert.ok(wikiPortalSrc.includes('#/wiki/class/'));
     assert.ok(wikiPortalSrc.includes('#/wiki/concept/currencies'));
+    assert.ok(wikiPortalSrc.includes('#/wiki/design'), 'WikiPortal must support #/wiki/design route');
     assert.ok(!wikiPortalSrc.includes('✕ Close Dossier'), 'Modal popups must be replaced by dedicated Wiki pages');
 
     // 2. SemanticText includes compound quantity regex and WIKI_ENTITY_LINKS
     assert.ok(semanticSrc.includes('WIKI_ENTITY_LINKS'));
     assert.ok(semanticSrc.includes('COMPOUND_OR_TOKEN_REGEX'));
+    assert.ok(semanticSrc.includes('[FAIL]'), 'SemanticText must support [FAIL] token');
 
     // 3. Vault Economy explicitly distinguishes the 3 Primary Vault Currencies from Non-Currency States/Rewards/Trackers
     assert.ok(vaultEconomyMd.includes('Three Primary Vault Currencies'));
     assert.ok(vaultEconomyMd.includes('Non-Currency States, Rewards & Meta Trackers'));
+    assert.ok(vaultEconomyMd.includes('[FAIL]'), 'vault_economy.md must use [FAIL] token');
 
     // 4. No component rules_text or body has broken nested bold+backtick currency formatting like **+1 `[CR]`**
     for (const comp of allComponents) {
       assert.ok(
-        !/\*\*[^*`]*`\[(?:CR|EF|PIP|LOY|DOOM|MOM|VP)\]`/.test(comp.body || ''),
+        !/\*\*[^*`]*`\[(?:CR|EF|PIP|LOY|FAIL|FAILURE|DOOM|MOM|VP)\]`/.test(comp.body || ''),
         `Component ${comp.id} body contains unnormalized nested backtick currency formatting`
       );
     }

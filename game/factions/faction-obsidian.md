@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "Completing an Open Agenda with this character deployed grants [+1 EF] directly to Obsidian's Vault."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Shadow Director (+3 VPs)"
+    title: "Corporate Icon — Shadow Director ([+3 VP])"
     effect: "Draw 2 Secret Objectives and keep both; while deployed, all squad stealth/[Infiltrate] checks gain +1 automatic Success. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Black Budget): During Boardroom step, draw 1 extra Open Agenda and 1 extra Perk; keep 1 beyond standard Boardroom slot limits."
 tags:

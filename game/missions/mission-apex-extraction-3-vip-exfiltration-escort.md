@@ -39,7 +39,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "survival"
       target_difficulty: 4
-      cost: "1 Effort from Squad Leader's Vault"
+      cost: "[1 EF] from Squad Leader's Vault"
       description: "Spend [1 EF] to ram the armored transport through the roadblock barrier and veer onto an off-road industrial service trail."
     failure_penalty: "Armor-piercing RPG strike! Every deployed operative takes 1 point of HP damage, and Stage 2 Target Difficulty escalates by +1 Success."
   - stage_number: 2
@@ -58,8 +58,8 @@ stages:
     preset_focus: "combat"
     target_difficulty: 5
     dynamic_swap: null
-    failure_penalty: "Mission Failure: The VIP is recaptured by enemy forces! Add +2 [DOOM] and consume 1 Campaign Retry. Squad may execute 1 optional Side-Mission before retrying M2/M3 for Target B (Dr. Kaelen)."
-rules_text: "Operation: Apex Extraction — Mission 3 (Double-Mission Part B, [Continuous Drop] / [No HQ], 3 Stages). Squad enters directly from Mission 2 without HQ Downtime! Stage 1: Convoy Ambush ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Mountain Pass Run ([Survival] D4; Force Breach to [Combat] D5). Stage 3: Helipad Evac Siege ([Combat] D5, Mandatory Siege Fight). POST-MISSION 3 LOCKOUT: Upon clearing Stage 3, all Side-Missions lock out permanently prior to Mission 4! Failing adds [+2 DOOM] and consumes 1 Retry."
+    failure_penalty: "Mission Failure: The VIP is recaptured by enemy forces! Add [+2 FAIL] and consume 1 Campaign Retry. Squad may execute 1 optional Side-Mission before retrying M2/M3 for Target B (Dr. Kaelen)."
+rules_text: "Operation: Apex Extraction — Mission 3 (Double-Mission Part B, [Continuous Drop] / [No HQ], 3 Stages). Squad enters directly from Mission 2 without HQ Downtime! Stage 1: Convoy Ambush ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Mountain Pass Run ([Survival] D4; Force Breach to [Combat] D5). Stage 3: Helipad Evac Siege ([Combat] D5, Mandatory Siege Fight). POST-MISSION 3 LOCKOUT: Upon clearing Stage 3, all Side-Missions lock out permanently prior to Mission 4! Failing adds [+2 FAIL] and consumes 1 Retry."
 active_ability: null
 tags:
   - "mission"
@@ -100,8 +100,8 @@ Carrying the extracted VIP (**Dr. Elena Vance** or **Dr. Kaelen**), the exhauste
 
 ### Failure & Retry Contingency
 * If Mission 3 fails, the VIP is recaptured or killed during the siege.
-* **Failure Penalty:** Advance the Campaign Doom Track by **[+2 DOOM]** and consume **`1 Campaign Retry`** from the global 2-retry budget.
-* **Recovery Window:** If [DOOM] is below 4 and a retry remains, the squad returns to HQ and may execute **1 optional Side-Mission** before retrying the linked Mission 2/3 arc for the secondary target (**Dr. Kaelen**).
+* **Failure Penalty:** Advance the Campaign Mission Failure Track by **[+2 FAIL]** and consume **`1 Campaign Retry`** from the global 2-retry budget.
+* **Recovery Window:** If [FAIL] is below 4 and a retry remains, the squad returns to HQ and may execute **1 optional Side-Mission** before retrying the linked Mission 2/3 arc for the secondary target (**Dr. Kaelen**).
 
 ---
 
@@ -111,7 +111,7 @@ Carrying the extracted VIP (**Dr. Elena Vance** or **Dr. Kaelen**), the exhauste
 | :---: | :--- | :---: | :---: | :--- | :--- |
 | **1** | **Convoy Ambush** | [Combat] | **4 Successes** | **Tactical Bypass ([Survival]):** Cost [1 EF], Target $D = 4$ | RPG strike! All deployed operatives take **1 HP damage**; Stage 2 $D$ increases by **$+1$ Success**. |
 | **2** | **Mountain Pass Run** | [Survival] | **4 Successes** *(5 if S1 failed)* | **Force Breach ([Combat]):** Target $D = 5$ | Collapsing catwalk! All deployed operatives lose **1 static die**; Stage 3 $D$ increases by **$+1$ Success**. |
-| **3** | **Helipad Evac Siege** | [Combat] | **5 Successes** *(+1 if S2 failed)* | *(None — Mandatory Siege Firefight)* | **Mission Failure:** VIP recaptured! Add **[+2 DOOM]**, consume **1 Retry**, allow `1 Side-Mission`. |
+| **3** | **Helipad Evac Siege** | [Combat] | **5 Successes** *(+1 if S2 failed)* | *(None — Mandatory Siege Firefight)* | **Mission Failure:** VIP recaptured! Add **[+2 FAIL]**, consume **1 Retry**, allow `1 Side-Mission`. |
 
 ---
 
@@ -146,4 +146,4 @@ Carrying the extracted VIP (**Dr. Elena Vance** or **Dr. Kaelen**), the exhauste
 * **Stage Clearance:**
   * **VIP Extracted!** Award **[10 CR]** and **[2 PIP]**. Return to HQ for final Downtime preparation. **All Side-Missions are now permanently LOCKED OUT** prior to Mission 4.
 * **Stage Failure Penalty (Mission Failure):**
-  * The VIP is recaptured by enemy forces! Add **[+2 DOOM]** and consume **`1 Campaign Retry`**. If eligible to continue, the squad may run **1 optional Side-Mission** before retrying Mission 2/3 for **Dr. Kaelen**.
+  * The VIP is recaptured by enemy forces! Add **[+2 FAIL]** and consume **`1 Campaign Retry`**. If eligible to continue, the squad may run **1 optional Side-Mission** before retrying Mission 2/3 for **Dr. Kaelen**.

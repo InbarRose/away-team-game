@@ -17,6 +17,7 @@ export interface TokenSpec {
     | 'ef'
     | 'pip'
     | 'loy'
+    | 'fail'
     | 'doom'
     | 'mom'
     | 'vp'
@@ -119,6 +120,22 @@ export const SEMANTIC_TOKENS: Record<string, TokenSpec> = {
     tooltip: 'Operative Rank Reward: Loyalty [LOY] — Permanent personal rank on an operative card (Tiers 1–4). Cannot be spent or traded like a currency.',
     wikiHash: '#/wiki/concept/currencies',
     glyph: 'loy',
+  },
+  '[FAIL]': {
+    label: 'FAIL',
+    cssClass: 'badge-currency-fail',
+    categoryLabel: 'Meta Campaign Tracker',
+    tooltip: 'Meta Campaign Tracker: Mission Failure [FAIL] — Advances ONLY when a mission fails or retreats. Reaching Dissolution Threshold causes Task Force Dissolution.',
+    wikiHash: '#/wiki/rule/campaign_engine',
+    glyph: 'fail',
+  },
+  '[FAILURE]': {
+    label: 'FAIL',
+    cssClass: 'badge-currency-fail',
+    categoryLabel: 'Meta Campaign Tracker',
+    tooltip: 'Meta Campaign Tracker: Mission Failure [FAIL] — Advances ONLY when a mission fails or retreats.',
+    wikiHash: '#/wiki/rule/campaign_engine',
+    glyph: 'fail',
   },
   '[DOOM]': {
     label: 'DOOM',
@@ -401,6 +418,7 @@ export function renderGlyph(glyph: TokenSpec['glyph']) {
           <path d="M6 15l6-6 6 6M6 9l6-6 6 6" />
         </svg>
       );
+    case 'fail':
     case 'doom':
       return (
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4">
@@ -473,7 +491,7 @@ export function FocusBadge({
  * 3. Standard bracketed tokens: [Combat], [Infiltrate], [CR], [EF], [Head], etc.
  */
 const COMPOUND_OR_TOKEN_REGEX =
-  /(\[[+-]?\d+(?:[–-]\d+|\+)?\s+(?:CR|EF|PIP|LOY|DOOM|MOM|VP)\]|(?<![A-Za-z0-9_])[+-]?\d+(?:[–-]\d+|\+)?\s+\[(?:CR|EF|PIP|LOY|DOOM|MOM|VP)\]|\[(?:Combat|Infiltrate|Intel|Operations|Negotiate|Survival|CR|EF|PIP|LOY|DOOM|MOM|VP|Head|Body|Legs|Pack|Hand L|Hand R|Hand|Consumable|Complex|Continuous Drop|No HQ|Facility|Urban|Covert|Space|Planet)\])/g;
+  /(\[[+-]?\d+(?:[–-]\d+|\+)?\s+(?:CR|EF|PIP|LOY|FAIL|FAILURE|DOOM|MOM|VP)\]|(?<![A-Za-z0-9_])[+-]?\d+(?:[–-]\d+|\+)?\s+\[(?:CR|EF|PIP|LOY|FAIL|FAILURE|DOOM|MOM|VP)\]|\[(?:Combat|Infiltrate|Intel|Operations|Negotiate|Survival|CR|EF|PIP|LOY|FAIL|FAILURE|DOOM|MOM|VP|Head|Body|Legs|Pack|Hand L|Hand R|Hand|Consumable|Complex|Continuous Drop|No HQ|Facility|Urban|Covert|Space|Planet)\])/g;
 
 const ENTITY_REGEX = new RegExp(
   `\\b(${WIKI_ENTITY_LINKS.map((e) =>
@@ -550,7 +568,7 @@ export function SemanticText({
 
         // 2. Compound bracketed token e.g. [+2 CR], [-1 PIP], [10+ LOY], [2–3 EF]
         const compoundBracketMatch = part.match(
-          /^\[([+-]?\d+(?:[–-]\d+|\+)?)\s+(CR|EF|PIP|LOY|DOOM|MOM|VP)\]$/
+          /^\[([+-]?\d+(?:[–-]\d+|\+)?)\s+(CR|EF|PIP|LOY|FAIL|FAILURE|DOOM|MOM|VP)\]$/
         );
         if (compoundBracketMatch) {
           const [, qty, unit] = compoundBracketMatch;
@@ -579,7 +597,7 @@ export function SemanticText({
 
         // 3. Adjacent number + bracketed token e.g. "+2 [CR]" -> unified badge "+2 CR"
         const adjacentMatch = part.match(
-          /^([+-]?\d+(?:[–-]\d+|\+)?)\s+\[(CR|EF|PIP|LOY|DOOM|MOM|VP)\]$/
+          /^([+-]?\d+(?:[–-]\d+|\+)?)\s+\[(CR|EF|PIP|LOY|FAIL|FAILURE|DOOM|MOM|VP)\]$/
         );
         if (adjacentMatch) {
           const [, qty, unit] = adjacentMatch;

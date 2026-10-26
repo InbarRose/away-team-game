@@ -57,7 +57,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "survival"
       target_difficulty: 4
-      cost: "0 Effort (Physical Specimen Extraction)"
+      cost: "[0 EF] (Physical Specimen Extraction)"
       description: "Grab the physical specimen cryo-canisters and escape through the flooded jungle drainage pipes."
     failure_penalty: "Lab purges automatically! Genetic data is incinerated; mission fails without base payouts."
 rules_text: "Side-Mission (Themes: [Planet], [Facility] — 3 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Bonus Bounty: Deploy at least 1 Scientist -> +1 free Consumable Item card. Stage 1: Decontamination Chamber Seal ([Operations] D3; Force Breach to [Combat] D4). Stage 2: Specimen Nest Siege ([Combat] D5, Mandatory Siege Fight). Stage 3: Genetic Data Core ([Intel] D4; Bypass to [Survival] D4)."

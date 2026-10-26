@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "When a stage fails, this character salvages [+2 CR] for Ironclad and shields 1 ally from taking HP damage."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Scrap Monarch (+3 VPs)"
+    title: "Corporate Icon — Scrap Monarch ([+3 VP])"
     effect: "All squad members gain +1 Wearable/Armor Slot; consumable items used by any squad member have a 50% (4+) chance to not be consumed. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Vulture Salvage): Gain [+2 CR] whenever a stage fails or an item is burned/discarded. Buy discarded scrap items at half price during Downtime."
 tags:

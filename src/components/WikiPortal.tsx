@@ -2,6 +2,19 @@ import React, { useEffect, useMemo, useState } from 'react';
 import { ComponentCard, GameComponent } from './ComponentCard';
 import { MarkdownRenderer } from './MarkdownRenderer';
 import { FocusBadge, navigateWiki, SemanticText } from './SemanticText';
+import rawDesignDocs from '../data/design_docs.json';
+
+export interface DesignDoc {
+  id: string;
+  slug: string;
+  title: string;
+  order: number;
+  summary: string;
+  source_path: string;
+  body: string;
+}
+
+const designDocs = rawDesignDocs as DesignDoc[];
 
 export interface CoreRuleChapter {
   id: string;
@@ -22,6 +35,7 @@ type PortalSection =
   | 'home'
   | 'print_rulebook'
   | 'design_backlog'
+  | 'design'
   | 'rulebook'
   | 'currencies_guide'
   | 'focus_page'
@@ -184,57 +198,57 @@ const CATEGORY_LABELS: Record<string, string> = {
 const DESIGN_BACKLOG_RULES = [
   {
     id: 'BL-RULES-01',
-    priority: 'P0 — High',
+    priority: 'RESOLVED',
     system: 'Vault Economy & Mission Briefs (Debrief Step 1)',
-    question: 'Mission Clearance Bounty Distribution (Per-Faction vs. Shared Agency Pot)',
+    question: 'Mission Clearance Bounty Distribution (Stipend + Shared Reward Pool)',
     analysis:
-      'Mission briefs specify a Base Clearance Bounty (e.g., Iron Dawn M1: [6 CR], [1 PIP]; M2: [8 CR], [2 PIP]). Playtesters will immediately ask whether each participating Faction receives the full printed bounty or whether the bounty is a shared pot divided across the 4 deployed slots.',
+      'How are mission bounties divided among the 4 deployed slots and participating Factions?',
     recommendation:
-      'Clarify as either (A) Per-Faction Payout (if Quartermaster prices assume [6–8 CR] income per player per mission) OR (B) Shared Contract Pot split per deployed operative slot with odd remainders claimed by the Squad Leader (adding strong economic incentive to the Command Auction).',
+      'RESOLVED: Codified dual-stream payout in vault_economy.md: (1) Baseline Participation Stipend ([2 CR] per deployed operative, [1 PIP] per Faction), plus (2) Shared Mission Clearance Reward Pool divided evenly among players, with any odd remainder allocated at Squad Leader discretion. Terms can be negotiated via Binding Promises.',
     link: '#/wiki/rule/vault_economy',
   },
   {
     id: 'BL-RULES-02',
-    priority: 'P0 — High',
+    priority: 'RESOLVED',
     system: 'Stage Resolution & Mortality (Step 2/3 vs Step 4)',
     question: 'The "Martyr’s Last Stand / Dying Breath" Success Counting Rule',
     analysis:
-      'If an operative at 1 HP rolls [5, 4, 1], the natural 1 inflicts 1 Backfire damage (0 HP). If no player spends [1 EF] in Step 4 to stabilize them, do the 5 and 4 from their lethal roll still count toward clearing the stage in Step 5?',
+      'If an operative at 1 HP rolls a natural 1 Backfire alongside successes and is not stabilized, do their successes count?',
     recommendation:
-      'Yes ("Dying Breath Rule"). All rolled successes lock in during Step 2/3; stabilization occurs in Step 4. We documented this explicitly in a Golden Rule callout in Chapter 1 (rules_overview.md).',
+      'RESOLVED: Codified in rules_overview.md Golden Rule: All rolled successes lock in during Step 2/3 and count toward clearing the stage even if the operative dies unstabilized in Step 4 triage.',
     link: '#/wiki/rule/rules_overview',
   },
   {
     id: 'BL-RULES-03',
-    priority: 'P1 — Medium',
+    priority: 'RESOLVED',
     system: 'Mortality & Vulture Economy (medbay_trauma.md)',
     question: 'Turn Order Priority for Stabilization Offers & Vulture Looting Claims',
     analysis:
-      'When an operative drops to 0 HP or dies and drops equipment, multiple rival Factions may want to extort a stabilization deal or pay [-1 PIP] (Vulture Tax) to claim dropped Tier 2 weapons before rolling off.',
+      'When an operative drops to 0 HP or drops equipment, what is the declaration order?',
     recommendation:
-      'Standardize table declaration order as Squad Leader first, then clockwise around the table.',
+      'RESOLVED: Codified in medbay_trauma.md: Triage priority order is (1) Owning Faction first, (2) Squad Leader second, (3) Clockwise around table. Vulture claim declaration order begins with Squad Leader, then proceeds clockwise around the table.',
     link: '#/wiki/rule/medbay_trauma',
   },
   {
     id: 'BL-RULES-04',
-    priority: 'P1 — Medium',
+    priority: 'RESOLVED',
     system: 'Squad Leader Command (squad_leader_command.md)',
-    question: 'Zero-Credit Command Auction Poverty Fallback ([1 CR] Min vs [0 CR])',
+    question: 'Zero-Credit Command Auction Fallback ([1 CR] Min vs [0 CR])',
     analysis:
-      'The Command Auction specifies a [1 CR] minimum entry bid. If all 4 Factions spend down to [0 CR] during HQ Downtime Steps 4–6 (or all refuse to bid), how is the Squad Leader assigned?',
+      'If all Factions refuse or cannot bid [1 CR], how is Squad Leader decided?',
     recommendation:
-      'Documented a [0 CR] Fallback Note: if no player bids [1 CR] or more, resolve at [0 CR] using the standard tie-breaker hierarchy ([PIP] → [LOY] → Roll-off).',
+      'RESOLVED: Codified in squad_leader_command.md: Immediate high-stakes d6 roll-off right away. Highest roll is thrust into Squad Leader for [0 CR], carrying the [-1 PIP] failure risk.',
     link: '#/wiki/rule/squad_leader_command',
   },
   {
     id: 'BL-RULES-05',
-    priority: 'P2 — Clarity',
+    priority: 'RESOLVED',
     system: 'Classes & Focus (classes_and_focus.md)',
     question: 'Technician Adaptive Calibration & Phase 1 Early Resolution Window',
     analysis:
-      'Technician spends [1 EF] after Phase 1 rolls so a Primary (3+) Specialist can commit additional static dice. Confirming that reaching Target Difficulty D with these bonus dice still triggers Early Resolution (skipping Phase 2 Support rolls) makes Technician’s timing window crystal clear.',
+      'Do additional Specialist dice rolled via Adaptive Calibration count toward Early Resolution?',
     recommendation:
-      'Added an explicit Golden Rule callout in Chapter 3 (classes_and_focus.md) confirming Early Resolution applies.',
+      'RESOLVED: Codified in classes_and_focus.md: Yes! Reaching Target Difficulty D with bonus Specialist dice immediately triggers Early Resolution and Support operatives skip rolling.',
     link: '#/wiki/rule/classes_and_focus',
   },
   {
@@ -282,6 +296,9 @@ export function WikiPortal({
   const [selectedRuleSlug, setSelectedRuleSlug] = useState<string>(
     coreRules[0]?.slug || 'rules_overview'
   );
+  const [selectedDesignSlug, setSelectedDesignSlug] = useState<string>(
+    designDocs[0]?.slug || '01_mathematical_engine_and_9es_ledger'
+  );
   const [printChapterFilter, setPrintChapterFilter] = useState<string>('all');
   const [selectedComponentId, setSelectedComponentId] = useState<string>(
     components[0]?.id || 'agent-01-commander'
@@ -313,6 +330,9 @@ export function WikiPortal({
       } else if (segs[0] === 'print-rulebook' || segs[0] === 'rulebook') {
         setActiveSection('print_rulebook');
         if (segs[1]) setPrintChapterFilter(segs[1]);
+      } else if (segs[0] === 'design') {
+        setActiveSection('design');
+        if (segs[1]) setSelectedDesignSlug(segs[1]);
       } else if (segs[0] === 'backlog') {
         setActiveSection('design_backlog');
       } else if (segs[0] === 'rule' && segs[1]) {
@@ -353,6 +373,12 @@ export function WikiPortal({
       window.removeEventListener('wiki:navigate', onCustomWikiNav);
     };
   }, []);
+
+  const activeDesignIndex = useMemo(
+    () => Math.max(0, designDocs.findIndex((d) => d.slug === selectedDesignSlug)),
+    [selectedDesignSlug]
+  );
+  const activeDesignDoc = designDocs[activeDesignIndex] || designDocs[0];
 
   const activeRuleIndex = useMemo(
     () => Math.max(0, coreRules.findIndex((r) => r.slug === selectedRuleSlug)),
@@ -836,7 +862,7 @@ export function WikiPortal({
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.3rem' }}>
             <SemanticText text="[MOM]" />
             <SemanticText text="[LOY]" />
-            <SemanticText text="[DOOM]" />
+            <SemanticText text="[FAIL]" />
             <SemanticText text="[VP]" />
           </div>
         </div>
@@ -887,7 +913,7 @@ export function WikiPortal({
                 <strong>Factions</strong> inside a joint planetary task force. On the ground, your{' '}
                 <strong>4 deployed Specialist Operatives</strong> must coordinate finite static dice
                 pools to breach facilities, clear hazards, and stop the campaign{' '}
-                <SemanticText text="[DOOM]" /> clock from collapsing. In the boardroom, however,{' '}
+                <SemanticText text="[FAIL]" /> clock from collapsing. In the boardroom, however,{' '}
                 <strong>only one Director can win</strong>—by hoarding{' '}
                 <SemanticText text="[VP]" />, sponsoring HQ modules, extorting teammates at{' '}
                 <code>0 HP</code>, and fulfilling hidden <SemanticText text="Secret Objectives" />.
@@ -1084,7 +1110,7 @@ export function WikiPortal({
                     <SemanticText text="[CR]" /> <SemanticText text="[EF]" />{' '}
                     <SemanticText text="[PIP]" />) vs. Mission Flow (<SemanticText text="[MOM]" />
                     ), Operative Rank (<SemanticText text="[LOY]" />), and Meta Trackers (
-                    <SemanticText text="[DOOM]" /> <SemanticText text="[VP]" />).
+                    <SemanticText text="[FAIL]" /> <SemanticText text="[VP]" />).
                   </p>
                 </div>
                 <div
@@ -1699,6 +1725,143 @@ export function WikiPortal({
         {/* ====================================================================
             VIEW 0C: DESIGN COMPANION AUDIT & PRODUCT BACKLOG (#/wiki/backlog)
            ==================================================================== */}
+                {activeSection === 'design' && activeDesignDoc && (
+          <div>
+            <div
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                marginBottom: '1rem',
+                padding: '0.75rem 1rem',
+                borderRadius: '8px',
+                background: 'rgba(214, 51, 132, 0.12)',
+                border: '1px solid rgba(214, 51, 132, 0.35)',
+              }}
+            >
+              <span style={{ fontSize: '1.4rem' }}>🔬</span>
+              <div>
+                <strong style={{ color: '#f472b6', fontSize: '0.92rem', display: 'block' }}>
+                  INTERNAL DEVELOPER REFERENCE (SEPARATE FROM PLAYER RULEBOOK)
+                </strong>
+                <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>
+                  Foundational game theory, 9.0 ES mathematical engine, probability curves, and anti-dilution frameworks.
+                </span>
+              </div>
+            </div>
+
+            {/* Design Doc Navigation Pills */}
+            <div
+              style={{
+                display: 'flex',
+                gap: '0.4rem',
+                flexWrap: 'wrap',
+                marginBottom: '1.5rem',
+                paddingBottom: '0.8rem',
+                borderBottom: '1px solid var(--border-subtle)',
+              }}
+            >
+              {designDocs.map((doc, idx) => {
+                const isSelected = doc.slug === selectedDesignSlug;
+                return (
+                  <button
+                    key={doc.slug}
+                    type="button"
+                    onClick={() => navigateWiki(`#/wiki/design/${doc.slug}`)}
+                    style={{
+                      padding: '0.4rem 0.75rem',
+                      borderRadius: '6px',
+                      fontSize: '0.8rem',
+                      fontWeight: isSelected ? 700 : 500,
+                      cursor: 'pointer',
+                      border: isSelected ? '1px solid #f472b6' : '1px solid var(--border-subtle)',
+                      background: isSelected ? 'rgba(214, 51, 132, 0.2)' : 'var(--bg-card)',
+                      color: isSelected ? '#fbcfe8' : 'var(--text-secondary)',
+                    }}
+                  >
+                    Doc {idx + 1}: {doc.title.split('&')[0].trim()}
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Document Header */}
+            <div style={{ marginBottom: '1.5rem' }}>
+              <div
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.72rem',
+                  color: 'var(--text-muted)',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.25rem',
+                }}
+              >
+                File: {activeDesignDoc.source_path} • Order {activeDesignDoc.order}
+              </div>
+              <h1
+                style={{
+                  fontSize: '1.9rem',
+                  fontFamily: 'var(--font-display)',
+                  margin: '0 0 0.5rem 0',
+                  color: 'var(--text-primary)',
+                }}
+              >
+                {activeDesignDoc.title}
+              </h1>
+              {activeDesignDoc.summary && (
+                <div
+                  style={{
+                    fontSize: '0.92rem',
+                    color: 'var(--text-secondary)',
+                    fontStyle: 'italic',
+                    padding: '0.6rem 0.9rem',
+                    borderRadius: '6px',
+                    background: 'var(--bg-card)',
+                    borderLeft: '3px solid #f472b6',
+                  }}
+                >
+                  {activeDesignDoc.summary}
+                </div>
+              )}
+            </div>
+
+            {/* Markdown Body with KaTeX */}
+            <div className="wiki-markdown-body" style={{ lineHeight: 1.7 }}>
+              <MarkdownRenderer markdown={activeDesignDoc.body} />
+            </div>
+
+            {/* Prev/Next Navigation */}
+            <div
+              style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                marginTop: '2.5rem',
+                paddingTop: '1.2rem',
+                borderTop: '1px solid var(--border-subtle)',
+              }}
+            >
+              {activeDesignIndex > 0 ? (
+                <button
+                  type="button"
+                  className="at-btn"
+                  onClick={() => navigateWiki(`#/wiki/design/${designDocs[activeDesignIndex - 1].slug}`)}
+                >
+                  ← Previous Doc: {designDocs[activeDesignIndex - 1].title.split('&')[0].trim()}
+                </button>
+              ) : <div />}
+              {activeDesignIndex < designDocs.length - 1 ? (
+                <button
+                  type="button"
+                  className="at-btn"
+                  onClick={() => navigateWiki(`#/wiki/design/${designDocs[activeDesignIndex + 1].slug}`)}
+                >
+                  Next Doc: {designDocs[activeDesignIndex + 1].title.split('&')[0].trim()} →
+                </button>
+              ) : <div />}
+            </div>
+          </div>
+        )}
+
         {activeSection === 'design_backlog' && (
           <div className="rulebook-article">
             <nav className="wiki-breadcrumbs">
@@ -2369,10 +2532,10 @@ export function WikiPortal({
             </p>
             <ul>
               <li>
-                <SemanticText text="[DOOM]" /> <strong>(The Doom Tracker — Meta Catastrophe Clock):</strong>{' '}
+                <SemanticText text="[FAIL]" /> <strong>(The Mission Failure Tracker — Meta Catastrophe Clock):</strong>{' '}
                 Tracked globally on the active Campaign Dossier (<SemanticText text="Operation: Iron Dawn" />{' '}
                 or <SemanticText text="Operation: Apex Extraction" />). Whenever a mission fails or the
-                squad is wiped out, the clock advances by <SemanticText text="[+1 DOOM]" />. If it
+                squad is wiped out, the clock advances by <SemanticText text="[+1 FAIL]" />. If it
                 reaches the campaign’s Max Doom threshold, the entire coalition loses immediately.
               </li>
               <li>

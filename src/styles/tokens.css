@@ -47,7 +47,10 @@
   --currency-loyalty-bg: rgba(59, 130, 246, 0.16);
 
   /* 2D. Macro-Campaign & Endgame Meta Trackers ([DOOM], [VP]) */
-  --currency-doom: #8B0000;
+  --currency-fail: #8B0000;
+  --currency-fail-text: #ff6b6b;
+  --currency-fail-bg: rgba(139, 0, 0, 0.28);
+  --currency-doom: var(--currency-fail);
   --currency-doom-text: #ff6b6b;
   --currency-doom-bg: rgba(139, 0, 0, 0.28);
   --currency-vp: #F59E0B;
@@ -276,7 +279,7 @@ a:hover {
 }
 
 /* Category 4: Meta Campaign & Endgame Score Trackers ([DOOM], [VP]) */
-.badge-currency-doom {
+.badge-currency-fail, .badge-currency-doom {
   color: var(--currency-doom-text);
   background: var(--currency-doom-bg);
   border: 1px double #ef4444;

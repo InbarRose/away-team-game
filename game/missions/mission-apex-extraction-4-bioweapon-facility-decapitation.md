@@ -40,7 +40,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "infiltrate"
       target_difficulty: 4
-      cost: "0 Effort (Uses VIP Biometric Overrides)"
+      cost: "[0 EF] (Uses VIP Biometric Overrides)"
       description: "Use the extracted VIP's biometric clearance codes to slip through the subterranean waste-disposal airlocks unseen."
     failure_penalty: "Rampart artillery barrage! Every deployed operative takes 1 point of HP damage, and Stage 2 Target Difficulty escalates by +1 Success."
   - stage_number: 2
@@ -59,7 +59,7 @@ stages:
     preset_focus: "combat"
     target_difficulty: 5
     dynamic_swap: null
-    failure_penalty: "Elite Directorate counter-strike! Every deployed operative takes 1 point of HP damage, the Squad Leader loses 1 [EF], and Stage 4 Target Difficulty escalates by +1 Success."
+    failure_penalty: "Elite Directorate counter-strike! Every deployed operative takes 1 point of HP damage, the Squad Leader loses [1 EF], and Stage 4 Target Difficulty escalates by +1 Success."
   - stage_number: 4
     name: "Meltdown Evacuation"
     preset_focus: "survival"
@@ -68,9 +68,9 @@ stages:
       type: "tactical_bypass"
       target_focus: "operations"
       target_difficulty: 5
-      cost: "1 Effort from Squad Leader's Vault"
+      cost: "[1 EF] from Squad Leader's Vault"
       description: "Spend [1 EF] to hotwire the executive escape pod rail-launchers and blast out of the collapsing mountain complex."
-    failure_penalty: "Mission Failure: Catastrophic subterranean collapse aborts the assault! Add +1 [DOOM] and consume 1 Campaign Retry (if budget remains)."
+    failure_penalty: "Mission Failure: Catastrophic subterranean collapse aborts the assault! Add [+1 FAIL] and consume 1 Campaign Retry (if budget remains)."
 rules_text: "Operation: Apex Extraction — Mission 4 Campaign Climax (4 Stages). Pre-Mission Lockdown: Side-Missions strictly prohibited prior to launch. Stage 1: Outer Rampart Siege ([Combat] D4; Bypass to [Infiltrate] D4). Stage 2: Reactor Core Overload ([Operations] D5; Force Breach to [Combat] D6). Stage 3: Executive Guard Core ([Combat] D5, Mandatory Fight). Stage 4: Meltdown Evacuation ([Survival] D5; Bypass to [Operations] D5 for [1 EF]). Clearing Stage 4 wins the Campaign!"
 active_ability: null
 tags:
@@ -109,7 +109,7 @@ With the VIP (**Dr. Elena Vance** or **Dr. Kaelen**) in Agency custody and Side-
 | **1** | **Outer Rampart Siege** | [Combat] | **4 Successes** | **Tactical Bypass ([Infiltrate]):** Target $D = 4$ | Artillery barrage! All deployed operatives take **1 HP damage**; Stage 2 $D$ increases by **$+1$ Success**. |
 | **2** | **Reactor Core Overload** | [Operations] | **5 Successes** *(6 if S1 failed)* | **Force Breach ([Combat]):** Target $D = 6$ | Radiation surge! All deployed operatives take **1 HP damage** and lose **1 static die**. |
 | **3** | **Executive Guard Core** | [Combat] | **5 Successes** | *(None — Mandatory Elite Fight)* | Elite counter-strike! All operatives take **1 HP damage**, Squad Leader loses **[1 EF]**, Stage 4 $D$ **$+1$**. |
-| **4** | **Meltdown Evacuation** | [Survival] | **5 Successes** *(6 if S3 failed)* | **Tactical Bypass ([Operations]):** Cost [1 EF], Target $D = 5$ | **Mission Failure:** Add **[+1 DOOM]** and consume **1 Campaign Retry** (if budget remains). |
+| **4** | **Meltdown Evacuation** | [Survival] | **5 Successes** *(6 if S3 failed)* | **Tactical Bypass ([Operations]):** Cost [1 EF], Target $D = 5$ | **Mission Failure:** Add **[+1 FAIL]** and consume **1 Campaign Retry** (if budget remains). |
 
 ---
 
@@ -155,4 +155,4 @@ With the VIP (**Dr. Elena Vance** or **Dr. Kaelen**) in Agency custody and Side-
 * **Stage Clearance (Campaign Victory!):**
   * **CAMPAIGN VICTORY!** The *Apex Chimera* bioweapon facility is obliterated and the strike team survives. Proceed immediately to the **Final Executive [VP] Audit**: convert [PIP] (`[2 VP]`), living & Dead Pool [LOY] (`[2 VP]` + `[3 VP]` per Tier 4 Icon), and score Tiered **Secret Objectives** (`15 / 10 / [5 VP]`).
 * **Stage Failure Penalty (Mission Failure):**
-  * Catastrophic tunnel collapse forces an emergency abort! Advance the Campaign Doom Track by **[+1 DOOM]** and consume **`1 Campaign Retry`**. If [DOOM] hits `4` or the squad has exceeded its `2-Retry Global Cap`, the campaign ends in **Game Over (Agency Collapse)**.
+  * Catastrophic tunnel collapse forces an emergency abort! Advance the Campaign Mission Failure Track by **[+1 FAIL]** and consume **`1 Campaign Retry`**. If [FAIL] hits `4` or the squad has exceeded its `2-Retry Global Cap`, the campaign ends in **Game Over (Task Force Dissolution)**.

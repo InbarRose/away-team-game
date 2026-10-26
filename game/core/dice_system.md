@@ -84,11 +84,11 @@ Immediately during **Step 5 (Resolution)** of the completed stage, the **Squad L
 > **Tactical Insight — Why Focus Alignment Saves Lives:** Because every die rolled has a flat `16.7%` (`1-in-6`) chance of inflicting `1 HP` Backfire damage, rolling **Out of Focus (`5+`, `0.33 ES/die`)** is doubly punishing. To generate `2 Expected Successes`, a Primary Specialist (`3+`) only needs to roll **3 dice** (`0.50` expected Backfire damage), whereas an Out-of-Focus operative (`5+`) must roll **6 dice** (`1.00` expected Backfire damage AND double the static pool depletion). Always equip a **Focus Bridge** weapon (`4+`) or use **Dynamic Focus Swaps** before rolling Out of Focus!
 
 > [!IMPORTANT]
-> **The Skin-in-the-Game Rule for `[MOM]` Refunds:** You cannot "free-ride" on your teammates' rolls to refill your own spent dice pool. An operative is **only eligible** to receive a restored static die from `[1 MOM]` if they **committed and rolled at least `1` static die** during that specific stage (unless a specific ability such as *Field Scavenger* overrides this restriction).
+> **The Skin-in-the-Game Rule for [MOM] Refunds:** You cannot "free-ride" on your teammates' rolls to refill your own spent dice pool. An operative is **only eligible** to receive a restored static die from `[1 MOM]` if they **committed and rolled at least `1` static die** during that specific stage (unless a specific ability such as *Field Scavenger* overrides this restriction).
 
 > [!EXAMPLE]
 > **Example of Play — Static Pool Depletion & Momentum Refill:**
-> * **The Ghost Point** (`2 HP`, `7 Starting Static Dice`, Primary `[Infiltrate]` `3+`) enters **Stage 1: Outer Perimeter** (`[Infiltrate]`, Target Difficulty $D = 3$).
+> * **The Ghost Point** (`2 HP`, `7 Starting Static Dice`, Primary [Infiltrate] `3+`) enters **Stage 1: Outer Perimeter** ([Infiltrate], Target Difficulty $D = 3$).
 > * She commits **4 of her 7 static dice**, leaving **3 Available Static Dice** on her card.
 > * Along with her teammate **The Prowler** (who commits **3 static dice**), they roll `7 dice` total at `3+` and score **6 Successes** (`+3` above $D = 3$).
 > * The stage clears with $\text{Momentum} = 6 - 3 - 1 = \mathbf{[2\text{ MOM}]}$.

@@ -93,7 +93,7 @@ Surviving operatives who return to HQ with missing HP do **not** heal automatica
 ## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
 
 > [!IMPORTANT]
-> **Stabilization Extortion & Binding Promises at `0 HP`:** When an operative drops to `0 HP` during Step 4, **any deployed ally** may pay the `[1 EF]` or Medical Consumable cost to save them—not just the owning Faction! If the owning Faction is out of `[EF]`, rivals can legally demand an immediate **Binding Promise** (e.g., *"Pay me `[3 CR]` from your Vault right now and I will burn my `[1 EF]` to stabilize your veteran agent"*).
+> **Stabilization Extortion & Binding Promises at `0 HP`:** When an operative drops to `0 HP` during Step 4, **any deployed ally** may pay the `[1 EF]` or Medical Consumable cost to save them—not just the owning Faction! If the owning Faction is out of [EF], rivals can legally demand an immediate **Binding Promise** (e.g., *"Pay me `[3 CR]` from your Vault right now and I will burn my `[1 EF]` to stabilize your veteran agent"*).
 
 > [!WARNING]
 > **Calcification Risk (`Natural 1` in Med Bay):** Rolling baseline Infirmary Healing Dice (`5+`) always carries a `1-in-6` chance per die of rolling a natural `1`, which calcifies that wound into a **Permanent Trauma Token** (`-1 Max HP`, `-1 Starting Static Die`, locked against normal bed rolls). For high-Loyalty Tier 3 or Tier 4 veterans, consider using the **Gene-Stasis Tank** (`[1 EF]` = auto-heal `1 HP` with `0%` trauma risk) or **Cryo-Stasis Chamber** (`100%` risk-free heal)!

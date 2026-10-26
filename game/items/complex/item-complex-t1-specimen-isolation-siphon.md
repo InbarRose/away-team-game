@@ -23,7 +23,7 @@ stats:
     - "complex"
   armor_buffer: null
 rules_text: "Secure Storage (Passive): Increases squad carrying capacity for mission-critical objectives. Resource Siphon (Active Cost): Whenever your squad clears an [Intel] or [Operations] stage with Momentum [MOM] (+2 or higher), spend 1 static die to instantly extract [+2 CR] directly into your Faction Vault."
-active_ability: "Resource Siphon — Cost: Spend 1 Static Die upon clearing an [Intel] or [Operations] stage with Momentum (+2 or higher). Effect: Instantly extract +2 Credits [CR] directly into your Faction Vault."
+active_ability: "Resource Siphon — Cost: Spend 1 Static Die upon clearing an [Intel] or [Operations] stage with Momentum (+2 or higher). Effect: Instantly extract [+2 CR] directly into your Faction Vault."
 tags:
   - "complex"
   - "tier-1"

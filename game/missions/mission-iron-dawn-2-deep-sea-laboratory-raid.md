@@ -39,7 +39,7 @@ stages:
       type: "tactical_bypass"
       target_focus: "survival"
       target_difficulty: 4
-      cost: "1 Effort from Squad Leader's Vault"
+      cost: "[1 EF] from Squad Leader's Vault"
       description: "Spend [1 EF] to bypass the heavy security patrol by swimming through pressurized intake ducts or climbing toxic ventilation shafts."
     failure_penalty: "Ambush counter-attack! Every deployed operative takes 1 point of HP damage."
   - stage_number: 2
@@ -47,7 +47,7 @@ stages:
     preset_focus: "combat"
     target_difficulty: 3
     dynamic_swap: null
-    failure_penalty: "Heavy suppressive fire! The Squad Leader loses 2 [CR] from their Vault (damaged gear) and Stage 3 Target Difficulty escalates by +1 Success."
+    failure_penalty: "Heavy suppressive fire! The Squad Leader loses [2 CR] from their Vault (damaged gear) and Stage 3 Target Difficulty escalates by +1 Success."
   - stage_number: 3
     name: "Sub-Level Mainframe / Bio-Lab Mainframe"
     preset_focus: "intel"
@@ -58,8 +58,8 @@ stages:
       target_difficulty: 6
       cost: "Triggers automated turret purge (+2 Difficulty)"
       description: "Destroy the server liquid-cooling housing to force a physical core dump under heavy automated gunfire."
-    failure_penalty: "Mission Failure: Data wiped by automated purge! The squad retreats empty-handed. Add +1 [DOOM] to the Campaign Track (Retriable)."
-rules_text: "Operation: Iron Dawn — Mission 2 (3 Stages). Base Clearance Bounty: [8 CR], [2 PIP]. Requires >= 1 [Combat] and >= 1 [Intel] operative. Stage 1: Ocean Platform Docks / Containment Patrol ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Heavy Enforcer Gate ([Combat] D3, Mandatory Fight). Stage 3: Sub-Level Mainframe / Bio-Lab Mainframe ([Intel] D4, or D5 if Stage 2 failed; Force Breach to [Combat] D6). Mission Failure adds [+1 DOOM]."
+    failure_penalty: "Mission Failure: Data wiped by automated purge! The squad retreats empty-handed. Add [+1 FAIL] to the Campaign Track (Retriable)."
+rules_text: "Operation: Iron Dawn — Mission 2 (3 Stages). Base Clearance Bounty: [8 CR], [2 PIP]. Requires >= 1 [Combat] and >= 1 [Intel] operative. Stage 1: Ocean Platform Docks / Containment Patrol ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Heavy Enforcer Gate ([Combat] D3, Mandatory Fight). Stage 3: Sub-Level Mainframe / Bio-Lab Mainframe ([Intel] D4, or D5 if Stage 2 failed; Force Breach to [Combat] D6). Mission Failure adds [+1 FAIL]."
 active_ability: null
 tags:
   - "mission"
@@ -88,7 +88,7 @@ art_spec:
 * **Revised Global Macro-Arc ("Deep-Sea Laboratory Raid" — Pacific Trench Rig):** Using the encryption keys recovered in Mission 1, HQ tracks Ascendant Bio-Tech's primary genetic laboratory to a submerged ocean platform in the Pacific Trench. The squad deploys via stealth sub-pod to clear the docking bay, destroy the automated Enforcer mech guarding the inner bulkhead, and siphon prototype genetic blueprints from the sub-level mainframe.
 * **Facility Incursion Variant ("The Subterranean Core"):** Descending into the lower containment sectors of Ascendant's facility, the squad breaches security patrols, defeats the heavy mech bottleneck, and extracts classified telemetry before automated purges wipe the servers.
 * **Return to HQ:** Upon clearing Stage 3, the squad extracts with the blueprints and orbital coordinates, returning to HQ to prepare for the final strike against Ascendant's high-orbit command array.
-* **Retry Narrative:** If Stage 3 fails, automated server purges wipe the local terminal and force the squad to retreat to the sub-pod ([+1 DOOM]). Retrying launches a second dive against an alerted facility before the backup drives are relocated.
+* **Retry Narrative:** If Stage 3 fails, automated server purges wipe the local terminal and force the squad to retreat to the sub-pod ([+1 FAIL]). Retrying launches a second dive against an alerted facility before the backup drives are relocated.
 
 ---
 
@@ -98,7 +98,7 @@ art_spec:
 | :---: | :--- | :---: | :---: | :--- | :--- |
 | **1** | **Ocean Platform Docks** *(or Containment Patrol)* | [Combat] | **4 Successes** | **Tactical Bypass ([Survival]):** Cost [1 EF], Target $D = 4$ | Ambush counter-attack! Every deployed operative takes **1 HP damage**. |
 | **2** | **Heavy Enforcer Gate** | [Combat] | **3 Successes** | *(None — Mandatory Kinetic Bottleneck)* | Heavy fire! Squad Leader loses **[2 CR]**; Stage 3 $D$ increases by **$+1$ Success**. |
-| **3** | **Sub-Level Mainframe** *(or Bio-Lab Mainframe)* | [Intel] | **4 Successes** *(5 if S2 failed)* | **Force Breach ([Combat]):** Target $D = 6$ | **Mission Failure:** Data wiped! Squad retreats empty-handed. Add **[+1 DOOM]**. |
+| **3** | **Sub-Level Mainframe** *(or Bio-Lab Mainframe)* | [Intel] | **4 Successes** *(5 if S2 failed)* | **Force Breach ([Combat]):** Target $D = 6$ | **Mission Failure:** Data wiped! Squad retreats empty-handed. Add **[+1 FAIL]**. |
 
 ---
 
@@ -135,4 +135,4 @@ art_spec:
   * **Mission Accomplished!** Award **[8 CR]** and **[2 PIP]** and advance the campaign dossier to **Mission 3**.
 * **Stage Failure Penalty (Mission Failure):**
   * The anti-intrusion wipe completes and the squad is forced to retreat empty-handed.
-  * Advance the Campaign Doom Track by **[+1 DOOM]**. If [DOOM] remains below 3, the squad returns to HQ and may retry Mission 2.
+  * Advance the Campaign Mission Failure Track by **[+1 FAIL]**. If [FAIL] remains below 3, the squad returns to HQ and may retry Mission 2.

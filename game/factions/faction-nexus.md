@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "Once per mission, during Step 1 (Briefing), swap the room's current Focus category to [Intel] or [Operations] without spending Effort."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Neural Apex (+3 VPs)"
+    title: "Corporate Icon — Neural Apex ([+3 VP])"
     effect: "While deployed, all squad members treat [Intel] and [Operations] as Primary Focus (3+). Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Deep-Data Synthesis): Spend [1 EF] during Briefing of an [Intel] or [Operations] stage to reorder top 2 Stage Modifiers; gain [+2 CR] on stage clear."
 tags:

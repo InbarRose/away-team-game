@@ -67,6 +67,31 @@ describe('Suite 01: Repository Architecture, Directory Layout & Design Intent', 
     assert.equal(total, 208, 'Total Markdown files across /game/ must equal 208');
   });
 
+  it('verifies separation of internal design documentation in docs/design/ (5 docs) and player rulebook in game/core/ (8 chapters)', () => {
+    const designDir = path.join(ROOT_DIR, 'docs', 'design');
+    assert.ok(fs.existsSync(designDir), 'docs/design directory must exist');
+    const designDocs = fs.readdirSync(designDir).filter((f) => f.endsWith('.md'));
+    assert.equal(designDocs.length, 5, 'Must have all 5 internal design reference documents');
+
+    const coreRulesJson = JSON.parse(
+      fs.readFileSync(path.join(ROOT_DIR, 'src', 'data', 'core_rules.json'), 'utf8')
+    );
+    assert.equal(coreRulesJson.length, 8, 'Must have 8 player rulebook chapters');
+    assert.ok(
+      coreRulesJson.some((ch) => ch.slug === 'table_setup_and_glossary'),
+      'Chapter 8 must be table_setup_and_glossary'
+    );
+    assert.ok(
+      !coreRulesJson.some((ch) => ch.slug === 'math_and_balance'),
+      'math_and_balance must be separated into docs/design/'
+    );
+
+    const designDocsJson = JSON.parse(
+      fs.readFileSync(path.join(ROOT_DIR, 'src', 'data', 'design_docs.json'), 'utf8')
+    );
+    assert.equal(designDocsJson.length, 5, 'Must export all 5 design docs to src/data/design_docs.json');
+  });
+
   it('configures custom domain awayteam.inbarrose.com and GitHub Actions workflows', () => {
     const cnamePath = path.join(ROOT_DIR, 'public', 'CNAME');
     assert.ok(fs.existsSync(cnamePath), 'public/CNAME must exist');

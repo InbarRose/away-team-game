@@ -38,7 +38,7 @@ loyalty_tiers:
     effect: "Once per mission, during a Transition Step, restore 1 spent static die to every squad member for free ([0 EF] cost)."
   tier_4:
     loyalty_required: 10
-    title: "Corporate Icon — Logistics Paragon (+3 VPs)"
+    title: "Corporate Icon — Logistics Paragon ([+3 VP])"
     effect: "Active static dice pools across the entire squad can never drop below 2 dice during any stage. Awards [+3 VP] at end-of-game."
 rules_text: "Base Power (Orbital Munitions Resupply): Spend [2 EF] during any Transition Step to restore +1 spent static die to every deployed operative on the squad."
 tags:

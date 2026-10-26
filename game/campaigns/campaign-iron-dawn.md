@@ -45,7 +45,7 @@ campaign_parameters:
     - "mission-iron-dawn-2-deep-sea-laboratory-raid"
     - "mission-iron-dawn-3-orbital-array-sabotage"
 stages: []
-rules_text: "Standard 3-Mission Campaign Dossier. Max Doom Threshold: [3 DOOM]. Unlimited Side-Missions between drops ([0 DOOM] on Side-Mission failure). Campaign Missions are freely retriable upon failure ([+1 DOOM] per failed mission). Clearing Mission 3 triggers Campaign Victory and Final Executive [VP] Audit."
+rules_text: "Standard 3-Mission Campaign Dossier. Maximum Failure Limit: [3 FAIL]. Unlimited Side-Missions between drops ([0 FAIL] on Side-Mission failure). Campaign Missions are freely retriable upon failure ([+1 FAIL] per failed mission). Clearing Mission 3 triggers Campaign Victory and Final Executive [VP] Audit."
 active_ability: null
 tags:
   - "campaign"
@@ -84,10 +84,10 @@ art_spec:
 | :--- | :--- |
 | **Difficulty Rating** | **Easy / Standard Initializer** |
 | **Sequence Length** | **3 Fixed Linear Campaign Missions** |
-| **Max Doom Threshold** | **[3 DOOM] Points** (Immediate Agency Collapse / Game Over at [3 DOOM]) |
+| **Maximum Failure Limit** | **[3 FAIL] Points** (Immediate Task Force Dissolution / Game Over at [3 FAIL]) |
 | **Side-Mission Policy** | **UNLIMITED** access during HQ Downtime between Campaign Missions |
-| **Side-Mission Failure Penalty** | **[0 DOOM] Points** (Local tactical HP damage, static die loss, or resource drain only) |
-| **Campaign Mission Retry Policy** | **Freely Retriable** upon failure ([+1 DOOM] per failed Campaign Mission) |
+| **Side-Mission Failure Penalty** | **[0 FAIL] Points** (Local tactical HP damage, static die loss, or resource drain only) |
+| **Campaign Mission Retry Policy** | **Freely Retriable** upon failure ([+1 FAIL] per failed Campaign Mission) |
 | **Allowed Side-Mission Themes** | [Urban], [Facility], [Space], [Covert], [Planet] |
 
 ---
@@ -95,7 +95,7 @@ art_spec:
 ## 3. Macro-Spacing & Coherent Retry Logic
 
 * **Macro-Spacing Across Time & Space:** Each mission in *Operation: Iron Dawn* represents a major strategic deployment separated by days or weeks of intelligence processing, Infirmary trauma recovery, and Quartermaster re-arming at HQ.
-* **Tactical Retreat & Second Assault Wave:** If the squad fails a Campaign Mission climax stage or declares an emergency retreat, the narrative records that the strike team pulled back before securing the objective. The campaign track advances by **[+1 DOOM]**, and the squad returns to HQ. Retrying the mission represents launching a **Second Assault Wave** against an alerted target or secondary safehouse.
+* **Tactical Retreat & Second Assault Wave:** If the squad fails a Campaign Mission climax stage or declares an emergency retreat, the narrative records that the strike team pulled back before securing the objective. The campaign track advances by **[+1 FAIL]**, and the squad returns to HQ. Retrying the mission represents launching a **Second Assault Wave** against an alerted target or secondary safehouse.
 
 ---
 
@@ -126,4 +126,4 @@ art_spec:
 | **Base [Combat] Stages** | `5 of 8 Stages` (`62.5% [Combat]` — Exceeds the 50% Focus Pyramid Mandate) |
 | **Frontline Mandate** | Every mission includes at least 1 [Combat] stage |
 | **Dynamic Focus Swaps** | Available on `6 of 8 Stages` (*Force Breach* or *Tactical Bypass*) |
-| **Doom Escalation** | Stage failures inflict local HP/dice/credit blowback; Mission failures add [+1 DOOM] (`3 Max`) |
+| **Doom Escalation** | Stage failures inflict local HP/dice/credit blowback; Mission failures add [+1 FAIL] (`3 Max`) |

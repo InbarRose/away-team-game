@@ -64,6 +64,14 @@ export function AppShell({
           <button
             type="button"
             className="at-nav-btn"
+            onClick={() => openWikiRoute('#/wiki/design')}
+            title="Internal Game Design Reference: 9.0 ES Engine, Skewed Pyramid, and Anti-Alpha Architecture"
+          >
+            🔬 Design Docs
+          </button>
+          <button
+            type="button"
+            className="at-nav-btn"
             onClick={() => openWikiRoute('#/wiki/backlog')}
             title="Design Companion Audit: Rule Edge Cases, Balance Observations & Product Backlog"
           >
@@ -80,16 +88,21 @@ export function AppShell({
         </nav>
       </header>
 
-      {mode === 'wiki' ? (
-        <WikiPortal
-          coreRules={coreRules}
-          components={components}
-          artManifest={artManifest}
-          onLaunchVTT={() => setMode('vtt')}
-        />
-      ) : (
-        <VirtualTabletop components={components} />
-      )}
+      <main>
+        {mode === 'wiki' ? (
+          <WikiPortal
+            coreRules={coreRules}
+            components={components}
+            artManifest={artManifest}
+            onLaunchVTT={() => setMode('vtt')}
+          />
+        ) : (
+          <VirtualTabletop
+            components={components}
+            onReturnToWiki={() => setMode('wiki')}
+          />
+        )}
+      </main>
     </div>
   );
 }

@@ -4,7 +4,7 @@ title: "Campaign Engine, Missions & Endgame Scoring"
 component_type: "core_rule"
 category: "core"
 order: 7
-summary: "Macro-campaign architecture, the Doom Tracker, Retry logic, Continuous Drops ([No HQ]), Safehouse Protocol, Side-Mission Theme tags, and Final VP Scoring."
+summary: "Macro-campaign architecture, the Mission Failure Tracker, Retry logic, Continuous Drops ([No HQ]), Safehouse Protocol, Side-Mission Theme tags, and Final VP Scoring."
 ---
 
 # Campaign Engine, Missions & Endgame Scoring
@@ -24,8 +24,8 @@ A campaign in **Away Team** consists of **3 to 5 fixed, story-driven Campaign Mi
 Each Campaign Dossier defines five structural parameters:
 
 1. **Mission Sequence Length:** `3 Missions` (Standard/Initializer) to `4–5 Missions` (Complex/Hard).
-2. **Maximum Doom Threshold ([DOOM]):** Typically **3 to [4 DOOM] points**. Note that **individual stage failures never add [DOOM]**—Stage failures inflict local tactical blowback (HP damage, static die loss, downstream stage difficulty $+1$). **[DOOM] is added strictly when an entire Mission fails** (or when a campaign rule explicitly triggers it). If [DOOM] reaches the campaign threshold, the Agency suffers immediate **Operational Collapse (Game Over)**.
-3. **Global Retry Budget:** Easy campaigns allow free mission retries (limited only by the [DOOM] track), whereas hard campaigns enforce a strict **Global Retry Cap** (e.g., max 2 total retries across the campaign).
+2. **Maximum Failure Limit ([FAIL]):** Typically **3 to [4 FAIL] points**. Note that **individual stage failures never add [FAIL]**—Stage failures inflict local tactical blowback (HP damage, static die loss, downstream stage difficulty $+1$). **[FAIL] is added strictly when an entire Mission fails** (or when a campaign rule explicitly triggers it). If [FAIL] reaches the campaign threshold, the Agency suffers immediate **Operational Collapse (Game Over)**.
+3. **Global Retry Budget:** Easy campaigns allow free mission retries (limited only by the [FAIL] track), whereas hard campaigns enforce a strict **Global Retry Cap** (e.g., max 2 total retries across the campaign).
 4. **Side-Mission Windows & Lockouts:** Campaigns specify when Side-Missions are open, capped, or locked out (e.g., after clearing Mission 3 in *Apex Extraction*, Side-Missions lock out permanently prior to the finale).
 5. **Special Deployment Tags:**
    * **[Continuous Drop] / [No HQ]:** Links two consecutive missions (e.g., Mission 2 $\rightarrow$ Mission 3 in *Apex Extraction*). Upon clearing Part A, the squad **skips HQ Downtime entirely**, carrying their surviving HP, unspent static dice, equipped gear, and remaining consumables directly into Part B.
@@ -72,18 +72,18 @@ When the squad clears the final Climax Stage of the campaign's last mission, the
 ## 6. Rulebook Callouts, Examples of Play & Diagram Blueprints
 
 > [!IMPORTANT]
-> **Stage Failures vs. Mission Failures (`[DOOM]` Escalation):** Failing an individual Stage Card inside a mission **never** advances the global `[DOOM]` tracker (unless that stage is a Mission Climax stage whose failure aborts the mission). Individual stage failures inflict local tactical blowback (HP damage, static die loss, or `+1` downstream difficulty). **`[+1 DOOM]` is added strictly when an entire Campaign Mission fails or is aborted via Retreat.**
+> **Stage Failures vs. Mission Failures ([FAIL] Escalation):** Failing an individual Stage Card inside a mission **never** advances the global [FAIL] tracker (unless that stage is a Mission Climax stage whose failure aborts the mission). Individual stage failures inflict local tactical blowback (HP damage, static die loss, or `+1` downstream difficulty). **`[+1 FAIL]` is added strictly when an entire Campaign Mission fails or is aborted via Retreat.**
 
 > [!TIP]
-> **Preparing for `[Continuous Drop]` (`[No HQ]`) Missions:** In advanced campaigns like *Operation: Apex Extraction*, Mission 2 links directly into Mission 3 with the **`[Continuous Drop]`** tag. Because there is **no HQ Downtime** between Part A and Part B, any static dice spent or HP lost in Mission 2 remain spent/missing at the start of Mission 3! Save a Squad Leader **Logistical Refresh (`[3 EF]`)** and extra Medical Consumables for the transition into Part B.
+> **Preparing for [Continuous Drop] ([No HQ]) Missions:** In advanced campaigns like *Operation: Apex Extraction*, Mission 2 links directly into Mission 3 with the **[Continuous Drop]** tag. Because there is **no HQ Downtime** between Part A and Part B, any static dice spent or HP lost in Mission 2 remain spent/missing at the start of Mission 3! Save a Squad Leader **Logistical Refresh (`[3 EF]`)** and extra Medical Consumables for the transition into Part B.
 
 > [!EXAMPLE]
-> **Example of Play — Final Executive `[VP]` Audit (Endgame Scoring):**
-> * The squad clears Stage 3 of Mission 3 in *Operation: Iron Dawn*, winning the campaign collectively. Now the 4 Directors audit their final **`[VP]`** totals:
->   * **Aegis Director:** `6 VP` (from 2 Open Agendas) + `3 PIP` (`6 VP`) + `9 LOY` across living/martyr agents (`18 VP`) + 1st Place on Secret Objective *The Warlord* (`+15 VP`) = **`45 VP` (1st Place — Winner!)**.
->   * **Vanderbilt Director:** `8 VP` (from Open Agendas) + `5 PIP` (`10 VP`) + `6 LOY` (`12 VP`) + 2nd Place Secret Objective (`+10 VP`) = **`40 VP` (2nd Place)**.
+> **Example of Play — Final Executive [VP] Audit (Endgame Scoring):**
+> * The squad clears Stage 3 of Mission 3 in *Operation: Iron Dawn*, winning the campaign collectively. Now the 4 Directors audit their final **[VP]** totals:
+>   * **Aegis Director:** `[6 VP]` (from 2 Open Agendas) + `3 PIP` (`[6 VP]`) + `[9 LOY]` across living/martyr agents (`[18 VP]`) + 1st Place on Secret Objective *The Warlord* (`[+15 VP]`) = **`[45 VP]` (1st Place — Winner!)**.
+>   * **Vanderbilt Director:** `[8 VP]` (from Open Agendas) + `5 PIP` (`[10 VP]`) + `[6 LOY]` (`[12 VP]`) + 2nd Place Secret Objective (`[+10 VP]`) = **`[40 VP]` (2nd Place)**.
 
 > [!DIAGRAM]
 > **Figure 7.1 — Campaign Progression, Side-Mission Windows & 6-Slot Anatomical Loadout**
-> * **Visual Specification:** Split diagram. Left panel shows the **Campaign Mission Track (`M1` $\rightarrow$ `M2` $\rightarrow$ `M3`)** with optional Side-Mission branches (`[Urban]`, `[Space]`, `[Facility]`) and the 3-step **`[DOOM]` Clock**. Right panel shows the **Operative Anatomical Loadout Silhouette** with `[Head]`, `[Body]`, `[Legs]`, `[Pack]`, `[Hand L] + [Hand R]`, `[Complex]`, and `2 Consumable` slots.
+> * **Visual Specification:** Split diagram. Left panel shows the **Campaign Mission Track (`M1` $\rightarrow$ `M2` $\rightarrow$ `M3`)** with optional Side-Mission branches ([Urban], [Space], [Facility]) and the 3-step **[FAIL] Clock**. Right panel shows the **Operative Anatomical Loadout Silhouette** with [Head], [Body], [Legs], [Pack], `[Hand L] + [Hand R]`, [Complex], and `2 Consumable` slots.
 > * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_7_1_campaign_and_loadout.webp`
