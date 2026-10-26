@@ -215,3 +215,36 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 - [x] Add GitHub issue templates in `.github/ISSUE_TEMPLATE/` (`bug_report.md`, `gameplay_feedback.md`, `feature_request.md`, `config.yml`).
 - [x] Update `AppShell.tsx` with top-level 4-mode navigation (`home`, `wiki`, `design`, `vtt`), GitHub repository badge, and an interactive &ldquo;Feedback & Issues&rdquo; modal launcher.
 - [x] Add regression test coverage in `tests/01-structure-and-intent.test.js` (26/26 tests passing) and verify production Astro build.
+
+---
+
+### ✅ Iteration 19: Chronological Board Game Rulebook Flow & VTT Macro Phase Alignment (COMPLETE)
+- [x] Restructure all 8 Core Rulebook chapters in `game/core/` to follow the exact chronological flow of a published tabletop game (Overview & Objectives -> Box Contents & Setup -> Phase 1 Mission Select & Phase 2 Command Auction -> Phase 3 Tactical Field Mission -> Specialist Classes & Focus -> Casualties & Med Bay -> Phase 4 HQ Downtime -> Campaign Progression & Victory).
+- [x] Codify 1P/2P/3P/4P table setup variants with official 3-Player Vanguard Slot mechanics.
+- [x] Enhance the Print Rulebook reader in `src/components/WikiPortal.tsx` with Phase Banners, table of contents, and card anatomy schematics.
+- [x] Re-architect the Virtual Tabletop in `src/vtt/VirtualTabletop.tsx` with a top-level **Board Game Phase Bar** (`Setup` -> `Phase 1: Mission` -> `Phase 2: Command & Roster` -> `Phase 3: Tactical Field` -> `Phase 4: HQ Downtime` -> `Simulator & Balance Ledger`).
+- [x] Implement interactive Phase 0 Setup panel (player counts, Faction Director seats, starting vaults, setup sequence).
+- [x] Implement Phase 1 Mission Selection with threat assessment, stage preview, and Dissolution failure tracker.
+- [x] Implement Phase 2 Command Auction bidding console with live canonical tie-breakers, zero-bid roll-off (`BL-RULES-04`), and 6-slot loadout validator.
+- [x] Implement Phase 3 Tactical Mission with 7-step sequencer, dynamic focus swaps, static dice pools, and triage.
+- [x] Implement Phase 4 HQ Downtime with 8-step cycle, dual-stream debrief payouts calculator (`BL-RULES-01`), recovery beds, and sponsored base modules.
+- [x] Add regression test coverage in `tests/05-vtt-engine-and-simulator.test.js` (27/27 tests passing) and verify production Astro build.
+
+---
+
+### 📋 Architecture Decision Records (ADRs)
+
+#### ADR-12: Chronological Board Game Sequence of Play & VTT Macro Phase Alignment
+* **Context:** The core rulebook and VTT previously presented game concepts non-chronologically, mixing setup, mid-mission tactical resolution, and downtime economies across non-sequential chapters and unsequenced VTT dashboard views.
+* **Decision:**
+  1. Renumber and restructure all 8 core rulebook chapters in `game/core/` into chronological board game order:
+     - Chapter 1: *Game Overview, Concept & Objectives* (Theme, abstract, semi-co-op paradox, victory conditions).
+     - Chapter 2: *Game Components & Tabletop Setup* (1P/2P/3P/4P variations, Vanguard slot, 6-step setup, card anatomy).
+     - Chapter 3: *Phase 1 (Mission Select) & Phase 2 (Roster & Command Auction)* (Briefings, 4-agent deployment, command bids, tie-breakers, roll-offs, executive levers).
+     - Chapter 4: *Phase 3 — The Tactical Mission Phase (In the Field)* (Static pools, 3+/4+/5+ thresholds, 5-step stage micro-loop, early resolution, momentum).
+     - Chapter 5: *Specialist Classes & The Focus Matrix* (6 classes, 1-EF standard powers, exact timing windows, 24-agent focus matrix).
+     - Chapter 6: *Field Casualties, Triage & Med Bay Trauma Engine* (Step 4 triage, Dying Breath, vulture looting, infirmary beds, calcification).
+     - Chapter 7: *Phase 4 — Headquarters Downtime Phase (Base Operations)* (8-step HQ cycle: debrief dual-stream payouts, stand-down auction, med bay, sponsorships, armory).
+     - Chapter 8: *Campaign Progression, Failure Tracker & Endgame Victory* (Branching campaigns, failure tracker, final VP scoring tally, keyword glossary).
+  2. Implement an identical top-level Board Game Phase Navigation Bar in the VTT (`Setup` -> `Phase 1` -> `Phase 2` -> `Phase 3` -> `Phase 4` -> `Simulator`), providing dedicated screens, contextual guidance, and sequential forward progression buttons for all 4 phases of tabletop play.
+* **Status:** Adopted and verified across all test suites and static build.

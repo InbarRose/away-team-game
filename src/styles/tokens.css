@@ -1030,6 +1030,142 @@ a:hover {
   font-size: 0.85rem;
 }
 
+/* ==========================================================================
+   BOARD GAME MACRO PHASE BAR & RULEBOOK PHASE BANNERS
+   ========================================================================== */
+.vtt-phase-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+  gap: 0.6rem;
+  margin-bottom: 1.1rem;
+}
+
+.vtt-phase-tab {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-align: left;
+}
+
+.vtt-phase-tab:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-strong);
+  color: var(--text-primary);
+}
+
+.vtt-phase-tab.active {
+  background: rgba(0, 229, 255, 0.12);
+  border-color: var(--currency-effort);
+  color: #f8fafc;
+  box-shadow: 0 0 16px rgba(0, 229, 255, 0.22);
+}
+
+.vtt-phase-tab.active.badge-setup {
+  border-color: #94a3b8;
+  background: rgba(148, 163, 184, 0.14);
+  box-shadow: 0 0 16px rgba(148, 163, 184, 0.25);
+}
+
+.vtt-phase-tab.active.badge-phase1 {
+  border-color: #38bdf8;
+  background: rgba(56, 189, 248, 0.14);
+  box-shadow: 0 0 16px rgba(56, 189, 248, 0.25);
+}
+
+.vtt-phase-tab.active.badge-phase2 {
+  border-color: #c084fc;
+  background: rgba(192, 132, 252, 0.14);
+  box-shadow: 0 0 16px rgba(192, 132, 252, 0.25);
+}
+
+.vtt-phase-tab.active.badge-phase3 {
+  border-color: #f87171;
+  background: rgba(248, 113, 113, 0.14);
+  box-shadow: 0 0 16px rgba(248, 113, 113, 0.25);
+}
+
+.vtt-phase-tab.active.badge-phase4 {
+  border-color: #34d399;
+  background: rgba(52, 211, 153, 0.14);
+  box-shadow: 0 0 16px rgba(52, 211, 153, 0.25);
+}
+
+.vtt-phase-tab.active.badge-sim {
+  border-color: #fbbf24;
+  background: rgba(251, 191, 36, 0.14);
+  box-shadow: 0 0 16px rgba(251, 191, 36, 0.25);
+}
+
+.rulebook-phase-badge {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.9rem;
+}
+
+.rulebook-phase-badge.badge-overview {
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid #94a3b8;
+  color: #e2e8f0;
+}
+
+.rulebook-phase-badge.badge-setup {
+  background: rgba(148, 163, 184, 0.12);
+  border: 1px solid #94a3b8;
+  color: #cbd5e1;
+}
+
+.rulebook-phase-badge.badge-phase-1-2 {
+  background: rgba(192, 132, 252, 0.12);
+  border: 1px solid #c084fc;
+  color: #e9d5ff;
+}
+
+.rulebook-phase-badge.badge-phase-3 {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid #f87171;
+  color: #fecaca;
+}
+
+.rulebook-phase-badge.badge-classes {
+  background: rgba(56, 189, 248, 0.12);
+  border: 1px solid #38bdf8;
+  color: #bae6fd;
+}
+
+.rulebook-phase-badge.badge-medbay {
+  background: rgba(251, 113, 133, 0.12);
+  border: 1px solid #fb7185;
+  color: #fecdd3;
+}
+
+.rulebook-phase-badge.badge-phase-4 {
+  background: rgba(52, 211, 153, 0.12);
+  border: 1px solid #34d399;
+  color: #a7f3d0;
+}
+
+.rulebook-phase-badge.badge-campaign {
+  background: rgba(251, 191, 36, 0.12);
+  border: 1px solid #fbbf24;
+  color: #fde68a;
+}
+
 @media (max-width: 960px) {
   .wiki-sidebar {
     position: static;

@@ -197,4 +197,21 @@ describe('Suite 05: VTT 7-Step Sequencer, Monte Carlo Balance Simulator, Print R
       assert.ok(backlogMd.includes(ruleId), 'BACKLOG.md must contain ' + ruleId);
     }
   });
+  it('verifies VTT board game phase flow (Setup -> Phase 1 -> Phase 2 -> Phase 3 -> Phase 4 -> Sim) and Vanguard Slot mechanics', () => {
+    const vttSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'VirtualTabletop.tsx'), 'utf8');
+    assert.ok(vttSrc.includes('BOARD_GAME_PHASES'), 'VTT must export or define BOARD_GAME_PHASES');
+    assert.ok(vttSrc.includes('vtt-phase-nav'), 'VTT must render vtt-phase-nav navigation bar');
+    assert.ok(vttSrc.includes('handleZeroBidRollOff'), 'VTT must implement handleZeroBidRollOff for BL-RULES-04');
+    assert.ok(vttSrc.includes('handleDistributeMissionPayouts'), 'VTT must implement handleDistributeMissionPayouts for BL-RULES-01');
+    assert.ok(vttSrc.includes('Vanguard Slot'), 'VTT must support 3-player Vanguard Slot protocol');
+
+    const tokensCss = fs.readFileSync(path.join(ROOT_DIR, 'src', 'styles', 'tokens.css'), 'utf8');
+    assert.ok(tokensCss.includes('.vtt-phase-nav'), 'tokens.css must define .vtt-phase-nav');
+    assert.ok(tokensCss.includes('.vtt-phase-tab'), 'tokens.css must define .vtt-phase-tab');
+    assert.ok(tokensCss.includes('.rulebook-phase-badge'), 'tokens.css must define .rulebook-phase-badge');
+
+    const wikiSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'components', 'WikiPortal.tsx'), 'utf8');
+    assert.ok(wikiSrc.includes('rulebook-phase-badge badge-overview'), 'WikiPortal print rulebook must render chapter phase banners');
+    assert.ok(wikiSrc.includes('rulebook-phase-badge badge-phase-3'), 'WikiPortal print rulebook must render tactical phase banner');
+  });
 });

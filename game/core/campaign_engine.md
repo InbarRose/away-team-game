@@ -1,9 +1,9 @@
 ---
 id: "core-campaign-engine"
-title: "Campaign Engine, Missions & Endgame Scoring"
+title: "Chapter 8: Campaign Progression, Failure Tracker & Endgame Victory"
 component_type: "core_rule"
 category: "core"
-order: 7
+order: 8
 summary: "Macro-campaign architecture, the Mission Failure Tracker, Retry logic, Continuous Drops ([No HQ]), Safehouse Protocol, Side-Mission Theme tags, and Final VP Scoring."
 ---
 

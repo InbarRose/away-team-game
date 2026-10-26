@@ -251,11 +251,62 @@ const DEFAULT_STATE: VTTState = {
   ],
 };
 
+
+export type VTTTabKey =
+  | 'setup'
+  | 'phase1_mission'
+  | 'phase2_command'
+  | 'stage'
+  | 'squad'
+  | 'hq'
+  | 'medbay'
+  | 'simulator';
+
+export const BOARD_GAME_PHASES = [
+  {
+    id: 'setup' as const,
+    title: '⚙️ Setup',
+    subtitle: '1–4 Players & Factions',
+    badgeClass: 'badge-setup',
+  },
+  {
+    id: 'phase1_mission' as const,
+    title: '🗺️ Phase 1: Mission',
+    subtitle: 'Briefing & Threat Deck',
+    badgeClass: 'badge-phase1',
+  },
+  {
+    id: 'phase2_command' as const,
+    title: '👑 Phase 2: Command',
+    subtitle: 'Roster & Command Auction',
+    badgeClass: 'badge-phase2',
+  },
+  {
+    id: 'stage' as const,
+    title: '🎲 Phase 3: Tactical Field',
+    subtitle: '5-Step Stage Micro-Loop',
+    badgeClass: 'badge-phase3',
+  },
+  {
+    id: 'hq' as const,
+    title: '🏢 Phase 4: HQ Downtime',
+    subtitle: '8-Step Base Operations',
+    badgeClass: 'badge-phase4',
+  },
+  {
+    id: 'simulator' as const,
+    title: '📊 Balance & Sim',
+    subtitle: 'Monte Carlo & 9.0 ES',
+    badgeClass: 'badge-sim',
+  },
+] as const;
+
 export function VirtualTabletop({ components = rawAllComponents as GameComponent[], onReturnToWiki }: VTTProps) {
   const [state, setState] = useState<VTTState>(DEFAULT_STATE);
-  const [activeTab, setActiveTab] = useState<
-    'stage' | 'squad' | 'hq' | 'medbay' | 'simulator'
-  >('stage');
+  const [activeTab, setActiveTab] = useState<VTTTabKey>('setup');
+  const [tacticalSubTab, setTacticalSubTab] = useState<'stage' | 'medbay'>('stage');
+  const [bountyPoolCr, setBountyPoolCr] = useState<number>(8);
+  const [bountyPoolPip, setBountyPoolPip] = useState<number>(1);
   const [simTrials, setSimTrials] = useState<number>(1000);
   const [simSeedBump, setSimSeedBump] = useState<number>(0);
 
@@ -648,6 +699,60 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
   };
 
   // Resolve Command Auction
+  
+  // High-Stakes Zero-Bid Roll-Off (BL-RULES-04)
+  const handleZeroBidRollOff = () => {
+    const rolls = state.vaults.map((v) => ({
+      playerIndex: v.playerIndex,
+      playerName: v.playerName,
+      roll: Math.floor(Math.random() * 6) + 1,
+    }));
+    rolls.sort((a, b) => b.roll - a.roll);
+    const winner = rolls[0];
+
+    setState((prev) => ({
+      ...prev,
+      vaults: prev.vaults.map((v) => ({
+        ...v,
+        isSquadLeader: v.playerIndex === winner.playerIndex,
+      })),
+    }));
+    appendLog(
+      `🎲 Zero-Bid High-Stakes Roll-Off (BL-RULES-04): ${rolls
+        .map((r) => `${r.playerName}: ${r.roll}`)
+        .join(', ')}. ${winner.playerName} rolled highest (${winner.roll}) and is thrust into the Squad Leader role for [0 CR]!`
+    );
+  };
+
+  // Debrief Dual-Stream Payouts (BL-RULES-01)
+  const handleDistributeMissionPayouts = (bountyCredits: number, bountyPip: number) => {
+    const activeCount = state.playerCount || 4;
+    const squadLeader = state.vaults.find((v) => v.isSquadLeader);
+    const leaderIdx = squadLeader ? squadLeader.playerIndex : 0;
+
+    const evenCredits = Math.floor(bountyCredits / activeCount);
+    const remainderCredits = bountyCredits % activeCount;
+    const evenPip = Math.floor(bountyPip / activeCount);
+    const remainderPip = bountyPip % activeCount;
+
+    setState((prev) => ({
+      ...prev,
+      vaults: prev.vaults.map((v) => {
+        const isLeader = v.playerIndex === leaderIdx;
+        const totalCrGain = 2 + evenCredits + (isLeader ? remainderCredits : 0);
+        const totalPipGain = 1 + evenPip + (isLeader ? remainderPip : 0);
+        return {
+          ...v,
+          credits: v.credits + totalCrGain,
+          pip: v.pip + totalPipGain,
+        };
+      }),
+    }));
+    appendLog(
+      `🏢 HQ Debrief (BL-RULES-01): Awarded [2 CR] + [1 PIP] baseline stipend + [${bountyCredits} CR, ${bountyPip} PIP] mission pool divided evenly (${evenCredits} CR, ${evenPip} PIP each). Squad Leader (${state.vaults[leaderIdx].playerName}) received the odd remainder (+${remainderCredits} CR, +${remainderPip} PIP).`
+    );
+  };
+
   const handleResolveCommandAuction = () => {
     let winnerIdx = 0;
     let bestBid = -1;
@@ -821,614 +926,867 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
   return (
     <div className="vtt-container">
       {/* ====================================================================
-          GUIDED 7-STEP PHASE SEQUENCER & CONTEXTUAL RULES COACH
+          VTT HEADER BAR: MISSION STATUS, RESOURCE BADGES & ACTIONS
          ==================================================================== */}
-      <section className="vtt-panel">
-        <div className="vtt-panel-title">
-          <span>🧭 GUIDED 7-STEP GAME LOOP SEQUENCER & TACTICAL RULES COACH</span>
-          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
-            <button
-              type="button"
-              className="vtt-btn"
-              title="Move to the previous step in the official Sequence of Play"
-              onClick={() =>
-                setState((p) => ({
-                  ...p,
-                  sequenceStep: p.sequenceStep > 1 ? p.sequenceStep - 1 : 7,
-                }))
-              }
-            >
-              ◀ Prev Step
-            </button>
-            <button
-              type="button"
-              className="vtt-btn vtt-btn-primary"
-              title="Advance to the next step in the official Sequence of Play"
-              onClick={() =>
-                setState((p) => ({
-                  ...p,
-                  sequenceStep: p.sequenceStep < 7 ? p.sequenceStep + 1 : 1,
-                }))
-              }
-            >
-              Next Step ▶
-            </button>
-            <button
-              type="button"
-              className="vtt-btn"
-              title="Export current campaign, vaults, and squad state as a JSON save file"
-              onClick={() => {
-                const blob = new Blob([JSON.stringify(state, null, 2)], {
-                  type: 'application/json',
-                });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = 'away_team_campaign_save.json';
-                a.click();
-              }}
-            >
-              💾 Export Save JSON
-            </button>
-            <button
-              type="button"
-              className="vtt-btn vtt-btn-danger"
-              title="Reset the entire Virtual Tabletop back to initial Mission 1 state"
-              onClick={() => {
-                setState(DEFAULT_STATE);
-                localStorage.removeItem(STORAGE_KEY);
-              }}
-            >
-              ↺ Reset Table
-            </button>
+      <header
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          flexWrap: 'wrap',
+          gap: '0.75rem',
+          padding: '0.75rem 1rem',
+          borderRadius: 'var(--radius-md)',
+          background: 'var(--bg-elevated)',
+          border: '1px solid var(--border-subtle)',
+        }}
+      >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+          <div>
+            <strong style={{ fontFamily: 'var(--font-display)', fontSize: '1.05rem', letterSpacing: '0.04em' }}>
+              AWAY TEAM — VIRTUAL TABLETOP
+            </strong>
+            <span style={{ marginLeft: '0.5rem', fontSize: '0.75rem', color: 'var(--currency-effort)', fontFamily: 'var(--font-mono)' }}>
+              • Board Game Operations Engine
+            </span>
           </div>
-        </div>
-
-        {/* 7-Step Clickable Sequencer Bar */}
-        <div className="vtt-sequencer-bar">
-          {SEQUENCE_STEPS.map((st) => {
-            const isActive = state.sequenceStep === st.step;
-            const isDone = state.sequenceStep > st.step;
-            return (
-              <button
-                key={st.step}
-                type="button"
-                className={`vtt-step-pill ${isActive ? 'active' : isDone ? 'completed' : ''}`}
-                title={st.coachHint}
-                onClick={() => {
-                  setState((p) => ({ ...p, sequenceStep: st.step }));
-                  if (st.step === 7) setActiveTab('medbay');
-                  else setActiveTab('stage');
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.66rem',
-                    color: isActive
-                      ? 'var(--currency-effort)'
-                      : isDone
-                      ? '#34d399'
-                      : 'var(--text-muted)',
-                  }}
-                >
-                  {isDone ? '✓ COMPLETED' : isActive ? '● ACTIVE STEP' : `STEP 0${st.step}`}
-                </div>
-                <strong style={{ fontSize: '0.78rem' }}>{st.shortTitle}</strong>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Contextual Rules Coach & Live Probability Hint */}
-        <div className="vtt-coach-banner">
-          <div style={{ flex: 1, minWidth: '280px' }}>
-            <div
+          <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', flexWrap: 'wrap' }}>
+            <span
               style={{
-                fontFamily: 'var(--font-mono)',
                 fontSize: '0.72rem',
-                color: 'var(--currency-effort)',
-                fontWeight: 700,
-                marginBottom: '0.2rem',
+                padding: '0.2rem 0.5rem',
+                borderRadius: '4px',
+                background: 'var(--bg-card)',
+                border: '1px solid var(--border-subtle)',
+                fontFamily: 'var(--font-mono)',
               }}
             >
-              💡 ACTIVE STEP RULES COACH — {activeStepMeta.fullTitle}
-            </div>
-            <div style={{ color: '#dbe4f0', lineHeight: 1.5 }}>
-              <SemanticText text={activeStepMeta.coachHint} />
-            </div>
-          </div>
-
-          <div
-            style={{
-              padding: '0.55rem 0.85rem',
-              borderRadius: '6px',
-              background: 'rgba(15, 23, 42, 0.88)',
-              border: '1px solid var(--border-strong)',
-              fontFamily: 'var(--font-mono)',
-              fontSize: '0.74rem',
-              minWidth: '255px',
-            }}
-            title="Live 1,000-trial Monte Carlo simulation of your currently committed static dice against Target Difficulty D"
-          >
-            <div style={{ color: 'var(--text-secondary)', fontSize: '0.68rem' }}>
-              PRE-ROLL MONTE CARLO FORECAST ({squadSummary.totalCommittedDice}d6 vs D={state.targetDifficulty})
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.25rem' }}>
-              <span>Clear Odds:</span>
-              <strong
-                style={{
-                  color:
-                    liveSimulation.clearProbabilityPct >= 80
-                      ? '#34d399'
-                      : liveSimulation.clearProbabilityPct >= 55
-                      ? '#fbbf24'
-                      : '#f87171',
-                }}
-              >
-                {liveSimulation.clearProbabilityPct}% (E={squadSummary.expectedSuccesses} ES)
-              </strong>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>Phase 1 Early Clear:</span>
-              <strong style={{ color: '#38bdf8' }}>
-                {liveSimulation.earlyPhase1ClearProbabilityPct}%
-              </strong>
-            </div>
-            <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-              <span>Momentum ([MOM]) Odds:</span>
-              <strong style={{ color: '#a855f7' }}>
-                {liveSimulation.momentumProbabilityPct}%
-              </strong>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Top Macro Campaign & Doom Bar */}
-      <section className="vtt-panel">
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-            gap: '0.85rem',
-            alignItems: 'center',
-          }}
-        >
-          {/* Campaign Selector */}
-          <div title="Select the active Campaign Dossier (sets Max Doom threshold and narrative mission arc)">
-            <label style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block' }}>
-              ACTIVE CAMPAIGN DOSSIER
-            </label>
-            <select
-              value={state.campaignId}
-              onChange={(e) =>
-                setState((prev) => ({ ...prev, campaignId: e.target.value }))
-              }
+              📍 {activeMission?.title || 'Mission 1'}
+            </span>
+            <span
               style={{
-                width: '100%',
-                padding: '0.45rem',
-                borderRadius: '6px',
-                background: 'var(--bg-void)',
-                color: 'var(--text-primary)',
-                border: '1px solid var(--border-strong)',
-              }}
-            >
-              {campaigns.map((c) => (
-                <option key={c.id} value={c.id}>
-                  {c.title}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Mission Selector */}
-          <div title="Select the active Campaign Mission or Themed Side-Mission">
-            <label style={{ fontSize: '0.72rem', color: 'var(--text-secondary)', display: 'block' }}>
-              ACTIVE MISSION / SIDE-MISSION
-            </label>
-            <select
-              value={state.missionId}
-              onChange={(e) =>
-                setState((prev) => ({
-                  ...prev,
-                  missionId: e.target.value,
-                  stageIndex: 0,
-                  overrideFocus: null,
-                }))
-              }
-              style={{
-                width: '100%',
-                padding: '0.45rem',
-                borderRadius: '6px',
-                background: 'var(--bg-void)',
-                color: 'var(--text-primary)',
-                border: '1px solid var(--border-strong)',
-              }}
-            >
-              {missions.map((m) => (
-                <option key={m.id} value={m.id}>
-                  {m.title}
-                </option>
-              ))}
-            </select>
-          </div>
-
-          {/* Doom & Momentum Trackers */}
-          <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center', flexWrap: 'wrap' }}>
-            <div
-              title="Meta Campaign Failure Tracker ([FAIL]) — Advances ONLY when an entire Campaign Mission fails or retreats. Reaching Dissolution Threshold causes Task Force Dissolution!"
-              style={{
-                padding: '0.4rem 0.7rem',
-                borderRadius: '6px',
+                fontSize: '0.72rem',
+                padding: '0.2rem 0.5rem',
+                borderRadius: '4px',
                 background: 'var(--currency-doom-bg)',
                 border: '1px solid var(--currency-doom)',
+                color: '#f87171',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 700,
               }}
+              title="Campaign Mission Failure Tracker ([FAIL]) — Dissolution occurs when reaching threshold!"
             >
-              <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)' }}>
-                MISSION FAILURE TRACKER
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <button
-                  type="button"
-                  className="vtt-btn"
-                  onClick={() =>
-                    setState((p) => ({ ...p, doom: Math.max(0, p.doom - 1) }))
-                  }
-                >
-                  -
-                </button>
-                <strong style={{ fontSize: '1.05rem', color: '#ff8080' }}>
-                  {state.doom} / {activeCampaign?.stats?.max_doom || 3} [FAIL]
-                </strong>
-                <button
-                  type="button"
-                  className="vtt-btn"
-                  onClick={() =>
-                    setState((p) => ({ ...p, doom: p.doom + 1 }))
-                  }
-                >
-                  +
-                </button>
-              </div>
-            </div>
-
-            <div
-              title="In-Mission Operational Momentum ([MOM]) — Transient state earned when clearing a Stage by >= D+2 successes (MOM = Successes - D - 1). Spend [1 MOM] to restore 1 spent static die to a participating roller!"
+              💀 {state.doom} / {activeCampaign?.stats?.max_doom || 3} [FAIL]
+            </span>
+            <span
               style={{
-                padding: '0.4rem 0.7rem',
-                borderRadius: '6px',
+                fontSize: '0.72rem',
+                padding: '0.2rem 0.5rem',
+                borderRadius: '4px',
                 background: 'var(--currency-momentum-bg)',
                 border: '1px solid var(--currency-momentum)',
+                color: '#34d399',
+                fontFamily: 'var(--font-mono)',
+                fontWeight: 700,
               }}
+              title="Operational Momentum ([MOM]) earned from clears >= D+2. Restores spent static dice!"
             >
-              <div style={{ fontSize: '0.68rem', fontFamily: 'var(--font-mono)' }}>
-                IN-MISSION MOMENTUM (TRANSIENT)
-              </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <button
-                  type="button"
-                  className="vtt-btn"
-                  onClick={() =>
-                    setState((p) => ({
-                      ...p,
-                      momentumTokens: Math.max(0, p.momentumTokens - 1),
-                    }))
-                  }
-                >
-                  -
-                </button>
-                <strong style={{ fontSize: '1.05rem', color: '#34d399' }}>
-                  {state.momentumTokens} [MOM]
-                </strong>
-                <button
-                  type="button"
-                  className="vtt-btn"
-                  onClick={() =>
-                    setState((p) => ({
-                      ...p,
-                      momentumTokens: p.momentumTokens + 1,
-                    }))
-                  }
-                >
-                  +
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4-Player Faction Vaults & Command Auction */}
-      <section className="vtt-panel">
-        <div className="vtt-panel-title">
-          <span>FACTION VAULTS & COMMAND AUCTION</span>
-          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
-            <button
-              type="button"
-              className="vtt-btn"
-              title="Squad Leader Command Ability (Transition Step): Spend [2 EF] from Leader's Vault to restore +1 spent static die to all 4 operatives"
-              onClick={() => handleLogisticalRefresh(2)}
-            >
-              🚁 Logistical Refresh T1 ([2 EF] → +1 Die All)
-            </button>
-            <button
-              type="button"
-              className="vtt-btn"
-              title="Squad Leader Command Ability (Transition Step): Spend [3 EF] from Leader's Vault to restore +2 spent static dice to all 4 operatives"
-              onClick={() => handleLogisticalRefresh(3)}
-            >
-              🚁 Logistical Refresh T2 ([3 EF] → +2 Dice All)
-            </button>
-            <button
-              type="button"
-              className="vtt-btn vtt-btn-primary"
-              title="Resolve the pre-mission Command Auction using the canonical tie-breaker hierarchy: Highest [CR] Bid → Highest [PIP] → Candidate [LOY]"
-              onClick={handleResolveCommandAuction}
-            >
-              👑 Resolve Command Auction (Elect Squad Leader)
-            </button>
+              ⚡ {state.momentumTokens} [MOM]
+            </span>
           </div>
         </div>
 
-        <div className="vtt-grid-4">
-          {state.vaults.map((v, idx) => {
-            const fac = factions.find((f) => f.id === v.factionId) || factions[0];
-            return (
+        <div style={{ display: 'flex', gap: '0.45rem', alignItems: 'center', flexWrap: 'wrap' }}>
+          {onReturnToWiki && (
+            <button
+              type="button"
+              className="vtt-btn"
+              onClick={onReturnToWiki}
+              title="Return to the Away Team Rules & Reference Wiki"
+            >
+              📖 Rules Wiki
+            </button>
+          )}
+          <button
+            type="button"
+            className="vtt-btn"
+            title="Export current campaign, vaults, and squad state as a JSON save file"
+            onClick={() => {
+              const blob = new Blob([JSON.stringify(state, null, 2)], {
+                type: 'application/json',
+              });
+              const url = URL.createObjectURL(blob);
+              const a = document.createElement('a');
+              a.href = url;
+              a.download = 'away_team_campaign_save.json';
+              a.click();
+            }}
+          >
+            💾 Export Save
+          </button>
+          <button
+            type="button"
+            className="vtt-btn vtt-btn-danger"
+            title="Reset the entire Virtual Tabletop back to initial state"
+            onClick={() => {
+              setState(DEFAULT_STATE);
+              localStorage.removeItem(STORAGE_KEY);
+            }}
+          >
+            ↺ Reset
+          </button>
+        </div>
+      </header>
+
+      {/* ====================================================================
+          BOARD GAME MACRO PHASE BAR (SETUP -> PHASE 1 -> PHASE 2 -> PHASE 3 -> PHASE 4 -> SIM)
+         ==================================================================== */}
+      <nav className="vtt-phase-nav" aria-label="Board Game Phase Progression">
+        {BOARD_GAME_PHASES.map((p) => {
+          const isCurrent =
+            activeTab === p.id ||
+            (p.id === 'stage' && (activeTab === 'stage' || activeTab === 'medbay')) ||
+            (p.id === 'phase2_command' && activeTab === 'squad');
+          return (
+            <button
+              key={p.id}
+              type="button"
+              className={`vtt-phase-tab ${isCurrent ? `active ${p.badgeClass}` : ''}`}
+              onClick={() => setActiveTab(p.id as any)}
+            >
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', width: '100%' }}>
+                <strong style={{ fontSize: '0.88rem' }}>{p.title}</strong>
+              </div>
               <div
-                key={v.playerIndex}
                 style={{
-                  padding: '0.85rem',
-                  borderRadius: '8px',
-                  background: 'var(--bg-card)',
-                  border: v.isSquadLeader
-                    ? '2px solid var(--currency-credits)'
-                    : '1px solid var(--border-subtle)',
-                  borderTop: `4px solid ${fac?.color_hex || '#38bdf8'}`,
+                  fontSize: '0.68rem',
+                  color: isCurrent ? '#f1f5f9' : 'var(--text-muted)',
+                  marginTop: '0.2rem',
                 }}
               >
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    marginBottom: '0.5rem',
-                  }}
-                >
-                  <strong>
-                    {v.playerName} {v.isSquadLeader ? '👑 SQUAD LEADER' : ''}
-                  </strong>
-                  <div
-                    style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }}
-                    title="Endgame Victory Point Score Tracker (Not a Spendable Currency)"
-                  >
-                    <span className="semantic-badge badge-currency-vp">🏆 {v.vp} VP</span>
-                    <button
-                      type="button"
-                      className="vtt-btn"
-                      style={{ padding: '0px 5px', fontSize: '0.68rem' }}
-                      onClick={() =>
-                        setState((prev) => ({
-                          ...prev,
-                          vaults: prev.vaults.map((item, i) =>
-                            i === idx ? { ...item, vp: Math.max(0, item.vp - 1) } : item
-                          ),
-                        }))
-                      }
-                    >
-                      -
-                    </button>
-                    <button
-                      type="button"
-                      className="vtt-btn"
-                      style={{ padding: '0px 5px', fontSize: '0.68rem' }}
-                      onClick={() =>
-                        setState((prev) => ({
-                          ...prev,
-                          vaults: prev.vaults.map((item, i) =>
-                            i === idx ? { ...item, vp: item.vp + 1 } : item
-                          ),
-                        }))
-                      }
-                    >
-                      +
-                    </button>
-                  </div>
-                </div>
+                {p.subtitle}
+              </div>
+            </button>
+          );
+        })}
+      </nav>
 
-                <select
-                  value={v.factionId}
-                  onChange={(e) => {
-                    const val = e.target.value;
-                    setState((prev) => ({
-                      ...prev,
-                      vaults: prev.vaults.map((item, i) =>
-                        i === idx ? { ...item, factionId: val } : item
-                      ),
-                    }));
-                  }}
+      {/* ====================================================================
+          PHASE 0: GAME SETUP (1-4 PLAYERS, FACTIONS, VANGUARD SLOT & VAULTS)
+         ==================================================================== */}
+      {activeTab === 'setup' && (
+        <section className="vtt-panel">
+          <div className="vtt-panel-title">
+            <span>⚙️ TABLETOP SETUP & AGENCY COUNCIL INITIALIZATION</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+              Chapter 2 Tabletop Rules
+            </span>
+          </div>
+
+          <p style={{ color: '#cbd5e1', fontSize: '0.88rem', margin: '0 0 1rem 0' }}>
+            Configure player count, assign Faction Director seats, and review the initial tabletop setup steps.
+            In 3-player games, the 4th slot functions as the <strong>Vanguard Slot</strong>.
+          </p>
+
+          {/* Player Count Selector */}
+          <div style={{ marginBottom: '1.25rem' }}>
+            <label style={{ fontSize: '0.75rem', fontFamily: 'var(--font-mono)', color: 'var(--currency-effort)', display: 'block', marginBottom: '0.4rem' }}>
+              TABLE PLAYER COUNT CONFIGURATION
+            </label>
+            <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+              {[
+                { count: 1, label: '👤 1 Player (Solo Directive)', desc: 'Automated 4-operative strike squad' },
+                { count: 2, label: '👥 2 Players (Duo Task Force)', desc: 'Each player commands 2 operative slots' },
+                { count: 3, label: '🛡️ 3 Players (Trio + Vanguard Slot)', desc: 'Squad Leader commands 4th Vanguard slot' },
+                { count: 4, label: '🏛️ 4 Players (Full Agency Council)', desc: 'Standard 4-faction semi-cooperative council' },
+              ].map((cfg) => (
+                <button
+                  key={cfg.count}
+                  type="button"
+                  className={`vtt-btn ${state.playerCount === cfg.count ? 'vtt-btn-primary' : ''}`}
+                  onClick={() => setState((p) => ({ ...p, playerCount: cfg.count }))}
+                  style={{ textAlign: 'left', padding: '0.5rem 0.8rem' }}
+                >
+                  <div style={{ fontWeight: 700 }}>{cfg.label}</div>
+                  <div style={{ fontSize: '0.68rem', color: 'var(--text-muted)' }}>{cfg.desc}</div>
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* 3-Player Vanguard Slot Callout */}
+          {state.playerCount === 3 && (
+            <div
+              style={{
+                padding: '0.75rem 1rem',
+                borderRadius: '6px',
+                background: 'rgba(192, 132, 252, 0.1)',
+                border: '1px solid #c084fc',
+                fontSize: '0.82rem',
+                marginBottom: '1.25rem',
+              }}
+            >
+              <strong style={{ color: '#e9d5ff' }}>🛡️ The 3-Player Vanguard Slot Protocol:</strong>
+              <div style={{ color: '#d8b4fe', marginTop: '0.25rem' }}>
+                The 4th Operative is designated as the <strong>Vanguard Agent</strong>. The winning Squad Leader
+                deploys and commands the Vanguard operative during Phase 3, but the Vanguard agent’s survival rewards
+                and Med Bay liability are shared by the Agency Council.
+              </div>
+            </div>
+          )}
+
+          {/* Faction Director Vault Endowments */}
+          <div style={{ marginBottom: '1.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.75rem', color: 'var(--text-secondary)', marginBottom: '0.5rem' }}>
+              DIRECTOR SEATS & INITIAL VAULT ENDOWMENTS
+            </div>
+            <div className="vtt-grid-4">
+              {state.vaults.slice(0, state.playerCount || 4).map((v, idx) => (
+                <div
+                  key={v.playerIndex}
                   style={{
-                    width: '100%',
-                    padding: '0.35rem',
-                    marginBottom: '0.45rem',
-                    borderRadius: '4px',
-                    background: 'var(--bg-void)',
-                    color: 'var(--text-primary)',
+                    padding: '0.85rem',
+                    borderRadius: '8px',
+                    background: 'var(--bg-card)',
                     border: '1px solid var(--border-subtle)',
-                    fontSize: '0.78rem',
                   }}
                 >
-                  {factions.map((f) => (
-                    <option key={f.id} value={f.id}>
-                      {f.title}
-                    </option>
-                  ))}
-                </select>
-
-                {/* Primary Spendable Currencies (3-Column Grid) */}
-                <div
-                  style={{
-                    fontFamily: 'var(--font-mono)',
-                    fontSize: '0.64rem',
-                    color: 'var(--text-muted)',
-                    marginBottom: '0.25rem',
-                  }}
-                >
-                  PRIMARY VAULT CURRENCIES (SPENDABLE ASSETS)
-                </div>
-                <div
-                  style={{
-                    display: 'grid',
-                    gridTemplateColumns: 'repeat(3, 1fr)',
-                    gap: '0.4rem',
-                    textAlign: 'center',
-                    fontSize: '0.75rem',
-                  }}
-                >
-                  {(
-                    [
-                      [
-                        'credits',
-                        'CR',
-                        'badge-currency-cr',
-                        'Credits [CR] (0.50 ES) — Tradeable in Binding Promises. Spent on Armory gear, HQ sponsorships, and Command Auctions.',
-                      ],
-                      [
-                        'effort',
-                        'EF',
-                        'badge-currency-ef',
-                        'Effort [EF] (1.33 ES) — Vault-bound fuel. Spent on [1 EF] Class Abilities, [Complex] items, 0 HP Stabilization, and Logistical Refresh.',
-                      ],
-                      [
-                        'pip',
-                        'PIP',
-                        'badge-currency-pip',
-                        'Political Influence [PIP] (6.00 ES) — Vault-bound executive leverage. Breaks auction ties, pays Vulture Tax, and scores 2 VP each at endgame.',
-                      ],
-                    ] as const
-                  ).map(([field, label, badgeClass, tooltip]) => (
-                    <div
-                      key={field}
-                      title={tooltip}
-                      style={{
-                        padding: '0.35rem',
-                        borderRadius: '6px',
-                        background: 'var(--bg-void)',
-                        border: '1px solid var(--border-subtle)',
-                      }}
-                    >
-                      <div className={`semantic-badge ${badgeClass}`} style={{ marginBottom: '0.25rem' }}>
-                        {label}
-                      </div>
-                      <div style={{ fontWeight: 800, fontSize: '0.95rem', margin: '0.15rem 0' }}>
-                        {v[field]}
-                      </div>
-                      <div style={{ display: 'flex', justifyContent: 'center', gap: '0.2rem' }}>
-                        <button
-                          type="button"
-                          className="vtt-btn"
-                          style={{ padding: '1px 6px' }}
-                          onClick={() =>
-                            setState((prev) => ({
-                              ...prev,
-                              vaults: prev.vaults.map((item, i) =>
-                                i === idx
-                                  ? { ...item, [field]: Math.max(0, item[field] - 1) }
-                                  : item
-                              ),
-                            }))
-                          }
-                        >
-                          -
-                        </button>
-                        <button
-                          type="button"
-                          className="vtt-btn"
-                          style={{ padding: '1px 6px' }}
-                          onClick={() =>
-                            setState((prev) => ({
-                              ...prev,
-                              vaults: prev.vaults.map((item, i) =>
-                                i === idx ? { ...item, [field]: item[field] + 1 } : item
-                              ),
-                            }))
-                          }
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Command Bid Input */}
-                <div
-                  title="Enter your Faction's Credit [CR] bid for the Squad Leader role (Tie-breaker: Highest [PIP] → Candidate [LOY])"
-                  style={{
-                    marginTop: '0.55rem',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    alignItems: 'center',
-                    fontSize: '0.76rem',
-                    color: 'var(--text-secondary)',
-                  }}
-                >
-                  <span>Command Auction Bid ([CR]):</span>
-                  <input
-                    type="number"
-                    min={0}
-                    max={v.credits}
-                    value={v.commandBid}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
+                    <strong style={{ fontSize: '0.88rem' }}>Seat {idx + 1}: {v.playerName}</strong>
+                    {v.isSquadLeader && (
+                      <span className="semantic-badge badge-currency-cr">👑 Squad Leader</span>
+                    )}
+                  </div>
+                  <select
+                    value={v.factionId}
                     onChange={(e) => {
-                      const bid = Math.max(0, Number(e.target.value) || 0);
-                      setState((prev) => ({
-                        ...prev,
-                        vaults: prev.vaults.map((item, i) =>
-                          i === idx ? { ...item, commandBid: bid } : item
+                      const nextFac = e.target.value;
+                      setState((p) => ({
+                        ...p,
+                        vaults: p.vaults.map((item, i) =>
+                          i === idx ? { ...item, factionId: nextFac } : item
                         ),
                       }));
                     }}
                     style={{
-                      width: '64px',
-                      padding: '0.2rem 0.4rem',
+                      width: '100%',
+                      padding: '0.35rem',
                       borderRadius: '4px',
                       background: 'var(--bg-void)',
-                      color: 'var(--currency-credits)',
+                      color: 'var(--text-primary)',
                       border: '1px solid var(--border-strong)',
-                      fontFamily: 'var(--font-mono)',
-                      fontWeight: 700,
+                      fontSize: '0.78rem',
+                      marginBottom: '0.65rem',
                     }}
-                  />
+                  >
+                    {factions.map((f) => (
+                      <option key={f.id} value={f.id}>
+                        {f.title}
+                      </option>
+                    ))}
+                  </select>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.35rem', textAlign: 'center' }}>
+                    <div style={{ padding: '0.35rem', borderRadius: '4px', background: 'var(--bg-void)', border: '1px solid var(--border-subtle)' }}>
+                      <div className="semantic-badge badge-currency-cr">CR</div>
+                      <div style={{ fontWeight: 800, marginTop: '0.15rem' }}>{v.credits}</div>
+                      <div style={{ display: 'flex', justifyContent: 'center', gap: '2px', marginTop: '0.2rem' }}>
+                        <button type="button" className="vtt-btn" style={{ padding: '1px 5px' }} onClick={() => setState((p) => ({ ...p, vaults: p.vaults.map((it, i) => i === idx ? { ...it, credits: Math.max(0, it.credits - 1) } : it) }))}>-</button>
+                        <button type="button" className="vtt-btn" style={{ padding: '1px 5px' }} onClick={() => setState((p) => ({ ...p, vaults: p.vaults.map((it, i) => i === idx ? { ...it, credits: it.credits + 1 } : it) }))}>+</button>
+                      </div>
+                    </div>
+                    <div style={{ padding: '0.35rem', borderRadius: '4px', background: 'var(--bg-void)', border: '1px solid var(--border-subtle)' }}>
+                      <div className="semantic-badge badge-currency-ef">EF</div>
+                      <div style={{ fontWeight: 800, marginTop: '0.15rem' }}>{v.effort}</div>
+                      <div style={{ display: 'flex', justifyContent: 'center', gap: '2px', marginTop: '0.2rem' }}>
+                        <button type="button" className="vtt-btn" style={{ padding: '1px 5px' }} onClick={() => setState((p) => ({ ...p, vaults: p.vaults.map((it, i) => i === idx ? { ...it, effort: Math.max(0, it.effort - 1) } : it) }))}>-</button>
+                        <button type="button" className="vtt-btn" style={{ padding: '1px 5px' }} onClick={() => setState((p) => ({ ...p, vaults: p.vaults.map((it, i) => i === idx ? { ...it, effort: it.effort + 1 } : it) }))}>+</button>
+                      </div>
+                    </div>
+                    <div style={{ padding: '0.35rem', borderRadius: '4px', background: 'var(--bg-void)', border: '1px solid var(--border-subtle)' }}>
+                      <div className="semantic-badge badge-currency-pip">PIP</div>
+                      <div style={{ fontWeight: 800, marginTop: '0.15rem' }}>{v.pip}</div>
+                      <div style={{ display: 'flex', justifyContent: 'center', gap: '2px', marginTop: '0.2rem' }}>
+                        <button type="button" className="vtt-btn" style={{ padding: '1px 5px' }} onClick={() => setState((p) => ({ ...p, vaults: p.vaults.map((it, i) => i === idx ? { ...it, pip: Math.max(0, it.pip - 1) } : it) }))}>-</button>
+                        <button type="button" className="vtt-btn" style={{ padding: '1px 5px' }} onClick={() => setState((p) => ({ ...p, vaults: p.vaults.map((it, i) => i === idx ? { ...it, pip: it.pip + 1 } : it) }))}>+</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Setup Steps Reference */}
+          <div style={{ padding: '0.85rem', borderRadius: '6px', background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-subtle)', marginBottom: '1.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: 'var(--currency-effort)', marginBottom: '0.4rem' }}>
+              6-STEP TABLETOP INITIALIZATION SEQUENCE (FIELD MANUAL)
+            </div>
+            <ol style={{ paddingLeft: '1.2rem', margin: 0, fontSize: '0.8rem', color: '#cbd5e1', lineHeight: 1.6 }}>
+              <li><strong>Step 1: Agency Council & Vault Allocation:</strong> Each player chooses 1 Faction and takes their Player Mat, starting [12 CR], [3 EF], and [2 PIP].</li>
+              <li><strong>Step 2: Specialist Roster Bench:</strong> Shuffle the 24 Specialist Operative cards and deal 3 to each Faction bench.</li>
+              <li><strong>Step 3: Armory Supply Market:</strong> Deal 6 face-up Armory cards to form the Quartermaster supply row.</li>
+              <li><strong>Step 4: Headquarters Station Deployment:</strong> Place the 9 HQ Facilities in the central base grid.</li>
+              <li><strong>Step 5: Campaign Dossier & Threat Deck:</strong> Select active campaign and assemble the stage deck.</li>
+              <li><strong>Step 6: Initial Command Auction:</strong> Players bid [CR] to claim the Squad Leader Token for Drop 1.</li>
+            </ol>
+          </div>
+
+          <button
+            type="button"
+            className="vtt-btn vtt-btn-primary"
+            style={{ width: '100%', padding: '0.75rem', fontSize: '0.92rem', fontWeight: 700 }}
+            onClick={() => setActiveTab('phase1_mission')}
+          >
+            Proceed to Phase 1: Mission Selection & Briefing ▶
+          </button>
+        </section>
+      )}
+
+      {/* ====================================================================
+          PHASE 1: MISSION SELECT & INTELLIGENCE BRIEFING
+         ==================================================================== */}
+      {activeTab === 'phase1_mission' && (
+        <section className="vtt-panel">
+          <div className="vtt-panel-title">
+            <span>🗺️ PHASE 1: MISSION SELECTION & THREAT INTELLIGENCE</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+              Chapter 3 Tabletop Rules
+            </span>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
+              gap: '1rem',
+              marginBottom: '1.25rem',
+            }}
+          >
+            {/* Campaign Dossier Selector */}
+            <div style={{ padding: '0.85rem', borderRadius: '6px', background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }}>
+              <label style={{ fontSize: '0.74rem', fontFamily: 'var(--font-mono)', color: 'var(--currency-effort)', display: 'block', marginBottom: '0.35rem' }}>
+                ACTIVE CAMPAIGN DOSSIER
+              </label>
+              <select
+                value={state.campaignId}
+                onChange={(e) => setState((p) => ({ ...p, campaignId: e.target.value }))}
+                style={{
+                  width: '100%',
+                  padding: '0.45rem',
+                  borderRadius: '6px',
+                  background: 'var(--bg-void)',
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--border-strong)',
+                  marginBottom: '0.6rem',
+                }}
+              >
+                {campaigns.map((c) => (
+                  <option key={c.id} value={c.id}>
+                    {c.title}
+                  </option>
+                ))}
+              </select>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>
+                <SemanticText text={activeCampaign?.rules_text || activeCampaign?.flavor_text || ''} />
+              </div>
+            </div>
+
+            {/* Mission Selector */}
+            <div style={{ padding: '0.85rem', borderRadius: '6px', background: 'var(--bg-card)', border: '1px solid var(--border-subtle)' }}>
+              <label style={{ fontSize: '0.74rem', fontFamily: 'var(--font-mono)', color: 'var(--currency-effort)', display: 'block', marginBottom: '0.35rem' }}>
+                ACTIVE MISSION / SIDE-MISSION BRIEF
+              </label>
+              <select
+                value={state.missionId}
+                onChange={(e) => setState((p) => ({ ...p, missionId: e.target.value, stageIndex: 0, overrideFocus: null }))}
+                style={{
+                  width: '100%',
+                  padding: '0.45rem',
+                  borderRadius: '6px',
+                  background: 'var(--bg-void)',
+                  color: 'var(--text-primary)',
+                  border: '1px solid var(--border-strong)',
+                  marginBottom: '0.6rem',
+                }}
+              >
+                {missions.map((m) => (
+                  <option key={m.id} value={m.id}>
+                    {m.title}
+                  </option>
+                ))}
+              </select>
+              <div style={{ fontSize: '0.78rem', color: '#94a3b8' }}>
+                <SemanticText text={activeMission?.rules_text || activeMission?.flavor_text || ''} />
+              </div>
+            </div>
+
+            {/* Mission Failure Tracker */}
+            <div style={{ padding: '0.85rem', borderRadius: '6px', background: 'var(--currency-doom-bg)', border: '1px solid var(--currency-doom)' }}>
+              <label style={{ fontSize: '0.74rem', fontFamily: 'var(--font-mono)', color: '#f87171', display: 'block', marginBottom: '0.35rem' }}>
+                TASK FORCE DISSOLUTION TRACKER ([FAIL])
+              </label>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', margin: '0.5rem 0' }}>
+                <button type="button" className="vtt-btn" onClick={() => setState((p) => ({ ...p, doom: Math.max(0, p.doom - 1) }))}>-</button>
+                <strong style={{ fontSize: '1.2rem', color: '#ff8080' }}>
+                  {state.doom} / {activeCampaign?.stats?.max_doom || 3} [FAIL]
+                </strong>
+                <button type="button" className="vtt-btn" onClick={() => setState((p) => ({ ...p, doom: p.doom + 1 }))}>+</button>
+              </div>
+              <div style={{ fontSize: '0.74rem', color: '#fca5a5' }}>
+                Advances only when an entire Mission fails or retreats. Reaching {activeCampaign?.stats?.max_doom || 3} dissolves the Task Force!
+              </div>
+            </div>
+          </div>
+
+          {/* Stages Breakdown Preview */}
+          <div style={{ padding: '0.85rem', borderRadius: '6px', background: 'var(--bg-card)', border: '1px solid var(--border-subtle)', marginBottom: '1.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: 'var(--currency-effort)', marginBottom: '0.5rem' }}>
+              MISSION STAGE SEQUENCE PREVIEW ({activeStages.length} STAGES)
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.6rem' }}>
+              {activeStages.map((st: any, idx: number) => (
+                <div
+                  key={idx}
+                  style={{
+                    padding: '0.65rem',
+                    borderRadius: '6px',
+                    background: 'var(--bg-void)',
+                    border: '1px solid var(--border-subtle)',
+                    fontSize: '0.78rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
+                    <strong>Stage {idx + 1}: {st.name}</strong>
+                    <span className="semantic-badge badge-currency-cr">D={st.target_difficulty}</span>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.3rem', alignItems: 'center' }}>
+                    <FocusBadge focus={st.focus_required} />
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>Focus Required</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.6rem' }}>
+            <button
+              type="button"
+              className="vtt-btn"
+              onClick={() => setActiveTab('setup')}
+            >
+              ◀ Back to Setup
+            </button>
+            <button
+              type="button"
+              className="vtt-btn vtt-btn-primary"
+              style={{ flex: 1, padding: '0.75rem', fontSize: '0.92rem', fontWeight: 700 }}
+              onClick={() => setActiveTab('phase2_command')}
+            >
+              Proceed to Phase 2: Roster Assembly & Command Auction ▶
+            </button>
+          </div>
+        </section>
+      )}
+
+      {/* ====================================================================
+          PHASE 2: ROSTER ASSEMBLY & COMMAND AUCTION
+         ==================================================================== */}
+      {(activeTab === 'phase2_command' || activeTab === 'squad') && (
+        <section className="vtt-panel">
+          <div className="vtt-panel-title">
+            <span>👑 PHASE 2: SQUAD LEADER COMMAND AUCTION & 6-SLOT LOADOUTS</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+              Chapter 3 Tabletop Rules
+            </span>
+          </div>
+
+          {/* Command Auction Bidding Console */}
+          <div
+            style={{
+              padding: '0.9rem',
+              borderRadius: '8px',
+              background: 'rgba(15, 23, 42, 0.85)',
+              border: '1px solid var(--border-subtle)',
+              marginBottom: '1.25rem',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.75rem' }}>
+              <div>
+                <strong style={{ fontSize: '0.95rem', color: 'var(--currency-credits)' }}>
+                  👑 Command Auction Bidding Console ([1 CR] Entry Bid)
+                </strong>
+                <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>
+                  Tie-Breakers: Highest [CR] → Highest [PIP] → Highest Candidate [LOY] → Roll-Off (BL-RULES-04)
                 </div>
               </div>
-            );
-          })}
-        </div>
-      </section>
+              <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="vtt-btn vtt-btn-primary"
+                  onClick={handleResolveCommandAuction}
+                  title="Elect Squad Leader using standard canonical tie-breaker hierarchy"
+                >
+                  👑 Resolve Auction
+                </button>
+                <button
+                  type="button"
+                  className="vtt-btn"
+                  onClick={handleZeroBidRollOff}
+                  title="High-Stakes d6 Roll-Off if all players bid [0 CR] or decline (BL-RULES-04)"
+                >
+                  🎲 0-Bid Roll-Off (BL-RULES-04)
+                </button>
+              </div>
+            </div>
 
-      {/* VTT Mode Sub-Navigation */}
-      <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
-        {(
-          [
-            ['stage', '🎲 1. Active Stage Resolver & Static Dice Pool Engine'],
-            ['squad', '🎒 2. Away Team Loadouts (6-Slot Equipment Validator)'],
-            ['hq', '🏛 3. Sponsored HQ Facilities & Landmarks'],
-            ['medbay', '🏥 4. Med Bay Triage & Critical Trauma Roller'],
-            ['simulator', '📊 5. Balance & Monte Carlo Simulator (1,000 Trials)'],
-          ] as const
-        ).map(([tabKey, label]) => (
-          <button
-            key={tabKey}
-            type="button"
-            className={`vtt-btn ${activeTab === tabKey ? 'vtt-btn-primary' : ''}`}
-            onClick={() => setActiveTab(tabKey)}
-          >
-            {label}
-          </button>
-        ))}
-      </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '0.65rem' }}>
+              {state.vaults.slice(0, state.playerCount || 4).map((v, idx) => (
+                <div
+                  key={v.playerIndex}
+                  style={{
+                    padding: '0.65rem',
+                    borderRadius: '6px',
+                    background: v.isSquadLeader ? 'rgba(0, 229, 255, 0.12)' : 'var(--bg-card)',
+                    border: v.isSquadLeader ? '1px solid var(--currency-effort)' : '1px solid var(--border-subtle)',
+                    fontSize: '0.78rem',
+                  }}
+                >
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                    <strong>{v.playerName}</strong>
+                    {v.isSquadLeader && <span className="semantic-badge badge-currency-cr">👑 SQUAD LEADER</span>}
+                  </div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span>Credit Bid:</span>
+                    <input
+                      type="number"
+                      min={0}
+                      max={v.credits}
+                      value={v.commandBid}
+                      onChange={(e) => {
+                        const bid = Math.max(0, Number(e.target.value) || 0);
+                        setState((prev) => ({
+                          ...prev,
+                          vaults: prev.vaults.map((item, i) =>
+                            i === idx ? { ...item, commandBid: bid } : item
+                          ),
+                        }));
+                      }}
+                      style={{
+                        width: '60px',
+                        padding: '0.2rem 0.35rem',
+                        borderRadius: '4px',
+                        background: 'var(--bg-void)',
+                        color: 'var(--currency-credits)',
+                        border: '1px solid var(--border-strong)',
+                        fontFamily: 'var(--font-mono)',
+                        fontWeight: 700,
+                      }}
+                    />
+                  </div>
+                </div>
+              ))}
+            </div>
 
-      {/* TAB 1: STAGE RESOLVER & DICE ENGINE */}
+            {/* Squad Leader Levers Banner */}
+            <div style={{ marginTop: '0.75rem', padding: '0.55rem 0.75rem', borderRadius: '4px', background: 'rgba(0, 229, 255, 0.06)', border: '1px solid rgba(0, 229, 255, 0.25)', fontSize: '0.76rem', color: '#cbd5e1' }}>
+              <strong>Squad Leader Powers:</strong> (1) Step 1 Dynamic Focus Swap (Force Breach / Tactical Bypass + BL-RULES-07 Split Modifiers), (2) Step 5 Momentum Die Allocation, (3) Transition Logistical Refresh ([2 EF] / [3 EF]), (4) Tactical vs Forced Retreat.
+            </div>
+          </div>
+
+          {/* Away Team Operatives Roster & 6-Slot Anatomical Validator */}
+          <div style={{ marginBottom: '1.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: 'var(--currency-effort)', marginBottom: '0.5rem' }}>
+              AWAY TEAM ROSTER & 6-SLOT ANATOMICAL LOADOUTS (4 OPERATIVES)
+            </div>
+            <div className="vtt-grid-4">
+              {state.squad.map((op, slotIdx) => {
+                const char = characters.find((c) => c.id === op.characterId);
+                const charStats = char?.stats || {};
+                const baseDice = (charStats.dice_pool || 6) + op.bonusDice - op.critInjuryDicePenalty;
+                const maxHp = (charStats.max_hp || 3) - op.critInjuryHpPenalty;
+                const equippedItems = items.filter((it) => op.equippedItemIds.includes(it.id));
+
+                return (
+                  <div
+                    key={slotIdx}
+                    style={{
+                      padding: '0.85rem',
+                      borderRadius: '8px',
+                      background: 'var(--bg-card)',
+                      border: '1px solid var(--border-subtle)',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.5rem',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <strong style={{ fontSize: '0.9rem' }}>Slot {slotIdx + 1}: {char?.title || 'Unassigned'}</strong>
+                      <span className="semantic-badge badge-focus-combat">{charStats.focus_primary || 'Combat'}</span>
+                    </div>
+
+                    <select
+                      value={op.characterId}
+                      onChange={(e) => {
+                        const newCharId = e.target.value;
+                        setState((p) => ({
+                          ...p,
+                          squad: p.squad.map((s, i) =>
+                            i === slotIdx ? { ...s, characterId: newCharId } : s
+                          ),
+                        }));
+                      }}
+                      style={{
+                        padding: '0.35rem',
+                        borderRadius: '4px',
+                        background: 'var(--bg-void)',
+                        color: 'var(--text-primary)',
+                        border: '1px solid var(--border-strong)',
+                        fontSize: '0.76rem',
+                      }}
+                    >
+                      {characters.map((c) => (
+                        <option key={c.id} value={c.id}>
+                          {c.title} ({c.stats?.focus_primary} 3+, {c.stats?.dice_pool}d6, {c.stats?.max_hp} HP)
+                        </option>
+                      ))}
+                    </select>
+
+                    <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem' }}>
+                      <span>HP: <strong style={{ color: '#ff8080' }}>{op.currentHp} / {maxHp}</strong></span>
+                      <span>Static Dice Pool: <strong style={{ color: 'var(--currency-effort)' }}>{baseDice - op.spentDice} / {baseDice}d6</strong></span>
+                    </div>
+
+                    {/* 6-Slot Anatomical Equip Section */}
+                    <div style={{ fontSize: '0.74rem', borderTop: '1px solid var(--border-subtle)', paddingTop: '0.4rem' }}>
+                      <div style={{ color: 'var(--text-muted)', marginBottom: '0.2rem' }}>Equipped Items ({equippedItems.length}):</div>
+                      {equippedItems.map((it) => (
+                        <div key={it.id} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
+                          <span style={{ color: '#cbd5e1' }}>• {it.title}</span>
+                          <button
+                            type="button"
+                            className="vtt-btn"
+                            style={{ padding: '0 4px', fontSize: '0.68rem' }}
+                            onClick={() => handleUnequipItem(slotIdx, it.id)}
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      ))}
+                      <select
+                        onChange={(e) => {
+                          if (e.target.value) {
+                            handleEquipItem(slotIdx, e.target.value);
+                            e.target.value = '';
+                          }
+                        }}
+                        style={{
+                          width: '100%',
+                          marginTop: '0.35rem',
+                          padding: '0.25rem',
+                          borderRadius: '4px',
+                          background: 'var(--bg-void)',
+                          color: 'var(--text-primary)',
+                          border: '1px solid var(--border-subtle)',
+                          fontSize: '0.72rem',
+                        }}
+                      >
+                        <option value="">+ Equip Armory Item...</option>
+                        {items
+                          .filter((it) => !op.equippedItemIds.includes(it.id))
+                          .map((it) => (
+                            <option key={it.id} value={it.id}>
+                              {it.title} ({it.cost_credits} CR, {it.stats?.slots_required?.join(', ') || 'Item'})
+                            </option>
+                          ))}
+                      </select>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.6rem' }}>
+            <button
+              type="button"
+              className="vtt-btn"
+              onClick={() => setActiveTab('phase1_mission')}
+            >
+              ◀ Back to Phase 1: Mission Select
+            </button>
+            <button
+              type="button"
+              className="vtt-btn vtt-btn-primary"
+              style={{ flex: 1, padding: '0.75rem', fontSize: '0.92rem', fontWeight: 700 }}
+              onClick={() => setActiveTab('stage')}
+            >
+              Deploy Away Team: Phase 3 Tactical Mission ▶
+            </button>
+          </div>
+        </section>
+      )}
+
+      {/* ====================================================================
+          PHASE 3: TACTICAL MISSION (GUIDED SEQUENCER & RULES COACH)
+         ==================================================================== */}
+      {(activeTab === 'stage' || activeTab === 'medbay') && (
+        <>
+          <section className="vtt-panel">
+            <div className="vtt-panel-title">
+              <span>🧭 GUIDED 7-STEP GAME LOOP SEQUENCER & TACTICAL RULES COACH</span>
+              <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap' }}>
+                <button
+                  type="button"
+                  className="vtt-btn"
+                  title="Move to the previous step in the official Sequence of Play"
+                  onClick={() =>
+                    setState((p) => ({
+                      ...p,
+                      sequenceStep: p.sequenceStep > 1 ? p.sequenceStep - 1 : 7,
+                    }))
+                  }
+                >
+                  ◀ Prev Step
+                </button>
+                <button
+                  type="button"
+                  className="vtt-btn vtt-btn-primary"
+                  title="Advance to the next step in the official Sequence of Play"
+                  onClick={() =>
+                    setState((p) => ({
+                      ...p,
+                      sequenceStep: p.sequenceStep < 7 ? p.sequenceStep + 1 : 1,
+                    }))
+                  }
+                >
+                  Next Step ▶
+                </button>
+              </div>
+            </div>
+
+            {/* 7-Step Clickable Sequencer Bar */}
+            <div className="vtt-sequencer-bar">
+              {SEQUENCE_STEPS.map((st) => {
+                const isActive = state.sequenceStep === st.step;
+                const isDone = state.sequenceStep > st.step;
+                return (
+                  <button
+                    key={st.step}
+                    type="button"
+                    className={`vtt-step-pill ${isActive ? 'active' : isDone ? 'completed' : ''}`}
+                    title={st.coachHint}
+                    onClick={() => {
+                      setState((p) => ({ ...p, sequenceStep: st.step }));
+                      if (st.step === 4 || st.step === 7) setTacticalSubTab('medbay');
+                      else setTacticalSubTab('stage');
+                    }}
+                  >
+                    <div
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.66rem',
+                        color: isActive
+                          ? 'var(--currency-effort)'
+                          : isDone
+                          ? '#34d399'
+                          : 'var(--text-muted)',
+                      }}
+                    >
+                      {isDone ? '✓ COMPLETED' : isActive ? '● ACTIVE STEP' : `STEP 0${st.step}`}
+                    </div>
+                    <strong style={{ fontSize: '0.78rem' }}>{st.shortTitle}</strong>
+                  </button>
+                );
+              })}
+            </div>
+
+            {/* Contextual Rules Coach & Live Probability Hint */}
+            <div className="vtt-coach-banner">
+              <div style={{ flex: 1, minWidth: '280px' }}>
+                <div
+                  style={{
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.72rem',
+                    color: 'var(--currency-effort)',
+                    fontWeight: 700,
+                    marginBottom: '0.2rem',
+                  }}
+                >
+                  💡 ACTIVE STEP RULES COACH — {activeStepMeta.fullTitle}
+                </div>
+                <div style={{ color: '#dbe4f0', lineHeight: 1.5 }}>
+                  <SemanticText text={activeStepMeta.coachHint} />
+                </div>
+              </div>
+
+              <div
+                style={{
+                  padding: '0.55rem 0.85rem',
+                  borderRadius: '6px',
+                  background: 'rgba(15, 23, 42, 0.88)',
+                  border: '1px solid var(--border-strong)',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.74rem',
+                  minWidth: '255px',
+                }}
+                title="Live 1,000-trial Monte Carlo simulation of your currently committed static dice against Target Difficulty D"
+              >
+                <div style={{ color: 'var(--text-secondary)', fontSize: '0.68rem' }}>
+                  PRE-ROLL MONTE CARLO FORECAST ({squadSummary.totalCommittedDice}d6 vs D={state.targetDifficulty})
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '0.25rem' }}>
+                  <span>Clear Odds:</span>
+                  <strong
+                    style={{
+                      color:
+                        liveSimulation.clearProbabilityPct >= 80
+                          ? '#34d399'
+                          : liveSimulation.clearProbabilityPct >= 55
+                          ? '#fbbf24'
+                          : '#f87171',
+                    }}
+                  >
+                    {liveSimulation.clearProbabilityPct}% (E={squadSummary.expectedSuccesses} ES)
+                  </strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Phase 1 Early Clear:</span>
+                  <strong style={{ color: '#38bdf8' }}>
+                    {liveSimulation.earlyPhase1ClearProbabilityPct}%
+                  </strong>
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <span>Momentum ([MOM]) Odds:</span>
+                  <strong style={{ color: '#a855f7' }}>
+                    {liveSimulation.momentumProbabilityPct}%
+                  </strong>
+                </div>
+              </div>
+            </div>
+
+            {/* Sub-view switcher within Phase 3 */}
+            <div style={{ display: 'flex', gap: '0.5rem', marginTop: '1rem' }}>
+              <button
+                type="button"
+                className={`vtt-btn ${(activeTab === 'stage' && tacticalSubTab === 'stage') ? 'vtt-btn-primary' : ''}`}
+                onClick={() => { setActiveTab('stage'); setTacticalSubTab('stage'); }}
+              >
+                🎲 Active Stage & Static Dice Resolver
+              </button>
+              <button
+                type="button"
+                className={`vtt-btn ${(activeTab === 'medbay' || tacticalSubTab === 'medbay') ? 'vtt-btn-primary' : ''}`}
+                onClick={() => { setActiveTab('medbay'); setTacticalSubTab('medbay'); }}
+              >
+                🏥 Field Casualties & Med Bay Trauma Roller
+              </button>
+            </div>
+          </section>
+        </>
+      )}
+
+{/* TAB 1: STAGE RESOLVER & DICE ENGINE */}
       {activeTab === 'stage' && (
         <section className="vtt-panel">
           <div className="vtt-panel-title">
@@ -1998,6 +2356,24 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
               );
             })}
           </div>
+
+          <div style={{ display: 'flex', gap: '0.6rem', marginTop: '1.25rem' }}>
+            <button
+              type="button"
+              className="vtt-btn"
+              onClick={() => setActiveTab('phase2_command')}
+            >
+              ◀ Back to Phase 2: Command & Roster
+            </button>
+            <button
+              type="button"
+              className="vtt-btn vtt-btn-primary"
+              style={{ flex: 1, padding: '0.75rem', fontSize: '0.92rem', fontWeight: 700 }}
+              onClick={() => setActiveTab('hq')}
+            >
+              Mission Complete: Proceed to Phase 4 HQ Downtime ▶
+            </button>
+          </div>
         </section>
       )}
 
@@ -2159,7 +2535,102 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       {activeTab === 'hq' && (
         <section className="vtt-panel">
           <div className="vtt-panel-title">
-            <span>HQ BASE INFRASTRUCTURE — SPONSORED FACILITIES (+2 VP PER MODULE) & LANDMARKS</span>
+            <span>🏢 PHASE 4: HEADQUARTERS DOWNTIME (8-STEP BASE OPERATIONS LOOP)</span>
+            <span style={{ fontSize: '0.78rem', color: 'var(--text-secondary)' }}>
+              Chapter 7 Tabletop Rules
+            </span>
+          </div>
+
+          {/* 8-Step Base Operations Cycle Reference */}
+          <div style={{ padding: '0.85rem', borderRadius: '6px', background: 'rgba(15, 23, 42, 0.7)', border: '1px solid var(--border-subtle)', marginBottom: '1.25rem' }}>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: 'var(--currency-effort)', marginBottom: '0.4rem' }}>
+              THE 8-STEP BASE OPERATIONS CYCLE (FIELD MANUAL)
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.5rem', fontSize: '0.78rem', color: '#cbd5e1' }}>
+              <div><strong>1. Debrief & Dual-Stream Payouts:</strong> Baseline stipends + shared clearance bounty pool.</div>
+              <div><strong>2. Stand-Down Auction:</strong> Rest an operative; winner double-deploys next drop.</div>
+              <div><strong>3. Infirmary Recovery:</strong> Rest wounded operatives in recovery beds (5+/4+ healing).</div>
+              <div><strong>4. Sponsored Modules:</strong> Sponsor facility upgrades for +1 PIP / +2 VP each.</div>
+              <div><strong>5. Recruitment Bureau:</strong> Spend [8 CR] to draft a fresh specialist from the agency bench.</div>
+              <div><strong>6. Quartermaster Armory:</strong> Buy weapons, armor, tech, and consumables with [CR].</div>
+              <div><strong>7. Boardroom Perks & Agendas:</strong> Score faction agendas, unlock loyalty doctrines.</div>
+              <div><strong>8. Next Drop Squad Assembly:</strong> Prepare 4-operative strike roster for next drop.</div>
+            </div>
+          </div>
+
+          {/* Step 1: Debrief & Dual-Stream Payouts Calculator (BL-RULES-01) */}
+          <div
+            style={{
+              padding: '0.85rem',
+              borderRadius: '8px',
+              background: 'rgba(0, 229, 255, 0.08)',
+              border: '1px solid var(--currency-effort)',
+              marginBottom: '1.25rem',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem', marginBottom: '0.6rem' }}>
+              <div>
+                <strong style={{ fontSize: '0.92rem', color: 'var(--currency-credits)' }}>
+                  💰 Step 1 Debrief & Dual-Stream Payouts Calculator (BL-RULES-01)
+                </strong>
+                <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>
+                  Baseline: [2 CR] per deployed operative + [1 PIP] per Faction • Shared clearance bounty pool split evenly (odd remainder to Squad Leader)
+                </div>
+              </div>
+              <button
+                type="button"
+                className="vtt-btn vtt-btn-primary"
+                onClick={() => handleDistributeMissionPayouts(bountyPoolCr, bountyPoolPip)}
+                title="Calculate and deposit dual-stream mission payouts into player vaults"
+              >
+                💸 Claim & Distribute Payouts
+              </button>
+            </div>
+
+            <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap', fontSize: '0.78rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span>Shared Mission Pool Credits:</span>
+                <input
+                  type="number"
+                  min={0}
+                  value={bountyPoolCr}
+                  onChange={(e) => setBountyPoolCr(Math.max(0, Number(e.target.value) || 0))}
+                  style={{
+                    width: '60px',
+                    padding: '0.2rem 0.35rem',
+                    borderRadius: '4px',
+                    background: 'var(--bg-void)',
+                    color: 'var(--currency-credits)',
+                    border: '1px solid var(--border-strong)',
+                    fontFamily: 'var(--font-mono)',
+                    fontWeight: 700,
+                  }}
+                />
+              </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                <span>Shared Mission Pool PIP:</span>
+                <input
+                  type="number"
+                  min={0}
+                  value={bountyPoolPip}
+                  onChange={(e) => setBountyPoolPip(Math.max(0, Number(e.target.value) || 0))}
+                  style={{
+                    width: '60px',
+                    padding: '0.2rem 0.35rem',
+                    borderRadius: '4px',
+                    background: 'var(--bg-void)',
+                    color: 'var(--currency-pip)',
+                    border: '1px solid var(--border-strong)',
+                    fontFamily: 'var(--font-mono)',
+                    fontWeight: 700,
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+
+          <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: 'var(--currency-effort)', marginBottom: '0.5rem' }}>
+            STEP 4: SPONSORED BASE MODULES (+2 VP PER SPONSORED FACILITY)
           </div>
           <div className="card-grid">
             {hqFacilities.map((hq) => (
@@ -2228,6 +2699,24 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
                 )}
               </div>
             ))}
+          </div>
+
+          <div style={{ display: 'flex', gap: '0.6rem', marginTop: '1.25rem' }}>
+            <button
+              type="button"
+              className="vtt-btn"
+              onClick={() => setActiveTab('stage')}
+            >
+              ◀ Back to Phase 3: Tactical Mission
+            </button>
+            <button
+              type="button"
+              className="vtt-btn vtt-btn-primary"
+              style={{ flex: 1, padding: '0.75rem', fontSize: '0.92rem', fontWeight: 700 }}
+              onClick={() => setActiveTab('phase1_mission')}
+            >
+              Prepare Next Drop: Advance to Phase 1 Mission Select ↺
+            </button>
           </div>
         </section>
       )}

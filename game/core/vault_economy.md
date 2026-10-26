@@ -1,9 +1,9 @@
 ---
 id: "core-vault-economy"
-title: "Faction Vault Economy & HQ Downtime Phase"
+title: "Chapter 7: Phase 4 — Headquarters Downtime Phase (Base Operations)"
 component_type: "core_rule"
 category: "core"
-order: 6
+order: 7
 summary: "Rules for Faction Vaults, the three primary currencies (Credits, Effort, PIP), non-currency rewards/trackers (Momentum, Loyalty, Doom, VP), Binding Promises, and the 8-step HQ Downtime Phase."
 ---
 

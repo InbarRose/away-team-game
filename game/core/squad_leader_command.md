@@ -1,116 +1,129 @@
 ---
 id: "core-squad-leader-command"
-title: "Operational Command (The Squad Leader)"
+title: "Chapter 3: Phase 1 (Mission Select) & Phase 2 (Roster & Command Auction)"
 component_type: "core_rule"
 category: "core"
-order: 4
-summary: "Rules for the pre-mission Command Auction, Squad Leader executive authority, Logistical Refresh dice resupply, Dynamic Focus Swaps, and Retreat protocols."
+order: 3
+summary: "Detailed procedures for Phase 1 (Mission Selection & Intelligence Briefing) and Phase 2 (Roster Staging, 6-Slot Loadouts, and the Command Auction)."
 ---
 
-# Operational Command (The Squad Leader)
-
-To prevent "alpha gaming" and create high-stakes table politics, **Away Team** codifies field leadership into an explicit, auctioned role: the **Squad Leader**.
-
----
-
-## 1. The Command Auction
-
-During **Step 8 of HQ Downtime (Loadout Step)**, once the 4-operative strike team is assembled, players bid for the right to assign the **Squad Leader Token** to their deployed operative.
-
-### Bidding & Table Politics
-* **Minimum Entry Bid:** `[1 CR]` paid from a Faction Vault directly to the HQ supply bank (unless modified by a character power such as *Corporate Executive*).
-* **Side-Deals & Bribes:** Factions are explicitly encouraged to negotiate binding side-deals to avoid costly bidding wars (e.g., *"Let me take Squad Leader for [1 CR], and I will guarantee you the first Momentum die refund in Stage 1"*).
-
-### Tie-Breaker Hierarchy
-If two or more Factions match the highest [CR] bid and refuse to raise or step down, resolve the tie using this strict hierarchy:
-1. **Highest Credits Bid ([CR]):** Highest payment to the HQ bank wins.
-2. **Highest Faction [PIP]:** The Faction currently holding more Political Influence Power wins.
-3. **Highest Operative [LOY]:** The Faction whose deployed candidate has higher personal Loyalty wins.
-4. **Die Roll-Off:** Roll a d6 until a single clear winner emerges.
+# Chapter 3: Phase 1 (Mission Select) & Phase 2 (Roster & Command)
 
 ---
 
-## 2. Executive Operational Authority
+## 1. Phase 1: Mission Selection & Intelligence Briefing
 
-During the mission, the player controlling the Squad Leader holds **final decision-making authority** over all non-rolling squad choices:
-* Declaring **Dynamic Focus Swaps** (*Force Breach* or *Tactical Bypass*) during Step 1 (Briefing).
-* Selecting branching paths or resolving narrative dilemmas on Mission Briefs.
-* Distributing **Operational Momentum ([MOM])** die refunds among eligible rollers at the end of a cleared stage.
-* Deciding whether the squad concedes a room before Phase 2 Support rolls.
-* Triggering **Logistical Resupply** or declaring a **Tactical / Forced Retreat**.
+Before deploying operatives into the field, the coalition reviews available intelligence and formalizes operational contracts:
 
----
+### 1.1 Selecting the Active Mission
+* Consult the active **Campaign Dossier** (*Operation: Iron Dawn* or *Operation: Apex Extraction*).
+* In sequential campaign play, the squad selects the next unlocked mission along the operational track. On branching campaign nodes, players negotiate and vote on which mission sector to assault.
 
-## 3. Command Ability: Logistical Resupply
-
-The Squad Leader maintains a direct uplink to HQ orbital supply drops. During any **Transition Step** between stages (never mid-stage during a rolling phase), the Squad Leader may spend pooled **[EF]** directly from their Faction Vault to inject spent dice back into the entire squad's static pools:
-
-| Command Action | Vault Cost | Squad-Wide Effect | Mathematical Value |
-| :--- | :--- | :--- | :--- |
-| **Logistical Refresh (Tier 1)** | **[2 EF]** (`2.66 ES`) | Restore **+1 spent static die** to **every** deployed operative (`4 dice` total). | `2.00–2.68 ES` expected return |
-| **Logistical Refresh (Tier 2)** | **[3 EF]** (`4.00 ES`) | Restore **+2 spent static dice** to **every** deployed operative (`8 dice` total). | `4.00–5.33 ES` expected return |
+### 1.2 The Intelligence Briefing
+Examine the active **Mission Brief Card**:
+1. **Sector Tag:** Identifies the operational theater (e.g., `[Urban]`, `[Space]`, `[Facility]`, `[Derelict]`), which determines which armory items and stage modifiers receive environmental bonuses or penalties.
+2. **Stage Track Length:** Missions feature **3 to 5 Stage Cards** that must be cleared sequentially.
+3. **Target Difficulty Preview:** Displays the baseline Target Difficulty $D$ (required successes) for each stage along the track.
+4. **Base Clearance Bounty:** Lists the institutional payout awarded upon mission completion (e.g., *Iron Dawn Mission 1*: `[6 CR], [1 PIP]`).
+5. **Permitted Dynamic Swaps:** Notes whether stages allow *Force Breach* (to `[Combat]`) or *Tactical Bypass* (to non-combat focuses).
 
 ---
 
-## 4. Dynamic Focus Swaps (Stage Overrides)
+## 2. Phase 2: Roster Assembly & Tactical Loadouts
 
-During **Step 1 (Briefing)** of a stage, if the Mission Brief permits a Dynamic Focus Swap, the Squad Leader may alter how the squad tackles the room:
+Once the mission brief is accepted, players assemble the strike team and equip their operatives:
 
-* 💥 **Force Breach (`[Non-Combat]` $\rightarrow$ [Combat]):** Turn a technical, stealth, or social stage into a brute-force firefight. The stage's active Focus becomes [Combat], but the Target Difficulty increases by **$+1$ or $+2$ Successes** (as printed on the Mission Brief) due to triggered security alarms.
-* 🌿 **Tactical Bypass ([Combat] $\rightarrow$ `[Non-Combat]`):** Detour around an armed patrol by slicing security gates ([Operations]), slipping through vents ([Infiltrate]), or scaling hazardous terrain ([Survival]). Shifts the active Focus to the listed category at the printed Target Difficulty (some bypasses require spending [1 EF] or `1 static die` per operative as specified on the brief).
+### 2.1 The 4-Operative Deployment Mandate
+* The Away Team **must always field exactly 4 specialist operatives**.
+* In a 4-player game, each Director deploys 1 operative from their personal bench.
+* In a 3-player game, Slots 1–3 are assigned to each player, and **Slot 4 (The Vanguard Slot)** is auctioned off to the highest bidder, allowing one player to double-deploy.
+* **Mandatory Deployment Directive:** A Faction with an eligible, living operative on their bench cannot voluntarily sit out a mission unless they negotiate a buyout or win the Stand-Down Auction during HQ Downtime.
 
-### Dynamic Split-Effect Modifier Interaction (`BL-RULES-07`)
+### 2.2 Equipping the 6-Slot Anatomical Loadout
+Each deployed operative features a strict **6-Slot Anatomical Loadout Matrix**:
+
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                       6-SLOT ANATOMICAL LOADOUT                             │
+├──────────────────────┬──────────────────────┬───────────────────────────────┤
+│  [HAND L] (1-Handed) │  [HEAD] (Sensors/HUD)│  [PACK] (Consumables/Gear)    │
+│  Pistol, Multi-Tool  │  Targeting Visor     │  Medkits, Siphon Cells        │
+├──────────────────────┼──────────────────────┼───────────────────────────────┤
+│  [HAND R] (1-Handed) │  [BODY] (Armor/Vest) │  [COMPLEX] (Heavy Rig/Tech)   │
+│  Shield, Slicer Deck │  Ballistic Carapace  │  Turret Deployer, Drone Rig   │
+└──────────────────────┴──────────────────────┴───────────────────────────────┘
+```
+
+* **2-Handed Weapons:** Equip into *both* `[Hand L]` and `[Hand R]` simultaneously.
+* **Complex Items:** Must be powered by spending `[1 EF]` or equipped by an operative whose Focus matches the item's requirement.
+
+---
+
+## 3. The Command Auction (Electing the Squad Leader)
+
+Field command is not assigned by arbitrary turn order; it is **bought with corporate capital**:
+
+### 3.1 Bidding Procedure
+1. All players review the mission brief and their operative loadouts.
+2. Starting with the player who held the Squad Leader token last mission (or highest initial `[PIP]` on Mission 1), each player declares a bid in **Credits (`[CR]`)** from their Faction Vault, or passes.
+3. Bidding proceeds clockwise around the table in escalating single-round or open-auction fashion with a **Minimum Entry Bid of `[1 CR]`**.
+4. The highest bidder pays their bid in Credits to the central Agency bank and receives the **Squad Leader Token**.
+
+### 3.2 Canonical Tie-Breakers & Zero-Bid Roll-Off (`BL-RULES-04`)
+If two or more players bid the same amount, or if all players bid `[0 CR]` or decline to bid:
+1. **Tier 1 Tie-Breaker:** Highest total **Political Influence (`[PIP]`)** in Faction Vault.
+2. **Tier 2 Tie-Breaker:** Highest current **Loyalty (`[LOY]`)** on the deployed candidate operative.
+3. **Zero-Bid High-Stakes Roll-Off (`BL-RULES-04`):** If all Factions bid `[0 CR]` or decline to bid, an **immediate high-stakes d6 roll-off** is conducted. The player rolling highest becomes the Squad Leader for `[0 CR]` cost!
+
+---
+
+## 4. Squad Leader Executive Levers & Command Authority
+
+Winning the Command Auction grants massive tactical authority during Phase 3 (The Tactical Mission):
+
+1. **Step 1 Dynamic Focus Swaps (`BL-RULES-07`):**
+   * 💥 **Force Breach (`[Non-Combat]` $ightarrow$ `[Combat]`):** Turn a stealth or technical stage into a kinetic firefight. Increases Target Difficulty by `+1` or `+2`, but matches your combat specialists.
+   * 🌿 **Tactical Bypass (`[Combat]` $ightarrow$ `[Non-Combat]`):** Siphon security gates or slip through vents to change the stage focus to `[Operations]`, `[Infiltrate]`, or `[Survival]`.
+### Dynamic Split-Effect Modifier Interaction (BL-RULES-07)
 When a Stage Modifier with a **Split-Effect** (e.g., *Security Hardening*, *Atmospheric Hazard*, or *Hostile Counter-Measures*) is active, its effects check the room's **currently active Focus**:
 * If the Squad Leader executes a *Tactical Bypass* swapping from [Combat] to [Infiltrate], the modifier **immediately shifts from its [Combat] clause to its [Non-Combat] clause**.
 * Conversely, executing a *Force Breach* switches any active Split Modifier into its kinetic [Combat] profile.
 
----
-
-## 5. Protocols of Retreat
-
-When a mission turns into a lethal meat-grinder, the Squad Leader can abort the operation to save veteran operatives from permanent death. A retreat marks the mission as **Failed**, triggering campaign-level failure rules, but extracts surviving operatives alive.
-
-### 5.1 Tactical Retreat (The Controlled Abort)
-The Squad Leader may voluntarily call a Tactical Retreat during any **Transition Step** between stages, provided **both** conditions are met:
-1. The squad has successfully cleared **at least Stage 1** of the mission.
-2. **AND** either at least one deployed operative is currently at **exactly `1 HP`**, **OR** more than **half (`50%`)** of the squad's collective starting static dice are currently in the Spent Pool.
-
-### 5.2 Forced Retreat (Emergency Extraction)
-If the squad fails to clear a stage and suffers its **Stage Failure Penalty**, the Squad Leader may immediately call a **Forced Retreat**, aborting all remaining stages on the track and extracting the surviving squad to HQ.
+2. **Step 5 Momentum Distribution:**
+   * When the squad clears a stage by $ge D + 2$, the Squad Leader unilaterally decides which participating operatives receive the restored static dice.
+3. **Transition Step Logistical Refresh:**
+   * The Squad Leader may burn `[2 EF]` (restore +1 die squad-wide) or `[3 EF]` (restore +2 dice squad-wide) from their private vault.
+4. **Protocols of Retreat:**
+   * **Tactical Retreat:** Controlled abort between stages if after Stage 1 and either an agent is at `1 HP` or $>50%$ of squad static dice are spent.
+   * **Forced Retreat:** Emergency evacuation after a failed stage.
 
 ---
 
-## 6. Command Accountability: Risk & Reward Stakes
-
-Taking the Squad Leader contract carries high institutional stakes at the end of the drop:
+## 5. Command Accountability: Risk vs. Reward
 
 | Mission Outcome | Faction Political Impact | Squad Leader Operative Impact |
 | :--- | :--- | :--- |
-| **Mission Cleared (Success)** | **[+1 PIP]** (`[2 VP]`) to Squad Leader's Faction Vault | **`[+1 LOY]`** ([+2 LOY] total including survival) |
-| **Mission Failed / Retreated** | **[-1 PIP]** (`[-2 VP]`) deducted from Squad Leader's Vault | **`[0 LOY]`** ([+1 LOY] if returning alive) |
-
+| **Mission Cleared (Success)** | **`[+1 PIP]`** (`[2 VP]`) to Squad Leader Vault | **`[+1 LOY]`** (`[+2 LOY]` total including survival) |
+| **Mission Failed / Retreated** | **`[-1 PIP]`** (`[-2 VP]`) deducted from Vault | **`0 LOY`** (`[+1 LOY]` if returning alive) |
 
 ---
 
-## 7. Rulebook Callouts, Examples of Play & Diagram Blueprints
+## 6. Rulebook Callouts, Examples of Play & Diagram Blueprints
 
 > [!IMPORTANT]
 > **Dynamic Modifier Interaction on Focus Swaps (`BL-RULES-07`):** Dynamic Focus Swaps declared by the Squad Leader alter the stage's active Focus immediately. Any active Stage Modifier containing a Split-Effect dynamically checks the *new* Focus—allowing a clever Squad Leader to use *Tactical Bypass* to sidestep brutal Combat-only penalties.
 
-> [!NOTE]
-> **Zero-Credit Command Auction Fallback:** While the standard minimum entry bid for the Command Auction is `[1 CR]`, if all participating Factions are at `[0 CR]` (or if every Faction declines to bid `[1 CR]`), the Squad Leader title does not go vacant. Instead, resolve the election at `[0 CR]` using the standard tie-breaker hierarchy: **Highest Faction [PIP] $\rightarrow$ Highest Candidate [LOY] $\rightarrow$ Die Roll-Off**.
-
 > [!WARNING]
-> **The Accountability Trap:** Winning the Squad Leader auction grants massive tactical leverage (distributing [MOM] die refunds, calling *Force Breach* / *Tactical Bypass*, and breaking ties), but if the mission ends in **Failure or Retreat**, the Squad Leader's Faction suffers **`[-1 PIP]` (`[-2 VP]`)** and their operative forfeits the Squad Leader `[+1 LOY]` bonus. Rivals may deliberately starve a greedy Squad Leader of dice in the final stage just to watch them eat the `[-1 PIP]` penalty!
+> **The Accountability Trap:** Taking the Squad Leader contract grants huge power, but if the mission ends in failure or retreat, your Faction suffers **`[-1 PIP]` (`[-2 VP]`)** and your operative forfeits the bonus Loyalty star!
 
 > [!EXAMPLE]
 > **Example of Play — The Command Auction & Binding Side-Deals:**
-> 1. During **Step 8 of HQ Downtime**, 4 players assemble the strike team. **Aegis** wants the Squad Leader token to guarantee their Commander gets the first [MOM] refund die (which also triggers Aegis's *Kinetic Reclamation* for `[+1 EF]`).
-> 2. **Aegis** opens bidding at `[1 CR]`. **Vanderbilt** threatens to raise to `[2 CR]`.
-> 3. Before bids lock, Aegis offers a **Binding Promise**: *"Don't raise the bid; let me win Squad Leader for `[1 CR]`, and I will pay you `[1 CR]` directly right now."*
-> 4. Vanderbilt accepts! Aegis pays `[1 CR]` to Vanderbilt and `[1 CR]` to the HQ bank (`[2 CR]` total outlay, keeping Vanderbilt happy and avoiding a `[3–4 CR]` bidding war).
+> 1. In Phase 2, 4 players assemble the strike team. **Aegis** wants Squad Leader to guarantee their Commander gets the first Momentum die refund.
+> 2. Aegis bids `[1 CR]`. **Vanderbilt** threatens to raise to `[2 CR]`.
+> 3. Aegis offers a **Binding Promise**: *"Don't raise the bid; let me win Squad Leader for `[1 CR]`, and I will pay you `[1 CR]` directly from my vault right now."*
+> 4. Vanderbilt accepts! Aegis pays `[1 CR]` to Vanderbilt and `[1 CR]` to the bank.
 
 > [!DIAGRAM]
-> **Figure 4.1 — Squad Leader Authority & Retreat Decision Tree**
-> * **Visual Specification:** Command console schematic illustrating the Squad Leader's 4 levers: (1) Step 1 Dynamic Focus Swap (*Force Breach* vs *Tactical Bypass*), (2) Step [5 MOM] Refund Distribution, (3) Transition Step *Logistical Refresh* (`[2 EF]` for `+1 die` squad-wide / `[3 EF]` for `+2 dice` squad-wide), and (4) Tactical vs. Forced Retreat gates.
+> **Figure 3.1 — Squad Leader Authority & Command Decision Tree**
+> * **Visual Specification:** Command console schematic illustrating the Squad Leader's 4 levers: (1) Step 1 Dynamic Focus Swap, (2) Step 5 Momentum Die Distribution, (3) Transition Step Logistical Refresh, and (4) Tactical vs. Forced Retreat gates.
 > * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_4_1_squad_leader_console.webp`
