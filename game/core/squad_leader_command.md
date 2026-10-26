@@ -59,6 +59,11 @@ During **Step 1 (Briefing)** of a stage, if the Mission Brief permits a Dynamic 
 * 💥 **Force Breach (`[Non-Combat]` $\rightarrow$ [Combat]):** Turn a technical, stealth, or social stage into a brute-force firefight. The stage's active Focus becomes [Combat], but the Target Difficulty increases by **$+1$ or $+2$ Successes** (as printed on the Mission Brief) due to triggered security alarms.
 * 🌿 **Tactical Bypass ([Combat] $\rightarrow$ `[Non-Combat]`):** Detour around an armed patrol by slicing security gates ([Operations]), slipping through vents ([Infiltrate]), or scaling hazardous terrain ([Survival]). Shifts the active Focus to the listed category at the printed Target Difficulty (some bypasses require spending [1 EF] or `1 static die` per operative as specified on the brief).
 
+### Dynamic Split-Effect Modifier Interaction (`BL-RULES-07`)
+When a Stage Modifier with a **Split-Effect** (e.g., *Security Hardening*, *Atmospheric Hazard*, or *Hostile Counter-Measures*) is active, its effects check the room's **currently active Focus**:
+* If the Squad Leader executes a *Tactical Bypass* swapping from [Combat] to [Infiltrate], the modifier **immediately shifts from its [Combat] clause to its [Non-Combat] clause**.
+* Conversely, executing a *Force Breach* switches any active Split Modifier into its kinetic [Combat] profile.
+
 ---
 
 ## 5. Protocols of Retreat
@@ -88,6 +93,9 @@ Taking the Squad Leader contract carries high institutional stakes at the end of
 ---
 
 ## 7. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!IMPORTANT]
+> **Dynamic Modifier Interaction on Focus Swaps (`BL-RULES-07`):** Dynamic Focus Swaps declared by the Squad Leader alter the stage's active Focus immediately. Any active Stage Modifier containing a Split-Effect dynamically checks the *new* Focus—allowing a clever Squad Leader to use *Tactical Bypass* to sidestep brutal Combat-only penalties.
 
 > [!NOTE]
 > **Zero-Credit Command Auction Fallback:** While the standard minimum entry bid for the Command Auction is `[1 CR]`, if all participating Factions are at `[0 CR]` (or if every Faction declines to bid `[1 CR]`), the Squad Leader title does not go vacant. Instead, resolve the election at `[0 CR]` using the standard tie-breaker hierarchy: **Highest Faction [PIP] $\rightarrow$ Highest Candidate [LOY] $\rightarrow$ Die Roll-Off**.

@@ -78,3 +78,12 @@ All 6 Class Abilities cost a uniform `[1 EF]` (`1.33 ES`). However, because thei
   1. *Primary Focus Matching (`3+`):* Yields $\sim 0.67\text{ ES}$ per die, stretching 26 dice to `17.4 ES`.
   2. *Operational Momentum (`[MOM]`):* Refunds static dice when rolling high margins ($\ge D + 2$), providing positive feedback for optimal specialist deployment.
   3. *Squad Leader Logistical Refresh:* Injects 4 or 8 dice mid-mission at the cost of Faction Effort (`[2 EF]` or `[3 EF]`).
+
+
+### 4.1 Operational Momentum as a Variance Cushion (`BL-BAL-01` — Designer Confirmed)
+* **Intentional Design Confirmation:** The requirement of clearing a stage by $\ge D + 2$ to generate `[1 MOM]` is intentionally designed as a **variance cushion / "hot-roll rebate"**, rather than an incentive to over-commit dice.
+* **Mathematical Rationale:** Because committing extra dice purely to chase Momentum is mathematically net-negative ($2.00\text{ ES}$ in extra dice to recoup $0.67\text{ ES}$ in a refunded die), players should never waste finite dice farming Momentum. Rather, Momentum provides positive relief when a normal roll runs unusually hot.
+
+### 4.2 2-HP Operatives & Backfire Vulnerability (`BL-BAL-02` — Designer Confirmed)
+* **Intentional Design Confirmation:** Operatives with `2 HP` and `8 Static Dice` (*Ghost Point*, *Virologist*, *Spymaster*) possess an intentional `39.5%` mission attrition mortality risk to Backfires (`1s`).
+* **Design Purpose:** This extreme fragility makes defensive `[Body]` armor, tactical positioning, and emergency `[1 EF]` field stabilization essential emergent synergies for fragile specialist builds.

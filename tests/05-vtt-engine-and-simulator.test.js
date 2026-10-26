@@ -170,4 +170,31 @@ describe('Suite 05: VTT 7-Step Sequencer, Monte Carlo Balance Simulator, Print R
     assert.ok(vttSrc.includes('vtt-sequencer-bar'));
     assert.ok(vttSrc.includes('simulateStageMonteCarlo'));
   });
+
+  it('verifies resolution of rules BL-RULES-06 through BL-RULES-08 and confirmation of balance models BL-BAL-01 through BL-BAL-03', () => {
+    const classesMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'classes_and_focus.md'), 'utf8');
+    assert.ok(classesMd.includes('BL-RULES-06'), 'classes_and_focus.md must codify BL-RULES-06');
+    assert.ok(classesMd.includes('Phase 1: The Specialists'), 'classes_and_focus.md must codify Phase 1 promotion for Scientist dual-vector');
+
+    const cmdMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'squad_leader_command.md'), 'utf8');
+    assert.ok(cmdMd.includes('BL-RULES-07'), 'squad_leader_command.md must codify BL-RULES-07');
+    assert.ok(cmdMd.includes('Dynamic Split-Effect Modifier Interaction'), 'squad_leader_command.md must explain split modifier dynamic evaluation');
+
+    const medbayMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'medbay_trauma.md'), 'utf8');
+    assert.ok(medbayMd.includes('BL-RULES-08'), 'medbay_trauma.md must codify BL-RULES-08');
+    assert.ok(medbayMd.includes('Medically Grounded Protocol'), 'medbay_trauma.md must codify Medically Grounded protocol');
+
+    const mathEngineMd = fs.readFileSync(path.join(ROOT_DIR, 'docs', 'design', '01_mathematical_engine_and_9es_ledger.md'), 'utf8');
+    assert.ok(mathEngineMd.includes('BL-BAL-01'), 'math engine design doc must confirm BL-BAL-01');
+    assert.ok(mathEngineMd.includes('BL-BAL-02'), 'math engine design doc must confirm BL-BAL-02');
+
+    const economyMd = fs.readFileSync(path.join(ROOT_DIR, 'docs', 'design', '04_economy_and_valuation_models.md'), 'utf8');
+    assert.ok(economyMd.includes('BL-BAL-03'), 'economy design doc must confirm BL-BAL-03');
+
+    const backlogMd = fs.readFileSync(path.join(ROOT_DIR, 'BACKLOG.md'), 'utf8');
+    for (let i = 1; i <= 8; i++) {
+      const ruleId = 'BL-RULES-0' + i;
+      assert.ok(backlogMd.includes(ruleId), 'BACKLOG.md must contain ' + ruleId);
+    }
+  });
 });
