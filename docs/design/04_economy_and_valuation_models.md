@@ -55,3 +55,9 @@ To ensure fair participation across different player counts while keeping negoti
 
 1. **Participation Stipend:** Every deployed character receives a baseline stipend of `[2 CR]`, and every participating Faction receives `[1 PIP]`. This guarantees that even if a mission goes terribly, deploying an operative does not leave a player completely bankrupt.
 2. **Shared Mission Clearance Bounty:** Clearing the mission deposits a collective pool of `[CR]` and `[PIP]` into the middle of the table. By default, it is split evenly among players, with any odd remainder allocated by the Squad Leader. However, players may alter this distribution through pre-mission contract negotiations.
+
+
+## 4. 3-Player Vanguard Slot Valuation & Loyalty Velocity (`BL-BAL-03` — Designer Confirmed)
+
+* **Intentional Design Confirmation:** In a 3-player configuration, the winner of the **Vanguard Auction** controls 2 of the 4 deployed operatives (Slot 4 Vanguard). If both survive, that Faction reaps `[+2 LOY]` (`[4 VP]` endgame value) in a single mission.
+* **Economic Balance:** This accelerated Loyalty velocity is an intentional incentive. Bidding `[2–3 CR]` for the Vanguard Slot is mathematically optimal and drives aggressive auction competition, compensating for the increased risk of dice depletion across two operatives simultaneously.

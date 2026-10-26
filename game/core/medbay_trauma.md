@@ -71,8 +71,14 @@ Surviving operatives who return to HQ with missing HP do **not** heal automatica
 
 | Condition Token | How It Is Acquired | Mechanical Penalty | How It Is Removed |
 | :--- | :--- | :--- | :--- |
-| **Critical Injury Token** *(Temporary Scar)* | Any missing HP that remains **unhealed** at the end of Downtime Step 3 (from missed rolls or no available bed). | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy.** | Assign to an Infirmary Bed in a future Downtime and roll at a **`-1` threshold penalty** (`6+` base, or `5+` with *Trauma Cybernetics*), OR use *Gene-Stasis Tank* / *Cybernetic Lab*. |
-| **Permanent Trauma Token** *(Locked Complication)* | Rolling a **natural `1`** on a Med Bay Healing Die during Downtime Step 3. | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy.** | **Locked** against normal Med Bay rolls. Can **only** be purged via the **Cybernetic Lab** ([5 CR]) or **Rehab Lab** ([3 EF]). |
+| **Critical Injury Token** *(Temporary Scar)* | Any missing HP that remains **unhealed** at the end of Downtime Step 3 (from missed rolls or no available bed). | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy** (unless effective Max HP is reduced to 0). | Assign to an Infirmary Bed in a future Downtime and roll at a **`-1` threshold penalty** (`6+` base, or `5+` with *Trauma Cybernetics*), OR use *Gene-Stasis Tank* / *Cybernetic Lab*. |
+| **Permanent Trauma Token** *(Locked Complication)* | Rolling a **natural `1`** on a Med Bay Healing Die during Downtime Step 3. | **`-1 Max HP`** and **`-1 Starting Static Die`** on mission launch. **Operative CAN still deploy** (unless effective Max HP is reduced to 0). | **Locked** against normal Med Bay rolls. Can **only** be purged via the **Cybernetic Lab** ([5 CR]) or **Rehab Lab** ([3 EF]). |
+
+### 2.3 Medically Grounded Protocol (0 Effective Max HP — `BL-RULES-08`)
+Each Critical Injury or Permanent Trauma token inflicts a compounding `-1 Max HP` penalty. If an operative accumulates enough tokens that their **effective Max HP is reduced to `0`** (for example, a `2 HP` specialist such as *The Prowler* or *The Spymaster* taking 2 injury/trauma tokens):
+* The operative is **Medically Grounded** and **Ineligible to Deploy** on missions.
+* They cannot be selected as one of the Faction's deployed field agents in Step 8 of HQ Downtime.
+* They must remain grounded in the HQ Reserve until at least 1 token is cured or purged at the Infirmary or Cybernetic Lab, raising their effective Max HP back to $\ge 1$.
 
 ---
 
@@ -91,6 +97,9 @@ Surviving operatives who return to HQ with missing HP do **not** heal automatica
 ---
 
 ## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!WARNING]
+> **Medically Grounded at 0 Max HP (`BL-RULES-08`):** Fragile `2 HP` operatives become Medically Grounded if they accumulate 2 Critical Injury or Permanent Trauma tokens. They cannot deploy on missions until at least 1 token is purged at the Infirmary or Cybernetic Lab, protecting the squad from deploying unplayable zero-health casualties.
 
 > [!IMPORTANT]
 > **Stabilization Extortion & Binding Promises at `0 HP`:** When an operative drops to `0 HP` during Step 4, **any deployed ally** may pay the `[1 EF]` or Medical Consumable cost to save them—not just the owning Faction! If the owning Faction is out of [EF], rivals can legally demand an immediate **Binding Promise** (e.g., *"Pay me `[3 CR]` from your Vault right now and I will burn my `[1 EF]` to stabilize your veteran agent"*).

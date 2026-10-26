@@ -54,7 +54,7 @@ The 24 unique specialist operatives are divided into **6 functional Classes** (4
 ### 3. Scientist — *Dual-Vector Mapping*
 * **Cost:** [1 EF]
 * **Trigger:** Activate during Step 1 (Stage Briefing), after the room's Operational Focus and Stage Modifier are revealed, before dice are committed.
-* **Effect:** Deep-scan environmental vulnerabilities. Choose any one Focus category distinct from the room's current printed Focus. For the duration of this stage, **add the chosen category as a concurrent Operational Focus for the room**. Operatives may use *either* the original Focus *or* the Scientist's added Focus to determine their Initiative Phase and success threshold (`3+` Primary, `4+` Secondary).
+* **Effect:** Deep-scan environmental vulnerabilities. Choose any one Focus category distinct from the room's current printed Focus. For the duration of this stage, **add the chosen category as a concurrent Operational Focus for the room**. Operatives may use *either* the original Focus *or* the Scientist's added Focus to determine both their **Initiative Phase** (acting in **Phase 1: The Specialists** if they hold Primary Focus `3+` in *either* category) and their **success threshold** (`3+` Primary, `4+` Secondary). Meeting Target Difficulty $D$ in Phase 1 triggers Early Resolution, completely sparing Phase 2 Support (`BL-RULES-06`).
 * **Class Offset:** `-0.5 ES` (Slightly leaner base stats due to high squad-wide `2.00 ES` output yield).
 
 ### 4. Diplomat — *Strategic Alignment*
@@ -113,6 +113,9 @@ Across the 6 classes, Focus pairings are mathematically distributed into **11 Pr
 ---
 
 ## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
+
+> [!IMPORTANT]
+> **Scientist Dual-Vector Mapping Initiative Promotion (`BL-RULES-06`):** When *Dual-Vector Mapping* adds a second concurrent Focus to a room, any operative whose Primary Focus (`3+`) matches the added Focus is promoted to **Phase 1 Initiative (The Specialists)** alongside specialists of the original Focus. If their combined rolls meet or exceed Target Difficulty $D$, Early Resolution is triggered and Phase 2 Support operatives do not roll.
 
 > [!IMPORTANT]
 > **Timing Clarification — Technician's *Adaptive Calibration* Preserves Early Resolution:** When a Technician spends `[1 EF]` on *Adaptive Calibration* immediately after the Phase 1 (Specialists) roll concludes, the additional static dice rolled by a Primary Focus (`3+`) operative **still count as part of Phase 1**. If those extra dice bring total successes up to or above Target Difficulty $D$, the stage triggers **Early Resolution** and Phase 2 Support operatives do not have to roll!

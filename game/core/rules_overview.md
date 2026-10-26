@@ -75,8 +75,8 @@ When entering a stage, resolve the encounter in **5 strict steps**:
 
 ### Step 1: Briefing & Transaction Window
 * Reveal the current Stage Card and draw **1 Stage Modifier Card** face-up.
-* The **Squad Leader** may declare a **Dynamic Focus Swap** (*Force Breach* to [Combat] or *Tactical Bypass* to a non-combat Focus).
-* Factions may activate Step 1 Class Abilities (e.g., Recon *Intel Reconnaissance*, Scientist *Dual-Vector Mapping*, Diplomat *Strategic Alignment*), deploy [Complex] items, use Briefing consumables, or broker **Binding Promises** (trading [CR] or items; [EF] and [LOY] cannot be traded).
+* The **Squad Leader** may declare a **Dynamic Focus Swap** (*Force Breach* to [Combat] or *Tactical Bypass* to a non-combat Focus). If an active Stage Modifier features a **Split-Effect** ([Combat] vs. [Non-Combat]), it immediately evaluates based on the stage's *active* Focus after any swaps (`BL-RULES-07`).
+* Factions may activate Step 1 Class Abilities (e.g., Recon *Intel Reconnaissance*, Scientist *Dual-Vector Mapping* which promotes matching specialists to Phase 1 Initiative [`BL-RULES-06`], Diplomat *Strategic Alignment*) (e.g., Recon *Intel Reconnaissance*, Scientist *Dual-Vector Mapping*, Diplomat *Strategic Alignment*), deploy [Complex] items, use Briefing consumables, or broker **Binding Promises** (trading [CR] or items; [EF] and [LOY] cannot be traded).
 
 ### Step 2: Phase 1 Initiative (The Specialists)
 Operatives whose **Primary Focus** matches the stage's active Focus act first:
