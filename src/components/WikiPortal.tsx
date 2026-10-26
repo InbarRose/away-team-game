@@ -663,29 +663,26 @@ export function WikiPortal({
             ★ 4-Tier Currencies & Trackers
           </button>
 
-          <button
+                    <button
             type="button"
-            onClick={() => navigateWiki('#/wiki/backlog')}
+            onClick={() => {
+              if (onNavigateDesign) onNavigateDesign();
+              else window.location.hash = '#/design';
+            }}
             style={{
               textAlign: 'left',
               padding: '0.42rem 0.6rem',
               borderRadius: '6px',
-              border:
-                activeSection === 'design_backlog'
-                  ? '1px solid #10b981'
-                  : '1px solid transparent',
-              background:
-                activeSection === 'design_backlog'
-                  ? 'rgba(16, 185, 129, 0.14)'
-                  : 'transparent',
-              color:
-                activeSection === 'design_backlog' ? '#6ee7b7' : 'var(--text-secondary)',
+              border: '1px dashed #10b981',
+              background: 'rgba(16, 185, 129, 0.08)',
+              color: '#6ee7b7',
               fontSize: '0.8rem',
-              fontWeight: activeSection === 'design_backlog' ? 700 : 600,
+              fontWeight: 600,
               cursor: 'pointer',
             }}
+            title="Open the standalone Design Companion portal (outside the rules wiki)"
           >
-            🧭 Design Companion & Backlog
+            🔬 Design Companion & Math ↗
           </button>
         </div>
 
