@@ -107,6 +107,9 @@ Using the new VTT Monte Carlo Simulator (`src/vtt/simulator.ts`), here are **4 b
 - [x] **`BL-UX-03` — Core Rulebook Clarity Pass (`/game/core/*.md`):** Added worked Examples of Play, callout boxes, timing clarifications, and diagram blueprints across all 8 chapters without changing any rules.
 - [x] **`BL-VTT-01` — 7-Step Guided Game Sequencer & Contextual Hover Coach:** Step-by-step interactive phase bar guiding players through Briefing $\rightarrow$ Phase 1 Specialists $\rightarrow$ Phase 2 Support $\rightarrow$ Triage $\rightarrow$ Momentum $\rightarrow$ Transition $\rightarrow$ HQ Downtime, with rich hover explanations.
 - [x] **`BL-VTT-02` — True Static Pool Commitment & Monte Carlo Balance Simulator (`src/vtt/simulator.ts`):** Per-stage dice commitment, spent dice tracking, `[MOM]` die refunds, and a 1,000-trial statistical simulator inside the VTT.
+- [x] **`BL-UX-04` — Standalone Homepage Portal (`#/home`):** Created dedicated command-deck landing page showcasing the 3 digital platform hubs, core 6.0 engine innovations, live component metrics, and community links.
+- [x] **`BL-UX-05` — Standalone Design Companion Portal (`#/design`):** Extracted developer design dossiers, 9.0 ES mathematical ledger, and companion backlog outside the Rules Wiki into an independent top-level engineering workspace.
+- [x] **`BL-OPS-01` — GitHub Issue Templates & In-App Reporter:** Added structured issue templates for Bug Reports, Gameplay Feedback, and Feature Requests in `.github/ISSUE_TEMPLATE/`, with in-app modal launcher and repo links.
 
 ### 📋 Upcoming Backlog (Next Iterations)
 - [ ] **`BL-VTT-03` — Interactive Political Deck & Secret Objective Dealer in VTT:** Deal 2 hidden Secret Objectives (keep 1) and draw 3 Open Agendas into active play inside the VTT state, with automatic `[VP]` scoring triggers when conditions are met.

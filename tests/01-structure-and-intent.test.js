@@ -116,4 +116,46 @@ describe('Suite 01: Repository Architecture, Directory Layout & Design Intent', 
       '.github/workflows/test-pr.yml must exist'
     );
   });
+
+  it('verifies dedicated HomePortal, standalone DesignCompanionPortal outside Rules Wiki, and GitHub issue templates', () => {
+    // 1. Issue templates
+    const issueTemplateDir = path.join(ROOT_DIR, '.github', 'ISSUE_TEMPLATE');
+    assert.ok(fs.existsSync(issueTemplateDir), '.github/ISSUE_TEMPLATE must exist');
+    assert.ok(
+      fs.existsSync(path.join(issueTemplateDir, 'bug_report.md')),
+      'bug_report.md must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(issueTemplateDir, 'gameplay_feedback.md')),
+      'gameplay_feedback.md must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(issueTemplateDir, 'feature_request.md')),
+      'feature_request.md must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(issueTemplateDir, 'config.yml')),
+      'config.yml must exist'
+    );
+
+    // 2. Dedicated Portal components
+    assert.ok(
+      fs.existsSync(path.join(ROOT_DIR, 'src', 'components', 'HomePortal.tsx')),
+      'src/components/HomePortal.tsx must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(ROOT_DIR, 'src', 'components', 'DesignCompanionPortal.tsx')),
+      'src/components/DesignCompanionPortal.tsx must exist'
+    );
+
+    // 3. AppShell integration
+    const appShellSrc = fs.readFileSync(
+      path.join(ROOT_DIR, 'src', 'components', 'AppShell.tsx'),
+      'utf8'
+    );
+    assert.ok(appShellSrc.includes('HomePortal'), 'AppShell must render HomePortal');
+    assert.ok(appShellSrc.includes('DesignCompanionPortal'), 'AppShell must render DesignCompanionPortal');
+    assert.ok(appShellSrc.includes('https://github.com/InbarRose/away-team-game'), 'AppShell must link to GitHub repo');
+    assert.ok(appShellSrc.includes('handleLaunchGithubIssue'), 'AppShell must support GitHub issue launching');
+  });
 });
