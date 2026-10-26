@@ -1,100 +1,134 @@
 ---
 id: "core-dice-system"
-title: "Static Pool Dice Engine & Operational Momentum"
+title: "Chapter 4: Phase 3 — The Tactical Mission Phase (In the Field)"
 component_type: "core_rule"
 category: "core"
-order: 2
-summary: "Mechanics of non-refreshing static dice pools, Focus probability thresholds (3+, 4+, 5+), Backfire damage on natural 1s, and the Operational Momentum refill loop."
+order: 4
+summary: "The field deployment phase: static dice pool paradigm, 50/35/15 focus pyramid, backfire damage, and the complete 5-step stage resolution micro-loop."
 ---
 
-# Static Pool Dice Engine & Operational Momentum
+# Chapter 4: Phase 3 — The Tactical Mission Phase (In the Field)
 
-## 1. The Static Pool Paradigm
+---
 
-In standard tactical board games, dice represent a recurring action economy that refreshes every turn. **Away Team** replaces this safety net with the **Static Pool Paradigm**.
+## 1. The Static Pool Paradigm (Finite Operational Stamina)
 
-When an operative deploys from the HQ bench, their **Starting Static Dice Pool** (ranging from **4 to 10 physical d6 dice** based on their character profile, gear, and injuries) is a **finite, non-refreshing resource for the entire mission duration**.
+Most tactical board games refresh all dice at the end of each round. **Away Team** rejects this arcade convention in favor of high-friction stamina management:
+
+* **Static Mission Pools:** Each operative deploys with a fixed **Static Dice Pool** (typically **6 to 8 dice** depending on class budget).
+* **Dice Exhaustion:** Dice committed and rolled during a stage move to that operative's **Spent Pool**. They remain exhausted until restored via **Operational Momentum ([MOM])** or a Squad Leader **Logistical Refresh**.
+* **Variance Cushion (`BL-BAL-01`):** Operatives who burn through their dice early in a mission will face later climax stages empty-handed, forcing dangerous Out-of-Focus rolls from teammates!
+
+---
+
+## 2. The 50 / 35 / 15 Focus Pyramid & Thresholds
+
+Every stage encounter requires an active **Operational Focus** representing the challenge type:
 
 ```text
-[ MISSION LAUNCH ] ──► Operative enters with 7 Static Dice in Active Pool.
-       │
-       ├──► STAGE 1: Player commits & rolls 3 dice to secure clearance.
-       │             (3 dice are moved to the Spent Pool)
-       │
-       └──► STAGE 2: Operative enters room with only 4 AVAILABLE DICE.
+                 ▲
+                / \
+               /   \      TIER 3: FRICTION HAZARDS (~15%)
+              / T3  \     [Operations] • [Survival]
+             /───────\
+            /         \   TIER 2: SPECIALIST OBJECTIVES (~35%)
+           /    T2     \  [Infiltrate] • [Intel] • [Negotiate]
+          /─────────────\
+         /               \ TIER 1: KINETIC BASELINE (~50%)
+        /       T1        \[Combat]
+       /───────────────────\
 ```
 
-### Permanent Exhaustion vs. Temporary Dice
-* **Static Dice:** Dice committed from an operative's sheet are moved to their **Spent Pool** after rolling. They do **not** automatically refresh between stages. They can only be restored via **Operational Momentum ([MOM])**, the Squad Leader's **Logistical Refresh**, or specific item/class/faction abilities.
-* **Temporary Dice:** Bonus dice granted for a single check by Class Abilities (such as Soldier's *Lock and Load*) or Handheld/Complex equipment are rolled alongside committed static dice, then returned to the supply box immediately after the stage resolves. Temporary dice never deplete or inflate an operative's permanent static pool cap.
+When rolling against the stage's active Focus, each operative hits based on their alignment:
+
+| Operative Alignment | Focus Relationship | Success Threshold | Backfire Risk |
+| :--- | :--- | :---: | :---: |
+| **Primary Focus** | The room's Focus matches operative's Primary Focus | **`3+`** (`67%` success) | `1` on d6 (`16.7%`) |
+| **Secondary / Bridge** | Operative holds Secondary Focus or equipped Focus Bridge item | **`4+`** (`50%` success) | `1` on d6 (`16.7%`) |
+| **Out of Focus** | Operative has no matching alignment | **`5+`** (`33%` success) | `1` on d6 (`16.7%`) |
+
+### Standardized Backfire Risk (`Natural 1`)
+Regardless of threshold, **every natural `1` rolled is an unpreventable Backfire** inflicting **`1 HP` of immediate damage** to that operative. Out-of-Focus operatives must roll twice as many dice to achieve the same successes, doubling their exposure to lethal Backfires!
 
 ---
 
-## 2. Focus Thresholds & Standardized Risk Math
+## 3. The 5-Step Stage Resolution Micro-Loop
 
-When rolling dice during a stage check, each operative's success probability is determined by how their printed **Focus** ratings align with the stage's active **Operational Focus**:
+The Away Team advances sequentially through the mission track's 3 to 5 Stage Cards. Each room resolves in **5 strict steps**:
 
-| Operative Focus Alignment | Initiative Phase | Success Threshold | Expected Success / Die | Backfire Window |
-| :--- | :--- | :--- | :--- | :--- |
-| **Primary Focus (Specialist)** | Phase 1 (Acts First) | **`3+`** (`3, 4, 5, 6`) | `0.67 ES` (66.7%) | **Natural `1` Only** |
-| **Secondary Focus (Matched)** | Phase 2 (Support) | **`4+`** (`4, 5, 6`) | `0.50 ES` (50.0%) | **Natural `1` Only** |
-| **Out of Focus (Unmatched)** | Phase 2 (Support) | **`5+`** (`5, 6`) | `0.33 ES` (33.3%) | **Natural `1` Only** |
+```text
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    THE 5-STEP STAGE RESOLUTION MICRO-LOOP                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+       │
+       ▼
+ ┌───────────┐     Step 1: BRIEFING, MODIFIERS & DYNAMIC SWAPS
+ │  STEP 1   │ ──► Reveal Stage Card & Modifier. Squad Leader may Force Breach
+ └───────────┘     or Tactical Bypass. Step 1 Class Abilities activate.
+       │
+       ▼
+ ┌───────────┐     Step 2: PHASE 1 INITIATIVE — THE SPECIALISTS (3+)
+ │  STEP 2   │ ──► Primary Focus specialists commit & roll at 3+.
+ └───────────┘     EARLY RESOLUTION: If Successes >= D, SKIP Phase 2 Support!
+       │
+       ▼ (If Successes < D)
+ ┌───────────┐     Step 3: PHASE 2 INITIATIVE — THE SUPPORT (4+ / 5+)
+ │  STEP 3   │ ──► Non-Primary operatives commit & roll at 4+ or 5+.
+ └───────────┘     All natural 1s inflict 1 HP Backfire damage.
+       │
+       ▼
+ ┌───────────┐     Step 4: POST-INITIATIVE & TRIAGE WINDOW
+ │  STEP 4   │ ──► Trigger damage mitigation. If an operative is at 0 HP,
+ └───────────┘     resolve Emergency Stabilization (Owning Faction first).
+       │
+       ▼
+ ┌───────────┐     Step 5: RESOLUTION & OPERATIONAL MOMENTUM ([MOM])
+ │  STEP 5   │ ──► Compare Successes to D. If >= D + 2, generate Momentum:
+ └───────────┘     MOM = Successes - D - 1. Leader refunds spent dice!
+```
 
-### Why Backfire Risk is Standardized (`Natural 1`)
-Every die rolled—whether thrown by a Phase 1 Specialist or an Out-of-Focus Support operative—carries the exact same baseline trauma hazard: a **1-in-6 (`16.7%`) chance of rolling a natural `1` (Backfire)**, which inflicts **1 point of immediate HP damage** to the rolling operative.
+### Step 1: Briefing, Modifiers & Dynamic Swaps
+* Reveal the Stage Card and attach **1 Stage Modifier Card**.
+* The **Squad Leader** may execute a **Dynamic Focus Swap** (*Force Breach* to `[Combat]` or *Tactical Bypass* to non-combat). Active Split-Effect Modifiers evaluate dynamically against the new Focus (`BL-RULES-07`).
+* Factions may activate Step 1 abilities: Recon *Intel Reconnaissance*, Scientist *Dual-Vector Mapping* (which promotes matching specialists to Phase 1 Initiative [`BL-RULES-06`]), or Diplomat *Strategic Alignment*.
 
-Operating Out of Focus is penalized not by arbitrary extra damage, but by **severe dice inefficiency**: an Out-of-Focus operative must burn twice as many precious static dice as a Specialist to generate the same number of successes, exposing themselves to twice as many Backfire checks in the process.
+### Step 2: Phase 1 Initiative — The Specialists (`3+`)
+Operatives whose Primary Focus matches the room act first:
+1. Specialists coordinate and commit dice from their remaining static pools.
+2. Roll all committed Specialist dice simultaneously: **`3+` = +1 Success**, **`1` = 1 HP Backfire**.
+3. **Early Resolution Check:** If total successes meet or exceed Target Difficulty $D$, the stage is **instantly cleared**! Skip Step 3 entirely—Support operatives preserve all dice and avoid Backfire injury! *(Technician Adaptive Calibration may extend Phase 1 to trigger Early Resolution per `BL-RULES-05`)*.
 
-### Focus Bridging & Focus Elevation
-* **Focus Bridge (Items & Perks):** Many Tier 1 and Tier 2 Handheld items, Complex rigs, and Faction Perks grant a **Focus Bridge**, allowing an Out-of-Focus (`5+`) operative to roll in the bridged category as if it were a **Secondary Focus (`4+`)**.
-* **Focus Elevation:** High-tier abilities (e.g., *Neural Override Matrix*, *Neuro-Overclock Ampoule*) can elevate a Secondary Focus (`4+`) to **Primary Focus (`3+`)**, allowing the operative to act in Phase 1 Initiative as a full Specialist.
+### Step 3: Phase 2 Initiative — The Support (`4+` / `5+`)
+If the Specialists did not reach Target Difficulty $D$, non-specialists must step up:
+1. Secondary Focus operatives hit on **`4+`**; Out-of-Focus operatives hit on **`5+`**.
+2. Natural `1s` inflict **`1 HP` of Backfire damage**.
 
----
+### Step 4: Post-Initiative & Triage Window
+* Trigger Survivalist *Emergency Field Medicine* (`[1 EF]` heals up to 2 stage HP).
+* **Emergency Stabilization at `0 HP` (`BL-RULES-03`):** If an agent drops to `0 HP`, any ally may pay `[1 EF]` or a Medkit to stabilize them at `1 HP`. Right of first refusal: Owning Faction first $ightarrow$ Squad Leader second $ightarrow$ Clockwise.
+* **Dying Breath Rule (`BL-RULES-02`):** Successes rolled on a lethal throw count toward stage resolution in Step 5 even if the operative dies unstabilized.
 
-## 3. Operational Momentum ([MOM])
-
-To prevent conservative dice hoarding ("penny-pinching") and reward aggressive Specialist play, clearing a stage with excess successes generates **Operational Momentum ([MOM])**.
-
-### 3.1 Generating Momentum
-When the squad clears a stage and their **Total Successes** exceed the stage's **Target Difficulty ($D$)** by **$+2$ or more**, every success starting at $D + 2$ generates **1 Momentum ([MOM])**:
-
-$$\text{Momentum} = \text{Total Successes} - D - 1 \quad (\text{for } \text{Total Successes} \ge D + 2)$$
-
-| Target Difficulty ($D$) | Total Successes Rolled | Margin Above Target | Momentum ([MOM]) Generated |
-| :---: | :---: | :---: | :--- |
-| **3** | 3 | $+0$ | **[0 MOM]** (Standard Clear) |
-| **3** | 4 | $+1$ | **[0 MOM]** (Clean Clear) |
-| **3** | 5 | **$+2$** | **[1 MOM]** |
-| **3** | 6 | **$+3$** | **[2 MOM]** |
-| **3** | 7 | **$+4$** | **[3 MOM]** |
-
-### 3.2 Spending Momentum (Squad Leader Distribution)
-Immediately during **Step 5 (Resolution)** of the completed stage, the **Squad Leader** distributes all generated [MOM] points across the squad:
-
-* **Exchange Rate:** **[1 MOM] = Restore `1 spent static die`** from an operative's Spent Pool back to their Active Static Pool.
-* **The Skin-in-the-Game Constraint:** Momentum dice can **ONLY** be restored to operatives who **actually committed and rolled at least 1 die** during the stage just completed. Operatives who committed `0` dice cannot receive Momentum refunds (unless a specific power such as *Field Scavenger* overrides this rule).
-* **Cap Limit:** An operative's restored static dice can never exceed their starting mission static pool cap.
-
+### Step 5: Resolution & Operational Momentum (`[MOM]`)
+Compare total successes against Target Difficulty $D$:
+* **Stage Cleared ($	ext{Successes} ge D$):** Room is cleared!
+* **Operational Momentum ($	ext{Successes} ge D + 2$):** Generate $	ext{Momentum} = 	ext{Successes} - D - 1$. The Squad Leader distributes `[1 MOM] = +1 restored die` to operatives who committed $ge 1$ die in this stage.
+* **Stage Failed ($	ext{Successes} < D$):** Suffer printed Stage Failure Penalty.
 
 ---
 
 ## 4. Rulebook Callouts, Examples of Play & Diagram Blueprints
 
-> [!TIP]
-> **Tactical Insight — Why Focus Alignment Saves Lives:** Because every die rolled has a flat `16.7%` (`1-in-6`) chance of inflicting `1 HP` Backfire damage, rolling **Out of Focus (`5+`, `0.33 ES/die`)** is doubly punishing. To generate `2 Expected Successes`, a Primary Specialist (`3+`) only needs to roll **3 dice** (`0.50` expected Backfire damage), whereas an Out-of-Focus operative (`5+`) must roll **6 dice** (`1.00` expected Backfire damage AND double the static pool depletion). Always equip a **Focus Bridge** weapon (`4+`) or use **Dynamic Focus Swaps** before rolling Out of Focus!
-
 > [!IMPORTANT]
-> **The Skin-in-the-Game Rule for [MOM] Refunds:** You cannot "free-ride" on your teammates' rolls to refill your own spent dice pool. An operative is **only eligible** to receive a restored static die from `[1 MOM]` if they **committed and rolled at least `1` static die** during that specific stage (unless a specific ability such as *Field Scavenger* overrides this restriction).
+> **Skin-in-the-Game Constraint on Momentum Refunds:** Only operatives who committed and rolled at least 1 static die in this stage are legally eligible to receive Momentum die refunds. Selfish players who withhold all dice cannot receive Momentum rebates!
 
 > [!EXAMPLE]
-> **Example of Play — Static Pool Depletion & Momentum Refill:**
-> * **The Ghost Point** (`2 HP`, `7 Starting Static Dice`, Primary [Infiltrate] `3+`) enters **Stage 1: Outer Perimeter** ([Infiltrate], Target Difficulty $D = 3$).
-> * She commits **4 of her 7 static dice**, leaving **3 Available Static Dice** on her card.
-> * Along with her teammate **The Prowler** (who commits **3 static dice**), they roll `7 dice` total at `3+` and score **6 Successes** (`+3` above $D = 3$).
-> * The stage clears with $\text{Momentum} = 6 - 3 - 1 = \mathbf{[2\text{ MOM}]}$.
-> * Both The Ghost Point and The Prowler rolled at least 1 die, so both are eligible for refunds. The Squad Leader gives `[1 MOM]` to each: The Ghost Point moves `1 spent die` back to her Active Pool, entering Stage 2 with **4 Available Static Dice** (`3 Spent`).
+> **Example of Play — Early Resolution in Action:**
+> 1. The squad enters **Vault Core Access** (`[Infiltrate]`, Target Difficulty $D = 4$).
+> 2. **The Ghost Point** (Primary `[Infiltrate]` `3+`) commits `5 static dice` in Phase 1.
+> 3. The roll produces `6, 5, 4, 3, 1` — scoring **4 Successes** and **1 Backfire** (`1 HP` damage).
+> 4. Because `4 Successes` meets $D = 4$, **Early Resolution triggers immediately**! Support teammates (*The Commander*, *The Juggernaut*) skip Phase 2 completely, preserving all of their combat dice for the upcoming boss fight.
 
 > [!DIAGRAM]
-> **Figure 2.1 — Anatomy of the Static Dice Pool & Focus Thresholds**
-> * **Visual Specification:** Schematic flow diagram showing an Operative Card's **Active Static Pool (`7d6`)** splitting into **Committed Dice (`3d6`)** + **Temporary Bonus Dice (`+2d6` from Lock and Load)**. Shows the 3 threshold bands (`3+` Primary Crimson/Cyan, `4+` Secondary/Bridge Amber, `5+` Out-of-Focus Slate) and the red skull `1` Backfire face, followed by committed static dice moving to the **Spent Pool** while temporary dice return to the supply box.
-> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_2_1_static_dice_flow.webp`
+> **Figure 4.1 — The 5-Step Stage Micro-Loop & Threshold Resolution Tree**
+> * **Visual Specification:** Detailed stage encounter flowchart showing Phase 1 Specialists branch (checking Early Resolution) leading to Phase 2 Support fallback, followed by Step 4 Triage priority tree and Step 5 Momentum calculation formula.
+> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_2_1_stage_micro_loop.webp`

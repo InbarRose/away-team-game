@@ -1610,6 +1610,54 @@ export function WikiPortal({
                         FOLIO PAGE {realIdx * 3 + 3}–{realIdx * 3 + 5}
                       </span>
                     </div>
+                    {ch.slug === 'rules_overview' && (
+                      <div className="rulebook-phase-badge badge-overview">
+                        <span>🔰 TABLETOP OVERVIEW</span>
+                        <span>THEME, OBJECTIVES & SEMI-COOPERATIVE MACRO LOOP</span>
+                      </div>
+                    )}
+                    {ch.slug === 'table_setup_and_glossary' && (
+                      <div className="rulebook-phase-badge badge-setup">
+                        <span>⚙️ TABLETOP SETUP</span>
+                        <span>1–4 PLAYER VARIATIONS & 6-STEP TABLE INITIALIZATION</span>
+                      </div>
+                    )}
+                    {ch.slug === 'squad_leader_command' && (
+                      <div className="rulebook-phase-badge badge-phase-1-2">
+                        <span>🗺️ PHASE 1: MISSION SELECT • 👑 PHASE 2: COMMAND AUCTION</span>
+                        <span>ROSTER ASSEMBLY, 6-SLOT LOADOUTS & EXECUTIVE COMMAND</span>
+                      </div>
+                    )}
+                    {ch.slug === 'dice_system' && (
+                      <div className="rulebook-phase-badge badge-phase-3">
+                        <span>🎲 PHASE 3: THE TACTICAL MISSION PHASE (IN THE FIELD)</span>
+                        <span>5-STEP STAGE MICRO-LOOP, STATIC DICE POOLS & MOMENTUM</span>
+                      </div>
+                    )}
+                    {ch.slug === 'classes_and_focus' && (
+                      <div className="rulebook-phase-badge badge-classes">
+                        <span>⚡ SPECIALIST CLASSES & FOCUS MATRIX</span>
+                        <span>TACTICAL TIMING WINDOWS & 24-AGENT ROSTER DOCTRINE</span>
+                      </div>
+                    )}
+                    {ch.slug === 'medbay_trauma' && (
+                      <div className="rulebook-phase-badge badge-medbay">
+                        <span>🏥 FIELD CASUALTIES & MED BAY TRAUMA ENGINE</span>
+                        <span>STEP 4 TRIAGE, DYING BREATH & CRITICAL TRAUMA</span>
+                      </div>
+                    )}
+                    {ch.slug === 'vault_economy' && (
+                      <div className="rulebook-phase-badge badge-phase-4">
+                        <span>🏢 PHASE 4: HEADQUARTERS DOWNTIME (BASE OPERATIONS)</span>
+                        <span>8-STEP BASE CYCLE, DUAL-STREAM PAYOUTS & SPONSORSHIPS</span>
+                      </div>
+                    )}
+                    {ch.slug === 'campaign_engine' && (
+                      <div className="rulebook-phase-badge badge-campaign">
+                        <span>🏆 CAMPAIGN PROGRESSION & ENDGAME VICTORY</span>
+                        <span>TASK FORCE DISSOLUTION TRACKER & FINAL SCORING TALLY</span>
+                      </div>
+                    )}
                     <MarkdownRenderer content={ch.body} />
                   </section>
                 );

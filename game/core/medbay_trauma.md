@@ -1,9 +1,9 @@
 ---
 id: "core-medbay-trauma"
-title: "Mortality, Med Bay & Critical Trauma Engine"
+title: "Chapter 6: Field Casualties, Triage & Med Bay Trauma Engine"
 component_type: "core_rule"
 category: "core"
-order: 5
+order: 6
 summary: "Rules for 0 HP emergency stabilization, field casualty drops and the Vulture Tax, the HQ Infirmary bed recovery system, Critical Injuries, and Permanent Trauma."
 ---
 

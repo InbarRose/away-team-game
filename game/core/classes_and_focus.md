@@ -1,9 +1,9 @@
 ---
 id: "core-classes-and-focus"
-title: "The Skewed Focus Pyramid & 6 Core Classes"
+title: "Chapter 5: Specialist Classes & The Focus Matrix"
 component_type: "core_rule"
 category: "core"
-order: 3
+order: 5
 summary: "The 50/35/15 Skewed Focus Pyramid, the 6 functional operative classes, their 1-Effort Class Abilities, and the 24-Operative Roster Matrix."
 ---
 
