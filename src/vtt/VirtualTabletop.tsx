@@ -8,6 +8,7 @@ import {
   expectedSuccessPerDie,
   simulateStageMonteCarlo,
 } from './simulator';
+import { runGameSimulation, SimulationReport } from './gameSimulator';
 import { OperativeCard } from './components/OperativeCard';
 import { FactionDossierCard } from './components/FactionDossierCard';
 import { StageCard } from './components/StageCard';
@@ -118,13 +119,7 @@ export interface VTTState {
   negotiatedBountyCredits: Record<number, number>;
 }
 
-export const BOARD_GAME_PHASES = [
-  {
-    id: 'setup' as const,
-    title: '⚙️ Setup',
-    subtitle: '1–4 Players & Factions',
-    badgeClass: 'badge-setup',
-  },
+export const IN_GAME_PHASES = [
   {
     id: 'phase1_mission' as const,
     title: '🗺️ Phase 1: Mission',
@@ -151,11 +146,21 @@ export const BOARD_GAME_PHASES = [
   },
   {
     id: 'simulator' as const,
-    title: '📊 Balance & Sim',
-    subtitle: 'Monte Carlo & 9.0 ES',
+    title: '📊 Simulator & Telemetry',
+    subtitle: 'Monte Carlo & Chaos Tests',
     badgeClass: 'badge-sim',
   },
 ] as const;
+
+export const SETUP_STEPS = [
+  { step: 'setup_players', label: '0.1 Players', subtitle: 'Table Seating' },
+  { step: 'setup_factions', label: '0.2 Factions', subtitle: 'Dossier Draft' },
+  { step: 'setup_bench', label: '0.3 Specialists', subtitle: 'Operative Draft' },
+  { step: 'setup_agendas_objectives', label: '0.4 Objectives', subtitle: 'Secret Mandates' },
+  { step: 'setup_campaign', label: '0.5 Campaign', subtitle: 'Campaign Track' },
+] as const;
+
+export const BOARD_GAME_PHASES = IN_GAME_PHASES; // Backward-compatibility alias
 
 export const SEQUENCE_STEPS = [
   {
@@ -272,6 +277,11 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
   const [simSeedBump, setSimSeedBump] = useState<number>(0);
   const [bountyPoolCr, setBountyPoolCr] = useState<number>(6);
   const [bountyPoolPip, setBountyPoolPip] = useState<number>(1);
+  const [showRestartModal, setShowRestartModal] = useState<boolean>(false);
+  const [simReport, setSimReport] = useState<SimulationReport | null>(null);
+  const [simTab, setSimTab] = useState<'combat_monte_carlo' | 'deterministic_scenarios' | 'chaos_fuzzing'>('combat_monte_carlo');
+  const [chaosRunsCount, setChaosRunsCount] = useState<number>(20);
+  const [selectedScenario, setSelectedScenario] = useState<'smoke_clean_clear' | 'martyr_dying_breath'>('smoke_clean_clear');
 
   // Load state from localStorage on mount
   useEffect(() => {
@@ -1548,55 +1558,153 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
           <button
             type="button"
             className="tabletop-btn tabletop-btn-danger"
-            title="Reset Virtual Tabletop to Setup"
-            onClick={handleResetTabletop}
+            title="Start a new game or reset the tabletop"
+            onClick={() => {
+              if (!state.flowStep.startsWith('setup')) {
+                setShowRestartModal(true);
+              } else {
+                handleResetTabletop();
+              }
+            }}
           >
-            ↺ Reset Game
+            🎮 Start New Game
           </button>
         </div>
       </header>
 
       {/* ====================================================================
-          BOARD GAME MACRO PHASE BAR (PROCEED ONE STEP AT A TIME)
+          CONFIRMATION MODAL: START NEW GAME (PREVENTS ACCIDENTAL MID-GAME RESETS)
+         ==================================================================== */}
+      {showRestartModal && (
+        <div
+          style={{
+            position: 'fixed',
+            inset: 0,
+            background: 'rgba(0, 0, 0, 0.75)',
+            backdropFilter: 'blur(4px)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            zIndex: 9999,
+            padding: '1rem',
+          }}
+        >
+          <div
+            style={{
+              background: '#0f172a',
+              border: '2px solid #ef4444',
+              borderRadius: '12px',
+              maxWidth: '500px',
+              width: '100%',
+              padding: '1.5rem',
+              boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 0 25px rgba(239, 68, 68, 0.3)',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem' }}>
+              <span style={{ fontSize: '1.5rem' }}>⚠️</span>
+              <h3 style={{ margin: 0, color: '#f8fafc', fontSize: '1.25rem' }}>
+                Start a New Game?
+              </h3>
+            </div>
+            <p style={{ color: '#cbd5e1', fontSize: '0.86rem', lineHeight: 1.5, margin: '0.5rem 0 1.25rem 0' }}>
+              You are currently playing an active campaign session (<strong>{activeMission?.title || 'Mission 1'}</strong>).
+              Starting a new game will reset all Faction Vaults, Operative Rosters, Armory Inventories, and Campaign Progress back to Step 0.1 Setup.
+            </p>
+            <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '0.75rem' }}>
+              <button
+                type="button"
+                className="tabletop-btn"
+                onClick={() => setShowRestartModal(false)}
+                style={{ padding: '0.5rem 1rem' }}
+              >
+                Cancel / Resume Game
+              </button>
+              <button
+                type="button"
+                className="tabletop-btn tabletop-btn-danger"
+                onClick={() => {
+                  setShowRestartModal(false);
+                  handleResetTabletop();
+                }}
+                style={{ padding: '0.5rem 1rem', fontWeight: 700 }}
+              >
+                Confirm: Start New Game ▶
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* ====================================================================
+          PHASE NAVIGATION BAR: STRICT SEPARATION OF SETUP VS IN-GAME PHASES
          ==================================================================== */}
       <nav className="vtt-phase-nav" aria-label="Board Game Phase Progression">
-        {BOARD_GAME_PHASES.map((p) => {
-          const isCurrent =
-            (p.id === 'setup' && state.flowStep.startsWith('setup')) ||
-            (p.id === 'phase1_mission' && state.flowStep === 'phase1_brief') ||
-            (p.id === 'phase2_command' && state.flowStep === 'phase2_auction') ||
-            (p.id === 'stage' && state.flowStep === 'phase3_tactical') ||
-            (p.id === 'hq' && state.flowStep === 'phase4_hq') ||
-            (p.id === 'simulator' && state.activeTab === 'simulator');
-
-          return (
+        {state.flowStep.startsWith('setup') ? (
+          /* SETUP PROGRESSION BAR (ONLY VISIBLE DURING SETUP) */
+          <>
+            {SETUP_STEPS.map((s) => {
+              const isCurrent = state.flowStep === s.step;
+              return (
+                <div
+                  key={s.step}
+                  className={`vtt-phase-tab ${isCurrent ? 'active badge-setup' : ''}`}
+                  style={{ cursor: 'default' }}
+                >
+                  <strong style={{ fontSize: '0.84rem' }}>{s.label}</strong>
+                  <div style={{ fontSize: '0.66rem', color: isCurrent ? '#f1f5f9' : '#94a3b8', marginTop: '0.2rem' }}>
+                    {s.subtitle}
+                  </div>
+                </div>
+              );
+            })}
             <button
-              key={p.id}
               type="button"
-              className={`vtt-phase-tab ${isCurrent ? `active ${p.badgeClass}` : ''}`}
-              onClick={() => {
-                if (p.id === 'simulator') {
-                  setState((prev) => ({ ...prev, activeTab: 'simulator' }));
-                } else if (p.id === 'setup') {
-                  setState((prev) => ({ ...prev, flowStep: 'setup_players', activeTab: 'setup' }));
-                } else if (p.id === 'phase1_mission') {
-                  setState((prev) => ({ ...prev, flowStep: 'phase1_brief', activeTab: 'phase1_mission' }));
-                } else if (p.id === 'phase2_command') {
-                  setState((prev) => ({ ...prev, flowStep: 'phase2_auction', activeTab: 'phase2_command' }));
-                } else if (p.id === 'stage') {
-                  setState((prev) => ({ ...prev, flowStep: 'phase3_tactical', activeTab: 'stage' }));
-                } else if (p.id === 'hq') {
-                  setState((prev) => ({ ...prev, flowStep: 'phase4_hq', activeTab: 'hq' }));
-                }
-              }}
+              className={`vtt-phase-tab ${state.activeTab === 'simulator' ? 'active badge-sim' : ''}`}
+              onClick={() => setState((p) => ({ ...p, activeTab: 'simulator' }))}
             >
-              <strong style={{ fontSize: '0.88rem' }}>{p.title}</strong>
-              <div style={{ fontSize: '0.68rem', color: isCurrent ? '#f1f5f9' : '#94a3b8', marginTop: '0.2rem' }}>
-                {p.subtitle}
+              <strong style={{ fontSize: '0.84rem' }}>📊 Sim & Telemetry</strong>
+              <div style={{ fontSize: '0.66rem', color: state.activeTab === 'simulator' ? '#f1f5f9' : '#94a3b8', marginTop: '0.2rem' }}>
+                Chaos & Smoke Tests
               </div>
             </button>
-          );
-        })}
+          </>
+        ) : (
+          /* IN-GAME CAMPAIGN PHASES (CANNOT NAVIGATE BACK TO SETUP MID-GAME) */
+          IN_GAME_PHASES.map((p) => {
+            const isCurrent =
+              (p.id === 'phase1_mission' && state.flowStep === 'phase1_brief') ||
+              (p.id === 'phase2_command' && state.flowStep === 'phase2_auction') ||
+              (p.id === 'stage' && state.flowStep === 'phase3_tactical') ||
+              (p.id === 'hq' && state.flowStep === 'phase4_hq') ||
+              (p.id === 'simulator' && state.activeTab === 'simulator');
+
+            return (
+              <button
+                key={p.id}
+                type="button"
+                className={`vtt-phase-tab ${isCurrent ? `active ${p.badgeClass}` : ''}`}
+                onClick={() => {
+                  if (p.id === 'simulator') {
+                    setState((prev) => ({ ...prev, activeTab: 'simulator' }));
+                  } else if (p.id === 'phase1_mission') {
+                    setState((prev) => ({ ...prev, flowStep: 'phase1_brief', activeTab: 'phase1_mission' }));
+                  } else if (p.id === 'phase2_command') {
+                    setState((prev) => ({ ...prev, flowStep: 'phase2_auction', activeTab: 'phase2_command' }));
+                  } else if (p.id === 'stage') {
+                    setState((prev) => ({ ...prev, flowStep: 'phase3_tactical', activeTab: 'stage' }));
+                  } else if (p.id === 'hq') {
+                    setState((prev) => ({ ...prev, flowStep: 'phase4_hq', activeTab: 'hq' }));
+                  }
+                }}
+              >
+                <strong style={{ fontSize: '0.88rem' }}>{p.title}</strong>
+                <div style={{ fontSize: '0.68rem', color: isCurrent ? '#f1f5f9' : '#94a3b8', marginTop: '0.2rem' }}>
+                  {p.subtitle}
+                </div>
+              </button>
+            );
+          })
+        )}
       </nav>
 
       {/* ====================================================================
@@ -3353,58 +3461,340 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       )}
 
       {/* ====================================================================
-          TAB 5: BALANCE & MONTE CARLO SIMULATOR
+          TAB 5: BALANCE, MONTE CARLO, DETERMINISTIC & CHAOS SIMULATOR CONSOLE
          ==================================================================== */}
       {state.activeTab === 'simulator' && (
-        <section className="card-stage" style={{ maxWidth: '1000px', margin: '0 auto' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', paddingBottom: '0.75rem' }}>
+        <section className="card-stage" style={{ maxWidth: '1080px', margin: '0 auto' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', paddingBottom: '0.75rem', flexWrap: 'wrap', gap: '0.75rem' }}>
             <div>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#38bdf8' }}>
-                MONTE CARLO STATISTICAL BALANCE ENGINE
+                STATISTICAL BALANCE & AUTOMATED TEST SIMULATOR
               </span>
               <h3 style={{ margin: '0.2rem 0', fontSize: '1.25rem', color: '#f8fafc' }}>
-                Live 1,000-Trial Simulation vs Target D={state.targetDifficulty}
+                Tabletop Verification Console
               </h3>
             </div>
-            <button
-              type="button"
-              className="tabletop-btn tabletop-btn-primary"
-              onClick={() => setSimSeedBump((p) => p + 1)}
-            >
-              🔄 Re-Run Simulation
-            </button>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', margin: '1rem 0' }}>
-            <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>CLEAR PROBABILITY</div>
-              <strong style={{ fontSize: '1.6rem', color: liveSimulation.clearProbabilityPct >= 75 ? '#34d399' : '#fbbf24' }}>
-                {liveSimulation.clearProbabilityPct}%
-              </strong>
-            </div>
-            <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>EARLY RESOLUTION ODDS (PHASE 1)</div>
-              <strong style={{ fontSize: '1.6rem', color: '#38bdf8' }}>
-                {liveSimulation.earlyPhase1ClearProbabilityPct}%
-              </strong>
-            </div>
-            <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>OPERATIONAL MOMENTUM ODDS</div>
-              <strong style={{ fontSize: '1.6rem', color: '#a855f7' }}>
-                {liveSimulation.momentumProbabilityPct}%
-              </strong>
-            </div>
-            <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-              <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>EXPECTED BACKFIRES</div>
-              <strong style={{ fontSize: '1.6rem', color: '#f87171' }}>
-                {liveSimulation.averageBackfires} / trial
-              </strong>
+            {/* Simulator Mode Switcher */}
+            <div style={{ display: 'flex', gap: '0.4rem', background: '#090d16', padding: '0.3rem', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+              <button
+                type="button"
+                className={`tabletop-btn ${simTab === 'combat_monte_carlo' ? 'tabletop-btn-primary' : ''}`}
+                style={{ padding: '0.35rem 0.75rem', fontSize: '0.78rem' }}
+                onClick={() => setSimTab('combat_monte_carlo')}
+              >
+                📊 Combat Monte Carlo
+              </button>
+              <button
+                type="button"
+                className={`tabletop-btn ${simTab === 'deterministic_scenarios' ? 'tabletop-btn-primary' : ''}`}
+                style={{ padding: '0.35rem 0.75rem', fontSize: '0.78rem' }}
+                onClick={() => setSimTab('deterministic_scenarios')}
+              >
+                🎯 Deterministic Smoke Scenarios
+              </button>
+              <button
+                type="button"
+                className={`tabletop-btn ${simTab === 'chaos_fuzzing' ? 'tabletop-btn-primary' : ''}`}
+                style={{ padding: '0.35rem 0.75rem', fontSize: '0.78rem' }}
+                onClick={() => setSimTab('chaos_fuzzing')}
+              >
+                🎲 Chaos Fuzz Simulator
+              </button>
             </div>
           </div>
 
-          <div style={{ padding: '0.75rem', borderRadius: '6px', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.08)', fontSize: '0.82rem', color: '#cbd5e1' }}>
-            <strong>Tactical Verdict: </strong> {liveSimulation.tacticalVerdict}
-          </div>
+          {/* SUB-PANEL 1: COMBAT MONTE CARLO */}
+          {simTab === 'combat_monte_carlo' && (
+            <div style={{ marginTop: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                <div>
+                  <h4 style={{ margin: 0, color: '#f1f5f9', fontSize: '1rem' }}>
+                    Live Stage Probability vs Target D={state.targetDifficulty}
+                  </h4>
+                  <p style={{ margin: '0.2rem 0 0 0', color: '#94a3b8', fontSize: '0.78rem' }}>
+                    1,000-trial simulation based on current 4 deployed operatives and active Stage focus.
+                  </p>
+                </div>
+                <button
+                  type="button"
+                  className="tabletop-btn tabletop-btn-primary"
+                  onClick={() => setSimSeedBump((p) => p + 1)}
+                >
+                  🔄 Re-Run Monte Carlo
+                </button>
+              </div>
+
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1rem', margin: '1rem 0' }}>
+                <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>CLEAR PROBABILITY</div>
+                  <strong style={{ fontSize: '1.6rem', color: liveSimulation.clearProbabilityPct >= 75 ? '#34d399' : '#fbbf24' }}>
+                    {liveSimulation.clearProbabilityPct}%
+                  </strong>
+                </div>
+                <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>EARLY RESOLUTION ODDS (PHASE 1)</div>
+                  <strong style={{ fontSize: '1.6rem', color: '#38bdf8' }}>
+                    {liveSimulation.earlyPhase1ClearProbabilityPct}%
+                  </strong>
+                </div>
+                <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>OPERATIONAL MOMENTUM ODDS</div>
+                  <strong style={{ fontSize: '1.6rem', color: '#a855f7' }}>
+                    {liveSimulation.momentumProbabilityPct}%
+                  </strong>
+                </div>
+                <div style={{ padding: '1rem', borderRadius: '8px', background: '#182234', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <div style={{ fontSize: '0.74rem', color: '#94a3b8' }}>EXPECTED BACKFIRES</div>
+                  <strong style={{ fontSize: '1.6rem', color: '#f87171' }}>
+                    {liveSimulation.averageBackfires} / trial
+                  </strong>
+                </div>
+              </div>
+
+              <div style={{ padding: '0.75rem', borderRadius: '6px', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.08)', fontSize: '0.82rem', color: '#cbd5e1' }}>
+                <strong>Tactical Verdict: </strong> {liveSimulation.tacticalVerdict}
+              </div>
+            </div>
+          )}
+
+          {/* SUB-PANEL 2: DETERMINISTIC SMOKE SCENARIOS */}
+          {simTab === 'deterministic_scenarios' && (
+            <div style={{ marginTop: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <div>
+                  <h4 style={{ margin: 0, color: '#f1f5f9', fontSize: '1rem' }}>
+                    Deterministic Acceptance Scenarios
+                  </h4>
+                  <p style={{ margin: '0.2rem 0 0 0', color: '#94a3b8', fontSize: '0.78rem' }}>
+                    Execute fixed, repeatable game paths with predictable dice and state assertions.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <select
+                    className="tabletop-select"
+                    value={selectedScenario}
+                    onChange={(e) => setSelectedScenario(e.target.value as any)}
+                    style={{ padding: '0.45rem 0.75rem', fontSize: '0.84rem' }}
+                  >
+                    <option value="smoke_clean_clear">Scenario 1: Clean Clear Smoke Test</option>
+                    <option value="martyr_dying_breath">Scenario 2: Martyr & Dying Breath Test</option>
+                  </select>
+                  <button
+                    type="button"
+                    className="tabletop-btn tabletop-btn-primary"
+                    onClick={() => {
+                      const rep = runGameSimulation(
+                        { mode: 'deterministic', scenarioId: selectedScenario },
+                        components
+                      );
+                      setSimReport(rep);
+                      appendLog(`🎯 [SIMULATOR] Ran deterministic scenario ${selectedScenario}: ${rep.success ? 'PASSED ✅' : 'FAILED ❌'}.`);
+                    }}
+                  >
+                    ▶ Run Scenario Test
+                  </button>
+                </div>
+              </div>
+
+              {simReport && simReport.mode === 'deterministic' && (
+                <div style={{ marginTop: '1rem' }}>
+                  <div
+                    style={{
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      background: simReport.success ? 'rgba(5, 150, 105, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                      border: `1px solid ${simReport.success ? '#059669' : '#ef4444'}`,
+                      marginBottom: '1rem',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <div>
+                      <strong style={{ fontSize: '1.05rem', color: simReport.success ? '#34d399' : '#f87171' }}>
+                        {simReport.success ? '✅ SCENARIO ACCEPTANCE PASSED' : '❌ SCENARIO FAILED'}
+                      </strong>
+                      <div style={{ fontSize: '0.78rem', color: '#cbd5e1', marginTop: '0.25rem' }}>
+                        Executed {simReport.totalStepsExecuted} discrete game engine steps across 1 full run. Deadlocks: {simReport.deadlocksDetected}. Invariant Violations: {simReport.invariantViolations.length}.
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      className="tabletop-btn"
+                      onClick={() => {
+                        const blob = new Blob([JSON.stringify(simReport, null, 2)], { type: 'application/json' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `away_team_deterministic_${selectedScenario}_report.json`;
+                        a.click();
+                      }}
+                      title="Download full JSON telemetry export"
+                    >
+                      💾 Export Telemetry (JSON)
+                    </button>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>TOTAL CREDITS EARNED</div>
+                      <strong style={{ fontSize: '1.2rem', color: '#38bdf8' }}>{simReport.summaryMetrics.totalCreditsEarned} CR</strong>
+                    </div>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>FACILITIES SPONSORED</div>
+                      <strong style={{ fontSize: '1.2rem', color: '#34d399' }}>{simReport.summaryMetrics.totalFacilitiesSponsored}</strong>
+                    </div>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>ITEMS PURCHASED</div>
+                      <strong style={{ fontSize: '1.2rem', color: '#fbbf24' }}>{simReport.summaryMetrics.totalItemsPurchased}</strong>
+                    </div>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>CASUALTIES SUSTAINED</div>
+                      <strong style={{ fontSize: '1.2rem', color: '#f87171' }}>{simReport.summaryMetrics.totalCasualties}</strong>
+                    </div>
+                  </div>
+
+                  <div style={{ maxHeight: '200px', overflowY: 'auto', background: '#090d16', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '6px', padding: '0.6rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}>
+                    <div style={{ color: '#38bdf8', fontWeight: 700, marginBottom: '0.3rem' }}>SCENARIO EXECUTION LOG:</div>
+                    {simReport.logs.map((log, idx) => (
+                      <div key={idx} style={{ color: '#94a3b8', lineHeight: 1.5 }}>
+                        [{log.phase} / Step {log.step}] <span style={{ color: '#e2e8f0', fontWeight: 600 }}>{log.action}</span>: {log.details}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* SUB-PANEL 3: CHAOS FUZZ SIMULATOR */}
+          {simTab === 'chaos_fuzzing' && (
+            <div style={{ marginTop: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+                <div>
+                  <h4 style={{ margin: 0, color: '#f1f5f9', fontSize: '1rem' }}>
+                    Automated Chaos / Fuzz Testing Loop
+                  </h4>
+                  <p style={{ margin: '0.2rem 0 0 0', color: '#94a3b8', fontSize: '0.78rem' }}>
+                    Simulates N complete playthroughs with stochastic player choices to expose deadlocks, race conditions, and negative balances.
+                  </p>
+                </div>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <label style={{ fontSize: '0.8rem', color: '#cbd5e1' }}>
+                    Cycles:{' '}
+                    <input
+                      type="number"
+                      min={5}
+                      max={100}
+                      value={chaosRunsCount}
+                      onChange={(e) => setChaosRunsCount(Math.min(100, Math.max(5, parseInt(e.target.value) || 20)))}
+                      style={{ width: '60px', padding: '0.35rem', background: '#0f172a', border: '1px solid #334155', color: '#f8fafc', borderRadius: '4px', textAlign: 'center' }}
+                    />
+                  </label>
+                  <button
+                    type="button"
+                    className="tabletop-btn tabletop-btn-primary"
+                    onClick={() => {
+                      const rep = runGameSimulation(
+                        { mode: 'chaos', runs: chaosRunsCount, seed: Date.now() },
+                        components
+                      );
+                      setSimReport(rep);
+                      appendLog(`🎲 [CHAOS SIM] Completed ${rep.runsCompleted} cycles. Deadlocks: ${rep.deadlocksDetected}, Invariant Violations: ${rep.invariantViolations.length}.`);
+                    }}
+                  >
+                    ⚡ Run Chaos Fuzzing
+                  </button>
+                </div>
+              </div>
+
+              {simReport && simReport.mode === 'chaos' && (
+                <div style={{ marginTop: '1rem' }}>
+                  <div
+                    style={{
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      background: simReport.success ? 'rgba(5, 150, 105, 0.15)' : 'rgba(239, 68, 68, 0.15)',
+                      border: `1px solid ${simReport.success ? '#059669' : '#ef4444'}`,
+                      marginBottom: '1rem',
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                    }}
+                  >
+                    <div>
+                      <strong style={{ fontSize: '1.05rem', color: simReport.success ? '#34d399' : '#f87171' }}>
+                        {simReport.success ? '✅ CHAOS FUZZ PASSED (0 DEADLOCKS)' : '❌ INVARIANT VIOLATION DETECTED'}
+                      </strong>
+                      <div style={{ fontSize: '0.78rem', color: '#cbd5e1', marginTop: '0.25rem' }}>
+                        Executed {simReport.totalStepsExecuted} total steps across {simReport.runsCompleted} automated campaign cycles.
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      className="tabletop-btn"
+                      onClick={() => {
+                        const blob = new Blob([JSON.stringify(simReport, null, 2)], { type: 'application/json' });
+                        const url = URL.createObjectURL(blob);
+                        const a = document.createElement('a');
+                        a.href = url;
+                        a.download = `away_team_chaos_${simReport.runsCompleted}_cycles_telemetry.json`;
+                        a.click();
+                      }}
+                      title="Download full JSON telemetry export"
+                    >
+                      💾 Export Chaos Telemetry (JSON)
+                    </button>
+                  </div>
+
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '0.75rem', marginBottom: '1rem' }}>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>RUNS COMPLETED</div>
+                      <strong style={{ fontSize: '1.2rem', color: '#38bdf8' }}>{simReport.runsCompleted} Cycles</strong>
+                    </div>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>DEADLOCKS DETECTED</div>
+                      <strong style={{ fontSize: '1.2rem', color: simReport.deadlocksDetected === 0 ? '#34d399' : '#ef4444' }}>
+                        {simReport.deadlocksDetected}
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>INVARIANT VIOLATIONS</div>
+                      <strong style={{ fontSize: '1.2rem', color: simReport.invariantViolations.length === 0 ? '#34d399' : '#ef4444' }}>
+                        {simReport.invariantViolations.length}
+                      </strong>
+                    </div>
+                    <div style={{ padding: '0.75rem', background: '#182234', borderRadius: '6px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>AVG STEPS / RUN</div>
+                      <strong style={{ fontSize: '1.2rem', color: '#fbbf24' }}>
+                        {(simReport.totalStepsExecuted / (simReport.runsCompleted || 1)).toFixed(1)}
+                      </strong>
+                    </div>
+                  </div>
+
+                  {simReport.invariantViolations.length > 0 && (
+                    <div style={{ padding: '0.75rem', background: 'rgba(239, 68, 68, 0.1)', border: '1px solid #ef4444', borderRadius: '6px', marginBottom: '1rem', color: '#fca5a5', fontSize: '0.8rem' }}>
+                      <strong>Invariant Violations:</strong>
+                      <ul style={{ margin: '0.25rem 0 0 1rem' }}>
+                        {simReport.invariantViolations.map((v, i) => (
+                          <li key={i}>{v}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  )}
+
+                  <div style={{ maxHeight: '200px', overflowY: 'auto', background: '#090d16', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '6px', padding: '0.6rem', fontFamily: 'var(--font-mono)', fontSize: '0.72rem' }}>
+                    <div style={{ color: '#38bdf8', fontWeight: 700, marginBottom: '0.3rem' }}>CHAOS SAMPLE LOGS (FIRST 50 STEPS):</div>
+                    {simReport.logs.slice(0, 50).map((log, idx) => (
+                      <div key={idx} style={{ color: '#94a3b8', lineHeight: 1.5 }}>
+                        [{log.phase} / Step {log.step}] <span style={{ color: '#e2e8f0', fontWeight: 600 }}>{log.action}</span>: {log.details}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </section>
       )}
 

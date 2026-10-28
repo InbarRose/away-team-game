@@ -280,6 +280,15 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 
 ### 📋 Architecture Decision Records (ADRs)
 
+#### ADR-17: Strict Mid-Game Navigation Isolation, Deterministic Acceptance Scenarios, & Chaos / Fuzz Testing Engine
+* **Context:** Once players began an active campaign game, navigating to Setup wiped game state without a formal reset. Furthermore, the engine lacked systematic test coverage for deadlocks, invariant violations under chaotic random play, and repeatable deterministic scenarios with overridable random outcomes.
+* **Decision:**
+  1. **Navigation Isolation:** Strictly separate `SETUP_STEPS` (Step 0.1–0.5) from `IN_GAME_PHASES` (Phase 1–4 + Sim). Setup steps are only accessible prior to campaign launch. Once in-game, resetting requires explicit user confirmation via a modal ("Start a New Game?").
+  2. **Deterministic Acceptance Testing:** Built `src/vtt/gameSimulator.ts` with preset test scenarios (`smoke_clean_clear`, `martyr_dying_breath`) and pluggable `diceOverride` hooks allowing static dice roll injection for automated acceptance testing.
+  3. **Chaos / Fuzz Simulation & Invariant Verifier:** Built seedable PRNG simulation running full automated playthroughs with stochastic player decisions, validating 6 invariants: non-negative currency, valid HP/dice bounds, 4-operative roster stability, bounded execution ($< 250$ steps/run, 0 deadlocks), market replenishment, and dual-stream payouts.
+  4. **In-Browser Sim Console & Telemetry Export:** Upgraded Tab 5 in the VTT to feature 3 operational sub-modes (Combat Monte Carlo, Deterministic Scenarios, Chaos Fuzz Simulator) and one-click JSON telemetry export for telemetry analysis.
+* **Status:** Adopted and verified across all test suites and static build.
+
 #### ADR-16: Quartermaster Market Depletion, Director Console Sovereignty, & Secret Corporate Objectives Tabletop Architecture
 * **Context:** In Phase 4 HQ Downtime, purchasing an armory item did not deplete the shop or clarify which Director was buying. Additionally, HQ facility improvements, boardroom perks, open agendas, and secret corporate objectives were missing from the interactive tabletop.
 * **Decision:**
