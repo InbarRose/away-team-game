@@ -280,4 +280,51 @@ describe('Suite 05: VTT 7-Step Sequencer, Monte Carlo Balance Simulator, Print R
       'engine.js must guide players on individual support dice commitment'
     );
   });
+  it('verifies Dual-Stream Payout Model (BL-RULES-01), per-character stipends, negotiated pool, and multi-click claim lock', () => {
+    // 1. Core Rulebook Verification
+    const vaultEconomyMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'vault_economy.md'), 'utf8');
+    assert.ok(
+      vaultEconomyMd.includes('Step 1 Deep-Dive: Debrief & Dual-Stream Payouts (BL-RULES-01)'),
+      'vault_economy.md must define Step 1 Dual-Stream Payout Model'
+    );
+    assert.ok(
+      vaultEconomyMd.includes('Stream 1: Guaranteed Per-Character Deployment Stipend'),
+      'vault_economy.md must codify Stream 1 per-character stipend'
+    );
+    assert.ok(
+      vaultEconomyMd.includes('Stream 2: The Shared Clearance Bounty Pool (Negotiated Split)'),
+      'vault_economy.md must codify Stream 2 negotiated bounty pool'
+    );
+    assert.ok(
+      vaultEconomyMd.includes('Single-Claim Invariant'),
+      'vault_economy.md must state Single-Claim Invariant to prevent duplicate payout claims'
+    );
+
+    // 2. VTT Implementation Verification
+    const vttSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'VirtualTabletop.tsx'), 'utf8');
+    assert.ok(
+      vttSrc.includes('payoutsClaimed'),
+      'VirtualTabletop.tsx must track payoutsClaimed state flag'
+    );
+    assert.ok(
+      vttSrc.includes('negotiatedBountyCredits'),
+      'VirtualTabletop.tsx must track negotiatedBountyCredits allocation'
+    );
+    assert.ok(
+      vttSrc.includes('handleSetNegotiatedBountyCredits'),
+      'VirtualTabletop.tsx must provide handleSetNegotiatedBountyCredits'
+    );
+    assert.ok(
+      vttSrc.includes('handleResetCanonicalBountySplit'),
+      'VirtualTabletop.tsx must provide handleResetCanonicalBountySplit'
+    );
+    assert.ok(
+      vttSrc.includes('Payouts Deposited into Vaults (Claimed)'),
+      'VirtualTabletop.tsx must lock button with claimed message after deposit'
+    );
+    assert.ok(
+      vttSrc.includes('if (state.payoutsClaimed) return;'),
+      'handleDistributeMissionPayouts must prevent multi-click duplicate payouts'
+    );
+  });
 });

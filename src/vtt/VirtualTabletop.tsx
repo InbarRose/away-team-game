@@ -101,6 +101,8 @@ export interface VTTState {
   stageBackfires: number;
   rolledDiceHistory: RolledDieRecord[];
   combatLog: string[];
+  payoutsClaimed: boolean;
+  negotiatedBountyCredits: Record<number, number>;
 }
 
 export const BOARD_GAME_PHASES = [
@@ -223,6 +225,8 @@ const DEFAULT_STATE: VTTState = {
   stageBackfires: 0,
   rolledDiceHistory: [],
   combatLog: ['[SYSTEM] Away Team Procedural Tabletop Engine initialized. Select Table Player Count to begin.'],
+  payoutsClaimed: false,
+  negotiatedBountyCredits: { 0: 2, 1: 2, 2: 1, 3: 1 },
 };
 
 export function VirtualTabletop({ components = rawAllComponents as GameComponent[], onReturnToWiki }: VTTProps) {
@@ -369,6 +373,10 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
     const initialSquad: DeployedOperative[] = [];
     const benches: Record<number, string[]> = {};
 
+    const initialBountyCredits: Record<number, number> = {};
+    const baseEven = Math.floor(6 / count);
+    const rem = 6 % count;
+
     for (let i = 0; i < count; i++) {
       initialVaults.push({
         playerIndex: i,
@@ -382,6 +390,7 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
         isSquadLeader: i === 0,
       });
       benches[i] = [];
+      initialBountyCredits[i] = baseEven + (i === 0 ? rem : 0);
     }
 
     for (let s = 0; s < 4; s++) {
@@ -410,6 +419,8 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       vaults: initialVaults,
       squad: initialSquad,
       playerBenches: benches,
+      payoutsClaimed: false,
+      negotiatedBountyCredits: initialBountyCredits,
       setupDraftPlayerIndex: 0,
       flowStep: 'setup_factions',
       activeTab: 'setup',
@@ -959,33 +970,97 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
     }
   };
 
+  // Phase 4: Step 1 Adjust Negotiated Bounty Allocation per Player
+  const handleSetNegotiatedBountyCredits = (playerIdx: number, delta: number) => {
+    if (state.payoutsClaimed) return;
+    setState((p) => {
+      const current = p.negotiatedBountyCredits[playerIdx] || 0;
+      const next = Math.max(0, current + delta);
+      return {
+        ...p,
+        negotiatedBountyCredits: {
+          ...p.negotiatedBountyCredits,
+          [playerIdx]: next,
+        },
+      };
+    });
+  };
+
+  // Reset to canonical even split with remainder to Squad Leader
+  const handleResetCanonicalBountySplit = () => {
+    if (state.payoutsClaimed) return;
+    const activeCount = state.playerCount || 4;
+    const leaderIdx = state.vaults.find((v) => v.isSquadLeader)?.playerIndex || 0;
+    const evenCredits = Math.floor(bountyPoolCr / activeCount);
+    const remainderCredits = bountyPoolCr % activeCount;
+
+    const resetSplit: Record<number, number> = {};
+    for (let i = 0; i < activeCount; i++) {
+      resetSplit[i] = evenCredits + (i === leaderIdx ? remainderCredits : 0);
+    }
+    setState((p) => ({ ...p, negotiatedBountyCredits: resetSplit }));
+  };
+
   // Phase 4: Step 1 Debrief & Dual-Stream Payouts (BL-RULES-01)
   const handleDistributeMissionPayouts = (bountyCredits: number, bountyPip: number) => {
+    if (state.payoutsClaimed) return; // Prevent multi-click duplicate payouts bug
+
     const activeCount = state.playerCount || 4;
     const squadLeader = state.vaults.find((v) => v.isSquadLeader);
     const leaderIdx = squadLeader ? squadLeader.playerIndex : 0;
 
-    const evenCredits = Math.floor(bountyCredits / activeCount);
-    const remainderCredits = bountyCredits % activeCount;
-    const evenPip = Math.floor(bountyPip / activeCount);
-    const remainderPip = bountyPip % activeCount;
+    // Stream 1: Guaranteed Per-Character Participating Stipend
+    // Each deployed character earns +2 CR for their controlling Director.
+    // Each participating faction earns +1 PIP.
+    // In 3P mode, the Vanguard Slot operative earns +2 CR for the Squad Leader.
+    const operativeStipends: Record<number, number> = {};
+    for (let i = 0; i < activeCount; i++) operativeStipends[i] = 0;
+
+    state.squad.slice(0, 4).forEach((op) => {
+      const owner = op.ownerPlayer;
+      if (operativeStipends[owner] !== undefined) {
+        operativeStipends[owner] += 2; // +2 CR per deployed operative
+      }
+    });
+
+    // Stream 2: Negotiated Shared Bounty Pool
+    const allocatedBounty = { ...state.negotiatedBountyCredits };
+
+    // Update surviving operatives loyalty & Squad Leader bonus
+    const updatedSquad = state.squad.map((op) => {
+      const isAlive = op.currentHp > 0;
+      const isLeaderOp = op.ownerPlayer === leaderIdx;
+      const loyGain = isAlive ? (isLeaderOp ? 2 : 1) : 0;
+      return {
+        ...op,
+        loyalty: Math.min(4, op.loyalty + loyGain),
+      };
+    });
+
+    // Deposit dual-stream earnings into vaults
+    const updatedVaults = state.vaults.map((v) => {
+      if (v.playerIndex >= activeCount) return v;
+      const baseCr = operativeStipends[v.playerIndex] || 0;
+      const poolCr = allocatedBounty[v.playerIndex] || 0;
+      const isLeader = v.playerIndex === leaderIdx;
+      const basePip = 1 + (isLeader ? 1 : 0); // +1 PIP participation (+1 PIP Squad Leader bonus)
+
+      return {
+        ...v,
+        credits: v.credits + baseCr + poolCr,
+        pip: v.pip + basePip,
+      };
+    });
 
     setState((prev) => ({
       ...prev,
-      vaults: prev.vaults.map((v) => {
-        const isLeader = v.playerIndex === leaderIdx;
-        const totalCrGain = 2 + evenCredits + (isLeader ? remainderCredits : 0);
-        const totalPipGain = 1 + evenPip + (isLeader ? remainderPip : 0);
-        return {
-          ...v,
-          credits: v.credits + totalCrGain,
-          pip: v.pip + totalPipGain,
-        };
-      }),
+      vaults: updatedVaults,
+      squad: updatedSquad,
+      payoutsClaimed: true, // Lock claiming!
     }));
 
     appendLog(
-      `🏢 HQ Debrief (BL-RULES-01): Awarded [2 CR] + [1 PIP] baseline stipend + [${bountyCredits} CR, ${bountyPip} PIP] mission pool divided evenly (${evenCredits} CR, ${evenPip} PIP each). Squad Leader (${state.vaults[leaderIdx].playerName}) claimed the odd remainder (+${remainderCredits} CR, +${remainderPip} PIP).`
+      `🏢 HQ Debrief (BL-RULES-01): Dual-stream mission payouts deposited into Faction Vaults! Stream 1: [2 CR] guaranteed per deployed operative + [1 PIP] per faction (+1 PIP / +2 LOY to Squad Leader). Stream 2: [${bountyCredits} CR] shared clearance pot distributed per player negotiations.`
     );
   };
 
@@ -2157,46 +2232,222 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       {state.flowStep === 'phase4_hq' && state.activeTab !== 'simulator' && (
         <section style={{ maxWidth: '1150px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
           {/* Header & Debrief Payouts */}
+          {/* Step 1: Debrief & Dual-Stream Payout Console */}
           <div
             style={{
-              padding: '1.1rem 1.25rem',
+              padding: '1.25rem',
               borderRadius: '10px',
               background: '#182234',
               border: '1px solid rgba(255, 255, 255, 0.12)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
             }}
           >
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.85rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem' }}>
               <div>
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#38bdf8' }}>
-                  PHASE 4 // HEADQUARTERS DOWNTIME (8-STEP BASE OPERATIONS)
+                  PHASE 4 // HEADQUARTERS DOWNTIME (STEP 1: DEBRIEF & DUAL-STREAM PAYOUTS)
                 </span>
                 <h3 style={{ margin: '0.2rem 0', fontSize: '1.35rem', color: '#f8fafc' }}>
-                  Step 1: Debrief & Dual-Stream Payouts (BL-RULES-01)
+                  Dual-Stream Payout Model (BL-RULES-01)
                 </h3>
                 <div style={{ color: '#94a3b8', fontSize: '0.78rem' }}>
-                  Participation: [2 CR] per deployed operative + [1 PIP] per faction • Shared bounty pool split evenly (odd remainder to Squad Leader).
+                  <strong>Stream 1:</strong> [2 CR] guaranteed per deployed character + [1 PIP] per faction • <strong>Stream 2:</strong> [{bountyPoolCr} CR] clearance pool negotiated by players.
                 </div>
               </div>
-              <button
-                type="button"
-                className="tabletop-btn tabletop-btn-primary"
-                onClick={() => handleDistributeMissionPayouts(bountyPoolCr, bountyPoolPip)}
-                style={{ padding: '0.6rem 1.25rem', fontWeight: 700 }}
-              >
-                💸 Claim & Deposit Payouts into Vaults
-              </button>
+
+              {/* Multi-Click Protected Deposit Button */}
+              <div>
+                {(() => {
+                  const activeCount = state.playerCount || 4;
+                  let allocatedSum = 0;
+                  for (let i = 0; i < activeCount; i++) {
+                    allocatedSum += state.negotiatedBountyCredits[i] || 0;
+                  }
+                  const unallocated = bountyPoolCr - allocatedSum;
+                  const canClaim = !state.payoutsClaimed && unallocated === 0;
+
+                  return (
+                    <button
+                      type="button"
+                      className="tabletop-btn"
+                      disabled={!canClaim}
+                      onClick={() => handleDistributeMissionPayouts(bountyPoolCr, bountyPoolPip)}
+                      style={{
+                        padding: '0.65rem 1.35rem',
+                        fontWeight: 700,
+                        fontSize: '0.85rem',
+                        background: state.payoutsClaimed
+                          ? '#065f46'
+                          : unallocated !== 0
+                          ? '#78350f'
+                          : '#0284c7',
+                        borderColor: state.payoutsClaimed
+                          ? '#10b981'
+                          : unallocated !== 0
+                          ? '#f59e0b'
+                          : '#38bdf8',
+                        color: '#f8fafc',
+                        cursor: canClaim ? 'pointer' : 'not-allowed',
+                      }}
+                      title={
+                        state.payoutsClaimed
+                          ? 'Payouts have already been deposited for this mission.'
+                          : unallocated !== 0
+                          ? `Allocate the full ${bountyPoolCr} CR pool before depositing.`
+                          : 'Deposit guaranteed character stipends and negotiated pool shares into vaults.'
+                      }
+                    >
+                      {state.payoutsClaimed
+                        ? '✅ Payouts Deposited into Vaults (Claimed)'
+                        : unallocated !== 0
+                        ? `⚠️ Allocate Full Pool (${unallocated > 0 ? `+${unallocated} CR left` : `${Math.abs(unallocated)} CR over`})`
+                        : '💸 Claim & Deposit Dual-Stream Payouts into Vaults'}
+                    </button>
+                  );
+                })()}
+              </div>
             </div>
 
-            {/* Payout Pool Configuration */}
-            <div style={{ display: 'flex', gap: '1.25rem', alignItems: 'center', flexWrap: 'wrap', fontSize: '0.8rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span>Shared Clearance Pool Credits:</span>
-                <strong style={{ color: '#fbbf24', fontSize: '0.95rem' }}>{bountyPoolCr} CR</strong>
+            {/* Interactive Player Payout Table */}
+            <div style={{ background: '#0f172a', borderRadius: '8px', border: '1px solid rgba(255, 255, 255, 0.08)', overflow: 'hidden' }}>
+              <div
+                style={{
+                  display: 'grid',
+                  gridTemplateColumns: '2fr 2fr 1.5fr 2fr 1.5fr',
+                  padding: '0.6rem 0.85rem',
+                  background: 'rgba(255, 255, 255, 0.04)',
+                  borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+                  fontSize: '0.72rem',
+                  fontWeight: 700,
+                  color: '#94a3b8',
+                }}
+              >
+                <div>DIRECTOR / FACTION</div>
+                <div>DEPLOYED CHARACTER(S)</div>
+                <div>STREAM 1 (GUARANTEED)</div>
+                <div>STREAM 2 (NEGOTIATED POOL)</div>
+                <div>TOTAL DEPOSIT</div>
               </div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-                <span>Shared Clearance Pool PIP:</span>
-                <strong style={{ color: '#c084fc', fontSize: '0.95rem' }}>{bountyPoolPip} PIP</strong>
+
+              {state.vaults.slice(0, state.playerCount).map((v) => {
+                // Find operatives deployed by this player
+                const deployedOps = state.squad.filter((s) => s.ownerPlayer === v.playerIndex);
+                const charNames = deployedOps
+                  .map((op) => {
+                    const c = characters.find((char) => char.id === op.characterId);
+                    return c ? c.title : `Operative ${op.slotIndex + 1}`;
+                  })
+                  .join(', ');
+
+                const isLeader = v.isSquadLeader;
+                const guaranteedCr = deployedOps.length * 2; // +2 CR per character
+                const guaranteedPip = 1 + (isLeader ? 1 : 0);
+                const poolCr = state.negotiatedBountyCredits[v.playerIndex] || 0;
+                const totalCr = guaranteedCr + poolCr;
+
+                return (
+                  <div
+                    key={v.playerIndex}
+                    style={{
+                      display: 'grid',
+                      gridTemplateColumns: '2fr 2fr 1.5fr 2fr 1.5fr',
+                      padding: '0.75rem 0.85rem',
+                      alignItems: 'center',
+                      borderBottom: '1px solid rgba(255, 255, 255, 0.04)',
+                      fontSize: '0.78rem',
+                    }}
+                  >
+                    <div>
+                      <strong style={{ color: '#f8fafc' }}>{v.playerName}</strong>
+                      {isLeader && (
+                        <span style={{ marginLeft: '0.4rem', color: '#38bdf8', fontSize: '0.66rem' }}>
+                          👑 LEADER
+                        </span>
+                      )}
+                    </div>
+                    <div style={{ color: '#cbd5e1', fontSize: '0.74rem' }}>
+                      {charNames || 'None'} ({deployedOps.length} agent{deployedOps.length !== 1 ? 's' : ''})
+                    </div>
+                    <div style={{ color: '#34d399', fontWeight: 600 }}>
+                      +{guaranteedCr} CR • +{guaranteedPip} PIP
+                    </div>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                      <button
+                        type="button"
+                        className="tabletop-btn"
+                        style={{ padding: '1px 6px', fontSize: '0.72rem' }}
+                        disabled={state.payoutsClaimed || poolCr <= 0}
+                        onClick={() => handleSetNegotiatedBountyCredits(v.playerIndex, -1)}
+                        title="Decrease negotiated credit share"
+                      >
+                        -
+                      </button>
+                      <strong style={{ minWidth: '32px', textAlign: 'center', color: '#fbbf24' }}>
+                        {poolCr} CR
+                      </strong>
+                      <button
+                        type="button"
+                        className="tabletop-btn"
+                        style={{ padding: '1px 6px', fontSize: '0.72rem' }}
+                        disabled={state.payoutsClaimed}
+                        onClick={() => handleSetNegotiatedBountyCredits(v.playerIndex, 1)}
+                        title="Increase negotiated credit share"
+                      >
+                        +
+                      </button>
+                    </div>
+                    <div>
+                      <strong style={{ color: '#fbbf24', fontSize: '0.88rem' }}>+{totalCr} CR</strong>
+                      <span style={{ color: '#c084fc', marginLeft: '0.35rem' }}>+{guaranteedPip} PIP</span>
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+
+            {/* Negotiation Pool Status & Reset */}
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem', fontSize: '0.78rem' }}>
+              <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
+                {(() => {
+                  const activeCount = state.playerCount || 4;
+                  let allocatedSum = 0;
+                  for (let i = 0; i < activeCount; i++) {
+                    allocatedSum += state.negotiatedBountyCredits[i] || 0;
+                  }
+                  const unallocated = bountyPoolCr - allocatedSum;
+
+                  return (
+                    <>
+                      <span>
+                        Shared Pool: <strong style={{ color: '#fbbf24' }}>{bountyPoolCr} CR</strong>
+                      </span>
+                      <span>
+                        Allocated: <strong style={{ color: '#34d399' }}>{allocatedSum} CR</strong>
+                      </span>
+                      <span>
+                        Unallocated:{' '}
+                        <strong style={{ color: unallocated === 0 ? '#34d399' : '#f87171' }}>
+                          {unallocated} CR
+                        </strong>
+                      </span>
+                    </>
+                  );
+                })()}
               </div>
+
+              {!state.payoutsClaimed && (
+                <button
+                  type="button"
+                  className="tabletop-btn"
+                  onClick={handleResetCanonicalBountySplit}
+                  style={{ fontSize: '0.72rem', padding: '0.35rem 0.75rem' }}
+                  title="Reset negotiated pool to canonical split (divided evenly with remainder to Squad Leader)"
+                >
+                  ⚖️ Reset to Canonical Split
+                </button>
+              )}
             </div>
           </div>
 
@@ -2263,6 +2514,14 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
             style={{ width: '100%', padding: '0.85rem', fontSize: '1rem', fontWeight: 700 }}
             onClick={() => {
               const nextMIdx = state.missionIndex + 1;
+              const activeCount = state.playerCount || 4;
+              const baseEven = Math.floor(bountyPoolCr / activeCount);
+              const rem = bountyPoolCr % activeCount;
+              const nextSplit: Record<number, number> = {};
+              for (let i = 0; i < activeCount; i++) {
+                nextSplit[i] = baseEven + (i === 0 ? rem : 0);
+              }
+
               setState((p) => ({
                 ...p,
                 missionIndex: nextMIdx,
@@ -2270,8 +2529,10 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
                 sequenceStep: 1,
                 flowStep: 'phase1_brief',
                 activeTab: 'phase1_mission',
+                payoutsClaimed: false, // Reset for next debrief
+                negotiatedBountyCredits: nextSplit,
                 // Reset operative HP and spent dice in base
-                squad: p.squad.map((s) => ({ ...s, spentDice: 0, currentHp: 3 })),
+                squad: p.squad.map((s) => ({ ...s, spentDice: 0, currentHp: 3, rolledDice: [] })),
               }));
               appendLog(`Downtime completed. Advancing to Mission ${nextMIdx + 1} briefing.`);
             }}

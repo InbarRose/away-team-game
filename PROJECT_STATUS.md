@@ -258,7 +258,25 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 
 ---
 
+### ✅ Iteration 22: Dual-Stream Debrief Payouts & Multi-Click Claim Lock (COMPLETE)
+- [x] **Core Rules Codification:** Codified the authoritative **Dual-Stream Payout Model** in `game/core/vault_economy.md` (§1) distinguishing Stream 1 guaranteed operative participation stipends (`[+2 CR]` per operative, `[+1 PIP]` per faction) from Stream 2 negotiated clearance bounty pot (`[6 CR]` and `[1 PIP]`), with 3P Vanguard Slot stipend flow and single-claim invariant.
+- [x] **Regenerated JSON Manifests:** Updated core rules exports in `manifests/exports/core_rules.json` and `src/data/core_rules.json`.
+- [x] **Multi-Click Idempotency Lock:** Fixed bug in `src/vtt/VirtualTabletop.tsx` where repeatedly clicking "Claim & Deposit Payouts into Vaults" awarded infinite payouts, locking execution behind `payoutsClaimed: true` and resetting state upon concluding HQ downtime.
+- [x] **Interactive Dual-Stream Payout Console:** Replaced automated opaque lump sum with an interactive debrief console displaying player Director seats, participating operatives, base stipends, interactive negotiation steppers (`- / +`) for the shared pool, total payout preview, and unallocated pool warning badges.
+- [x] **Comprehensive Test Coverage:** Added Test 10 in `tests/05-vtt-engine-and-simulator.test.js` validating dual-stream mechanics, negotiation state, and multi-click claim locking (29/29 tests pass).
+
+---
+---
+
 ### 📋 Architecture Decision Records (ADRs)
+
+#### ADR-15: Dual-Stream Debrief Payout Architecture & Multi-Click Claim Lock
+* **Context:** Players previously could click "Claim & Deposit Payouts into Vaults" multiple times, triggering duplicate payouts. Additionally, payouts were mathematically lumped together without making the distinction between per-character stipends and the shared negotiable bounty pool visible or interactive.
+* **Decision:**
+  1. **Single-Claim Invariant:** Lock claim execution behind `state.payoutsClaimed`. Once deposited, the button is disabled and shows `✅ Payouts Deposited into Vaults (Claimed)`. Concluding HQ Downtime resets `payoutsClaimed` for the next mission.
+  2. **Dual-Stream Transparency & Steppers:** Clearly display Stream 1 guaranteed stipends (`+2 CR` per deployed operative, `+1 PIP` per faction) and provide an interactive negotiated stepper for Stream 2 (`negotiatedBountyCredits`), allowing players to adjust how the shared clearance bounty pool is divided at the table before claiming.
+  3. **3-Player Vanguard Alignment:** The operative in Vanguard Slot (Slot 4) commanded by the Squad Leader correctly awards their `+2 CR` stipend to the Squad Leader's vault.
+* **Status:** Adopted and verified across all test suites and static build.
 
 #### ADR-14: Individual Operative Dice Sovereignty & Tabletop Commitment Console
 * **Context:** Tactical dice commitment was previously ambiguous: players wondered whether all characters were required to roll, who determined the dice counts, and whether holding back was permissible. In the VTT, commitment was an unprompted counter rather than an active player choice.
