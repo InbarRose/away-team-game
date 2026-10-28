@@ -13,6 +13,10 @@ import { FactionDossierCard } from './components/FactionDossierCard';
 import { StageCard } from './components/StageCard';
 import { ArmoryItemCard } from './components/ArmoryItemCard';
 import { TactileDiceTray } from './components/TactileDiceTray';
+import { SecretObjectiveCard } from './components/SecretObjectiveCard';
+import { AgendaCard } from './components/AgendaCard';
+import { HQFacilityBoard, FacilitySponsorshipRecord } from './components/HQFacilityBoard';
+import { FactionPerksConsole } from './components/FactionPerksConsole';
 
 export interface VTTProps {
   components?: GameComponent[];
@@ -53,6 +57,7 @@ export type VTTFlowStep =
   | 'setup_players'
   | 'setup_factions'
   | 'setup_bench'
+  | 'setup_agendas_objectives'
   | 'setup_campaign'
   | 'phase1_brief'
   | 'phase2_auction'
@@ -81,6 +86,7 @@ export interface VTTState {
   playerCount: number;
   flowStep: VTTFlowStep;
   setupDraftPlayerIndex: number;
+  activeDirectorIndex: number; // Active Director at the tabletop console (Phase 4 / actions)
   activeTab: VTTTabKey;
   campaignId: string;
   missionIndex: number;
@@ -94,9 +100,16 @@ export interface VTTState {
   retriesUsed: number;
   momentumTokens: number;
   sponsoredModules: Record<string, number>;
+  sponsoredFacilities: Record<string, FacilitySponsorshipRecord>;
+  activePerkIds: Record<number, string[]>;
   vaults: FactionVault[];
   squad: DeployedOperative[];
   playerBenches: Record<number, string[]>;
+  factionArmoryCaches: Record<number, string[]>; // Unequipped purchased items in player cache
+  armoryMarketItemIds: string[]; // Active Quartermaster market display row
+  openAgendaIds: string[]; // 3 Active face-up Open Corporate Agendas
+  claimedAgendaIds: Record<string, number>; // agendaId -> playerIndex who claimed it
+  playerSecretObjectives: Record<number, { dealtIds: string[]; selectedId: string | null; isRevealed: boolean }>;
   stageHits: number;
   stageBackfires: number;
   rolledDiceHistory: RolledDieRecord[];
@@ -195,6 +208,7 @@ const DEFAULT_STATE: VTTState = {
   playerCount: 4,
   flowStep: 'setup_players',
   setupDraftPlayerIndex: 0,
+  activeDirectorIndex: 0,
   activeTab: 'setup',
   campaignId: 'campaign-iron-dawn',
   missionIndex: 0,
@@ -208,6 +222,8 @@ const DEFAULT_STATE: VTTState = {
   retriesUsed: 0,
   momentumTokens: 0,
   sponsoredModules: {},
+  sponsoredFacilities: {},
+  activePerkIds: { 0: [], 1: [], 2: [], 3: [] },
   vaults: [
     { playerIndex: 0, playerName: 'Director 1', factionId: '', credits: 4, effort: 1, pip: 1, vp: 0, commandBid: 0, isSquadLeader: false },
     { playerIndex: 1, playerName: 'Director 2', factionId: '', credits: 4, effort: 1, pip: 1, vp: 0, commandBid: 0, isSquadLeader: false },
@@ -221,6 +237,27 @@ const DEFAULT_STATE: VTTState = {
     { slotIndex: 3, ownerPlayer: 3, characterId: '', loyalty: 1, currentHp: 3, armorRemaining: 0, bonusDice: 0, committedDice: 3, spentDice: 0, critInjuryDicePenalty: 0, critInjuryHpPenalty: 0, traumaNote: '', equippedItemIds: [], rolledDice: [], inMedBay: false },
   ],
   playerBenches: { 0: [], 1: [], 2: [], 3: [] },
+  factionArmoryCaches: { 0: [], 1: [], 2: [], 3: [] },
+  armoryMarketItemIds: [
+    'item-01-kinetic-carbine',
+    'item-02-combat-shotgun',
+    'item-03-stealth-fiber-rig',
+    'item-04-sub-dermal-plating',
+    'item-05-holographic-decoy',
+    'item-06-tactical-stim-injector',
+  ],
+  openAgendaIds: [
+    'agenda-01-overwhelming-force',
+    'agenda-02-surgical-extraction',
+    'agenda-03-asset-recovery',
+  ],
+  claimedAgendaIds: {},
+  playerSecretObjectives: {
+    0: { dealtIds: ['secret-01-human-capital-hegemony', 'secret-02-corporate-liquidity'], selectedId: 'secret-01-human-capital-hegemony', isRevealed: false },
+    1: { dealtIds: ['secret-03-bureaucratic-monopoly', 'secret-04-armory-dominance'], selectedId: 'secret-03-bureaucratic-monopoly', isRevealed: false },
+    2: { dealtIds: ['secret-05-institutional-overtime', 'secret-06-clean-asset-management'], selectedId: 'secret-05-institutional-overtime', isRevealed: false },
+    3: { dealtIds: ['secret-07-directive-compliance', 'secret-08-infrastructure-mastery'], selectedId: 'secret-07-directive-compliance', isRevealed: false },
+  },
   stageHits: 0,
   stageBackfires: 0,
   rolledDiceHistory: [],
@@ -271,6 +308,9 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
   const campaigns = useMemo(() => components.filter((c) => c.component_type === 'campaign'), [components]);
   const missions = useMemo(() => components.filter((c) => c.component_type === 'mission' || c.component_type === 'side_mission'), [components]);
   const hqFacilities = useMemo(() => components.filter((c) => c.component_type === 'hq_facility' || c.component_type === 'hq_landmark'), [components]);
+  const perks = useMemo(() => components.filter((c) => c.component_type === 'perk'), [components]);
+  const agendas = useMemo(() => components.filter((c) => c.component_type === 'agenda'), [components]);
+  const secretObjectives = useMemo(() => components.filter((c) => c.component_type === 'secret_objective'), [components]);
 
   // Active campaign object
   const activeCampaign = useMemo(() => {
@@ -413,12 +453,35 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       });
     }
 
+    const initialCaches: Record<number, string[]> = {};
+    const initialObjectives: Record<number, { dealtIds: string[]; selectedId: string | null; isRevealed: boolean }> = {};
+    const initialPerks: Record<number, string[]> = {};
+    for (let i = 0; i < count; i++) {
+      initialCaches[i] = [];
+      initialPerks[i] = [];
+      const s1 = secretObjectives[i * 2]?.id || `secret-${i * 2 + 1}`;
+      const s2 = secretObjectives[i * 2 + 1]?.id || `secret-${i * 2 + 2}`;
+      initialObjectives[i] = {
+        dealtIds: [s1, s2],
+        selectedId: s1,
+        isRevealed: false,
+      };
+    }
+
     setState((p) => ({
       ...p,
       playerCount: count,
       vaults: initialVaults,
       squad: initialSquad,
       playerBenches: benches,
+      factionArmoryCaches: initialCaches,
+      playerSecretObjectives: initialObjectives,
+      activePerkIds: initialPerks,
+      sponsoredFacilities: {},
+      activeDirectorIndex: 0,
+      armoryMarketItemIds: items.slice(0, 6).map((it) => it.id),
+      openAgendaIds: agendas.slice(0, 3).map((a) => a.id),
+      claimedAgendaIds: {},
       payoutsClaimed: false,
       negotiatedBountyCredits: initialBountyCredits,
       setupDraftPlayerIndex: 0,
@@ -1064,30 +1127,321 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
     );
   };
 
-  // Phase 4: Step 6 Armory Purchase
-  const handlePurchaseArmoryItem = (playerIdx: number, itemId: string) => {
+  // Step 0.4: Select Secret Corporate Objective
+  const handleSelectSecretObjective = (playerIdx: number, objectiveId: string) => {
+    setState((p) => ({
+      ...p,
+      playerSecretObjectives: {
+        ...p.playerSecretObjectives,
+        [playerIdx]: {
+          ...p.playerSecretObjectives[playerIdx],
+          selectedId: objectiveId,
+        },
+      },
+    }));
+    const obj = secretObjectives.find((o) => o.id === objectiveId);
+    appendLog(`Director ${playerIdx + 1} (${state.vaults[playerIdx]?.playerName}) selected and locked secret corporate objective: ${obj?.title || objectiveId}.`);
+  };
+
+  // Toggle secret objective privacy peek
+  const handleToggleSecretObjectiveReveal = (playerIdx: number) => {
+    setState((p) => ({
+      ...p,
+      playerSecretObjectives: {
+        ...p.playerSecretObjectives,
+        [playerIdx]: {
+          ...p.playerSecretObjectives[playerIdx],
+          isRevealed: !p.playerSecretObjectives[playerIdx]?.isRevealed,
+        },
+      },
+    }));
+  };
+
+  // Claim Open Corporate Agenda
+  const handleClaimAgenda = (agendaId: string) => {
+    if (state.claimedAgendaIds[agendaId] !== undefined) return;
+    const ag = agendas.find((a) => a.id === agendaId);
+    if (!ag) return;
+    const payout = (ag as any).payout || { vp: 2, credits: 1, pip: 0 };
+    const pIdx = state.activeDirectorIndex;
+    const v = state.vaults[pIdx];
+
+    setState((p) => ({
+      ...p,
+      claimedAgendaIds: {
+        ...p.claimedAgendaIds,
+        [agendaId]: pIdx,
+      },
+      vaults: p.vaults.map((vault, i) =>
+        i === pIdx
+          ? {
+              ...vault,
+              credits: vault.credits + (payout.credits || 0),
+              pip: vault.pip + (payout.pip || 0),
+              vp: vault.vp + (payout.vp || 0),
+            }
+          : vault
+      ),
+    }));
+
+    appendLog(`Director ${pIdx + 1} (${v.playerName}) claimed Open Agenda: ${ag.title}! Earned [+${payout.vp || 0} VP, +${payout.credits || 0} CR, +${payout.pip || 0} PIP].`);
+  };
+
+  // Switch Active Director at console
+  const handleSwitchActiveDirector = (newIdx: number) => {
+    setState((p) => ({
+      ...p,
+      activeDirectorIndex: newIdx,
+    }));
+  };
+
+  // Phase 4: Step 6 Armory Purchase with market depletion & delivery target
+  const handlePurchaseArmoryItem = (
+    playerIdx: number,
+    itemId: string,
+    targetSlotIndex: number = -1,
+    sendToCache: boolean = false
+  ) => {
     const it = items.find((i) => i.id === itemId);
     if (!it) return;
     const costCr = it.cost?.credits || 0;
     const v = state.vaults[playerIdx];
     if (v.credits < costCr) return;
 
-    // Deduct credits and equip onto operative
-    setState((p) => ({
-      ...p,
-      vaults: p.vaults.map((vault, i) => (i === playerIdx ? { ...vault, credits: vault.credits - costCr } : vault)),
-      squad: p.squad.map((s, i) =>
-        s.ownerPlayer === playerIdx
+    // Remaining items in deck not currently in market
+    const currentMarket = state.armoryMarketItemIds || [];
+    const remainingDeck = items.filter(
+      (item) => !currentMarket.includes(item.id) && item.id !== itemId
+    );
+    const replacementItem = remainingDeck[Math.floor(Math.random() * remainingDeck.length)];
+
+    const updatedMarket = currentMarket
+      .filter((id) => id !== itemId)
+      .concat(replacementItem ? [replacementItem.id] : []);
+
+    const updatedVaults = state.vaults.map((vault, i) =>
+      i === playerIdx ? { ...vault, credits: vault.credits - costCr } : vault
+    );
+
+    let updatedSquad = [...state.squad];
+    const updatedCaches = { ...state.factionArmoryCaches };
+    if (!updatedCaches[playerIdx]) updatedCaches[playerIdx] = [];
+
+    // Determine target operative slot
+    const targetSlot =
+      targetSlotIndex >= 0
+        ? targetSlotIndex
+        : state.squad.findIndex((s) => s.ownerPlayer === playerIdx);
+
+    if (sendToCache || targetSlot < 0) {
+      updatedCaches[playerIdx] = [...updatedCaches[playerIdx], itemId];
+      appendLog(
+        `Director ${playerIdx + 1} (${v.playerName}) purchased ${it.title} for [${costCr} CR] and placed it into Faction Armory Cache.`
+      );
+    } else {
+      updatedSquad = updatedSquad.map((s, idx) =>
+        idx === targetSlot
           ? {
               ...s,
               equippedItemIds: [...s.equippedItemIds, itemId],
               armorRemaining: s.armorRemaining + (it.stats?.armor_buffer || 0),
             }
           : s
-      ),
+      );
+      const targetOpName =
+        characters.find((c) => c.id === updatedSquad[targetSlot]?.characterId)?.title ||
+        `Operative Slot ${targetSlot + 1}`;
+      appendLog(
+        `Director ${playerIdx + 1} (${v.playerName}) purchased ${it.title} for [${costCr} CR] and equipped it onto ${targetOpName}.`
+      );
+    }
+
+    setState((p) => ({
+      ...p,
+      vaults: updatedVaults,
+      squad: updatedSquad,
+      factionArmoryCaches: updatedCaches,
+      armoryMarketItemIds: updatedMarket,
+    }));
+  };
+
+  // Equip item from Faction Cache to Operative
+  const handleEquipFromCache = (playerIdx: number, itemId: string, targetSlotIndex: number) => {
+    const it = items.find((i) => i.id === itemId);
+    if (!it) return;
+
+    const currentCache = state.factionArmoryCaches[playerIdx] || [];
+    const itemIdx = currentCache.indexOf(itemId);
+    if (itemIdx < 0) return;
+
+    const updatedCache = [...currentCache];
+    updatedCache.splice(itemIdx, 1);
+
+    const updatedSquad = state.squad.map((s, idx) =>
+      idx === targetSlotIndex
+        ? {
+            ...s,
+            equippedItemIds: [...s.equippedItemIds, itemId],
+            armorRemaining: s.armorRemaining + (it.stats?.armor_buffer || 0),
+          }
+        : s
+    );
+
+    const opName = characters.find((c) => c.id === updatedSquad[targetSlotIndex]?.characterId)?.title || `Operative ${targetSlotIndex + 1}`;
+    appendLog(`Director ${playerIdx + 1} equipped ${it.title} from Faction Cache onto ${opName}.`);
+
+    setState((p) => ({
+      ...p,
+      squad: updatedSquad,
+      factionArmoryCaches: {
+        ...p.factionArmoryCaches,
+        [playerIdx]: updatedCache,
+      },
+    }));
+  };
+
+  // Unequip item from Operative and return to Faction Cache
+  const handleUnequipItem = (slotIndex: number, itemId: string) => {
+    const it = items.find((i) => i.id === itemId);
+    const op = state.squad[slotIndex];
+    if (!op) return;
+
+    const itemIdx = op.equippedItemIds.indexOf(itemId);
+    if (itemIdx < 0) return;
+
+    const updatedEquipped = [...op.equippedItemIds];
+    updatedEquipped.splice(itemIdx, 1);
+    const armorSub = it?.stats?.armor_buffer || 0;
+
+    const updatedSquad = state.squad.map((s, idx) =>
+      idx === slotIndex
+        ? {
+            ...s,
+            equippedItemIds: updatedEquipped,
+            armorRemaining: Math.max(0, s.armorRemaining - armorSub),
+          }
+        : s
+    );
+
+    const pIdx = op.ownerPlayer;
+    const currentCache = state.factionArmoryCaches[pIdx] || [];
+
+    appendLog(`Operative returned ${it?.title || itemId} to Director ${pIdx + 1} Faction Cache.`);
+
+    setState((p) => ({
+      ...p,
+      squad: updatedSquad,
+      factionArmoryCaches: {
+        ...p.factionArmoryCaches,
+        [pIdx]: [...currentCache, itemId],
+      },
+    }));
+  };
+
+  // Refresh Quartermaster Market Row
+  const handleRefreshArmoryMarket = (isFree: boolean = false) => {
+    const pIdx = state.activeDirectorIndex;
+    const v = state.vaults[pIdx];
+    const cost = isFree ? 0 : 1;
+    if (v.credits < cost) return;
+
+    const shuffled = [...items].sort(() => Math.random() - 0.5);
+    const newMarket = shuffled.slice(0, 6).map((it) => it.id);
+
+    setState((p) => ({
+      ...p,
+      vaults: p.vaults.map((vault, i) => (i === pIdx ? { ...vault, credits: vault.credits - cost } : vault)),
+      armoryMarketItemIds: newMarket,
     }));
 
-    appendLog(`${v.playerName} purchased ${it.title} for [${costCr} CR] and equipped it onto their active operative.`);
+    appendLog(`Director ${pIdx + 1} refreshed the Quartermaster Armory Market row (cost: [${cost} CR]).`);
+  };
+
+  // Phase 4: Step 4 Sponsor HQ Facility Module
+  const handleSponsorFacility = (
+    facilityId: string,
+    moduleName: string,
+    costCr: number,
+    pipReward: number,
+    vpReward: number
+  ) => {
+    const pIdx = state.activeDirectorIndex;
+    const v = state.vaults[pIdx];
+    if (v.credits < costCr) return;
+
+    const newSponsorships = {
+      ...state.sponsoredFacilities,
+      [facilityId]: {
+        sponsoredByPlayer: pIdx,
+        facilityId,
+        moduleName,
+        costCr,
+        pipReward,
+        vpReward,
+      },
+    };
+
+    setState((p) => ({
+      ...p,
+      vaults: p.vaults.map((vault, i) =>
+        i === pIdx
+          ? {
+              ...vault,
+              credits: vault.credits - costCr,
+              pip: vault.pip + pipReward,
+              vp: vault.vp + vpReward,
+            }
+          : vault
+      ),
+      sponsoredFacilities: newSponsorships,
+    }));
+
+    appendLog(
+      `🏛️ HQ SPONSORSHIP: Director ${pIdx + 1} (${v.playerName}) sponsored ${moduleName} for [${costCr} CR]! Awarded [+${pipReward} PIP] and [+${vpReward} VP]!`
+    );
+  };
+
+  // Phase 4: Step 7 Unlock Faction Perk / Boardroom Doctrine
+  const handleUnlockPerk = (perkId: string, costCr: number, costPip: number) => {
+    const pIdx = state.activeDirectorIndex;
+    const v = state.vaults[pIdx];
+    const p = perks.find((x) => x.id === perkId);
+    if (!p) return;
+
+    // Check affordability (spend CR if possible, else PIP)
+    let crSpend = 0;
+    let pipSpend = 0;
+    if (v.credits >= costCr) {
+      crSpend = costCr;
+    } else if (v.pip >= costPip) {
+      pipSpend = costPip;
+    } else {
+      return;
+    }
+
+    const currentPerks = state.activePerkIds[pIdx] || [];
+    if (currentPerks.includes(perkId)) return;
+
+    setState((prev) => ({
+      ...prev,
+      vaults: prev.vaults.map((vault, i) =>
+        i === pIdx
+          ? {
+              ...vault,
+              credits: vault.credits - crSpend,
+              pip: vault.pip - pipSpend,
+            }
+          : vault
+      ),
+      activePerkIds: {
+        ...prev.activePerkIds,
+        [pIdx]: [...currentPerks, perkId],
+      },
+    }));
+
+    appendLog(
+      `📜 BOARDROOM DOCTRINE: Director ${pIdx + 1} (${v.playerName}) unlocked Perk: ${p.title} (spent ${crSpend > 0 ? `[${crSpend} CR]` : `[${pipSpend} PIP]`})!`
+    );
   };
 
   // Reset Tabletop
@@ -1404,9 +1758,9 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
               type="button"
               className="tabletop-btn tabletop-btn-success"
               style={{ padding: '0.65rem 1.25rem', fontWeight: 700 }}
-              onClick={() => setState((p) => ({ ...p, flowStep: 'setup_campaign' }))}
+              onClick={() => setState((p) => ({ ...p, flowStep: 'setup_agendas_objectives' }))}
             >
-              Lock Operatives & Choose Campaign ▶
+              Lock Operatives & Deal Corporate Objectives ▶
             </button>
           </div>
 
@@ -1480,7 +1834,130 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       )}
 
       {/* ====================================================================
-          PHASE 0.4: SETUP — CAMPAIGN SELECTION
+          PHASE 0.4: SETUP — POLITICAL AGENDAS & SECRET OBJECTIVES DRAFT
+         ==================================================================== */}
+      {state.flowStep === 'setup_agendas_objectives' && state.activeTab !== 'simulator' && (
+        <section style={{ maxWidth: '1100px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+          <div
+            style={{
+              padding: '1rem 1.25rem',
+              borderRadius: '8px',
+              background: 'rgba(15, 23, 42, 0.85)',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+              flexWrap: 'wrap',
+              gap: '0.75rem',
+            }}
+          >
+            <div>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#38bdf8' }}>
+                STEP 0.4 // POLITICAL AGENDAS & SECRET CORPORATE OBJECTIVES
+              </span>
+              <h2 style={{ margin: '0.2rem 0', fontSize: '1.35rem', color: '#f8fafc' }}>
+                Deal Open Agendas & Draft Secret Corporate Objectives
+              </h2>
+              <div style={{ color: '#cbd5e1', fontSize: '0.82rem' }}>
+                In accordance with Chapter 2 Step 6: 3 Open Agendas are dealt face-up to the table. Each Director is dealt 2 Secret Objectives and chooses 1 to keep face-down.
+              </div>
+            </div>
+            <button
+              type="button"
+              className="tabletop-btn tabletop-btn-success"
+              style={{ padding: '0.65rem 1.25rem', fontWeight: 700 }}
+              onClick={() => setState((p) => ({ ...p, flowStep: 'setup_campaign' }))}
+            >
+              Lock Objectives & Choose Campaign ▶
+            </button>
+          </div>
+
+          {/* Open Corporate Agendas on the Table */}
+          <div style={{ padding: '1rem', borderRadius: '8px', background: '#0e1726', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: '#38bdf8', fontWeight: 700 }}>
+                🌐 OPEN TABLE AGENDAS (3 ACTIVE CONTRACTS)
+              </span>
+              <span style={{ fontSize: '0.7rem', color: '#94a3b8' }}>
+                Any Director who fulfills an agenda during a mission claims its bounty immediately.
+              </span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.85rem' }}>
+              {state.openAgendaIds.map((agId) => {
+                const ag = agendas.find((a) => a.id === agId);
+                if (!ag) return null;
+                const claimedByPlayer = state.claimedAgendaIds[agId];
+                const claimedByName = claimedByPlayer !== undefined ? state.vaults[claimedByPlayer]?.playerName : null;
+                return (
+                  <AgendaCard
+                    key={agId}
+                    agenda={ag}
+                    claimedByPlayerName={claimedByName}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Director Secret Objectives Draft Tray */}
+          <div>
+            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: '#f59e0b', marginBottom: '0.75rem', fontWeight: 700 }}>
+              🔒 DIRECTORS' SECRET OBJECTIVE DRAFTS (KEEP 1 PER SEAT)
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
+              {state.vaults.slice(0, state.playerCount).map((v) => {
+                const pObj = state.playerSecretObjectives[v.playerIndex] || { dealtIds: [], selectedId: null, isRevealed: false };
+                const fac = factions.find((f) => f.id === v.factionId);
+
+                return (
+                  <div
+                    key={v.playerIndex}
+                    style={{
+                      padding: '1rem',
+                      borderRadius: '8px',
+                      background: '#131d2e',
+                      border: '1px solid rgba(255, 255, 255, 0.1)',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
+                      <strong style={{ color: '#f8fafc', fontSize: '0.95rem' }}>
+                        {v.playerName} ({fac?.title || 'Faction'})
+                      </strong>
+                      <span style={{ fontSize: '0.72rem', color: '#fbbf24', fontFamily: 'var(--font-mono)' }}>
+                        Choose 1 Secret Objective to Keep
+                      </span>
+                    </div>
+
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem' }}>
+                      {pObj.dealtIds.map((objId) => {
+                        const obj = secretObjectives.find((o) => o.id === objId);
+                        if (!obj) return null;
+                        const isSelected = pObj.selectedId === objId;
+
+                        return (
+                          <SecretObjectiveCard
+                            key={objId}
+                            objective={obj}
+                            isRevealed={pObj.isRevealed}
+                            onToggleReveal={() => handleToggleSecretObjectiveReveal(v.playerIndex)}
+                            isSelected={isSelected}
+                            showSelectButton={true}
+                            onSelect={() => handleSelectSecretObjective(v.playerIndex, objId)}
+                            ownerPlayerName={v.playerName}
+                          />
+                        );
+                      })}
+                    </div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ====================================================================
+          PHASE 0.5: SETUP — CAMPAIGN SELECTION
          ==================================================================== */}
       {state.flowStep === 'setup_campaign' && state.activeTab !== 'simulator' && (
         <section className="card-stage" style={{ maxWidth: '850px', margin: '0 auto' }}>
@@ -1620,7 +2097,38 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
             </div>
           </div>
 
-          <button
+          
+          {/* Active Table Open Agendas */}
+          <div style={{ padding: '0.85rem', borderRadius: '8px', background: '#0e1726', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.3rem' }}>
+              <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.7rem', color: '#38bdf8', fontWeight: 700 }}>
+                🌐 OPEN TABLE AGENDAS (ACTIVE CORPORATE CONTRACTS)
+              </span>
+              <span style={{ fontSize: '0.68rem', color: '#94a3b8' }}>
+                Acting Director: <strong style={{ color: '#38bdf8' }}>{state.vaults[state.activeDirectorIndex]?.playerName}</strong>
+              </span>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '0.75rem' }}>
+              {state.openAgendaIds.map((agId) => {
+                const ag = agendas.find((a) => a.id === agId);
+                if (!ag) return null;
+                const claimedByPlayer = state.claimedAgendaIds[agId];
+                const claimedByName = claimedByPlayer !== undefined ? state.vaults[claimedByPlayer]?.playerName : null;
+                return (
+                  <AgendaCard
+                    key={agId}
+                    agenda={ag}
+                    claimedByPlayerName={claimedByName}
+                    canClaim={claimedByPlayer === undefined}
+                    onClaim={() => handleClaimAgenda(agId)}
+                    activeDirectorName={state.vaults[state.activeDirectorIndex]?.playerName}
+                  />
+                );
+              })}
+            </div>
+          </div>
+
+<button
             type="button"
             className="tabletop-btn tabletop-btn-primary"
             style={{ width: '100%', padding: '0.75rem', fontSize: '0.95rem', fontWeight: 700 }}
@@ -2451,61 +2959,363 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
             </div>
           </div>
 
-          {/* Director Vault Assets */}
-          <div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: '#38bdf8', marginBottom: '0.5rem' }}>
-              FACTION VAULTS & SCORE TELEMETRY
+          {/* ====================================================================
+              DIRECTOR SEAT SWITCHER & TABLETOP ACTION CONSOLE
+             ==================================================================== */}
+          <div
+            style={{
+              padding: '1rem',
+              borderRadius: '10px',
+              background: '#0f172a',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '0.75rem',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <div>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#38bdf8' }}>
+                  DIRECTOR CONSOLE // SELECT ACTING SEAT
+                </span>
+                <h4 style={{ margin: '0.15rem 0', fontSize: '1.05rem', color: '#f8fafc' }}>
+                  Current Active Director: {state.vaults[state.activeDirectorIndex]?.playerName} ({factions.find((f) => f.id === state.vaults[state.activeDirectorIndex]?.factionId)?.title || 'Faction'})
+                </h4>
+              </div>
+              <button
+                type="button"
+                className="tabletop-btn"
+                onClick={() => {
+                  const nextIdx = (state.activeDirectorIndex + 1) % (state.playerCount || 4);
+                  handleSwitchActiveDirector(nextIdx);
+                }}
+                style={{ padding: '0.4rem 0.85rem', fontSize: '0.76rem' }}
+              >
+                Pass Turn to Next Director ▶
+              </button>
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
-              {state.vaults.slice(0, state.playerCount).map((v) => (
-                <div
-                  key={v.playerIndex}
-                  style={{
-                    padding: '0.85rem',
-                    borderRadius: '8px',
-                    background: '#111a2c',
-                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                  }}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem' }}>
-                    <strong style={{ color: '#f8fafc' }}>{v.playerName}</strong>
-                    {v.isSquadLeader && <span style={{ color: '#38bdf8', fontSize: '0.7rem' }}>👑 SQUAD LEADER</span>}
-                  </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '0.35rem', textAlign: 'center' }}>
-                    <div style={{ padding: '0.3rem', borderRadius: '4px', background: '#090d16' }}>
-                      <div style={{ fontSize: '0.6rem', color: '#f59e0b' }}>CREDITS</div>
-                      <div style={{ fontWeight: 800, color: '#fbbf24' }}>{v.credits} CR</div>
+
+            {/* Seated Directors Tab Bar */}
+            <div style={{ display: 'grid', gridTemplateColumns: `repeat(auto-fit, minmax(220px, 1fr))`, gap: '0.65rem' }}>
+              {state.vaults.slice(0, state.playerCount).map((v) => {
+                const isActive = v.playerIndex === state.activeDirectorIndex;
+                const fac = factions.find((f) => f.id === v.factionId);
+                return (
+                  <button
+                    key={v.playerIndex}
+                    type="button"
+                    onClick={() => handleSwitchActiveDirector(v.playerIndex)}
+                    style={{
+                      padding: '0.75rem',
+                      borderRadius: '8px',
+                      background: isActive ? 'linear-gradient(180deg, #1e293b 0%, #0f172a 100%)' : '#111827',
+                      border: isActive ? '2px solid #38bdf8' : '1px solid rgba(255, 255, 255, 0.08)',
+                      boxShadow: isActive ? '0 0 12px rgba(56, 189, 248, 0.25)' : 'none',
+                      textAlign: 'left',
+                      cursor: 'pointer',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      gap: '0.35rem',
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <strong style={{ color: isActive ? '#38bdf8' : '#f8fafc', fontSize: '0.86rem' }}>
+                        {v.playerName}
+                      </strong>
+                      {v.isSquadLeader && <span style={{ color: '#38bdf8', fontSize: '0.66rem' }}>👑 LEADER</span>}
                     </div>
-                    <div style={{ padding: '0.3rem', borderRadius: '4px', background: '#090d16' }}>
-                      <div style={{ fontSize: '0.6rem', color: '#38bdf8' }}>EFFORT</div>
-                      <div style={{ fontWeight: 800, color: '#38bdf8' }}>{v.effort} EF</div>
+                    <div style={{ fontSize: '0.7rem', color: '#94a3b8' }}>
+                      {fac?.title || 'Neutral Faction'}
                     </div>
-                    <div style={{ padding: '0.3rem', borderRadius: '4px', background: '#090d16' }}>
-                      <div style={{ fontSize: '0.6rem', color: '#c084fc' }}>INFLUENCE</div>
-                      <div style={{ fontWeight: 800, color: '#c084fc' }}>{v.pip} PIP</div>
+                    <div style={{ display: 'flex', gap: '0.5rem', fontSize: '0.72rem', marginTop: '0.2rem' }}>
+                      <span style={{ color: '#fbbf24', fontWeight: 700 }}>{v.credits} CR</span>
+                      <span style={{ color: '#38bdf8', fontWeight: 700 }}>{v.effort} EF</span>
+                      <span style={{ color: '#c084fc', fontWeight: 700 }}>{v.pip} PIP</span>
+                      <span style={{ color: '#facc15', fontWeight: 700 }}>{v.vp} VP</span>
                     </div>
-                  </div>
-                </div>
-              ))}
+                  </button>
+                );
+              })}
             </div>
           </div>
 
-          {/* Quartermaster Armory Market */}
-          <div>
-            <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.74rem', color: '#38bdf8', marginBottom: '0.5rem' }}>
-              STEP 6 // QUARTERMASTER ARMORY SUPPLY MARKET
+          {/* ====================================================================
+              ACTIVE DIRECTOR TABLETOP DESK: PIECES, GEAR RACK & SECRET OBJECTIVE
+             ==================================================================== */}
+          {(() => {
+            const pIdx = state.activeDirectorIndex;
+            const activeVault = state.vaults[pIdx] || state.vaults[0];
+            const activeFac = factions.find((f) => f.id === activeVault.factionId);
+            const activeOps = state.squad.filter((s) => s.ownerPlayer === pIdx);
+            const activeCache = state.factionArmoryCaches[pIdx] || [];
+            const activeObjState = state.playerSecretObjectives[pIdx];
+            const activeObj = secretObjectives.find((o) => o.id === activeObjState?.selectedId);
+
+            return (
+              <div
+                style={{
+                  padding: '1.25rem',
+                  borderRadius: '10px',
+                  background: 'linear-gradient(180deg, #131d2e 0%, #0a0f18 100%)',
+                  border: '1px solid rgba(56, 189, 248, 0.25)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '1rem',
+                }}
+              >
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+                  <div>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#38bdf8' }}>
+                      VIRTUAL DESK PIECES // {activeVault.playerName.toUpperCase()}
+                    </span>
+                    <h3 style={{ margin: '0.2rem 0', fontSize: '1.25rem', color: '#f8fafc' }}>
+                      {activeFac?.title || 'Faction Directorate'} Desk & Operative Gear Rack
+                    </h3>
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+                    <span style={{ fontSize: '0.74rem', color: '#cbd5e1' }}>Passive Trait:</span>
+                    <span style={{ fontSize: '0.74rem', color: '#38bdf8', fontWeight: 600 }}>
+                      {activeFac?.passive_ability?.name || 'Standard Operational Protocols'}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Desk Pieces Layout: Operatives Loadouts, Cache, Secret Objective */}
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '1rem' }}>
+                  {/* Left: Operative Loadouts & Anatomical Slots */}
+                  <div style={{ padding: '0.85rem', borderRadius: '8px', background: '#090d16', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#38bdf8', marginBottom: '0.5rem' }}>
+                      OPERATIVE ANATOMICAL LOADOUTS (6 SLOTS: HEAD, BODY, HANDS, ACCESSORIES)
+                    </div>
+                    {activeOps.length === 0 ? (
+                      <div style={{ color: '#94a3b8', fontSize: '0.78rem' }}>No operatives currently deployed in field.</div>
+                    ) : (
+                      activeOps.map((op) => {
+                        const char = characters.find((c) => c.id === op.characterId);
+                        return (
+                          <div
+                            key={op.slotIndex}
+                            style={{
+                              padding: '0.65rem',
+                              borderRadius: '6px',
+                              background: '#111a2c',
+                              border: '1px solid rgba(255, 255, 255, 0.1)',
+                              marginBottom: '0.65rem',
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.35rem' }}>
+                              <strong style={{ color: '#f8fafc', fontSize: '0.86rem' }}>
+                                {char?.title || `Operative Slot ${op.slotIndex + 1}`}
+                              </strong>
+                              <span style={{ fontSize: '0.72rem', color: '#34d399' }}>
+                                HP: {op.currentHp}/{char?.stats?.hp_cap || 3} {op.armorRemaining > 0 ? `• Armor: +${op.armorRemaining}` : ''}
+                              </span>
+                            </div>
+
+                            {/* Equipped Items List with Unequip Button */}
+                            <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem', marginTop: '0.35rem' }}>
+                              {op.equippedItemIds.length === 0 ? (
+                                <div style={{ fontSize: '0.7rem', color: '#64748b', fontStyle: 'italic' }}>
+                                  Empty loadout (0 / 6 anatomical slots equipped).
+                                </div>
+                              ) : (
+                                op.equippedItemIds.map((itemId) => {
+                                  const it = items.find((i) => i.id === itemId);
+                                  return (
+                                    <div
+                                      key={itemId}
+                                      style={{
+                                        display: 'flex',
+                                        justifyContent: 'space-between',
+                                        alignItems: 'center',
+                                        padding: '0.25rem 0.5rem',
+                                        borderRadius: '4px',
+                                        background: '#0f172a',
+                                        fontSize: '0.72rem',
+                                      }}
+                                    >
+                                      <span style={{ color: '#f8fafc' }}>
+                                        🎒 {it?.title || itemId} {it?.stats?.slots_required?.[0] ? `[${it.stats.slots_required[0]}]` : ''}
+                                      </span>
+                                      <button
+                                        type="button"
+                                        className="tabletop-btn"
+                                        onClick={() => handleUnequipItem(op.slotIndex, itemId)}
+                                        style={{ padding: '1px 5px', fontSize: '0.66rem' }}
+                                        title="Unequip item and return to Faction Cache"
+                                      >
+                                        Unequip
+                                      </button>
+                                    </div>
+                                  );
+                                })
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })
+                    )}
+
+                    {/* Faction Armory Cache */}
+                    <div style={{ marginTop: '0.75rem', paddingTop: '0.65rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                      <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.66rem', color: '#94a3b8', marginBottom: '0.35rem' }}>
+                        FACTION ARMORY CACHE ({activeCache.length} unequipped item{activeCache.length !== 1 ? 's' : ''})
+                      </div>
+                      {activeCache.length === 0 ? (
+                        <div style={{ fontSize: '0.7rem', color: '#64748b', fontStyle: 'italic' }}>
+                          Cache is empty. Purchase items at the Quartermaster below.
+                        </div>
+                      ) : (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '0.3rem' }}>
+                          {activeCache.map((itemId) => {
+                            const it = items.find((i) => i.id === itemId);
+                            const defaultTargetSlot = activeOps[0]?.slotIndex ?? 0;
+                            return (
+                              <div
+                                key={itemId}
+                                style={{
+                                  display: 'flex',
+                                  justifyContent: 'space-between',
+                                  alignItems: 'center',
+                                  padding: '0.3rem 0.5rem',
+                                  borderRadius: '4px',
+                                  background: '#111827',
+                                  fontSize: '0.72rem',
+                                }}
+                              >
+                                <span style={{ color: '#cbd5e1' }}>📦 {it?.title || itemId}</span>
+                                <button
+                                  type="button"
+                                  className="tabletop-btn tabletop-btn-primary"
+                                  onClick={() => handleEquipFromCache(pIdx, itemId, defaultTargetSlot)}
+                                  style={{ padding: '1px 6px', fontSize: '0.66rem' }}
+                                >
+                                  Equip to Operative ▶
+                                </button>
+                              </div>
+                            );
+                          })}
+                        </div>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Right: Secret Corporate Objective Card */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    <div style={{ fontFamily: 'var(--font-mono)', fontSize: '0.68rem', color: '#f59e0b' }}>
+                      DIRECTOR'S SECRET CORPORATE MANDATE
+                    </div>
+                    {activeObj ? (
+                      <SecretObjectiveCard
+                        objective={activeObj}
+                        isRevealed={activeObjState?.isRevealed}
+                        onToggleReveal={() => handleToggleSecretObjectiveReveal(pIdx)}
+                        ownerPlayerName={activeVault.playerName}
+                      />
+                    ) : (
+                      <div style={{ padding: '1rem', background: '#090d16', borderRadius: '8px', color: '#94a3b8', fontSize: '0.75rem' }}>
+                        No secret objective currently assigned.
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            );
+          })()}
+
+          {/* ====================================================================
+              STEP 4: CORPORATE BASE OPERATIONS & HQ FACILITY BOARD
+             ==================================================================== */}
+          <HQFacilityBoard
+            facilities={hqFacilities}
+            sponsorships={state.sponsoredFacilities}
+            activePlayerIndex={state.activeDirectorIndex}
+            activePlayerName={state.vaults[state.activeDirectorIndex]?.playerName || 'Director 1'}
+            activePlayerCredits={state.vaults[state.activeDirectorIndex]?.credits || 0}
+            activePlayerPip={state.vaults[state.activeDirectorIndex]?.pip || 0}
+            onSponsor={handleSponsorFacility}
+            playerNames={Object.fromEntries(state.vaults.map((v) => [v.playerIndex, v.playerName]))}
+            factionNames={Object.fromEntries(
+              state.vaults.map((v) => [
+                v.playerIndex,
+                factions.find((f) => f.id === v.factionId)?.title || `Player ${v.playerIndex + 1}`,
+              ])
+            )}
+          />
+
+          {/* ====================================================================
+              STEP 6: QUARTERMASTER ARMORY SUPPLY MARKET (WITH STOCK DEPLETION)
+             ==================================================================== */}
+          <div
+            style={{
+              padding: '1.25rem',
+              borderRadius: '10px',
+              background: '#182234',
+              border: '1px solid rgba(255, 255, 255, 0.12)',
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '1rem',
+            }}
+          >
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
+              <div>
+                <span style={{ fontFamily: 'var(--font-mono)', fontSize: '0.72rem', color: '#38bdf8' }}>
+                  STEP 6 // QUARTERMASTER ARMORY SUPPLY MARKET
+                </span>
+                <h3 style={{ margin: '0.2rem 0', fontSize: '1.3rem', color: '#f8fafc' }}>
+                  Procure Specialized Tactical Equipment
+                </h3>
+                <div style={{ color: '#94a3b8', fontSize: '0.78rem' }}>
+                  Acting Buyer: <strong style={{ color: '#38bdf8' }}>{state.vaults[state.activeDirectorIndex]?.playerName}</strong> • Vault:{' '}
+                  <strong style={{ color: '#fbbf24' }}>{state.vaults[state.activeDirectorIndex]?.credits} CR</strong>. Purchased items are removed from market and replenished.
+                </div>
+              </div>
+
+              <button
+                type="button"
+                className="tabletop-btn"
+                onClick={() => handleRefreshArmoryMarket(false)}
+                style={{ padding: '0.45rem 0.85rem', fontSize: '0.76rem' }}
+                title="Refresh Quartermaster market display row (cost: [1 CR])"
+              >
+                🔄 Refresh Market Display ([1 CR])
+              </button>
             </div>
+
+            {/* Market Row Cards */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.85rem' }}>
-              {items.slice(0, 4).map((it) => (
-                <ArmoryItemCard
-                  key={it.id}
-                  item={it}
-                  playerCredits={state.vaults[0].credits}
-                  onPurchase={() => handlePurchaseArmoryItem(0, it.id)}
-                />
-              ))}
+              {(state.armoryMarketItemIds || []).map((itemId) => {
+                const it = items.find((i) => i.id === itemId);
+                if (!it) return null;
+                const costCr = it.cost?.credits || 0;
+                const buyerCredits = state.vaults[state.activeDirectorIndex]?.credits || 0;
+                const defaultTargetSlot = state.squad.findIndex((s) => s.ownerPlayer === state.activeDirectorIndex);
+
+                return (
+                  <ArmoryItemCard
+                    key={it.id}
+                    item={it}
+                    playerCredits={buyerCredits}
+                    canPurchase={buyerCredits >= costCr}
+                    onPurchase={() => handlePurchaseArmoryItem(state.activeDirectorIndex, it.id, defaultTargetSlot, false)}
+                  />
+                );
+              })}
             </div>
           </div>
+
+          {/* ====================================================================
+              STEP 7: BOARDROOM DOCTRINES & FACTION PERKS
+             ==================================================================== */}
+          <FactionPerksConsole
+            perks={perks}
+            unlockedPerkIds={state.activePerkIds[state.activeDirectorIndex] || []}
+            activePlayerIndex={state.activeDirectorIndex}
+            activePlayerName={state.vaults[state.activeDirectorIndex]?.playerName || 'Director 1'}
+            activePlayerCredits={state.vaults[state.activeDirectorIndex]?.credits || 0}
+            activePlayerPip={state.vaults[state.activeDirectorIndex]?.pip || 0}
+            onUnlockPerk={handleUnlockPerk}
+          />
 
           {/* Advance to Next Mission */}
           <button
