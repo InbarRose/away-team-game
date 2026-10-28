@@ -155,14 +155,14 @@ export const SEQUENCE_STEPS = [
     shortTitle: '2. Phase 1: Specialists (3+)',
     fullTitle: 'Step 2: Phase 1 Initiative — Primary Focus Specialists (3+)',
     coachHint:
-      'Only operatives whose Primary Focus matches the room roll first! Commit static dice. EARLY RESOLUTION: If rolled hits meet or exceed Target Difficulty D, the stage is cleared immediately and Phase 2 Support skips rolling!',
+      'Each player controlling a Primary Specialist independently chooses how many dice to roll (0 = Hold Back). Commit dice and roll at 3+. EARLY RESOLUTION: If rolled hits meet or exceed Target Difficulty D, the stage is cleared immediately and Phase 2 Support skips rolling!',
   },
   {
     step: 3,
     shortTitle: '3. Phase 2: Support (4+/5+)',
     fullTitle: 'Step 3: Phase 2 Initiative — Support Operatives (4+ Secondary / 5+ Out of Focus)',
     coachHint:
-      'If Phase 1 Specialists did not clear Target D, remaining operatives commit dice: Secondary/Bridged Focus hits on 4+; Out of Focus hits on 5+. Every natural 1 Backfires for 1 HP damage.',
+      'If Phase 1 Specialists did not clear Target D, each player controlling a remaining Support operative chooses how many dice to roll (0 = Hold Back). Secondary hits on 4+; Out of Focus hits on 5+. Every natural 1 Backfires for 1 HP damage.',
   },
   {
     step: 4,
@@ -613,11 +613,107 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
     );
   };
 
-  // Phase 3: Step 2 Roll Specialists (3+) with Early Resolution
+  // Player Sovereignty: Set individual operative dice commitment (0 = Hold Back)
+  const handleSetOperativeCommittedDice = (slotIdx: number, count: number) => {
+    setState((p) => {
+      const op = p.squad[slotIdx];
+      if (!op) return p;
+      const char = characters.find((c) => c.id === op.characterId);
+      const avail = Math.max(0, (char?.stats?.static_dice || 6) - op.spentDice);
+      const safe = Math.max(0, Math.min(avail, count));
+      return {
+        ...p,
+        squad: p.squad.map((s, i) => (i === slotIdx ? { ...s, committedDice: safe } : s)),
+      };
+    });
+  };
+
+  // Player Sovereignty: Roll dice for a single operative independently
+  const handleRollSingleOperative = (slotIdx: number) => {
+    const op = state.squad[slotIdx];
+    if (!op || op.rolledDice.length > 0) return;
+    const char = characters.find((c) => c.id === op.characterId);
+    if (!char) return;
+
+    const pri = (char.focus_affinity?.primary || '').toLowerCase();
+    const sec = (char.focus_affinity?.secondary || '').toLowerCase();
+    const cur = currentActiveFocus.toLowerCase();
+    const isPri = pri === cur;
+    const thresh = isPri ? 3 : sec === cur ? 4 : 5;
+
+    const avail = Math.max(0, (char.stats?.static_dice || 6) - op.spentDice);
+    const commit = Math.min(op.committedDice, avail);
+
+    const rolled: number[] = [];
+    const newRecords: RolledDieRecord[] = [];
+    let newHits = 0;
+    let newBackfires = 0;
+    let wounds = 0;
+
+    for (let i = 0; i < commit; i++) {
+      const val = Math.floor(Math.random() * 6) + 1;
+      rolled.push(val);
+      const isHit = val >= thresh;
+      const isBackfire = val === 1 && thresh === 5; // Natural 1 Out of Focus
+      if (isHit) newHits++;
+      if (isBackfire) {
+        newBackfires++;
+        wounds++;
+      }
+      newRecords.push({
+        dieValue: val,
+        threshold: thresh,
+        isHit,
+        isBackfire,
+        operativeName: char.title,
+      });
+    }
+
+    const totalHits = state.stageHits + newHits;
+    const totalBackfires = state.stageBackfires + newBackfires;
+    const meetsTarget = totalHits >= state.targetDifficulty;
+
+    const updatedSquad = state.squad.map((s, idx) =>
+      idx === slotIdx
+        ? {
+            ...s,
+            rolledDice: rolled,
+            spentDice: s.spentDice + commit,
+            currentHp: Math.max(0, s.currentHp - wounds),
+          }
+        : s
+    );
+
+    // In Step 2 (Specialists): Check Early Resolution
+    const isSpecialistStep = state.sequenceStep === 2;
+    let nextStep = state.sequenceStep;
+
+    if (isSpecialistStep && meetsTarget) {
+      nextStep = 5; // Early resolution!
+      appendLog(
+        `🎯 ${char.title} rolled ${commit} dice [${rolled.join(', ')}] -> ${newHits} hit(s)! 🏆 EARLY RESOLUTION TRIGGERED! Stage cleared (${totalHits}/${state.targetDifficulty} D). Phase 2 Support skips rolling, preserving stamina!`
+      );
+    } else {
+      appendLog(
+        `🎲 ${char.title} rolled ${commit} dice [${rolled.join(', ')}] at ${thresh}+ focus -> ${newHits} hit(s)${wounds > 0 ? `, ${wounds} backfire wound(s)` : ''}. Stage total: ${totalHits}/${state.targetDifficulty} D.`
+      );
+    }
+
+    setState((p) => ({
+      ...p,
+      squad: updatedSquad,
+      stageHits: totalHits,
+      stageBackfires: totalBackfires,
+      rolledDiceHistory: [...p.rolledDiceHistory, ...newRecords],
+      sequenceStep: nextStep,
+    }));
+  };
+
+  // Phase 3: Step 2 Roll All Remaining Specialists (3+) with Early Resolution
   const handleRollSpecialists = () => {
-    const records: RolledDieRecord[] = [];
-    let hits = 0;
-    let backfires = 0;
+    const records = [...state.rolledDiceHistory];
+    let hits = state.stageHits;
+    let backfires = state.stageBackfires;
 
     const updatedSquad = state.squad.map((op) => {
       const char = characters.find((c) => c.id === op.characterId);
@@ -625,6 +721,7 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       const pri = (char.focus_affinity?.primary || '').toLowerCase();
       const cur = currentActiveFocus.toLowerCase();
       if (pri !== cur) return op; // Only primary specialists roll in Step 2
+      if (op.rolledDice.length > 0) return op; // Already rolled individually
 
       const avail = Math.max(0, (char.stats?.static_dice || 6) - op.spentDice);
       const commit = Math.min(op.committedDice, avail);
@@ -639,7 +736,7 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
           dieValue: val,
           threshold: 3,
           isHit,
-          isBackfire: false, // In focus -> no backfires
+          isBackfire: false,
           operativeName: char.title,
         });
       }
@@ -673,7 +770,7 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
     }
   };
 
-  // Phase 3: Step 3 Roll Support (4+/5+) with Backfire 1s
+  // Phase 3: Step 3 Roll All Remaining Support (4+/5+) with Backfire 1s
   const handleRollSupport = () => {
     const records = [...state.rolledDiceHistory];
     let hits = state.stageHits;
@@ -686,6 +783,7 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
       const sec = (char.focus_affinity?.secondary || '').toLowerCase();
       const cur = currentActiveFocus.toLowerCase();
       if (pri === cur) return op; // Already rolled in Phase 1
+      if (op.rolledDice.length > 0) return op; // Already rolled individually
 
       const thresh = sec === cur ? 4 : 5;
       const avail = Math.max(0, (char.stats?.static_dice || 6) - op.spentDice);
@@ -1741,23 +1839,50 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
               )}
 
               {state.sequenceStep === 2 && (
-                <button
-                  type="button"
-                  className="tabletop-btn tabletop-btn-primary"
-                  onClick={handleRollSpecialists}
-                >
-                  🎲 Roll Specialist Dice (3+) ▶
-                </button>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <button
+                    type="button"
+                    className="tabletop-btn tabletop-btn-primary"
+                    onClick={handleRollSpecialists}
+                    title="Roll all committed dice for eligible Phase 1 Specialists simultaneously"
+                  >
+                    🎲 Roll All Committed Specialists (3+) ▶
+                  </button>
+                  <button
+                    type="button"
+                    className="tabletop-btn"
+                    onClick={() => setState((p) => ({ ...p, sequenceStep: 3 }))}
+                    title="Skip Phase 1 (e.g. if all specialists hold back) and proceed to Phase 2 Support"
+                  >
+                    Skip to Step 3 Support ⏩
+                  </button>
+                </div>
               )}
 
               {state.sequenceStep === 3 && (
-                <button
-                  type="button"
-                  className="tabletop-btn tabletop-btn-primary"
-                  onClick={handleRollSupport}
-                >
-                  🎲 Roll Support Dice (4+/5+) ▶
-                </button>
+                <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+                  <button
+                    type="button"
+                    className="tabletop-btn tabletop-btn-primary"
+                    onClick={handleRollSupport}
+                    title="Roll all committed dice for eligible Phase 2 Support operatives simultaneously"
+                  >
+                    🎲 Roll All Committed Support (4+/5+) ▶
+                  </button>
+                  <button
+                    type="button"
+                    className="tabletop-btn"
+                    onClick={() =>
+                      setState((p) => ({
+                        ...p,
+                        sequenceStep: p.squad.some((s) => s.currentHp <= 0) ? 4 : 5,
+                      }))
+                    }
+                    title="Conclude rolling and proceed to Triage / Resolution"
+                  >
+                    Finish Support Rolls ⏩
+                  </button>
+                </div>
               )}
 
               {state.sequenceStep === 4 && (
@@ -1817,6 +1942,19 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
                 if (!char) return null;
                 const avail = Math.max(0, (char.stats?.static_dice || 6) - op.spentDice);
 
+                const pri = (char.focus_affinity?.primary || '').toLowerCase();
+                const sec = (char.focus_affinity?.secondary || '').toLowerCase();
+                const cur = currentActiveFocus.toLowerCase();
+                const isPri = pri === cur;
+                const thresh = isPri ? 3 : sec === cur ? 4 : 5;
+
+                const hasRolled = op.rolledDice.length > 0;
+                const isSpecialistStep = state.sequenceStep === 2;
+                const isSupportStep = state.sequenceStep === 3;
+                const isCurrentStepActive = (isSpecialistStep && isPri) || (isSupportStep && !isPri);
+                const isVanguard = state.playerCount === 3 && slotIdx === 3;
+                const ownerVault = state.vaults[op.ownerPlayer];
+
                 return (
                   <OperativeCard
                     key={slotIdx}
@@ -1829,47 +1967,159 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
                     isActiveSquad={true}
                     currentStageFocus={currentActiveFocus}
                     actionButton={
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem', marginTop: '0.35rem' }}>
-                        {/* Dice Commitment Control */}
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: '0.74rem' }}>
-                          <span>Commit Dice:</span>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                            <button
-                              type="button"
-                              className="tabletop-btn"
-                              style={{ padding: '1px 6px', fontSize: '0.72rem' }}
-                              disabled={op.committedDice <= 0}
-                              onClick={() =>
-                                setState((p) => ({
-                                  ...p,
-                                  squad: p.squad.map((s, i) => (i === slotIdx ? { ...s, committedDice: Math.max(0, s.committedDice - 1) } : s)),
-                                }))
-                              }
-                            >
-                              -
-                            </button>
-                            <strong style={{ color: '#38bdf8', minWidth: '24px', textAlign: 'center' }}>
-                              {op.committedDice}
-                            </strong>
-                            <button
-                              type="button"
-                              className="tabletop-btn"
-                              style={{ padding: '1px 6px', fontSize: '0.72rem' }}
-                              disabled={op.committedDice >= avail}
-                              onClick={() =>
-                                setState((p) => ({
-                                  ...p,
-                                  squad: p.squad.map((s, i) => (i === slotIdx ? { ...s, committedDice: Math.min(avail, s.committedDice + 1) } : s)),
-                                }))
-                              }
-                            >
-                              +
-                            </button>
-                          </div>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', marginTop: '0.45rem' }}>
+                        {/* Player Attribution & Sovereignty Header */}
+                        <div
+                          style={{
+                            display: 'flex',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            padding: '0.3rem 0.5rem',
+                            borderRadius: '4px',
+                            background: 'rgba(15, 23, 42, 0.75)',
+                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            fontSize: '0.7rem',
+                          }}
+                        >
+                          <span style={{ color: '#94a3b8' }}>
+                            {isVanguard ? (
+                              <strong style={{ color: '#38bdf8' }}>👑 Vanguard Slot (Squad Leader)</strong>
+                            ) : (
+                              <span>
+                                Player {op.ownerPlayer + 1}: <strong style={{ color: '#f8fafc' }}>{ownerVault?.playerName}</strong>
+                              </span>
+                            )}
+                          </span>
+                          {isPri ? (
+                            <span style={{ color: '#34d399', fontWeight: 700, fontSize: '0.66rem' }}>
+                              Specialist (3+)
+                            </span>
+                          ) : (
+                            <span style={{ color: '#94a3b8', fontSize: '0.66rem' }}>
+                              Support ({thresh}+)
+                            </span>
+                          )}
                         </div>
 
+                        {/* Status / Rolled Result */}
+                        {hasRolled ? (
+                          <div
+                            style={{
+                              padding: '0.4rem',
+                              borderRadius: '5px',
+                              background: 'rgba(16, 185, 129, 0.1)',
+                              border: '1px solid rgba(16, 185, 129, 0.3)',
+                              fontSize: '0.72rem',
+                              display: 'flex',
+                              justifyContent: 'space-between',
+                              alignItems: 'center',
+                            }}
+                          >
+                            <span style={{ color: '#34d399', fontWeight: 700 }}>
+                              ✅ Rolled {op.rolledDice.length} Dice:
+                            </span>
+                            <span style={{ fontFamily: 'var(--font-mono)', fontWeight: 800, color: '#f8fafc' }}>
+                              [{op.rolledDice.join(', ')}]
+                            </span>
+                          </div>
+                        ) : (
+                          /* Dedicated Dice Commitment Selector */
+                          <div
+                            style={{
+                              padding: '0.5rem',
+                              borderRadius: '6px',
+                              background: isCurrentStepActive ? 'rgba(30, 41, 59, 0.85)' : 'rgba(15, 23, 42, 0.5)',
+                              border: isCurrentStepActive ? '1px solid #0284c7' : '1px solid rgba(255, 255, 255, 0.06)',
+                            }}
+                          >
+                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.35rem', fontSize: '0.72rem' }}>
+                              <span style={{ color: isCurrentStepActive ? '#38bdf8' : '#94a3b8', fontWeight: 600 }}>
+                                {isCurrentStepActive ? '🎲 Choose Dice to Roll:' : 'Stamina Choice:'}
+                              </span>
+                              <strong style={{ color: '#f8fafc' }}>
+                                {op.committedDice} of {avail} dice
+                              </strong>
+                            </div>
+
+                            {/* Quick Select Buttons: 0 (Hold Back), 1, 2, 3, Max */}
+                            <div style={{ display: 'flex', gap: '0.25rem', flexWrap: 'wrap', marginBottom: '0.35rem' }}>
+                              <button
+                                type="button"
+                                className="tabletop-btn"
+                                style={{
+                                  flex: 1,
+                                  padding: '2px 4px',
+                                  fontSize: '0.66rem',
+                                  background: op.committedDice === 0 ? '#b45309' : undefined,
+                                  borderColor: op.committedDice === 0 ? '#f59e0b' : undefined,
+                                }}
+                                onClick={() => handleSetOperativeCommittedDice(slotIdx, 0)}
+                                title="Hold Back: Roll 0 dice. Preserves stamina and avoids all Backfire risk (forfeits [MOM] refunds)."
+                              >
+                                0 (Hold)
+                              </button>
+                              {[1, 2, 3].map((num) => (
+                                <button
+                                  key={num}
+                                  type="button"
+                                  className="tabletop-btn"
+                                  disabled={avail < num}
+                                  style={{
+                                    padding: '2px 6px',
+                                    fontSize: '0.66rem',
+                                    background: op.committedDice === num ? '#0369a1' : undefined,
+                                  }}
+                                  onClick={() => handleSetOperativeCommittedDice(slotIdx, num)}
+                                >
+                                  {num}
+                                </button>
+                              ))}
+                              <button
+                                type="button"
+                                className="tabletop-btn"
+                                disabled={avail === 0}
+                                style={{
+                                  padding: '2px 6px',
+                                  fontSize: '0.66rem',
+                                  background: op.committedDice === avail && avail > 0 ? '#0369a1' : undefined,
+                                }}
+                                onClick={() => handleSetOperativeCommittedDice(slotIdx, avail)}
+                                title={`Commit all ${avail} remaining available dice`}
+                              >
+                                Max ({avail})
+                              </button>
+                            </div>
+
+                            {/* Forecast & Explanation */}
+                            <div style={{ fontSize: '0.66rem', color: op.committedDice === 0 ? '#f59e0b' : '#94a3b8', lineHeight: 1.3 }}>
+                              {op.committedDice === 0 ? (
+                                '🛡️ Holding back: 0 dice rolled. Safe from Backfire, but ineligible for [MOM] refunds.'
+                              ) : (
+                                <span>
+                                  Forecast: ~{(op.committedDice * (thresh === 3 ? 4 / 6 : thresh === 4 ? 3 / 6 : 2 / 6)).toFixed(1)} Hits
+                                  {thresh === 5 && ' • ⚠️ 16.7% Backfire risk/die'}
+                                </span>
+                              )}
+                            </div>
+
+                            {/* Individual Operative Roll Button */}
+                            {isCurrentStepActive && (
+                              <button
+                                type="button"
+                                className="tabletop-btn tabletop-btn-primary"
+                                style={{ width: '100%', marginTop: '0.4rem', padding: '0.35rem', fontSize: '0.74rem', fontWeight: 700 }}
+                                disabled={op.committedDice === 0}
+                                onClick={() => handleRollSingleOperative(slotIdx)}
+                                title={`Roll ${op.committedDice} dice for ${char.title} at ${thresh}+ focus`}
+                              >
+                                🎲 Roll {op.committedDice} Dice for {char.title} ({thresh}+)
+                              </button>
+                            )}
+                          </div>
+                        )}
+
                         {/* Momentum Refund Button in Step 5 */}
-                        {state.sequenceStep === 5 && state.momentumTokens > 0 && op.spentDice > 0 && (
+                        {state.sequenceStep === 5 && state.momentumTokens > 0 && op.spentDice > 0 && op.committedDice > 0 && (
                           <button
                             type="button"
                             className="tabletop-btn tabletop-btn-success"
