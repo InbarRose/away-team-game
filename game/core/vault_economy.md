@@ -83,6 +83,22 @@ Between mission deployments, all players return to Agency Headquarters and resol
 └──────────────────────────────────────────────────────────────────────────────┘
 ```
 
+### Step 1 Deep-Dive: Debrief & Dual-Stream Payouts (BL-RULES-01)
+When the squad returns from a completed or retreated mission, Agency headquarters conducts operational debrief and distributes mission payouts under the **Dual-Stream Payout Model**:
+
+1. **Stream 1: Guaranteed Per-Character Deployment Stipend:**
+   * **Stipend per Operative:** Every operative deployed into the field earns a guaranteed baseline stipend of **`[2 CR]`** for their controlling Faction Vault.
+   * **Faction Organizational Standing:** Every participating Faction earns **`[1 PIP]`** in organizational political influence.
+   * **3-Player Vanguard Slot Stipend:** In 3-player games, the 4th unassigned operative in the Vanguard Slot earns their `[2 CR]` stipend for the elected **Squad Leader** who commanded them.
+   * **Veteran Loyalty:** Each surviving deployed operative gains **`[+1 LOY]`** (the Squad Leader gains **`[+2 LOY]`** total and **`[+1 PIP]`** to their vault on successful mission completion).
+
+2. **Stream 2: The Shared Clearance Bounty Pool (Negotiated Split):**
+   * Completing the mission unlocks the printed **Mission Clearance Bounty Pot** (typically **`[6 CR]`** and **`[1 PIP]`**, or as specified on the Campaign Mission Card).
+   * **Tabletop Negotiation Window:** This shared bounty pot is **subject to player negotiation**:
+     * Players may openly debate and agree on custom bounty cuts—for example, granting hazard bonuses to a player whose operative took severe wounds or died as a martyr, granting payout preference to the Squad Leader, or trading bounty cuts for future binding promises and armory transfers.
+   * **Canonical Default Split (If No Consensus):** If players cannot reach a negotiated consensus, the pot is divided equally among deployed players. Any odd remainder Credits or PIP are allocated at the **Squad Leader's sole discretion**.
+   * **Single-Claim Invariant:** Mission debrief payouts are deposited into Faction Vaults exactly once per completed mission.
+
 ### Step 2 Deep-Dive: The Stand-Down Auction
 Before launching the next mission, players bid [CR] (minimum bid: [0 CR], resolved via standard tie-breakers: [CR] $\rightarrow$ [PIP] $\rightarrow$ [LOY] $\rightarrow$ Roll-off) to determine the Agency's operational posture:
 * **Option A — DEPLOY:** Proceed normally through Downtime and launch the next Campaign or Side-Mission in Step 8.
