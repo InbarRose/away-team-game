@@ -19,6 +19,14 @@ Most tactical board games refresh all dice at the end of each round. **Away Team
 * **Dice Exhaustion:** Dice committed and rolled during a stage move to that operative's **Spent Pool**. They remain exhausted until restored via **Operational Momentum ([MOM])** or a Squad Leader **Logistical Refresh**.
 * **Variance Cushion (`BL-BAL-01`):** Operatives who burn through their dice early in a mission will face later climax stages empty-handed, forcing dangerous Out-of-Focus rolls from teammates!
 
+### 1.1 Individual Dice Commitment Sovereignty & The Right to Hold Back
+A foundational pillar of **Away Team**'s semi-cooperative design is **operative stamina sovereignty**:
+* **Player Choice on Every Roll:** Whenever an operative is eligible to roll (in Step 2 for Primary Specialists, or in Step 3 for Support), that operative's controlling player **freely and independently decides exactly how many dice to commit and roll**, choosing any quantity from `0 dice` up to their operative's current remaining available static dice.
+* **Anti-Quarterbacking Protection:** Neither teammates nor the Squad Leader can compel a player to roll dice from their character. Each player owns their operative's stamina and risk budget.
+* **The Right to Hold Back (`0 Dice`):** Choosing to commit `0 dice` ("Holding Back" or "Withholding") is a fully legal tactical choice. It preserves finite dice for subsequent stages and entirely eliminates the 16.7% Backfire injury risk. However, per the **Skin-in-the-Game Constraint**, committing 0 dice forfeits any eligibility to receive Operational Momentum (`[MOM]`) die refunds in Step 5.
+* **3-Player Vanguard Slot Governance:** In 3-player games, the unassigned fourth operative in the Vanguard Slot is commanded by the elected Squad Leader, who decides how many dice that Vanguard operative commits from their pool.
+* **Declaration Order:** Players may negotiate and discuss commitments openly. When executing an initiative step, the Squad Leader declares their operative's committed dice count first, followed clockwise around the table. All committed dice for that step resolve simultaneously.
+
 ---
 
 ## 2. The 50 / 35 / 15 Focus Pyramid & Thresholds
@@ -94,14 +102,14 @@ The Away Team advances sequentially through the mission track's 3 to 5 Stage Car
 
 ### Step 2: Phase 1 Initiative — The Specialists (`3+`)
 Operatives whose Primary Focus matches the room act first:
-1. Specialists coordinate and commit dice from their remaining static pools.
-2. Roll all committed Specialist dice simultaneously: **`3+` = +1 Success**, **`1` = 1 HP Backfire**.
+1. **Specialist Dice Commitment:** Each controlling player independently selects how many dice their specialist commits (from `0 dice` to their maximum available static dice).
+2. **Roll & Resolve:** Roll all committed Specialist dice simultaneously: **`3+` = +1 Success**, **`1` = 1 HP Backfire**.
 3. **Early Resolution Check:** If total successes meet or exceed Target Difficulty $D$, the stage is **instantly cleared**! Skip Step 3 entirely—Support operatives preserve all dice and avoid Backfire injury! *(Technician Adaptive Calibration may extend Phase 1 to trigger Early Resolution per `BL-RULES-05`)*.
 
 ### Step 3: Phase 2 Initiative — The Support (`4+` / `5+`)
 If the Specialists did not reach Target Difficulty $D$, non-specialists must step up:
-1. Secondary Focus operatives hit on **`4+`**; Out-of-Focus operatives hit on **`5+`**.
-2. Natural `1s` inflict **`1 HP` of Backfire damage**.
+1. **Support Dice Commitment:** Each controlling player with remaining non-specialist operatives independently selects how many dice to commit (from `0 dice` up to available static dice).
+2. **Roll & Resolve:** Secondary Focus operatives hit on **`4+`**; Out-of-Focus operatives hit on **`5+`**. Every natural `1` inflicts **`1 HP` of Backfire damage**.
 
 ### Step 4: Post-Initiative & Triage Window
 * Trigger Survivalist *Emergency Field Medicine* (`[1 EF]` heals up to 2 stage HP).

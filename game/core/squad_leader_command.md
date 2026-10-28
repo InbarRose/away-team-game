@@ -97,6 +97,11 @@ When a Stage Modifier with a **Split-Effect** (e.g., *Security Hardening*, *Atmo
    * **Tactical Retreat:** Controlled abort between stages if after Stage 1 and either an agent is at `1 HP` or $>50%$ of squad static dice are spent.
    * **Forced Retreat:** Emergency evacuation after a failed stage.
 
+### Command Limits & Operative Sovereignty
+While the Squad Leader holds unilateral authority over Focus Swaps, Momentum distribution, and Mission Retreats, **the Squad Leader cannot order or compel other players to commit dice from their operatives**.
+* Each player independently decides how many dice their character commits in Step 2 (Specialists) and Step 3 (Support).
+* In 3-Player games, the Squad Leader commands the fourth unassigned operative in the **Vanguard Slot**, deciding their dice commitments and target allocation.
+
 ---
 
 ## 5. Command Accountability: Risk vs. Reward

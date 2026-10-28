@@ -219,7 +219,7 @@ export const VTT_SEQUENCE_STEPS = [
     fullTitle: 'Step 2: Phase 1 Initiative — Primary Focus Specialists (3+)',
     phaseGroup: 'Mission Stage Micro-Loop',
     coachHint:
-      'Operatives whose Primary Focus matches the active room Focus act first! Commit static dice from their remaining pool and roll (3, 4, 5, 6 = Success; natural 1 = 1 HP Backfire). EARLY RESOLUTION: If Phase 1 successes meet or exceed Target Difficulty D, the stage is cleared immediately and Phase 2 Support skips rolling!',
+      'Each player independently chooses how many dice their specialist commits (from 0 to available stamina; holding back preserves stamina and avoids Backfires). Operatives whose Primary Focus matches the active room Focus act first! Commit static dice from their remaining pool and roll (3, 4, 5, 6 = Success; natural 1 = 1 HP Backfire). EARLY RESOLUTION: If Phase 1 successes meet or exceed Target Difficulty D, the stage is cleared immediately and Phase 2 Support skips rolling!',
   },
   {
     step: 3,
@@ -228,7 +228,7 @@ export const VTT_SEQUENCE_STEPS = [
     fullTitle: 'Step 3: Phase 2 Initiative — Support Operatives (4+ Secondary / 5+ Out of Focus)',
     phaseGroup: 'Mission Stage Micro-Loop',
     coachHint:
-      'If Phase 1 Specialists did not reach Target Difficulty D (and Technician did not close the gap with Adaptive Calibration), non-Primary operatives commit and roll static dice: Secondary/Bridged Focus hits on 4+; Out of Focus hits on 5+.',
+      'If Phase 1 Specialists did not reach Target Difficulty D (and Technician did not close the gap with Adaptive Calibration), each player with remaining Support operatives independently chooses how many dice to commit (from 0 to available stamina). Non-Primary operatives commit and roll static dice: Secondary/Bridged Focus hits on 4+; Out of Focus hits on 5+.',
   },
   {
     step: 4,

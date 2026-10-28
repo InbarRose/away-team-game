@@ -44,8 +44,9 @@ Unlike purely cooperative dungeon crawlers or purely competitive skirmish games,
 In traditional cooperative games, a single dominant player often "quarterbacks" the table, dictating everyone else's moves. **Away Team** structurally eliminates quarterbacking through the **Semi-Cooperative Paradox**:
 
 1. **Private Vault Sovereignty:** Your Faction's Credits [CR], Effort [EF], and Political Influence [PIP] are stored behind your personal Faction Dashboard. No teammate can force you to spend your Effort to stabilize their wounded agent or burn your static dice in an out-of-focus room.
-2. **The Tragedy of the Commons:** Every resource you burn to save a teammate—spending [1 EF] on emergency field medicine, committing finite static dice, or buying medkits—is an asset deducted from your private endgame score. Yet, letting a teammate die advances the mission toward failure and coalition loss.
-3. **Binding Promises:** Players may freely negotiate and broker binding economic contracts across the table. You may legally demand [3 CR] in cash from a rival before agreeing to spend your [1 EF] to stabilize their dying operative.
+2. **Individual Operative Dice Sovereignty:** In every stage encounter, each player independently decides how many dice their operative will roll (from 0 dice up to available static stamina). Committing 0 dice ("Holding Back") is completely legal, protecting that operative's finite stamina and avoiding Backfire injury, though it forfeits Momentum refunds.
+3. **The Tragedy of the Commons:** Every resource you burn to save a teammate—spending [1 EF] on emergency field medicine, committing finite static dice, or buying medkits—is an asset deducted from your private endgame score. Yet, letting a teammate die advances the mission toward failure and coalition loss.
+4. **Binding Promises:** Players may freely negotiate and broker binding economic contracts across the table. You may legally demand [3 CR] in cash from a rival before agreeing to spend your [1 EF] to stabilize their dying operative.
 
 ---
 

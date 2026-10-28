@@ -214,4 +214,70 @@ describe('Suite 05: VTT 7-Step Sequencer, Monte Carlo Balance Simulator, Print R
     assert.ok(wikiSrc.includes('rulebook-phase-badge badge-overview'), 'WikiPortal print rulebook must render chapter phase banners');
     assert.ok(wikiSrc.includes('rulebook-phase-badge badge-phase-3'), 'WikiPortal print rulebook must render tactical phase banner');
   });
+  it('verifies Individual Operative Dice Sovereignty rules and VTT commitment controls', () => {
+    // 1. Verify Core Rulebook Chapters
+    const diceSystemMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'dice_system.md'), 'utf8');
+    assert.ok(
+      diceSystemMd.includes('Individual Dice Commitment Sovereignty & The Right to Hold Back'),
+      'dice_system.md must contain Individual Dice Commitment Sovereignty section'
+    );
+    assert.ok(
+      diceSystemMd.includes('Anti-Quarterbacking Protection'),
+      'dice_system.md must document Anti-Quarterbacking Protection'
+    );
+    assert.ok(
+      diceSystemMd.includes('The Right to Hold Back'),
+      'dice_system.md must document the right to hold back (0 dice)'
+    );
+    assert.ok(
+      diceSystemMd.includes('3-Player Vanguard Slot Governance'),
+      'dice_system.md must document 3-player Vanguard Slot dice governance by Squad Leader'
+    );
+
+    const rulesOverviewMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'rules_overview.md'), 'utf8');
+    assert.ok(
+      rulesOverviewMd.includes('Individual Operative Dice Sovereignty'),
+      'rules_overview.md must codify Individual Operative Dice Sovereignty'
+    );
+
+    const squadCommandMd = fs.readFileSync(path.join(ROOT_DIR, 'game', 'core', 'squad_leader_command.md'), 'utf8');
+    assert.ok(
+      squadCommandMd.includes('Command Limits & Operative Sovereignty'),
+      'squad_leader_command.md must define command limits over teammate dice'
+    );
+
+    // 2. Verify VTT implementation
+    const vttSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'VirtualTabletop.tsx'), 'utf8');
+    assert.ok(
+      vttSrc.includes('handleSetOperativeCommittedDice'),
+      'VirtualTabletop.tsx must implement handleSetOperativeCommittedDice'
+    );
+    assert.ok(
+      vttSrc.includes('handleRollSingleOperative'),
+      'VirtualTabletop.tsx must implement handleRollSingleOperative for individual player agency'
+    );
+    assert.ok(
+      vttSrc.includes('0 (Hold)'),
+      'VirtualTabletop.tsx must render 0 (Hold) quick-select pill'
+    );
+    assert.ok(
+      vttSrc.includes('Holding back: 0 dice rolled'),
+      'VirtualTabletop.tsx must display feedback when holding back with 0 dice'
+    );
+    assert.ok(
+      vttSrc.includes('Roll All Committed Specialists'),
+      'VirtualTabletop.tsx must provide coordinated squad roll buttons'
+    );
+
+    // 3. Verify Engine coach hints
+    const engineSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'engine.js'), 'utf8');
+    assert.ok(
+      engineSrc.includes('Each player independently chooses how many dice their specialist commits'),
+      'engine.js must guide players on individual specialist dice commitment'
+    );
+    assert.ok(
+      engineSrc.includes('each player with remaining Support operatives independently chooses how many dice to commit'),
+      'engine.js must guide players on individual support dice commitment'
+    );
+  });
 });

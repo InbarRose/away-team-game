@@ -246,7 +246,27 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 
 ---
 
+---
+
+### ✅ Iteration 21: Individual Operative Dice Sovereignty & Tabletop Commitment Controls (COMPLETE)
+- [x] **Core Rules Codification:** Codified **Individual Operative Dice Sovereignty** across `game/core/dice_system.md` (§1.1, §3), `game/core/rules_overview.md` (§3), and `game/core/squad_leader_command.md` (§4).
+- [x] **The Right to Hold Back (0 Dice):** Explicitly codified that committing `0 dice` ("Holding Back") is a legal tactical choice that preserves stamina and completely eliminates Backfire injury risk, while forfeiting Operational Momentum (`[MOM]`) refunds under the Skin-in-the-Game constraint.
+- [x] **Vanguard Slot Authority:** Clarified that in 3-player games, the elected Squad Leader commands the fourth unassigned operative in the Vanguard Slot, deciding their dice commitments and target allocation.
+- [x] **VTT Player-Level Commitment Console:** Implemented dedicated dice commitment controls on each `OperativeCard` in Phase 3 Tactical Field with player attribution, quick-select pills (`[0 (Hold)]`, `[1]`, `[2]`, `[3]`, `[Max]`), mathematical hit/backfire forecasts, and individual operative roll triggers (`handleRollSingleOperative`).
+- [x] **Coordinated Squad Controls:** Added coordinated roll buttons and skip levers in the tactical Action Bar.
+- [x] **Comprehensive Test Coverage:** Added test suite in `tests/05-vtt-engine-and-simulator.test.js` verifying rulebook chapters, engine coach hints, and VTT commitment methods (28/28 tests passing).
+
+---
+
 ### 📋 Architecture Decision Records (ADRs)
+
+#### ADR-14: Individual Operative Dice Sovereignty & Tabletop Commitment Console
+* **Context:** Tactical dice commitment was previously ambiguous: players wondered whether all characters were required to roll, who determined the dice counts, and whether holding back was permissible. In the VTT, commitment was an unprompted counter rather than an active player choice.
+* **Decision:**
+  1. **Codify Stamina Sovereignty:** In every stage encounter, each controlling player independently decides how many dice their operative will roll from their remaining available static dice pool (from `0 dice` up to maximum).
+  2. **Holding Back Protocol:** Rolling `0 dice` is a valid tactical maneuver that avoids stamina depletion and Backfires. However, operatives who commit 0 dice are legally disqualified from receiving `[MOM]` refunds in Step 5.
+  3. **Tabletop UX & Individual Triggers:** In the VTT, each card displays the controlling Director seat, a dedicated quick-select stamina bar (`0 (Hold)`, `1`, `2`, `3`, `Max`), and an individual roll trigger alongside coordinated squad actions.
+* **Status:** Adopted and verified across all test suites and static build.
 
 #### ADR-13: Procedural Finite State Machine (FSM), Visual Drafting & Tactile Tabletop Component Architecture
 * **Context:** The previous Virtual Tabletop resembled an open debug dashboard with freeform counter adjusters (`+ / -`), dropdown selectors, premature item loadouts on newly drafted operatives, and glowing neon laser aesthetic styling that detracted from an authentic tabletop board game feel.
