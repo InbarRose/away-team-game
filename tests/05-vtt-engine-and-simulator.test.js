@@ -327,4 +327,123 @@ describe('Suite 05: VTT 7-Step Sequencer, Monte Carlo Balance Simulator, Print R
       'handleDistributeMissionPayouts must prevent multi-click duplicate payouts'
     );
   });
+
+  it('verifies Quartermaster Armory Market depletion, item acquisition, and Director seat actions', () => {
+    const vttSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'VirtualTabletop.tsx'), 'utf8');
+
+    // 1. Market depletion and dynamic shop tracking
+    assert.ok(
+      vttSrc.includes('armoryMarketItemIds'),
+      'VirtualTabletop.tsx must track armoryMarketItemIds in state'
+    );
+    assert.ok(
+      vttSrc.includes('factionArmoryCaches'),
+      'VirtualTabletop.tsx must track factionArmoryCaches in state'
+    );
+    assert.ok(
+      vttSrc.includes('handlePurchaseArmoryItem'),
+      'VirtualTabletop.tsx must implement handlePurchaseArmoryItem'
+    );
+    assert.ok(
+      vttSrc.includes('handleEquipFromCache'),
+      'VirtualTabletop.tsx must implement handleEquipFromCache'
+    );
+    assert.ok(
+      vttSrc.includes('handleUnequipItem'),
+      'VirtualTabletop.tsx must implement handleUnequipItem'
+    );
+    assert.ok(
+      vttSrc.includes('handleRefreshArmoryMarket'),
+      'VirtualTabletop.tsx must implement handleRefreshArmoryMarket'
+    );
+
+    // 2. Active Director Switcher
+    assert.ok(
+      vttSrc.includes('activeDirectorIndex'),
+      'VirtualTabletop.tsx must track activeDirectorIndex in state'
+    );
+    assert.ok(
+      vttSrc.includes('handleSwitchActiveDirector'),
+      'VirtualTabletop.tsx must implement handleSwitchActiveDirector'
+    );
+    assert.ok(
+      vttSrc.includes('Pass Turn to Next Director'),
+      'VirtualTabletop.tsx must provide button to pass turn to next Director'
+    );
+
+    // 3. Components
+    const armoryCardSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'components', 'ArmoryItemCard.tsx'), 'utf8');
+    assert.ok(
+      armoryCardSrc.includes('ArmoryItemCard'),
+      'ArmoryItemCard component must be defined'
+    );
+  });
+
+  it('verifies Open Corporate Agendas, Secret Corporate Objectives draft (Step 0.4), HQ Facility Board, and Boardroom Perks', () => {
+    const vttSrc = fs.readFileSync(path.join(ROOT_DIR, 'src', 'vtt', 'VirtualTabletop.tsx'), 'utf8');
+
+    // 1. Agendas and Secret Objectives state & handlers
+    assert.ok(
+      vttSrc.includes('openAgendaIds'),
+      'VirtualTabletop.tsx must track openAgendaIds in state'
+    );
+    assert.ok(
+      vttSrc.includes('playerSecretObjectives'),
+      'VirtualTabletop.tsx must track playerSecretObjectives in state'
+    );
+    assert.ok(
+      vttSrc.includes('handleSelectSecretObjective'),
+      'VirtualTabletop.tsx must implement handleSelectSecretObjective'
+    );
+    assert.ok(
+      vttSrc.includes('handleToggleSecretObjectiveReveal'),
+      'VirtualTabletop.tsx must implement handleToggleSecretObjectiveReveal'
+    );
+    assert.ok(
+      vttSrc.includes('handleClaimAgenda'),
+      'VirtualTabletop.tsx must implement handleClaimAgenda'
+    );
+
+    // 2. Setup Step 0.4: setup_agendas_objectives
+    assert.ok(
+      vttSrc.includes("'setup_agendas_objectives'"),
+      'VirtualTabletop.tsx must include setup_agendas_objectives step in setup flow'
+    );
+
+    // 3. Corporate Facility Sponsorships and Perks
+    assert.ok(
+      vttSrc.includes('sponsoredFacilities'),
+      'VirtualTabletop.tsx must track sponsoredFacilities in state'
+    );
+    assert.ok(
+      vttSrc.includes('activePerkIds'),
+      'VirtualTabletop.tsx must track activePerkIds in state'
+    );
+    assert.ok(
+      vttSrc.includes('handleSponsorFacility'),
+      'VirtualTabletop.tsx must implement handleSponsorFacility'
+    );
+    assert.ok(
+      vttSrc.includes('handleUnlockPerk'),
+      'VirtualTabletop.tsx must implement handleUnlockPerk'
+    );
+
+    // 4. Component files existence and validity
+    assert.ok(
+      fs.existsSync(path.join(ROOT_DIR, 'src', 'vtt', 'components', 'SecretObjectiveCard.tsx')),
+      'SecretObjectiveCard.tsx must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(ROOT_DIR, 'src', 'vtt', 'components', 'AgendaCard.tsx')),
+      'AgendaCard.tsx must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(ROOT_DIR, 'src', 'vtt', 'components', 'HQFacilityBoard.tsx')),
+      'HQFacilityBoard.tsx must exist'
+    );
+    assert.ok(
+      fs.existsSync(path.join(ROOT_DIR, 'src', 'vtt', 'components', 'FactionPerksConsole.tsx')),
+      'FactionPerksConsole.tsx must exist'
+    );
+  });
 });
