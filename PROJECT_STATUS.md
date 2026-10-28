@@ -232,7 +232,36 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 
 ---
 
+---
+
+### ✅ Iteration 20: Procedural VTT FSM Engine, Visual Component Drafting & Tactile Tabletop UX (COMPLETE)
+- [x] **Finite State Machine & One-Phase-at-a-Time:** Replaced the open dashboard with a strict procedural finite state machine (`setup_players` -> `setup_factions` -> `setup_bench` -> `setup_campaign` -> `phase1_brief` -> `phase2_auction` -> `phase3_tactical` -> `phase4_hq`). Removed arbitrary `+ / -` counter manipulators, ensuring all state changes are driven strictly by rules-governed actions.
+- [x] **Sequential Visual Faction Drafting:** Replaced dropdown selector with a card grid browsing all 8 Faction Dossiers (visual Faction Sheets displaying seals, lore, printed asymmetric starting assets, passive trait, and 4-tier Loyalty track).
+- [x] **Specialist Operative Draft Tray:** Implemented sequential drafting of 3 operatives per player bench with full visual Tarot cards (70×120 aspect ratio, 9.0 ES budget stats, class power, unique ability, loyalty badge) and assignment to Active Deployment Slots.
+- [x] **Zero Starting Items Enforcement:** Fixed initial state so operatives strictly begin with zero items; items must be purchased and equipped during Phase 4 HQ Downtime at the Quartermaster Armory.
+- [x] **Procedural Campaign Track:** Mission and stage sequences are procedurally loaded from campaign parameters (`campaign.campaign_parameters.missions`) and mission stage decks, preventing arbitrary out-of-order stage skipping.
+- [x] **Tactile Tabletop Aesthetics & Component System:** Replaced neon cyan glow styling with dark slate tabletop felt (`.vtt-tabletop`), tactile physical cards (`OperativeCard`, `FactionDossierCard`, `StageCard`, `ArmoryItemCard`), and a 3D-styled dice tray (`TactileDiceTray`).
+- [x] **Explanatory Tooltips & Cause-and-Effect Copy:** Added explicit hover/outcome text and action logs explaining resource costs, die probabilities, and rule mechanics across every button.
+- [x] Verify all 27 tests in suites 01–05 pass and Astro static build succeeds with 0 errors.
+
+---
+
 ### 📋 Architecture Decision Records (ADRs)
+
+#### ADR-13: Procedural Finite State Machine (FSM), Visual Drafting & Tactile Tabletop Component Architecture
+* **Context:** The previous Virtual Tabletop resembled an open debug dashboard with freeform counter adjusters (`+ / -`), dropdown selectors, premature item loadouts on newly drafted operatives, and glowing neon laser aesthetic styling that detracted from an authentic tabletop board game feel.
+* **Decision:**
+  1. **Enforce Rigid FSM Flow:** Lock player progression to a strictly sequential Finite State Machine:
+     - `setup_players` (1P–4P selection) $\rightarrow$ `setup_factions` (sequential Faction Dossier claims) $\rightarrow$ `setup_bench` (specialist drafting into player bench trays) $\rightarrow$ `setup_campaign` (locking mission tracks) $\rightarrow$ `phase1_brief` $\rightarrow$ `phase2_auction` $\rightarrow$ `phase3_tactical` $\rightarrow$ `phase4_hq`.
+  2. **Zero-Item Starting Invariant:** Operatives strictly begin with empty item slots (`equippedItemIds: []`). Equipment can only be obtained through Phase 4 HQ Quartermaster Armory purchases using earned Credit bounties.
+  3. **Visual Physical Card Components:**
+     - `OperativeCard.tsx`: Standard Tarot 70×120 proportions displaying class badge, 9.0 ES budget stats, class power, unique ability, and loyalty track.
+     - `FactionDossierCard.tsx`: Visual Faction Sheet featuring thematic seals, printed asymmetric starting assets (`credits`, `effort`, `pip`), passive trait, and 4-tier loyalty track.
+     - `StageCard.tsx`: Hazard card displaying room Focus, Target Difficulty $D$, attached modifier, and Squad Leader dynamic swap levers.
+     - `TactileDiceTray.tsx`: 3D tactile dice cubes for rolling, highlighting hits (green), misses (dark), and Backfires (red).
+     - `ArmoryItemCard.tsx`: Standard Poker 63×88 card with anatomical slot badges, Credit prices, and Focus bridges.
+  4. **Tabletop Aesthetic Design Tokens:** Removed `#00e5ff` cyan neon glow in favor of matte dark-slate tabletop felt (`tokens.css`), physical card elevation borders, and subtle muted state badges.
+* **Status:** Adopted and verified across all test suites and static build.
 
 #### ADR-12: Chronological Board Game Sequence of Play & VTT Macro Phase Alignment
 * **Context:** The core rulebook and VTT previously presented game concepts non-chronologically, mixing setup, mid-mission tactical resolution, and downtime economies across non-sequential chapters and unsequenced VTT dashboard views.

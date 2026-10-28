@@ -111,6 +111,9 @@ Using the new VTT Monte Carlo Simulator (`src/vtt/simulator.ts`), here are **4 b
 - [x] **`BL-UX-05` — Standalone Design Companion Portal (`#/design`):** Extracted developer design dossiers, 9.0 ES mathematical ledger, and companion backlog outside the Rules Wiki into an independent top-level engineering workspace.
 - [x] **`BL-OPS-01` — GitHub Issue Templates & In-App Reporter:** Added structured issue templates for Bug Reports, Gameplay Feedback, and Feature Requests in `.github/ISSUE_TEMPLATE/`, with in-app modal launcher and repo links.
 
+- [x] **`BL-VTT-03` — Rigid Procedural VTT FSM & Visual Card Drafting:** Replaced freeform counter controls and arbitrary dropdown selectors with a strict procedural finite state machine (`setup_players` -> `setup_factions` -> `setup_bench` -> `setup_campaign` -> `phase1_brief` -> `phase2_auction` -> `phase3_tactical` -> `phase4_hq`). Added visual Faction Dossier sheets (seals, printed starting assets, 4-tier loyalty trees), specialist operative bench draft trays, zero-starting-item loadout enforcement, and procedural campaign mission advancement.
+- [x] **`BL-VTT-04` — Tactile Physical Tabletop UI & Cause-and-Effect Explanations:** Replaced neon cyan laser glow with matte slate tabletop felt, physical card tokens (Tarot 70×120, Poker 63×88, Stage cards), 3D tactile dice trays, and explicit outcome tooltips.
+
 ### 📋 Upcoming Backlog (Next Iterations)
 - [ ] **`BL-VTT-03` — Interactive Political Deck & Secret Objective Dealer in VTT:** Deal 2 hidden Secret Objectives (keep 1) and draw 3 Open Agendas into active play inside the VTT state, with automatic `[VP]` scoring triggers when conditions are met.
 - [ ] **`BL-VTT-04` — Automated AI / Solo Bot ("The Attrition Director"):** In 1P or 2P VTT sessions, simulate rival Faction bidding in the Command Auction and Stand-Down Auction using heuristic EV bidding rules.
