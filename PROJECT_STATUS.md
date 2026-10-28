@@ -266,9 +266,28 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 - [x] **Comprehensive Test Coverage:** Added Test 10 in `tests/05-vtt-engine-and-simulator.test.js` validating dual-stream mechanics, negotiation state, and multi-click claim locking (29/29 tests pass).
 
 ---
+
+### ✅ Iteration 23: Tabletop Desk, Quartermaster Market Depletion, HQ Facility Board & Secret Corporate Objectives (COMPLETE)
+- [x] **Director Console Sovereignty & Tabletop Desk:** Added selectable active Director seat (`activeDirectorIndex`) with pass turn buttons. Built Virtual Desk displaying Faction Crest, passive trait, Vault chits, 6-slot anatomical operative loadout rack (`[Head]`, `[Body]`, `[Hands 1]`, `[Hands 2]`, `[Accessory 1]`, `[Accessory 2]`) with gear unequip/equip controls, Faction Armory Cache, and Secret Corporate Objective card.
+- [x] **Quartermaster Armory Market Depletion:** Fixed item purchasing bug so bought items are removed from `armoryMarketItemIds` and replenished from the deck. Deducts Credits from the acting Director, delivers gear to target operative (updating armor buffer) or to Faction Cache, and provides a market refresh button.
+- [x] **Corporate Base Operations & HQ Facility Sponsorships:** Built `<HQFacilityBoard>` in Phase 4 for all 5 Base Facilities and 4 Landmarks. Active Director spends Credits/PIP to sponsor modules, earning `+1/+2 PIP` and `+2/+4 VP`, stamping their Faction token.
+- [x] **Boardroom Doctrines & Faction Perks:** Built `<FactionPerksConsole>` in Phase 4 Step 7, allowing Directors to unlock tactical doctrines using Credits or PIP.
+- [x] **Tabletop Step 0.4: Agendas & Secret Corporate Objectives:** Added Step 0.4 to setup flow dealing 3 face-up Open Corporate Agendas to the table (with in-mission claim bounties in Phase 1, 2, 3), and 2 Secret Corporate Objectives per Director seat (with keep selection button and privacy peek/conceal toggle).
+- [x] **Automated Test Coverage:** Added Tests 11 & 12 in `tests/05-vtt-engine-and-simulator.test.js` (31/31 tests pass across all 5 suites).
+
+---
 ---
 
 ### 📋 Architecture Decision Records (ADRs)
+
+#### ADR-16: Quartermaster Market Depletion, Director Console Sovereignty, & Secret Corporate Objectives Tabletop Architecture
+* **Context:** In Phase 4 HQ Downtime, purchasing an armory item did not deplete the shop or clarify which Director was buying. Additionally, HQ facility improvements, boardroom perks, open agendas, and secret corporate objectives were missing from the interactive tabletop.
+* **Decision:**
+  1. **Quartermaster Market Depletion & Stock Flow:** When an item is bought, it is removed from `state.armoryMarketItemIds`, a replacement item is drawn from the deck, and the item is delivered to the target operative or to the active Director's `factionArmoryCaches`.
+  2. **Active Director Tabletop Desk & Pieces:** Players select which Director is acting at the console via a prominent switcher bar. The Desk displays the Faction Crest, Vault chits, 6-slot anatomical gear rack (`head`, `body`, `hands`, `accessory`), and secret objective card.
+  3. **Corporate Facility Board & Perks Console:** Built dedicated components (`<HQFacilityBoard>` and `<FactionPerksConsole>`) for Base Facility sponsorships and Boardroom executive doctrines.
+  4. **Open Agendas & Secret Objectives Setup (Step 0.4):** Dealt 3 face-up Open Corporate Agendas to the table and 2 Secret Corporate Objectives to each player (keep 1) with privacy peek/conceal toggles.
+* **Status:** Adopted and verified across all test suites and static build.
 
 #### ADR-15: Dual-Stream Debrief Payout Architecture & Multi-Click Claim Lock
 * **Context:** Players previously could click "Claim & Deposit Payouts into Vaults" multiple times, triggering duplicate payouts. Additionally, payouts were mathematically lumped together without making the distinction between per-character stipends and the shared negotiable bounty pool visible or interactive.
