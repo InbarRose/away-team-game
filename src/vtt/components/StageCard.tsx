@@ -121,6 +121,27 @@ export function StageCard({
             fontSize: '0.76rem',
           }}
         >
+          {attachedModifier.art_spec?.asset_path && (
+            <div
+              style={{
+                width: '100%',
+                height: '65px',
+                borderRadius: '4px',
+                overflow: 'hidden',
+                marginBottom: '0.4rem',
+                border: '1px solid rgba(220, 38, 38, 0.3)',
+              }}
+            >
+              <img
+                src={attachedModifier.art_spec.asset_path}
+                alt={attachedModifier.title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={(e) => {
+                  (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+                }}
+              />
+            </div>
+          )}
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.2rem' }}>
             <strong style={{ color: '#f87171' }}>
               ⚠️ Attached Modifier: {attachedModifier.title}

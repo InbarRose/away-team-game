@@ -69,16 +69,37 @@ export function FactionDossierCard({
         )}
       </div>
 
-      {/* Visual Seal / Insignia Placeholder */}
+      {/* Visual Seal / Insignia */}
       <div
         className="card-art-placeholder"
-        style={{ height: '70px', background: `radial-gradient(circle at 50% 50%, ${colorHex}22 0%, #0d131f 100%)` }}
+        style={{
+          height: '75px',
+          position: 'relative',
+          overflow: 'hidden',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          background: `radial-gradient(circle at 50% 50%, ${colorHex}25 0%, #0d131f 100%)`,
+          border: `1px solid ${colorHex}44`,
+        }}
         title={artSpec?.visual_description || faction.title}
       >
-        <span style={{ fontSize: '1.5rem' }}>🏛️</span>
-        <span style={{ fontSize: '0.7rem', color: '#cbd5e1' }}>
-          {faction.title} Official Corporate Seal
-        </span>
+        {artSpec?.asset_path ? (
+          <img
+            src={artSpec.asset_path}
+            alt={faction.title}
+            style={{
+              maxHeight: '68px',
+              maxWidth: '92%',
+              objectFit: 'contain',
+            }}
+            onError={(e) => {
+              (e.currentTarget as HTMLElement).style.display = 'none';
+            }}
+          />
+        ) : (
+          <span style={{ fontSize: '1.5rem' }}>🏛️</span>
+        )}
       </div>
 
       {/* Strategic Identity & Starting Vault Assets */}

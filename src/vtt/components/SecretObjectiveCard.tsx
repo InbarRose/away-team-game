@@ -120,6 +120,33 @@ export function SecretObjectiveCard({
             </div>
           </div>
 
+          {/* Secret Objective Art Frame */}
+          {objective.art_spec?.asset_path && (
+            <div
+              style={{
+                width: '100%',
+                height: '75px',
+                borderRadius: '5px',
+                overflow: 'hidden',
+                background: 'radial-gradient(circle, #1e293b 0%, #09090b 100%)',
+                border: '1px solid rgba(245, 158, 11, 0.25)',
+              }}
+            >
+              <img
+                src={objective.art_spec.asset_path}
+                alt={objective.title}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover',
+                }}
+                onError={(e) => {
+                  (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+                }}
+              />
+            </div>
+          )}
+
           {/* Target Metric Box */}
           <div
             style={{

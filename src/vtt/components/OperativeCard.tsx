@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GameComponent } from '../../components/ComponentCard';
+import { PhysicalCardModal } from '../../components/PhysicalCardMockup';
 import { FocusBadge } from '../../components/SemanticText';
 
 export interface OperativeCardProps {
@@ -43,6 +44,7 @@ export function OperativeCard({
   const classAbility = character.class_ability;
   const uniquePower = character.unique_power;
   const artSpec = character.art_spec;
+  const [showMockup, setShowMockup] = useState(false);
 
   // Determine hit threshold for current stage
   let hitThreshold = 5;
@@ -89,29 +91,55 @@ export function OperativeCard({
         <FocusBadge focus={primaryFocus} />
       </div>
 
-      {/* Visual Portrait Placeholder (Tarot Aspect 70×120) */}
+      {/* Visual Portrait (Tarot Aspect 70×120) */}
       <div
         className="card-art-placeholder"
-        title={artSpec?.visual_description || character.title}
+        style={{
+          height: '135px',
+          position: 'relative',
+          overflow: 'hidden',
+          padding: 0,
+          cursor: 'pointer',
+        }}
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowMockup(true);
+        }}
+        title={`Click to inspect physical Tarot proof: ${artSpec?.visual_description || character.title}`}
       >
-        <span style={{ fontSize: '1.6rem' }}>
-          {primaryFocus === 'combat'
-            ? '⚔️'
-            : primaryFocus === 'intel'
-            ? '📡'
-            : primaryFocus === 'infiltrate'
-            ? '👤'
-            : primaryFocus === 'operations'
-            ? '⚙️'
-            : primaryFocus === 'negotiate'
-            ? '🤝'
-            : '🌿'}
-        </span>
-        <div style={{ fontWeight: 600, color: '#e2e8f0' }}>
-          {character.category?.toUpperCase() || 'OPERATIVE'}
-        </div>
-        <div style={{ fontSize: '0.62rem', color: '#94a3b8', fontStyle: 'italic' }}>
-          9.0 ES Tabletop Spec
+        {artSpec?.asset_path ? (
+          <img
+            src={artSpec.asset_path}
+            alt={character.title}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+            onError={(e) => {
+              (e.currentTarget as HTMLElement).style.display = 'none';
+            }}
+          />
+        ) : null}
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            left: 0,
+            right: 0,
+            background: 'linear-gradient(transparent, rgba(15, 23, 42, 0.95))',
+            padding: '0.35rem 0.5rem 0.2rem',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'baseline',
+          }}
+        >
+          <span style={{ fontWeight: 700, fontSize: '0.68rem', color: '#e2e8f0', letterSpacing: '0.04em' }}>
+            {character.category?.toUpperCase() || 'OPERATIVE'}
+          </span>
+          <span style={{ fontSize: '0.6rem', color: '#38bdf8', fontFamily: 'var(--font-mono)' }}>
+            🎴 9.0 ES PROOF
+          </span>
         </div>
       </div>
 
@@ -231,6 +259,10 @@ export function OperativeCard({
       </div>
 
       {actionButton && <div style={{ marginTop: '0.2rem' }}>{actionButton}</div>}
+
+      {showMockup && (
+        <PhysicalCardModal item={character} onClose={() => setShowMockup(false)} />
+      )}
     </div>
   );
 }
