@@ -280,6 +280,17 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 
 ### 📋 Architecture Decision Records (ADRs)
 
+#### ADR-18: Documented Rules-Derived Testing Architecture (Suites 07–11)
+* **Context:** The game's canonical rules are formally articulated across 8 chapters in `/game/core/`, but earlier test coverage primarily focused on directory structure, schemas, and character budget mathematics. We needed direct, automated rules contracts derived from the documented ruleset so that any future rule updates or engine refactors automatically verify compliance or flag drift.
+* **Decision:**
+  1. **Suite 07 (Chapter 4 Tactical Dice & Momentum):** Tests focus thresholds (3+, 4+, 5+), mathematical ES expectations (4/6, 3/6, 2/6), standardized Backfire on 5+, Operational Momentum formula ($MOM = Hits - D - 1$ at $ge D+2$), Skin-in-the-Game invariant, Holding Back protocol (0 dice), and Phase 1 Early Resolution.
+  2. **Suite 08 (Chapter 3 Command & Initiative):** Tests Credit bidding, 4-tier tie-breakers (Credits $ightarrow$ PIP $ightarrow$ Loyalty $ightarrow$ Seat), 0-bid roll-offs (`BL-RULES-04`), 3-Player Vanguard Slot double loyalty, Dynamic Swaps (`BL-RULES-07`), and Scientist Phase 1 promotion (`BL-RULES-06`).
+  3. **Suite 09 (Chapter 6 Mortality & Med Bay):** Tests Step 4 Triage priority order (`BL-RULES-03`), Dying Breath locked successes (`BL-RULES-02`), d6 Critical Injury tables, Trauma Calcification (3 injuries = 1 trauma), Medically Grounded 0 Max HP deploy ban (`BL-RULES-08`), and 5+/4+ Med Bay recovery.
+  4. **Suite 10 (Chapter 7 HQ Downtime Economy):** Tests dual-stream debrief payouts (`BL-RULES-01`), Vanguard Slot +2 CR recipient, claim idempotency, Quartermaster market depletion/replenishment, and facility sponsorships.
+  5. **Suite 11 (Chapter 8 Endgame & Agendas):** Tests 3 Open Agendas claims, tiered Secret Corporate Objectives (15/10/5 VP), Failure tracker dissolution ($3	ext{ [FAIL]}$), and comprehensive endgame VP scoring aggregation.
+  6. **Zero-Dependency Native Execution:** All 79 tests run via Node.js native test runner (`node:test`) in $< 2.5$ seconds locally and in GitHub Actions CI.
+* **Status:** Adopted and verified across all test suites and static build.
+
 #### ADR-17: Strict Mid-Game Navigation Isolation, Deterministic Acceptance Scenarios, & Chaos / Fuzz Testing Engine
 * **Context:** Once players began an active campaign game, navigating to Setup wiped game state without a formal reset. Furthermore, the engine lacked systematic test coverage for deadlocks, invariant violations under chaotic random play, and repeatable deterministic scenarios with overridable random outcomes.
 * **Decision:**
