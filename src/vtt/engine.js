@@ -113,6 +113,61 @@ export function resolveCommandAuction(bids) {
 }
 
 /**
+ * Resolves a Zero-Bid tie-break roll-off (BL-RULES-04):
+ * If all players bid 0 CR, players roll 1d6 each; highest roll wins at 0 CR cost.
+ */
+export function resolveZeroBidRollOff(playersWithRolls) {
+  if (!playersWithRolls || playersWithRolls.length === 0) return null;
+  const sorted = [...playersWithRolls].sort((a, b) => {
+    if (b.roll !== a.roll) return b.roll - a.roll;
+    if ((b.pip ?? 0) !== (a.pip ?? 0)) return (b.pip ?? 0) - (a.pip ?? 0);
+    return (a.playerIndex ?? 0) - (b.playerIndex ?? 0);
+  });
+  return { winner: sorted[0], costCredits: 0 };
+}
+
+/**
+ * Resolves Squad Leader Dynamic Focus Swap (BL-RULES-07):
+ * Force Breach shifts to Combat; Tactical Bypass shifts to Infiltrate or Survival.
+ */
+export function resolveDynamicFocusSwap(currentStageFocus, swapType, bypassChoice = 'infiltrate') {
+  if (swapType === 'force_breach') {
+    return {
+      activeFocus: 'combat',
+      swapType: 'force_breach',
+      costEffort: 1,
+    };
+  }
+  if (swapType === 'tactical_bypass') {
+    return {
+      activeFocus: bypassChoice,
+      swapType: 'tactical_bypass',
+      costEffort: 1,
+    };
+  }
+  return {
+    activeFocus: currentStageFocus,
+    swapType: 'none',
+    costEffort: 0,
+  };
+}
+
+/**
+ * Dynamically evaluates a split modifier based on active stage focus (BL-RULES-07):
+ * Returns combat effect if activeFocus === 'combat', else non-combat effect.
+ */
+export function evaluateSplitModifier(modifier, activeFocus) {
+  if (!modifier) return null;
+  const isCombat = String(activeFocus).toLowerCase() === 'combat';
+  if (modifier.split_effect) {
+    return isCombat
+      ? { branch: 'combat', ...modifier.split_effect.combat }
+      : { branch: 'non_combat', ...modifier.split_effect.non_combat };
+  }
+  return { branch: 'generic', ...modifier.stats };
+}
+
+/**
  * Validates whether a candidate item can be equipped onto an operative's
  * 6-Slot Anatomical Grid ([Head], [Body], [Legs], [Pack], [Hand L], [Hand R]).
  */
@@ -281,7 +336,8 @@ export function expectedSuccessPerDie(threshold) {
  * Canonical Operational Momentum ([MOM]) formula from /game/core/dice_system.md:
  *   MOM = Total Successes - D - 1 (for Total Successes >= D + 2)
  */
-export function calculateOperationalMomentum(totalSuccesses, targetDifficulty) {
+export function calculateOperationalMomentum(totalSuccesses, targetDifficulty, committedDice = 1) {
+  if (committedDice === 0) return 0; // Skin-in-the-Game: 0 committed dice cannot receive MOM refunds
   if (totalSuccesses >= targetDifficulty + 2) {
     return totalSuccesses - targetDifficulty - 1;
   }
