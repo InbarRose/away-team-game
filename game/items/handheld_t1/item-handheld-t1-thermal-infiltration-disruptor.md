@@ -32,7 +32,7 @@ tags:
   - "infiltrate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-thermal-infiltration-disruptor.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-thermal-infiltration-disruptor.png"
   aspect_ratio: "63:88"
   visual_description: "A two-handed directional electronic countermeasures rifle with an octagonal wave-emitter barrel that warps infrared light and dampens acoustic echoes."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

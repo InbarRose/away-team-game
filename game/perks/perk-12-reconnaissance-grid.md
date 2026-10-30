@@ -43,7 +43,7 @@ tags:
   - "recon"
   - "modifier-control"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_12_reconnaissance_grid.webp"
+  asset_path: "/assets/cards/perks/perk_12_reconnaissance_grid.png"
   aspect_ratio: "63:88"
   visual_description: "A recon specialist perched on an elevated gantry, peering through a multi-spectrum visor while a palm-sized pulse drone scans the room ahead with blue lidar wireframe beams."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

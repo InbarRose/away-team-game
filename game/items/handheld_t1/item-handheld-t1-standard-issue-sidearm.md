@@ -32,7 +32,7 @@ tags:
   - "combat"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-standard-issue-sidearm.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-standard-issue-sidearm.png"
   aspect_ratio: "63:88"
   visual_description: "A rugged, matte-black military semi-automatic pistol with an integrated green laser sight and digital ammo counter reading '15', resting on a scratched steel briefing table under harsh fluorescent lighting."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

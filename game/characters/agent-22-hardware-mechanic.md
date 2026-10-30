@@ -39,7 +39,7 @@ tags:
   - "primary-operations"
   - "secondary-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_22_hardware_mechanic.webp"
+  asset_path: "/assets/cards/characters/agent_22_hardware_mechanic.png"
   aspect_ratio: "63:88"
   visual_description: "A grease-streaked heavy mechanic in an industrial orange exo-harness slinging a servo-assisted plasma torch over her shoulder and holding a salvaged titanium power core."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

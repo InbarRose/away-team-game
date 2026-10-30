@@ -39,7 +39,7 @@ tags:
   - "primary-negotiate"
   - "secondary-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_18_crisis_coordinator.webp"
+  asset_path: "/assets/cards/characters/agent_18_crisis_coordinator.png"
   aspect_ratio: "63:88"
   visual_description: "A composed crisis negotiator in a white-and-amber armored diplomatic vest standing between two armed security teams with her hands raised, projecting a wide-band ceasefire hologram."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

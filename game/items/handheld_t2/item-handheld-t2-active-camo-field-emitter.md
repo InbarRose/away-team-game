@@ -31,7 +31,7 @@ tags:
   - "infiltrate"
   - "primary-recirculation"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-active-camo-field-emitter.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-active-camo-field-emitter.png"
   aspect_ratio: "63:88"
   visual_description: "A two-handed metamaterial light-bending projector rig with hexagonal prism emitters creating a shimmering purple optical refraction bubble around the operator's arms."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

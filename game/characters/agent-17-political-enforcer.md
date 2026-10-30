@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-negotiate"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_17_political_enforcer.webp"
+  asset_path: "/assets/cards/characters/agent_17_political_enforcer.png"
   aspect_ratio: "63:88"
   visual_description: "A towering corporate consul in an armored pin-striped overcoat holding a heavy gold-inlaid kinetic revolver in one hand and a glowing legal asset-seizure tablet in the other."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

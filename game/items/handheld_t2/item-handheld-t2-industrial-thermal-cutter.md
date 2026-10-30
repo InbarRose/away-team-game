@@ -31,7 +31,7 @@ tags:
   - "survival"
   - "primary-recirculation"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-industrial-thermal-cutter.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-industrial-thermal-cutter.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy-duty twin-beam magnetic plasma lance with armored heat-shield gauntlets, projecting a blinding green-white thermal arc."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

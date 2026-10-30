@@ -36,7 +36,7 @@ tags:
   - "salvage"
   - "rivalry"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_23_vulture_retribution.webp"
+  asset_path: "/assets/cards/agendas/agenda_23_vulture_retribution.png"
   aspect_ratio: "63:88"
   visual_description: "A cold-eyed operative retrieving a high-tech weapon from beside a fallen rival's dog tags in the rubble, scratching out the previous faction's serial emblem."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -32,7 +32,7 @@ tags:
   - "high-risk"
   - "combat"
 art_spec:
-  asset_path: "/assets/cards/items/combat_hyper_stim.webp"
+  asset_path: "/assets/cards/items/combat_hyper_stim.png"
   aspect_ratio: "63:88"
   visual_description: "A military pneumatic neck-injector loaded with twin pressurized vials of glowing crimson-orange hyper-stimulant, marked with biohazard and cardiac warning stencils."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

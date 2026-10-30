@@ -30,7 +30,7 @@ tags:
   - "tier-1"
   - "backfire-protection"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-impact-recoil-greaves.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-impact-recoil-greaves.png"
   aspect_ratio: "63:88"
   visual_description: "Armored lower-leg exoskeleton greaves with pneumatic heel dampers and magnetic sole stabilizers."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

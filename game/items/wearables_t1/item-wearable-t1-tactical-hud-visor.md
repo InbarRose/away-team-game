@@ -31,7 +31,7 @@ tags:
   - "reroll"
   - "utility"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-tactical-hud-visor.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-tactical-hud-visor.png"
   aspect_ratio: "63:88"
   visual_description: "A sleek wrap-around polycarbonate ballistic visor with an illuminated amber-and-cyan heads-up display projecting windage vectors and target reticles."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

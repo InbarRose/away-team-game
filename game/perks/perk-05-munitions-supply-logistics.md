@@ -43,7 +43,7 @@ tags:
   - "consumables"
   - "inventory"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_05_munitions_supply_logistics.webp"
+  asset_path: "/assets/cards/perks/perk_05_munitions_supply_logistics.png"
   aspect_ratio: "63:88"
   visual_description: "A heavily Rigged logistics specialist popping open a smoking orbital drop pod crate filled with glowing stim-injectors, EMP grenades, and high-density magazine packs."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -81,7 +81,7 @@ tags:
   - "facility"
   - "four-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.webp"
+  asset_path: "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.png"
   aspect_ratio: "70:120"
   visual_description: "An apocalyptic subterranean bioweapon reactor core in catastrophic meltdown, with toxic emerald containment vats shattering, elite black-armored Executive Guards firing plasma rifles, and the strike team sprinting toward an emergency rail-pod evacuation tunnel."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

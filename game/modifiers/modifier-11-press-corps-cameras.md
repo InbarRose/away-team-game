@@ -30,7 +30,7 @@ tags:
   - "broadcast"
   - "publicity"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_11_press_corps_cameras.webp"
+  asset_path: "/assets/cards/modifiers/modifier_11_press_corps_cameras.png"
   aspect_ratio: "63:88"
   visual_description: "Autonomous news-broadcast drones with glowing red 'LIVE FEED' lenses hovering above a firefight, beaming real-time squad telemetry directly to corporate boardroom screens."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

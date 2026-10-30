@@ -47,7 +47,7 @@ tags:
   - "credits"
   - "auctions"
 art_spec:
-  asset_path: "/assets/factions/faction_vanderbilt.webp"
+  asset_path: "/assets/factions/faction_vanderbilt.png"
   aspect_ratio: "70:120"
   visual_description: "An opulent gilded-brass and black-marble corporate sigil featuring a stylized sovereign crown integrated with rising financial ticker bars inside a penthouse boardroom overlooking an orbital skyline."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -30,7 +30,7 @@ tags:
   - "cryo"
   - "lockout"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_10_sub_zero_thermal_drop.webp"
+  asset_path: "/assets/cards/modifiers/modifier_10_sub_zero_thermal_drop.png"
   aspect_ratio: "63:88"
   visual_description: "Shattered liquid-nitrogen cryo-pipes encasing a corridor in jagged blue ice crystals, freezing an operative's weapon battery pack and frosting over their helmet visor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

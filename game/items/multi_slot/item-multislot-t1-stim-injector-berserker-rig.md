@@ -35,7 +35,7 @@ tags:
   - "auto-success"
   - "combat"
 art_spec:
-  asset_path: "/assets/cards/items/stim_injector_berserker_rig.webp"
+  asset_path: "/assets/cards/items/stim_injector_berserker_rig.png"
   aspect_ratio: "63:88"
   visual_description: "A brutalist combat harness and leg brace assembly lined with glowing crimson sub-dermal auto-injectors, biometric heart-rate monitors, and pneumatic vascular compression cuffs."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

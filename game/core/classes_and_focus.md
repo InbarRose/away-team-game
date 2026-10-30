@@ -134,4 +134,4 @@ Across the 6 classes, Focus pairings are mathematically distributed into **11 Pr
 > [!DIAGRAM]
 > **Figure 3.1 — The 50 / 35 / 15 Skewed Focus Pyramid & 6 Class Timing Windows**
 > * **Visual Specification:** Left side: 3-tier illuminated pyramid showing Tier 1 [Combat] (`50%`), Tier 2 `[Intel] / [Infiltrate] / [Negotiate]` (`35%`), and Tier 3 `[Operations] / [Survival]` (`15%`). Right side: Timeline of the 5-Step Stage Loop showing exact activation pins for Recon/Scientist/Diplomat (`Step 1 Briefing`), Soldier (`Phase 1/2 Pre-Roll`), Technician (`Post-Phase 1`), and Survivalist (`Step 4 Triage`).
-> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_3_1_focus_pyramid_timeline.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_3_1_focus_pyramid_timeline.png`

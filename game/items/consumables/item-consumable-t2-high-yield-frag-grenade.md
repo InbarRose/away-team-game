@@ -33,7 +33,7 @@ tags:
   - "combat"
   - "survival"
 art_spec:
-  asset_path: "/assets/cards/items/high_yield_frag_grenade.webp"
+  asset_path: "/assets/cards/items/high_yield_frag_grenade.png"
   aspect_ratio: "63:88"
   visual_description: "A segmented tungsten-matrix fragmentation grenade with a glowing red digital fuse ring, geometric shrapnel grooves, and a heavy spring-loaded spoon lever."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

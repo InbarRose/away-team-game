@@ -34,7 +34,7 @@ tags:
   - "turrets"
   - "suppression"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_02_automated_defense_turrets.webp"
+  asset_path: "/assets/cards/modifiers/modifier_02_automated_defense_turrets.png"
   aspect_ratio: "63:88"
   visual_description: "Twin ceiling-mounted rotary sentry turrets swiveling downward from recessed armor hatches, sweeping a security checkpoint with intersecting red targeting lasers."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

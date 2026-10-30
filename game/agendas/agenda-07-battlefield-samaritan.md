@@ -36,7 +36,7 @@ tags:
   - "healing"
   - "loyalty"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_07_battlefield_samaritan.webp"
+  asset_path: "/assets/cards/agendas/agenda_07_battlefield_samaritan.png"
   aspect_ratio: "63:88"
   visual_description: "An operative from one corporate faction injecting a glowing green trauma-stim into the neck seal of a critically wounded rival operative under heavy gunfire."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

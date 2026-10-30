@@ -44,7 +44,7 @@ tags:
   - "healing"
   - "trauma"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_infirmary.webp"
+  asset_path: "/assets/cards/hq/hq_infirmary.png"
   aspect_ratio: "70:120"
   visual_description: "A clinical sci-fi trauma bay inside an underground agency bunker featuring two robotic surgical beds, glowing holographic vital-sign monitors, and a pressurized gene-stasis cylinder along the back wall."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

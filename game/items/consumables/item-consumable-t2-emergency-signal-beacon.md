@@ -32,7 +32,7 @@ tags:
   - "squad-support"
   - "briefing"
 art_spec:
-  asset_path: "/assets/cards/items/emergency_signal_beacon.webp"
+  asset_path: "/assets/cards/items/emergency_signal_beacon.png"
   aspect_ratio: "63:88"
   visual_description: "A deployable tri-leg orbital transponder beacon with an extended telescoping antenna mast firing a high-intensity amber laser beam upward through a breached facility ceiling."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

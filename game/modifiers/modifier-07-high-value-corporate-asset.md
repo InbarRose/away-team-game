@@ -30,7 +30,7 @@ tags:
   - "credits"
   - "pip"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_07_high_value_corporate_asset.webp"
+  asset_path: "/assets/cards/modifiers/modifier_07_high_value_corporate_asset.png"
   aspect_ratio: "63:88"
   visual_description: "An illuminated stasis pedestal in the center of a lab holding a glowing prototype quantum core and a locked biometric briefcase marked 'EYES ONLY — EXECUTIVE BOARD'."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

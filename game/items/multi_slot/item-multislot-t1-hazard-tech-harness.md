@@ -34,7 +34,7 @@ tags:
   - "hazard-immunity"
   - "survival"
 art_spec:
-  asset_path: "/assets/cards/items/hazard_tech_harness.webp"
+  asset_path: "/assets/cards/items/hazard_tech_harness.png"
   aspect_ratio: "63:88"
   visual_description: "An integrated hermetically sealed industrial rebreather helmet and heavy chest harness with twin corrugated air-scrubbing hoses, glowing amber pressure gauges, and high-visibility hazard striping mounted on an equipment rack."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

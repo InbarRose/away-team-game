@@ -43,7 +43,7 @@ tags:
   - "healing"
   - "survival"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_04_combat_medic_corps.webp"
+  asset_path: "/assets/cards/perks/perk_04_combat_medic_corps.png"
   aspect_ratio: "63:88"
   visual_description: "A field medic kneeling behind a blast shield in a smoke-filled corridor, pressing glowing cryo-gel defibrillator paddles to a wounded operative's chest plate while biometric vitals spike green."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

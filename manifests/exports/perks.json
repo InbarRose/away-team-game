@@ -55,7 +55,7 @@
       "breacher"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_01_breacher_protocol.webp",
+      "asset_path": "/assets/cards/perks/perk_01_breacher_protocol.png",
       "aspect_ratio": "63:88",
       "visual_description": "An armored CQC point-man kicking through a reinforced steel bulkhead amidst sparks and muzzle flash, firing a compact submachine gun one-handed while an holographic tactical HUD highlights critical weak points.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -121,7 +121,7 @@
       "capstone-t4"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_02_ghost_incursion.webp",
+      "asset_path": "/assets/cards/perks/perk_02_ghost_incursion.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cloaked operative shimmering with active hexagonal optical camouflage, rappelling silently past sweeping red security lasers inside a darkened server vault.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -187,7 +187,7 @@
       "hacking"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_03_cyber_warfare_suite.webp",
+      "asset_path": "/assets/cards/perks/perk_03_cyber_warfare_suite.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cybernetic technician jacked directly into a smoking corporate mainframe via fiber-optic wrist cables, projecting cascading cyan decryption matrices that shatter red security ICE glyphs.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -251,7 +251,7 @@
       "survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_04_combat_medic_corps.webp",
+      "asset_path": "/assets/cards/perks/perk_04_combat_medic_corps.png",
       "aspect_ratio": "63:88",
       "visual_description": "A field medic kneeling behind a blast shield in a smoke-filled corridor, pressing glowing cryo-gel defibrillator paddles to a wounded operative's chest plate while biometric vitals spike green.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -315,7 +315,7 @@
       "inventory"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_05_munitions_supply_logistics.webp",
+      "asset_path": "/assets/cards/perks/perk_05_munitions_supply_logistics.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily Rigged logistics specialist popping open a smoking orbital drop pod crate filled with glowing stim-injectors, EMP grenades, and high-density magazine packs.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -385,7 +385,7 @@
       "capstone-t4"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_06_venture_monopoly.webp",
+      "asset_path": "/assets/cards/perks/perk_06_venture_monopoly.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-suited corporate liaison standing in an orbital vault beside stacked gold-plated credit chits and holographic market tickers showing hostile buyout approvals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -451,7 +451,7 @@
       "agendas"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_07_political_pr_network.webp",
+      "asset_path": "/assets/cards/perks/perk_07_political_pr_network.png",
       "aspect_ratio": "63:88",
       "visual_description": "A charismatic diplomat surrounded by hovering micro-camera drones, adjusting a broadcast feed on a wrist tablet that transforms battlefield chaos into heroic corporate propaganda.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -515,7 +515,7 @@
       "vulture"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_08_scrapyard_engineering.webp",
+      "asset_path": "/assets/cards/perks/perk_08_scrapyard_engineering.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged scavenger mechanic using an arc-welder torch to patch a cracked ceramic chest plate in the field, surrounded by stripped drone servos and salvaged weapon modules.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -579,7 +579,7 @@
       "capstone-t4"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_09_hazard_survivalist.webp",
+      "asset_path": "/assets/cards/perks/perk_09_hazard_survivalist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sealed hazmat ranger striding unbothered through venting green corrosive gas and sub-zero frost, respirator glowing amber while scanning a safe path on a thermal wrist compass.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -643,7 +643,7 @@
       "support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_10_vanguard_leadership.webp",
+      "asset_path": "/assets/cards/perks/perk_10_vanguard_leadership.png",
       "aspect_ratio": "63:88",
       "visual_description": "A veteran squad commander projecting a 3D holographic floorplan from a forearm emitter, pointing three armed operatives into synchronized flanking positions.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -707,7 +707,7 @@
       "tank"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_11_juggernaut_bulwark.webp",
+      "asset_path": "/assets/cards/perks/perk_11_juggernaut_bulwark.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering heavy-weapons operative clad in ablative ceramic exo-armor, deploying an expandable forearm riot shield to deflect a hail of ricocheting rounds away from a crouching teammate.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -771,7 +771,7 @@
       "modifier-control"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_12_reconnaissance_grid.webp",
+      "asset_path": "/assets/cards/perks/perk_12_reconnaissance_grid.png",
       "aspect_ratio": "63:88",
       "visual_description": "A recon specialist perched on an elevated gantry, peering through a multi-spectrum visor while a palm-sized pulse drone scans the room ahead with blue lidar wireframe beams.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

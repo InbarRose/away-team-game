@@ -93,7 +93,7 @@ describe('Suite 02: Component YAML Frontmatter Schema & Generative Art Pipeline'
 
     for (const entry of artManifest) {
       assert.ok(
-        entry.asset_path && entry.asset_path.startsWith('/assets/') && entry.asset_path.endsWith('.webp'),
+        entry.asset_path && entry.asset_path.startsWith('/assets/') && (entry.asset_path.endsWith('.webp') || entry.asset_path.endsWith('.png')),
         `Invalid asset_path for ${entry.id}: ${entry.asset_path}`
       );
       assert.ok(

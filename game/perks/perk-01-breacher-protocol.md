@@ -43,7 +43,7 @@ tags:
   - "kinetic"
   - "breacher"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_01_breacher_protocol.webp"
+  asset_path: "/assets/cards/perks/perk_01_breacher_protocol.png"
   aspect_ratio: "63:88"
   visual_description: "An armored CQC point-man kicking through a reinforced steel bulkhead amidst sparks and muzzle flash, firing a compact submachine gun one-handed while an holographic tactical HUD highlights critical weak points."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -31,7 +31,7 @@ tags:
   - "defense"
   - "secondary-focus"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-auxiliary-sensor-monocle.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-auxiliary-sensor-monocle.png"
   aspect_ratio: "63:88"
   visual_description: "A precision temple-mounted cybernetic monocle with a rotating aperture ring and green holographic diagnostic overlay."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

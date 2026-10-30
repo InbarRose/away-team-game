@@ -31,7 +31,7 @@ tags:
   - "modifier-nullification"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-threat-predictive-telemetry-helm.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-threat-predictive-telemetry-helm.png"
   aspect_ratio: "63:88"
   visual_description: "A recon helmet topped with a compact wide-band radar dome and glowing cyan threat-vector projection visor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

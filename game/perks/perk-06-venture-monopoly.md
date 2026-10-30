@@ -47,7 +47,7 @@ tags:
   - "economy"
   - "capstone-t4"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_06_venture_monopoly.webp"
+  asset_path: "/assets/cards/perks/perk_06_venture_monopoly.png"
   aspect_ratio: "63:88"
   visual_description: "A sharp-suited corporate liaison standing in an orbital vault beside stacked gold-plated credit chits and holographic market tickers showing hostile buyout approvals."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

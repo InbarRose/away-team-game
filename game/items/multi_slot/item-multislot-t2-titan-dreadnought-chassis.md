@@ -37,7 +37,7 @@ tags:
   - "extra-hand"
   - "backfire-immunity"
 art_spec:
-  asset_path: "/assets/cards/items/titan_dreadnought_chassis.webp"
+  asset_path: "/assets/cards/items/titan_dreadnought_chassis.png"
   aspect_ratio: "63:88"
   visual_description: "A massive full-body mechanized dreadnought armor chassis in weathered industrial amber and gunmetal steel, with a recessed sensor-slit helmet, dorsal reactor exhaust vents glowing molten orange, and an auxiliary servo-arm."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

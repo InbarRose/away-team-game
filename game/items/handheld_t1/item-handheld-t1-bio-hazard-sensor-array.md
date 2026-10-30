@@ -34,7 +34,7 @@ tags:
   - "intel"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-bio-hazard-sensor-array.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-bio-hazard-sensor-array.png"
   aspect_ratio: "63:88"
   visual_description: "A rugged handheld telemetry scanner with dual articulated sensor wands, a green-and-cyan spectrographic display showing airborne pathogen density, and hazard warning stripes."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

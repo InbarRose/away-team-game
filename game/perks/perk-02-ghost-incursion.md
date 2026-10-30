@@ -44,7 +44,7 @@ tags:
   - "stealth"
   - "capstone-t4"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_02_ghost_incursion.webp"
+  asset_path: "/assets/cards/perks/perk_02_ghost_incursion.png"
   aspect_ratio: "63:88"
   visual_description: "A cloaked operative shimmering with active hexagonal optical camouflage, rappelling silently past sweeping red security lasers inside a darkened server vault."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

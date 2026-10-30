@@ -31,7 +31,7 @@ tags:
   - "healing"
   - "instant"
 art_spec:
-  asset_path: "/assets/cards/items/field_trauma_medkit.webp"
+  asset_path: "/assets/cards/items/field_trauma_medkit.png"
   aspect_ratio: "63:88"
   visual_description: "A compact white-and-red polycarbonate field trauma pouch popped open to reveal hemostatic bio-gel syringes, laser wound-staplers, and sterile synth-skin patches on a metal grating floor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

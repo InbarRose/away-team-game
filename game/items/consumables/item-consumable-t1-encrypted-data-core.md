@@ -33,7 +33,7 @@ tags:
   - "credits"
   - "effort"
 art_spec:
-  asset_path: "/assets/cards/items/encrypted_data_core.webp"
+  asset_path: "/assets/cards/items/encrypted_data_core.png"
   aspect_ratio: "63:88"
   visual_description: "A hexagonal ruggedized solid-state memory core with glowing cyan optical fiber data ports, gold-plated contact pins, and a holographic security seal."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

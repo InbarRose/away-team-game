@@ -42,7 +42,7 @@ tags:
   - "modifiers"
   - "side-missions"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_intel_array.webp"
+  asset_path: "/assets/cards/hq/hq_intel_array.png"
   aspect_ratio: "70:120"
   visual_description: "A cavernous subterranean satellite telemetry hub dominated by a glowing 3D topographical globe, multi-band signal receivers, and banks of decryption terminals."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

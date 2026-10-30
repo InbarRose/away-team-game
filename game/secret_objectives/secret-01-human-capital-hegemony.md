@@ -35,7 +35,7 @@ tags:
   - "personnel"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_01_human_capital_hegemony.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_01_human_capital_hegemony.png"
   aspect_ratio: "63:88"
   visual_description: "A towering holographic wall of honor inside a corporate headquarters displaying decorated veteran operatives and glowing royal-blue loyalty chevrons."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

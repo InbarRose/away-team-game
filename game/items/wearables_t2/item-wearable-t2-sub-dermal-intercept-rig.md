@@ -31,7 +31,7 @@ tags:
   - "squad-support"
   - "damage-prevention"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-sub-dermal-intercept-rig.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-sub-dermal-intercept-rig.png"
   aspect_ratio: "63:88"
   visual_description: "A directional kinetic-deflection chest rig with hexagonal electromagnetic projector plates that flare with a blue hard-light barrier."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

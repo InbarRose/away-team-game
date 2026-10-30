@@ -63,7 +63,7 @@ tags:
   - "facility"
   - "two-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.webp"
+  asset_path: "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.png"
   aspect_ratio: "70:120"
   visual_description: "A rain-slicked cyberpunk alleyway in the Neon Syndicate District leading to a heavy biometric vault door, split with a tactical inset of a snow-swept mountain perimeter watchtower guarding a subterranean elevator shaft."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

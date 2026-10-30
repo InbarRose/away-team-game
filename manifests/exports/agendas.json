@@ -42,7 +42,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_01_overwhelming_force.webp",
+      "asset_path": "/assets/cards/agendas/agenda_01_overwhelming_force.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy assault soldier advancing through shattered concrete cover with a rotary cannon blazing, while a holographic corporate performance meter hits 'MAXIMUM MOMENTUM' in crimson.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -93,7 +93,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_02_shadow_dominance.webp",
+      "asset_path": "/assets/cards/agendas/agenda_02_shadow_dominance.png",
       "aspect_ratio": "63:88",
       "visual_description": "A stealth operative Dropping silently from an overhead ventilation shaft behind two oblivious corporate guards, while security monitors display 'ZERO ALERTS DETECTED' in purple.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -144,7 +144,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_03_telemetry_apex.webp",
+      "asset_path": "/assets/cards/agendas/agenda_03_telemetry_apex.png",
       "aspect_ratio": "63:88",
       "visual_description": "An intelligence specialist illuminated by three floating holographic data globes, extracting a glowing cyan core drive from a high-security server rack.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -195,7 +195,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_04_system_overclock.webp",
+      "asset_path": "/assets/cards/agendas/agenda_04_system_overclock.png",
       "aspect_ratio": "63:88",
       "visual_description": "A combat engineer slamming a heavy manual override lever inside a sparking fusion reactor control room, orange warning strobes shifting to steady operational green.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -246,7 +246,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_05_executive_leverage.webp",
+      "asset_path": "/assets/cards/agendas/agenda_05_executive_leverage.png",
       "aspect_ratio": "63:88",
       "visual_description": "A corporate negotiator sliding an encrypted blackmail slate across a glass conference table toward a sweating facility director, flanked by armed security standing down.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -297,7 +297,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_06_hazard_mastery.webp",
+      "asset_path": "/assets/cards/agendas/agenda_06_hazard_mastery.png",
       "aspect_ratio": "63:88",
       "visual_description": "A survivalist operative cutting through a bio-contaminated ventilation tunnel with a plasma torch, guiding the squad around a sealed blast door.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -348,7 +348,7 @@
       "loyalty"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_07_battlefield_samaritan.webp",
+      "asset_path": "/assets/cards/agendas/agenda_07_battlefield_samaritan.png",
       "aspect_ratio": "63:88",
       "visual_description": "An operative from one corporate faction injecting a glowing green trauma-stim into the neck seal of a critically wounded rival operative under heavy gunfire.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -399,7 +399,7 @@
       "combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_08_forced_entry.webp",
+      "asset_path": "/assets/cards/agendas/agenda_08_forced_entry.png",
       "aspect_ratio": "63:88",
       "visual_description": "A squad leader detonating a shaped breaching charge on an encrypted biometric vault door, bypassing the keypad entirely as armored troops storm through the smoke.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -450,7 +450,7 @@
       "flawless"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_09_command_resilience.webp",
+      "asset_path": "/assets/cards/agendas/agenda_09_command_resilience.png",
       "aspect_ratio": "63:88",
       "visual_description": "A composed field commander coordinating an orbital supply drop beacon on a rainy extraction pad, all four squad icons on their tactical visor glowing green with full readiness.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -501,7 +501,7 @@
       "endurance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_10_iron_will.webp",
+      "asset_path": "/assets/cards/agendas/agenda_10_iron_will.png",
       "aspect_ratio": "63:88",
       "visual_description": "A battered operative with a cracked helmet visor and sparking shoulder armor bracing against a bulkhead, still firing accurately through the smoke to secure the objective.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -552,7 +552,7 @@
       "landmark"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_11_flagship_investor.webp",
+      "asset_path": "/assets/cards/agendas/agenda_11_flagship_investor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A faction executive unveiling a golden corporate dedication plaque inside a newly constructed orbital Cryo-Stasis Chamber while construction drones complete the final welds.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -603,7 +603,7 @@
       "medical"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_12_medical_benefactor.webp",
+      "asset_path": "/assets/cards/agendas/agenda_12_medical_benefactor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A surgical robot pod in the HQ Infirmary treating a rival faction's wounded operative, while an authorization screen displays 'SPONSORED BY EXTERNAL Faction GRANT'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -654,7 +654,7 @@
       "credits"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_13_strategic_concession.webp",
+      "asset_path": "/assets/cards/agendas/agenda_13_strategic_concession.png",
       "aspect_ratio": "63:88",
       "visual_description": "A senior corporate director leaning back in a leather boardroom chair and lowering their bidding paddle with a knowing smirk as a rival executive claims the command gavel.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -705,7 +705,7 @@
       "sponsorship"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_14_industrial_monopoly.webp",
+      "asset_path": "/assets/cards/agendas/agenda_14_industrial_monopoly.png",
       "aspect_ratio": "63:88",
       "visual_description": "A panoramic view of the Agency HQ base schematic where two adjacent facility wings light up simultaneously with the same faction's corporate insignia.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -756,7 +756,7 @@
       "bailout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_15_corporate_relief.webp",
+      "asset_path": "/assets/cards/agendas/agenda_15_corporate_relief.png",
       "aspect_ratio": "63:88",
       "visual_description": "A wealthy faction liaison handing an encrypted case of gold credit chips to a desperate rival quartermaster beside an empty vault terminal reading 'BALANCE: 0 CR'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -807,7 +807,7 @@
       "sponsorship"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_16_structural_mastery.webp",
+      "asset_path": "/assets/cards/agendas/agenda_16_structural_mastery.png",
       "aspect_ratio": "63:88",
       "visual_description": "An architectural holo-table in the HQ Boardroom displaying three fully operational, upgraded base modules locked into the station's structural core.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -858,7 +858,7 @@
       "equipment"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_17_black_market_sponsor.webp",
+      "asset_path": "/assets/cards/agendas/agenda_17_black_market_sponsor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A quartermaster sliding an unlocked weapon case containing a pristine pulse rifle across the armory counter to a rival faction operative while a corporate sponsor signs the tab.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -909,7 +909,7 @@
       "progression"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_18_veteran_promotion.webp",
+      "asset_path": "/assets/cards/agendas/agenda_18_veteran_promotion.png",
       "aspect_ratio": "63:88",
       "visual_description": "A battle-scarred specialist standing at attention in the HQ briefing hall as a holographic Tier-3 loyalty commendation badge is pinned to their armored collar.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -960,7 +960,7 @@
       "multi-slot"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_19_heavy_loadout_chassis.webp",
+      "asset_path": "/assets/cards/agendas/agenda_19_heavy_loadout_chassis.png",
       "aspect_ratio": "63:88",
       "visual_description": "An operative locked into a powered exo-frame rig inside the drop-bay gantry, lifting a massive two-handed railgun as mechanical arms secure their armor plates.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1011,7 +1011,7 @@
       "medbay"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_20_cybernetic_reconstruction.webp",
+      "asset_path": "/assets/cards/agendas/agenda_20_cybernetic_reconstruction.png",
       "aspect_ratio": "63:88",
       "visual_description": "A veteran operative sitting on a surgical table in the Cybernetic Lab, flexing a newly attached chrome-and-carbon bionic arm as laser calibrators seal the shoulder joint.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1062,7 +1062,7 @@
       "high-risk"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_21_battle_hardened_vanguard.webp",
+      "asset_path": "/assets/cards/agendas/agenda_21_battle_hardened_vanguard.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily bandaged, limping veteran boarding the extraction dropship with smoking weapon in hand, biometric suit warnings flashing amber yet vitals holding steady.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1113,7 +1113,7 @@
       "merit"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_22_pure_blood_loyalty.webp",
+      "asset_path": "/assets/cards/agendas/agenda_22_pure_blood_loyalty.png",
       "aspect_ratio": "63:88",
       "visual_description": "An operative carving a third tally mark into the stock of their service rifle inside a dimly lit dropship cabin after a brutal mission clearance.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1164,7 +1164,7 @@
       "rivalry"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_23_vulture_retribution.webp",
+      "asset_path": "/assets/cards/agendas/agenda_23_vulture_retribution.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cold-eyed operative retrieving a high-tech weapon from beside a fallen rival's dog tags in the rubble, scratching out the previous faction's serial emblem.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1215,7 +1215,7 @@
       "versatility"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_24_elite_cross_training.webp",
+      "asset_path": "/assets/cards/agendas/agenda_24_elite_cross_training.png",
       "aspect_ratio": "63:88",
       "visual_description": "A soldier inside the HQ Tactical Simulator wearing a neural training headset, seamlessly transitioning from heavy rifle marksmanship to decrypting a holographic security console.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

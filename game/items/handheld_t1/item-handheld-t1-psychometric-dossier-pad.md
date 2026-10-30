@@ -34,7 +34,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-psychometric-dossier-pad.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-psychometric-dossier-pad.png"
   aspect_ratio: "63:88"
   visual_description: "A slim, glass-screen intelligence datapad displaying facial recognition overlays, psychological vulnerability scores, and classified corporate blackmail files."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -36,7 +36,7 @@ tags:
   - "trauma-purge"
   - "medbay"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_20_cybernetic_reconstruction.webp"
+  asset_path: "/assets/cards/agendas/agenda_20_cybernetic_reconstruction.png"
   aspect_ratio: "63:88"
   visual_description: "A veteran operative sitting on a surgical table in the Cybernetic Lab, flexing a newly attached chrome-and-carbon bionic arm as laser calibrators seal the shoulder joint."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -34,7 +34,7 @@ tags:
   - "infiltrate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-mag-lock-bypass-rig.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-mag-lock-bypass-rig.png"
   aspect_ratio: "63:88"
   visual_description: "A compact, high-frequency electronic lockpicker with copper induction coils, magnetic contact prongs, and an oscillating purple-and-orange waveform screen clamped onto a heavy security bulkhead."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

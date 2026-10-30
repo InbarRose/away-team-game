@@ -56,7 +56,7 @@ tags:
   - "vip-extraction"
   - "four-mission-arc"
 art_spec:
-  asset_path: "/assets/cards/campaigns/campaign_apex_extraction.webp"
+  asset_path: "/assets/cards/campaigns/campaign_apex_extraction.png"
   aspect_ratio: "70:120"
   visual_description: "A high-stakes tactical command dossier showing a satellite thermal feed of a heavily fortified mountain bioweapons complex, an armored convoy racing along a collapsing cliffside highway under gunship fire, and biometric mugshots of VIP targets Dr. Elena Vance and Dr. Kaelen stamped 'PRIORITY EXTRACTION'."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

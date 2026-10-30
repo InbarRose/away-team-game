@@ -41,7 +41,7 @@ tags:
   - "zero-combat"
   - "glass-cannon"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_08_prowler.webp"
+  asset_path: "/assets/cards/characters/agent_08_prowler.png"
   aspect_ratio: "63:88"
   visual_description: "A cyber-augmented cat-burglar operative with glowing violet optical implants and neural data-jacks, siphoning encrypted credits from a breached corporate vault terminal in the dark."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -36,7 +36,7 @@ tags:
   - "infirmary"
   - "medical"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_12_medical_benefactor.webp"
+  asset_path: "/assets/cards/agendas/agenda_12_medical_benefactor.png"
   aspect_ratio: "63:88"
   visual_description: "A surgical robot pod in the HQ Infirmary treating a rival faction's wounded operative, while an authorization screen displays 'SPONSORED BY EXTERNAL Faction GRANT'."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

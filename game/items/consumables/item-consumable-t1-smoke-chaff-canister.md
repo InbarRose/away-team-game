@@ -31,7 +31,7 @@ tags:
   - "backfire-negation"
   - "resolution"
 art_spec:
-  asset_path: "/assets/cards/items/smoke_chaff_canister.webp"
+  asset_path: "/assets/cards/items/smoke_chaff_canister.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy ribbed cylindrical grenade canister venting thick swirling gray thermal-smoke and glittering metallic radar-chaff strips across a dimly lit corridor floor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

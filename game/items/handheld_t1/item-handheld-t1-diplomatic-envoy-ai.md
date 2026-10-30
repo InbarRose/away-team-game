@@ -34,7 +34,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-diplomatic-envoy-ai.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-diplomatic-envoy-ai.png"
   aspect_ratio: "63:88"
   visual_description: "A palm-sized biometric communicator and neural earpiece unit displaying real-time vocal stress waveforms, heart-rate telemetry, and crisis de-escalation prompts."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

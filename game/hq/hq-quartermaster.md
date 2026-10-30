@@ -42,7 +42,7 @@ tags:
   - "shop"
   - "equipment"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_quartermaster.webp"
+  asset_path: "/assets/cards/hq/hq_quartermaster.png"
   aspect_ratio: "70:120"
   visual_description: "A fortified underground weapons cage and automated ordnance rack displaying matte-black carbines, exo-rigs, and tactical visors behind a reinforced wire-mesh counter."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

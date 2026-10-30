@@ -36,7 +36,7 @@ tags:
   - "engineering"
   - "dominance"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_04_system_overclock.webp"
+  asset_path: "/assets/cards/agendas/agenda_04_system_overclock.png"
   aspect_ratio: "63:88"
   visual_description: "A combat engineer slamming a heavy manual override lever inside a sparking fusion reactor control room, orange warning strobes shifting to steady operational green."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

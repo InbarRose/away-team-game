@@ -32,7 +32,7 @@ tags:
   - "survival"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-industrial-hazard-cutter.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-industrial-hazard-cutter.png"
   aspect_ratio: "63:88"
   visual_description: "A two-handed hydraulic rescue spreader and plasma torch Rig painted in weathered hazard yellow, throwing white-hot sparks as it shears through collapsed steel girders."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

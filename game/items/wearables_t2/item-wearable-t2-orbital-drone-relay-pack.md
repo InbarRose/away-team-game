@@ -32,7 +32,7 @@ tags:
   - "dice-recovery"
   - "recon"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-orbital-drone-relay-pack.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-orbital-drone-relay-pack.png"
   aspect_ratio: "63:88"
   visual_description: "A satellite uplink backpack with a dorsal launch cradle deploying a winged micro-recon drone surrounded by cyan telemetry beams."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

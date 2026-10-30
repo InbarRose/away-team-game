@@ -36,7 +36,7 @@ tags:
   - "backfire"
   - "endurance"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_10_iron_will.webp"
+  asset_path: "/assets/cards/agendas/agenda_10_iron_will.png"
   aspect_ratio: "63:88"
   visual_description: "A battered operative with a cracked helmet visor and sparking shoulder armor bracing against a bulkhead, still firing accurately through the smoke to secure the objective."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -31,7 +31,7 @@ tags:
   - "defense"
   - "out-of-focus"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-hazard-insulation-harness.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-hazard-insulation-harness.png"
   aspect_ratio: "63:88"
   visual_description: "A rubberized high-voltage and thermal insulation chest harness with copper grounding straps and chemical-resistant chest pads."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

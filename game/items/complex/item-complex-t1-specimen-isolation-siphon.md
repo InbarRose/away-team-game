@@ -34,7 +34,7 @@ tags:
   - "intel"
   - "operations"
 art_spec:
-  asset_path: "/assets/cards/items/specimen_isolation_siphon.webp"
+  asset_path: "/assets/cards/items/specimen_isolation_siphon.png"
   aspect_ratio: "63:88"
   visual_description: "A pressurized cryo-containment cylinder encased in a titanium roll-cage, with a frosted armoured glass viewport illuminating a suspended bio-luminescent specimen in green stasis fluid."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

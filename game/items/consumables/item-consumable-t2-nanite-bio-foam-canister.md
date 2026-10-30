@@ -32,7 +32,7 @@ tags:
   - "trauma-suppression"
   - "instant"
 art_spec:
-  asset_path: "/assets/cards/items/nanite_bio_foam_canister.webp"
+  asset_path: "/assets/cards/items/nanite_bio_foam_canister.png"
   aspect_ratio: "63:88"
   visual_description: "A pressurized titanium medical aerosol canister with a surgical applicator nozzle, glowing emerald bioluminescent nanite suspension window, and Ascendant Bio-Tech clinical markings."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

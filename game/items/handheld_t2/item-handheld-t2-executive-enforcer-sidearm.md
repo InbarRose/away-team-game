@@ -37,7 +37,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-executive-enforcer-sidearm.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-executive-enforcer-sidearm.png"
   aspect_ratio: "63:88"
   visual_description: "An ornate yet lethal corporate revolver with brushed gold-titanium inlays, an integrated polygraph biometric scanner, and encrypted dossier projector."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

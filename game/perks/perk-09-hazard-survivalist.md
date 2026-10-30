@@ -43,7 +43,7 @@ tags:
   - "hazard"
   - "capstone-t4"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_09_hazard_survivalist.webp"
+  asset_path: "/assets/cards/perks/perk_09_hazard_survivalist.png"
   aspect_ratio: "63:88"
   visual_description: "A sealed hazmat ranger striding unbothered through venting green corrosive gas and sub-zero frost, respirator glowing amber while scanning a safe path on a thermal wrist compass."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

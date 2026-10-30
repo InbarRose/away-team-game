@@ -70,7 +70,7 @@ tags:
   - "scientist-bonus"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.webp"
+  asset_path: "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.png"
   aspect_ratio: "70:120"
   visual_description: "An overgrown jungle bio-research atrium with shattered stasis tubes and encroaching alien bioluminescent vines, where operatives in hazard gear hold off swarming chimeras while a Scientist extracts glowing genetic cryo-canisters."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

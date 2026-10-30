@@ -58,7 +58,7 @@
       "pmc"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_aegis.webp",
+      "asset_path": "/assets/factions/faction_aegis.png",
       "aspect_ratio": "70:120",
       "visual_description": "A brutalist gunmetal-slate corporate command crest featuring an angular tactical shield bisected by twin heavy rifle barrels, set against an armored bulkhead lit by cold tactical HUD projections.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -125,7 +125,7 @@
       "effort-engine"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_ascendant.webp",
+      "asset_path": "/assets/factions/faction_ascendant.png",
       "aspect_ratio": "70:120",
       "visual_description": "A glowing toxic-emerald double-helix emblem coiled around a surgical caduceus inside a pressurized bio-containment cylinder filled with bioluminescent nutrient fluid.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -192,7 +192,7 @@
       "media"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_aurelius.webp",
+      "asset_path": "/assets/factions/faction_aurelius.png",
       "aspect_ratio": "70:120",
       "visual_description": "A luminous broadcasting-indigo corporate crest shaped like an orbital satellite dish projecting concentric signal waves around a stylized globe inside a high-tech media control room.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -259,7 +259,7 @@
       "consumables"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_ironclad.webp",
+      "asset_path": "/assets/factions/faction_ironclad.png",
       "aspect_ratio": "70:120",
       "visual_description": "A weathered rust-bronze industrial claw emblem clamping onto a salvaged reactor core, stenciled onto pitted hull plating with welding sparks flying in the background.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -326,7 +326,7 @@
       "telemetry"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_nexus.webp",
+      "asset_path": "/assets/factions/faction_nexus.png",
       "aspect_ratio": "70:120",
       "visual_description": "A sleek neon-cyan holographic neural lattice emblem hovering inside a dark clean-room server core, with fiber-optic data streams converging into a stylized cybernetic iris.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -393,7 +393,7 @@
       "stealth"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_obsidian.webp",
+      "asset_path": "/assets/factions/faction_obsidian.png",
       "aspect_ratio": "70:120",
       "visual_description": "A razor-sharp matte-obsidian geometric monolith emblem fractured with faint violet light seams, emerging from deep shadow inside a covert black-site briefing room.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -460,7 +460,7 @@
       "dice-refresh"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_titan.webp",
+      "asset_path": "/assets/factions/faction_titan.png",
       "aspect_ratio": "70:120",
       "visual_description": "An industrial hazard-amber corporate emblem featuring a heavy orbital drop-pod descending through atmospheric plasma inside a colossal mechanized cargo bay.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -527,7 +527,7 @@
       "auctions"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_vanderbilt.webp",
+      "asset_path": "/assets/factions/faction_vanderbilt.png",
       "aspect_ratio": "70:120",
       "visual_description": "An opulent gilded-brass and black-marble corporate sigil featuring a stylized sovereign crown integrated with rising financial ticker bars inside a penthouse boardroom overlooking an orbital skyline.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

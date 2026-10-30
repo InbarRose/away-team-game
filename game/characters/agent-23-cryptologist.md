@@ -40,7 +40,7 @@ tags:
   - "secondary-intel"
   - "zero-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_23_cryptologist.webp"
+  asset_path: "/assets/cards/characters/agent_23_cryptologist.png"
   aspect_ratio: "63:88"
   visual_description: "A slender cryptologist in a high-collared technical jacket with fiber-optic data cables extending from his wrists into a floating holographic encryption prism."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

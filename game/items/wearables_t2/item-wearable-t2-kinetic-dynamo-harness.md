@@ -30,7 +30,7 @@ tags:
   - "tier-2"
   - "effort-engine"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-kinetic-dynamo-harness.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-kinetic-dynamo-harness.png"
   aspect_ratio: "63:88"
   visual_description: "An industrial torso harness wrapped in copper-and-teal electromagnetic induction coils and high-density Effort battery cells."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

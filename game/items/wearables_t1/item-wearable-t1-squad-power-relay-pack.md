@@ -31,7 +31,7 @@ tags:
   - "squad-support"
   - "dice-recovery"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-squad-power-relay-pack.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-squad-power-relay-pack.png"
   aspect_ratio: "63:88"
   visual_description: "A dorsal battery-relay pack with twin induction coils and glowing cyan power-transfer tethers."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

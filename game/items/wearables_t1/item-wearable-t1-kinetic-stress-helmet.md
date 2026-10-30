@@ -31,7 +31,7 @@ tags:
   - "effort-engine"
   - "damage-trigger"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-kinetic-stress-helmet.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-kinetic-stress-helmet.png"
   aspect_ratio: "63:88"
   visual_description: "An enclosed tactical combat helmet wired with glowing electric-teal neural telemetry nodes and biometric stress sensors along the temples."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

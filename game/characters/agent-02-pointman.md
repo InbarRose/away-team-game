@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-infiltrate"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_02_pointman.webp"
+  asset_path: "/assets/cards/characters/agent_02_pointman.png"
   aspect_ratio: "63:88"
   visual_description: "A sharp-eyed female point-operative in sleek dark-slate recon-assault armor, aiming a suppressed carbine around a rain-slicked concrete pillar with a green thermal optic over one eye."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

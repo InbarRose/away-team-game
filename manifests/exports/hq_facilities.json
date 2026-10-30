@@ -55,7 +55,7 @@
       "perks"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_boardroom.webp",
+      "asset_path": "/assets/cards/hq/hq_boardroom.png",
       "aspect_ratio": "70:120",
       "visual_description": "A high-security monolithic obsidian boardroom table surrounded by leather executive chairs, encrypted voting consoles, and an illuminated corporate seal overhead.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -120,7 +120,7 @@
       "trauma"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_infirmary.webp",
+      "asset_path": "/assets/cards/hq/hq_infirmary.png",
       "aspect_ratio": "70:120",
       "visual_description": "A clinical sci-fi trauma bay inside an underground agency bunker featuring two robotic surgical beds, glowing holographic vital-sign monitors, and a pressurized gene-stasis cylinder along the back wall.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -183,7 +183,7 @@
       "side-missions"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_intel_array.webp",
+      "asset_path": "/assets/cards/hq/hq_intel_array.png",
       "aspect_ratio": "70:120",
       "visual_description": "A cavernous subterranean satellite telemetry hub dominated by a glowing 3D topographical globe, multi-band signal receivers, and banks of decryption terminals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -222,7 +222,7 @@
       "sponsor-controlled"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_cryo_stasis.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_cryo_stasis.png",
       "aspect_ratio": "70:120",
       "visual_description": "A towering cylindrical cryogenic immersion pod frosted with liquid nitrogen vapor, illuminated from within by deep cyan bio-lasers monitoring a suspended operative.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -260,7 +260,7 @@
       "armory"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_supply_lines.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_supply_lines.png",
       "aspect_ratio": "70:120",
       "visual_description": "An automated orbital launch rail inside an armored silo firing a heavy reinforced resupply pod toward an open sky hatch amid clouds of exhaust steam.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -299,7 +299,7 @@
       "sponsor-controlled"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_tactical_simulator.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_tactical_simulator.png",
       "aspect_ratio": "70:120",
       "visual_description": "A hexagonal holographic combat simulation chamber with projection emitters casting wireframe urban cover and target silhouettes around a training operative.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -337,7 +337,7 @@
       "perks"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_war_room.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_war_room.png",
       "aspect_ratio": "70:120",
       "visual_description": "A circular tiered command amphitheater centered around a massive holographic tactical battle-map showing orbital drop vectors and threat zones.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -400,7 +400,7 @@
       "equipment"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_quartermaster.webp",
+      "asset_path": "/assets/cards/hq/hq_quartermaster.png",
       "aspect_ratio": "70:120",
       "visual_description": "A fortified underground weapons cage and automated ordnance rack displaying matte-black carbines, exo-rigs, and tactical visors behind a reinforced wire-mesh counter.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -464,7 +464,7 @@
       "loyalty"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_recruitment_bureau.webp",
+      "asset_path": "/assets/cards/hq/hq_recruitment_bureau.png",
       "aspect_ratio": "70:120",
       "visual_description": "A dimly lit corporate personnel dossier room featuring wall-sized holographic operative profiles, biometric scanners, and encrypted contract terminals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -35,7 +35,7 @@ tags:
   - "economy"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_02_corporate_liquidity.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_02_corporate_liquidity.png"
   aspect_ratio: "63:88"
   visual_description: "A reinforced titanium bank vault open to reveal rows of illuminated gold corporate credit ingots and digital ledger screens showing massive liquid reserves."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

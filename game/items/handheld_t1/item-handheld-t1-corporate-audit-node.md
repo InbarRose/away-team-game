@@ -34,7 +34,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-corporate-audit-node.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-corporate-audit-node.png"
   aspect_ratio: "63:88"
   visual_description: "A sleek brushed-titanium executive tablet with a biometric thumb scanner, glowing amber financial ledgers, and an encrypted satellite uplink antenna."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

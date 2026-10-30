@@ -38,7 +38,7 @@ tags:
   - "survival"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/heavy_chemical_flamethrower_rig.webp"
+  asset_path: "/assets/cards/items/heavy_chemical_flamethrower_rig.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy dual-tank pressurized napalm backpack connected by braided steel fuel lines to a two-handed industrial incinerator nozzle with a flickering blue pilot flame, scorched heat-shield shroud, and analog pressure manifolds."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

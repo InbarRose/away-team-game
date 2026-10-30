@@ -24,7 +24,7 @@ tags:
   - "logistics"
   - "armory"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_landmark_supply_lines.webp"
+  asset_path: "/assets/cards/hq/hq_landmark_supply_lines.png"
   aspect_ratio: "70:120"
   visual_description: "An automated orbital launch rail inside an armored silo firing a heavy reinforced resupply pod toward an open sky hatch amid clouds of exhaust steam."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

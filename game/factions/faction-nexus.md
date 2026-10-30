@@ -47,7 +47,7 @@ tags:
   - "operations"
   - "telemetry"
 art_spec:
-  asset_path: "/assets/factions/faction_nexus.webp"
+  asset_path: "/assets/factions/faction_nexus.png"
   aspect_ratio: "70:120"
   visual_description: "A sleek neon-cyan holographic neural lattice emblem hovering inside a dark clean-room server core, with fiber-optic data streams converging into a stylized cybernetic iris."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

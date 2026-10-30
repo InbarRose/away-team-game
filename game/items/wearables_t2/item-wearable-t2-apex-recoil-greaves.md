@@ -30,7 +30,7 @@ tags:
   - "tier-2"
   - "backfire-protection"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-apex-recoil-greaves.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-apex-recoil-greaves.png"
   aspect_ratio: "63:88"
   visual_description: "Heavy-duty lower-leg exoskeletal greaves with quad-hydraulic shock absorbers running from knee to heel."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

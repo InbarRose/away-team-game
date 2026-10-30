@@ -37,7 +37,7 @@ tags:
   - "infiltrate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-spec-ops-recon-sidearm.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-spec-ops-recon-sidearm.png"
   aspect_ratio: "63:88"
   visual_description: "A suppressed black-ops pistol featuring a flip-out multi-spectral telemetry screen, ultrasonic rangefinder, and subsonic magazine."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

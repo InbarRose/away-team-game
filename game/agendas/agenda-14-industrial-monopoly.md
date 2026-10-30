@@ -36,7 +36,7 @@ tags:
   - "monopoly"
   - "sponsorship"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_14_industrial_monopoly.webp"
+  asset_path: "/assets/cards/agendas/agenda_14_industrial_monopoly.png"
   aspect_ratio: "63:88"
   visual_description: "A panoramic view of the Agency HQ base schematic where two adjacent facility wings light up simultaneously with the same faction's corporate insignia."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

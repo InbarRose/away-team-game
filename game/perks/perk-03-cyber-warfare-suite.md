@@ -44,7 +44,7 @@ tags:
   - "intel"
   - "hacking"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_03_cyber_warfare_suite.webp"
+  asset_path: "/assets/cards/perks/perk_03_cyber_warfare_suite.png"
   aspect_ratio: "63:88"
   visual_description: "A cybernetic technician jacked directly into a smoking corporate mainframe via fiber-optic wrist cables, projecting cascading cyan decryption matrices that shatter red security ICE glyphs."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -34,7 +34,7 @@ tags:
   - "infiltrate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-tactical-multi-tool.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-tactical-multi-tool.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy-duty industrial pistol-grip multi-tool featuring a micro-plasma thermal cutter nozzle and an integrated high-tensile grappling winch spool."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

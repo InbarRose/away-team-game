@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-operations"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_06_saboteur.webp"
+  asset_path: "/assets/cards/characters/agent_06_saboteur.png"
   aspect_ratio: "63:88"
   visual_description: "A grinning demolitions recon operative rigging magnetic thermite charges onto a reinforced security bulkhead while holding a remote detonator and compact submachine gun."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

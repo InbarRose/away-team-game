@@ -40,7 +40,7 @@
       "blackout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_01_electromagnetic_blackout.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_01_electromagnetic_blackout.png",
       "aspect_ratio": "63:88",
       "visual_description": "A facility corridor plunged into sudden darkness as an electromagnetic pulse wave shatters overhead light fixtures in a shower of blue arcs, disabling an operative's weapon optic.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -89,7 +89,7 @@
       "suppression"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_02_automated_defense_turrets.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_02_automated_defense_turrets.png",
       "aspect_ratio": "63:88",
       "visual_description": "Twin ceiling-mounted rotary sentry turrets swiveling downward from recessed armor hatches, sweeping a security checkpoint with intersecting red targeting lasers.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -138,7 +138,7 @@
       "visibility"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_03_atmospheric_smoke.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_03_atmospheric_smoke.png",
       "aspect_ratio": "63:88",
       "visual_description": "Billowing clouds of dense aerosol coolant and chemical smoke flooding an industrial hangar bay, reducing floodlights to diffused amber halos and concealing shadowy silhouettes.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -187,7 +187,7 @@
       "comms-blackout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_04_wide_band_signal_jammer.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_04_wide_band_signal_jammer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A military-grade tripod signal scrambler pulsing with distortion waves in the center of a command room, turning nearby holographic comms screens into red static.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -231,7 +231,7 @@
       "fortifications"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_05_reinforced_fortifications.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_05_reinforced_fortifications.png",
       "aspect_ratio": "63:88",
       "visual_description": "Heavy interlocking titanium blast shutters and deployable ballistic barricades sealing a corporate vault entrance behind layers of holographic firewall warnings.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -275,7 +275,7 @@
       "corrosive"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_06_corrosive_gas_venting.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_06_corrosive_gas_venting.png",
       "aspect_ratio": "63:88",
       "visual_description": "Ruptured overhead chemical conduits hissing thick, acidic green vapor across a grated catwalk, blistering the paint off the walls as emergency scrubbers flash red.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -319,7 +319,7 @@
       "pip"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_07_high_value_corporate_asset.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_07_high_value_corporate_asset.png",
       "aspect_ratio": "63:88",
       "visual_description": "An illuminated stasis pedestal in the center of a lab holding a glowing prototype quantum core and a locked biometric briefcase marked 'EYES ONLY — EXECUTIVE BOARD'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -363,7 +363,7 @@
       "pip-penalty"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_08_executive_bribe_protocol.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_08_executive_bribe_protocol.png",
       "aspect_ratio": "63:88",
       "visual_description": "A facility security chief discreetly accepting a glowing gold credit chit at a checkpoint terminal while toggling the security gate status from 'LOCKED' to 'AUTHORIZED'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -407,7 +407,7 @@
       "attrition"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_09_structural_instability.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_09_structural_instability.png",
       "aspect_ratio": "63:88",
       "visual_description": "Buckling steel support girders and collapsing ceiling slabs crashing down in a shower of sparks and concrete dust inside a destabilized underground facility.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -451,7 +451,7 @@
       "lockout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_10_sub_zero_thermal_drop.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_10_sub_zero_thermal_drop.png",
       "aspect_ratio": "63:88",
       "visual_description": "Shattered liquid-nitrogen cryo-pipes encasing a corridor in jagged blue ice crystals, freezing an operative's weapon battery pack and frosting over their helmet visor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -495,7 +495,7 @@
       "publicity"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_11_press_corps_cameras.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_11_press_corps_cameras.png",
       "aspect_ratio": "63:88",
       "visual_description": "Autonomous news-broadcast drones with glowing red 'LIVE FEED' lenses hovering above a firefight, beaming real-time squad telemetry directly to corporate boardroom screens.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -539,7 +539,7 @@
       "aoe-backfire"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_12_explosive_fuel_craters.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_12_explosive_fuel_craters.png",
       "aspect_ratio": "63:88",
       "visual_description": "Leaking orange plasma fuel drums and ruptured promethium lines pooling across a scorched hangar floor as stray ricochet sparks threaten an imminent chain-reaction blast.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

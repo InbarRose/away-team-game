@@ -71,7 +71,7 @@ tags:
   - "covert"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.webp"
+  asset_path: "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.png"
   aspect_ratio: "70:120"
   visual_description: "A sterile, menacing subterranean black-site cellblock illuminated by emerald bio-containment fields, where tactical operatives breach a reinforced cryo-cell holding a scientist in a stained lab coat while sparks fly from overridden security consoles."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

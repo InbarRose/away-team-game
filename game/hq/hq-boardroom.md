@@ -43,7 +43,7 @@ tags:
   - "agendas"
   - "perks"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_boardroom.webp"
+  asset_path: "/assets/cards/hq/hq_boardroom.png"
   aspect_ratio: "70:120"
   visual_description: "A high-security monolithic obsidian boardroom table surrounded by leather executive chairs, encrypted voting consoles, and an illuminated corporate seal overhead."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

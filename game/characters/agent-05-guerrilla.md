@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-infiltrate"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_05_guerrilla.webp"
+  asset_path: "/assets/cards/characters/agent_05_guerrilla.png"
   aspect_ratio: "63:88"
   visual_description: "A hooded forward-recon sniper in active-camo cloak crouching on an industrial catwalk, painting targets with a high-powered laser designator rifle."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

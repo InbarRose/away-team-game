@@ -36,7 +36,7 @@ tags:
   - "auction"
   - "credits"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_13_strategic_concession.webp"
+  asset_path: "/assets/cards/agendas/agenda_13_strategic_concession.png"
   aspect_ratio: "63:88"
   visual_description: "A senior corporate director leaning back in a leather boardroom chair and lowering their bidding paddle with a knowing smirk as a rival executive claims the command gavel."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

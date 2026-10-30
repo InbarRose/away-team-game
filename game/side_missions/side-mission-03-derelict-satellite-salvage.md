@@ -73,7 +73,7 @@ tags:
   - "satellite"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.webp"
+  asset_path: "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.png"
   aspect_ratio: "70:120"
   visual_description: "A decommissioned corporate research satellite tumbling through low planetary orbit surrounded by glowing atmospheric re-entry sparks and floating hull debris, as EVA-suited operatives breach the airlock."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

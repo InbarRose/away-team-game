@@ -36,7 +36,7 @@ tags:
   - "force-breach"
   - "combat"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_08_forced_entry.webp"
+  asset_path: "/assets/cards/agendas/agenda_08_forced_entry.png"
   aspect_ratio: "63:88"
   visual_description: "A squad leader detonating a shaped breaching charge on an encrypted biometric vault door, bypassing the keypad entirely as armored troops storm through the smoke."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

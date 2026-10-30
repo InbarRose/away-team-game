@@ -47,7 +47,7 @@ tags:
   - "momentum"
   - "pmc"
 art_spec:
-  asset_path: "/assets/factions/faction_aegis.webp"
+  asset_path: "/assets/factions/faction_aegis.png"
   aspect_ratio: "70:120"
   visual_description: "A brutalist gunmetal-slate corporate command crest featuring an angular tactical shield bisected by twin heavy rifle barrels, set against an armored bulkhead lit by cold tactical HUD projections."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -35,7 +35,7 @@ tags:
   - "vault"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_05_institutional_overtime.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_05_institutional_overtime.png"
   aspect_ratio: "63:88"
   visual_description: "A row of glowing electric-teal capacitor banks inside a faction command center, humming at maximum charge while telemetry operators work through the night."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

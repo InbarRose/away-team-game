@@ -36,7 +36,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-covert-eliminator-sidearm.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-covert-eliminator-sidearm.png"
   aspect_ratio: "63:88"
   visual_description: "A sleek, integrally suppressed assassin's pistol in matte obsidian carbon-fiber, paired with a voice-modulator collar piece and false credential chip."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

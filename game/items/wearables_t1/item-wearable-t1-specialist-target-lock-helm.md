@@ -31,7 +31,7 @@ tags:
   - "defense"
   - "primary-focus"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-specialist-target-lock-helm.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-specialist-target-lock-helm.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy armored specialist helmet with a multi-lens optical turret over the left eye and crimson laser rangefinder emitters."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

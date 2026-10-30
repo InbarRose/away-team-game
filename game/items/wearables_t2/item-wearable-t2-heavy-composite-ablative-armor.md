@@ -31,7 +31,7 @@ tags:
   - "armor"
   - "damage-buffer"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-heavy-composite-ablative-armor.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-heavy-composite-ablative-armor.png"
   aspect_ratio: "63:88"
   visual_description: "Heavy interlocking ceramic-titanium chest and shoulder armor plates with reactive micro-explosive ablative tiles."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

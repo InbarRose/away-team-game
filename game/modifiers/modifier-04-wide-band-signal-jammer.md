@@ -34,7 +34,7 @@ tags:
   - "jammer"
   - "comms-blackout"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_04_wide_band_signal_jammer.webp"
+  asset_path: "/assets/cards/modifiers/modifier_04_wide_band_signal_jammer.png"
   aspect_ratio: "63:88"
   visual_description: "A military-grade tripod signal scrambler pulsing with distortion waves in the center of a command room, turning nearby holographic comms screens into red static."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

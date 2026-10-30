@@ -33,7 +33,7 @@ tags:
   - "infiltrate"
   - "modifier-control"
 art_spec:
-  asset_path: "/assets/cards/items/recon_sentry_drone.webp"
+  asset_path: "/assets/cards/items/recon_sentry_drone.png"
   aspect_ratio: "63:88"
   visual_description: "A whisper-quiet quad-rotor micro-drone hovering inside a dark maintenance duct, fitted with a multi-spectrum cyan optical camera sphere and folding carbon-fiber rotor shrouds."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

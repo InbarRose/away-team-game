@@ -34,7 +34,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-holographic-id-emitter.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-holographic-id-emitter.png"
   aspect_ratio: "63:88"
   visual_description: "A covert palm-held badge projector emitting a shimmering holographic executive security clearance seal and biometric RFID spoof signal."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

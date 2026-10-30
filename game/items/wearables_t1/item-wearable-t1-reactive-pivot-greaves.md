@@ -31,7 +31,7 @@ tags:
   - "saving-throw"
   - "primary-focus"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-reactive-pivot-greaves.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-reactive-pivot-greaves.png"
   aspect_ratio: "63:88"
   visual_description: "Agile carbon-fiber shin guards with micro-gyroscopic ankle thrusters that fire lateral evasion bursts."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

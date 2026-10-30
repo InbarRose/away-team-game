@@ -79,4 +79,4 @@ Every round of an **Away Team** campaign progresses through **Four Distinct Phas
 > [!DIAGRAM]
 > **Figure 1.1 — The 4-Phase Macro Game Loop & Decision Architecture**
 > * **Visual Specification:** Circular command flow schematic showing the 4 phases: (1) Mission Briefing, (2) Roster & Command Auction, (3) The Tactical Mission (with 5-step sub-loop), and (4) HQ Downtime (with 8-step base operations loop), ringed by the central Mission Failure Tracker and Faction Vaults.
-> * **Aspect Ratio:** 16:9 Rulebook Spread Diagram • **Asset Path:** /assets/rulebook/fig_1_1_macro_loop.webp
+> * **Aspect Ratio:** 16:9 Rulebook Spread Diagram • **Asset Path:** /assets/rulebook/fig_1_1_macro_loop.png

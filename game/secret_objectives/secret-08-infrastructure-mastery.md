@@ -35,7 +35,7 @@ tags:
   - "infrastructure"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_08_infrastructure_mastery.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_08_infrastructure_mastery.png"
   aspect_ratio: "63:88"
   visual_description: "An orbital view of the expanded Agency Headquarters complex, with gilded corporate sponsorship banners draped across newly welded habitats, comms arrays, and docking bays."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

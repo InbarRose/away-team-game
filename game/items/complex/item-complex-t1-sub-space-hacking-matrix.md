@@ -33,7 +33,7 @@ tags:
   - "focus-bridge"
   - "primary-override"
 art_spec:
-  asset_path: "/assets/cards/items/sub_space_hacking_matrix.webp"
+  asset_path: "/assets/cards/items/sub_space_hacking_matrix.png"
   aspect_ratio: "63:88"
   visual_description: "A ruggedized military cyber-deck matrix with fold-out holographic logic displays, quantum decryptor heat-pipes glowing orange-cyan, and braided fiber-optic intrusion cables."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

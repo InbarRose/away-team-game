@@ -24,7 +24,7 @@ tags:
   - "command"
   - "perks"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_landmark_war_room.webp"
+  asset_path: "/assets/cards/hq/hq_landmark_war_room.png"
   aspect_ratio: "70:120"
   visual_description: "A circular tiered command amphitheater centered around a massive holographic tactical battle-map showing orbital drop vectors and threat zones."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

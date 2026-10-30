@@ -36,7 +36,7 @@ tags:
   - "momentum"
   - "dominance"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_01_overwhelming_force.webp"
+  asset_path: "/assets/cards/agendas/agenda_01_overwhelming_force.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy assault soldier advancing through shattered concrete cover with a rotary cannon blazing, while a holographic corporate performance meter hits 'MAXIMUM MOMENTUM' in crimson."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -31,7 +31,7 @@ tags:
   - "momentum"
   - "temp-dice"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-kinetic-overdrive-greaves.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-kinetic-overdrive-greaves.png"
   aspect_ratio: "63:88"
   visual_description: "Streamlined cybernetic sprint greaves with glowing emerald super-capacitor banks along the calves that arc with stored kinetic energy."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

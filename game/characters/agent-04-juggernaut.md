@@ -40,7 +40,7 @@ tags:
   - "secondary-survival"
   - "tank"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_04_juggernaut.webp"
+  asset_path: "/assets/cards/characters/agent_04_juggernaut.png"
   aspect_ratio: "63:88"
   visual_description: "A towering heavy-infantry tank clad in thick layered ballistic siege plating with a deployable forearm riot-shield, standing unyielding amidst sparks and ricochets."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

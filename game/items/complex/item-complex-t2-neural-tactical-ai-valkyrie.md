@@ -33,7 +33,7 @@ tags:
   - "dice-refresh"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/neural_tactical_ai_valkyrie.webp"
+  asset_path: "/assets/cards/items/neural_tactical_ai_valkyrie.png"
   aspect_ratio: "63:88"
   visual_description: "An angular, predatory combat drone hovering on vectored micro-thrusters with a glowing crimson AI optic lens, miniature side-mounted micro-missile pods, and a neural telemetry tether."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -40,7 +40,7 @@ tags:
   - "secondary-infiltrate"
   - "zero-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_24_eod_drone_operator.webp"
+  asset_path: "/assets/cards/characters/agent_24_eod_drone_operator.png"
   aspect_ratio: "63:88"
   visual_description: "A tactical drone controller wearing a wrap-around FPV telemetry visor and a chest-mounted control deck, flanked by two hovering micro-reconnaissance EOD drones with laser emitters."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

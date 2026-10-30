@@ -25,7 +25,7 @@ tags:
   - "training"
   - "sponsor-controlled"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_landmark_tactical_simulator.webp"
+  asset_path: "/assets/cards/hq/hq_landmark_tactical_simulator.png"
   aspect_ratio: "70:120"
   visual_description: "A hexagonal holographic combat simulation chamber with projection emitters casting wireframe urban cover and target silhouettes around a training operative."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

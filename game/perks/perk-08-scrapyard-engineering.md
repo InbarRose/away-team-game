@@ -43,7 +43,7 @@ tags:
   - "repair"
   - "vulture"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_08_scrapyard_engineering.webp"
+  asset_path: "/assets/cards/perks/perk_08_scrapyard_engineering.png"
   aspect_ratio: "63:88"
   visual_description: "A rugged scavenger mechanic using an arc-welder torch to patch a cracked ceramic chest plate in the field, surrounded by stripped drone servos and salvaged weapon modules."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -47,7 +47,7 @@ tags:
   - "medical"
   - "effort-engine"
 art_spec:
-  asset_path: "/assets/factions/faction_ascendant.webp"
+  asset_path: "/assets/factions/faction_ascendant.png"
   aspect_ratio: "70:120"
   visual_description: "A glowing toxic-emerald double-helix emblem coiled around a surgical caduceus inside a pressurized bio-containment cylinder filled with bioluminescent nutrient fluid."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

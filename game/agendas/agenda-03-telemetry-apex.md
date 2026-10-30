@@ -36,7 +36,7 @@ tags:
   - "telemetry"
   - "dominance"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_03_telemetry_apex.webp"
+  asset_path: "/assets/cards/agendas/agenda_03_telemetry_apex.png"
   aspect_ratio: "63:88"
   visual_description: "An intelligence specialist illuminated by three floating holographic data globes, extracting a glowing cyan core drive from a high-security server rack."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

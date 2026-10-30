@@ -71,7 +71,7 @@ tags:
   - "urban"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.webp"
+  asset_path: "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.png"
   aspect_ratio: "70:120"
   visual_description: "A battered, bullet-riddled armored transport truck careening across a collapsing mountain highway bridge toward a rooftop helipad in a driving rainstorm, as exhausted operatives shield a VIP scientist from incoming VTOL gunship fire."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -32,7 +32,7 @@ tags:
   - "dice-refresh"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/emp_surge_pulse.webp"
+  asset_path: "/assets/cards/items/emp_surge_pulse.png"
   aspect_ratio: "63:88"
   visual_description: "A spherical electromagnetic pulse emitter with copper induction coils visible beneath a slotted polycarbonate shell, discharging crackling arcs of violet-blue electricity."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

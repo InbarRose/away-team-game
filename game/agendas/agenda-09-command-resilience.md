@@ -36,7 +36,7 @@ tags:
   - "logistical-refresh"
   - "flawless"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_09_command_resilience.webp"
+  asset_path: "/assets/cards/agendas/agenda_09_command_resilience.png"
   aspect_ratio: "63:88"
   visual_description: "A composed field commander coordinating an orbital supply drop beacon on a rainy extraction pad, all four squad icons on their tactical visor glowing green with full readiness."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

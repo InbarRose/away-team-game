@@ -31,7 +31,7 @@ tags:
   - "healing"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-auto-triage-trauma-pack.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-auto-triage-trauma-pack.png"
   aspect_ratio: "63:88"
   visual_description: "A white-and-emerald paramedic backpack with an articulated robotic injector arm and pressurized bio-foam canisters."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

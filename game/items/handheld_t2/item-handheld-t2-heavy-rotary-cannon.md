@@ -31,7 +31,7 @@ tags:
   - "combat"
   - "primary-recirculation"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-heavy-rotary-cannon.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-heavy-rotary-cannon.png"
   aspect_ratio: "63:88"
   visual_description: "A massive six-barrel rotary gatling cannon with an underslung servo-stabilizer handle, glowing red-hot barrel tips, and a linked caseless ammunition feed chute."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
