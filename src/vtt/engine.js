@@ -296,6 +296,45 @@ export function isOperativeMedicallyGrounded(baseMaxHp, permanentTrauma = 0, inj
   return effectiveMaxHp <= 0;
 }
 
+/**
+ * Calculates dual-stream debrief payouts (BL-RULES-01):
+ * Stream 1: +2 CR per deployed character to owner, +1 PIP per faction.
+ * Stream 2: Negotiated clearance bounty credits.
+ */
+export function calculateDualStreamPayouts({
+  squad = [],
+  playerCount = 4,
+  squadLeaderPlayerIndex = 0,
+  negotiatedBountyCredits = {},
+  bountyPip = 1,
+}) {
+  const operativeStipends = {};
+  for (let i = 0; i < playerCount; i++) operativeStipends[i] = 0;
+
+  squad.slice(0, 4).forEach((op) => {
+    const owner = op.ownerPlayer !== undefined ? op.ownerPlayer : squadLeaderPlayerIndex;
+    if (operativeStipends[owner] !== undefined) {
+      operativeStipends[owner] += 2;
+    }
+  });
+
+  const playerPayouts = {};
+  for (let i = 0; i < playerCount; i++) {
+    const guaranteedCr = operativeStipends[i] || 0;
+    const bountyCr = negotiatedBountyCredits[i] || 0;
+    const totalCr = guaranteedCr + bountyCr;
+    const pipEarned = bountyPip;
+    playerPayouts[i] = {
+      guaranteedCredits: guaranteedCr,
+      bountyCredits: bountyCr,
+      totalCredits: totalCr,
+      pip: pipEarned,
+    };
+  }
+
+  return { playerPayouts };
+}
+
 
 /**
  * 7-Step Guided Game Loop Sequencer Metadata (Following /game/core/rules_overview.md)
