@@ -17,7 +17,7 @@ Transform this repository into a dual-purpose tabletop game hub and asset pipeli
 ### 1.1 Mandatory Agent Engineering & Git Workflow Instructions
 All agents and contributors working in this repository MUST follow these rules at all times:
 * **Atomic Commits:** Make small, self-contained, atomic commits scoped to a single logical unit of work (e.g., Core Rulebook, Factions & HQ, Specialist Operatives, Armory Items, Political Decks, Campaigns/Missions, Manifest Pipeline, Web Engine/VTT, Test Suites & CI).
-* **Side Branches & Pull Requests to `main`:** Never push feature work directly to `main`. Create descriptive side branches (e.g., `feat/platform-and-rulebook-v1`) and open Pull Requests against `main`.
+* **Side Branches & Pull Requests to `main`:** Never push feature work directly to `main`. Always create a descriptive side branch and open a Pull Request into main. All PRs must pass checks and get merged cleanly. Formalized in AGENTS.md.
 * **Comprehensive Test Suites (`tests/`):** Every change must be accompanied by and pass automated test suites (`npm test`) covering:
   * **Suite 01 (`tests/01-structure-and-intent.test.js`):** Repository architecture, directory layout, exact component counts, and custom domain (`awayteam.inbarrose.com`) intent.
   * **Suite 02 (`tests/02-schema-and-art-pipeline.test.js`):** YAML frontmatter schema, unique IDs, `art_spec` completeness, and JSON manifest export synchronization.
