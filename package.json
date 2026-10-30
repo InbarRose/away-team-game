@@ -9,6 +9,7 @@
     "start": "node manifests/serve_local.js",
     "serve:local": "node manifests/serve_local.js",
     "generate:manifests": "node manifests/generate_manifests.js",
+    "lint:components": "node scripts/lint_components.js",
     "predev": "node manifests/generate_manifests.js",
     "dev": "astro dev",
     "prebuild": "node manifests/generate_manifests.js",
