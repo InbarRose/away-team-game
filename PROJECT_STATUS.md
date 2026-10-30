@@ -44,6 +44,8 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 | **ADR-18** | 2026-10-29 | **Documented Rules-Derived Testing Architecture (Suites 07–11):** Implemented automated test contracts directly derived from Chapters 3, 4, 6, 7, 8 covering tactical dice, command auctions, mortality triage, downtime economy, and endgame scoring. | Establishes rules compliance contracts directly against canonical rulebooks. |
 | **ADR-19** | 2026-10-29 | **VTT Finite State Machine, Tactical Operations & Client Storage Test Architecture (Suites 12–15):** Implemented automated test suites verifying setup flow, tactical dice sovereignty, active director desk, and localStorage persistence. | Validates state transitions and UI state machine invariants. |
 | **ADR-20** | 2026-10-29 | **Deep Chaos Fuzzing & Macro-Balance Simulation Architecture (Suites 16–17):** Implemented automated 100-cycle chaos fuzzing validating 6 state invariants with 0 deadlocks, and macro-balance simulations validating currency velocity, momentum distribution, and glass-cannon mortality rates. | Guarantees system resilience and statistical balance targets across long-term play. |
+| **ADR-21** | 2026-10-29 | **Design Companion Analytical Dossiers (Dossiers 06–09):** Expanded the Design Companion with 4 new analytical dossiers synthesizing empirical findings from Suites 01–17 into deep systems documentation covering operational pacing, macroeconomic liquidity, mortality curves, and VP dispersion. | Translates raw automated test telemetry into actionable game design analysis. |
+| **ADR-22** | 2026-10-29 | **Standardized Component Authoring Framework & Schema Linter:** Created formal Markdown design templates in `docs/templates/` (Operatives, Items, Missions) and an automated validator (`scripts/lint_components.js`, `npm run lint:components`) verifying the 9.0 ES budget, price-to-tier ratios, and anatomical slot boundaries. | Prevents power creep and ensures mathematical balance across newly designed components. |
 
 ---
 
@@ -288,6 +290,29 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 ---
 
 ### 📋 Architecture Decision Records (ADRs)
+
+#### ADR-22: Standardized Component Authoring Framework & Schema Linter
+* **Context:** Expanding the game with new characters, items, and missions carries a significant risk of power creep and budget drift if authors don't strictly adhere to the $9.0\text{ ES}$ budget formula, anatomical slot limits, or price-to-tier ratios. We needed formal specification templates and an automated tool to validate new submissions.
+* **Decision:**
+  1. **Component Design Templates:** Created standardized Markdown templates in `docs/templates/` (`character.template.md`, `item.template.md`, `mission.template.md`) specifying YAML frontmatter schemas, rules structures, art specs, and tactical analysis sections.
+  2. **Automated Component Linter (`scripts/lint_components.js`):** Built a comprehensive validation script invoked via `npm run lint:components` that crawls all game components, verifying:
+     - Exact $9.0\text{ ES}$ budget compliance: $(\text{HP} \times 1.5) + (\text{Dice} \times 0.5) + \text{Power ES} + \text{Class Offset} = 9.0$.
+     - Anatomical slot constraints (max 2 hands required).
+     - Standard Poker ($63:88$) and Tarot ($70:120$) aspect ratios with unique asset paths.
+     - Price-to-tier alignment ($2\text{--}4\text{ CR}$ for Tier 1, $5\text{--}8\text{ CR}$ for Tier 2).
+  3. **Package Script Integration:** Exposed `npm run lint:components` in `package.json` for rapid local and CI validation.
+* **Status:** Adopted and verified across all 200 components with 0 errors.
+
+#### ADR-21: Design Companion Analytical Dossiers (Dossiers 06–09)
+* **Context:** With 17 automated test suites, 1,000-trial Monte Carlo simulations, and 100-cycle chaos fuzzing runs in place, raw test numbers needed to be translated into formal, readable design theory in the Design Companion for ongoing balancing.
+* **Decision:**
+  1. Authored 4 comprehensive analytical dossiers in `docs/design/`:
+     - `06_operational_flow_and_stage_tempo.md`: Evaluates Phase 1 Specialist Early Resolution frequencies ($\sim 42.6\%$ in matching rooms), stamina preservation, and $5+$ Out-of-Focus Backfire spikes.
+     - `07_economic_liquidity_and_velocity_curves.md`: Models currency creation vs. destruction across 1P–4P seating, proving circular zero-sum stability ($14\text{ CR}$ net) and Armory market absorption ($> 58\%$).
+     - `08_operative_mortality_and_calcification_dynamics.md`: Actuarial analysis of the $35\%\text{--}45\%$ glass-cannon mortality rate, triage priority flow, and trauma calcification.
+     - `09_semi_cooperative_vp_dispersion_and_parity.md`: Game-theoretic study of the Semi-Cooperative Paradox, 4-tier endgame VP dispersion, Gini coefficient ($0.16$), and kingmaking prevention.
+  2. Integrated all 9 dossiers into `manifests/generate_manifests.js` and verified presentation in the Design Companion Portal (`#/design`).
+* **Status:** Adopted and verified across all 17 test suites and static build.
 
 #### ADR-20: Deep Chaos Fuzzing & Macro-Balance Simulation Architecture (Suites 16–17)
 * **Context:** Beyond discrete unit tests, validating a complex tabletop system requires continuous validation of systemic equilibrium: ensuring the finite state machine never deadlocks under unpredictable player inputs, state invariants (positive vaults, operative bounds, market stocks) are never violated, and economic / statistical balance targets (currency velocity, momentum distribution, glass-cannon mortality rates) hold mathematically true over hundreds of trials.
