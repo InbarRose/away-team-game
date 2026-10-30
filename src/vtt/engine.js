@@ -335,6 +335,44 @@ export function calculateDualStreamPayouts({
   return { playerPayouts };
 }
 
+/**
+ * Evaluates an endgame scoring tally for a player (Chapter 8):
+ * Total VP = Loyalty VP + Secret Objective VP + Agenda VP + Facility VP + floor(Credits / 5).
+ */
+export function calculatePlayerEndgameScore({
+  loyaltyVp = 0,
+  secretObjectiveVp = 0,
+  agendaVp = 0,
+  facilityVp = 0,
+  remainingCredits = 0,
+  remainingPip = 0,
+}) {
+  const creditVp = Math.floor(remainingCredits / 5);
+  const totalVp = loyaltyVp + secretObjectiveVp + agendaVp + facilityVp + creditVp;
+  return {
+    totalVp,
+    breakdown: {
+      loyaltyVp,
+      secretObjectiveVp,
+      agendaVp,
+      facilityVp,
+      creditVp,
+    },
+    tieBreakers: {
+      remainingCredits,
+      remainingPip,
+    },
+  };
+}
+
+/**
+ * Checks Task Force Dissolution (Failure Tracker):
+ * Returns true if failureTokens >= maxAllowedFailures.
+ */
+export function checkTaskForceDissolution(currentFailures, maxFailures = 3) {
+  return currentFailures >= maxFailures;
+}
+
 
 /**
  * 7-Step Guided Game Loop Sequencer Metadata (Following /game/core/rules_overview.md)
