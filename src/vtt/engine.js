@@ -253,6 +253,49 @@ export function resolveCriticalInjuryRoll(d6Roll) {
   };
 }
 
+/**
+ * Returns the exact Step 4 Triage priority sequence (BL-RULES-03):
+ * 1. Controlling Faction (Right of First Refusal)
+ * 2. Squad Leader
+ * 3. Clockwise around the table
+ */
+export function getTriagePriorityOrder(controllingPlayer, squadLeaderPlayer, playerCount = 4) {
+  const order = [controllingPlayer];
+  if (squadLeaderPlayer !== controllingPlayer) {
+    order.push(squadLeaderPlayer);
+  }
+  for (let i = 0; i < playerCount; i++) {
+    const seat = (squadLeaderPlayer + 1 + i) % playerCount;
+    if (!order.includes(seat)) {
+      order.push(seat);
+    }
+  }
+  return order;
+}
+
+/**
+ * Evaluates Critical Injury calcification into Permanent Trauma (Chapter 6):
+ * 3 Critical Injury tokens permanently calcify into 1 Permanent Trauma token.
+ */
+export function resolveTraumaCalcification(currentInjuries, addedInjuries) {
+  const total = currentInjuries + addedInjuries;
+  const permanentTraumaAdded = Math.floor(total / 3);
+  const remainingInjuries = total % 3;
+  return {
+    permanentTraumaAdded,
+    remainingInjuries,
+  };
+}
+
+/**
+ * Checks if an operative is Medically Grounded (BL-RULES-08):
+ * Effective Max HP <= 0 renders the specialist ineligible for mission deployment.
+ */
+export function isOperativeMedicallyGrounded(baseMaxHp, permanentTrauma = 0, injuryHpPenalty = 0) {
+  const effectiveMaxHp = baseMaxHp - permanentTrauma - injuryHpPenalty;
+  return effectiveMaxHp <= 0;
+}
+
 
 /**
  * 7-Step Guided Game Loop Sequencer Metadata (Following /game/core/rules_overview.md)
