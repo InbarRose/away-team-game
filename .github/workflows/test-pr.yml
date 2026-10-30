@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-suites:
-    name: Run Manifest Generator & 4 Test Suites
+    name: Run Manifest Generator & All 17 Test Suites
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -23,5 +23,5 @@ jobs:
       - name: Regenerate & Validate Component Manifests
         run: node manifests/generate_manifests.js
 
-      - name: Run Automated Test Suites (Structure, Schema, Game Math & VTT Engine)
+      - name: Run Automated Test Suites (All 17 Suites: Rules, VTT, Client & Chaos)
         run: npm test
