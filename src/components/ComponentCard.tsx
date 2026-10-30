@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FocusBadge, navigateWiki, SemanticText } from './SemanticText';
+import { PhysicalCardModal } from './PhysicalCardMockup';
 
 export interface GameComponent {
   id: string;
@@ -52,6 +53,7 @@ export function ComponentCard({
   const [copiedPrompt, setCopiedPrompt] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
   const [imgError, setImgError] = useState(false);
+  const [showMockup, setShowMockup] = useState(false);
 
   const cr = item.cost?.credits ?? 0;
   const ef = item.cost?.effort ?? 0;
@@ -194,6 +196,7 @@ export function ComponentCard({
           <SemanticText text={item.rules_text || 'See full component Wiki page for detailed rules.'} />
         </div>
 
+        <div style={{ display: 'flex', gap: '0.4rem', marginTop: '0.35rem', flexWrap: 'wrap' }}>
         <a
           href={wikiHref}
           className="vtt-btn"
@@ -210,6 +213,24 @@ export function ComponentCard({
         >
           Open Wiki Page →
         </a>
+          <button
+            type="button"
+            className="vtt-btn"
+            style={{
+              fontSize: '0.75rem',
+              background: 'rgba(56, 189, 248, 0.12)',
+              border: '1px solid rgba(56, 189, 248, 0.35)',
+              color: '#38bdf8',
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setShowMockup(true);
+            }}
+            title="Inspect physical print-ready card mockup with bleed and safe margins"
+          >
+            🎴 Print Proof
+          </button>
+        </div>
       </div>
 
       {/* Footer */}
@@ -217,6 +238,9 @@ export function ComponentCard({
         <span>ID: {item.id}</span>
         <span>{item.deck_copies ? `×${item.deck_copies} in deck` : 'Unique'}</span>
       </footer>
+      {showMockup && (
+        <PhysicalCardModal item={item} onClose={() => setShowMockup(false)} />
+      )}
     </article>
   );
 }
