@@ -33,7 +33,7 @@ tags:
   - "combat"
   - "survival"
 art_spec:
-  asset_path: "/assets/cards/items/automated_suppressive_turret.webp"
+  asset_path: "/assets/cards/items/automated_suppressive_turret.png"
   aspect_ratio: "63:88"
   visual_description: "A compact folding tripod-mounted auto-cannon with an optical targeting sensor pod, belt-fed caseless ammunition drum, and glowing red laser target acquisition beam."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

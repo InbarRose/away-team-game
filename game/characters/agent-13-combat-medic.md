@@ -40,7 +40,7 @@ tags:
   - "secondary-intel"
   - "medic"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_13_combat_medic.webp"
+  asset_path: "/assets/cards/characters/agent_13_combat_medic.png"
   aspect_ratio: "63:88"
   visual_description: "A battle-hardened field trauma surgeon in crimson-trimmed ballistic armor, holding a pneumatic auto-suture gun in one hand and a compact carbine in the other."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

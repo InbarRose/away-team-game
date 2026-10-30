@@ -35,7 +35,7 @@ tags:
   - "backfire-immunity"
   - "squad-defense"
 art_spec:
-  asset_path: "/assets/cards/items/aegis_bio_shield_platform.webp"
+  asset_path: "/assets/cards/items/aegis_bio_shield_platform.png"
   aspect_ratio: "63:88"
   visual_description: "A high-tech defensive helmet and chest platform featuring twin shoulder-mounted harmonic field emitter pylons projecting a translucent hexagonal emerald-blue energy lattice around the torso."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -113,7 +113,9 @@ If the Specialists did not reach Target Difficulty $D$, non-specialists must ste
 
 ### Step 4: Post-Initiative & Triage Window
 * Trigger Survivalist *Emergency Field Medicine* (`[1 EF]` heals up to 2 stage HP).
-* **Emergency Stabilization at `0 HP` (`BL-RULES-03`):** If an agent drops to `0 HP`, any ally may pay `[1 EF]` or a Medkit to stabilize them at `1 HP`. Right of first refusal: Owning Faction first $ightarrow$ Squad Leader second $ightarrow$ Clockwise.
+* **Emergency Stabilization at `0 HP` (`BL-RULES-03`):** If an agent drops to `0 HP`, any ally may pay `[1 EF]` or a Medkit to stabilize them at `1 HP`. Right of first refusal: Owning Faction first $
+ightarrow$ Squad Leader second $
+ightarrow$ Clockwise.
 * **Dying Breath Rule (`BL-RULES-02`):** Successes rolled on a lethal throw count toward stage resolution in Step 5 even if the operative dies unstabilized.
 
 ### Step 5: Resolution & Operational Momentum (`[MOM]`)
@@ -139,4 +141,4 @@ Compare total successes against Target Difficulty $D$:
 > [!DIAGRAM]
 > **Figure 4.1 — The 5-Step Stage Micro-Loop & Threshold Resolution Tree**
 > * **Visual Specification:** Detailed stage encounter flowchart showing Phase 1 Specialists branch (checking Early Resolution) leading to Phase 2 Support fallback, followed by Step 4 Triage priority tree and Step 5 Momentum calculation formula.
-> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_2_1_stage_micro_loop.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_2_1_stage_micro_loop.png`

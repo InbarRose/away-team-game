@@ -47,7 +47,7 @@ tags:
   - "salvage"
   - "consumables"
 art_spec:
-  asset_path: "/assets/factions/faction_ironclad.webp"
+  asset_path: "/assets/factions/faction_ironclad.png"
   aspect_ratio: "70:120"
   visual_description: "A weathered rust-bronze industrial claw emblem clamping onto a salvaged reactor core, stenciled onto pitted hull plating with welding sparks flying in the background."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

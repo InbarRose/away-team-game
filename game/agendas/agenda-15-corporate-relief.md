@@ -36,7 +36,7 @@ tags:
   - "trade"
   - "bailout"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_15_corporate_relief.webp"
+  asset_path: "/assets/cards/agendas/agenda_15_corporate_relief.png"
   aspect_ratio: "63:88"
   visual_description: "A wealthy faction liaison handing an encrypted case of gold credit chips to a desperate rival quartermaster beside an empty vault terminal reading 'BALANCE: 0 CR'."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

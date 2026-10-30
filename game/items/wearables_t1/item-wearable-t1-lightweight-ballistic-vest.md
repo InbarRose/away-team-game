@@ -31,7 +31,7 @@ tags:
   - "armor"
   - "damage-buffer"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-lightweight-ballistic-vest.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-lightweight-ballistic-vest.png"
   aspect_ratio: "63:88"
   visual_description: "A modular Kevlar-and-ceramic tactical plate carrier vest with MOLLE webbing and a cracked trauma plate showing a stopped projectile."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

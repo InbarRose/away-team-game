@@ -36,7 +36,7 @@ tags:
   - "veteran"
   - "progression"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_18_veteran_promotion.webp"
+  asset_path: "/assets/cards/agendas/agenda_18_veteran_promotion.png"
   aspect_ratio: "63:88"
   visual_description: "A battle-scarred specialist standing at attention in the HQ briefing hall as a holographic Tier-3 loyalty commendation badge is pinned to their armored collar."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

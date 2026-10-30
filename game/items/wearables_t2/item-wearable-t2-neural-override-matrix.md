@@ -30,7 +30,7 @@ tags:
   - "tier-2"
   - "focus-elevation"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-neural-override-matrix.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-neural-override-matrix.png"
   aspect_ratio: "63:88"
   visual_description: "A cybernetic cranial halo crown with fiber-optic cortical jacks and pulsing magenta-and-cyan synaptic overclock indicators."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

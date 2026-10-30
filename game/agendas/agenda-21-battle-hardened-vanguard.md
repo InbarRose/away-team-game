@@ -36,7 +36,7 @@ tags:
   - "survival"
   - "high-risk"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_21_battle_hardened_vanguard.webp"
+  asset_path: "/assets/cards/agendas/agenda_21_battle_hardened_vanguard.png"
   aspect_ratio: "63:88"
   visual_description: "A heavily bandaged, limping veteran boarding the extraction dropship with smoking weapon in hand, biometric suit warnings flashing amber yet vitals holding steady."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

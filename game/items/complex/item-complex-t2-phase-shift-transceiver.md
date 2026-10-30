@@ -33,7 +33,7 @@ tags:
   - "retreat"
   - "teleport"
 art_spec:
-  asset_path: "/assets/cards/items/phase_shift_transceiver.webp"
+  asset_path: "/assets/cards/items/phase_shift_transceiver.png"
   aspect_ratio: "63:88"
   visual_description: "An experimental spatial-displacement transceiver unit with three counter-rotating gyroscopic rings surrounding a violet gravitational singularity core inside a rugged titanium housing."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

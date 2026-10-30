@@ -38,7 +38,7 @@ tags:
   - "focus-override"
   - "briefing"
 art_spec:
-  asset_path: "/assets/cards/items/neuro_overclock_ampoule.webp"
+  asset_path: "/assets/cards/items/neuro_overclock_ampoule.png"
   aspect_ratio: "63:88"
   visual_description: "A precision neural-port ampoule cartridge filled with swirling iridescent silver-and-cyan liquid nanites, fitted with gold micro-coaxial pins for direct cranial socket injection."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

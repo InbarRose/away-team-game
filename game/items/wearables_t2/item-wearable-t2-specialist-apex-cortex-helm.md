@@ -32,7 +32,7 @@ tags:
   - "primary-focus"
   - "secondary-focus"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-specialist-apex-cortex-helm.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-specialist-apex-cortex-helm.png"
   aspect_ratio: "63:88"
   visual_description: "A heavily armored titanium cortex helmet with glowing neural dampener fins and a tri-optic sensor cluster."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

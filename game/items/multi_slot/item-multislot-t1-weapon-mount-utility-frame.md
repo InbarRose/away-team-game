@@ -34,7 +34,7 @@ tags:
   - "extra-hand"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/weapon_mount_utility_frame.webp"
+  asset_path: "/assets/cards/items/weapon_mount_utility_frame.png"
   aspect_ratio: "63:88"
   visual_description: "An industrial load-bearing exoskeleton frame spanning torso and legs with hydraulic knee pistons and an articulated gyro-stabilized third mechanical arm extending over the right shoulder with a universal weapon clamp."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

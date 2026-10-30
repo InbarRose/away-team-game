@@ -35,7 +35,7 @@ tags:
   - "auto-success"
   - "failure-immunity"
 art_spec:
-  asset_path: "/assets/cards/items/heavy_plasma_breach_borer.webp"
+  asset_path: "/assets/cards/items/heavy_plasma_breach_borer.png"
   aspect_ratio: "63:88"
   visual_description: "A massive industrial plasma-torch siege drill braced by a hydraulic arm mount, with a white-hot magnetic containment nozzle, liquid-nitrogen coolant canisters, and heavy hazard shielding."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -76,7 +76,7 @@ tags:
   - "intel-bounty"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.webp"
+  asset_path: "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.png"
   aspect_ratio: "70:120"
   visual_description: "A covert operative in a cloaking hood crouched atop a rain-swept corporate perimeter watchtower overlooking a glowing subterranean data vault, with cyan holographic server schematics projected on their visor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

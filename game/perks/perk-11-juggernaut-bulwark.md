@@ -43,7 +43,7 @@ tags:
   - "defense"
   - "tank"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_11_juggernaut_bulwark.webp"
+  asset_path: "/assets/cards/perks/perk_11_juggernaut_bulwark.png"
   aspect_ratio: "63:88"
   visual_description: "A towering heavy-weapons operative clad in ablative ceramic exo-armor, deploying an expandable forearm riot shield to deflect a hail of ricocheting rounds away from a crouching teammate."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

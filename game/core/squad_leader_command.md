@@ -82,8 +82,10 @@ If two or more players bid the same amount, or if all players bid `[0 CR]` or de
 Winning the Command Auction grants massive tactical authority during Phase 3 (The Tactical Mission):
 
 1. **Step 1 Dynamic Focus Swaps (`BL-RULES-07`):**
-   * 💥 **Force Breach (`[Non-Combat]` $ightarrow$ `[Combat]`):** Turn a stealth or technical stage into a kinetic firefight. Increases Target Difficulty by `+1` or `+2`, but matches your combat specialists.
-   * 🌿 **Tactical Bypass (`[Combat]` $ightarrow$ `[Non-Combat]`):** Siphon security gates or slip through vents to change the stage focus to `[Operations]`, `[Infiltrate]`, or `[Survival]`.
+   * 💥 **Force Breach (`[Non-Combat]` $
+ightarrow$ `[Combat]`):** Turn a stealth or technical stage into a kinetic firefight. Increases Target Difficulty by `+1` or `+2`, but matches your combat specialists.
+   * 🌿 **Tactical Bypass (`[Combat]` $
+ightarrow$ `[Non-Combat]`):** Siphon security gates or slip through vents to change the stage focus to `[Operations]`, `[Infiltrate]`, or `[Survival]`.
 ### Dynamic Split-Effect Modifier Interaction (BL-RULES-07)
 When a Stage Modifier with a **Split-Effect** (e.g., *Security Hardening*, *Atmospheric Hazard*, or *Hostile Counter-Measures*) is active, its effects check the room's **currently active Focus**:
 * If the Squad Leader executes a *Tactical Bypass* swapping from [Combat] to [Infiltrate], the modifier **immediately shifts from its [Combat] clause to its [Non-Combat] clause**.
@@ -131,4 +133,4 @@ While the Squad Leader holds unilateral authority over Focus Swaps, Momentum dis
 > [!DIAGRAM]
 > **Figure 3.1 — Squad Leader Authority & Command Decision Tree**
 > * **Visual Specification:** Command console schematic illustrating the Squad Leader's 4 levers: (1) Step 1 Dynamic Focus Swap, (2) Step 5 Momentum Die Distribution, (3) Transition Step Logistical Refresh, and (4) Tactical vs. Forced Retreat gates.
-> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_4_1_squad_leader_console.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_4_1_squad_leader_console.png`

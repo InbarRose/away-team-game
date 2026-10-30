@@ -31,7 +31,7 @@ tags:
   - "momentum"
   - "dice-recovery"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-kinetic-energy-absorbers.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-kinetic-energy-absorbers.png"
   aspect_ratio: "63:88"
   visual_description: "Sleek cybernetic leg braces lined with glowing emerald kinetic-capacitor coils that charge with every stride."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

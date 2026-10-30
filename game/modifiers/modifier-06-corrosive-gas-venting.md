@@ -30,7 +30,7 @@ tags:
   - "mitigation"
   - "corrosive"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_06_corrosive_gas_venting.webp"
+  asset_path: "/assets/cards/modifiers/modifier_06_corrosive_gas_venting.png"
   aspect_ratio: "63:88"
   visual_description: "Ruptured overhead chemical conduits hissing thick, acidic green vapor across a grated catwalk, blistering the paint off the walls as emergency scrubbers flash red."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -31,7 +31,7 @@ tags:
   - "operations"
   - "primary-recirculation"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-quantum-processing-terminal.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-quantum-processing-terminal.png"
   aspect_ratio: "63:88"
   visual_description: "An ultra-dense portable quantum mainframe deck with liquid-nitrogen cooling tubes, golden qubit core cylinders, and dual-hand haptic control grips."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

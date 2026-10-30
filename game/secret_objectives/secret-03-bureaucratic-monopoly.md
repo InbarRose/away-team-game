@@ -35,7 +35,7 @@ tags:
   - "politics"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_03_bureaucratic_monopoly.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_03_bureaucratic_monopoly.png"
   aspect_ratio: "63:88"
   visual_description: "A shadowy executive overlooking a semicircular corporate senate chamber from a high balcony, holding magenta-glowing encrypted dossiers linking every board member."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

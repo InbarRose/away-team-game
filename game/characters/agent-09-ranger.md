@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-survival"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_09_ranger.webp"
+  asset_path: "/assets/cards/characters/agent_09_ranger.png"
   aspect_ratio: "63:88"
   visual_description: "A weather-beaten frontier ranger in sealed environmental hazard armor and rebreather mask, wading through toxic green marsh mist with a heavy marksman rifle."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

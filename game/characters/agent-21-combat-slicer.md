@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-operations"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_21_combat_slicer.webp"
+  asset_path: "/assets/cards/characters/agent_21_combat_slicer.png"
   aspect_ratio: "63:88"
   visual_description: "A scarred cyber-combat technician with glowing orange sub-dermal coolant lines along his neck and forearms, firing a compact submachine gun while hard-wired into a sparking bulkhead."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

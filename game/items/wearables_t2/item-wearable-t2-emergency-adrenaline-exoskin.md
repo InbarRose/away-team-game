@@ -32,7 +32,7 @@ tags:
   - "auto-success"
   - "emergency"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-emergency-adrenaline-exoskin.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-emergency-adrenaline-exoskin.png"
   aspect_ratio: "63:88"
   visual_description: "A form-fitting synthetic muscle weave torso suit wired with glowing red pressurized epinephrine conduits and cardiac defibrillator nodes."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

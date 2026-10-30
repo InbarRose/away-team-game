@@ -30,7 +30,7 @@ tags:
   - "bounty"
   - "fortifications"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_05_reinforced_fortifications.webp"
+  asset_path: "/assets/cards/modifiers/modifier_05_reinforced_fortifications.png"
   aspect_ratio: "63:88"
   visual_description: "Heavy interlocking titanium blast shutters and deployable ballistic barricades sealing a corporate vault entrance behind layers of holographic firewall warnings."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

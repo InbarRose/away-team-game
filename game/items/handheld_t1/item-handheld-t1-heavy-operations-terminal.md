@@ -32,7 +32,7 @@ tags:
   - "operations"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-heavy-operations-terminal.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-heavy-operations-terminal.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy dual-grip industrial cyber-deck with reinforced rubberized handles, dual panoramic diagnostic screens, and thick braided umbilical cables."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

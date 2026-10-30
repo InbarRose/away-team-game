@@ -30,7 +30,7 @@ tags:
   - "bribe"
   - "pip-penalty"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_08_executive_bribe_protocol.webp"
+  asset_path: "/assets/cards/modifiers/modifier_08_executive_bribe_protocol.png"
   aspect_ratio: "63:88"
   visual_description: "A facility security chief discreetly accepting a glowing gold credit chit at a checkpoint terminal while toggling the security gate status from 'LOCKED' to 'AUTHORIZED'."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -36,7 +36,7 @@ tags:
   - "secondary-focus"
   - "versatility"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_24_elite_cross_training.webp"
+  asset_path: "/assets/cards/agendas/agenda_24_elite_cross_training.png"
   aspect_ratio: "63:88"
   visual_description: "A soldier inside the HQ Tactical Simulator wearing a neural training headset, seamlessly transitioning from heavy rifle marksmanship to decrypting a holographic security console."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

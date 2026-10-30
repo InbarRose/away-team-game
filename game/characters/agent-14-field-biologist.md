@@ -39,7 +39,7 @@ tags:
   - "primary-intel"
   - "secondary-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_14_field_biologist.webp"
+  asset_path: "/assets/cards/characters/agent_14_field_biologist.png"
   aspect_ratio: "63:88"
   visual_description: "A sharp-featured xenobiologist in a sealed bio-telemetry hazard suit scanning glowing organic spores with a wrist-mounted holographic spectrometer while keeping a sidearm holstered at her hip."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

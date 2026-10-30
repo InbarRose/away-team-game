@@ -30,7 +30,7 @@ tags:
   - "explosive"
   - "aoe-backfire"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_12_explosive_fuel_craters.webp"
+  asset_path: "/assets/cards/modifiers/modifier_12_explosive_fuel_craters.png"
   aspect_ratio: "63:88"
   visual_description: "Leaking orange plasma fuel drums and ruptured promethium lines pooling across a scorched hangar floor as stray ricochet sparks threaten an imminent chain-reaction blast."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

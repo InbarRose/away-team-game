@@ -25,7 +25,7 @@ tags:
   - "medical"
   - "sponsor-controlled"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_landmark_cryo_stasis.webp"
+  asset_path: "/assets/cards/hq/hq_landmark_cryo_stasis.png"
   aspect_ratio: "70:120"
   visual_description: "A towering cylindrical cryogenic immersion pod frosted with liquid nitrogen vapor, illuminated from within by deep cyan bio-lasers monitoring a suspended operative."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

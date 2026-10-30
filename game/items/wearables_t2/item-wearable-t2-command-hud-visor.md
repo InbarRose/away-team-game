@@ -31,7 +31,7 @@ tags:
   - "reroll"
   - "utility"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-command-hud-visor.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-command-hud-visor.png"
   aspect_ratio: "63:88"
   visual_description: "An advanced full-face tactical command visor with dual-layer holographic battle-network overlays, gold telemetry nodes, and multi-target tracking reticles."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

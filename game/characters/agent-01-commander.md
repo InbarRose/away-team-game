@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-intel"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_01_commander.webp"
+  asset_path: "/assets/cards/characters/agent_01_commander.png"
   aspect_ratio: "63:88"
   visual_description: "A grizzled veteran strike-team commander with a silver-streaked beard and scarred jaw, wearing gunmetal tactical plate armor with an illuminated holographic command gauntlet and a bullpup kinetic carbine slung across his chest."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

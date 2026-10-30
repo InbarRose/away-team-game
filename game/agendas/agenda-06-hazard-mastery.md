@@ -36,7 +36,7 @@ tags:
   - "focus-swap"
   - "dominance"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_06_hazard_mastery.webp"
+  asset_path: "/assets/cards/agendas/agenda_06_hazard_mastery.png"
   aspect_ratio: "63:88"
   visual_description: "A survivalist operative cutting through a bio-contaminated ventilation tunnel with a plasma torch, guiding the squad around a sealed blast door."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -75,7 +75,7 @@ tags:
   - "facility"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.webp"
+  asset_path: "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.png"
   aspect_ratio: "70:120"
   visual_description: "A high-altitude border communications array perched on a jagged, wind-swept mountain peak at night, with a giant satellite dish glowing crimson and operatives breaching a concrete patrol bunker toward an underground server vault."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

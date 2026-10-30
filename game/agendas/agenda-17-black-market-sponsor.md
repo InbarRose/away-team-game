@@ -36,7 +36,7 @@ tags:
   - "quartermaster"
   - "equipment"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_17_black_market_sponsor.webp"
+  asset_path: "/assets/cards/agendas/agenda_17_black_market_sponsor.png"
   aspect_ratio: "63:88"
   visual_description: "A quartermaster sliding an unlocked weapon case containing a pristine pulse rifle across the armory counter to a rival faction operative while a corporate sponsor signs the tab."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

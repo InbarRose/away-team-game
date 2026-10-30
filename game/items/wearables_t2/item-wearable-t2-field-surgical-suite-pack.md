@@ -31,7 +31,7 @@ tags:
   - "healing"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-field-surgical-suite-pack.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-field-surgical-suite-pack.png"
   aspect_ratio: "63:88"
   visual_description: "A compact dorsal trauma station equipped with synthetic blood synthesizers, dual laser cauterizer arms, and glowing emerald bio-monitors."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -30,7 +30,7 @@ tags:
   - "collapse"
   - "attrition"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_09_structural_instability.webp"
+  asset_path: "/assets/cards/modifiers/modifier_09_structural_instability.png"
   aspect_ratio: "63:88"
   visual_description: "Buckling steel support girders and collapsing ceiling slabs crashing down in a shower of sparks and concrete dust inside a destabilized underground facility."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

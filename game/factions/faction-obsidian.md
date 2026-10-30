@@ -47,7 +47,7 @@ tags:
   - "agendas"
   - "stealth"
 art_spec:
-  asset_path: "/assets/factions/faction_obsidian.webp"
+  asset_path: "/assets/factions/faction_obsidian.png"
   aspect_ratio: "70:120"
   visual_description: "A razor-sharp matte-obsidian geometric monolith emblem fractured with faint violet light seams, emerging from deep shadow inside a covert black-site briefing room."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -35,7 +35,7 @@ tags:
   - "retention"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_09_roster_retention.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_09_roster_retention.png"
   aspect_ratio: "63:88"
   visual_description: "A full squad of battle-tested operatives assembled in the faction ready-room, helmets under their arms, standing before a roster wall where every status light glows green."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

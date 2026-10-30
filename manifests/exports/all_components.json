@@ -42,7 +42,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_01_overwhelming_force.webp",
+      "asset_path": "/assets/cards/agendas/agenda_01_overwhelming_force.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy assault soldier advancing through shattered concrete cover with a rotary cannon blazing, while a holographic corporate performance meter hits 'MAXIMUM MOMENTUM' in crimson.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -93,7 +93,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_02_shadow_dominance.webp",
+      "asset_path": "/assets/cards/agendas/agenda_02_shadow_dominance.png",
       "aspect_ratio": "63:88",
       "visual_description": "A stealth operative Dropping silently from an overhead ventilation shaft behind two oblivious corporate guards, while security monitors display 'ZERO ALERTS DETECTED' in purple.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -144,7 +144,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_03_telemetry_apex.webp",
+      "asset_path": "/assets/cards/agendas/agenda_03_telemetry_apex.png",
       "aspect_ratio": "63:88",
       "visual_description": "An intelligence specialist illuminated by three floating holographic data globes, extracting a glowing cyan core drive from a high-security server rack.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -195,7 +195,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_04_system_overclock.webp",
+      "asset_path": "/assets/cards/agendas/agenda_04_system_overclock.png",
       "aspect_ratio": "63:88",
       "visual_description": "A combat engineer slamming a heavy manual override lever inside a sparking fusion reactor control room, orange warning strobes shifting to steady operational green.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -246,7 +246,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_05_executive_leverage.webp",
+      "asset_path": "/assets/cards/agendas/agenda_05_executive_leverage.png",
       "aspect_ratio": "63:88",
       "visual_description": "A corporate negotiator sliding an encrypted blackmail slate across a glass conference table toward a sweating facility director, flanked by armed security standing down.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -297,7 +297,7 @@
       "dominance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_06_hazard_mastery.webp",
+      "asset_path": "/assets/cards/agendas/agenda_06_hazard_mastery.png",
       "aspect_ratio": "63:88",
       "visual_description": "A survivalist operative cutting through a bio-contaminated ventilation tunnel with a plasma torch, guiding the squad around a sealed blast door.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -348,7 +348,7 @@
       "loyalty"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_07_battlefield_samaritan.webp",
+      "asset_path": "/assets/cards/agendas/agenda_07_battlefield_samaritan.png",
       "aspect_ratio": "63:88",
       "visual_description": "An operative from one corporate faction injecting a glowing green trauma-stim into the neck seal of a critically wounded rival operative under heavy gunfire.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -399,7 +399,7 @@
       "combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_08_forced_entry.webp",
+      "asset_path": "/assets/cards/agendas/agenda_08_forced_entry.png",
       "aspect_ratio": "63:88",
       "visual_description": "A squad leader detonating a shaped breaching charge on an encrypted biometric vault door, bypassing the keypad entirely as armored troops storm through the smoke.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -450,7 +450,7 @@
       "flawless"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_09_command_resilience.webp",
+      "asset_path": "/assets/cards/agendas/agenda_09_command_resilience.png",
       "aspect_ratio": "63:88",
       "visual_description": "A composed field commander coordinating an orbital supply drop beacon on a rainy extraction pad, all four squad icons on their tactical visor glowing green with full readiness.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -501,7 +501,7 @@
       "endurance"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_10_iron_will.webp",
+      "asset_path": "/assets/cards/agendas/agenda_10_iron_will.png",
       "aspect_ratio": "63:88",
       "visual_description": "A battered operative with a cracked helmet visor and sparking shoulder armor bracing against a bulkhead, still firing accurately through the smoke to secure the objective.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -552,7 +552,7 @@
       "landmark"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_11_flagship_investor.webp",
+      "asset_path": "/assets/cards/agendas/agenda_11_flagship_investor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A faction executive unveiling a golden corporate dedication plaque inside a newly constructed orbital Cryo-Stasis Chamber while construction drones complete the final welds.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -603,7 +603,7 @@
       "medical"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_12_medical_benefactor.webp",
+      "asset_path": "/assets/cards/agendas/agenda_12_medical_benefactor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A surgical robot pod in the HQ Infirmary treating a rival faction's wounded operative, while an authorization screen displays 'SPONSORED BY EXTERNAL Faction GRANT'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -654,7 +654,7 @@
       "credits"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_13_strategic_concession.webp",
+      "asset_path": "/assets/cards/agendas/agenda_13_strategic_concession.png",
       "aspect_ratio": "63:88",
       "visual_description": "A senior corporate director leaning back in a leather boardroom chair and lowering their bidding paddle with a knowing smirk as a rival executive claims the command gavel.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -705,7 +705,7 @@
       "sponsorship"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_14_industrial_monopoly.webp",
+      "asset_path": "/assets/cards/agendas/agenda_14_industrial_monopoly.png",
       "aspect_ratio": "63:88",
       "visual_description": "A panoramic view of the Agency HQ base schematic where two adjacent facility wings light up simultaneously with the same faction's corporate insignia.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -756,7 +756,7 @@
       "bailout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_15_corporate_relief.webp",
+      "asset_path": "/assets/cards/agendas/agenda_15_corporate_relief.png",
       "aspect_ratio": "63:88",
       "visual_description": "A wealthy faction liaison handing an encrypted case of gold credit chips to a desperate rival quartermaster beside an empty vault terminal reading 'BALANCE: 0 CR'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -807,7 +807,7 @@
       "sponsorship"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_16_structural_mastery.webp",
+      "asset_path": "/assets/cards/agendas/agenda_16_structural_mastery.png",
       "aspect_ratio": "63:88",
       "visual_description": "An architectural holo-table in the HQ Boardroom displaying three fully operational, upgraded base modules locked into the station's structural core.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -858,7 +858,7 @@
       "equipment"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_17_black_market_sponsor.webp",
+      "asset_path": "/assets/cards/agendas/agenda_17_black_market_sponsor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A quartermaster sliding an unlocked weapon case containing a pristine pulse rifle across the armory counter to a rival faction operative while a corporate sponsor signs the tab.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -909,7 +909,7 @@
       "progression"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_18_veteran_promotion.webp",
+      "asset_path": "/assets/cards/agendas/agenda_18_veteran_promotion.png",
       "aspect_ratio": "63:88",
       "visual_description": "A battle-scarred specialist standing at attention in the HQ briefing hall as a holographic Tier-3 loyalty commendation badge is pinned to their armored collar.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -960,7 +960,7 @@
       "multi-slot"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_19_heavy_loadout_chassis.webp",
+      "asset_path": "/assets/cards/agendas/agenda_19_heavy_loadout_chassis.png",
       "aspect_ratio": "63:88",
       "visual_description": "An operative locked into a powered exo-frame rig inside the drop-bay gantry, lifting a massive two-handed railgun as mechanical arms secure their armor plates.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1011,7 +1011,7 @@
       "medbay"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_20_cybernetic_reconstruction.webp",
+      "asset_path": "/assets/cards/agendas/agenda_20_cybernetic_reconstruction.png",
       "aspect_ratio": "63:88",
       "visual_description": "A veteran operative sitting on a surgical table in the Cybernetic Lab, flexing a newly attached chrome-and-carbon bionic arm as laser calibrators seal the shoulder joint.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1062,7 +1062,7 @@
       "high-risk"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_21_battle_hardened_vanguard.webp",
+      "asset_path": "/assets/cards/agendas/agenda_21_battle_hardened_vanguard.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily bandaged, limping veteran boarding the extraction dropship with smoking weapon in hand, biometric suit warnings flashing amber yet vitals holding steady.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1113,7 +1113,7 @@
       "merit"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_22_pure_blood_loyalty.webp",
+      "asset_path": "/assets/cards/agendas/agenda_22_pure_blood_loyalty.png",
       "aspect_ratio": "63:88",
       "visual_description": "An operative carving a third tally mark into the stock of their service rifle inside a dimly lit dropship cabin after a brutal mission clearance.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1164,7 +1164,7 @@
       "rivalry"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_23_vulture_retribution.webp",
+      "asset_path": "/assets/cards/agendas/agenda_23_vulture_retribution.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cold-eyed operative retrieving a high-tech weapon from beside a fallen rival's dog tags in the rubble, scratching out the previous faction's serial emblem.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1215,7 +1215,7 @@
       "versatility"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/agendas/agenda_24_elite_cross_training.webp",
+      "asset_path": "/assets/cards/agendas/agenda_24_elite_cross_training.png",
       "aspect_ratio": "63:88",
       "visual_description": "A soldier inside the HQ Tactical Simulator wearing a neural training headset, seamlessly transitioning from heavy rifle marksmanship to decrypting a holographic security console.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1288,7 +1288,7 @@
       "four-mission-arc"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/campaigns/campaign_apex_extraction.webp",
+      "asset_path": "/assets/cards/campaigns/campaign_apex_extraction.png",
       "aspect_ratio": "70:120",
       "visual_description": "A high-stakes tactical command dossier showing a satellite thermal feed of a heavily fortified mountain bioweapons complex, an armored convoy racing along a collapsing cliffside highway under gunship fire, and biometric mugshots of VIP targets Dr. Elena Vance and Dr. Kaelen stamped 'PRIORITY EXTRACTION'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1359,7 +1359,7 @@
       "three-mission-arc"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/campaigns/campaign_iron_dawn.webp",
+      "asset_path": "/assets/cards/campaigns/campaign_iron_dawn.png",
       "aspect_ratio": "70:120",
       "visual_description": "A holographic war-room tactical projection table displaying three linked global targets: a neon-drenched cyberpunk syndicate district, a submerged deep-ocean drilling rig in the Pacific Trench, and a high-orbit communications spire silhouetted against a rising sun over Earth's curvature.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1414,7 +1414,7 @@
       "secondary-intel"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_01_commander.webp",
+      "asset_path": "/assets/cards/characters/agent_01_commander.png",
       "aspect_ratio": "63:88",
       "visual_description": "A grizzled veteran strike-team commander with a silver-streaked beard and scarred jaw, wearing gunmetal tactical plate armor with an illuminated holographic command gauntlet and a bullpup kinetic carbine slung across his chest.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1469,7 +1469,7 @@
       "secondary-infiltrate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_02_pointman.webp",
+      "asset_path": "/assets/cards/characters/agent_02_pointman.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-eyed female point-operative in sleek dark-slate recon-assault armor, aiming a suppressed carbine around a rain-slicked concrete pillar with a green thermal optic over one eye.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1524,7 +1524,7 @@
       "secondary-operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_03_breacher.webp",
+      "asset_path": "/assets/cards/characters/agent_03_breacher.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily scarred assault breacher in scorched ceramic blast-armor bracing a drum-fed automatic shotgun against a breached bulkhead door while spent brass casings fly through the air.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1580,7 +1580,7 @@
       "tank"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_04_juggernaut.webp",
+      "asset_path": "/assets/cards/characters/agent_04_juggernaut.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering heavy-infantry tank clad in thick layered ballistic siege plating with a deployable forearm riot-shield, standing unyielding amidst sparks and ricochets.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1635,7 +1635,7 @@
       "secondary-infiltrate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_05_guerrilla.webp",
+      "asset_path": "/assets/cards/characters/agent_05_guerrilla.png",
       "aspect_ratio": "63:88",
       "visual_description": "A hooded forward-recon sniper in active-camo cloak crouching on an industrial catwalk, painting targets with a high-powered laser designator rifle.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1690,7 +1690,7 @@
       "secondary-operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_06_saboteur.webp",
+      "asset_path": "/assets/cards/characters/agent_06_saboteur.png",
       "aspect_ratio": "63:88",
       "visual_description": "A grinning demolitions recon operative rigging magnetic thermite charges onto a reinforced security bulkhead while holding a remote detonator and compact submachine gun.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1745,7 +1745,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_07_ghost_point.webp",
+      "asset_path": "/assets/cards/characters/agent_07_ghost_point.png",
       "aspect_ratio": "63:88",
       "visual_description": "An agile covert infiltrator in matte-black sound-dampening stealth suit dropping silently from an overhead ventilation shaft above a laser-grid corridor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1802,7 +1802,7 @@
       "glass-cannon"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_08_prowler.webp",
+      "asset_path": "/assets/cards/characters/agent_08_prowler.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cyber-augmented cat-burglar operative with glowing violet optical implants and neural data-jacks, siphoning encrypted credits from a breached corporate vault terminal in the dark.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1857,7 +1857,7 @@
       "secondary-survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_09_ranger.webp",
+      "asset_path": "/assets/cards/characters/agent_09_ranger.png",
       "aspect_ratio": "63:88",
       "visual_description": "A weather-beaten frontier ranger in sealed environmental hazard armor and rebreather mask, wading through toxic green marsh mist with a heavy marksman rifle.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1912,7 +1912,7 @@
       "secondary-intel"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_10_sentinel.webp",
+      "asset_path": "/assets/cards/characters/agent_10_sentinel.png",
       "aspect_ratio": "63:88",
       "visual_description": "A poised field captain in arctic-white and gunmetal survival rig standing atop a windswept radar array, holding a battle rifle and tactical trauma injector.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1967,7 +1967,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_11_vanguard_tracker.webp",
+      "asset_path": "/assets/cards/characters/agent_11_vanguard_tracker.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged wilderness tracker in torn thermal cloak with cybernetic blood-hound olfactory sensors, bracing a heavy carbine while bleeding from a shoulder wound.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2023,7 +2023,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_12_outpost_mechanic.webp",
+      "asset_path": "/assets/cards/characters/agent_12_outpost_mechanic.png",
       "aspect_ratio": "63:88",
       "visual_description": "A resourceful deep-space outpost salvage mechanic in grease-stained exosuit overalls carrying an arc-welder torch and a backpack overflowing with salvaged battery cells.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2079,7 +2079,7 @@
       "medic"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_13_combat_medic.webp",
+      "asset_path": "/assets/cards/characters/agent_13_combat_medic.png",
       "aspect_ratio": "63:88",
       "visual_description": "A battle-hardened field trauma surgeon in crimson-trimmed ballistic armor, holding a pneumatic auto-suture gun in one hand and a compact carbine in the other.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2134,7 +2134,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_14_field_biologist.webp",
+      "asset_path": "/assets/cards/characters/agent_14_field_biologist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-featured xenobiologist in a sealed bio-telemetry hazard suit scanning glowing organic spores with a wrist-mounted holographic spectrometer while keeping a sidearm holstered at her hip.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2191,7 +2191,7 @@
       "glass-cannon"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_15_virologist.webp",
+      "asset_path": "/assets/cards/characters/agent_15_virologist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A focused bioweapons virologist in a sleek dark clean-suit holding a glowing cryo-vial of engineered nanites inside a covert subterranean laboratory.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2247,7 +2247,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_16_systems_architect.webp",
+      "asset_path": "/assets/cards/characters/agent_16_systems_architect.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cybernetically augmented systems architect wearing multi-lens neural spectacles and a silver-weave lab coat, surrounded by floating cyan mainframe schematics.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2302,7 +2302,7 @@
       "secondary-negotiate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_17_political_enforcer.webp",
+      "asset_path": "/assets/cards/characters/agent_17_political_enforcer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering corporate consul in an armored pin-striped overcoat holding a heavy gold-inlaid kinetic revolver in one hand and a glowing legal asset-seizure tablet in the other.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2357,7 +2357,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_18_crisis_coordinator.webp",
+      "asset_path": "/assets/cards/characters/agent_18_crisis_coordinator.png",
       "aspect_ratio": "63:88",
       "visual_description": "A composed crisis negotiator in a white-and-amber armored diplomatic vest standing between two armed security teams with her hands raised, projecting a wide-band ceasefire hologram.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2413,7 +2413,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_19_spymaster.webp",
+      "asset_path": "/assets/cards/characters/agent_19_spymaster.png",
       "aspect_ratio": "63:88",
       "visual_description": "An aristocratic corporate spymaster in a bespoke high-collar velvet-and-kevlar coat seated in a darkened boardroom, reviewing encrypted dossier feeds on a golden monocle display.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2469,7 +2469,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_20_black_ops_envoy.webp",
+      "asset_path": "/assets/cards/characters/agent_20_black_ops_envoy.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-featured covert director in a matte-black tactical trench coat stepping off an executive dropship, opening a slim titanium briefcase lined with glowing vials and encrypted chits.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2524,7 +2524,7 @@
       "secondary-operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_21_combat_slicer.webp",
+      "asset_path": "/assets/cards/characters/agent_21_combat_slicer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A scarred cyber-combat technician with glowing orange sub-dermal coolant lines along his neck and forearms, firing a compact submachine gun while hard-wired into a sparking bulkhead.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2579,7 +2579,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_22_hardware_mechanic.webp",
+      "asset_path": "/assets/cards/characters/agent_22_hardware_mechanic.png",
       "aspect_ratio": "63:88",
       "visual_description": "A grease-streaked heavy mechanic in an industrial orange exo-harness slinging a servo-assisted plasma torch over her shoulder and holding a salvaged titanium power core.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2635,7 +2635,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_23_cryptologist.webp",
+      "asset_path": "/assets/cards/characters/agent_23_cryptologist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A slender cryptologist in a high-collared technical jacket with fiber-optic data cables extending from his wrists into a floating holographic encryption prism.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2691,7 +2691,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_24_eod_drone_operator.webp",
+      "asset_path": "/assets/cards/characters/agent_24_eod_drone_operator.png",
       "aspect_ratio": "63:88",
       "visual_description": "A tactical drone controller wearing a wrap-around FPV telemetry visor and a chest-mounted control deck, flanked by two hovering micro-reconnaissance EOD drones with laser emitters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2758,7 +2758,7 @@
       "pmc"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_aegis.webp",
+      "asset_path": "/assets/factions/faction_aegis.png",
       "aspect_ratio": "70:120",
       "visual_description": "A brutalist gunmetal-slate corporate command crest featuring an angular tactical shield bisected by twin heavy rifle barrels, set against an armored bulkhead lit by cold tactical HUD projections.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2825,7 +2825,7 @@
       "effort-engine"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_ascendant.webp",
+      "asset_path": "/assets/factions/faction_ascendant.png",
       "aspect_ratio": "70:120",
       "visual_description": "A glowing toxic-emerald double-helix emblem coiled around a surgical caduceus inside a pressurized bio-containment cylinder filled with bioluminescent nutrient fluid.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2892,7 +2892,7 @@
       "media"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_aurelius.webp",
+      "asset_path": "/assets/factions/faction_aurelius.png",
       "aspect_ratio": "70:120",
       "visual_description": "A luminous broadcasting-indigo corporate crest shaped like an orbital satellite dish projecting concentric signal waves around a stylized globe inside a high-tech media control room.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -2959,7 +2959,7 @@
       "consumables"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_ironclad.webp",
+      "asset_path": "/assets/factions/faction_ironclad.png",
       "aspect_ratio": "70:120",
       "visual_description": "A weathered rust-bronze industrial claw emblem clamping onto a salvaged reactor core, stenciled onto pitted hull plating with welding sparks flying in the background.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3026,7 +3026,7 @@
       "telemetry"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_nexus.webp",
+      "asset_path": "/assets/factions/faction_nexus.png",
       "aspect_ratio": "70:120",
       "visual_description": "A sleek neon-cyan holographic neural lattice emblem hovering inside a dark clean-room server core, with fiber-optic data streams converging into a stylized cybernetic iris.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3093,7 +3093,7 @@
       "stealth"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_obsidian.webp",
+      "asset_path": "/assets/factions/faction_obsidian.png",
       "aspect_ratio": "70:120",
       "visual_description": "A razor-sharp matte-obsidian geometric monolith emblem fractured with faint violet light seams, emerging from deep shadow inside a covert black-site briefing room.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3160,7 +3160,7 @@
       "dice-refresh"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_titan.webp",
+      "asset_path": "/assets/factions/faction_titan.png",
       "aspect_ratio": "70:120",
       "visual_description": "An industrial hazard-amber corporate emblem featuring a heavy orbital drop-pod descending through atmospheric plasma inside a colossal mechanized cargo bay.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3227,7 +3227,7 @@
       "auctions"
     ],
     "art_spec": {
-      "asset_path": "/assets/factions/faction_vanderbilt.webp",
+      "asset_path": "/assets/factions/faction_vanderbilt.png",
       "aspect_ratio": "70:120",
       "visual_description": "An opulent gilded-brass and black-marble corporate sigil featuring a stylized sovereign crown integrated with rising financial ticker bars inside a penthouse boardroom overlooking an orbital skyline.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3291,7 +3291,7 @@
       "perks"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_boardroom.webp",
+      "asset_path": "/assets/cards/hq/hq_boardroom.png",
       "aspect_ratio": "70:120",
       "visual_description": "A high-security monolithic obsidian boardroom table surrounded by leather executive chairs, encrypted voting consoles, and an illuminated corporate seal overhead.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3356,7 +3356,7 @@
       "trauma"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_infirmary.webp",
+      "asset_path": "/assets/cards/hq/hq_infirmary.png",
       "aspect_ratio": "70:120",
       "visual_description": "A clinical sci-fi trauma bay inside an underground agency bunker featuring two robotic surgical beds, glowing holographic vital-sign monitors, and a pressurized gene-stasis cylinder along the back wall.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3419,7 +3419,7 @@
       "side-missions"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_intel_array.webp",
+      "asset_path": "/assets/cards/hq/hq_intel_array.png",
       "aspect_ratio": "70:120",
       "visual_description": "A cavernous subterranean satellite telemetry hub dominated by a glowing 3D topographical globe, multi-band signal receivers, and banks of decryption terminals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3458,7 +3458,7 @@
       "sponsor-controlled"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_cryo_stasis.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_cryo_stasis.png",
       "aspect_ratio": "70:120",
       "visual_description": "A towering cylindrical cryogenic immersion pod frosted with liquid nitrogen vapor, illuminated from within by deep cyan bio-lasers monitoring a suspended operative.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3496,7 +3496,7 @@
       "armory"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_supply_lines.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_supply_lines.png",
       "aspect_ratio": "70:120",
       "visual_description": "An automated orbital launch rail inside an armored silo firing a heavy reinforced resupply pod toward an open sky hatch amid clouds of exhaust steam.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3535,7 +3535,7 @@
       "sponsor-controlled"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_tactical_simulator.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_tactical_simulator.png",
       "aspect_ratio": "70:120",
       "visual_description": "A hexagonal holographic combat simulation chamber with projection emitters casting wireframe urban cover and target silhouettes around a training operative.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3573,7 +3573,7 @@
       "perks"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_landmark_war_room.webp",
+      "asset_path": "/assets/cards/hq/hq_landmark_war_room.png",
       "aspect_ratio": "70:120",
       "visual_description": "A circular tiered command amphitheater centered around a massive holographic tactical battle-map showing orbital drop vectors and threat zones.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3636,7 +3636,7 @@
       "equipment"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_quartermaster.webp",
+      "asset_path": "/assets/cards/hq/hq_quartermaster.png",
       "aspect_ratio": "70:120",
       "visual_description": "A fortified underground weapons cage and automated ordnance rack displaying matte-black carbines, exo-rigs, and tactical visors behind a reinforced wire-mesh counter.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3700,7 +3700,7 @@
       "loyalty"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/hq/hq_recruitment_bureau.webp",
+      "asset_path": "/assets/cards/hq/hq_recruitment_bureau.png",
       "aspect_ratio": "70:120",
       "visual_description": "A dimly lit corporate personnel dossier room featuring wall-sized holographic operative profiles, biometric scanners, and encrypted contract terminals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3748,7 +3748,7 @@
       "survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/automated_suppressive_turret.webp",
+      "asset_path": "/assets/cards/items/automated_suppressive_turret.png",
       "aspect_ratio": "63:88",
       "visual_description": "A compact folding tripod-mounted auto-cannon with an optical targeting sensor pod, belt-fed caseless ammunition drum, and glowing red laser target acquisition beam.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3796,7 +3796,7 @@
       "modifier-control"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/recon_sentry_drone.webp",
+      "asset_path": "/assets/cards/items/recon_sentry_drone.png",
       "aspect_ratio": "63:88",
       "visual_description": "A whisper-quiet quad-rotor micro-drone hovering inside a dark maintenance duct, fitted with a multi-spectrum cyan optical camera sphere and folding carbon-fiber rotor shrouds.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3845,7 +3845,7 @@
       "operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/specimen_isolation_siphon.webp",
+      "asset_path": "/assets/cards/items/specimen_isolation_siphon.png",
       "aspect_ratio": "63:88",
       "visual_description": "A pressurized cryo-containment cylinder encased in a titanium roll-cage, with a frosted armoured glass viewport illuminating a suspended bio-luminescent specimen in green stasis fluid.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3894,7 +3894,7 @@
       "primary-override"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/sub_space_hacking_matrix.webp",
+      "asset_path": "/assets/cards/items/sub_space_hacking_matrix.png",
       "aspect_ratio": "63:88",
       "visual_description": "A ruggedized military cyber-deck matrix with fold-out holographic logic displays, quantum decryptor heat-pipes glowing orange-cyan, and braided fiber-optic intrusion cables.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3942,7 +3942,7 @@
       "squad-defense"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/fortress_defense_barrier_turret.webp",
+      "asset_path": "/assets/cards/items/fortress_defense_barrier_turret.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy armored quad-leg kinetic sentry turret with twin rotary barrels and wide deployable wings projecting a shimmering blue ballistic energy wall across a blasted corridor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -3992,7 +3992,7 @@
       "failure-immunity"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/heavy_plasma_breach_borer.webp",
+      "asset_path": "/assets/cards/items/heavy_plasma_breach_borer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A massive industrial plasma-torch siege drill braced by a hydraulic arm mount, with a white-hot magnetic containment nozzle, liquid-nitrogen coolant canisters, and heavy hazard shielding.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4040,7 +4040,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/neural_tactical_ai_valkyrie.webp",
+      "asset_path": "/assets/cards/items/neural_tactical_ai_valkyrie.png",
       "aspect_ratio": "63:88",
       "visual_description": "An angular, predatory combat drone hovering on vectored micro-thrusters with a glowing crimson AI optic lens, miniature side-mounted micro-missile pods, and a neural telemetry tether.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4088,7 +4088,7 @@
       "teleport"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/phase_shift_transceiver.webp",
+      "asset_path": "/assets/cards/items/phase_shift_transceiver.png",
       "aspect_ratio": "63:88",
       "visual_description": "An experimental spatial-displacement transceiver unit with three counter-rotating gyroscopic rings surrounding a violet gravitational singularity core inside a rugged titanium housing.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4134,7 +4134,7 @@
       "briefing"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/adrenaline_auto_injector.webp",
+      "asset_path": "/assets/cards/items/adrenaline_auto_injector.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged cylindrical military auto-injector pen with a knurled titanium grip, safety cap removed, and a pressurized glass ampoule glowing bright electric yellow inside.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4181,7 +4181,7 @@
       "combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/combat_hyper_stim.webp",
+      "asset_path": "/assets/cards/items/combat_hyper_stim.png",
       "aspect_ratio": "63:88",
       "visual_description": "A military pneumatic neck-injector loaded with twin pressurized vials of glowing crimson-orange hyper-stimulant, marked with biohazard and cardiac warning stencils.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4229,7 +4229,7 @@
       "effort"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/encrypted_data_core.webp",
+      "asset_path": "/assets/cards/items/encrypted_data_core.png",
       "aspect_ratio": "63:88",
       "visual_description": "A hexagonal ruggedized solid-state memory core with glowing cyan optical fiber data ports, gold-plated contact pins, and a holographic security seal.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4275,7 +4275,7 @@
       "instant"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/field_trauma_medkit.webp",
+      "asset_path": "/assets/cards/items/field_trauma_medkit.png",
       "aspect_ratio": "63:88",
       "visual_description": "A compact white-and-red polycarbonate field trauma pouch popped open to reveal hemostatic bio-gel syringes, laser wound-staplers, and sterile synth-skin patches on a metal grating floor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4321,7 +4321,7 @@
       "resolution"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/smoke_chaff_canister.webp",
+      "asset_path": "/assets/cards/items/smoke_chaff_canister.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy ribbed cylindrical grenade canister venting thick swirling gray thermal-smoke and glittering metallic radar-chaff strips across a dimly lit corridor floor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4369,7 +4369,7 @@
       "infiltrate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/thermal_breaching_charge.webp",
+      "asset_path": "/assets/cards/items/thermal_breaching_charge.png",
       "aspect_ratio": "63:88",
       "visual_description": "A magnetic strip-shaped thermite breaching charge clamped onto a reinforced steel bulkhead door, with an armed digital countdown timer reading '00:03' and red magnetic lock indicators.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4416,7 +4416,7 @@
       "briefing"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/emergency_signal_beacon.webp",
+      "asset_path": "/assets/cards/items/emergency_signal_beacon.png",
       "aspect_ratio": "63:88",
       "visual_description": "A deployable tri-leg orbital transponder beacon with an extended telescoping antenna mast firing a high-intensity amber laser beam upward through a breached facility ceiling.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4463,7 +4463,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/emp_surge_pulse.webp",
+      "asset_path": "/assets/cards/items/emp_surge_pulse.png",
       "aspect_ratio": "63:88",
       "visual_description": "A spherical electromagnetic pulse emitter with copper induction coils visible beneath a slotted polycarbonate shell, discharging crackling arcs of violet-blue electricity.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4511,7 +4511,7 @@
       "survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/high_yield_frag_grenade.webp",
+      "asset_path": "/assets/cards/items/high_yield_frag_grenade.png",
       "aspect_ratio": "63:88",
       "visual_description": "A segmented tungsten-matrix fragmentation grenade with a glowing red digital fuse ring, geometric shrapnel grooves, and a heavy spring-loaded spoon lever.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4558,7 +4558,7 @@
       "instant"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/nanite_bio_foam_canister.webp",
+      "asset_path": "/assets/cards/items/nanite_bio_foam_canister.png",
       "aspect_ratio": "63:88",
       "visual_description": "A pressurized titanium medical aerosol canister with a surgical applicator nozzle, glowing emerald bioluminescent nanite suspension window, and Ascendant Bio-Tech clinical markings.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4612,7 +4612,7 @@
       "briefing"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/neuro_overclock_ampoule.webp",
+      "asset_path": "/assets/cards/items/neuro_overclock_ampoule.png",
       "aspect_ratio": "63:88",
       "visual_description": "A precision neural-port ampoule cartridge filled with swirling iridescent silver-and-cyan liquid nanites, fitted with gold micro-coaxial pins for direct cranial socket injection.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4662,7 +4662,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-bio-hazard-sensor-array.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-bio-hazard-sensor-array.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged handheld telemetry scanner with dual articulated sensor wands, a green-and-cyan spectrographic display showing airborne pathogen density, and hazard warning stripes.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4712,7 +4712,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-corporate-audit-node.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-corporate-audit-node.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sleek brushed-titanium executive tablet with a biometric thumb scanner, glowing amber financial ledgers, and an encrypted satellite uplink antenna.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4762,7 +4762,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-diplomatic-envoy-ai.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-diplomatic-envoy-ai.png",
       "aspect_ratio": "63:88",
       "visual_description": "A palm-sized biometric communicator and neural earpiece unit displaying real-time vocal stress waveforms, heart-rate telemetry, and crisis de-escalation prompts.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4812,7 +4812,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-fiber-optic-recon-probe.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-fiber-optic-recon-probe.png",
       "aspect_ratio": "63:88",
       "visual_description": "A handheld monitor grip attached to a coiled, articulated snake-cam with a micro-thermal lens slipping beneath a sealed steel door.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4860,7 +4860,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-heavy-operations-terminal.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-heavy-operations-terminal.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy dual-grip industrial cyber-deck with reinforced rubberized handles, dual panoramic diagnostic screens, and thick braided umbilical cables.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4908,7 +4908,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-holo-broadcast-comm-unit.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-holo-broadcast-comm-unit.png",
       "aspect_ratio": "63:88",
       "visual_description": "A portable two-handed holographic communications projector case with telescoping transceiver masts and a glowing amber 3D projection of a corporate boardroom seal.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -4958,7 +4958,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-holographic-id-emitter.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-holographic-id-emitter.png",
       "aspect_ratio": "63:88",
       "visual_description": "A covert palm-held badge projector emitting a shimmering holographic executive security clearance seal and biometric RFID spoof signal.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5006,7 +5006,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-industrial-hazard-cutter.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-industrial-hazard-cutter.png",
       "aspect_ratio": "63:88",
       "visual_description": "A two-handed hydraulic rescue spreader and plasma torch Rig painted in weathered hazard yellow, throwing white-hot sparks as it shears through collapsed steel girders.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5054,7 +5054,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-long-range-telemetry-array.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-long-range-telemetry-array.png",
       "aspect_ratio": "63:88",
       "visual_description": "A two-handed collapsible parabolic sensor dish and high-gain signal decryptor with glowing cyan telemetry readouts, carried by reinforced side handles.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5104,7 +5104,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-mag-lock-bypass-rig.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-mag-lock-bypass-rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "A compact, high-frequency electronic lockpicker with copper induction coils, magnetic contact prongs, and an oscillating purple-and-orange waveform screen clamped onto a heavy security bulkhead.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5154,7 +5154,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-psychometric-dossier-pad.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-psychometric-dossier-pad.png",
       "aspect_ratio": "63:88",
       "visual_description": "A slim, glass-screen intelligence datapad displaying facial recognition overlays, psychological vulnerability scores, and classified corporate blackmail files.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5202,7 +5202,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-standard-issue-sidearm.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-standard-issue-sidearm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged, matte-black military semi-automatic pistol with an integrated green laser sight and digital ammo counter reading '15', resting on a scratched steel briefing table under harsh fluorescent lighting.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5250,7 +5250,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-tactical-assault-rifle.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-tactical-assault-rifle.png",
       "aspect_ratio": "63:88",
       "visual_description": "A bullpup military assault carbine with a holographic reflex sight, vented carbon-fiber barrel shroud, and polymer magazine resting on an armory rack.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5300,7 +5300,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-tactical-multi-tool.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-tactical-multi-tool.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy-duty industrial pistol-grip multi-tool featuring a micro-plasma thermal cutter nozzle and an integrated high-tensile grappling winch spool.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5350,7 +5350,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-tactical-slicer-deck.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-tactical-slicer-deck.png",
       "aspect_ratio": "63:88",
       "visual_description": "A ruggedized forearm-mounted hacker terminal with a flip-up holographic display, glowing cyan fiber-optic data cables, and mechanical macro keys, resting on an industrial server rack.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5398,7 +5398,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t1-thermal-infiltration-disruptor.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t1-thermal-infiltration-disruptor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A two-handed directional electronic countermeasures rifle with an octagonal wave-emitter barrel that warps infrared light and dampens acoustic echoes.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5444,7 +5444,7 @@
       "primary-recirculation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-active-camo-field-emitter.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-active-camo-field-emitter.png",
       "aspect_ratio": "63:88",
       "visual_description": "A two-handed metamaterial light-bending projector rig with hexagonal prism emitters creating a shimmering purple optical refraction bubble around the operator's arms.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5496,7 +5496,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-covert-eliminator-sidearm.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-covert-eliminator-sidearm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sleek, integrally suppressed assassin's pistol in matte obsidian carbon-fiber, paired with a voice-modulator collar piece and false credential chip.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5549,7 +5549,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-executive-enforcer-sidearm.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-executive-enforcer-sidearm.png",
       "aspect_ratio": "63:88",
       "visual_description": "An ornate yet lethal corporate revolver with brushed gold-titanium inlays, an integrated polygraph biometric scanner, and encrypted dossier projector.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5595,7 +5595,7 @@
       "primary-recirculation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-heavy-rotary-cannon.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-heavy-rotary-cannon.png",
       "aspect_ratio": "63:88",
       "visual_description": "A massive six-barrel rotary gatling cannon with an underslung servo-stabilizer handle, glowing red-hot barrel tips, and a linked caseless ammunition feed chute.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5643,7 +5643,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-heavy-smart-pistol.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-heavy-smart-pistol.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy-caliber cybernetic smart-pistol with an angular tungsten slide, micro-missile guidance sensors along the barrel, and a red neural target-lock reticle hologram.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5689,7 +5689,7 @@
       "primary-recirculation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-high-gain-deep-scanner.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-high-gain-deep-scanner.png",
       "aspect_ratio": "63:88",
       "visual_description": "A two-handed deep-spectrum gravimetric and electromagnetic scanner unit with rotating ring-antennas and a 3D volumetric wireframe display of an entire underground facility.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5735,7 +5735,7 @@
       "primary-recirculation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-industrial-thermal-cutter.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-industrial-thermal-cutter.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy-duty twin-beam magnetic plasma lance with armored heat-shield gauntlets, projecting a blinding green-white thermal arc.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5787,7 +5787,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-omni-agency-command-rig.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-omni-agency-command-rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "An all-in-one holographic wrist-and-palm corporate field computer projecting layered cyan telemetry, purple stealth routing maps, and amber diplomatic clearance seals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5833,7 +5833,7 @@
       "primary-recirculation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-quantum-processing-terminal.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-quantum-processing-terminal.png",
       "aspect_ratio": "63:88",
       "visual_description": "An ultra-dense portable quantum mainframe deck with liquid-nitrogen cooling tubes, golden qubit core cylinders, and dual-hand haptic control grips.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5886,7 +5886,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-spec-ops-recon-sidearm.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-spec-ops-recon-sidearm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A suppressed black-ops pistol featuring a flip-out multi-spectral telemetry screen, ultrasonic rangefinder, and subsonic magazine.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5932,7 +5932,7 @@
       "primary-recirculation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-sub-neural-broadcast-rig.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-sub-neural-broadcast-rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "A two-handed acoustic and sub-harmonic neural resonance transmitter with gilded dish arrays emitting subtle amber concentric waves.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -5985,7 +5985,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-handheld-t2-tactical-hazard-sidearm.webp",
+      "asset_path": "/assets/cards/items/item-handheld-t2-tactical-hazard-sidearm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged industrial sidearm fitted with an underslung plasma arc-torch and diagnostic logic-probe coupler, finished in high-visibility orange and gunmetal.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6034,7 +6034,7 @@
       "survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/hazard_tech_harness.webp",
+      "asset_path": "/assets/cards/items/hazard_tech_harness.png",
       "aspect_ratio": "63:88",
       "visual_description": "An integrated hermetically sealed industrial rebreather helmet and heavy chest harness with twin corrugated air-scrubbing hoses, glowing amber pressure gauges, and high-visibility hazard striping mounted on an equipment rack.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6088,7 +6088,7 @@
       "focus-bridge"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/heavy_chemical_flamethrower_rig.webp",
+      "asset_path": "/assets/cards/items/heavy_chemical_flamethrower_rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy dual-tank pressurized napalm backpack connected by braided steel fuel lines to a two-handed industrial incinerator nozzle with a flickering blue pilot flame, scorched heat-shield shroud, and analog pressure manifolds.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6138,7 +6138,7 @@
       "combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/stim_injector_berserker_rig.webp",
+      "asset_path": "/assets/cards/items/stim_injector_berserker_rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "A brutalist combat harness and leg brace assembly lined with glowing crimson sub-dermal auto-injectors, biometric heart-rate monitors, and pneumatic vascular compression cuffs.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6187,7 +6187,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/weapon_mount_utility_frame.webp",
+      "asset_path": "/assets/cards/items/weapon_mount_utility_frame.png",
       "aspect_ratio": "63:88",
       "visual_description": "An industrial load-bearing exoskeleton frame spanning torso and legs with hydraulic knee pistons and an articulated gyro-stabilized third mechanical arm extending over the right shoulder with a universal weapon clamp.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6237,7 +6237,7 @@
       "squad-defense"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/aegis_bio_shield_platform.webp",
+      "asset_path": "/assets/cards/items/aegis_bio_shield_platform.png",
       "aspect_ratio": "63:88",
       "visual_description": "A high-tech defensive helmet and chest platform featuring twin shoulder-mounted harmonic field emitter pylons projecting a translucent hexagonal emerald-blue energy lattice around the torso.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6286,7 +6286,7 @@
       "power-frame"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/siphon_core_power_frame.webp",
+      "asset_path": "/assets/cards/items/siphon_core_power_frame.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sleek Tier 2 powered exo-frame covering torso and legs with a glowing electric-teal micro-fusion siphon core embedded in the sternum, superconducting power conduits pulsing along the thighs, and heat-sink vents.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6338,7 +6338,7 @@
       "backfire-immunity"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/titan_dreadnought_chassis.webp",
+      "asset_path": "/assets/cards/items/titan_dreadnought_chassis.png",
       "aspect_ratio": "63:88",
       "visual_description": "A massive full-body mechanized dreadnought armor chassis in weathered industrial amber and gunmetal steel, with a recessed sensor-slit helmet, dorsal reactor exhaust vents glowing molten orange, and an auxiliary servo-arm.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6388,7 +6388,7 @@
       "trauma-heal"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/vanguard_breacher_carapace.webp",
+      "asset_path": "/assets/cards/items/vanguard_breacher_carapace.png",
       "aspect_ratio": "63:88",
       "visual_description": "Heavy angular gunmetal breacher carapace integrating an armored blast-shield helmet, a shoulder-mounted mechanical third weapon gimbal, and internal medical nanite purge ports glowing cyan.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6434,7 +6434,7 @@
       "emergency"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-adrenaline-surge-harness.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-adrenaline-surge-harness.png",
       "aspect_ratio": "63:88",
       "visual_description": "A tactical chest harness fitted with twin pressurized crimson combat-stim ampoules and sub-dermal auto-injector ports over the ribcage.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6480,7 +6480,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-auto-triage-trauma-pack.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-auto-triage-trauma-pack.png",
       "aspect_ratio": "63:88",
       "visual_description": "A white-and-emerald paramedic backpack with an articulated robotic injector arm and pressurized bio-foam canisters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6526,7 +6526,7 @@
       "secondary-focus"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-auxiliary-sensor-monocle.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-auxiliary-sensor-monocle.png",
       "aspect_ratio": "63:88",
       "visual_description": "A precision temple-mounted cybernetic monocle with a rotating aperture ring and green holographic diagnostic overlay.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6572,7 +6572,7 @@
       "medkit"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-field-logistics-backpack.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-field-logistics-backpack.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged hard-shell tactical rucksack with quick-release consumable dispenser pods and a prominent white-and-green Trauma Field Medkit pouch.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6619,7 +6619,7 @@
       "credit-engine"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-field-scavenger-rig.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-field-scavenger-rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "An industrial salvage backpack frame with magnetic scrap-claws, a chemical recharging vat, and a compact component sorter.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6665,7 +6665,7 @@
       "out-of-focus"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-hazard-insulation-harness.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-hazard-insulation-harness.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rubberized high-voltage and thermal insulation chest harness with copper grounding straps and chemical-resistant chest pads.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6711,7 +6711,7 @@
       "failure-protection"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-hydraulic-servo-struts.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-hydraulic-servo-struts.png",
       "aspect_ratio": "63:88",
       "visual_description": "Heavy-duty motorized knee-and-calf servo struts with pressurized hydraulic pistons designed for high-speed sprinting and blast-door evasion.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6756,7 +6756,7 @@
       "backfire-protection"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-impact-recoil-greaves.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-impact-recoil-greaves.png",
       "aspect_ratio": "63:88",
       "visual_description": "Armored lower-leg exoskeleton greaves with pneumatic heel dampers and magnetic sole stabilizers.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6802,7 +6802,7 @@
       "dice-recovery"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-kinetic-energy-absorbers.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-kinetic-energy-absorbers.png",
       "aspect_ratio": "63:88",
       "visual_description": "Sleek cybernetic leg braces lined with glowing emerald kinetic-capacitor coils that charge with every stride.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6848,7 +6848,7 @@
       "backfire-salvage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-kinetic-reclamation-plating.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-kinetic-reclamation-plating.png",
       "aspect_ratio": "63:88",
       "visual_description": "An industrial chest rig plated with piezoelectric impact-harvesting cells and magnetic shrapnel-collection traps glowing with gold charge indicators.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6894,7 +6894,7 @@
       "damage-trigger"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-kinetic-stress-helmet.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-kinetic-stress-helmet.png",
       "aspect_ratio": "63:88",
       "visual_description": "An enclosed tactical combat helmet wired with glowing electric-teal neural telemetry nodes and biometric stress sensors along the temples.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6940,7 +6940,7 @@
       "damage-buffer"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-lightweight-ballistic-vest.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-lightweight-ballistic-vest.png",
       "aspect_ratio": "63:88",
       "visual_description": "A modular Kevlar-and-ceramic tactical plate carrier vest with MOLLE webbing and a cracked trauma plate showing a stopped projectile.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -6986,7 +6986,7 @@
       "primary-focus"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-reactive-pivot-greaves.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-reactive-pivot-greaves.png",
       "aspect_ratio": "63:88",
       "visual_description": "Agile carbon-fiber shin guards with micro-gyroscopic ankle thrusters that fire lateral evasion bursts.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7032,7 +7032,7 @@
       "primary-focus"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-specialist-target-lock-helm.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-specialist-target-lock-helm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy armored specialist helmet with a multi-lens optical turret over the left eye and crimson laser rangefinder emitters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7078,7 +7078,7 @@
       "dice-recovery"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-squad-power-relay-pack.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-squad-power-relay-pack.png",
       "aspect_ratio": "63:88",
       "visual_description": "A dorsal battery-relay pack with twin induction coils and glowing cyan power-transfer tethers.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7124,7 +7124,7 @@
       "utility"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t1-tactical-hud-visor.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t1-tactical-hud-visor.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sleek wrap-around polycarbonate ballistic visor with an illuminated amber-and-cyan heads-up display projecting windage vectors and target reticles.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7169,7 +7169,7 @@
       "backfire-protection"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-apex-recoil-greaves.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-apex-recoil-greaves.png",
       "aspect_ratio": "63:88",
       "visual_description": "Heavy-duty lower-leg exoskeletal greaves with quad-hydraulic shock absorbers running from knee to heel.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7215,7 +7215,7 @@
       "utility"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-command-hud-visor.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-command-hud-visor.png",
       "aspect_ratio": "63:88",
       "visual_description": "An advanced full-face tactical command visor with dual-layer holographic battle-network overlays, gold telemetry nodes, and multi-target tracking reticles.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7262,7 +7262,7 @@
       "emergency"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-emergency-adrenaline-exoskin.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-emergency-adrenaline-exoskin.png",
       "aspect_ratio": "63:88",
       "visual_description": "A form-fitting synthetic muscle weave torso suit wired with glowing red pressurized epinephrine conduits and cardiac defibrillator nodes.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7308,7 +7308,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-field-surgical-suite-pack.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-field-surgical-suite-pack.png",
       "aspect_ratio": "63:88",
       "visual_description": "A compact dorsal trauma station equipped with synthetic blood synthesizers, dual laser cauterizer arms, and glowing emerald bio-monitors.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7354,7 +7354,7 @@
       "damage-buffer"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-heavy-composite-ablative-armor.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-heavy-composite-ablative-armor.png",
       "aspect_ratio": "63:88",
       "visual_description": "Heavy interlocking ceramic-titanium chest and shoulder armor plates with reactive micro-explosive ablative tiles.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7399,7 +7399,7 @@
       "effort-engine"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-kinetic-dynamo-harness.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-kinetic-dynamo-harness.png",
       "aspect_ratio": "63:88",
       "visual_description": "An industrial torso harness wrapped in copper-and-teal electromagnetic induction coils and high-density Effort battery cells.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7445,7 +7445,7 @@
       "temp-dice"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-kinetic-overdrive-greaves.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-kinetic-overdrive-greaves.png",
       "aspect_ratio": "63:88",
       "visual_description": "Streamlined cybernetic sprint greaves with glowing emerald super-capacitor banks along the calves that arc with stored kinetic energy.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7491,7 +7491,7 @@
       "medkit"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-master-quartermaster-frame.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-master-quartermaster-frame.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavy-duty logistical exo-pack frame with automated over-the-shoulder servo-arms and twin stocked Trauma Field Medkit canisters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7536,7 +7536,7 @@
       "focus-elevation"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-neural-override-matrix.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-neural-override-matrix.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cybernetic cranial halo crown with fiber-optic cortical jacks and pulsing magenta-and-cyan synaptic overclock indicators.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7583,7 +7583,7 @@
       "recon"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-orbital-drone-relay-pack.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-orbital-drone-relay-pack.png",
       "aspect_ratio": "63:88",
       "visual_description": "A satellite uplink backpack with a dorsal launch cradle deploying a winged micro-recon drone surrounded by cyan telemetry beams.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7629,7 +7629,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-pneumatic-escape-thrusters.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-pneumatic-escape-thrusters.png",
       "aspect_ratio": "63:88",
       "visual_description": "Armored leg greaves fitted with calf-mounted micro-burst cold-gas thrusters venting pressurized white vapor jets.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7675,7 +7675,7 @@
       "consumable-synergy"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-quantum-re-fabricator-rig.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-quantum-re-fabricator-rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "A portable molecular 3D printer backpack with glowing cyan matter-feedstock tubes and a holographic laser fabrication chamber.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7722,7 +7722,7 @@
       "secondary-focus"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-specialist-apex-cortex-helm.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-specialist-apex-cortex-helm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily armored titanium cortex helmet with glowing neural dampener fins and a tri-optic sensor cluster.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7768,7 +7768,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-stasis-anchor-greaves.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-stasis-anchor-greaves.png",
       "aspect_ratio": "63:88",
       "visual_description": "Massive industrial leg boots with deployable electromagnetic floor clamps and hydraulic anchor spikes driven into steel deck grating.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7814,7 +7814,7 @@
       "damage-prevention"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-sub-dermal-intercept-rig.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-sub-dermal-intercept-rig.png",
       "aspect_ratio": "63:88",
       "visual_description": "A directional kinetic-deflection chest rig with hexagonal electromagnetic projector plates that flare with a blue hard-light barrier.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7860,7 +7860,7 @@
       "squad-support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/items/item-wearable-t2-threat-predictive-telemetry-helm.webp",
+      "asset_path": "/assets/cards/items/item-wearable-t2-threat-predictive-telemetry-helm.png",
       "aspect_ratio": "63:88",
       "visual_description": "A recon helmet topped with a compact wide-band radar dome and glowing cyan threat-vector projection visor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -7960,7 +7960,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.png",
       "aspect_ratio": "70:120",
       "visual_description": "A high-altitude border communications array perched on a jagged, wind-swept mountain peak at night, with a giant satellite dish glowing crimson and operatives breaching a concrete patrol bunker toward an underground server vault.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8055,7 +8055,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.png",
       "aspect_ratio": "70:120",
       "visual_description": "A sterile, menacing subterranean black-site cellblock illuminated by emerald bio-containment fields, where tactical operatives breach a reinforced cryo-cell holding a scientist in a stained lab coat while sparks fly from overridden security consoles.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8149,7 +8149,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.png",
       "aspect_ratio": "70:120",
       "visual_description": "A battered, bullet-riddled armored transport truck careening across a collapsing mountain highway bridge toward a rooftop helipad in a driving rainstorm, as exhausted operatives shield a VIP scientist from incoming VTOL gunship fire.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8257,7 +8257,7 @@
       "four-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.png",
       "aspect_ratio": "70:120",
       "visual_description": "An apocalyptic subterranean bioweapon reactor core in catastrophic meltdown, with toxic emerald containment vats shattering, elite black-armored Executive Guards firing plasma rifles, and the strike team sprinting toward an emergency rail-pod evacuation tunnel.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8342,7 +8342,7 @@
       "two-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.webp",
+      "asset_path": "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.png",
       "aspect_ratio": "70:120",
       "visual_description": "A rain-slicked cyberpunk alleyway in the Neon Syndicate District leading to a heavy biometric vault door, split with a tactical inset of a snow-swept mountain perimeter watchtower guarding a subterranean elevator shaft.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8434,7 +8434,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.webp",
+      "asset_path": "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.png",
       "aspect_ratio": "70:120",
       "visual_description": "A claustrophobic deep-sea research facility corridor with reinforced glass windows looking out into bioluminescent abyssal ocean water, where a four-operative strike team battles an automated heavy security mech guarding a glowing cyan mainframe vault.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8535,7 +8535,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.webp",
+      "asset_path": "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.png",
       "aspect_ratio": "70:120",
       "visual_description": "A dramatic zero-g firefight inside the burning hangar bay of an orbital communications spire as plasma conduits overload, with operatives leaping across collapsing catwalks toward an open assault shuttle ramp against a backdrop of Earth in low orbit.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8584,7 +8584,7 @@
       "blackout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_01_electromagnetic_blackout.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_01_electromagnetic_blackout.png",
       "aspect_ratio": "63:88",
       "visual_description": "A facility corridor plunged into sudden darkness as an electromagnetic pulse wave shatters overhead light fixtures in a shower of blue arcs, disabling an operative's weapon optic.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8633,7 +8633,7 @@
       "suppression"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_02_automated_defense_turrets.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_02_automated_defense_turrets.png",
       "aspect_ratio": "63:88",
       "visual_description": "Twin ceiling-mounted rotary sentry turrets swiveling downward from recessed armor hatches, sweeping a security checkpoint with intersecting red targeting lasers.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8682,7 +8682,7 @@
       "visibility"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_03_atmospheric_smoke.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_03_atmospheric_smoke.png",
       "aspect_ratio": "63:88",
       "visual_description": "Billowing clouds of dense aerosol coolant and chemical smoke flooding an industrial hangar bay, reducing floodlights to diffused amber halos and concealing shadowy silhouettes.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8731,7 +8731,7 @@
       "comms-blackout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_04_wide_band_signal_jammer.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_04_wide_band_signal_jammer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A military-grade tripod signal scrambler pulsing with distortion waves in the center of a command room, turning nearby holographic comms screens into red static.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8775,7 +8775,7 @@
       "fortifications"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_05_reinforced_fortifications.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_05_reinforced_fortifications.png",
       "aspect_ratio": "63:88",
       "visual_description": "Heavy interlocking titanium blast shutters and deployable ballistic barricades sealing a corporate vault entrance behind layers of holographic firewall warnings.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8819,7 +8819,7 @@
       "corrosive"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_06_corrosive_gas_venting.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_06_corrosive_gas_venting.png",
       "aspect_ratio": "63:88",
       "visual_description": "Ruptured overhead chemical conduits hissing thick, acidic green vapor across a grated catwalk, blistering the paint off the walls as emergency scrubbers flash red.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8863,7 +8863,7 @@
       "pip"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_07_high_value_corporate_asset.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_07_high_value_corporate_asset.png",
       "aspect_ratio": "63:88",
       "visual_description": "An illuminated stasis pedestal in the center of a lab holding a glowing prototype quantum core and a locked biometric briefcase marked 'EYES ONLY — EXECUTIVE BOARD'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8907,7 +8907,7 @@
       "pip-penalty"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_08_executive_bribe_protocol.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_08_executive_bribe_protocol.png",
       "aspect_ratio": "63:88",
       "visual_description": "A facility security chief discreetly accepting a glowing gold credit chit at a checkpoint terminal while toggling the security gate status from 'LOCKED' to 'AUTHORIZED'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8951,7 +8951,7 @@
       "attrition"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_09_structural_instability.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_09_structural_instability.png",
       "aspect_ratio": "63:88",
       "visual_description": "Buckling steel support girders and collapsing ceiling slabs crashing down in a shower of sparks and concrete dust inside a destabilized underground facility.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -8995,7 +8995,7 @@
       "lockout"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_10_sub_zero_thermal_drop.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_10_sub_zero_thermal_drop.png",
       "aspect_ratio": "63:88",
       "visual_description": "Shattered liquid-nitrogen cryo-pipes encasing a corridor in jagged blue ice crystals, freezing an operative's weapon battery pack and frosting over their helmet visor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9039,7 +9039,7 @@
       "publicity"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_11_press_corps_cameras.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_11_press_corps_cameras.png",
       "aspect_ratio": "63:88",
       "visual_description": "Autonomous news-broadcast drones with glowing red 'LIVE FEED' lenses hovering above a firefight, beaming real-time squad telemetry directly to corporate boardroom screens.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9083,7 +9083,7 @@
       "aoe-backfire"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/modifiers/modifier_12_explosive_fuel_craters.webp",
+      "asset_path": "/assets/cards/modifiers/modifier_12_explosive_fuel_craters.png",
       "aspect_ratio": "63:88",
       "visual_description": "Leaking orange plasma fuel drums and ruptured promethium lines pooling across a scorched hangar floor as stray ricochet sparks threaten an imminent chain-reaction blast.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9147,7 +9147,7 @@
       "breacher"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_01_breacher_protocol.webp",
+      "asset_path": "/assets/cards/perks/perk_01_breacher_protocol.png",
       "aspect_ratio": "63:88",
       "visual_description": "An armored CQC point-man kicking through a reinforced steel bulkhead amidst sparks and muzzle flash, firing a compact submachine gun one-handed while an holographic tactical HUD highlights critical weak points.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9213,7 +9213,7 @@
       "capstone-t4"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_02_ghost_incursion.webp",
+      "asset_path": "/assets/cards/perks/perk_02_ghost_incursion.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cloaked operative shimmering with active hexagonal optical camouflage, rappelling silently past sweeping red security lasers inside a darkened server vault.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9279,7 +9279,7 @@
       "hacking"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_03_cyber_warfare_suite.webp",
+      "asset_path": "/assets/cards/perks/perk_03_cyber_warfare_suite.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cybernetic technician jacked directly into a smoking corporate mainframe via fiber-optic wrist cables, projecting cascading cyan decryption matrices that shatter red security ICE glyphs.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9343,7 +9343,7 @@
       "survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_04_combat_medic_corps.webp",
+      "asset_path": "/assets/cards/perks/perk_04_combat_medic_corps.png",
       "aspect_ratio": "63:88",
       "visual_description": "A field medic kneeling behind a blast shield in a smoke-filled corridor, pressing glowing cryo-gel defibrillator paddles to a wounded operative's chest plate while biometric vitals spike green.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9407,7 +9407,7 @@
       "inventory"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_05_munitions_supply_logistics.webp",
+      "asset_path": "/assets/cards/perks/perk_05_munitions_supply_logistics.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily Rigged logistics specialist popping open a smoking orbital drop pod crate filled with glowing stim-injectors, EMP grenades, and high-density magazine packs.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9477,7 +9477,7 @@
       "capstone-t4"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_06_venture_monopoly.webp",
+      "asset_path": "/assets/cards/perks/perk_06_venture_monopoly.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-suited corporate liaison standing in an orbital vault beside stacked gold-plated credit chits and holographic market tickers showing hostile buyout approvals.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9543,7 +9543,7 @@
       "agendas"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_07_political_pr_network.webp",
+      "asset_path": "/assets/cards/perks/perk_07_political_pr_network.png",
       "aspect_ratio": "63:88",
       "visual_description": "A charismatic diplomat surrounded by hovering micro-camera drones, adjusting a broadcast feed on a wrist tablet that transforms battlefield chaos into heroic corporate propaganda.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9607,7 +9607,7 @@
       "vulture"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_08_scrapyard_engineering.webp",
+      "asset_path": "/assets/cards/perks/perk_08_scrapyard_engineering.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged scavenger mechanic using an arc-welder torch to patch a cracked ceramic chest plate in the field, surrounded by stripped drone servos and salvaged weapon modules.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9671,7 +9671,7 @@
       "capstone-t4"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_09_hazard_survivalist.webp",
+      "asset_path": "/assets/cards/perks/perk_09_hazard_survivalist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sealed hazmat ranger striding unbothered through venting green corrosive gas and sub-zero frost, respirator glowing amber while scanning a safe path on a thermal wrist compass.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9735,7 +9735,7 @@
       "support"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_10_vanguard_leadership.webp",
+      "asset_path": "/assets/cards/perks/perk_10_vanguard_leadership.png",
       "aspect_ratio": "63:88",
       "visual_description": "A veteran squad commander projecting a 3D holographic floorplan from a forearm emitter, pointing three armed operatives into synchronized flanking positions.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9799,7 +9799,7 @@
       "tank"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_11_juggernaut_bulwark.webp",
+      "asset_path": "/assets/cards/perks/perk_11_juggernaut_bulwark.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering heavy-weapons operative clad in ablative ceramic exo-armor, deploying an expandable forearm riot shield to deflect a hail of ricocheting rounds away from a crouching teammate.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9863,7 +9863,7 @@
       "modifier-control"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/perks/perk_12_reconnaissance_grid.webp",
+      "asset_path": "/assets/cards/perks/perk_12_reconnaissance_grid.png",
       "aspect_ratio": "63:88",
       "visual_description": "A recon specialist perched on an elevated gantry, peering through a multi-spectrum visor while a palm-sized pulse drone scans the room ahead with blue lidar wireframe beams.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9913,7 +9913,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_01_human_capital_hegemony.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_01_human_capital_hegemony.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering holographic wall of honor inside a corporate headquarters displaying decorated veteran operatives and glowing royal-blue loyalty chevrons.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -9963,7 +9963,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_02_corporate_liquidity.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_02_corporate_liquidity.png",
       "aspect_ratio": "63:88",
       "visual_description": "A reinforced titanium bank vault open to reveal rows of illuminated gold corporate credit ingots and digital ledger screens showing massive liquid reserves.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10013,7 +10013,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_03_bureaucratic_monopoly.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_03_bureaucratic_monopoly.png",
       "aspect_ratio": "63:88",
       "visual_description": "A shadowy executive overlooking a semicircular corporate senate chamber from a high balcony, holding magenta-glowing encrypted dossiers linking every board member.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10063,7 +10063,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_04_armory_dominance.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_04_armory_dominance.png",
       "aspect_ratio": "63:88",
       "visual_description": "A private faction armory cage stacked floor-to-ceiling with high-tier railguns, powered exo-suits, and autonomous turret crates under crisp security spotlights.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10113,7 +10113,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_05_institutional_overtime.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_05_institutional_overtime.png",
       "aspect_ratio": "63:88",
       "visual_description": "A row of glowing electric-teal capacitor banks inside a faction command center, humming at maximum charge while telemetry operators work through the night.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10163,7 +10163,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_06_clean_asset_management.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_06_clean_asset_management.png",
       "aspect_ratio": "63:88",
       "visual_description": "A pristine, white-lit corporate medical inspection bay where four operatives stand in immaculate uniforms as a diagnostic scanner displays '100% BIOMETRIC INTEGRITY — ZERO TRAUMA'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10213,7 +10213,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_07_directive_compliance.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_07_directive_compliance.png",
       "aspect_ratio": "63:88",
       "visual_description": "An executive desk covered with stamped, verified mission dossiers and glowing green 'DIRECTIVE FULFILLED' digital seals under an Agency Command holographic crest.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10263,7 +10263,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_08_infrastructure_mastery.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_08_infrastructure_mastery.png",
       "aspect_ratio": "63:88",
       "visual_description": "An orbital view of the expanded Agency Headquarters complex, with gilded corporate sponsorship banners draped across newly welded habitats, comms arrays, and docking bays.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10313,7 +10313,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_09_roster_retention.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_09_roster_retention.png",
       "aspect_ratio": "63:88",
       "visual_description": "A full squad of battle-tested operatives assembled in the faction ready-room, helmets under their arms, standing before a roster wall where every status light glows green.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10363,7 +10363,7 @@
       "tiered-scoring"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/secret_objectives/secret_10_specialist_diversity.webp",
+      "asset_path": "/assets/cards/secret_objectives/secret_10_specialist_diversity.png",
       "aspect_ratio": "63:88",
       "visual_description": "Six distinct specialists—Soldier, Recon, Scientist, Diplomat, Technician, and Survivalist—standing around a hexagonal tactical holo-table, each displaying their signature class tool.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10465,7 +10465,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.png",
       "aspect_ratio": "70:120",
       "visual_description": "A covert operative in a cloaking hood crouched atop a rain-swept corporate perimeter watchtower overlooking a glowing subterranean data vault, with cyan holographic server schematics projected on their visor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10558,7 +10558,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.png",
       "aspect_ratio": "70:120",
       "visual_description": "An underground syndicate armory vault illuminated by harsh amber industrial strips, packed with crates of military-grade rifles, grenades, and tactical rigs as operatives crack the biometric vault door.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10657,7 +10657,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.png",
       "aspect_ratio": "70:120",
       "visual_description": "A decommissioned corporate research satellite tumbling through low planetary orbit surrounded by glowing atmospheric re-entry sparks and floating hull debris, as EVA-suited operatives breach the airlock.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10757,7 +10757,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_04_sub_grid_power_siphon.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_04_sub_grid_power_siphon.png",
       "aspect_ratio": "70:120",
       "visual_description": "A cavernous subterranean corporate power substation crackling with electric-teal plasma arcs and towering high-voltage capacitor banks, as an Engineer operative connects heavy siphon cables to a glowing battery core.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -10852,7 +10852,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.png",
       "aspect_ratio": "70:120",
       "visual_description": "An overgrown jungle bio-research atrium with shattered stasis tubes and encroaching alien bioluminescent vines, where operatives in hazard gear hold off swarming chimeras while a Scientist extracts glowing genetic cryo-canisters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

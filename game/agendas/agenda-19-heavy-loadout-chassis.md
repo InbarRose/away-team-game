@@ -36,7 +36,7 @@ tags:
   - "heavy-gear"
   - "multi-slot"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_19_heavy_loadout_chassis.webp"
+  asset_path: "/assets/cards/agendas/agenda_19_heavy_loadout_chassis.png"
   aspect_ratio: "63:88"
   visual_description: "An operative locked into a powered exo-frame rig inside the drop-bay gantry, lifting a massive two-handed railgun as mechanical arms secure their armor plates."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -76,7 +76,7 @@ tags:
   - "facility"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.webp"
+  asset_path: "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.png"
   aspect_ratio: "70:120"
   visual_description: "A dramatic zero-g firefight inside the burning hangar bay of an orbital communications spire as plasma conduits overload, with operatives leaping across collapsing catwalks toward an open assault shuttle ramp against a backdrop of Earth in low orbit."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

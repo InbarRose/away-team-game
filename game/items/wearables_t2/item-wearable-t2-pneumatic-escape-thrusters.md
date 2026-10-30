@@ -31,7 +31,7 @@ tags:
   - "retreat-safety"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-pneumatic-escape-thrusters.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-pneumatic-escape-thrusters.png"
   aspect_ratio: "63:88"
   visual_description: "Armored leg greaves fitted with calf-mounted micro-burst cold-gas thrusters venting pressurized white vapor jets."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

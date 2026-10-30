@@ -47,7 +47,7 @@ tags:
   - "logistics"
   - "dice-refresh"
 art_spec:
-  asset_path: "/assets/factions/faction_titan.webp"
+  asset_path: "/assets/factions/faction_titan.png"
   aspect_ratio: "70:120"
   visual_description: "An industrial hazard-amber corporate emblem featuring a heavy orbital drop-pod descending through atmospheric plasma inside a colossal mechanized cargo bay."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

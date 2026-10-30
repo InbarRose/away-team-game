@@ -40,7 +40,7 @@ tags:
   - "secondary-infiltrate"
   - "zero-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_20_black_ops_envoy.webp"
+  asset_path: "/assets/cards/characters/agent_20_black_ops_envoy.png"
   aspect_ratio: "63:88"
   visual_description: "A sharp-featured covert director in a matte-black tactical trench coat stepping off an executive dropship, opening a slim titanium briefcase lined with glowing vials and encrypted chits."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

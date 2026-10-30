@@ -32,7 +32,7 @@ tags:
   - "combat"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-heavy-smart-pistol.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-heavy-smart-pistol.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy-caliber cybernetic smart-pistol with an angular tungsten slide, micro-missile guidance sensors along the barrel, and a red neural target-lock reticle hologram."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

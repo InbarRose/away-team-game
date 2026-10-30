@@ -33,7 +33,7 @@ tags:
   - "operations"
   - "infiltrate"
 art_spec:
-  asset_path: "/assets/cards/items/thermal_breaching_charge.webp"
+  asset_path: "/assets/cards/items/thermal_breaching_charge.png"
   aspect_ratio: "63:88"
   visual_description: "A magnetic strip-shaped thermite breaching charge clamped onto a reinforced steel bulkhead door, with an armed digital countdown timer reading '00:03' and red magnetic lock indicators."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

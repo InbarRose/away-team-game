@@ -68,7 +68,7 @@ tags:
   - "arms-cache"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.webp"
+  asset_path: "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.png"
   aspect_ratio: "70:120"
   visual_description: "An underground syndicate armory vault illuminated by harsh amber industrial strips, packed with crates of military-grade rifles, grenades, and tactical rigs as operatives crack the biometric vault door."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

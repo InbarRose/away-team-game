@@ -44,7 +44,7 @@ tags:
   - "pip"
   - "agendas"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_07_political_pr_network.webp"
+  asset_path: "/assets/cards/perks/perk_07_political_pr_network.png"
   aspect_ratio: "63:88"
   visual_description: "A charismatic diplomat surrounded by hovering micro-camera drones, adjusting a broadcast feed on a wrist tablet that transforms battlefield chaos into heroic corporate propaganda."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

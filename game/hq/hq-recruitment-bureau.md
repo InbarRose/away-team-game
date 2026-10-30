@@ -43,7 +43,7 @@ tags:
   - "personnel"
   - "loyalty"
 art_spec:
-  asset_path: "/assets/cards/hq/hq_recruitment_bureau.webp"
+  asset_path: "/assets/cards/hq/hq_recruitment_bureau.png"
   aspect_ratio: "70:120"
   visual_description: "A dimly lit corporate personnel dossier room featuring wall-sized holographic operative profiles, biometric scanners, and encrypted contract terminals."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

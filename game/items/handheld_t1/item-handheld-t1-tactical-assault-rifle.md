@@ -32,7 +32,7 @@ tags:
   - "combat"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-tactical-assault-rifle.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-tactical-assault-rifle.png"
   aspect_ratio: "63:88"
   visual_description: "A bullpup military assault carbine with a holographic reflex sight, vented carbon-fiber barrel shroud, and polymer magazine resting on an armory rack."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

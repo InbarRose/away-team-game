@@ -32,7 +32,7 @@ tags:
   - "salvage"
   - "credit-engine"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t1-field-scavenger-rig.webp"
+  asset_path: "/assets/cards/items/item-wearable-t1-field-scavenger-rig.png"
   aspect_ratio: "63:88"
   visual_description: "An industrial salvage backpack frame with magnetic scrap-claws, a chemical recharging vat, and a compact component sorter."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -150,4 +150,4 @@ In a 3-player game, Slots 1, 2, and 3 are filled by each player's active operati
 > [!DIAGRAM]
 > **Figure 2.1 — Complete Table Setup & Component Hierarchy Schematic**
 > * **Visual Specification:** Comprehensive full-table layout illustration showing Central Command Zone with active Mission Stage Track (Stages 1–3), Stage Modifier deck, HQ Facility Board (5 facilities + 4 landmarks), and Recruitment/Quartermaster markets, flanked by 4 player perimeter enclaves with Faction Dashboards, 3-Currency Vaults, and Operative Loadout Mats.
-> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_8_1_complete_table_setup.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Spread Diagram • **Asset Path:** `/assets/rulebook/fig_8_1_complete_table_setup.png`

@@ -86,4 +86,4 @@ When the squad clears the final Climax Stage of the campaign's last mission, the
 > [!DIAGRAM]
 > **Figure 7.1 — Campaign Progression, Side-Mission Windows & 6-Slot Anatomical Loadout**
 > * **Visual Specification:** Split diagram. Left panel shows the **Campaign Mission Track (`M1` $\rightarrow$ `M2` $\rightarrow$ `M3`)** with optional Side-Mission branches ([Urban], [Space], [Facility]) and the 3-step **[FAIL] Clock**. Right panel shows the **Operative Anatomical Loadout Silhouette** with [Head], [Body], [Legs], [Pack], `[Hand L] + [Hand R]`, [Complex], and `2 Consumable` slots.
-> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_7_1_campaign_and_loadout.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_7_1_campaign_and_loadout.png`

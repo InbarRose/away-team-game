@@ -47,7 +47,7 @@ tags:
   - "pip"
   - "media"
 art_spec:
-  asset_path: "/assets/factions/faction_aurelius.webp"
+  asset_path: "/assets/factions/faction_aurelius.png"
   aspect_ratio: "70:120"
   visual_description: "A luminous broadcasting-indigo corporate crest shaped like an orbital satellite dish projecting concentric signal waves around a stylized globe inside a high-tech media control room."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

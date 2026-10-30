@@ -35,7 +35,7 @@ tags:
   - "dice-refresh"
   - "trauma-heal"
 art_spec:
-  asset_path: "/assets/cards/items/vanguard_breacher_carapace.webp"
+  asset_path: "/assets/cards/items/vanguard_breacher_carapace.png"
   aspect_ratio: "63:88"
   visual_description: "Heavy angular gunmetal breacher carapace integrating an armored blast-shield helmet, a shoulder-mounted mechanical third weapon gimbal, and internal medical nanite purge ports glowing cyan."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

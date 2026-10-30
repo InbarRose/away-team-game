@@ -39,7 +39,7 @@ tags:
   - "primary-survival"
   - "secondary-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_11_vanguard_tracker.webp"
+  asset_path: "/assets/cards/characters/agent_11_vanguard_tracker.png"
   aspect_ratio: "63:88"
   visual_description: "A rugged wilderness tracker in torn thermal cloak with cybernetic blood-hound olfactory sensors, bracing a heavy carbine while bleeding from a shoulder wound."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

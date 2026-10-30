@@ -31,7 +31,7 @@ tags:
   - "negotiate"
   - "primary-recirculation"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-sub-neural-broadcast-rig.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-sub-neural-broadcast-rig.png"
   aspect_ratio: "63:88"
   visual_description: "A two-handed acoustic and sub-harmonic neural resonance transmitter with gilded dish arrays emitting subtle amber concentric waves."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

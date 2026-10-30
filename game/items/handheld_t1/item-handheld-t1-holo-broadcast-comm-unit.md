@@ -32,7 +32,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-holo-broadcast-comm-unit.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-holo-broadcast-comm-unit.png"
   aspect_ratio: "63:88"
   visual_description: "A portable two-handed holographic communications projector case with telescoping transceiver masts and a glowing amber 3D projection of a corporate boardroom seal."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -31,7 +31,7 @@ tags:
   - "intel"
   - "primary-recirculation"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-high-gain-deep-scanner.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-high-gain-deep-scanner.png"
   aspect_ratio: "63:88"
   visual_description: "A two-handed deep-spectrum gravimetric and electromagnetic scanner unit with rotating ring-antennas and a 3D volumetric wireframe display of an entire underground facility."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

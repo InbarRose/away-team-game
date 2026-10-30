@@ -118,4 +118,4 @@ Each Critical Injury or Permanent Trauma token inflicts a compounding `-1 Max HP
 > [!DIAGRAM]
 > **Figure 5.1 — The Med Bay Triage & Trauma Lifecycle**
 > * **Visual Specification:** Dual-track medical bay schematic. Top track shows **In-Mission `0 HP` Stabilization** branching into *Saved at `1 HP`* vs *Dead Pool Martyr (`[+2 PIP]` + Vulture Loot Drop)*. Bottom track shows **HQ Downtime Step 3 Infirmary Beds**: rolling `5+` (Clean Heal), `2–4` (Converts to **Critical Injury Token**), and `1` (Converts to **Permanent Trauma Token** requiring Cybernetic Lab purge).
-> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_5_1_medbay_trauma_flow.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_5_1_medbay_trauma_flow.png`

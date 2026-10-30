@@ -33,7 +33,7 @@ tags:
   - "damage-absorption"
   - "squad-defense"
 art_spec:
-  asset_path: "/assets/cards/items/fortress_defense_barrier_turret.webp"
+  asset_path: "/assets/cards/items/fortress_defense_barrier_turret.png"
   aspect_ratio: "63:88"
   visual_description: "A heavy armored quad-leg kinetic sentry turret with twin rotary barrels and wide deployable wings projecting a shimmering blue ballistic energy wall across a blasted corridor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

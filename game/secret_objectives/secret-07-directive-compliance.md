@@ -35,7 +35,7 @@ tags:
   - "compliance"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_07_directive_compliance.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_07_directive_compliance.png"
   aspect_ratio: "63:88"
   visual_description: "An executive desk covered with stamped, verified mission dossiers and glowing green 'DIRECTIVE FULFILLED' digital seals under an Agency Command holographic crest."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

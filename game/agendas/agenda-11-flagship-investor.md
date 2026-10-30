@@ -36,7 +36,7 @@ tags:
   - "sponsorship"
   - "landmark"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_11_flagship_investor.webp"
+  asset_path: "/assets/cards/agendas/agenda_11_flagship_investor.png"
   aspect_ratio: "63:88"
   visual_description: "A faction executive unveiling a golden corporate dedication plaque inside a newly constructed orbital Cryo-Stasis Chamber while construction drones complete the final welds."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

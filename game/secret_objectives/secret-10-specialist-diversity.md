@@ -35,7 +35,7 @@ tags:
   - "diversity"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_10_specialist_diversity.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_10_specialist_diversity.png"
   aspect_ratio: "63:88"
   visual_description: "Six distinct specialists—Soldier, Recon, Scientist, Diplomat, Technician, and Survivalist—standing around a hexagonal tactical holo-table, each displaying their signature class tool."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -134,4 +134,4 @@ HQ starts with **5 Baseline Facilities** (*Infirmary*, *Quartermaster*, *Recruit
 > [!DIAGRAM]
 > **Figure 6.1 — Faction Dashboard & 4-Tier Economy Layout**
 > * **Visual Specification:** Annotated diagram of a player's physical **Faction Dashboard**. Left zone: **The Faction Vault** holding the 3 spendable currencies ([CR] Gold chits, [EF] Cyan energy cells, [PIP] Magenta executive seals) + Armory Cache cards. Center zone: **Active & Bench Operative Roster** with personal [LOY] rank tracks (`Tiers 1–4`). Top-right corner: **Endgame [VP] Ledger** (separated from the spendable Vault).
-> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_6_1_faction_dashboard_anatomy.webp`
+> * **Aspect Ratio:** `16:9` Rulebook Diagram • **Asset Path:** `/assets/rulebook/fig_6_1_faction_dashboard_anatomy.png`

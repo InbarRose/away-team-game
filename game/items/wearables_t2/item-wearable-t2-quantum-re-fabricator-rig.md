@@ -31,7 +31,7 @@ tags:
   - "fabrication"
   - "consumable-synergy"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-quantum-re-fabricator-rig.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-quantum-re-fabricator-rig.png"
   aspect_ratio: "63:88"
   visual_description: "A portable molecular 3D printer backpack with glowing cyan matter-feedstock tubes and a holographic laser fabrication chamber."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

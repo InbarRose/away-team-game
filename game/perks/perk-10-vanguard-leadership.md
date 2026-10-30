@@ -43,7 +43,7 @@ tags:
   - "command"
   - "support"
 art_spec:
-  asset_path: "/assets/cards/perks/perk_10_vanguard_leadership.webp"
+  asset_path: "/assets/cards/perks/perk_10_vanguard_leadership.png"
   aspect_ratio: "63:88"
   visual_description: "A veteran squad commander projecting a 3D holographic floorplan from a forearm emitter, pointing three armed operatives into synchronized flanking positions."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

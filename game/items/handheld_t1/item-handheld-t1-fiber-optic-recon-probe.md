@@ -34,7 +34,7 @@ tags:
   - "infiltrate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-fiber-optic-recon-probe.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-fiber-optic-recon-probe.png"
   aspect_ratio: "63:88"
   visual_description: "A handheld monitor grip attached to a coiled, articulated snake-cam with a micro-thermal lens slipping beneath a sealed steel door."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

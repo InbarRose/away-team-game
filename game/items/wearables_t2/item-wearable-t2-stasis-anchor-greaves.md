@@ -31,7 +31,7 @@ tags:
   - "failure-protection"
   - "squad-support"
 art_spec:
-  asset_path: "/assets/cards/items/item-wearable-t2-stasis-anchor-greaves.webp"
+  asset_path: "/assets/cards/items/item-wearable-t2-stasis-anchor-greaves.png"
   aspect_ratio: "63:88"
   visual_description: "Massive industrial leg boots with deployable electromagnetic floor clamps and hydraulic anchor spikes driven into steel deck grating."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-intel"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_10_sentinel.webp"
+  asset_path: "/assets/cards/characters/agent_10_sentinel.png"
   aspect_ratio: "63:88"
   visual_description: "A poised field captain in arctic-white and gunmetal survival rig standing atop a windswept radar array, holding a battle rifle and tactical trauma injector."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

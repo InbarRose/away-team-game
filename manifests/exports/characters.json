@@ -46,7 +46,7 @@
       "secondary-intel"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_01_commander.webp",
+      "asset_path": "/assets/cards/characters/agent_01_commander.png",
       "aspect_ratio": "63:88",
       "visual_description": "A grizzled veteran strike-team commander with a silver-streaked beard and scarred jaw, wearing gunmetal tactical plate armor with an illuminated holographic command gauntlet and a bullpup kinetic carbine slung across his chest.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -101,7 +101,7 @@
       "secondary-infiltrate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_02_pointman.webp",
+      "asset_path": "/assets/cards/characters/agent_02_pointman.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-eyed female point-operative in sleek dark-slate recon-assault armor, aiming a suppressed carbine around a rain-slicked concrete pillar with a green thermal optic over one eye.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -156,7 +156,7 @@
       "secondary-operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_03_breacher.webp",
+      "asset_path": "/assets/cards/characters/agent_03_breacher.png",
       "aspect_ratio": "63:88",
       "visual_description": "A heavily scarred assault breacher in scorched ceramic blast-armor bracing a drum-fed automatic shotgun against a breached bulkhead door while spent brass casings fly through the air.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -212,7 +212,7 @@
       "tank"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_04_juggernaut.webp",
+      "asset_path": "/assets/cards/characters/agent_04_juggernaut.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering heavy-infantry tank clad in thick layered ballistic siege plating with a deployable forearm riot-shield, standing unyielding amidst sparks and ricochets.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -267,7 +267,7 @@
       "secondary-infiltrate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_05_guerrilla.webp",
+      "asset_path": "/assets/cards/characters/agent_05_guerrilla.png",
       "aspect_ratio": "63:88",
       "visual_description": "A hooded forward-recon sniper in active-camo cloak crouching on an industrial catwalk, painting targets with a high-powered laser designator rifle.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -322,7 +322,7 @@
       "secondary-operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_06_saboteur.webp",
+      "asset_path": "/assets/cards/characters/agent_06_saboteur.png",
       "aspect_ratio": "63:88",
       "visual_description": "A grinning demolitions recon operative rigging magnetic thermite charges onto a reinforced security bulkhead while holding a remote detonator and compact submachine gun.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -377,7 +377,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_07_ghost_point.webp",
+      "asset_path": "/assets/cards/characters/agent_07_ghost_point.png",
       "aspect_ratio": "63:88",
       "visual_description": "An agile covert infiltrator in matte-black sound-dampening stealth suit dropping silently from an overhead ventilation shaft above a laser-grid corridor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -434,7 +434,7 @@
       "glass-cannon"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_08_prowler.webp",
+      "asset_path": "/assets/cards/characters/agent_08_prowler.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cyber-augmented cat-burglar operative with glowing violet optical implants and neural data-jacks, siphoning encrypted credits from a breached corporate vault terminal in the dark.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -489,7 +489,7 @@
       "secondary-survival"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_09_ranger.webp",
+      "asset_path": "/assets/cards/characters/agent_09_ranger.png",
       "aspect_ratio": "63:88",
       "visual_description": "A weather-beaten frontier ranger in sealed environmental hazard armor and rebreather mask, wading through toxic green marsh mist with a heavy marksman rifle.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -544,7 +544,7 @@
       "secondary-intel"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_10_sentinel.webp",
+      "asset_path": "/assets/cards/characters/agent_10_sentinel.png",
       "aspect_ratio": "63:88",
       "visual_description": "A poised field captain in arctic-white and gunmetal survival rig standing atop a windswept radar array, holding a battle rifle and tactical trauma injector.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -599,7 +599,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_11_vanguard_tracker.webp",
+      "asset_path": "/assets/cards/characters/agent_11_vanguard_tracker.png",
       "aspect_ratio": "63:88",
       "visual_description": "A rugged wilderness tracker in torn thermal cloak with cybernetic blood-hound olfactory sensors, bracing a heavy carbine while bleeding from a shoulder wound.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -655,7 +655,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_12_outpost_mechanic.webp",
+      "asset_path": "/assets/cards/characters/agent_12_outpost_mechanic.png",
       "aspect_ratio": "63:88",
       "visual_description": "A resourceful deep-space outpost salvage mechanic in grease-stained exosuit overalls carrying an arc-welder torch and a backpack overflowing with salvaged battery cells.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -711,7 +711,7 @@
       "medic"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_13_combat_medic.webp",
+      "asset_path": "/assets/cards/characters/agent_13_combat_medic.png",
       "aspect_ratio": "63:88",
       "visual_description": "A battle-hardened field trauma surgeon in crimson-trimmed ballistic armor, holding a pneumatic auto-suture gun in one hand and a compact carbine in the other.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -766,7 +766,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_14_field_biologist.webp",
+      "asset_path": "/assets/cards/characters/agent_14_field_biologist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-featured xenobiologist in a sealed bio-telemetry hazard suit scanning glowing organic spores with a wrist-mounted holographic spectrometer while keeping a sidearm holstered at her hip.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -823,7 +823,7 @@
       "glass-cannon"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_15_virologist.webp",
+      "asset_path": "/assets/cards/characters/agent_15_virologist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A focused bioweapons virologist in a sleek dark clean-suit holding a glowing cryo-vial of engineered nanites inside a covert subterranean laboratory.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -879,7 +879,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_16_systems_architect.webp",
+      "asset_path": "/assets/cards/characters/agent_16_systems_architect.png",
       "aspect_ratio": "63:88",
       "visual_description": "A cybernetically augmented systems architect wearing multi-lens neural spectacles and a silver-weave lab coat, surrounded by floating cyan mainframe schematics.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -934,7 +934,7 @@
       "secondary-negotiate"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_17_political_enforcer.webp",
+      "asset_path": "/assets/cards/characters/agent_17_political_enforcer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A towering corporate consul in an armored pin-striped overcoat holding a heavy gold-inlaid kinetic revolver in one hand and a glowing legal asset-seizure tablet in the other.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -989,7 +989,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_18_crisis_coordinator.webp",
+      "asset_path": "/assets/cards/characters/agent_18_crisis_coordinator.png",
       "aspect_ratio": "63:88",
       "visual_description": "A composed crisis negotiator in a white-and-amber armored diplomatic vest standing between two armed security teams with her hands raised, projecting a wide-band ceasefire hologram.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1045,7 +1045,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_19_spymaster.webp",
+      "asset_path": "/assets/cards/characters/agent_19_spymaster.png",
       "aspect_ratio": "63:88",
       "visual_description": "An aristocratic corporate spymaster in a bespoke high-collar velvet-and-kevlar coat seated in a darkened boardroom, reviewing encrypted dossier feeds on a golden monocle display.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1101,7 +1101,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_20_black_ops_envoy.webp",
+      "asset_path": "/assets/cards/characters/agent_20_black_ops_envoy.png",
       "aspect_ratio": "63:88",
       "visual_description": "A sharp-featured covert director in a matte-black tactical trench coat stepping off an executive dropship, opening a slim titanium briefcase lined with glowing vials and encrypted chits.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1156,7 +1156,7 @@
       "secondary-operations"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_21_combat_slicer.webp",
+      "asset_path": "/assets/cards/characters/agent_21_combat_slicer.png",
       "aspect_ratio": "63:88",
       "visual_description": "A scarred cyber-combat technician with glowing orange sub-dermal coolant lines along his neck and forearms, firing a compact submachine gun while hard-wired into a sparking bulkhead.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1211,7 +1211,7 @@
       "secondary-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_22_hardware_mechanic.webp",
+      "asset_path": "/assets/cards/characters/agent_22_hardware_mechanic.png",
       "aspect_ratio": "63:88",
       "visual_description": "A grease-streaked heavy mechanic in an industrial orange exo-harness slinging a servo-assisted plasma torch over her shoulder and holding a salvaged titanium power core.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1267,7 +1267,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_23_cryptologist.webp",
+      "asset_path": "/assets/cards/characters/agent_23_cryptologist.png",
       "aspect_ratio": "63:88",
       "visual_description": "A slender cryptologist in a high-collared technical jacket with fiber-optic data cables extending from his wrists into a floating holographic encryption prism.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1323,7 +1323,7 @@
       "zero-combat"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/characters/agent_24_eod_drone_operator.webp",
+      "asset_path": "/assets/cards/characters/agent_24_eod_drone_operator.png",
       "aspect_ratio": "63:88",
       "visual_description": "A tactical drone controller wearing a wrap-around FPV telemetry visor and a chest-mounted control deck, flanked by two hovering micro-reconnaissance EOD drones with laser emitters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

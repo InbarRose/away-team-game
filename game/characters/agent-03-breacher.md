@@ -39,7 +39,7 @@ tags:
   - "primary-combat"
   - "secondary-operations"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_03_breacher.webp"
+  asset_path: "/assets/cards/characters/agent_03_breacher.png"
   aspect_ratio: "63:88"
   visual_description: "A heavily scarred assault breacher in scorched ceramic blast-armor bracing a drum-fed automatic shotgun against a breached bulkhead door while spent brass casings fly through the air."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

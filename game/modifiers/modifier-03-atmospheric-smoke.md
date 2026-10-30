@@ -34,7 +34,7 @@ tags:
   - "smoke"
   - "visibility"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_03_atmospheric_smoke.webp"
+  asset_path: "/assets/cards/modifiers/modifier_03_atmospheric_smoke.png"
   aspect_ratio: "63:88"
   visual_description: "Billowing clouds of dense aerosol coolant and chemical smoke flooding an industrial hangar bay, reducing floodlights to diffused amber halos and concealing shadowy silhouettes."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

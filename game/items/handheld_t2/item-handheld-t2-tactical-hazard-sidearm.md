@@ -37,7 +37,7 @@ tags:
   - "survival"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-tactical-hazard-sidearm.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-tactical-hazard-sidearm.png"
   aspect_ratio: "63:88"
   visual_description: "A rugged industrial sidearm fitted with an underslung plasma arc-torch and diagnostic logic-probe coupler, finished in high-visibility orange and gunmetal."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

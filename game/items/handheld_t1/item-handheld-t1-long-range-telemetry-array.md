@@ -32,7 +32,7 @@ tags:
   - "intel"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-long-range-telemetry-array.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-long-range-telemetry-array.png"
   aspect_ratio: "63:88"
   visual_description: "A two-handed collapsible parabolic sensor dish and high-gain signal decryptor with glowing cyan telemetry readouts, carried by reinforced side handles."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

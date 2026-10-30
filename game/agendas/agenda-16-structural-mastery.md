@@ -36,7 +36,7 @@ tags:
   - "cumulative"
   - "sponsorship"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_16_structural_mastery.webp"
+  asset_path: "/assets/cards/agendas/agenda_16_structural_mastery.png"
   aspect_ratio: "63:88"
   visual_description: "An architectural holo-table in the HQ Boardroom displaying three fully operational, upgraded base modules locked into the station's structural core."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

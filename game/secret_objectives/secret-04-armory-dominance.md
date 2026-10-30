@@ -35,7 +35,7 @@ tags:
   - "armory"
   - "tiered-scoring"
 art_spec:
-  asset_path: "/assets/cards/secret_objectives/secret_04_armory_dominance.webp"
+  asset_path: "/assets/cards/secret_objectives/secret_04_armory_dominance.png"
   aspect_ratio: "63:88"
   visual_description: "A private faction armory cage stacked floor-to-ceiling with high-tier railguns, powered exo-suits, and autonomous turret crates under crisp security spotlights."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

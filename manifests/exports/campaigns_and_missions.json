@@ -64,7 +64,7 @@
       "four-mission-arc"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/campaigns/campaign_apex_extraction.webp",
+      "asset_path": "/assets/cards/campaigns/campaign_apex_extraction.png",
       "aspect_ratio": "70:120",
       "visual_description": "A high-stakes tactical command dossier showing a satellite thermal feed of a heavily fortified mountain bioweapons complex, an armored convoy racing along a collapsing cliffside highway under gunship fire, and biometric mugshots of VIP targets Dr. Elena Vance and Dr. Kaelen stamped 'PRIORITY EXTRACTION'.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -135,7 +135,7 @@
       "three-mission-arc"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/campaigns/campaign_iron_dawn.webp",
+      "asset_path": "/assets/cards/campaigns/campaign_iron_dawn.png",
       "aspect_ratio": "70:120",
       "visual_description": "A holographic war-room tactical projection table displaying three linked global targets: a neon-drenched cyberpunk syndicate district, a submerged deep-ocean drilling rig in the Pacific Trench, and a high-orbit communications spire silhouetted against a rising sun over Earth's curvature.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -235,7 +235,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.png",
       "aspect_ratio": "70:120",
       "visual_description": "A high-altitude border communications array perched on a jagged, wind-swept mountain peak at night, with a giant satellite dish glowing crimson and operatives breaching a concrete patrol bunker toward an underground server vault.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -330,7 +330,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.png",
       "aspect_ratio": "70:120",
       "visual_description": "A sterile, menacing subterranean black-site cellblock illuminated by emerald bio-containment fields, where tactical operatives breach a reinforced cryo-cell holding a scientist in a stained lab coat while sparks fly from overridden security consoles.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -424,7 +424,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.png",
       "aspect_ratio": "70:120",
       "visual_description": "A battered, bullet-riddled armored transport truck careening across a collapsing mountain highway bridge toward a rooftop helipad in a driving rainstorm, as exhausted operatives shield a VIP scientist from incoming VTOL gunship fire.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -532,7 +532,7 @@
       "four-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.webp",
+      "asset_path": "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.png",
       "aspect_ratio": "70:120",
       "visual_description": "An apocalyptic subterranean bioweapon reactor core in catastrophic meltdown, with toxic emerald containment vats shattering, elite black-armored Executive Guards firing plasma rifles, and the strike team sprinting toward an emergency rail-pod evacuation tunnel.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -617,7 +617,7 @@
       "two-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.webp",
+      "asset_path": "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.png",
       "aspect_ratio": "70:120",
       "visual_description": "A rain-slicked cyberpunk alleyway in the Neon Syndicate District leading to a heavy biometric vault door, split with a tactical inset of a snow-swept mountain perimeter watchtower guarding a subterranean elevator shaft.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -709,7 +709,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.webp",
+      "asset_path": "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.png",
       "aspect_ratio": "70:120",
       "visual_description": "A claustrophobic deep-sea research facility corridor with reinforced glass windows looking out into bioluminescent abyssal ocean water, where a four-operative strike team battles an automated heavy security mech guarding a glowing cyan mainframe vault.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -810,7 +810,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.webp",
+      "asset_path": "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.png",
       "aspect_ratio": "70:120",
       "visual_description": "A dramatic zero-g firefight inside the burning hangar bay of an orbital communications spire as plasma conduits overload, with operatives leaping across collapsing catwalks toward an open assault shuttle ramp against a backdrop of Earth in low orbit.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -912,7 +912,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.png",
       "aspect_ratio": "70:120",
       "visual_description": "A covert operative in a cloaking hood crouched atop a rain-swept corporate perimeter watchtower overlooking a glowing subterranean data vault, with cyan holographic server schematics projected on their visor.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1005,7 +1005,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.png",
       "aspect_ratio": "70:120",
       "visual_description": "An underground syndicate armory vault illuminated by harsh amber industrial strips, packed with crates of military-grade rifles, grenades, and tactical rigs as operatives crack the biometric vault door.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1104,7 +1104,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.png",
       "aspect_ratio": "70:120",
       "visual_description": "A decommissioned corporate research satellite tumbling through low planetary orbit surrounded by glowing atmospheric re-entry sparks and floating hull debris, as EVA-suited operatives breach the airlock.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1204,7 +1204,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_04_sub_grid_power_siphon.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_04_sub_grid_power_siphon.png",
       "aspect_ratio": "70:120",
       "visual_description": "A cavernous subterranean corporate power substation crackling with electric-teal plasma arcs and towering high-voltage capacitor banks, as an Engineer operative connects heavy siphon cables to a glowing battery core.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
@@ -1299,7 +1299,7 @@
       "three-stage"
     ],
     "art_spec": {
-      "asset_path": "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.webp",
+      "asset_path": "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.png",
       "aspect_ratio": "70:120",
       "visual_description": "An overgrown jungle bio-research atrium with shattered stasis tubes and encroaching alien bioluminescent vines, where operatives in hazard gear hold off swarming chimeras while a Scientist extracts glowing genetic cryo-canisters.",
       "art_style": "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

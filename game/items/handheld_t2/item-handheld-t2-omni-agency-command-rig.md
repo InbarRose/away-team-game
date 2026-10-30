@@ -36,7 +36,7 @@ tags:
   - "negotiate"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t2-omni-agency-command-rig.webp"
+  asset_path: "/assets/cards/items/item-handheld-t2-omni-agency-command-rig.png"
   aspect_ratio: "63:88"
   visual_description: "An all-in-one holographic wrist-and-palm corporate field computer projecting layered cyan telemetry, purple stealth routing maps, and amber diplomatic clearance seals."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

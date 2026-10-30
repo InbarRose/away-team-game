@@ -40,7 +40,7 @@ tags:
   - "secondary-operations"
   - "zero-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_12_outpost_mechanic.webp"
+  asset_path: "/assets/cards/characters/agent_12_outpost_mechanic.png"
   aspect_ratio: "63:88"
   visual_description: "A resourceful deep-space outpost salvage mechanic in grease-stained exosuit overalls carrying an arc-welder torch and a backpack overflowing with salvaged battery cells."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

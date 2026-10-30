@@ -40,7 +40,7 @@ tags:
   - "secondary-intel"
   - "zero-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_19_spymaster.webp"
+  asset_path: "/assets/cards/characters/agent_19_spymaster.png"
   aspect_ratio: "63:88"
   visual_description: "An aristocratic corporate spymaster in a bespoke high-collar velvet-and-kevlar coat seated in a darkened boardroom, reviewing encrypted dossier feeds on a golden monocle display."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

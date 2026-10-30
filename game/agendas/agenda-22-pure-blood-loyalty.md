@@ -36,7 +36,7 @@ tags:
   - "field-progression"
   - "merit"
 art_spec:
-  asset_path: "/assets/cards/agendas/agenda_22_pure_blood_loyalty.webp"
+  asset_path: "/assets/cards/agendas/agenda_22_pure_blood_loyalty.png"
   aspect_ratio: "63:88"
   visual_description: "An operative carving a third tally mark into the stock of their service rifle inside a dimly lit dropship cabin after a brutal mission clearance."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

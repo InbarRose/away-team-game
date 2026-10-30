@@ -34,7 +34,7 @@ tags:
   - "emp"
   - "blackout"
 art_spec:
-  asset_path: "/assets/cards/modifiers/modifier_01_electromagnetic_blackout.webp"
+  asset_path: "/assets/cards/modifiers/modifier_01_electromagnetic_blackout.png"
   aspect_ratio: "63:88"
   visual_description: "A facility corridor plunged into sudden darkness as an electromagnetic pulse wave shatters overhead light fixtures in a shower of blue arcs, disabling an operative's weapon optic."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

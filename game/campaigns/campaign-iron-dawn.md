@@ -54,7 +54,7 @@ tags:
   - "ascendant-biotech"
   - "three-mission-arc"
 art_spec:
-  asset_path: "/assets/cards/campaigns/campaign_iron_dawn.webp"
+  asset_path: "/assets/cards/campaigns/campaign_iron_dawn.png"
   aspect_ratio: "70:120"
   visual_description: "A holographic war-room tactical projection table displaying three linked global targets: a neon-drenched cyberpunk syndicate district, a submerged deep-ocean drilling rig in the Pacific Trench, and a high-orbit communications spire silhouetted against a rising sun over Earth's curvature."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

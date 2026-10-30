@@ -31,7 +31,7 @@ tags:
   - "temp-dice"
   - "briefing"
 art_spec:
-  asset_path: "/assets/cards/items/adrenaline_auto_injector.webp"
+  asset_path: "/assets/cards/items/adrenaline_auto_injector.png"
   aspect_ratio: "63:88"
   visual_description: "A rugged cylindrical military auto-injector pen with a knurled titanium grip, safety cap removed, and a pressurized glass ampoule glowing bright electric yellow inside."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

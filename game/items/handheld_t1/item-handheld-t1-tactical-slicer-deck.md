@@ -34,7 +34,7 @@ tags:
   - "intel"
   - "focus-bridge"
 art_spec:
-  asset_path: "/assets/cards/items/item-handheld-t1-tactical-slicer-deck.webp"
+  asset_path: "/assets/cards/items/item-handheld-t1-tactical-slicer-deck.png"
   aspect_ratio: "63:88"
   visual_description: "A ruggedized forearm-mounted hacker terminal with a flip-up holographic display, glowing cyan fiber-optic data cables, and mechanical macro keys, resting on an industrial server rack."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

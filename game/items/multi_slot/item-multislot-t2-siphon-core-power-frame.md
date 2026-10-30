@@ -34,7 +34,7 @@ tags:
   - "effort-engine"
   - "power-frame"
 art_spec:
-  asset_path: "/assets/cards/items/siphon_core_power_frame.webp"
+  asset_path: "/assets/cards/items/siphon_core_power_frame.png"
   aspect_ratio: "63:88"
   visual_description: "A sleek Tier 2 powered exo-frame covering torso and legs with a glowing electric-teal micro-fusion siphon core embedded in the sternum, superconducting power conduits pulsing along the thighs, and heat-sink vents."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

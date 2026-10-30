@@ -68,7 +68,7 @@ tags:
   - "facility"
   - "three-stage"
 art_spec:
-  asset_path: "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.webp"
+  asset_path: "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.png"
   aspect_ratio: "70:120"
   visual_description: "A claustrophobic deep-sea research facility corridor with reinforced glass windows looking out into bioluminescent abyssal ocean water, where a four-operative strike team battles an automated heavy security mech guarding a glowing cyan mainframe vault."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

@@ -40,7 +40,7 @@ tags:
   - "secondary-operations"
   - "zero-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_16_systems_architect.webp"
+  asset_path: "/assets/cards/characters/agent_16_systems_architect.png"
   aspect_ratio: "63:88"
   visual_description: "A cybernetically augmented systems architect wearing multi-lens neural spectacles and a silver-weave lab coat, surrounded by floating cyan mainframe schematics."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

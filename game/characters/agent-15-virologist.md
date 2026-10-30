@@ -41,7 +41,7 @@ tags:
   - "zero-combat"
   - "glass-cannon"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_15_virologist.webp"
+  asset_path: "/assets/cards/characters/agent_15_virologist.png"
   aspect_ratio: "63:88"
   visual_description: "A focused bioweapons virologist in a sleek dark clean-suit holding a glowing cryo-vial of engineered nanites inside a covert subterranean laboratory."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."

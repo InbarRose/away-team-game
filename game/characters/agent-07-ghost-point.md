@@ -39,7 +39,7 @@ tags:
   - "primary-infiltrate"
   - "secondary-combat"
 art_spec:
-  asset_path: "/assets/cards/characters/agent_07_ghost_point.webp"
+  asset_path: "/assets/cards/characters/agent_07_ghost_point.png"
   aspect_ratio: "63:88"
   visual_description: "An agile covert infiltrator in matte-black sound-dampening stealth suit dropping silently from an overhead ventilation shaft above a laser-grid corridor."
   art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
