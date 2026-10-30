@@ -1,5 +1,6 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { ComponentCard, GameComponent } from './ComponentCard';
+import { PhysicalCardMockup, PhysicalCardModal } from './PhysicalCardMockup';
 import { MarkdownRenderer } from './MarkdownRenderer';
 import { FocusBadge, navigateWiki, SemanticText } from './SemanticText';
 import rawDesignDocs from '../data/design_docs.json';
@@ -310,6 +311,8 @@ export function WikiPortal({
   const [focusFilter, setFocusFilter] = useState<string>('all');
   const [tierFilter, setTierFilter] = useState<string>('all');
   const [subCategoryFilter, setSubCategoryFilter] = useState<string>('all');
+  const [componentPageView, setComponentPageView] = useState<'article' | 'proof'>('article');
+  const [selectedProofItem, setSelectedProofItem] = useState<GameComponent | null>(null);
 
   // Synchronize with URL hash (#/wiki/...) for true multi-page Wiki navigation
   useEffect(() => {
@@ -2124,7 +2127,40 @@ export function WikiPortal({
               </div>
             </nav>
 
-            {/* 2-Column Wiki Article + Infobox */}
+            {/* View Switcher: Documentation Article vs Realistic Card Mockup */}
+            <div
+              style={{
+                display: 'flex',
+                gap: '0.5rem',
+                margin: '0.85rem 0 1.25rem 0',
+                paddingBottom: '0.65rem',
+                borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+              }}
+            >
+              <button
+                type="button"
+                className={`tabletop-btn ${componentPageView === 'article' ? 'tabletop-btn-primary' : ''}`}
+                style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem' }}
+                onClick={() => setComponentPageView('article')}
+              >
+                📄 Wiki Article & Data
+              </button>
+              <button
+                type="button"
+                className={`tabletop-btn ${componentPageView === 'proof' ? 'tabletop-btn-primary' : ''}`}
+                style={{ fontSize: '0.8rem', padding: '0.35rem 0.85rem' }}
+                onClick={() => setComponentPageView('proof')}
+              >
+                🎴 Realistic Card Mockup & Print Proof
+              </button>
+            </div>
+
+            {componentPageView === 'proof' ? (
+              <div style={{ margin: '1rem 0 2rem' }}>
+                <PhysicalCardMockup item={activeComponent} />
+              </div>
+            ) : (
+            /* 2-Column Wiki Article + Infobox */
             <div className="wiki-entity-layout">
               {/* Left Column: Full Wiki Article */}
               <div className="rulebook-article">
@@ -2285,6 +2321,21 @@ export function WikiPortal({
 
                 {/* Art Spec Preview */}
                 <div className="at-card-art-frame">
+                  {activeComponent.art_spec?.asset_path && (
+                    <img
+                      src={activeComponent.art_spec.asset_path}
+                      alt={activeComponent.title}
+                      style={{
+                        width: '100%',
+                        maxHeight: '260px',
+                        objectFit: 'cover',
+                        borderRadius: '6px',
+                        marginBottom: '0.65rem',
+                        boxShadow: '0 4px 12px rgba(0,0,0,0.4)',
+                        border: '1px solid rgba(255,255,255,0.1)',
+                      }}
+                    />
+                  )}
                   <div className="at-card-art-meta">
                     <span>ART SPEC ({activeComponent.art_spec.aspect_ratio})</span>
                     <span>{activeComponent.art_spec.asset_path}</span>
@@ -2292,6 +2343,25 @@ export function WikiPortal({
                   <p className="at-card-art-prompt" style={{ WebkitLineClamp: 6 }}>
                     “{activeComponent.art_spec.visual_description}”
                   </p>
+                  <button
+                    type="button"
+                    className="vtt-btn"
+                    style={{
+                      width: '100%',
+                      marginTop: '0.5rem',
+                      background: 'rgba(56, 189, 248, 0.15)',
+                      border: '1px solid rgba(56, 189, 248, 0.4)',
+                      color: '#38bdf8',
+                      fontSize: '0.74rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      gap: '0.4rem',
+                    }}
+                    onClick={() => setSelectedProofItem(activeComponent)}
+                  >
+                    <span>🎴 Inspect Print Mockup</span>
+                  </button>
                 </div>
 
                 <table className="wiki-infobox-table">
@@ -2427,6 +2497,7 @@ export function WikiPortal({
                 </table>
               </aside>
             </div>
+            )}
           </div>
         )}
 
@@ -2992,6 +3063,12 @@ export function WikiPortal({
               ))}
             </div>
           </div>
+        )}
+        {selectedProofItem && (
+          <PhysicalCardModal
+            item={selectedProofItem}
+            onClose={() => setSelectedProofItem(null)}
+          />
         )}
       </main>
     </div>
