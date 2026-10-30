@@ -280,6 +280,16 @@ To ensure we never lose work to interruptions or timeouts and to keep Git commit
 
 ### 📋 Architecture Decision Records (ADRs)
 
+#### ADR-19: VTT Finite State Machine, Tactical Operations & Client Storage Test Architecture (Suites 12–15)
+* **Context:** The Virtual Tabletop represents a complex interactive client with a multi-step Finite State Machine (Steps 0.1–0.5 setup through Phase 4 HQ downtime), player sovereignty dice commitment steppers, active Director desk consoles, and localStorage persistence. We needed targeted test suites verifying these state transitions, data structures, and edge-case behaviors without requiring heavy browser mocks.
+* **Decision:**
+  1. **Suite 12 (VTT FSM & Setup Flow):** Tests 1P–4P table configuration, 3P Vanguard Slot allocation, sequential Faction Draft seat cycling ($0 ightarrow N-1$), asymmetric vault assets, Zero-Starting-Item invariant on drafted specialists, Open Agendas/Secret Objectives draft (Step 0.4), and campaign initialization.
+  2. **Suite 13 (VTT Tactical Operations & Dice Sovereignty):** Tests individual operative dice commitment without mutating teammates, stamina bounds clamping ($[0..	ext{Available}]$), individual roll execution and Backfire wound application, coordinated squad roll protection for holding-back specialists, Early Resolution step advancement ($2 ightarrow 5$), and Step 5 Momentum die refunds.
+  3. **Suite 14 (VTT HQ Consoles & Active Director Desk):** Tests active Director console switcher, vault scoping, 6-slot anatomical grid compatibility ($2	ext{ Hands}$ limit via `validateSlotLoadout`), armory cache equipping, armor buffer updates, unequip return protocol, boardroom perks, and facility sponsorship records.
+  4. **Suite 15 (Client Storage Persistence & Safety Guards):** Tests `localStorage` state round-trip serialization/hydration, graceful degradation on corrupted JSON, save file export/import numeric invariants ($N ge 0$, no `NaN`), in-game navigation isolation (`IN_GAME_PHASES` vs `SETUP_STEPS`), and "Start New Game" confirmation modal.
+  5. **Native Test Execution:** All 106 tests across 15 suites execute cleanly in $< 3.9$ seconds with 0 external dependencies.
+* **Status:** Adopted and verified across all test suites and static build.
+
 #### ADR-18: Documented Rules-Derived Testing Architecture (Suites 07–11)
 * **Context:** The game's canonical rules are formally articulated across 8 chapters in `/game/core/`, but earlier test coverage primarily focused on directory structure, schemas, and character budget mathematics. We needed direct, automated rules contracts derived from the documented ruleset so that any future rule updates or engine refactors automatically verify compliance or flag drift.
 * **Decision:**
