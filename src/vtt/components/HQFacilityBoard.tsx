@@ -146,6 +146,33 @@ export function HQFacilityBoard({
                 </span>
               </div>
 
+              {/* Facility Artwork Frame */}
+              {fac.art_spec?.asset_path && (
+                <div
+                  style={{
+                    width: '100%',
+                    height: '75px',
+                    borderRadius: '5px',
+                    overflow: 'hidden',
+                    background: 'radial-gradient(circle, #1e293b 0%, #0f172a 100%)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                  }}
+                >
+                  <img
+                    src={fac.art_spec.asset_path}
+                    alt={fac.title}
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      objectFit: 'cover',
+                    }}
+                    onError={(e) => {
+                      (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+                    }}
+                  />
+                </div>
+              )}
+
               {/* Rules / Effects */}
               <div style={{ fontSize: '0.72rem', color: '#cbd5e1', lineHeight: 1.45, flex: 1 }}>
                 <SemanticText text={fac.rules_text || fac.body || ''} />

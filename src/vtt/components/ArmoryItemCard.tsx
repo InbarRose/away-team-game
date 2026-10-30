@@ -72,6 +72,33 @@ export function ArmoryItemCard({
         </span>
       </div>
 
+      {/* Item Artwork Frame */}
+      {item.art_spec?.asset_path && (
+        <div
+          style={{
+            width: '100%',
+            height: '75px',
+            borderRadius: '5px',
+            overflow: 'hidden',
+            background: 'radial-gradient(circle, #1e293b 0%, #0b0f17 100%)',
+            border: '1px solid rgba(255, 255, 255, 0.08)',
+          }}
+        >
+          <img
+            src={item.art_spec.asset_path}
+            alt={item.title}
+            style={{
+              width: '100%',
+              height: '100%',
+              objectFit: 'cover',
+            }}
+            onError={(e) => {
+              (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+            }}
+          />
+        </div>
+      )}
+
       {/* Anatomical Slot & Focus Bridge Badges */}
       <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap' }}>
         {slots.map((s) => (
