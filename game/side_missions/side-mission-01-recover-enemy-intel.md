@@ -1,9 +1,9 @@
 ---
-id: "side-mission-01-recover-enemy-intel"
-title: "Side-Mission: Recover Enemy Intel"
-component_type: "side_mission"
-category: "side_mission"
-faction: "neutral"
+id: side-mission-01-recover-enemy-intel
+title: 'Side-Mission: Recover Enemy Intel'
+component_type: side_mission
+category: side_mission
+faction: neutral
 tier: 1
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "intel"
+  primary: combat
+  secondary: intel
   bridges:
-    - "infiltrate"
-    - "operations"
+    - infiltrate
+    - operations
 stats:
   es_budget: null
   hp_cap: null
@@ -27,60 +27,70 @@ stats:
   bounty_credits: 6
   bounty_pip: 1
   bounty_effort: 0
-  bonus_bounty: "Maintain stealth through Stage 1 (via [Infiltrate] Swap) -> [+3 CR], [+1 PIP]"
+  bonus_bounty: Maintain stealth through Stage 1 (via [Infiltrate] Swap) -> [+3 CR], [+1 PIP]
 themes:
-  - "Urban"
-  - "Covert"
-  - "Facility"
+  - Urban
+  - Covert
+  - Facility
 stages:
   - stage_number: 1
-    name: "Perimeter Watchtower"
-    preset_focus: "combat"
+    name: Perimeter Watchtower
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Stealth Insertion — unlocks Bonus Stealth Bounty)"
-      description: "Shift stage to [Infiltrate] (Target D=4) to slip past the watchtower undetected and preserve the Stealth Bounty."
-    failure_penalty: "Alarm Tripped! Stealth bonus bounty is failed. Every deployed operative loses 1 static die from shock, and Stage 2 and Stage 3 Target Difficulties escalate by +1 Success."
+      cost: '[0 EF] (Stealth Insertion — unlocks Bonus Stealth Bounty)'
+      description: Shift stage to [Infiltrate] (Target D=4) to slip past the watchtower undetected and preserve the Stealth Bounty.
+    failure_penalty: Alarm Tripped! Stealth bonus bounty is failed. Every deployed operative loses 1 static die from shock, and Stage 2 and Stage 3 Target Difficulties escalate by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_01_recover_enemy_intel_1_perimeter_watchtower.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Internal Navigation"
-    preset_focus: "operations"
+    name: Internal Navigation
+    preset_focus: operations
     target_difficulty: 3
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers high facility alert (+1 Difficulty)"
-      description: "Blast through the internal blast doors with breaching charges."
-    failure_penalty: "Security countermeasures trigger! Venting gas inflicts 1 point of HP damage on every deployed operative and deducts [1 EF] from the Squad Leader's Faction Vault."
+      cost: Triggers high facility alert (+1 Difficulty)
+      description: Blast through the internal blast doors with breaching charges.
+    failure_penalty: Security countermeasures trigger! Venting gas inflicts 1 point of HP damage on every deployed operative and deducts [1 EF] from the Squad Leader's Faction Vault.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_01_recover_enemy_intel_2_internal_navigation.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "The Data Vault"
-    preset_focus: "intel"
+    name: The Data Vault
+    preset_focus: intel
     target_difficulty: 3
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 6
-      cost: "Triggers vault turret lockdown (+1 to +2 Difficulty)"
-      description: "Physically rip the classified drives from the server racks under heavy automated turret fire."
-    failure_penalty: "Anti-intrusion wipe completes! The data is permanently lost. Side-Mission ends in failure without base payouts."
-rules_text: "Side-Mission (Themes: [Urban], [Covert], [Facility] — 3 Stages). Base Payout: [6 CR], [1 PIP]. Bonus Stealth Bounty: Maintain stealth through Stage 1 -> [+3 CR], [+1 PIP]. Stage 1: Perimeter Watchtower ([Combat] D3; Stealth Bypass to [Infiltrate] D4). Stage 2: Internal Navigation ([Operations] D3 if stealth maintained, D4 if loud/failed). Stage 3: The Data Vault ([Intel] D3 if stealth maintained, D5 if alert is high)."
+      cost: Triggers vault turret lockdown (+1 to +2 Difficulty)
+      description: Physically rip the classified drives from the server racks under heavy automated turret fire.
+    failure_penalty: Anti-intrusion wipe completes! The data is permanently lost. Side-Mission ends in failure without base payouts.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_01_recover_enemy_intel_3_the_data_vault.svg
+      aspect_ratio: '63:88'
+rules_text: 'Side-Mission (Themes: [Urban], [Covert], [Facility] — 3 Stages). Base Payout: [6 CR], [1 PIP]. Bonus Stealth Bounty: Maintain stealth through Stage 1 -> [+3 CR], [+1 PIP]. Stage 1: Perimeter Watchtower ([Combat] D3; Stealth Bypass to [Infiltrate] D4). Stage 2: Internal Navigation ([Operations] D3 if stealth maintained, D4 if loud/failed). Stage 3: The Data Vault ([Intel] D3 if stealth maintained, D5 if alert is high).'
 active_ability: null
 tags:
-  - "side-mission"
-  - "urban"
-  - "covert"
-  - "facility"
-  - "intel-bounty"
-  - "three-stage"
+  - side-mission
+  - urban
+  - covert
+  - facility
+  - intel-bounty
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_01_recover_enemy_intel.png"
-  aspect_ratio: "70:120"
-  visual_description: "A covert operative in a cloaking hood crouched atop a rain-swept corporate perimeter watchtower overlooking a glowing subterranean data vault, with cyan holographic server schematics projected on their visor."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/side_missions/side_mission_01_recover_enemy_intel.png
+  aspect_ratio: '70:120'
+  visual_description: A covert operative in a cloaking hood crouched atop a rain-swept corporate perimeter watchtower overlooking a glowing subterranean data vault, with cyan holographic server schematics projected on their visor.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Side-Mission: Recover Enemy Intel
 

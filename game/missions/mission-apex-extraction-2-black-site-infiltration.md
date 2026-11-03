@@ -1,9 +1,9 @@
 ---
-id: "mission-apex-extraction-2-black-site-infiltration"
-title: "Mission 2: Black-Site Infiltration (Double-Mission: Part A)"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-apex-extraction-2-black-site-infiltration
+title: 'Mission 2: Black-Site Infiltration (Double-Mission: Part A)'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 3
 deck_copies: 1
 cost:
@@ -11,10 +11,10 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "operations"
+  primary: combat
+  secondary: operations
   bridges:
-    - "infiltrate"
+    - infiltrate
 stats:
   es_budget: null
   hp_cap: null
@@ -22,60 +22,70 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-apex-extraction"
+  campaign_id: campaign-apex-extraction
   mission_number: 2
   stage_count: 3
   doom_on_failure: 2
   bounty_credits: 8
   bounty_pip: 2
   bounty_effort: 0
-  squad_requirement: "At least 1 [Combat] and 1 [Operations] operative"
-  continuous_drop_next: "mission-apex-extraction-3-vip-exfiltration-escort"
+  squad_requirement: At least 1 [Combat] and 1 [Operations] operative
+  continuous_drop_next: mission-apex-extraction-3-vip-exfiltration-escort
 stages:
   - stage_number: 1
-    name: "Perimeter Guard Gate"
-    preset_focus: "combat"
+    name: Perimeter Guard Gate
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Standard Bypass)"
-      description: "Spoof biometric gate transponders and slip past the outer black-site checkpoint."
-    failure_penalty: "Black-site lockdown initiated! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[0 EF] (Standard Bypass)'
+      description: Spoof biometric gate transponders and slip past the outer black-site checkpoint.
+    failure_penalty: Black-site lockdown initiated! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_2_black_site_infiltration_1_perimeter_guard_gate.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Sub-Level Barracks"
-    preset_focus: "combat"
+    name: Sub-Level Barracks
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap: null
-    failure_penalty: "Close-quarters crossfire! Every deployed operative takes 1 point of HP damage, and Stage 3 Target Difficulty escalates by +1 Success."
+    failure_penalty: Close-quarters crossfire! Every deployed operative takes 1 point of HP damage, and Stage 3 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_2_black_site_infiltration_2_sub_level_barracks.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Bio-Vault Cellblock"
-    preset_focus: "operations"
+    name: Bio-Vault Cellblock
+    preset_focus: operations
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers cellblock purge (+1 Difficulty)"
-      description: "Detonate shaped breaching charges on the containment cell doors and fight through the warden's guard detail."
-    failure_penalty: "Mission Failure: VIP Dr. Vance is executed/evacuated! Add [+2 FAIL] and consume 1 Campaign Retry. Unlocks 1 optional Side-Mission before retrying at Facility Beta for Target B (Dr. Kaelen)."
-rules_text: "Operation: Apex Extraction — Mission 2 (Double-Mission Part A, 3 Stages). Stage 1: Perimeter Guard Gate ([Combat] D4; Bypass to [Infiltrate] D4). Stage 2: Sub-Level Barracks ([Combat] D3, Mandatory Fight). Stage 3: Bio-Vault Cellblock ([Operations] D4; Force Breach to [Combat] D5). CONTINUOUS LINK: Upon clearing Stage 3, SKIP HQ DOWNTIME and deploy immediately into Mission 3 with surviving HP, unspent dice, and gear! FAILURE CONTINGENCY: Failing adds [+2 FAIL], consumes 1 Retry, allows 1 Side-Mission, and pivots retry to Facility Beta for Target B (Dr. Kaelen)."
+      cost: Triggers cellblock purge (+1 Difficulty)
+      description: Detonate shaped breaching charges on the containment cell doors and fight through the warden's guard detail.
+    failure_penalty: 'Mission Failure: VIP Dr. Vance is executed/evacuated! Add [+2 FAIL] and consume 1 Campaign Retry. Unlocks 1 optional Side-Mission before retrying at Facility Beta for Target B (Dr. Kaelen).'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_2_black_site_infiltration_3_bio_vault_cellblock.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Apex Extraction — Mission 2 (Double-Mission Part A, 3 Stages). Stage 1: Perimeter Guard Gate ([Combat] D4; Bypass to [Infiltrate] D4). Stage 2: Sub-Level Barracks ([Combat] D3, Mandatory Fight). Stage 3: Bio-Vault Cellblock ([Operations] D4; Force Breach to [Combat] D5). CONTINUOUS LINK: Upon clearing Stage 3, SKIP HQ DOWNTIME and deploy immediately into Mission 3 with surviving HP, unspent dice, and gear! FAILURE CONTINGENCY: Failing adds [+2 FAIL], consumes 1 Retry, allows 1 Side-Mission, and pivots retry to Facility Beta for Target B (Dr. Kaelen).'
 active_ability: null
 tags:
-  - "mission"
-  - "apex-extraction"
-  - "mission-2"
-  - "continuous-drop-part-a"
-  - "facility"
-  - "covert"
-  - "three-stage"
+  - mission
+  - apex-extraction
+  - mission-2
+  - continuous-drop-part-a
+  - facility
+  - covert
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.png"
-  aspect_ratio: "70:120"
-  visual_description: "A sterile, menacing subterranean black-site cellblock illuminated by emerald bio-containment fields, where tactical operatives breach a reinforced cryo-cell holding a scientist in a stained lab coat while sparks fly from overridden security consoles."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_apex_extraction_2_black_site_infiltration.png
+  aspect_ratio: '70:120'
+  visual_description: A sterile, menacing subterranean black-site cellblock illuminated by emerald bio-containment fields, where tactical operatives breach a reinforced cryo-cell holding a scientist in a stained lab coat while sparks fly from overridden security consoles.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 2: Black-Site Infiltration (Double-Mission: Part A)
 

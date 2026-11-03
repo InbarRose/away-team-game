@@ -1,9 +1,9 @@
 ---
-id: "side-mission-04-sub-grid-power-siphon"
-title: "Side-Mission: Sub-Grid Power Siphon"
-component_type: "side_mission"
-category: "side_mission"
-faction: "neutral"
+id: side-mission-04-sub-grid-power-siphon
+title: 'Side-Mission: Sub-Grid Power Siphon'
+component_type: side_mission
+category: side_mission
+faction: neutral
 tier: 2
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "operations"
-  secondary: "combat"
+  primary: operations
+  secondary: combat
   bridges:
-    - "infiltrate"
-    - "survival"
+    - infiltrate
+    - survival
 stats:
   es_budget: null
   hp_cap: null
@@ -27,58 +27,68 @@ stats:
   bounty_credits: 5
   bounty_pip: 0
   bounty_effort: 2
-  bonus_bounty: "Clear Stage 2 without rolling any natural 1s (Backfires) -> [+2 CR]"
+  bonus_bounty: Clear Stage 2 without rolling any natural 1s (Backfires) -> [+2 CR]
 themes:
-  - "Facility"
-  - "Urban"
+  - Facility
+  - Urban
 stages:
   - stage_number: 1
-    name: "Maintenance Checkpoint"
-    preset_focus: "combat"
+    name: Maintenance Checkpoint
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Standard Bypass)"
-      description: "Crawl through high-voltage utility conduits to bypass the maintenance checkpoint."
-    failure_penalty: "Alert tripped! Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[0 EF] (Standard Bypass)'
+      description: Crawl through high-voltage utility conduits to bypass the maintenance checkpoint.
+    failure_penalty: Alert tripped! Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_04_sub_grid_power_siphon_1_maintenance_checkpoint.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "High-Voltage Recalibration"
-    preset_focus: "operations"
+    name: High-Voltage Recalibration
+    preset_focus: operations
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers transformer coolant rupture (+1 Difficulty)"
-      description: "Override the transformers by shooting out the pressurized liquid nitrogen cooling lines."
-    failure_penalty: "Voltage arc! Every deployed operative takes 1 point of HP damage."
+      cost: Triggers transformer coolant rupture (+1 Difficulty)
+      description: Override the transformers by shooting out the pressurized liquid nitrogen cooling lines.
+    failure_penalty: Voltage arc! Every deployed operative takes 1 point of HP damage.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_04_sub_grid_power_siphon_2_high_voltage_recalibration.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Generator Overdrive"
-    preset_focus: "survival"
+    name: Generator Overdrive
+    preset_focus: survival
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "operations"
+      type: tactical_bypass
+      target_focus: operations
       target_difficulty: 4
-      cost: "[0 EF] (Terminal Override)"
-      description: "Engage emergency heat sinks via terminal overrides to vent the plasma feedback safely."
-    failure_penalty: "Generator safety trip! The siphon fails; the squad extracts without base payouts."
-rules_text: "Side-Mission (Themes: [Facility], [Urban] — 3 Stages). Base Clearance Bounty: [5 CR], [2 EF] deposited directly into Vault. Bonus Bounty: Clear Stage 2 without rolling natural 1s -> [+2 CR]. Stage 1: Maintenance Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: High-Voltage Recalibration ([Operations] D4; Force Breach to [Combat] D5). Stage 3: Generator Overdrive ([Survival] D4; Bypass to [Operations] D4)."
+      cost: '[0 EF] (Terminal Override)'
+      description: Engage emergency heat sinks via terminal overrides to vent the plasma feedback safely.
+    failure_penalty: Generator safety trip! The siphon fails; the squad extracts without base payouts.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_04_sub_grid_power_siphon_3_generator_overdrive.svg
+      aspect_ratio: '63:88'
+rules_text: 'Side-Mission (Themes: [Facility], [Urban] — 3 Stages). Base Clearance Bounty: [5 CR], [2 EF] deposited directly into Vault. Bonus Bounty: Clear Stage 2 without rolling natural 1s -> [+2 CR]. Stage 1: Maintenance Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: High-Voltage Recalibration ([Operations] D4; Force Breach to [Combat] D5). Stage 3: Generator Overdrive ([Survival] D4; Bypass to [Operations] D4).'
 active_ability: null
 tags:
-  - "side-mission"
-  - "facility"
-  - "urban"
-  - "effort-bounty"
-  - "three-stage"
+  - side-mission
+  - facility
+  - urban
+  - effort-bounty
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_04_sub_grid_power_siphon.png"
-  aspect_ratio: "70:120"
-  visual_description: "A cavernous subterranean corporate power substation crackling with electric-teal plasma arcs and towering high-voltage capacitor banks, as an Engineer operative connects heavy siphon cables to a glowing battery core."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/side_missions/side_mission_04_sub_grid_power_siphon.png
+  aspect_ratio: '70:120'
+  visual_description: A cavernous subterranean corporate power substation crackling with electric-teal plasma arcs and towering high-voltage capacitor banks, as an Engineer operative connects heavy siphon cables to a glowing battery core.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Side-Mission: Sub-Grid Power Siphon
 

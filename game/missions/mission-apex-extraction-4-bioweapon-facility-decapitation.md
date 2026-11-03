@@ -1,9 +1,9 @@
 ---
-id: "mission-apex-extraction-4-bioweapon-facility-decapitation"
-title: "Mission 4: Bioweapon Facility Decapitation (Campaign Climax)"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-apex-extraction-4-bioweapon-facility-decapitation
+title: 'Mission 4: Bioweapon Facility Decapitation (Campaign Climax)'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 4
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "operations"
+  primary: combat
+  secondary: operations
   bridges:
-    - "infiltrate"
-    - "survival"
+    - infiltrate
+    - survival
 stats:
   es_budget: null
   hp_cap: null
@@ -23,69 +23,82 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-apex-extraction"
+  campaign_id: campaign-apex-extraction
   mission_number: 4
   stage_count: 4
   doom_on_failure: 1
   bounty_credits: 0
   bounty_pip: 0
   bounty_effort: 0
-  squad_requirement: "Side-Missions strictly locked out prior to launch; 4-Stage Finale"
+  squad_requirement: Side-Missions strictly locked out prior to launch; 4-Stage Finale
 stages:
   - stage_number: 1
-    name: "Outer Rampart Siege"
-    preset_focus: "combat"
+    name: Outer Rampart Siege
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Uses VIP Biometric Overrides)"
-      description: "Use the extracted VIP's biometric clearance codes to slip through the subterranean waste-disposal airlocks unseen."
-    failure_penalty: "Rampart artillery barrage! Every deployed operative takes 1 point of HP damage, and Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[0 EF] (Uses VIP Biometric Overrides)'
+      description: Use the extracted VIP's biometric clearance codes to slip through the subterranean waste-disposal airlocks unseen.
+    failure_penalty: Rampart artillery barrage! Every deployed operative takes 1 point of HP damage, and Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_4_bioweapon_facility_decapitation_1_outer_rampart_siege.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Reactor Core Overload"
-    preset_focus: "operations"
+    name: Reactor Core Overload
+    preset_focus: operations
     target_difficulty: 5
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 6
-      cost: "Triggers core radiation vent (+1 Difficulty)"
-      description: "Detonate high-explosive charges directly against the primary reactor coolant manifolds while fighting off core technicians and sentries."
-    failure_penalty: "Plasma radiation surge! Every deployed operative loses 1 static die and takes 1 point of HP damage."
+      cost: Triggers core radiation vent (+1 Difficulty)
+      description: Detonate high-explosive charges directly against the primary reactor coolant manifolds while fighting off core technicians and sentries.
+    failure_penalty: Plasma radiation surge! Every deployed operative loses 1 static die and takes 1 point of HP damage.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_4_bioweapon_facility_decapitation_2_reactor_core_overload.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Executive Guard Core"
-    preset_focus: "combat"
+    name: Executive Guard Core
+    preset_focus: combat
     target_difficulty: 5
     dynamic_swap: null
-    failure_penalty: "Elite Directorate counter-strike! Every deployed operative takes 1 point of HP damage, the Squad Leader loses [1 EF], and Stage 4 Target Difficulty escalates by +1 Success."
+    failure_penalty: Elite Directorate counter-strike! Every deployed operative takes 1 point of HP damage, the Squad Leader loses [1 EF], and Stage 4 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_4_bioweapon_facility_decapitation_3_executive_guard_core.svg
+      aspect_ratio: '63:88'
   - stage_number: 4
-    name: "Meltdown Evacuation"
-    preset_focus: "survival"
+    name: Meltdown Evacuation
+    preset_focus: survival
     target_difficulty: 5
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "operations"
+      type: tactical_bypass
+      target_focus: operations
       target_difficulty: 5
-      cost: "[1 EF] from Squad Leader's Vault"
-      description: "Spend [1 EF] to hotwire the executive escape pod rail-launchers and blast out of the collapsing mountain complex."
-    failure_penalty: "Mission Failure: Catastrophic subterranean collapse aborts the assault! Add [+1 FAIL] and consume 1 Campaign Retry (if budget remains)."
-rules_text: "Operation: Apex Extraction — Mission 4 Campaign Climax (4 Stages). Pre-Mission Lockdown: Side-Missions strictly prohibited prior to launch. Stage 1: Outer Rampart Siege ([Combat] D4; Bypass to [Infiltrate] D4). Stage 2: Reactor Core Overload ([Operations] D5; Force Breach to [Combat] D6). Stage 3: Executive Guard Core ([Combat] D5, Mandatory Fight). Stage 4: Meltdown Evacuation ([Survival] D5; Bypass to [Operations] D5 for [1 EF]). Clearing Stage 4 wins the Campaign!"
+      cost: '[1 EF] from Squad Leader''s Vault'
+      description: Spend [1 EF] to hotwire the executive escape pod rail-launchers and blast out of the collapsing mountain complex.
+    failure_penalty: 'Mission Failure: Catastrophic subterranean collapse aborts the assault! Add [+1 FAIL] and consume 1 Campaign Retry (if budget remains).'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_4_bioweapon_facility_decapitation_4_meltdown_evacuation.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Apex Extraction — Mission 4 Campaign Climax (4 Stages). Pre-Mission Lockdown: Side-Missions strictly prohibited prior to launch. Stage 1: Outer Rampart Siege ([Combat] D4; Bypass to [Infiltrate] D4). Stage 2: Reactor Core Overload ([Operations] D5; Force Breach to [Combat] D6). Stage 3: Executive Guard Core ([Combat] D5, Mandatory Fight). Stage 4: Meltdown Evacuation ([Survival] D5; Bypass to [Operations] D5 for [1 EF]). Clearing Stage 4 wins the Campaign!'
 active_ability: null
 tags:
-  - "mission"
-  - "apex-extraction"
-  - "mission-4"
-  - "climax"
-  - "facility"
-  - "four-stage"
+  - mission
+  - apex-extraction
+  - mission-4
+  - climax
+  - facility
+  - four-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.png"
-  aspect_ratio: "70:120"
-  visual_description: "An apocalyptic subterranean bioweapon reactor core in catastrophic meltdown, with toxic emerald containment vats shattering, elite black-armored Executive Guards firing plasma rifles, and the strike team sprinting toward an emergency rail-pod evacuation tunnel."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_apex_extraction_4_bioweapon_facility_decapitation.png
+  aspect_ratio: '70:120'
+  visual_description: An apocalyptic subterranean bioweapon reactor core in catastrophic meltdown, with toxic emerald containment vats shattering, elite black-armored Executive Guards firing plasma rifles, and the strike team sprinting toward an emergency rail-pod evacuation tunnel.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 4: Bioweapon Facility Decapitation (Campaign Climax)
 

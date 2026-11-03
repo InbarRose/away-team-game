@@ -1,9 +1,9 @@
 ---
-id: "side-mission-03-derelict-satellite-salvage"
-title: "Side-Mission: Derelict Satellite Salvage"
-component_type: "side_mission"
-category: "side_mission"
-faction: "neutral"
+id: side-mission-03-derelict-satellite-salvage
+title: 'Side-Mission: Derelict Satellite Salvage'
+component_type: side_mission
+category: side_mission
+faction: neutral
 tier: 2
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "intel"
+  primary: combat
+  secondary: intel
   bridges:
-    - "survival"
-    - "operations"
+    - survival
+    - operations
 stats:
   es_budget: null
   hp_cap: null
@@ -27,57 +27,67 @@ stats:
   bounty_credits: 6
   bounty_pip: 2
   bounty_effort: 0
-  bonus_bounty: "Spend [0 EF] during the entire mission -> [+2 CR]"
+  bonus_bounty: Spend [0 EF] during the entire mission -> [+2 CR]
 themes:
-  - "Space"
+  - Space
 stages:
   - stage_number: 1
-    name: "Airlock Debris Field"
-    preset_focus: "survival"
+    name: Airlock Debris Field
+    preset_focus: survival
     target_difficulty: 3
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 4
-      cost: "Triggers hull shockwave (+1 Difficulty)"
-      description: "Blast through the jammed airlock doors and floating debris using heavy firearms."
-    failure_penalty: "Debris impact! Every deployed operative loses 1 static die from shock."
+      cost: Triggers hull shockwave (+1 Difficulty)
+      description: Blast through the jammed airlock doors and floating debris using heavy firearms.
+    failure_penalty: Debris impact! Every deployed operative loses 1 static die from shock.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_03_derelict_satellite_salvage_1_airlock_debris_field.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Sentry Drone Bay"
-    preset_focus: "combat"
+    name: Sentry Drone Bay
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "operations"
+      type: tactical_bypass
+      target_focus: operations
       target_difficulty: 4
-      cost: "[0 EF] (Terminal Hack)"
-      description: "Hack the drone control terminal to shut down the automated security drones remotely."
-    failure_penalty: "Electrical discharge! The Squad Leader loses [1 EF] from their Faction Vault."
+      cost: '[0 EF] (Terminal Hack)'
+      description: Hack the drone control terminal to shut down the automated security drones remotely.
+    failure_penalty: Electrical discharge! The Squad Leader loses [1 EF] from their Faction Vault.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_03_derelict_satellite_salvage_2_sentry_drone_bay.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Mainframe Core Siphon"
-    preset_focus: "intel"
+    name: Mainframe Core Siphon
+    preset_focus: intel
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 6
-      cost: "Triggers automated turret fire (+2 Difficulty)"
-      description: "Physically rip out the server drives under automated turret fire as the satellite breaks apart."
-    failure_penalty: "Orbit decays! Mission fails; the squad retreats to the shuttle empty-handed without base payouts."
-rules_text: "Side-Mission (Themes: [Space] — 3 Stages). Base Clearance Bounty: [6 CR], [2 PIP]. Bonus Bounty: Spend [0 EF] during the mission -> [+2 CR]. Stage 1: Airlock Debris Field ([Survival] D3; Force Breach to [Combat] D4). Stage 2: Sentry Drone Bay ([Combat] D4; Bypass to [Operations] D4). Stage 3: Mainframe Core Siphon ([Intel] D4; Force Breach to [Combat] D6)."
+      cost: Triggers automated turret fire (+2 Difficulty)
+      description: Physically rip out the server drives under automated turret fire as the satellite breaks apart.
+    failure_penalty: Orbit decays! Mission fails; the squad retreats to the shuttle empty-handed without base payouts.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_03_derelict_satellite_salvage_3_mainframe_core_siphon.svg
+      aspect_ratio: '63:88'
+rules_text: 'Side-Mission (Themes: [Space] — 3 Stages). Base Clearance Bounty: [6 CR], [2 PIP]. Bonus Bounty: Spend [0 EF] during the mission -> [+2 CR]. Stage 1: Airlock Debris Field ([Survival] D3; Force Breach to [Combat] D4). Stage 2: Sentry Drone Bay ([Combat] D4; Bypass to [Operations] D4). Stage 3: Mainframe Core Siphon ([Intel] D4; Force Breach to [Combat] D6).'
 active_ability: null
 tags:
-  - "side-mission"
-  - "space"
-  - "zero-g"
-  - "satellite"
-  - "three-stage"
+  - side-mission
+  - space
+  - zero-g
+  - satellite
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.png"
-  aspect_ratio: "70:120"
-  visual_description: "A decommissioned corporate research satellite tumbling through low planetary orbit surrounded by glowing atmospheric re-entry sparks and floating hull debris, as EVA-suited operatives breach the airlock."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/side_missions/side_mission_03_derelict_satellite_salvage.png
+  aspect_ratio: '70:120'
+  visual_description: A decommissioned corporate research satellite tumbling through low planetary orbit surrounded by glowing atmospheric re-entry sparks and floating hull debris, as EVA-suited operatives breach the airlock.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Side-Mission: Derelict Satellite Salvage
 

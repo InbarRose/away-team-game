@@ -1,9 +1,9 @@
 ---
-id: "mission-iron-dawn-2-deep-sea-laboratory-raid"
-title: "Mission 2: Deep-Sea Laboratory Raid / The Subterranean Core"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-iron-dawn-2-deep-sea-laboratory-raid
+title: 'Mission 2: Deep-Sea Laboratory Raid / The Subterranean Core'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 1
 deck_copies: 1
 cost:
@@ -11,10 +11,10 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "intel"
+  primary: combat
+  secondary: intel
   bridges:
-    - "survival"
+    - survival
 stats:
   es_budget: null
   hp_cap: null
@@ -22,57 +22,67 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-iron-dawn"
+  campaign_id: campaign-iron-dawn
   mission_number: 2
   stage_count: 3
   doom_on_failure: 1
   bounty_credits: 8
   bounty_pip: 2
   bounty_effort: 0
-  squad_requirement: "At least 1 [Combat] and 1 [Intel] operative"
+  squad_requirement: At least 1 [Combat] and 1 [Intel] operative
 stages:
   - stage_number: 1
-    name: "Ocean Platform Docks / Containment Sector Patrol"
-    preset_focus: "combat"
+    name: Ocean Platform Docks / Containment Sector Patrol
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "survival"
+      type: tactical_bypass
+      target_focus: survival
       target_difficulty: 4
-      cost: "[1 EF] from Squad Leader's Vault"
-      description: "Spend [1 EF] to bypass the heavy security patrol by swimming through pressurized intake ducts or climbing toxic ventilation shafts."
-    failure_penalty: "Ambush counter-attack! Every deployed operative takes 1 point of HP damage."
+      cost: '[1 EF] from Squad Leader''s Vault'
+      description: Spend [1 EF] to bypass the heavy security patrol by swimming through pressurized intake ducts or climbing toxic ventilation shafts.
+    failure_penalty: Ambush counter-attack! Every deployed operative takes 1 point of HP damage.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_2_deep_sea_laboratory_raid_1_ocean_platform_docks.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Heavy Enforcer Gate"
-    preset_focus: "combat"
+    name: Heavy Enforcer Gate
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap: null
-    failure_penalty: "Heavy suppressive fire! The Squad Leader loses [2 CR] from their Vault (damaged gear) and Stage 3 Target Difficulty escalates by +1 Success."
+    failure_penalty: Heavy suppressive fire! The Squad Leader loses [2 CR] from their Vault (damaged gear) and Stage 3 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_2_deep_sea_laboratory_raid_2_heavy_enforcer_gate.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Sub-Level Mainframe / Bio-Lab Mainframe"
-    preset_focus: "intel"
+    name: Sub-Level Mainframe / Bio-Lab Mainframe
+    preset_focus: intel
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 6
-      cost: "Triggers automated turret purge (+2 Difficulty)"
-      description: "Destroy the server liquid-cooling housing to force a physical core dump under heavy automated gunfire."
-    failure_penalty: "Mission Failure: Data wiped by automated purge! The squad retreats empty-handed. Add [+1 FAIL] to the Campaign Track (Retriable)."
-rules_text: "Operation: Iron Dawn — Mission 2 (3 Stages). Base Clearance Bounty: [8 CR], [2 PIP]. Requires >= 1 [Combat] and >= 1 [Intel] operative. Stage 1: Ocean Platform Docks / Containment Patrol ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Heavy Enforcer Gate ([Combat] D3, Mandatory Fight). Stage 3: Sub-Level Mainframe / Bio-Lab Mainframe ([Intel] D4, or D5 if Stage 2 failed; Force Breach to [Combat] D6). Mission Failure adds [+1 FAIL]."
+      cost: Triggers automated turret purge (+2 Difficulty)
+      description: Destroy the server liquid-cooling housing to force a physical core dump under heavy automated gunfire.
+    failure_penalty: 'Mission Failure: Data wiped by automated purge! The squad retreats empty-handed. Add [+1 FAIL] to the Campaign Track (Retriable).'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_2_deep_sea_laboratory_raid_3_sub_level_mainframe.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Iron Dawn — Mission 2 (3 Stages). Base Clearance Bounty: [8 CR], [2 PIP]. Requires >= 1 [Combat] and >= 1 [Intel] operative. Stage 1: Ocean Platform Docks / Containment Patrol ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Heavy Enforcer Gate ([Combat] D3, Mandatory Fight). Stage 3: Sub-Level Mainframe / Bio-Lab Mainframe ([Intel] D4, or D5 if Stage 2 failed; Force Breach to [Combat] D6). Mission Failure adds [+1 FAIL].'
 active_ability: null
 tags:
-  - "mission"
-  - "iron-dawn"
-  - "mission-2"
-  - "facility"
-  - "three-stage"
+  - mission
+  - iron-dawn
+  - mission-2
+  - facility
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.png"
-  aspect_ratio: "70:120"
-  visual_description: "A claustrophobic deep-sea research facility corridor with reinforced glass windows looking out into bioluminescent abyssal ocean water, where a four-operative strike team battles an automated heavy security mech guarding a glowing cyan mainframe vault."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_iron_dawn_2_deep_sea_laboratory_raid.png
+  aspect_ratio: '70:120'
+  visual_description: A claustrophobic deep-sea research facility corridor with reinforced glass windows looking out into bioluminescent abyssal ocean water, where a four-operative strike team battles an automated heavy security mech guarding a glowing cyan mainframe vault.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 2: Deep-Sea Laboratory Raid / The Subterranean Core
 

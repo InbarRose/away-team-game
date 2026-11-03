@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" width="600px" height="400px">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="skyGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="60%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+
+    <!-- Light Beams -->
+    <linearGradient id="lightBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Hazard Stripes -->
+    <pattern id="hazardStripes" width="20" height="20" patternTransform="rotate(45 0 0)" patternUnits="userSpaceOnUse">
+      <line x1="0" y1="0" x2="0" y2="20" stroke="#eab308" stroke-width="10" />
+      <line x1="10" y1="0" x2="10" y2="20" stroke="#1e293b" stroke-width="10" />
+    </pattern>
+
+    <!-- Core Plasma Glow -->
+    <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#E03E3E" stop-opacity="0.9"/>
+      <stop offset="60%" stop-color="#E03E3E" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Sky / Background Canvas -->
+  <rect x="0" y="0" width="600" height="400" fill="url(#skyGrad)"/>
+
+  <!-- Perspective Floor Grid -->
+  <g stroke="rgba(255,255,255,0.05)" stroke-width="1">
+    
+      <line x1="0" y1="400" x2="240" y2="180"/>
+    
+      <line x1="60" y1="400" x2="252" y2="180"/>
+    
+      <line x1="120" y1="400" x2="264" y2="180"/>
+    
+      <line x1="180" y1="400" x2="276" y2="180"/>
+    
+      <line x1="240" y1="400" x2="288" y2="180"/>
+    
+      <line x1="300" y1="400" x2="300" y2="180"/>
+    
+      <line x1="360" y1="400" x2="312" y2="180"/>
+    
+      <line x1="420" y1="400" x2="324" y2="180"/>
+    
+      <line x1="480" y1="400" x2="336" y2="180"/>
+    
+      <line x1="540" y1="400" x2="348" y2="180"/>
+    
+      <line x1="600" y1="400" x2="360" y2="180"/>
+    
+    
+      <line x1="0" y1="200" x2="600" y2="200"/>
+    
+      <line x1="0" y1="240" x2="600" y2="240"/>
+    
+      <line x1="0" y1="280" x2="600" y2="280"/>
+    
+      <line x1="0" y1="320" x2="600" y2="320"/>
+    
+      <line x1="0" y1="360" x2="600" y2="360"/>
+    
+      <line x1="0" y1="395" x2="600" y2="395"/>
+    
+  </g>
+
+  <!-- Thematic Encounter Architecture -->
+  
+      <!-- Neon Urban Canyon / Mountain Pass Run -->
+      <polygon points="0,150 140,240 140,380 0,380" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+      <polygon points="600,150 460,240 460,380 600,380" fill="#0f172a" stroke="#1e293b" stroke-width="2"/>
+      <!-- Roadway / Alleyway Line of Advance -->
+      <polygon points="140,380 260,220 340,220 460,380" fill="#182234" stroke="#334155" stroke-width="1.5"/>
+      <line x1="300" y1="220" x2="300" y2="380" stroke="#facc15" stroke-width="2" stroke-dasharray="14 10"/>
+      <!-- Tactical Vehicle Silhouette -->
+      <rect x="270" y="270" width="60" height="30" rx="4" fill="#0f172a" stroke="#E03E3E" stroke-width="1.5"/>
+    
+
+  <!-- Tactical Vignette & Frame Bevel -->
+  <rect x="0" y="0" width="600" height="400" fill="none" stroke="#E03E3E" stroke-width="2" opacity="0.6"/>
+  <rect x="6" y="6" width="588" height="388" fill="none" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+
+  <!-- HUD Top Banner -->
+  <path d="M 10,10 L 220,10 L 240,36 L 10,36 Z" fill="#090d16" stroke="#E03E3E" stroke-width="1.5"/>
+  <text x="20" y="26" fill="#E03E3E" font-family="monospace" font-size="10" font-weight="bold" letter-spacing="1">
+    STAGE ENCOUNTER // STAGE 1
+  </text>
+
+  <!-- Stage Name Ribbon -->
+  <text x="20" y="62" fill="#f8fafc" font-family="sans-serif" font-size="18" font-weight="800">
+    Convoy Ambush
+  </text>
+  <text x="20" y="80" fill="#94a3b8" font-family="sans-serif" font-size="11">
+    Mission 3: VIP Exfiltration Escort (Double-Mission: Part B)
+  </text>
+
+  <!-- Target Difficulty & Focus Stamp (Top Right) -->
+  <g transform="translate(470, 14)">
+    <rect x="0" y="0" width="116" height="42" rx="4" fill="#090d16" stroke="#E03E3E" stroke-width="1.5"/>
+    <text x="10" y="18" fill="#94a3b8" font-family="monospace" font-size="9">TARGET DIFFICULTY</text>
+    <text x="10" y="36" fill="#fbbf24" font-family="monospace" font-size="16" font-weight="bold">D=4</text>
+    <!-- Focus Emblem Badge -->
+    <rect x="76" y="8" width="30" height="26" rx="3" fill="#450a0a" stroke="#E03E3E" stroke-width="1"/>
+    <text x="91" y="25" fill="#f8fafc" font-family="sans-serif" font-size="12" text-anchor="middle">⚔️</text>
+  </g>
+
+  <!-- Bottom HUD Diagnostics -->
+  <g transform="translate(14, 376)">
+    <text x="0" y="10" fill="#64748b" font-family="monospace" font-size="9">
+      FOCUS: [COMBAT] • STATUS: ACTIVE THEATER
+    </text>
+  </g>
+  <text x="586" y="386" fill="#64748b" font-family="monospace" font-size="8" text-anchor="end">
+    AWAY TEAM TACTICAL CARD SPEC
+  </text>
+</svg>

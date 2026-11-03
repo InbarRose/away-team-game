@@ -1,9 +1,9 @@
 ---
-id: "mission-iron-dawn-1-black-market-intercept"
-title: "Mission 1: Black-Market Intercept / Perimeter Breach"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-iron-dawn-1-black-market-intercept
+title: 'Mission 1: Black-Market Intercept / Perimeter Breach'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 1
 deck_copies: 1
 cost:
@@ -11,10 +11,10 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "operations"
+  primary: combat
+  secondary: operations
   bridges:
-    - "infiltrate"
+    - infiltrate
 stats:
   es_budget: null
   hp_cap: null
@@ -22,52 +22,59 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-iron-dawn"
+  campaign_id: campaign-iron-dawn
   mission_number: 1
   stage_count: 2
   doom_on_failure: 1
   bounty_credits: 6
   bounty_pip: 1
   bounty_effort: 0
-  squad_requirement: "At least 1 [Combat] operative"
+  squad_requirement: At least 1 [Combat] operative
 stages:
   - stage_number: 1
-    name: "Syndicate Alleyway / Outer Checkpoint Watchtower"
-    preset_focus: "combat"
+    name: Syndicate Alleyway / Outer Checkpoint Watchtower
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Standard Bypass)"
-      description: "Slip unseen through neon rooftop fire escapes or frozen drainage pipes to bypass the perimeter guards."
-    failure_penalty: "Security alert sounds! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[0 EF] (Standard Bypass)'
+      description: Slip unseen through neon rooftop fire escapes or frozen drainage pipes to bypass the perimeter guards.
+    failure_penalty: Security alert sounds! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_1_black_market_intercept_1_syndicate_alleyway.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Broker's Safe-Vault / Lift Terminal Control"
-    preset_focus: "operations"
+    name: Broker's Safe-Vault / Lift Terminal Control
+    preset_focus: operations
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers facility alarm (+1 Difficulty)"
-      description: "Blow the reinforced vault or blast doors with thermal charges and fight through the security lobby."
-    failure_penalty: "Mission Failure: Internal lockdown seals the vault/lift completely. Add [+1 FAIL] to the Campaign Track. Retrying Mission 1 is permitted."
-rules_text: "Operation: Iron Dawn — Mission 1 (2 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Requires >= 1 [Combat] operative. Stage 1: Syndicate Alleyway / Outer Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Broker's Safe-Vault / Lift Terminal Control ([Operations] D4, or D5 if Stage 1 failed; Force Breach to [Combat] D5). Mission Failure adds [+1 FAIL] and triggers a Tactical Retreat (freely retriable)."
+      cost: Triggers facility alarm (+1 Difficulty)
+      description: Blow the reinforced vault or blast doors with thermal charges and fight through the security lobby.
+    failure_penalty: 'Mission Failure: Internal lockdown seals the vault/lift completely. Add [+1 FAIL] to the Campaign Track. Retrying Mission 1 is permitted.'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_1_black_market_intercept_2_broker_s_safe_vault.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Iron Dawn — Mission 1 (2 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Requires >= 1 [Combat] operative. Stage 1: Syndicate Alleyway / Outer Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Broker''s Safe-Vault / Lift Terminal Control ([Operations] D4, or D5 if Stage 1 failed; Force Breach to [Combat] D5). Mission Failure adds [+1 FAIL] and triggers a Tactical Retreat (freely retriable).'
 active_ability: null
 tags:
-  - "mission"
-  - "iron-dawn"
-  - "mission-1"
-  - "urban"
-  - "facility"
-  - "two-stage"
+  - mission
+  - iron-dawn
+  - mission-1
+  - urban
+  - facility
+  - two-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_iron_dawn_1_black_market_intercept.png"
-  aspect_ratio: "70:120"
-  visual_description: "A rain-slicked cyberpunk alleyway in the Neon Syndicate District leading to a heavy biometric vault door, split with a tactical inset of a snow-swept mountain perimeter watchtower guarding a subterranean elevator shaft."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_iron_dawn_1_black_market_intercept.png
+  aspect_ratio: '70:120'
+  visual_description: A rain-slicked cyberpunk alleyway in the Neon Syndicate District leading to a heavy biometric vault door, split with a tactical inset of a snow-swept mountain perimeter watchtower guarding a subterranean elevator shaft.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 1: Black-Market Intercept / Perimeter Breach
 

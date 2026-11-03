@@ -1,9 +1,9 @@
 ---
-id: "mission-apex-extraction-3-vip-exfiltration-escort"
-title: "Mission 3: VIP Exfiltration Escort (Double-Mission: Part B)"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-apex-extraction-3-vip-exfiltration-escort
+title: 'Mission 3: VIP Exfiltration Escort (Double-Mission: Part B)'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 3
 deck_copies: 1
 cost:
@@ -11,8 +11,8 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "survival"
+  primary: combat
+  secondary: survival
   bridges: []
 stats:
   es_budget: null
@@ -21,61 +21,71 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-apex-extraction"
+  campaign_id: campaign-apex-extraction
   mission_number: 3
   stage_count: 3
   doom_on_failure: 2
   bounty_credits: 10
   bounty_pip: 2
   bounty_effort: 0
-  squad_requirement: "Entered directly from Mission 2 via [Continuous Drop] / [No HQ]"
-  continuous_drop_from: "mission-apex-extraction-2-black-site-infiltration"
+  squad_requirement: Entered directly from Mission 2 via [Continuous Drop] / [No HQ]
+  continuous_drop_from: mission-apex-extraction-2-black-site-infiltration
 stages:
   - stage_number: 1
-    name: "Convoy Ambush"
-    preset_focus: "combat"
+    name: Convoy Ambush
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "survival"
+      type: tactical_bypass
+      target_focus: survival
       target_difficulty: 4
-      cost: "[1 EF] from Squad Leader's Vault"
-      description: "Spend [1 EF] to ram the armored transport through the roadblock barrier and veer onto an off-road industrial service trail."
-    failure_penalty: "Armor-piercing RPG strike! Every deployed operative takes 1 point of HP damage, and Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[1 EF] from Squad Leader''s Vault'
+      description: Spend [1 EF] to ram the armored transport through the roadblock barrier and veer onto an off-road industrial service trail.
+    failure_penalty: Armor-piercing RPG strike! Every deployed operative takes 1 point of HP damage, and Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_3_vip_exfiltration_escort_1_convoy_ambush.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Mountain Pass Run"
-    preset_focus: "survival"
+    name: Mountain Pass Run
+    preset_focus: survival
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers gunship pursuit (+1 Difficulty)"
-      description: "Stand your ground on the crumbling cliffside catwalks and engage the pursuing Ascendant VTOL gunships with heavy weapons."
-    failure_penalty: "Collapsing catwalk debris! Every deployed operative loses 1 static die from exhaustion, and Stage 3 Target Difficulty escalates by +1 Success."
+      cost: Triggers gunship pursuit (+1 Difficulty)
+      description: Stand your ground on the crumbling cliffside catwalks and engage the pursuing Ascendant VTOL gunships with heavy weapons.
+    failure_penalty: Collapsing catwalk debris! Every deployed operative loses 1 static die from exhaustion, and Stage 3 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_3_vip_exfiltration_escort_2_mountain_pass_run.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Helipad Evac Siege"
-    preset_focus: "combat"
+    name: Helipad Evac Siege
+    preset_focus: combat
     target_difficulty: 5
     dynamic_swap: null
-    failure_penalty: "Mission Failure: The VIP is recaptured by enemy forces! Add [+2 FAIL] and consume 1 Campaign Retry. Squad may execute 1 optional Side-Mission before retrying M2/M3 for Target B (Dr. Kaelen)."
-rules_text: "Operation: Apex Extraction — Mission 3 (Double-Mission Part B, [Continuous Drop] / [No HQ], 3 Stages). Squad enters directly from Mission 2 without HQ Downtime! Stage 1: Convoy Ambush ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Mountain Pass Run ([Survival] D4; Force Breach to [Combat] D5). Stage 3: Helipad Evac Siege ([Combat] D5, Mandatory Siege Fight). POST-MISSION 3 LOCKOUT: Upon clearing Stage 3, all Side-Missions lock out permanently prior to Mission 4! Failing adds [+2 FAIL] and consumes 1 Retry."
+    failure_penalty: 'Mission Failure: The VIP is recaptured by enemy forces! Add [+2 FAIL] and consume 1 Campaign Retry. Squad may execute 1 optional Side-Mission before retrying M2/M3 for Target B (Dr. Kaelen).'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_3_vip_exfiltration_escort_3_helipad_evac_siege.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Apex Extraction — Mission 3 (Double-Mission Part B, [Continuous Drop] / [No HQ], 3 Stages). Squad enters directly from Mission 2 without HQ Downtime! Stage 1: Convoy Ambush ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 2: Mountain Pass Run ([Survival] D4; Force Breach to [Combat] D5). Stage 3: Helipad Evac Siege ([Combat] D5, Mandatory Siege Fight). POST-MISSION 3 LOCKOUT: Upon clearing Stage 3, all Side-Missions lock out permanently prior to Mission 4! Failing adds [+2 FAIL] and consumes 1 Retry.'
 active_ability: null
 tags:
-  - "mission"
-  - "apex-extraction"
-  - "mission-3"
-  - "continuous-drop"
-  - "no-hq"
-  - "planet"
-  - "urban"
-  - "three-stage"
+  - mission
+  - apex-extraction
+  - mission-3
+  - continuous-drop
+  - no-hq
+  - planet
+  - urban
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.png"
-  aspect_ratio: "70:120"
-  visual_description: "A battered, bullet-riddled armored transport truck careening across a collapsing mountain highway bridge toward a rooftop helipad in a driving rainstorm, as exhausted operatives shield a VIP scientist from incoming VTOL gunship fire."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_apex_extraction_3_vip_exfiltration_escort.png
+  aspect_ratio: '70:120'
+  visual_description: A battered, bullet-riddled armored transport truck careening across a collapsing mountain highway bridge toward a rooftop helipad in a driving rainstorm, as exhausted operatives shield a VIP scientist from incoming VTOL gunship fire.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 3: VIP Exfiltration Escort (Double-Mission: Part B)
 

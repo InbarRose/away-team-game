@@ -1,9 +1,9 @@
 ---
-id: "side-mission-05-bio-specimen-containment-purge"
-title: "Side-Mission: Bio-Specimen Containment Purge"
-component_type: "side_mission"
-category: "side_mission"
-faction: "neutral"
+id: side-mission-05-bio-specimen-containment-purge
+title: 'Side-Mission: Bio-Specimen Containment Purge'
+component_type: side_mission
+category: side_mission
+faction: neutral
 tier: 2
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "intel"
+  primary: combat
+  secondary: intel
   bridges:
-    - "operations"
-    - "survival"
+    - operations
+    - survival
 stats:
   es_budget: null
   hp_cap: null
@@ -27,54 +27,64 @@ stats:
   bounty_credits: 6
   bounty_pip: 1
   bounty_effort: 0
-  bonus_bounty: "Deploy at least 1 Scientist operative -> +1 free Consumable Item card"
+  bonus_bounty: Deploy at least 1 Scientist operative -> +1 free Consumable Item card
 themes:
-  - "Planet"
-  - "Facility"
+  - Planet
+  - Facility
 stages:
   - stage_number: 1
-    name: "Decontamination Chamber Seal"
-    preset_focus: "operations"
+    name: Decontamination Chamber Seal
+    preset_focus: operations
     target_difficulty: 3
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 4
-      cost: "Shatters bio-seal (+1 Difficulty)"
-      description: "Blast through the reinforced quartz decontamination glass with explosive charges."
-    failure_penalty: "Toxic gas leak! Every deployed operative takes 1 point of HP damage."
+      cost: Shatters bio-seal (+1 Difficulty)
+      description: Blast through the reinforced quartz decontamination glass with explosive charges.
+    failure_penalty: Toxic gas leak! Every deployed operative takes 1 point of HP damage.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_05_bio_specimen_containment_purge_1_decontamination_chamber_seal.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Specimen Nest Siege"
-    preset_focus: "combat"
+    name: Specimen Nest Siege
+    preset_focus: combat
     target_difficulty: 5
     dynamic_swap: null
-    failure_penalty: "Vicious onslaught! Every deployed operative takes 1 point of HP damage and loses 1 static die."
+    failure_penalty: Vicious onslaught! Every deployed operative takes 1 point of HP damage and loses 1 static die.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_05_bio_specimen_containment_purge_2_specimen_nest_siege.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Genetic Data Core"
-    preset_focus: "intel"
+    name: Genetic Data Core
+    preset_focus: intel
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "survival"
+      type: tactical_bypass
+      target_focus: survival
       target_difficulty: 4
-      cost: "[0 EF] (Physical Specimen Extraction)"
-      description: "Grab the physical specimen cryo-canisters and escape through the flooded jungle drainage pipes."
-    failure_penalty: "Lab purges automatically! Genetic data is incinerated; mission fails without base payouts."
-rules_text: "Side-Mission (Themes: [Planet], [Facility] — 3 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Bonus Bounty: Deploy at least 1 Scientist -> +1 free Consumable Item card. Stage 1: Decontamination Chamber Seal ([Operations] D3; Force Breach to [Combat] D4). Stage 2: Specimen Nest Siege ([Combat] D5, Mandatory Siege Fight). Stage 3: Genetic Data Core ([Intel] D4; Bypass to [Survival] D4)."
+      cost: '[0 EF] (Physical Specimen Extraction)'
+      description: Grab the physical specimen cryo-canisters and escape through the flooded jungle drainage pipes.
+    failure_penalty: Lab purges automatically! Genetic data is incinerated; mission fails without base payouts.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_05_bio_specimen_containment_purge_3_genetic_data_core.svg
+      aspect_ratio: '63:88'
+rules_text: 'Side-Mission (Themes: [Planet], [Facility] — 3 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Bonus Bounty: Deploy at least 1 Scientist -> +1 free Consumable Item card. Stage 1: Decontamination Chamber Seal ([Operations] D3; Force Breach to [Combat] D4). Stage 2: Specimen Nest Siege ([Combat] D5, Mandatory Siege Fight). Stage 3: Genetic Data Core ([Intel] D4; Bypass to [Survival] D4).'
 active_ability: null
 tags:
-  - "side-mission"
-  - "planet"
-  - "facility"
-  - "bio-specimen"
-  - "scientist-bonus"
-  - "three-stage"
+  - side-mission
+  - planet
+  - facility
+  - bio-specimen
+  - scientist-bonus
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.png"
-  aspect_ratio: "70:120"
-  visual_description: "An overgrown jungle bio-research atrium with shattered stasis tubes and encroaching alien bioluminescent vines, where operatives in hazard gear hold off swarming chimeras while a Scientist extracts glowing genetic cryo-canisters."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/side_missions/side_mission_05_bio_specimen_containment_purge.png
+  aspect_ratio: '70:120'
+  visual_description: An overgrown jungle bio-research atrium with shattered stasis tubes and encroaching alien bioluminescent vines, where operatives in hazard gear hold off swarming chimeras while a Scientist extracts glowing genetic cryo-canisters.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Side-Mission: Bio-Specimen Containment Purge
 
