@@ -82,12 +82,36 @@ describe('Suite 18: Physical Card Mockup, Print Proofing Geometry & Art Integrat
     assert.ok(agendaCode.includes('agenda.art_spec?.asset_path'), 'AgendaCard must render agenda card art');
 
     const stageCode = fs.readFileSync(path.join(vttDir, 'StageCard.tsx'), 'utf8');
+    assert.ok(stageCode.includes('stage.art_spec?.asset_path'), 'StageCard must render stage room artwork');
     assert.ok(stageCode.includes('attachedModifier.art_spec?.asset_path'), 'StageCard must render attached modifier art');
+    assert.ok(stageCode.includes('onInspectCard'), 'StageCard must support onInspectCard callback');
 
     const hqCode = fs.readFileSync(path.join(vttDir, 'HQFacilityBoard.tsx'), 'utf8');
     assert.ok(hqCode.includes('fac.art_spec?.asset_path'), 'HQFacilityBoard must render facility module art');
 
     const objectiveCode = fs.readFileSync(path.join(vttDir, 'SecretObjectiveCard.tsx'), 'utf8');
     assert.ok(objectiveCode.includes('objective.art_spec?.asset_path'), 'SecretObjectiveCard must render secret objective art');
+  });
+
+  it('verifies campaign, mission, and stage artwork presentation and physical card inspection in VTT', () => {
+    const vttCode = fs.readFileSync(
+      path.join(ROOT_DIR, 'src', 'vtt', 'VirtualTabletop.tsx'),
+      'utf8'
+    );
+    assert.ok(vttCode.includes('camp.art_spec?.asset_path'), 'Campaign selection must render campaign artwork');
+    assert.ok(vttCode.includes('activeMission?.art_spec?.asset_path'), 'Mission briefing must render mission hero artwork');
+    assert.ok(vttCode.includes('st.art_spec?.asset_path'), 'Procedural stage sequence must render stage artwork thumbnails');
+    assert.ok(vttCode.includes('PhysicalCardModal'), 'VirtualTabletop must render PhysicalCardModal for card inspection');
+  });
+
+  it('verifies physical card mockup dedicated tabletop layouts for campaigns, missions, and stages', () => {
+    const mockupCode = fs.readFileSync(
+      path.join(ROOT_DIR, 'src', 'components', 'PhysicalCardMockup.tsx'),
+      'utf8'
+    );
+    assert.ok(mockupCode.includes("item.component_type === 'stage'"), 'PhysicalCardMockup must support stage component layout');
+    assert.ok(mockupCode.includes("item.component_type === 'campaign'"), 'PhysicalCardMockup must support campaign dossier layout');
+    assert.ok(mockupCode.includes("item.dynamic_swap"), 'PhysicalCardMockup must render tactical dynamic swap lever');
+    assert.ok(mockupCode.includes("item.failure_penalty"), 'PhysicalCardMockup must render failure penalty badge');
   });
 });

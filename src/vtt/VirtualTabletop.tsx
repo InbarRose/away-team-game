@@ -18,6 +18,7 @@ import { SecretObjectiveCard } from './components/SecretObjectiveCard';
 import { AgendaCard } from './components/AgendaCard';
 import { HQFacilityBoard, FacilitySponsorshipRecord } from './components/HQFacilityBoard';
 import { FactionPerksConsole } from './components/FactionPerksConsole';
+import { PhysicalCardModal } from '../components/PhysicalCardMockup';
 
 export interface VTTProps {
   components?: GameComponent[];
@@ -278,6 +279,7 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
   const [bountyPoolCr, setBountyPoolCr] = useState<number>(6);
   const [bountyPoolPip, setBountyPoolPip] = useState<number>(1);
   const [showRestartModal, setShowRestartModal] = useState<boolean>(false);
+  const [inspectingComponent, setInspectingComponent] = useState<GameComponent | null>(null);
   const [simReport, setSimReport] = useState<SimulationReport | null>(null);
   const [simTab, setSimTab] = useState<'combat_monte_carlo' | 'deterministic_scenarios' | 'chaos_fuzzing'>('combat_monte_carlo');
   const [chaosRunsCount, setChaosRunsCount] = useState<number>(20);
@@ -2096,6 +2098,50 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
                   gap: '0.75rem',
                 }}
               >
+                {camp.art_spec?.asset_path && (
+                  <div
+                    style={{
+                      width: '100%',
+                      height: '140px',
+                      borderRadius: '6px',
+                      overflow: 'hidden',
+                      border: '1px solid rgba(56, 189, 248, 0.25)',
+                      background: '#090d16',
+                      marginBottom: '0.5rem',
+                      position: 'relative',
+                    }}
+                  >
+                    <img
+                      src={camp.art_spec.asset_path}
+                      alt={camp.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                      onError={(e) => {
+                        (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+                      }}
+                    />
+                    <button
+                      type="button"
+                      onClick={() => setInspectingComponent(camp)}
+                      style={{
+                        position: 'absolute',
+                        bottom: '6px',
+                        right: '6px',
+                        padding: '2px 8px',
+                        fontSize: '0.66rem',
+                        fontFamily: 'var(--font-mono)',
+                        background: 'rgba(15, 23, 42, 0.85)',
+                        color: '#38bdf8',
+                        border: '1px solid rgba(56, 189, 248, 0.5)',
+                        borderRadius: '4px',
+                        cursor: 'pointer',
+                        backdropFilter: 'blur(4px)',
+                      }}
+                      title="Inspect Campaign Physical Card Mockup"
+                    >
+                      🎴 CARD
+                    </button>
+                  </div>
+                )}
                 <div>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
                     <strong style={{ fontSize: '1.05rem', color: '#f8fafc' }}>{camp.title}</strong>
@@ -2168,6 +2214,51 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
             </div>
           </div>
 
+                    {/* Mission Hero Vector Art Banner */}
+          {activeMission?.art_spec?.asset_path && (
+            <div
+              style={{
+                width: '100%',
+                height: '160px',
+                borderRadius: '6px',
+                overflow: 'hidden',
+                border: '1px solid rgba(56, 189, 248, 0.3)',
+                background: '#090d16',
+                position: 'relative',
+                marginBottom: '0.75rem',
+              }}
+            >
+              <img
+                src={activeMission.art_spec.asset_path}
+                alt={activeMission.title}
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                onError={(e) => {
+                  (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+                }}
+              />
+              <button
+                type="button"
+                onClick={() => setInspectingComponent(activeMission)}
+                style={{
+                  position: 'absolute',
+                  bottom: '8px',
+                  right: '8px',
+                  padding: '3px 9px',
+                  fontSize: '0.68rem',
+                  fontFamily: 'var(--font-mono)',
+                  background: 'rgba(15, 23, 42, 0.85)',
+                  color: '#38bdf8',
+                  border: '1px solid rgba(56, 189, 248, 0.5)',
+                  borderRadius: '4px',
+                  cursor: 'pointer',
+                  backdropFilter: 'blur(4px)',
+                }}
+                title="Inspect Mission Physical Card Mockup"
+              >
+                🎴 INSPECT MISSION CARD
+              </button>
+            </div>
+          )}
           {/* Narrative Brief */}
           <div style={{ padding: '0.75rem', borderRadius: '6px', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.08)', fontSize: '0.82rem', color: '#cbd5e1', lineHeight: 1.5 }}>
             <SemanticText text={activeMission?.rules_text || activeMission?.body || ''} />
@@ -2188,17 +2279,68 @@ export function VirtualTabletop({ components = rawAllComponents as GameComponent
                     background: '#182234',
                     border: '1px solid rgba(255, 255, 255, 0.1)',
                     fontSize: '0.78rem',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '0.45rem',
                   }}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.3rem' }}>
+                  {st.art_spec?.asset_path && (
+                    <div
+                      style={{
+                        width: '100%',
+                        height: '80px',
+                        borderRadius: '4px',
+                        overflow: 'hidden',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        background: '#090d16',
+                      }}
+                    >
+                      <img
+                        src={st.art_spec.asset_path}
+                        alt={st.name}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                        onError={(e) => {
+                          (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+                        }}
+                      />
+                    </div>
+                  )}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.1rem' }}>
                     <strong style={{ color: '#f8fafc' }}>Stage {idx + 1}: {st.name}</strong>
                     <span style={{ fontFamily: 'var(--font-mono)', color: '#fbbf24', fontWeight: 700 }}>
                       D={st.target_difficulty}
                     </span>
                   </div>
-                  <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center' }}>
-                    <FocusBadge focus={st.preset_focus} />
-                    <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Preset Focus</span>
+                  <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ display: 'flex', gap: '0.35rem', alignItems: 'center' }}>
+                      <FocusBadge focus={st.preset_focus} />
+                      <span style={{ fontSize: '0.72rem', color: '#94a3b8' }}>Preset Focus</span>
+                    </div>
+                    <button
+                      type="button"
+                      onClick={() => setInspectingComponent({
+                        id: `stage-${activeMission?.id}-${idx + 1}`,
+                        title: st.name,
+                        component_type: 'stage',
+                        stage_number: idx + 1,
+                        preset_focus: st.preset_focus,
+                        target_difficulty: st.target_difficulty,
+                        dynamic_swap: st.dynamic_swap,
+                        failure_penalty: st.failure_penalty,
+                        art_spec: st.art_spec,
+                        rules_text: st.dynamic_swap ? `${st.dynamic_swap.type}: ${st.dynamic_swap.description}` : 'Standard tactical encounter room.',
+                      } as GameComponent)}
+                      style={{
+                        background: 'transparent',
+                        border: 'none',
+                        color: '#38bdf8',
+                        fontSize: '0.68rem',
+                        cursor: 'pointer',
+                        textDecoration: 'underline',
+                      }}
+                    >
+                      🎴 Card
+                    </button>
                   </div>
                 </div>
               ))}
