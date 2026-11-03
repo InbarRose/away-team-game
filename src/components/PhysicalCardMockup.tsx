@@ -723,8 +723,8 @@ export function PhysicalCardMockup({
                 <SemanticText text={rulesText} />
               </div>
 
-              {/* Art Visual Flavor Description Snippet */}
-              {item.art_spec?.visual_description && (
+              {/* Lore / Flavor Text Snippet (Not visual art description) */}
+              {item.flavor_text && (
                 <div
                   style={{
                     marginTop: `${0.4 * zoom}rem`,
@@ -736,7 +736,7 @@ export function PhysicalCardMockup({
                     lineHeight: 1.3,
                   }}
                 >
-                  “{item.art_spec.visual_description}”
+                  “{item.flavor_text}”
                 </div>
               )}
             </div>
