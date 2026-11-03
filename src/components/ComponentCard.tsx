@@ -29,6 +29,12 @@ export interface GameComponent {
     armor_buffer?: number | null;
     stage_count?: number;
     max_doom?: number;
+    mission_count?: number;
+    total_stages?: number;
+    combat_ratio?: number;
+    bounty_credits?: number;
+    bounty_pip?: number;
+    [key: string]: any;
   };
   rules_text?: string;
   tags?: string[];

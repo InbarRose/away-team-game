@@ -28,7 +28,7 @@ export function PhysicalCardMockup({
   // Aspect ratio determination: Tarot (70:120) vs Poker (63:88)
   const isTarot =
     item.art_spec?.aspect_ratio === '70:120' ||
-    ['character', 'campaign', 'mission'].includes(item.component_type);
+    ['character', 'campaign', 'mission', 'side_mission'].includes(item.component_type);
 
   // Card dimensions in pixels (base 1mm = 5px)
   // Poker: 63mm x 88mm -> 315px x 440px
@@ -280,9 +280,7 @@ export function PhysicalCardMockup({
               borderRadius: `${(isTarot ? 18 : 15) * zoom}px`,
               background: 'linear-gradient(135deg, #090d16 0%, #151d2e 50%, #080c14 100%)',
               border: `${2 * zoom}px solid #334155`,
-              boxShadow: mode === 'realistic'
-                ? `0 ${10 * zoom}px ${25 * zoom}px rgba(0, 0, 0, 0.7), 0 0 0 ${1 * zoom}px rgba(255, 255, 255, 0.15)`
-                : 'none',
+              boxShadow: `0 ${10 * zoom}px ${25 * zoom}px rgba(0, 0, 0, 0.7), 0 0 0 ${1 * zoom}px rgba(255, 255, 255, 0.15)`,
               display: 'flex',
               flexDirection: 'column',
               justifyContent: 'center',
@@ -450,7 +448,7 @@ export function PhysicalCardMockup({
                     fontWeight: 700,
                   }}
                 >
-                  {item.component_type.replace(/_/g, ' ')}
+                  {item.component_type === 'stage' ? `STAGE ${item.stage_number || ''}` : item.component_type.replace(/_/g, ' ')}
                   {item.category ? ` • ${item.category.replace(/_/g, ' ')}` : ''}
                   {item.tier ? ` • Tier ${item.tier}` : ''}
                 </div>
@@ -470,6 +468,91 @@ export function PhysicalCardMockup({
 
               {/* Stamped Cost Badges */}
               <div style={{ display: 'flex', gap: `${0.25 * zoom}rem`, flexShrink: 0 }}>
+                {item.component_type === 'stage' && (
+                  <span
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: `${0.65 * zoom}rem`,
+                      fontWeight: 800,
+                      padding: `${1 * zoom}px ${6 * zoom}px`,
+                      borderRadius: `${3 * zoom}px`,
+                      background: 'rgba(234, 179, 8, 0.2)',
+                      border: `${1 * zoom}px solid #eab308`,
+                      color: '#facc15',
+                      boxShadow: '0 1px 4px rgba(0,0,0,0.4)',
+                    }}
+                  >
+                    D={item.target_difficulty ?? 2}
+                  </span>
+                )}
+                {['mission', 'side_mission'].includes(item.component_type) && (
+                  <>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: `${0.62 * zoom}rem`,
+                        fontWeight: 800,
+                        padding: `${1 * zoom}px ${5 * zoom}px`,
+                        borderRadius: `${3 * zoom}px`,
+                        background: 'rgba(234, 179, 8, 0.2)',
+                        border: `${1 * zoom}px solid #eab308`,
+                        color: '#facc15',
+                        boxShadow: '0 1px 4px rgba(0,0,0,0.4)',
+                      }}
+                    >
+                      +{item.clearance_bounty ?? item.stats?.bounty_credits ?? 6} CR
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: `${0.62 * zoom}rem`,
+                        fontWeight: 800,
+                        padding: `${1 * zoom}px ${5 * zoom}px`,
+                        borderRadius: `${3 * zoom}px`,
+                        background: 'rgba(220, 38, 38, 0.2)',
+                        border: `${1 * zoom}px solid #dc2626`,
+                        color: '#f87171',
+                        boxShadow: '0 1px 4px rgba(0,0,0,0.4)',
+                      }}
+                    >
+                      +{item.doom_escalation ?? 1} FAIL
+                    </span>
+                  </>
+                )}
+                {item.component_type === 'campaign' && (
+                  <>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: `${0.62 * zoom}rem`,
+                        fontWeight: 800,
+                        padding: `${1 * zoom}px ${5 * zoom}px`,
+                        borderRadius: `${3 * zoom}px`,
+                        background: 'rgba(220, 38, 38, 0.2)',
+                        border: `${1 * zoom}px solid #dc2626`,
+                        color: '#f87171',
+                        boxShadow: '0 1px 4px rgba(0,0,0,0.4)',
+                      }}
+                    >
+                      MAX {item.stats?.max_doom || 3} FAIL
+                    </span>
+                    <span
+                      style={{
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: `${0.62 * zoom}rem`,
+                        fontWeight: 800,
+                        padding: `${1 * zoom}px ${5 * zoom}px`,
+                        borderRadius: `${3 * zoom}px`,
+                        background: 'rgba(56, 189, 248, 0.2)',
+                        border: `${1 * zoom}px solid #38bdf8`,
+                        color: '#38bdf8',
+                        boxShadow: '0 1px 4px rgba(0,0,0,0.4)',
+                      }}
+                    >
+                      {item.stats?.mission_count || 3} MISSIONS
+                    </span>
+                  </>
+                )}
                 {cr > 0 && (
                   <span
                     style={{
@@ -619,6 +702,50 @@ export function PhysicalCardMockup({
                 zIndex: 2,
               }}
             >
+              {item.component_type === 'campaign' && (
+                <>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#38bdf8' }}>
+                    🗺️ {item.stats?.mission_count || 3} Missions
+                  </span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#f59e0b' }}>
+                    🎯 {item.stats?.total_stages || 8} Stages
+                  </span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#e03e3e' }}>
+                    ⚔️ {Math.round((item.stats?.combat_ratio || 0.625) * 100)}% Combat
+                  </span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.58 * zoom}rem`, color: '#94a3b8', marginLeft: 'auto' }}>
+                    {item.campaign_parameters?.difficulty_rating || 'Tier 1'}
+                  </span>
+                </>
+              )}
+
+              {['mission', 'side_mission'].includes(item.component_type) && (
+                <>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#38bdf8' }}>
+                    🚪 {item.stages?.length || 3} Stages
+                  </span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#f59e0b' }}>
+                    💰 {item.clearance_bounty ?? 6} CR Bounty
+                  </span>
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#ef4444' }}>
+                    💀 +{item.doom_escalation ?? 1} Fail Doom
+                  </span>
+                </>
+              )}
+
+              {item.component_type === 'stage' && (
+                <>
+                  <FocusBadge focus={item.preset_focus || item.focus_affinity?.primary || 'Combat'} />
+                  <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.62 * zoom}rem`, fontWeight: 700, color: '#fbbf24' }}>
+                    🎯 Target D={item.target_difficulty ?? 2}
+                  </span>
+                  {item.dynamic_swap && (
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.58 * zoom}rem`, color: '#d8b4fe', marginLeft: 'auto' }}>
+                      ⚡ Lever: [{item.dynamic_swap.target_focus}] (D={item.dynamic_swap.target_difficulty})
+                    </span>
+                  )}
+                </>
+              )}
               {item.focus_affinity?.secondary && (
                 <FocusBadge focus={item.focus_affinity.secondary} roleLabel="2°" />
               )}
@@ -722,6 +849,80 @@ export function PhysicalCardMockup({
               <div>
                 <SemanticText text={rulesText} />
               </div>
+
+              {item.component_type === 'stage' && item.dynamic_swap && (
+                <div style={{ marginTop: `${0.35 * zoom}rem`, padding: `${0.35 * zoom}rem`, borderRadius: `${4 * zoom}px`, background: 'rgba(30, 41, 59, 0.7)', border: `${1 * zoom}px solid rgba(168, 85, 247, 0.4)` }}>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: `${0.2 * zoom}rem` }}>
+                    <strong style={{ color: '#d8b4fe', fontSize: `${0.65 * zoom}rem` }}>
+                      🔀 Lever: {item.dynamic_swap.type === 'force_breach' ? 'Force Breach' : 'Tactical Bypass'}
+                    </strong>
+                    <span style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.6 * zoom}rem`, color: '#38bdf8' }}>
+                      Cost: {item.dynamic_swap.cost}
+                    </span>
+                  </div>
+                  <div style={{ fontSize: `${0.62 * zoom}rem`, color: '#cbd5e1' }}>
+                    {item.dynamic_swap.description}
+                  </div>
+                </div>
+              )}
+
+              {item.component_type === 'stage' && item.failure_penalty && (
+                <div style={{ marginTop: `${0.3 * zoom}rem`, padding: `${0.3 * zoom}rem`, borderRadius: `${4 * zoom}px`, background: 'rgba(239, 68, 68, 0.15)', border: `${1 * zoom}px solid rgba(239, 68, 68, 0.35)`, fontSize: `${0.62 * zoom}rem`, color: '#fca5a5' }}>
+                  <strong>⚠️ Failure Penalty:</strong> {item.failure_penalty}
+                </div>
+              )}
+
+              {item.component_type === 'campaign' && item.campaign_parameters?.missions && (
+                <div style={{ marginTop: `${0.4 * zoom}rem`, display: 'flex', flexDirection: 'column', gap: `${0.25 * zoom}rem` }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.58 * zoom}rem`, color: '#38bdf8', letterSpacing: '0.04em' }}>
+                    CAMPAIGN MISSION PATH ({item.campaign_parameters.missions.length} MISSIONS)
+                  </div>
+                  {item.campaign_parameters.missions.map((mId: string, mIdx: number) => (
+                    <div
+                      key={mIdx}
+                      style={{
+                        padding: `${0.2 * zoom}rem ${0.4 * zoom}rem`,
+                        borderRadius: `${3 * zoom}px`,
+                        background: 'rgba(15, 23, 42, 0.6)',
+                        border: `${1 * zoom}px solid rgba(255, 255, 255, 0.06)`,
+                        fontSize: `${0.6 * zoom}rem`,
+                        color: '#cbd5e1',
+                      }}
+                    >
+                      Mission {mIdx + 1}: {mId.replace(/^mission-/, '').replace(/-/g, ' ')}
+                    </div>
+                  ))}
+                </div>
+              )}
+
+              {['mission', 'side_mission'].includes(item.component_type) && item.stages && item.stages.length > 0 && (
+                <div style={{ marginTop: `${0.4 * zoom}rem`, display: 'flex', flexDirection: 'column', gap: `${0.25 * zoom}rem` }}>
+                  <div style={{ fontFamily: 'var(--font-mono)', fontSize: `${0.58 * zoom}rem`, color: '#38bdf8', letterSpacing: '0.04em' }}>
+                    PROCEDURAL STAGE SEQUENCE ({item.stages.length})
+                  </div>
+                  {item.stages.map((st: any, sIdx: number) => (
+                    <div
+                      key={sIdx}
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'space-between',
+                        alignItems: 'center',
+                        padding: `${0.2 * zoom}rem ${0.4 * zoom}rem`,
+                        borderRadius: `${3 * zoom}px`,
+                        background: 'rgba(15, 23, 42, 0.6)',
+                        border: `${1 * zoom}px solid rgba(255, 255, 255, 0.06)`,
+                        fontSize: `${0.6 * zoom}rem`,
+                      }}
+                    >
+                      <span style={{ color: '#f8fafc', fontWeight: 600 }}>{sIdx + 1}. {st.name}</span>
+                      <div style={{ display: 'flex', gap: `${0.3 * zoom}rem`, alignItems: 'center' }}>
+                        <span style={{ color: '#94a3b8' }}>[{st.preset_focus}]</span>
+                        <strong style={{ color: '#fbbf24', fontFamily: 'var(--font-mono)' }}>D={st.target_difficulty}</strong>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* Lore / Flavor Text Snippet (Not visual art description) */}
               {item.flavor_text && (

@@ -16,6 +16,12 @@ export interface StageCardProps {
       description: string;
     };
     failure_penalty?: string;
+    art_spec?: {
+      asset_path: string;
+      aspect_ratio?: string;
+      visual_description?: string;
+      art_style?: string;
+    };
   };
   totalStages: number;
   activeFocus: string;
@@ -24,6 +30,7 @@ export interface StageCardProps {
   isSquadLeader: boolean;
   onDynamicSwap?: (targetFocus: string, targetDifficulty: number) => void;
   canSwap?: boolean;
+  onInspectCard?: () => void;
 }
 
 export function StageCard({
@@ -35,12 +42,13 @@ export function StageCard({
   isSquadLeader,
   onDynamicSwap,
   canSwap = true,
+  onInspectCard,
 }: StageCardProps) {
   const dynamicSwap = stage.dynamic_swap;
   const isSwapped = activeFocus.toLowerCase() !== stage.preset_focus.toLowerCase();
 
   return (
-    <div className="card-stage">
+    <div className="card-stage" style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
       {/* Header: Stage Number & Difficulty */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div>
@@ -76,6 +84,53 @@ export function StageCard({
           </strong>
         </div>
       </div>
+
+      {/* Stage Vector Illustration */}
+      {stage.art_spec?.asset_path && (
+        <div
+          style={{
+            width: '100%',
+            height: '115px',
+            borderRadius: '6px',
+            overflow: 'hidden',
+            border: '1px solid rgba(56, 189, 248, 0.3)',
+            background: '#090d16',
+            position: 'relative',
+          }}
+        >
+          <img
+            src={stage.art_spec.asset_path}
+            alt={stage.name}
+            style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            onError={(e) => {
+              (e.currentTarget as HTMLElement).parentElement!.style.display = 'none';
+            }}
+          />
+          {onInspectCard && (
+            <button
+              type="button"
+              onClick={onInspectCard}
+              style={{
+                position: 'absolute',
+                bottom: '6px',
+                right: '6px',
+                padding: '2px 8px',
+                fontSize: '0.66rem',
+                fontFamily: 'var(--font-mono)',
+                background: 'rgba(15, 23, 42, 0.85)',
+                color: '#38bdf8',
+                border: '1px solid rgba(56, 189, 248, 0.5)',
+                borderRadius: '4px',
+                cursor: 'pointer',
+                backdropFilter: 'blur(4px)',
+              }}
+              title="Inspect Physical Stage Card Mockup"
+            >
+              🎴 INSPECT CARD
+            </button>
+          )}
+        </div>
+      )}
 
       {/* Active Room Focus Badge & Swap Indicator */}
       <div
