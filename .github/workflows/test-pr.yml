@@ -9,7 +9,7 @@ on:
 
 jobs:
   test-suites:
-    name: Run Manifest Generator & All 17 Test Suites
+    name: "Run Manifest Generator & All 18 Test Suites"
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -20,8 +20,17 @@ jobs:
         with:
           node-version: "22"
 
+      - name: Install Dependencies
+        run: npm install
+
       - name: Regenerate & Validate Component Manifests
         run: node manifests/generate_manifests.js
 
-      - name: Run Automated Test Suites (All 17 Suites: Rules, VTT, Client & Chaos)
+      - name: Run Component Linter
+        run: npm run lint:components
+
+      - name: "Run Automated Test Suites (All 18 Suites: Rules, VTT, Client & Chaos)"
         run: npm test
+
+      - name: Build Static Production Site
+        run: npm run build
