@@ -1,9 +1,9 @@
 ---
-id: "side-mission-02-black-market-arms-cache"
-title: "Side-Mission: Black-Market Arms Cache"
-component_type: "side_mission"
-category: "side_mission"
-faction: "neutral"
+id: side-mission-02-black-market-arms-cache
+title: 'Side-Mission: Black-Market Arms Cache'
+component_type: side_mission
+category: side_mission
+faction: neutral
 tier: 1
 deck_copies: 1
 cost:
@@ -11,10 +11,10 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "operations"
+  primary: combat
+  secondary: operations
   bridges:
-    - "infiltrate"
+    - infiltrate
 stats:
   es_budget: null
   hp_cap: null
@@ -26,53 +26,63 @@ stats:
   bounty_credits: 7
   bounty_pip: 1
   bounty_effort: 0
-  bonus_bounty: "Clear Stage 3 with Momentum (+2 or higher above Target D) -> +1 free Consumable Item card"
+  bonus_bounty: Clear Stage 3 with Momentum (+2 or higher above Target D) -> +1 free Consumable Item card
 themes:
-  - "Urban"
-  - "Covert"
+  - Urban
+  - Covert
 stages:
   - stage_number: 1
-    name: "Syndicate Alleyway"
-    preset_focus: "combat"
+    name: Syndicate Alleyway
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Standard Bypass)"
-      description: "Slip through rooftop fire escapes unseen to bypass the syndicate lookouts."
-    failure_penalty: "Alarm raised! Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[0 EF] (Standard Bypass)'
+      description: Slip through rooftop fire escapes unseen to bypass the syndicate lookouts.
+    failure_penalty: Alarm raised! Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_02_black_market_arms_cache_1_syndicate_alleyway.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Guard Barracks"
-    preset_focus: "combat"
+    name: Guard Barracks
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap: null
-    failure_penalty: "Suppression fire! Every deployed operative takes 1 point of HP damage."
+    failure_penalty: Suppression fire! Every deployed operative takes 1 point of HP damage.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_02_black_market_arms_cache_2_guard_barracks.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Armory Main Vault"
-    preset_focus: "operations"
+    name: Armory Main Vault
+    preset_focus: operations
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers vault demolition alarm (+1 Difficulty)"
-      description: "Blow the vault doors with thermite charges under heavy fire."
-    failure_penalty: "Vault auto-locks! The squad extracts empty-handed without base payouts."
-rules_text: "Side-Mission (Themes: [Urban], [Covert] — 3 Stages). Base Clearance Bounty: [7 CR], [1 PIP]. Bonus Bounty: Clear Stage 3 with [MOM] (+2 or higher) -> +1 free Consumable Item card. Stage 1: Syndicate Alleyway ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Guard Barracks ([Combat] D4, Mandatory Fight). Stage 3: Armory Main Vault ([Operations] D4; Force Breach to [Combat] D5)."
+      cost: Triggers vault demolition alarm (+1 Difficulty)
+      description: Blow the vault doors with thermite charges under heavy fire.
+    failure_penalty: Vault auto-locks! The squad extracts empty-handed without base payouts.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_side_02_black_market_arms_cache_3_armory_main_vault.svg
+      aspect_ratio: '63:88'
+rules_text: 'Side-Mission (Themes: [Urban], [Covert] — 3 Stages). Base Clearance Bounty: [7 CR], [1 PIP]. Bonus Bounty: Clear Stage 3 with [MOM] (+2 or higher) -> +1 free Consumable Item card. Stage 1: Syndicate Alleyway ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Guard Barracks ([Combat] D4, Mandatory Fight). Stage 3: Armory Main Vault ([Operations] D4; Force Breach to [Combat] D5).'
 active_ability: null
 tags:
-  - "side-mission"
-  - "urban"
-  - "covert"
-  - "arms-cache"
-  - "three-stage"
+  - side-mission
+  - urban
+  - covert
+  - arms-cache
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/side_missions/side_mission_02_black_market_arms_cache.png"
-  aspect_ratio: "70:120"
-  visual_description: "An underground syndicate armory vault illuminated by harsh amber industrial strips, packed with crates of military-grade rifles, grenades, and tactical rigs as operatives crack the biometric vault door."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/side_missions/side_mission_02_black_market_arms_cache.png
+  aspect_ratio: '70:120'
+  visual_description: An underground syndicate armory vault illuminated by harsh amber industrial strips, packed with crates of military-grade rifles, grenades, and tactical rigs as operatives crack the biometric vault door.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Side-Mission: Black-Market Arms Cache
 

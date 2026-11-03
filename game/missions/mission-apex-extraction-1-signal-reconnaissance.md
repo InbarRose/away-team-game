@@ -1,9 +1,9 @@
 ---
-id: "mission-apex-extraction-1-signal-reconnaissance"
-title: "Mission 1: Signal Reconnaissance"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-apex-extraction-1-signal-reconnaissance
+title: 'Mission 1: Signal Reconnaissance'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 2
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "intel"
+  primary: combat
+  secondary: intel
   bridges:
-    - "infiltrate"
-    - "survival"
+    - infiltrate
+    - survival
 stats:
   es_budget: null
   hp_cap: null
@@ -23,63 +23,73 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-apex-extraction"
+  campaign_id: campaign-apex-extraction
   mission_number: 1
   stage_count: 3
   doom_on_failure: 1
   bounty_credits: 6
   bounty_pip: 1
   bounty_effort: 0
-  squad_requirement: "At least 1 [Combat] and 1 [Intel] operative"
+  squad_requirement: At least 1 [Combat] and 1 [Intel] operative
 stages:
   - stage_number: 1
-    name: "Outer Gate Checkpoint"
-    preset_focus: "combat"
+    name: Outer Gate Checkpoint
+    preset_focus: combat
     target_difficulty: 3
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (Standard Bypass)"
-      description: "Scale the snowy perimeter cliffside and cut through sensor fencing unseen."
-    failure_penalty: "Perimeter alarm triggered! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success."
+      cost: '[0 EF] (Standard Bypass)'
+      description: Scale the snowy perimeter cliffside and cut through sensor fencing unseen.
+    failure_penalty: Perimeter alarm triggered! Every deployed operative loses 1 static die from shock, and Stage 2 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_1_signal_reconnaissance_1_outer_gate_checkpoint.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Patrol Bunker"
-    preset_focus: "combat"
+    name: Patrol Bunker
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "survival"
+      type: tactical_bypass
+      target_focus: survival
       target_difficulty: 4
-      cost: "[1 EF] from Squad Leader's Vault"
-      description: "Spend [1 EF] to detour around the fortified guard bunker through sub-zero mountain drainage tunnels."
-    failure_penalty: "Suppressive bunker fire! Every deployed operative takes 1 point of HP damage, and Stage 3 Target Difficulty escalates by +1 Success."
+      cost: '[1 EF] from Squad Leader''s Vault'
+      description: Spend [1 EF] to detour around the fortified guard bunker through sub-zero mountain drainage tunnels.
+    failure_penalty: Suppressive bunker fire! Every deployed operative takes 1 point of HP damage, and Stage 3 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_1_signal_reconnaissance_2_patrol_bunker.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Relay Server Vault"
-    preset_focus: "intel"
+    name: Relay Server Vault
+    preset_focus: intel
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 6
-      cost: "Triggers automated vault defenses (+2 Difficulty)"
-      description: "Blast open the encrypted server racks and physically extract the telemetry drives under heavy security fire."
-    failure_penalty: "Mission Failure: Telemetry wiped before decryption! Add [+1 FAIL] to the Campaign Track and consume 1 Campaign Retry from the global 2-retry budget."
-rules_text: "Operation: Apex Extraction — Mission 1 (3 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Side-Missions unlocked upon return to HQ. Stage 1: Outer Gate Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Patrol Bunker ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 3: Relay Server Vault ([Intel] D4; Force Breach to [Combat] D6). Mission Failure adds [+1 FAIL] and consumes 1 of 2 Campaign Retries."
+      cost: Triggers automated vault defenses (+2 Difficulty)
+      description: Blast open the encrypted server racks and physically extract the telemetry drives under heavy security fire.
+    failure_penalty: 'Mission Failure: Telemetry wiped before decryption! Add [+1 FAIL] to the Campaign Track and consume 1 Campaign Retry from the global 2-retry budget.'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_apex_extraction_1_signal_reconnaissance_3_relay_server_vault.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Apex Extraction — Mission 1 (3 Stages). Base Clearance Bounty: [6 CR], [1 PIP]. Side-Missions unlocked upon return to HQ. Stage 1: Outer Gate Checkpoint ([Combat] D3; Bypass to [Infiltrate] D4). Stage 2: Patrol Bunker ([Combat] D4; Bypass to [Survival] D4 for [1 EF]). Stage 3: Relay Server Vault ([Intel] D4; Force Breach to [Combat] D6). Mission Failure adds [+1 FAIL] and consumes 1 of 2 Campaign Retries.'
 active_ability: null
 tags:
-  - "mission"
-  - "apex-extraction"
-  - "mission-1"
-  - "planet"
-  - "facility"
-  - "three-stage"
+  - mission
+  - apex-extraction
+  - mission-1
+  - planet
+  - facility
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.png"
-  aspect_ratio: "70:120"
-  visual_description: "A high-altitude border communications array perched on a jagged, wind-swept mountain peak at night, with a giant satellite dish glowing crimson and operatives breaching a concrete patrol bunker toward an underground server vault."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_apex_extraction_1_signal_reconnaissance.png
+  aspect_ratio: '70:120'
+  visual_description: A high-altitude border communications array perched on a jagged, wind-swept mountain peak at night, with a giant satellite dish glowing crimson and operatives breaching a concrete patrol bunker toward an underground server vault.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 1: Signal Reconnaissance
 

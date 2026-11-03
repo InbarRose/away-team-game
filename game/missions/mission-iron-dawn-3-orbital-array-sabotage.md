@@ -1,9 +1,9 @@
 ---
-id: "mission-iron-dawn-3-orbital-array-sabotage"
-title: "Mission 3: Orbital Array Sabotage / Extraction Zero"
-component_type: "mission"
-category: "campaign_mission"
-faction: "neutral"
+id: mission-iron-dawn-3-orbital-array-sabotage
+title: 'Mission 3: Orbital Array Sabotage / Extraction Zero'
+component_type: mission
+category: campaign_mission
+faction: neutral
 tier: 2
 deck_copies: 1
 cost:
@@ -11,11 +11,11 @@ cost:
   effort: 0
   pip: 0
 focus_affinity:
-  primary: "combat"
-  secondary: "survival"
+  primary: combat
+  secondary: survival
   bridges:
-    - "operations"
-    - "infiltrate"
+    - operations
+    - infiltrate
 stats:
   es_budget: null
   hp_cap: null
@@ -23,64 +23,74 @@ stats:
   temp_dice_bonus: null
   slots_required: []
   armor_buffer: null
-  campaign_id: "campaign-iron-dawn"
+  campaign_id: campaign-iron-dawn
   mission_number: 3
   stage_count: 3
   doom_on_failure: 1
   bounty_credits: 0
   bounty_pip: 0
   bounty_effort: 0
-  squad_requirement: "At least 2 [Combat] and 1 [Survival] operative"
+  squad_requirement: At least 2 [Combat] and 1 [Survival] operative
 stages:
   - stage_number: 1
-    name: "Hangar Bay Breach / Overload Terminal"
-    preset_focus: "combat"
+    name: Hangar Bay Breach / Overload Terminal
+    preset_focus: combat
     target_difficulty: 4
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "infiltrate"
+      type: tactical_bypass
+      target_focus: infiltrate
       target_difficulty: 4
-      cost: "[0 EF] (or Force Breach from [Operations] D4 to [Combat] D5 in Extraction Zero variant)"
-      description: "Slip through external zero-g maintenance airlocks (or shoot out the reactor control relays manually under guard fire in the Overload Terminal variant)."
-    failure_penalty: "Core malfunction / explosive decompression! Every deployed operative takes 1 point of HP damage and loses 1 static die."
+      cost: '[0 EF] (or Force Breach from [Operations] D4 to [Combat] D5 in Extraction Zero variant)'
+      description: Slip through external zero-g maintenance airlocks (or shoot out the reactor control relays manually under guard fire in the Overload Terminal variant).
+    failure_penalty: Core malfunction / explosive decompression! Every deployed operative takes 1 point of HP damage and loses 1 static die.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_3_orbital_array_sabotage_1_hangar_bay_breach.svg
+      aspect_ratio: '63:88'
   - stage_number: 2
-    name: "Relay Power Grid / Helipad Defense"
-    preset_focus: "operations"
+    name: Relay Power Grid / Helipad Defense
+    preset_focus: operations
     target_difficulty: 4
     dynamic_swap:
-      type: "force_breach"
-      target_focus: "combat"
+      type: force_breach
+      target_focus: combat
       target_difficulty: 5
-      cost: "Triggers station siege alert (Mandatory [Combat] D5 siege in Helipad Defense variant)"
-      description: "Plant demolition charges directly on the primary power conduits while holding off waves of orbital security reinforcements."
-    failure_penalty: "Heavy crossfire and arc discharge! Every deployed operative takes 1 point of HP damage and Stage 3 Target Difficulty escalates by +1 Success."
+      cost: Triggers station siege alert (Mandatory [Combat] D5 siege in Helipad Defense variant)
+      description: Plant demolition charges directly on the primary power conduits while holding off waves of orbital security reinforcements.
+    failure_penalty: Heavy crossfire and arc discharge! Every deployed operative takes 1 point of HP damage and Stage 3 Target Difficulty escalates by +1 Success.
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_3_orbital_array_sabotage_2_relay_power_grid.svg
+      aspect_ratio: '63:88'
   - stage_number: 3
-    name: "Master Control Hub / Evacuation Dash"
-    preset_focus: "combat"
+    name: Master Control Hub / Evacuation Dash
+    preset_focus: combat
     target_difficulty: 5
     dynamic_swap:
-      type: "tactical_bypass"
-      target_focus: "survival"
+      type: tactical_bypass
+      target_focus: survival
       target_difficulty: 4
-      cost: "1 static die per deployed operative"
-      description: "Every deployed operative spends 1 static die to leap across collapsing zero-g catwalks and burning landing strips directly onto the extraction shuttle ramp."
-    failure_penalty: "Mission Failure: Sabotage fails / shuttle wave aborted! Add [+1 FAIL] to the Campaign Track. If Doom hits 3, Game Over; otherwise squad may retry Mission 3."
-rules_text: "Operation: Iron Dawn — Mission 3 Climax (3 Stages). Requires >= 2 [Combat] and >= 1 [Survival] operative. Stage 1: Hangar Bay Breach / Overload Terminal ([Combat] D4 with [Infiltrate] D4 Bypass, or [Operations] D4 with [Combat] D5 Breach). Stage 2: Relay Power Grid / Helipad Defense ([Operations] D4 with [Combat] D5 Breach, or Mandatory [Combat] D5 Siege). Stage 3: Master Control Hub / Evacuation Dash ([Combat] D4-5; Bypass to [Survival] D4-5 by spending 1 static die per operative). Clearing Stage 3 wins the Campaign!"
+      cost: 1 static die per deployed operative
+      description: Every deployed operative spends 1 static die to leap across collapsing zero-g catwalks and burning landing strips directly onto the extraction shuttle ramp.
+    failure_penalty: 'Mission Failure: Sabotage fails / shuttle wave aborted! Add [+1 FAIL] to the Campaign Track. If Doom hits 3, Game Over; otherwise squad may retry Mission 3.'
+    art_spec:
+      asset_path: /assets/cards/stages/stage_iron_dawn_3_orbital_array_sabotage_3_master_control_hub.svg
+      aspect_ratio: '63:88'
+rules_text: 'Operation: Iron Dawn — Mission 3 Climax (3 Stages). Requires >= 2 [Combat] and >= 1 [Survival] operative. Stage 1: Hangar Bay Breach / Overload Terminal ([Combat] D4 with [Infiltrate] D4 Bypass, or [Operations] D4 with [Combat] D5 Breach). Stage 2: Relay Power Grid / Helipad Defense ([Operations] D4 with [Combat] D5 Breach, or Mandatory [Combat] D5 Siege). Stage 3: Master Control Hub / Evacuation Dash ([Combat] D4-5; Bypass to [Survival] D4-5 by spending 1 static die per operative). Clearing Stage 3 wins the Campaign!'
 active_ability: null
 tags:
-  - "mission"
-  - "iron-dawn"
-  - "mission-3"
-  - "climax"
-  - "space"
-  - "facility"
-  - "three-stage"
+  - mission
+  - iron-dawn
+  - mission-3
+  - climax
+  - space
+  - facility
+  - three-stage
 art_spec:
-  asset_path: "/assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.png"
-  aspect_ratio: "70:120"
-  visual_description: "A dramatic zero-g firefight inside the burning hangar bay of an orbital communications spire as plasma conduits overload, with operatives leaping across collapsing catwalks toward an open assault shuttle ramp against a backdrop of Earth in low orbit."
-  art_style: "Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting."
+  asset_path: /assets/cards/missions/mission_iron_dawn_3_orbital_array_sabotage.png
+  aspect_ratio: '70:120'
+  visual_description: A dramatic zero-g firefight inside the burning hangar bay of an orbital communications spire as plasma conduits overload, with operatives leaping across collapsing catwalks toward an open assault shuttle ramp against a backdrop of Earth in low orbit.
+  art_style: Near-future gritty corporate sci-fi concept art, hard-surface industrial design, matte digital illustration with dramatic rim lighting.
 ---
+
 
 # Mission 3: Orbital Array Sabotage / Extraction Zero
 
