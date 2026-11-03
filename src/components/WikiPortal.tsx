@@ -2337,12 +2337,9 @@ export function WikiPortal({
                     />
                   )}
                   <div className="at-card-art-meta">
-                    <span>ART SPEC ({activeComponent.art_spec.aspect_ratio})</span>
+                    <span>CARD ART • {activeComponent.art_spec.aspect_ratio}</span>
                     <span>{activeComponent.art_spec.asset_path}</span>
                   </div>
-                  <p className="at-card-art-prompt" style={{ WebkitLineClamp: 6 }}>
-                    “{activeComponent.art_spec.visual_description}”
-                  </p>
                   <button
                     type="button"
                     className="vtt-btn"

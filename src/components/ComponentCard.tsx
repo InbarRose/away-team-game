@@ -109,9 +109,9 @@ export function ComponentCard({
         </div>
       </header>
 
-      {/* Art Spec Blueprint Frame */}
-      <div className="at-card-art-frame">
-        {!imgError && item.art_spec?.asset_path && (
+      {/* Card Artwork Window */}
+      <div className="at-card-art-frame" style={{ padding: '0.35rem', background: '#0b111e' }}>
+        {!imgError && item.art_spec?.asset_path ? (
           <img
             src={item.art_spec.asset_path}
             alt={item.title}
@@ -120,39 +120,16 @@ export function ComponentCard({
             style={{
               display: imgLoaded ? 'block' : 'none',
               width: '100%',
-              maxHeight: '180px',
+              maxHeight: '190px',
               objectFit: 'cover',
               borderRadius: '6px',
-              marginBottom: '0.5rem',
             }}
           />
+        ) : (
+          <div style={{ height: '120px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#64748b', fontSize: '0.75rem' }}>
+            {item.title}
+          </div>
         )}
-        <div className="at-card-art-meta">
-          <span>ART SPEC • {item.art_spec.aspect_ratio}</span>
-          <button
-            type="button"
-            onClick={handleCopyPrompt}
-            style={{
-              background: 'rgba(255,255,255,0.06)',
-              border: '1px solid rgba(255,255,255,0.15)',
-              color: copiedPrompt ? '#10B981' : '#94a3b8',
-              borderRadius: '4px',
-              padding: '1px 6px',
-              fontSize: '0.64rem',
-              cursor: 'pointer',
-              fontFamily: 'var(--font-mono)',
-            }}
-            title="Copy generative art prompt to clipboard"
-          >
-            {copiedPrompt ? '✓ PROMPT COPIED' : 'COPY PROMPT'}
-          </button>
-        </div>
-        <p className="at-card-art-prompt" title={item.art_spec.visual_description}>
-          “{item.art_spec.visual_description}”
-        </p>
-        <div className="at-card-art-meta">
-          <span style={{ opacity: 0.75 }}>{item.art_spec.asset_path}</span>
-        </div>
       </div>
 
       {/* Stats & Focus Affinity Bar */}
